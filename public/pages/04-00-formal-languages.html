@@ -1,0 +1,648 @@
+<div id="rightSideWrapper">
+
+
+        <div class="content">
+            <div class='chapter'>
+                <h1 class="hidden-title">
+                    <span class="chapterTitle">4. Formale Sprachen - Einführung und Beispiele</span>
+                </h1>
+
+                <div class='subChapter'>
+
+
+
+
+                    <p>
+                        Hier sehen Sie einige Beispiele für gültige und ungültige Email-Adressen. Mit <em>gültig</em>
+                        meine ich, dass sie syntaktisch korrekt sind, ungeachtet, ob ein Konto mit dieser Email-Adresse
+                        besteht.
+                    </p>
+                    <pre class="container">
+thomas.schmitz@hszg.de                              <span class='comment'>Gültig</span>
+dominik@cs.sjtu.edu.cn                              <span class='comment'>Gültig</span>
+raffaela@mayer@gmail.com                            <span class='comment'>Ungültig: @ kommt zweimal vor</span>
+lorenz.klein@greatest/company/in/the/world.com      <span class='comment'>Ungültig: Domain-Name darf kein / enthalten</span>
+.schlaumeier@gmail.com                              <span class='comment'>Ungültig: Google will kein . an erster Stelle</span></pre>
+                    <p>
+                        Hier sehen Sie den Teil eines HTML-Dokuments. Beachten Sie die typische
+                        hierarchisch-geschachtelte
+                        Struktur (sie müssen es nicht im Detail lesen):
+                    </p>
+                    <style>
+                        .StartTag,
+                        .EndTag {
+                            color: blue;
+                        }
+
+                        .AttributeValueDoubleQuote,
+                        .AttributeValueSingleQuote {
+                            color: orange
+                        }
+
+                        .RawText {
+                            font-style: italic;
+                        }
+
+                        .AttributeName {
+                            color: limegreen;
+                        }
+                    </style>
+                    <pre class="container">
+<span class='RawText'> </span><span class='LessThanBracket'>&lt;</span><span class='StartTag'>div</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>class</span><span class='WaitingForValue'>=</span><span class='SingleQuote'>'</span><span class='AttributeValueSingleQuote'>carousel-inner</span><span class='SingleQuote'>'</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>style</span><span class='WaitingForValue'>=</span><span class='SingleQuote'>'</span><span class='AttributeValueSingleQuote'>display:inline-block</span><span class='SingleQuote'>'</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'>
+</span><span class='RawText'>    </span><span class='LessThanBracket'>&lt;</span><span class='StartTag'>div</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>class</span><span class='WaitingForValue'>=</span><span class='SingleQuote'>'</span><span class='AttributeValueSingleQuote'>item active</span><span class='SingleQuote'>'</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'>
+</span><span class='RawText'>        </span><span class='LessThanBracket'>&lt;</span><span class='StartTag'>p</span><span class='GreaterThanBracket'>&gt;</span><span class='RawText'>\(110 x + 794\)</span><span class='LessThanBracket'>&lt;</span><span class='EndTag'>/p</span><span class='GreaterThanBracket'>&gt;</span><span class='LessThanBracket'>&lt;</span><span class='StartTag'>img</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>loading</span><span class='WaitingForValue'>=</span><span class='DoubleQuote'>"</span><span class='AttributeValueDoubleQuote'>lazy</span><span class='DoubleQuote'>"</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>src</span><span class='WaitingForValue'>=</span><span class='SingleQuote'>'</span><span class='AttributeValueSingleQuote'>../img/hash/hashfunction_110_794.svg</span><span class='SingleQuote'>'</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'>
+</span><span class='RawText'>    </span><span class='LessThanBracket'>&lt;</span><span class='EndTag'>/div</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'>
+</span><span class='RawText'>    </span><span class='LessThanBracket'>&lt;</span><span class='StartTag'>div</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>class</span><span class='WaitingForValue'>=</span><span class='SingleQuote'>'</span><span class='AttributeValueSingleQuote'>item</span><span class='SingleQuote'>'</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'>
+</span><span class='RawText'>        </span><span class='LessThanBracket'>&lt;</span><span class='StartTag'>p</span><span class='GreaterThanBracket'>&gt;</span><span class='RawText'>\(502 x + 121\)</span><span class='LessThanBracket'>&lt;</span><span class='EndTag'>/p</span><span class='GreaterThanBracket'>&gt;</span><span class='LessThanBracket'>&lt;</span><span class='StartTag'>img</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>loading</span><span class='WaitingForValue'>=</span><span class='DoubleQuote'>"</span><span class='AttributeValueDoubleQuote'>lazy</span><span class='DoubleQuote'>"</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>src</span><span class='WaitingForValue'>=</span><span class='SingleQuote'>'</span><span class='AttributeValueSingleQuote'>../img/hash/hashfunction_502_121.svg</span><span class='SingleQuote'>'</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'>
+</span><span class='RawText'>    </span><span class='LessThanBracket'>&lt;</span><span class='EndTag'>/div</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'>
+</span><span class='RawText'>    </span><span class='LessThanBracket'>&lt;</span><span class='StartTag'>div</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>class</span><span class='WaitingForValue'>=</span><span class='SingleQuote'>'</span><span class='AttributeValueSingleQuote'>item</span><span class='SingleQuote'>'</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'>
+</span><span class='RawText'>        </span><span class='LessThanBracket'>&lt;</span><span class='StartTag'>p</span><span class='GreaterThanBracket'>&gt;</span><span class='RawText'>\(617 x + 5\)</span><span class='LessThanBracket'>&lt;</span><span class='EndTag'>/p</span><span class='GreaterThanBracket'>&gt;</span><span class='LessThanBracket'>&lt;</span><span class='StartTag'>img</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>loading</span><span class='WaitingForValue'>=</span><span class='DoubleQuote'>"</span><span class='AttributeValueDoubleQuote'>lazy</span><span class='DoubleQuote'>"</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>src</span><span class='WaitingForValue'>=</span><span class='SingleQuote'>'</span><span class='AttributeValueSingleQuote'>../img/hash/hashfunction_617_5.svg</span><span class='SingleQuote'>'</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'>
+</span><span class='RawText'>    </span><span class='LessThanBracket'>&lt;</span><span class='EndTag'>/div</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'>
+</span><span class='RawText'>    </span><span class='LessThanBracket'>&lt;</span><span class='StartTag'>div</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>class</span><span class='WaitingForValue'>=</span><span class='SingleQuote'>'</span><span class='AttributeValueSingleQuote'>item</span><span class='SingleQuote'>'</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'>
+</span><span class='RawText'>        </span><span class='LessThanBracket'>&lt;</span><span class='StartTag'>p</span><span class='GreaterThanBracket'>&gt;</span><span class='RawText'>\(815 x + 562\)</span><span class='LessThanBracket'>&lt;</span><span class='EndTag'>/p</span><span class='GreaterThanBracket'>&gt;</span><span class='LessThanBracket'>&lt;</span><span class='StartTag'>img</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>loading</span><span class='WaitingForValue'>=</span><span class='DoubleQuote'>"</span><span class='AttributeValueDoubleQuote'>lazy</span><span class='DoubleQuote'>"</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>src</span><span class='WaitingForValue'>=</span><span class='SingleQuote'>'</span><span class='AttributeValueSingleQuote'>../img/hash/hashfunction_851_562.svg</span><span class='SingleQuote'>'</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'>
+</span><span class='RawText'>    </span><span class='LessThanBracket'>&lt;</span><span class='EndTag'>/div</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'>
+</span><span class='RawText'>    </span><span class='LessThanBracket'>&lt;</span><span class='StartTag'>div</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>class</span><span class='WaitingForValue'>=</span><span class='SingleQuote'>'</span><span class='AttributeValueSingleQuote'>item</span><span class='SingleQuote'>'</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'>
+</span><span class='RawText'>        </span><span class='LessThanBracket'>&lt;</span><span class='StartTag'>p</span><span class='GreaterThanBracket'>&gt;</span><span class='RawText'>\(868 x + 858\)</span><span class='LessThanBracket'>&lt;</span><span class='EndTag'>/p</span><span class='GreaterThanBracket'>&gt;</span><span class='LessThanBracket'>&lt;</span><span class='StartTag'>img</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>loading</span><span class='WaitingForValue'>=</span><span class='DoubleQuote'>"</span><span class='AttributeValueDoubleQuote'>lazy</span><span class='DoubleQuote'>"</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>src</span><span class='WaitingForValue'>=</span><span class='SingleQuote'>'</span><span class='AttributeValueSingleQuote'>../img/hash/hashfunction_868_858.svg</span><span class='SingleQuote'>'</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'>
+</span><span class='RawText'>    </span><span class='LessThanBracket'>&lt;</span><span class='EndTag'>/div</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'>
+</span><span class='RawText'>    </span><span class='LessThanBracket'>&lt;</span><span class='StartTag'>div</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>class</span><span class='WaitingForValue'>=</span><span class='SingleQuote'>'</span><span class='AttributeValueSingleQuote'>item</span><span class='SingleQuote'>'</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'>
+</span><span class='RawText'>        </span><span class='LessThanBracket'>&lt;</span><span class='StartTag'>p</span><span class='GreaterThanBracket'>&gt;</span><span class='RawText'>\(915 x + 320\)</span><span class='LessThanBracket'>&lt;</span><span class='EndTag'>/p</span><span class='GreaterThanBracket'>&gt;</span><span class='LessThanBracket'>&lt;</span><span class='StartTag'>img</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>loading</span><span class='WaitingForValue'>=</span><span class='DoubleQuote'>"</span><span class='AttributeValueDoubleQuote'>lazy</span><span class='DoubleQuote'>"</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>src</span><span class='WaitingForValue'>=</span><span class='SingleQuote'>'</span><span class='AttributeValueSingleQuote'>../img/hash/hashfunction_915_320.svg</span><span class='SingleQuote'>'</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'>
+</span><span class='RawText'>    </span><span class='LessThanBracket'>&lt;</span><span class='EndTag'>/div</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'>
+</span><span class='LessThanBracket'>&lt;</span><span class='EndTag'>/div</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>class</span><span class='WaitingForValue'>=</span><span class='SingleQuote'>'</span><span class='AttributeValueSingleQuote'>carousel-inner</span><span class='SingleQuote'>'</span><span class='GreaterThanBracket'>&gt;</span>                    </pre>
+                    <p>Hier sehen Sie einen Ausschnitt aus einem Elm-Programm (auch diesen müssen Sie nicht im
+                        Detail lesen):</p>
+                    <pre class='listing container'>
+<code>find : Bst -&gt; String -&gt; Maybe String</code>
+<code>find tree key =</code>
+<code>    case tree of</code>
+<code>        Empty _ -&gt;</code>
+<code>            Nothing</code>
+<code></code>
+<code>        Node ( keyHere, valueHere ) leftChild rightChild -&gt;</code>
+<code>            if key == keyHere then</code>
+<code>                Just valueHere</code>
+<code></code>
+<code>            else if key &lt; keyHere then</code>
+<code>                find leftChild key</code>
+<code></code>
+<code>            else</code>
+<code>                find rightChild key</code></pre>
+                    <p>Als letztes Beispiel sehen Sie hier eine svg-Datei. Dies ist ein Dateiformat für Vektorgrafiken.
+                        In
+                        diesem
+                        Falle ein Kreis mit einer Geraden: <img src="../img/svg-example.svg" style="height:4em">
+                    </p>
+                    <pre class='listing container'>
+<code>
+    <span class='RawText'></span>
+    <span class='LessThanBracket'>&lt;</span>
+    <span class='StartTag'>?xml</span>
+    <span class='WaitingForAttribute'> </span>
+    <span class='AttributeName'>version</span>
+    <span class='WaitingForValue'>=</span>
+    <span class='DoubleQuote'>"</span>
+    <span class='AttributeValueDoubleQuote'>1.0</span>
+    <span class='DoubleQuote'>"</span>
+    <span class='WaitingForAttribute'> </span>
+    <span class='AttributeName'>encoding</span>
+    <span class='WaitingForValue'>=</span>
+    <span class='DoubleQuote'>"</span>
+    <span class='AttributeValueDoubleQuote'>UTF-8</span>
+    <span class='DoubleQuote'>"</span>
+    <span class='AttributeName'>?</span>
+    <span class='GreaterThanBracket'>&gt;</span>
+    <span class='LineBreak'></span>
+</code>
+<code><span class='LessThanBracket'>&lt;</span>
+    <span class='StartTag'>svg</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>xmlns</span><span class='WaitingForValue'>=</span><span class='DoubleQuote'>"</span><span class='AttributeValueDoubleQuote'>http://www.w3.org/2000/svg</span><span class='DoubleQuote'>"</span><span class='WaitingForAttribute'> </span><span class='LineBreak'></span></code>
+<code><span class='WaitingForAttribute'>     </span><span class='AttributeName'>xmlns:xlink</span><span class='WaitingForValue'>=</span><span class='DoubleQuote'>"</span><span class='AttributeValueDoubleQuote'>http://www.w3.org/1999/xlink</span><span class='DoubleQuote'>"</span><span class='WaitingForAttribute'> </span><span class='LineBreak'></span></code>
+<code><span class='WaitingForAttribute'>     </span><span class='AttributeName'>width</span><span class='WaitingForValue'>=</span><span class='DoubleQuote'>"</span><span class='AttributeValueDoubleQuote'>102pt</span><span class='DoubleQuote'>"</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>height</span><span class='WaitingForValue'>=</span><span class='DoubleQuote'>"</span><span class='AttributeValueDoubleQuote'>102pt</span><span class='DoubleQuote'>"</span><span class='WaitingForAttribute'> </span><span class='LineBreak'></span></code>
+<code><span class='WaitingForAttribute'>     </span><span class='AttributeName'>viewBox</span><span class='WaitingForValue'>=</span><span class='DoubleQuote'>"</span><span class='AttributeValueDoubleQuote'>0 0 102 102</span><span class='DoubleQuote'>"</span><span class='WaitingForAttribute'> </span><span class='LineBreak'></span></code>
+<code><span class='WaitingForAttribute'>     </span><span class='AttributeName'>version</span><span class='WaitingForValue'>=</span><span class='DoubleQuote'>"</span><span class='AttributeValueDoubleQuote'>1.1</span><span class='DoubleQuote'>"</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'></span></code>
+<code><span class='LessThanBracket'>&lt;</span><span class='StartTag'>g</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>id</span><span class='WaitingForValue'>=</span><span class='DoubleQuote'>"</span><span class='AttributeValueDoubleQuote'>surface2322</span><span class='DoubleQuote'>"</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'></span></code>
+<code><span class='LessThanBracket'>&lt;</span><span class='StartTag'>circle</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>style</span><span class='WaitingForValue'>=</span><span class='DoubleQuote'>"</span><span class='AttributeValueDoubleQuote'>fill:none;stroke-width:0.4;stroke:rgba(0,0,0,100);</span><span class='DoubleQuote'>"</span><span class='WaitingForAttribute'> </span><span class='LineBreak'></span></code>
+<code><span class='WaitingForAttribute'>        </span><span class='AttributeName'>cx</span><span class='WaitingForValue'>=</span><span class='DoubleQuote'>"</span><span class='AttributeValueDoubleQuote'>51</span><span class='DoubleQuote'>"</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>cy</span><span class='WaitingForValue'>=</span><span class='DoubleQuote'>"</span><span class='AttributeValueDoubleQuote'>51</span><span class='DoubleQuote'>"</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>r</span><span class='WaitingForValue'>=</span><span class='DoubleQuote'>"</span><span class='AttributeValueDoubleQuote'>40</span><span class='DoubleQuote'>"</span><span class='AttributeName'>/</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'></span></code>
+<code><span class='LessThanBracket'>&lt;</span><span class='StartTag'>path</span><span class='WaitingForAttribute'> </span><span class='AttributeName'>style</span><span class='WaitingForValue'>=</span><span class='DoubleQuote'>"</span><span class='AttributeValueDoubleQuote'>fill:none;stroke-width:0.4;stroke:rgba(0,0,0,100);</span><span class='DoubleQuote'>"</span><span class='LineBreak'></span></code>
+<code><span class='WaitingForAttribute'>      </span><span class='AttributeName'>d</span><span class='WaitingForValue'>=</span><span class='DoubleQuote'>"</span><span class='AttributeValueDoubleQuote'>M 50 50 l 33.5 -22.5</span><span class='DoubleQuote'>"</span><span class='AttributeName'>/</span><span class='GreaterThanBracket'>&gt;</span><span class='RawText'> </span><span class='LineBreak'></span></code>
+<code><span class='LessThanBracket'>&lt;</span><span class='EndTag'>/g</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'></span></code>
+<code><span class='LessThanBracket'>&lt;</span><span class='EndTag'>/svg</span><span class='GreaterThanBracket'>&gt;</span><span class='LineBreak'></span></code></pre>
+
+                    <p>Was haben diese vier Beispiele gemeinsam? Es handelt sich in allen Fällen um <em>Daten</em>, die
+                        in
+                        einem bestimmten festgelegten <em>Format</em>
+                        dargelegt werden. Soll ein Rechner etwas sinnvolles damit anfangen (zum Beispiel das
+                        Elm-Programm
+                        starten oder die HTML-Seite oder die Svg-Datei
+                        auf dem Bildschirm darstellen), muss er dieses Format erst einmal "verstehen", also den bloßen
+                        String aus ASCII-Zeichen umwandeln in eine logisch
+                        sinnvolle Struktur. Und genau darum geht es in den Formalen Sprachen: wir wollen Begriffe,
+                        Regeln,
+                        Methoden, Algorithmen entwickeln, um
+                        Daten, die in einem bestimmten Format vorliegen, zu verarbeiten; ja auch erst einmal überhaupt
+                        Begriffe festlegen, wie man solche Formate definiert.
+                    </p>
+
+                    <h2>Korrekte Email-Adressen</h2>
+
+                    <p>Kommen wir auf unser erstes, einfachstes Beispiel zurück: die Email-Adressen. Können Sie
+                        möglichst
+                        präzise und möglichst formal beschreiben, wie eine korrekte
+                        Email-Adresse auszusehen hat? Hier versuche ich es einmal:
+                    </p>
+                    <div class="well container">
+                        Eine Emailadresse besteht aus einem <em>Benutzernamen</em> und einem <em>Domainnamen</em>, die
+                        mit
+                        einem <code>@</code> verbunden sind.
+                        Der Benutzername ist ein nichtleerer String bestehend aus Groß- und Kleinbuchstaben, Zahlen, und
+                        Punkten (<code>.</code>).
+                        Erster und letzter Buchstaben dürfen keine Punkte sein, außerdem dürfen keine zwei Punkte
+                        nebeneinander stehen.
+                        Der Domainname ist eine Folge von mindestenes zwei <em>Labels</em>, die jeweils mit einem
+                        <code>.</code> separiert sind. Ein Label
+                        ist ein nichtleerer String aus Groß- und Kleinbuchstaben, Zahlen und dem Bindestrich
+                        (<code>-</code>).
+                    </div>
+                    <p>
+                        Die genauen Regeln mögen von Anbieter zu Anbieter variieren; ich habe mich mal an das gehalten,
+                        was
+                        ich experimentell bei <code>gmail.com</code> herausgefunden
+                        habe. Die obige Beschreibung ist (hoffentlich) verständlich und präzise und unzweideutig.
+                        Allerdings
+                        ist sie in natürlicher Sprache verfasst;
+                        es ist beispielsweise nicht klar, wie ein Rechner aus der obigen Beschreibung einen Algorithmus
+                        konstruieren kann, der Korrektheit einer Email-Adresse überprüft.
+                        Außerdem schleichen sich bei natürlicher Sprache schnell Zweideutigkeiten ein, die a priori
+                        nicht
+                        immer zu erkennen sind.
+                        Wir wollen daher ein formales Regelwerk erstellen, wie wir Formate dieser Art vollständig und
+                        eindeutig beschreiben können.
+                        Ich werde dies nun Schritt für Schritt entwickeln, erst informell anhand des
+                        Email-Adressen-Beispiels und dann, im nächsten Kapitel, formal und abstrakt.
+                    </p>
+
+                    <p>Eine Emailadresse ist von der Form <em>Benutzername</em><code>@</code><em>Domainnname</em>. Dies
+                        können wir als <em>Ableitungsregel</em> darstellen:</p>
+                    <pre class="container">
+ &lt;EmailAdress&gt; <strong>-&gt;</strong> &lt;User&gt; @ &lt;Domain&gt;</pre>
+                    <p>Wie können wir nun beispielsweise eine ähnliche Ableitungsregeln für <code>&lt;Domain&gt;</code>
+                        erstellen? Eine <code>&lt;Domain&gt;</code> soll
+                        eine Folge aus mindestens zwei <code>&lt;Label&gt;</code> sein, jeweils durch einen
+                        <code>.</code>
+                        separiert. Wir erreichen dies, indem wir einen an Rekursion
+                        erinnernden Trick anwenden: entweder gibt es genau zwei Labels oder die Domain beginnt mit einem
+                        Label,
+                        gefolgt von einem Punkt und wiederum einer <em>Folge von mindestens zwei durch <code>.</code>
+                            separierten Labels</em>,
+                        also wiederum etwas, das wie ein Domainname aussieht. Daher:
+                    </p>
+                    <pre class="container">
+&lt;Domain&gt; <strong>-&gt;</strong> &lt;Label&gt; . &lt;Label&gt;
+&lt;Domain&gt; <strong>-&gt;</strong> &lt;Label&gt; . &lt;Domain&gt;</pre>
+                    <p>
+                        Wir geben also <em>zwei</em> Möglichkeiten an, wie mit einem <code>&lt;Domain&gt;</code> zu
+                        verfahren ist.
+                        Was ist nun <code>&lt;Label&gt;</code>? Dies ist eine nichtleere Folge von in Domainnamen
+                        erlaubten
+                        Zeichen.
+                        Diese sind alphanumerisch (Buchstaben und Zahlen) und der Strich <code>-</code> (in der Praxis
+                        sind
+                        eventuell noch weitere Zeichen erlaubt;
+                        im Ernstfall hängt dies davon ab, was die Domain Name Server des jeweiligen Landes / der
+                        jeweiligen
+                        Top-Level-Domain erlauben, siehe
+                        zum Beispiel <a href="https://en.wikipedia.org/wiki/Internationalized_domain_name">Wikipedia:
+                            Internationalized Domain Name</a>).
+                        Wie formulieren wir <em>nichtleere Folge von ...</em> mit unserer <code>--&gt;</code>-Notation?
+                        Wieder mit dem Rekursionstrick:
+                    </p>
+                    <pre class="container">
+&lt;Label&gt; <strong>-&gt;</strong> &lt;AlphaNumOrDash&gt; 
+&lt;Label&gt; <strong>-&gt;</strong> &lt;AlphaNumOrDash&gt; &lt;Label&gt;
+&lt;AlphaNumOrDash&gt; <strong>-&gt;</strong> &lt;AlphaNum&gt;
+&lt;AlphaNumOrDash&gt; <strong>-&gt;</strong> - </pre>
+                    <p>
+                        Nun müssen wir noch Regeln für <code>&lt;AlphaNum&gt;</code> angeben. Hier führen wir eine
+                        weitere
+                        Konvention ein: nämlich, dass wir
+                        verschiedene Alternativen mit einem senkrechten Strich | separieren:
+                    </p>
+                    <pre class="container">
+&lt;AlphaNum&gt; <strong>-&gt;</strong> a <strong>|</strong> b <strong>|</strong> c <strong>|</strong> d <strong>|</strong> e <strong>|</strong> f <strong>|</strong> g <strong>|</strong> h <strong>|</strong> i <strong>|</strong> j <strong>|</strong> k <strong>|</strong> l <strong>|</strong> m <strong>|</strong> n <strong>|</strong> o <strong>|</strong> p <strong>|</strong> q <strong>|</strong> r <strong>|</strong> s <strong>|</strong> t <strong>|</strong> u <strong>|</strong> v <strong>|</strong> w <strong>|</strong> x <strong>|</strong> y <strong>|</strong> z
+&lt;AlphaNum&gt; <strong>-&gt;</strong> A <strong>|</strong> B <strong>|</strong> C <strong>|</strong> D <strong>|</strong> E <strong>|</strong> F <strong>|</strong> G <strong>|</strong> H <strong>|</strong> I <strong>|</strong> J <strong>|</strong> K <strong>|</strong> L <strong>|</strong> M <strong>|</strong> N <strong>|</strong> O <strong>|</strong> P <strong>|</strong> Q <strong>|</strong> R <strong>|</strong> S <strong>|</strong> T <strong>|</strong> U <strong>|</strong> V <strong>|</strong> W <strong>|</strong> X <strong>|</strong> Y <strong>|</strong> Z
+&lt;AlphaNum&gt; <strong>-&gt;</strong> 0 <strong>|</strong> 1 <strong>|</strong> 2 <strong>|</strong> 3 <strong>|</strong> 4 <strong>|</strong> 5 <strong>|</strong> 6 <strong>|</strong> 7 <strong>|</strong> 8 <strong>|</strong> 9</pre>
+                    <p>Beachten Sie: ich habe hier absichtlich nicht
+                        <code>&lt;AlphaNum&gt; <strong>-&gt;</strong> a <strong>|</strong>  ... <strong>|</strong> z</code>
+                        geschrieben, weil ich in diesem Beispiel wirklich alles ausschreiben wollte und mit der
+                        ...-Notation
+                        schon wieder etwas menschen- aber nicht maschinenlesbares
+                        eingeführt hätte.
+                    </p>
+                    <p>
+                        Wir brauchen noch Regeln für <code>&lt;User&gt;</code>. Dies ist ein nichtleerer String aus
+                        alphanumerischen Zeichen und dem Punkt <code>.</code>, wobei
+                        der Punkt nicht am Anfang und nicht am Ende stehen darf. Also: eine nichtleere Folge von
+                        <em>Namensblöcken</em>, die jeweils durch <code>.</code> separiert sind,
+                        wobei ein Namensblock eine nichtleere Folge alphanumerischer Zeichen ist.
+                    </p>
+                    <pre class="container">
+&lt;User&gt; <strong>-&gt;</strong> &lt;NameBlock&gt; <strong>|</strong> &lt;NameBlock&gt; . &lt;User&gt;
+&lt;NameBlock&gt; <strong>-&gt;</strong> &lt;AlphaNum&gt; <strong>|</strong> &lt;AlphaNum&gt; &lt;NameBlock&gt;</pre>
+                    <p>Nun haben wir unser Emailformat vollständig beschrieben. Das gesamte Regelwerk sehen Sie hier
+                        noch
+                        einmal im Ganzen:</p>
+                    <pre class="container listing" id="email-context-free-grammar">
+<code>&lt;EmailAddress&gt;    <strong>-&gt;</strong>    &lt;User&gt; @ &lt;Domain&gt;</code>
+<code>&lt;Domain&gt;          <strong>-&gt;</strong>    &lt;Label&gt; . &lt;Label&gt; <strong>|</strong> &lt;Label&gt; . &lt;Domain&gt;</code>
+<code>&lt;User&gt;            <strong>-&gt;</strong>    &lt;NameBlock&gt; <strong>|</strong> &lt;NameBlock&gt; . &lt;User&gt;</code>
+<code>&lt;NameBlock&gt;       <strong>-&gt;</strong>    &lt;AlphaNum&gt; <strong>|</strong> &lt;AlphaNum&gt; &lt;NameBlock&gt;</code>
+<code>&lt;Label&gt;           <strong>-&gt;</strong>    &lt;AlphaNumOrDash&gt; <strong>|</strong> &lt;AlphaNumOrDash&gt; &lt;Label&gt;</code>
+<code>&lt;AlphaNumOrDash&gt;  <strong>-&gt;</strong>    &lt;AlphaNum&gt; <strong>|</strong> - </code>
+<code>&lt;AlphaNum&gt;        <strong>-&gt;</strong>    a <strong>|</strong> b <strong>|</strong> c <strong>|</strong> d <strong>|</strong> e <strong>|</strong> f <strong>|</strong> g <strong>|</strong> h <strong>|</strong> i <strong>|</strong> j <strong>|</strong> k <strong>|</strong> l <strong>|</strong> m <strong>|</strong> n <strong>|</strong> o <strong>|</strong> p <strong>|</strong> q <strong>|</strong> r <strong>|</strong> s <strong>|</strong> t <strong>|</strong> u <strong>|</strong> v <strong>|</strong> w <strong>|</strong> x <strong>|</strong> y <strong>|</strong> z</code>
+<code>&lt;AlphaNum&gt;        <strong>-&gt;</strong>    A <strong>|</strong> B <strong>|</strong> C <strong>|</strong> D <strong>|</strong> E <strong>|</strong> F <strong>|</strong> G <strong>|</strong> H <strong>|</strong> I <strong>|</strong> J <strong>|</strong> K <strong>|</strong> L <strong>|</strong> M <strong>|</strong> N <strong>|</strong> O <strong>|</strong> P <strong>|</strong> Q <strong>|</strong> R <strong>|</strong> S <strong>|</strong> T <strong>|</strong> U <strong>|</strong> V <strong>|</strong> W <strong>|</strong> X <strong>|</strong> Y <strong>|</strong> Z</code></pre>
+
+
+                    <h2>Ein Beispiel einer formalen Grammatik und einer Ableitung</h2>
+                    <p>
+                        Was Sie hier sehen, nennt man eine <em>formale Grammatik</em>. Ihre Bestandteile sind:
+                    </p>
+                    <ul>
+
+                        <li>Das Alphabet \(\Sigma\) aller verwendeten Zeichen, in unserem
+                            Fall also \(\Sigma = \{a,\dots,z,A,\dots,Z,.,-,@\}\). Wir nennen \(\Sigma\) die Menge
+                            der <em>terminalen Symbole</em>.
+                        </li>
+                        <li>
+                            Eine Menge \(N\) abstrakter Symbole, hier
+                            $$
+                            N = \{\texttt{&lt;EmailAddress&gt;, &lt;Domain&gt;,
+                            &lt;User&gt;,&lt;NameBlock&gt;,&lt;Label&gt;,&lt;AlphaNumOrDash&gt;,&lt;AlphaNum&gt;}
+                            \} \ .
+                            $$
+                            Diese Menge nennen wir die <em>nichtterminalen Symbole</em>. Wir verlangen, dass \(N \cap
+                            \Sigma
+                            = \emptyset\) gilt; ein Symbol kann also
+                            nicht gleichzeitig Terminalsymbol und Nichtterminalsymbol sein.
+                        </li>
+                        <li>
+                            Eine Menge \(P\) von Regeln, auch <em>Produktionen</em> genannt, wobei jede Regel die Form
+                            \(X \rightarrow \alpha\) hat, wobei \(\alpha\) eine beliebig lange endliche Folge von
+                            Symbolen
+                            in \(\Sigma \cup N\) ist.
+                        </li>
+                        <li>
+                            Ein Startsymbol \(S \in N\), das angibt, wo wir mit unserer Ableitung beginnen sollen. Im
+                            obigen
+                            Beispiel
+                            sind wir ja an Emailadressen interessiert, also ist <code>&lt;EmailAddress&gt;</code> das
+                            Startsymbol.
+                        </li>
+                    </ul>
+                    <p>
+                        Wenn wir nun so eine Grammatik gegeben haben, können wir Wörter <em>ableiten</em>; das heißt,
+                        wir beginnen mit dem
+                        Startsymbol und ersetzen in jedem Schritt ein nichtterminales Symbol durch die rechte Seite
+                        einer entsprechenden Regel.
+                        Dieser Vorgang ist nicht eindeutig und lässt mehrere Möglichkeiten offen; das ist auch gut so,
+                        denn es soll ja mehr als
+                        eine Email-Adresse geben. Hier ist ein Beispiel für eine Ableitung basierend auf der obigen
+                        Grammatik:
+                    </p>
+                    <pre class="container">
+<code>&lt;EmailAddress&gt;  <strong>-&gt;</strong> &lt;User&gt;@&lt;Domain&gt;</code>   
+<code>                <strong>-&gt;</strong> &lt;NameBlock&gt;.&lt;User&gt;@&lt;Domain&gt; </code> 
+<code>                <strong>-&gt;</strong> &lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Domain&gt; </code> 
+<code>                <strong>-&gt;</strong> &lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Domain&gt; </code> 
+<code>                <strong>-&gt;</strong> &lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt; </code> 
+<code>                <strong>-&gt;</strong> &lt;AlphaNum&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt; </code> 
+<code>                <strong>-&gt;</strong> &lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt; </code> 
+<code>                <strong>-&gt;</strong> &lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;Label&gt;.&lt;Label&gt; </code> 
+<code>                <strong>-&gt;</strong> &lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;Label&gt; </code> 
+<code>                <strong>-&gt;</strong> &lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;Label&gt; </code> 
+<code>                <strong>-&gt;</strong> &lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt; </code> 
+<code>                <strong>-&gt;</strong> d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt; </code> 
+<code>                <strong>-&gt;</strong> d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;e</code> 
+<code>                <strong>-&gt;</strong> d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de</code> 
+<code>                <strong>-&gt;</strong> d.s@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de</code> 
+<code>                <strong>-&gt;</strong> d.s@&lt;AlphaNumOrDash&gt;.b.de</code> 
+<code>                <strong>-&gt;</strong> d.s@a.b.de</code> </pre>
+                    <p>
+                        Nach dem gleichen Schema könnten wir <code>d.s.@-.-.--</code> ableiten, was
+                        darauf schließen lässt, dass unsere Grammatik nicht wirklich das
+                        tut, was wir beabsichtigen, dass sie nämlich <em>zu viele</em> Emailadressen
+                        herleitet, auch solche, die wir nicht als zulässige Adressen gelten lassen wollen.
+                    </p>
+                    <div class='well well-lg numbered-exercise container'>
+                        <span class='numbered-title'>Übungsaufgabe</span>
+                        Formulieren Sie weitere Regeln, um unsinnige Domainnamen wie <code>-.-.--</code>
+                        zu verbieten. Wie müssen Sie die obige Grammatik ändern?
+                    </div>
+
+
+                    <h1>Terminologie, formale Definitionen und Beispiele</h1>
+
+
+
+                    <p>
+                        Im letzten Abschnitt haben wir die Regeln für die Bildung syntaktisch korrekter
+                        Emailadressen formalisiert. Zwar unvollständig, doch hoffe ich, dass das allgemeine
+                        Schema klar geworden ist. Wir werden nun alles formaler und abstrakter definieren.
+                    </p>
+
+                    <h2>Alphabet</h2>
+
+                    <p>
+                        Wenn wir über formale Sprachen reden, so liegt immer eine (endliche) Menge von
+                        Symbolen zugrunde, das Alphabet \(\Sigma\). Im Emailadressen-Beispiel war (\Sigma) recht groß:
+                        die 52 Buchstaben; 10 Ziffern; die Zeichen <code>@ . - </code>. Für Java-Programme oder
+                        andere Programmiersprachen kämen
+                        noch weitere Zeichen hinzu, zum Beispiel <code>+ - / \ { } </code> und so weiter;
+                        wenn wir alle Unicode-Zeichen miteinschließen, landen wir im Millionenbereich.
+                        In den theoretischen Beispielen, die in diesem Kurs folgen werden, ist das Alphabet fast immer
+                        viel kleiner: typische Alphabete zum Beispiel sind \( \{0,1\}\) , \(\{a,b,c,d\}\) oder auch
+                        \(\{1\}\), ein Alphabet mit nur einem Zeichen.
+                    </p>
+
+                    <p>Für ein Alphabet \(\Sigma\) bezeichnen wir mit \(\Sigma^*\) die Menge aller
+                        endlichen Strings über diesem Alphabet; das schließt den <em>leeren String</em> mit ein,
+                        den wir mit \(\epsilon\) bezeichnen. So ist beispielsweise
+                        $$
+                        \{a,b\}^* = \{\epsilon, a, b, aa, ab, ba, bb, aaa, aab, aba, ...\}
+                        $$
+                        Ein Element \(x \in \Sigma^*\), also einen endlichen String aus \(\Sigma\)-Symbolen,
+                        bezeichnen wir als <em>Wort über \(\Sigma\)</em>.
+                        Mit \(\Sigma^+\) bezeichnen wir die Menge aller nichtleeren Strings, also
+                        \(\Sigma^+ = \Sigma^* \setminus \{\epsilon\}\).
+                    </p>
+
+                    <h2>Sprachen</h2>
+
+                    <p>
+                        Eine Teilmenge \(L \subseteq \Sigma\) bezeichnen wir in diesem Kontext als <em>Sprache</em> und
+                        kürzen Sie oft mit \(L\) ab, was für <em>language</em> steht. Beispiele für Sprachen wären
+                    </p>
+                    <ol>
+                        <li>Die Sprache aller syntaktisch korrekten Emailadressen.</li>
+                        <li>Die Sprache aller Java-Programme, die ohne Fehlermeldung kompilieren</li>
+                        <li>Die Sprache aller Java-Programme, die kompilieren, dann aber mit einem Laufzeitfehler
+                            abbrechen.</li>
+                        <li>Die Sprache aller Java-Programme, die kompilieren und nicht mit einem Laufzeitfehler
+                            abbrechen.</li>
+                        <li>Die Sprache aller Wörter über \(\{a,b\}\), die gleich viele \(a\)'s wie \(b\)'s enthalten.
+                        </li>
+                        <li>Die Sprache aller Palindrome über \(\{a,b,c,d\}\), also Wörter, die von vorne wie hinten
+                            gelesen gleich aussehen.</li>
+                    </ol>
+                    <p>
+                        Wir wollen herausfinden, welche Arten von Sprachen wir mit den im letzten Abschnitt eingeführen
+                        Regelwerk
+                        aus Ableitungen beschreiben können. Für die gerade aufgelisteten sechs Sprachen lautet die
+                        Antwort
+                    </p>
+                    <ol>
+                        <li>Ja, können wir.</li>
+                        <li>Ja, wenn wir leicht komplexere Ableitungsregeln erlauben.</li>
+                        <li>Ja, wenn wir leicht komplexere Ableitungsregeln erlaubten.</li>
+                        <li>Nein, können wir nicht.</li>
+                        <li>Ja, können wir.</li>
+                        <li>Ja, können wir.</li>
+                    </ol>
+
+                    <h2>Grammatiken</h2>
+
+                    <div class='well container theorem'>
+                        <span class='numbered-title'>Definition</span>
+                        <strong>(Kontextfreie Grammatik).</strong>
+                        Eine <em>kontextfreie Grammatik</em> besteht aus
+                        <ol>
+                            <li>einem endlichen Alphabet \(\Sigma\), den <em>terminalen Symbolen</em>;</li>
+                            <li>einer dazu disjunkten endlichen Menge \(N\), genannt die <em>nichtterminalen
+                                    Symbole</em>; </li>
+                            <li>einer endlichen Menge \(P\) von <em>Produktionsregeln</em> der Form
+                                \(X \rightarrow \alpha\) mit \(X \in N\) und \(\alpha \in (\Sigma \cup \N)^*\);
+                                formal also \(P \subseteq N \times (\Sigma \cup \N)^*\).</li>
+                            <li>einem Startsymbol \(S \in N\).</li>
+                        </ol>
+                        Die Grammatik \(G\) ist also ein 4-Tupel \((\Sigma, N, P, S)\).
+                    </div>
+
+                    <p>Woher der Name <em>kontextfrei</em> kommt, werden Sie hoffentlich verstehen, wenn wir
+                        <em>Ableitungen</em> definiert haben.
+                        Die Tradition will es, dass wir für die terminalen Symbole
+                        Zahlen oder lateinsiche Kleinbuchstaben und für die nichtterminalen Symbole
+                        lateinische Großbuchstaben verwenden.
+                        Dies ist eine Konvention, die hilfreich ist, solange wir auf abstrakt-theoretischer
+                        Ebene über formale Grammatiken sprechen; wenn Sie z.B. eine Grammatik
+                        für Java erstellen wollen, dann wird \(\Sigma\) natürlich auch Großbuchstaben enthalten.
+                    </p>
+
+                    <div class='well container theorem'>
+                        <span class='numbered-title'>Beispiel</span>
+                        Wir betrachten die Grammatik \(G = (\{a,b\}, \{S, A, B\}, P, S)\) mit den Produktionsregeln
+                        \begin{align*}
+                        S & \rightarrow A B \\
+                        A & \rightarrow \epsilon \ | \ a A \\
+                        B & \rightarrow \epsilon \ | \ b B \ . \\
+                        \end{align*}
+                        Formal sind die Produktionsregeln \(P\) eine Teilmenge von \( N \times (\Sigma \cup \N)^*\),
+                        also
+                        $$
+                        P = \{ (S, AB), (A, \epsilon), (A, aA), (B, \epsilon), (B, bB) \} \ .
+                        $$
+                        Für konkrete Beispiele wie die gerade betrachtete Grammatik jedoch verwenden wir einfach die
+                        Pfeilschreibweise \(S \rightarrow AB, \dots\). Hier ist
+                        eine <em>Ableitung</em> basierend auf der Grammatik:
+                        \begin{align*}
+                        S \Rightarrow AB \Rightarrow aAB \Rightarrow aAbB \Rightarrow aAbbB
+                        \Rightarrow aAbb \Rightarrow abb \ .
+                        \end{align*}
+                        <p>In jedem Schritt wählen wir ein Nichtterminal aus, zum Beispiel im zweiten Schritt \(A\),
+                            und wenden eine Regel an, zum Beispiel \(A \rightarrow aA\). Dadurch
+                            wird \(AB\) zu \(aAB\).
+                            Wir setzen diese Ableitungsschritte so lange fort, bis nur noch terminale Symbole
+                            übrigbleiben. Dann hat sich ein Wort \(\alpha \in \Sigma^*\) ergeben.
+                        </p>
+                    </div class='theorem'>
+
+                    <div class='well container theorem'>
+                        <span class='numbered-title'>Definition</span>
+                        Gegeben sei eine kontextfreie Grammatik \(G = (\Sigma, N, P, S)\).
+                        Ein String \(\alpha \in (\Sigma \cup N)^*\) heißt <em>Wortform</em> (im Gegensatz
+                        zu einem Wort \(x \in \Sigma^*)\).
+                        Für zwei Wortformen \(\alpha , \beta\) schreiben wir
+                        $$
+                        \alpha \Rightarrow \beta
+                        $$
+                        wenn wir \(\alpha\) zu \(\beta\) machen können, indem wir ein nichtterminales
+                        Symbol \(X\) in \(\alpha\) durch die rechte Seite \(X \rightarrow \gamma\) ersetzen können.
+                        Formal gesprochen, wenn wir \(\alpha = \alpha_1 X \alpha_2\) und \(\beta = \beta_1 \gamma
+                        \beta_2\)
+                        mit Wortformen \(\alpha_1, \alpha_2, \beta_1, \gamma, \beta_2\) und einem Nichtterminal
+                        \(X\) schreiben können, so dass \(X \rightarrow \gamma \) eine Produktionsregel in \(P\) ist.
+                        <p>
+                            Wenn wir \(\alpha = \beta\) "vorlesen", dann sagen wir <em>\(\beta\) kann aus \(\alpha\) in
+                                einem Schritt abgeleitet werden</em>.
+                            Wenn \(\beta\) aus \(\alpha\) in mehreren (im Extremfall null) Schritten
+                            abgeleitet werden kann, so schreiben wir \(\alpha \Rightarrow^* \beta\).</p>
+                        <p>
+                            Formal bedeutet \(\alpha \Rightarrow^* \beta\), dass es ein \(k \geq 0\) gibt
+                            und "Zwischenwortformen" \(\alpha_0, \alpha_1, \dots, \alpha_k\) mit
+                            \(\alpha = \alpha_0\) und \(\alpha_k = \beta\), sodass
+                            \(\alpha_i \Rightarrow \alpha_{i+1}\) für alle \(i = 0, 1, \dots, k-1\) gilt.
+                            Dies schließt den "trivialen" Fall \(k=0\) mit ein, in welchem \(\alpha = \beta\) gilt.
+                        </p>
+                    </div class='well container theorem'>
+
+                    <p>Nochmals: wenn \(\alpha\) die Form \(\alpha_1 X \alpha_2\) hat, dann dürfen Sie
+                        das Nichtterminal \(X\) durch die rechte Seite einer Produktionsregel \(X \rightarrow \gamma\)
+                        ersetzen; Sie dürfen das unabhängig von dem <em>Kontext</em>, in welchem \(X\) in
+                        der Wortform \(\alpha\) vorkommt. Daher rührt der Name <em>kontextfreie Grammatik</em>.
+                    </p>
+
+
+                    <p>Beachten Sie, dass \(P\) per Definition eine <em>endliche Menge</em> von Regeln
+                        sein muss, dass jedoch \(\Rightarrow\) im Allgemeinen unendlich ist. Bereits
+                        für unsere einfache Grammatik mit den Produktionsregeln</p>
+                    \begin{align*}
+                    S & \rightarrow A B \\
+                    A & \rightarrow \epsilon \ | \ a A \\
+                    B & \rightarrow \epsilon \ | \ b B \ . \\
+                    \end{align*}
+                    haben wir beispielsweise
+                    \begin{align*}
+                    A & \rightarrow aA \\
+                    aA & \rightarrow aaA \\
+                    aaA & \rightarrow aaaA \\
+                    \dots
+                    \end{align*}
+                    und sehen, dass die Menge aller Paare \(\alpha \Rightarrow \beta\) unendlich ist.
+                    <div class='well container theorem'>
+                        <span class='numbered-title'>Definition</span>
+                        <strong>(Die von einer Grammatik erzeugte Sprache).</strong>
+                        Sei \(G = (\Sigma, N, P, S) \) eine kontextfreie Grammatik. Die von \(G\) erzeugte Sprache
+                        \(L(G)\) ist die Menge aller Wörter, die vom Startsymbol \(S\) abgeleitet werden können, also
+                        \begin{align*}
+                        L(G) := \{x \in \Sigma^* \ | \ S \Rightarrow^* x\} \ .
+                        \end{align*}
+                        Wenn es zu einer Sprache \(L \subseteq \Sigma^*\) eine kontextfreie Grammatik \(G\) mit
+                        \(L(G) = L\) gibt, so nennen wir \(L\) eine <em>kontextfreie Sprache</em>.
+                    </div class='well container theorem'>
+                    Beachten Sie, dass in dem obigen Beispiel die Wortform
+                    \(aaAB\) zwar aus \(S\) abgeleitet werden kann, allerdings kein <em>Wort</em> ist,
+                    da es noch nichtterminale Symbole enthält. Es gilt also \(aaAB \not \in L(G)\).
+                    Oft können wir \(L(G)\) kompakt mit natürlicher Sprache beschreiben:
+                </div class=' subChapter'>
+                <div class='well container theorem'>
+                    <span class='numbered-title'>Beispiel.</span>
+                    Sei \(G\) die zuletzt betrachtete Grammatik. Dann ist \(L(G)\) die
+                    Menge aller Wörter der Form \(a^* b^*\), also Wörter, in denen auf beliebig viele
+                    \(a\)'s beliebig viele \(b\)'s folgen.
+                </div class='well container theorem'>
+
+                <p>Wir betrachten nun einige weitere Beispiele</p>
+
+                <div class='well container theorem'>
+                    <span class='numbered-title'>Beispiel</span>
+                    Wir betrachten die Grammatik \(G_2 = (\{a,b\}, \{S\}, P, S)\) mit den Produktionsregeln
+                    \begin{align}
+                    S & \rightarrow aSbS \\
+                    S & \rightarrow bSaS \\
+                    S & \rightarrow \epsilon \ .
+                    \end{align}
+                    Hier sind mögliche Ableitungen des Wortes \(abab\). Zur Verdeutlichung
+                    schreiben wir über den Pfeil \(\Rightarrow\) die Nummer der Regel, die
+                    wir angewendet haben:
+                    \begin{align*}
+                    S & \stackrel{(1)}{\Rightarrow} aSbS
+                    \stackrel{(1)}{\Rightarrow} aSbaSbS
+                    \stackrel{(3)}{\Rightarrow} aSbaSb
+                    \stackrel{(3)}{\Rightarrow} abaSb
+                    \stackrel{(3)}{\Rightarrow} abab \\
+                    S & \stackrel{(1)}{\Rightarrow} aSbS
+                    \stackrel{(3)}{\Rightarrow} abS
+                    \stackrel{(1)}{\Rightarrow} abaSbS
+                    \stackrel{(3)}{\Rightarrow} ababS
+                    \stackrel{(3)}{\Rightarrow} abab \ .
+                    \end{align*}
+                    <p>
+                        Wir sehen also: das gleiche Wort kann mehrere Ableitungen haben.
+                        Da die Ersetzungsregeln <em>kontextfrei</em> sind, spielt es keine Rolle, in welcher
+                        Reihenfolge wir nichtterminale Symbole ersetzen. Wenn Sie scharf hinschauen,
+                        werden Sie erkennen, dass die beiden Ableitungen "irgendwie gleich" sind, dass nur
+                        die Ableitungen in anderer Reihenfolge durchgeführt worden sind. Ich werde
+                        das in einem späteren Kapitel formal definieren, was ich mit damit meine.
+                        Um Ordnung in das Chaos zu bringen, könnten wir uns zum Beispiel einigen,
+                        dass man immer das am weitesten links stehende Nichtterminal ersetzen muss.
+                        Das nennt man eine <em>Linksableitung</em>. Dies ist nicht wirklich eine
+                        Einschränkung, da die Ersetzungsreihenfolge keine Rolle spielt.
+                        Wir sehen, dass die zweite Ableitung des Wortes \(abab\) oben eine
+                        Linksableitung ist; zusammen mit der Beschriftung
+                        \(\stackrel{(i)}{\Rightarrow}\), die die Nummer der angewendeten Regel
+                        angibt, ist eindeutig, wie wir von \(S\) zum abgeleiteten Wort gekommen sind.
+                        Betrachten Sie nun eine weitere Linksableitung \(S \Rightarrow^* abab\):
+                    </p>
+                    \begin{align*}
+                    S & \stackrel{(1)}{\Rightarrow} aSbS
+                    \stackrel{(2)}{\Rightarrow} abSaSbS
+                    \stackrel{(3)}{\Rightarrow} abaSbS
+                    \stackrel{(3)}{\Rightarrow} ababS
+                    \stackrel{(3)}{\Rightarrow} abab
+                    \end{align*}
+                    <p>
+                        Sehen Sie, dass diese Ableitung <em>qualitativ</em> anders ist, da
+                        wir hier auch die Regel \(S \rightarrow bSaS\) angewendet haben? Um die
+                        Struktur der Ableitung zu verdeutlichen, könnten wir
+                        die ersten beiden Ableitungen mit
+                        Wort \(S \Rightarrow^* (ab)(ab)\) bezeichnen und die dritte mit Wort \(S \Rightarrow^* a(ba)b\).
+                    </p>
+                </div class='well container theorem'>
+                <h2>Ziele der Theorie der formalen Sprachen</h2>
+
+                <p>
+                    Ganz allgemein gesagt wollen wir lernen, wie wir Sprachen formal beschreiben können;
+                    wie wir, gegeben eine Grammatik \(G\) und ein Zielwort \(x\), eine Ableitung
+                    \(G \Rightarrow^* x\) finden können. Anhand der Ableitungssequenz können wir
+                    dann oft auf die logische Struktur von \(x\) schließen. Handelt es sich bei
+                    \(G\) zum Beispiel um eine Grammatik für die Programmiersprache Java,
+                    so wäre ein Ziel, aus der Ableitungssequenz \(G \Rightarrow^* x\) die Struktur
+                    des Programms \(x\), also Klassenstruktur, Methoden, etc., ablesen zu können und schlussendlich
+                    das Programm in ausführbaren Maschinencode kompilieren zu können.
+                </p>
+
+                <div class='well container theorem'>
+                    <span class='numbered-title'>Algorithmisches Problem: Parsing</span>
+                    Gegeben eine (kontextfreie) Grammatik \(G\) und ein Zielwort \(x\),
+                    finde eine Ableitung \(G \Rightarrow^* x\), falls es so eine gibt.
+
+                    <p>
+                        Für einen String \(x\) eine Ableitung zu finden bezeichnen wir als <em>parsen</em>,
+                        das zugehörige Hauptwort als <em>Parsing</em>.
+                    </p>
+                </div class='well container theorem'>
+
+                <p><strong>Die gute Nachricht:</strong>
+                    Die gute Nachricht: wir kennen Algorithmen, die dieses
+                    Problem im effizient lösen, wenn wir den "theoretischen" Effizienzbegriff
+                    zugrund legen. </p>
+
+
+                <p><strong>Die schlechte Nachricht:</strong> wir kennen keinen Algorithmus,
+                    der das Parsing kontextfreier Sprachen in seiner ganzen Allgemeinheit
+                    in <em>linearer Zeit</em> erledigt, dessen Laufzeit also proportional zur Länge des Zielwortes
+                    \(x\) ist. Dies ist aber, was wir in der Praxis, zum Beispiel bei Compilern, erwarten.</p>
+
+                <p><strong>Die gute Nachricht:</strong> in fast allen praktisch relevanten Fällen haben
+                    wir es mit Grammatiken zu tun, die Parsing in linearer Zeit ermöglichen.
+                    Und wenn wir Programmiersprachen, Datenformate etc. entwerfen, haben wir es ja in der Hand,
+                    Sprache und Grammatik so anzulegen, dass effizientes Parsen möglich ist. </p>
+
+
+                <p>Im nächsten Kapitel lernen wir eine stark eingeschränkte, aber dennoch sehr wichtige Klasse
+                    kontextfreier Grammatik kennen, die allesamt ein sehr effizientes Parsing
+                    erlauben: die sogenannten <em>regulären</em> Grammatiken. </p>
+
+
+            </div class='subChapter'>
+        </div class='chapter'>
+
+
+    </div class="content">
+    </div class="rightSideWrapper">

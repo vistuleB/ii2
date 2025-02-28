@@ -1,0 +1,453 @@
+body {
+    text-align: justify;
+    position: absolute;
+    padding: 20px;
+    /*font-size: 18pt;*/
+    font-size: large;
+
+    @media (max-width: 48px) {
+        font-size: 36pt;
+    }
+
+    ;
+    counter-reset: chapter-counter;
+}
+
+
+
+.alert-info,
+.alert-warning {
+    padding: 1ch;
+}
+
+.subtheorem {
+    background: azure;
+}
+
+
+tr.float-right>th {
+    text-align: right;
+}
+
+math,
+sub,
+sup {
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif
+}
+
+
+
+a.codefile {
+    font-family: monospace;
+}
+
+img.latexL {
+    height: 1.5em;
+}
+
+img.latex {
+    height: 1.2em;
+}
+
+img.latexS {
+    height: 0.9em;
+}
+
+img.latexSS {
+    height: 0.6em;
+}
+
+section {
+    margin-top: 30px;
+}
+
+h2 {
+    margin: 20px;
+}
+
+.hidden-title {
+    display: grid;
+    grid-template-columns: minmax(50px, 1fr) auto minmax(50px, 1fr);
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+}
+
+.hidden-title::before,
+.hidden-title::after {
+    content: '';
+    border-top: 6px double;
+}
+
+.tableOfContentLink {
+    text-decoration: none;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.dropdown-menu {
+    max-height: 80vh;
+    font-size: 18pt;
+    min-width: 50rem;
+    max-width: 30vw;
+    overflow: scroll;
+    overflow-x: hidden;
+    margin-top: 0px;
+}
+
+.dropdown-menu>li>a {
+    display: inline;
+    padding: 3px 20px;
+    clear: both;
+    color: #337ab7;
+    white-space: normal;
+}
+
+.dropdown-menu>li>a:hover {
+    color: rgb(38, 83, 123);
+    background-color: inherit;
+}
+
+p {
+    text-align: justify;
+    margin-top: 10px;
+}
+
+
+div.excursion {
+    border-top: black solid 1pt;
+    border-bottom: black solid 1pt;
+    background-image: linear-gradient(45deg, transparent 20%, lightgrey 25%, transparent 25%),
+        linear-gradient(-45deg, transparent 20%, lightgrey 25%, transparent 25%),
+        linear-gradient(-45deg, transparent 75%, lightgrey 80%, transparent 0);
+
+    background-size: 30px 30px, 30px 30px;
+    background-color: rgba(100, 100, 100, 0.1);
+    padding: 20px;
+    margin: 20px;
+}
+
+div.excursion pre {
+    background-color: rgba(100, 100, 100, 0.1);
+}
+
+div.excursion::before {
+    font-weight: bold;
+    content: "Exkurs. ";
+}
+
+figure {
+    text-align: center;
+    padding: 5px;
+}
+
+#sidebar {
+    position: fixed;
+}
+
+.carousel .carousel-indicators li {
+    background-color: lightgrey;
+}
+
+.carousel .carousel-indicators li.active {
+    background-color: black;
+}
+
+.carousel-indicators {
+    bottom: -50px;
+}
+
+.carousel {
+    margin-bottom: 50px;
+}
+
+
+.carousel-control-prev-icon {
+    padding: 20px;
+    order: 1;
+}
+
+.carousel {
+    order: 2;
+}
+
+.carousel-control-next-icon {
+    padding: 30px;
+    order: 3;
+}
+
+.carousel-nav-icon {
+    height: 48px;
+    width: 48px;
+}
+
+#rightSideWrapper {
+    float: right;
+}
+
+.exercise-div::before {
+    content: "Ãœbung";
+    font-family: "courier";
+    font-weight: bold;
+}
+
+.exercise-title {
+    font-family: "courier";
+    font-weight: bold;
+}
+
+.numbered-title {
+    font-weight: bold;
+}
+
+div.chapter {
+    margin-top: 15vh;
+    counter-reset: subChapter-counter;
+    counter-increment: chapter-counter;
+}
+
+div.subChapter {
+    margin-top: 15vh;
+    counter-increment: subChapter-counter;
+}
+
+.subChapter::before {
+    counter-reset: exericse-counter;
+}
+
+/*
+.subChapterTitle::before {
+    content: counter(chapter-counter) "." counter(subChapter-counter) " ";
+}
+
+.chapterTitle::before {
+    content: counter(chapter-counter) ". ";
+}
+*/
+
+
+.dropdown-toggle {
+    padding-left: 3vw;
+    padding-right: 3vw;
+    font-size: 18pt;
+}
+
+header {
+
+    height: 10vh;
+    width: 90vw;
+}
+
+#link-to-overview {
+    right: 1ch;
+    top: 2vh;
+    position: fixed;
+    padding-left: 0.5ch;
+    background-color: rgba(248, 244, 253, 1);
+}
+
+#link-to-overview>p {
+    text-align: right;
+}
+
+#link-to-toc {
+    left: 1ch;
+    top: 2vh;
+    position: fixed;
+    padding-right: 0.5ch;
+    background-color: rgba(248, 244, 253, 1);
+}
+
+.example-div,
+.exercise-div,
+.numbered-exercise {
+    background-color: rgb(232, 228, 214);
+    counter-increment: exercise-counter;
+}
+
+.example-div a {
+    display: inline-block;
+    margin: 5px;
+
+}
+
+ol.nested {
+    counter-reset: item;
+    list-style-type: none;
+}
+
+ol.nested>li {
+    counter-increment: item;
+}
+
+ol.nested>li::before {
+    content: counters(item, '.') ' - ';
+}
+
+pre {
+    text-align: left;
+    font-size: 70%;
+}
+
+.simple-program-1-image {
+    width: 50vw;
+}
+
+.comment {
+    color: darkorange;
+    font-style: italic;
+}
+
+.codeInComment {
+    color: rgb(180, 100, 0);
+    font-style: normal;
+    font-weight: normal;
+}
+
+code {
+    /* color: black; */
+    /* background-color: rgba(213, 147, 158, 0.2); */
+    /* background-color : inherit; */
+}
+
+
+
+/* this is from
+https://stackoverflow.com/questions/41306797/html-how-to-add-line-numbers-to-a-source-code-block
+*/
+pre {
+    white-space: pre-wrap;
+}
+
+pre.listing:before {
+    counter-reset: listing;
+}
+
+pre.listing code {
+    counter-increment: listing;
+}
+
+pre.listing code::before {
+    color: gray;
+    content: counter(listing) ". ";
+    min-width: 4ch;
+    display: inline-block;
+    /* doesn't work */
+    padding-left: auto;
+    /* doesn't work */
+    margin-left: auto;
+    /* doesn't work */
+    text-align: right;
+    /* doesn't work */
+}
+
+/*
+pre.listing code.emphLine::before {
+    color: red;
+}
+*/
+.emphLine {
+    color: red;
+}
+
+/*
+pre.listing .emphLine {
+    color: red;
+}
+*/
+pre.prompt {
+    white-space: pre-wrap;
+}
+
+pre code.prompt::before {
+    color: gray;
+    font-family: "courier";
+    content: "> ";
+    width: 8em;
+    /* doesn't work */
+    padding-left: auto;
+    /* doesn't work */
+    margin-left: auto;
+    /* doesn't work */
+    text-align: right;
+    /* doesn't work */
+}
+
+pre code.elmWaitingPrompt::before {
+    color: gray;
+    font-family: "courier";
+    content: "| ";
+    width: 8em;
+    /* doesn't work */
+    padding-left: auto;
+    /* doesn't work */
+    margin-left: auto;
+    /* doesn't work */
+    text-align: right;
+    /* doesn't work */
+}
+
+pre code.waitingPrompt::before {
+    color: gray;
+    font-family: "courier";
+    content: "... ";
+    width: 8em;
+    /* doesn't work */
+    padding-left: auto;
+    /* doesn't work */
+    margin-left: auto;
+    /* doesn't work */
+    text-align: right;
+    /* doesn't work */
+}
+
+.terminalOutput {
+    color: blue;
+}
+
+code.terminalPrompt::before {
+    color: gray;
+    font-family: "courier";
+    content: "user@home:~$ ";
+    width: 8em;
+    /* doesn't work */
+    padding-left: auto;
+    /* doesn't work */
+    margin-left: auto;
+    /* doesn't work */
+    text-align: right;
+    /* doesn't work */
+}
+
+pre code.pythonPrompt::before {
+    color: purple;
+    font-family: "courier";
+    content: ">>> ";
+    width: 8em;
+    /* doesn't work */
+    padding-left: auto;
+    /* doesn't work */
+    margin-left: auto;
+    /* doesn't work */
+    text-align: right;
+    /* doesn't work */
+}
+
+.centered-figure,
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.qed {
+    display: inline-block;
+    float: right;
+}

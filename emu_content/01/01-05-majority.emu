@@ -1,0 +1,866 @@
+|> Section
+    title_gr Majority
+    title_en majority
+    number 1.5
+    counter DefCtr
+    counter ExoCtr
+    |> div
+        id link-to-toc
+        |> a
+            href ../vorlesungsskript
+
+            Inhaltsverzeichnis
+        |> a
+            href 01-04-monotone-circuits
+
+            &lt;&lt; Kapitel 1.4
+    |> div
+        id link-to-overview
+        style text-align: end
+        |> a
+            href /
+
+            zur Kursübersicht
+        |> a
+            href 01-06-lower-and-upper-bounds
+
+            Kapitel 1.6 &gt;&gt;
+    |> div
+        id rightSideWrapper
+        |> div
+            class content
+            |> div
+                class chapter
+                |> div
+                    class subChapter
+                    |> h1
+                        class hidden-title
+                        |> span
+                            class subChapterTitle
+
+                            ::::ChapterCtr.::++SectionCtr 
+                            Majority
+                    Unser Ziel in diesem Teilkapitel ist es, Schaltkreise für die Majority-Funktion zu bauen:
+                    |> figure
+                        |> img
+                            style height:10em
+                            src ../img/circuits/majority.svg
+                            loading lazy
+                    Diese nimmt \(n\) Bits als Input und gibt 1 aus, wenn mehr als \(n/2\) davon 1 sind.
+                    Für \(n=3\) heißt dass, das mindestens zwei Input-Bits 1 sein müssen. Als Formel
+                    kann man das so schreiben:
+                    $$
+                    \maj_3(x,y,z) = (x \wedge y) \vee (x \wedge z) \vee (y \wedge z)
+                    $$
+                    und als Schaltkreis so:
+                    |> figure
+                        |> img
+                            style height:8em
+                            src ../img/circuits/maj3.svg
+                            loading lazy
+                    |> p
+
+                        Wie können wir das sinnvoll verallgemeinern für größere \(n\)?
+                        Was geschieht, wenn wir einfach die Wahrheitstabellen-Methode anwenden?
+                        Falls \(n\) ungerade ist, dann sieht man leicht, dass die Wahrheitstabelle
+                        in genau \(2^{n-1}\) vielen Zeilen eine 1 stehen hat und in ebenso vielen eine 0.
+                    |> div
+                        class well well-lg numbered-exercise container
+                        |> span
+                            class numbered-title
+
+                            Übungsaufgabe
+                            |> NumberedTitle
+
+                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                        Sei \(n\) eine ungerade Zahl. Zeigen Sie, dass \(\maj_n\) für genau
+                        die Hälfte aller \(2^n\) möglichen Eingaben eine 1 ausgibt (und für die
+                        andere Hälfte eine 0).
+                    |> p
+
+                        Wir erhielten also eine DNF mit \(2^{n-1}\) vielen AND-Gates. Das ist
+                        sehr groß, gemessen daran, dass Zählen und mit \(n/2\) vergleichen
+                        ja nicht besonders schwierig klingt.
+                        Hier ist eine kleine Verbesserung, demonstriert am Beispiel
+                        \(n=7\). Wenn wir für \(n=7\) mit Hilfe einer Wahrheitstabelle
+                        eine DNF konstruieren, erhalten wir ja unter Anderem den Term
+                        $$
+                        T := x_1 \bar{x}_2 x_3 x_4 \bar{x}_5 x_6 x_7 \ ,
+                        $$
+                        da der Input \(\maj_7(1011011) = 1\) ist. Schauen wir uns nun den Term
+                        \(T'\) an, den wir erhalten, wenn wir alle negativen Literale aus \(T\) löschen:
+                        $$
+                        T' := x_1 x_3 x_4 x_6 x_7 \ .
+                        $$
+                        Wenn dieser Term 1 wird, dann sind \(x_1 = x_3 = x_4 = x_6 = x_7\) sein, also
+                        insgesamt fünf Input-Bits 1, und \(\maj_7\) gibt 1 aus. Hier ist also eine Vereinfachung:
+                        wir folgen der Wahrheitstabellen-Methode, lassen aber alle negativen Literale weg.
+                        Das Ergebnis ist etwas kleiner und immer noch korrekt.
+                        Schauen Sie sich nun den Term
+                        $$
+                        x_1 \bar{x}_2 \bar{x}_3 x_4 \bar{x}_5 x_6 x_7
+                        $$
+                        an. Auch dieser kommt in der Wahrheitstabelle vor, da \(\maj_7(1001011)=1\) gilt.
+                        In unserer neuen Konstruktion wird dieser zu \(x_1 x_4 x_6 x_7\) vereinfacht.
+                        Nun schauen Sie: wenn \(T'\) den Wert 1 ausgibt, dann
+                        gibt \(x_1 x_4 x_6 x_7\) auf jeden Fall 1 aus, und \(\maj_7\) wird 1; \(T'\) ist
+                        also redundant. Irgendwie ist das ja auch klar: zu verlangen, dass die fünf
+                        Variablen \(x_1, x_3, x_4 x_6, x_7\) alle mit 1 abstimmen, ist zwar hinreichend,
+                        aber eben schon mehr als nötig. Es reicht also, sich auf alle Terme mit genau 4 Variablen zu
+                        beschränken.
+                        Im allgemeinen sei \(k = \ceil{\frac{k+1}{2}}\). Dann gilt
+                    \begin{align}
+                    \maj_n (x_1,\dots,x_n) = \bigvee_{\substack{I \subseteq [n] \\ |I| = k}} \bigwedge_{i \in I} x_i
+                    \ .
+                    \label{johns-equation}
+                    \end{align}
+                    |> p
+
+                        Diese Konstruktion hat nun \({n \choose k}\) Terme, von denen jeder aus \(k\) Variablen
+                        besteht.
+                        Ist das nun gut oder schlecht?
+                    |> div
+                        class well container theorem
+                        |> span
+                            class numbered-title
+                            data-counter theorem
+                            data-label mid-level-lower-bound
+
+                            Lemma.
+                        Es gilt
+                        $$
+                        {n \choose {\ceil{n/2}}} \geq \frac{2^n}{n+1} \ .
+                        $$
+                    |> div
+                        class well container
+
+                        *Beweis.*Sei \(k \in \{1,\dots,n\}\). Vergleichen wir \({n \choose k}\) mit \({n \choose k-1}\):
+                        \begin{align*}
+                        \frac{{n \choose k}}{{n \choose k-1}}&amp;=
+                        \frac{ \frac{n!}{k! (n-k)!}}{\frac{n!}{ (k-1)! (n-k+1)!}} = \frac{n-k+1}{k}
+                        \end{align*}
+                        und somit
+                        \begin{align*}
+                        {n \choose k}&amp;\geq {n \choose k-1} \quad \Longleftrightarrow \\
+                        n-k+1&amp;\geq k \quad \Longleftrightarrow \\
+                        2k&amp;\leq n+1 \quad \Longleftrightarrow \\
+                        k&amp;\leq \frac{n+1}{2} \quad \Longleftrightarrow \\
+                        k&amp;\leq \floor{ \frac{n+1}{2}} = \ceil{\frac{n}{2}} \ .
+                        \end{align*}
+                        Aus der letzten Zeile folgt nun, dass \({n \choose k}\) durch \(k := \ceil{\frac{n}{2}}\)
+                        maximiert wird, also
+                        \({n \choose k} \leq {n \choose \ceil{\frac{n}{2}}}\) gilt.
+                        |> p
+
+                            Als nächstes müssen wir uns die Definition von \({n \choose k}\) ins Gedächtnis rufen.
+                            Nein, \(\frac{n!}{k!(n-k)!}\) ist nicht die Definition, sondern eine Formel dafür. Die
+                            Definition ist:
+                            \({n \choose k}\) ist die Menge der Teilmengen von \(\{1,\dots,n\}\), die Größe \(k\)
+                            haben.
+                            Wieviele Teilmenge (jeglicher Größe) gibt es insgesamt? Genau \(2^n\) viele: Sie müssen
+                            für
+                            jede
+                            Zahl \(i \in \{1,\dots,n\}\) die Entscheidung treffen, ob \(i\) in die Menge soll oder
+                            nicht,
+                            haben also insgesamt \(2^n\) Wahlmöglichkeiten. Daher gilt:
+                            $$
+                            \sum_{k=0}^n {n \choose k} = 2^n \ .
+                            $$
+                            Intuitiv gesprochen heißt das: diese Summe hat \(n+1\) Terme (\(k\) wandert von 0 bis
+                            \(n\),
+                            also muss
+                            der größte Term mindestens ein \((n+1)\)-tel des Gesamtbetrages sein. Formal:
+                            $$
+                            2^n = \sum_{k=0}^n {n \choose k} \leq \sum_{k=0}^n {n \choose \ceil{\frac{n}{2}}}
+                            = (n+1) \cdot {n \choose \ceil{\frac{n}{2}}}
+                            $$
+                            und somit
+                            $$
+                            {n \choose \ceil{\frac{n}{2}}} \geq \frac{2^n} {n+1} \ ,
+                            $$
+                        wie behauptet.
+                        |> span
+                            class qed
+
+                            \(\square\)
+                    |> p
+
+                        Unsere neue, bessere Konstruktion benötigt also immer noch mindestens \(\frac{2^n}{n+1}\)
+                        Terme,
+                        was bereits für moderate Werte wie \(n=30\) nicht vertretbar ist.
+                    |> h3
+
+                        Majority Top-Down mit `if-then-else`-Gates
+                    Wenden wir nun statt Wahrheitstabelle die Top-Down-Methode an, modifiziert
+                    für monotone Funktionen wie in den
+                    |> a
+                        href ../sub-pages/01-monotone.html
+
+                        &ensp;Lösungen zu den Übungsaufgaben 
+                    &ensp;dargestellt.
+                    Insbesondere definieren wir Verallgemeinerungen von \(\maj_n\) wie folgt:
+                    \begin{align*}
+                    \theta^n_k (x_1,\dots,x_n)&amp;:=
+                    \begin{cases}
+                    1&amp;\textnormal{ falls $x_1 + \dots + x_n \geq k$} \\
+                    0&amp;\textnormal{ sonst.}
+                    \end{cases}
+                    \end{align*}
+                    Die Funktion \(\maj_n\) ist also ein Speziallfall \(\theta^n_k\) für
+                    \(k = \ceil{\frac{n+1}{2}}\). Wir können \(\theta^n_k\) rekursiv zerlegen wie folgt:
+                    $$
+                    \theta^n_k (x_1,\dots,x_n) =
+                    (x_n \wedge \theta^{n-1}_{k-1} (x_1,\dots,x_{n-1}))
+                    \vee
+                    \theta^{n-1}_{k} (x_1,\dots,x_{n-1}) \
+                    $$
+                    und somit \(\theta^n_k\) aus \(\theta^{n-1}_{k-1}\) und
+                    \(\theta^{n-1}_k\) berechnen. Rekursiv fortgefühtr sieht das dann so aus:
+                    |> figure
+                        |> img
+                            style height:15em
+                            src ../img/circuits/majority-theta-recursive.svg
+                            loading lazy
+                    Die Konstruktion endet mit \(\theta^m_0\), was immer \(1\) ausgibt, und
+                    mit \(\theta^m_{m}\), was \(x_1 \wedge \dots \wedge x_m\) ist. Die
+                    Konstruktion ist leider auch nicht effizient; wenn man
+                    mit \(C^n_k\) die Anzahl der \(\theta^m_m\) und \(\theta^m_0\) in diesem
+                    Baum zählt, dann sieht man, dass
+                    \begin{align*}
+                    C^n_k&amp;= C^{n-1}_{k-1} + C^{n-1}_k \\
+                    C^n_n&amp;= 1 \\
+                    C^n_0&amp;= 1
+                    \end{align*}
+                    gilt; sie erfüllt also die gleiche Rekursionsgleichung wie der Binomialkoeffizient
+                    \({n \choose k}\), also gilt \(C^n_k = {n \choose k}\). Die Konstruktion ist
+                    asymptotisch auch nicht besser als die, aus der Wahrheitstabelle direkt
+                    eine monotone DNF zu basteln.
+                    |> p
+
+                        Allerdings können wir die obige Konstruktion offensichtlich
+                        effizienter machen, indem wir mehrfach verwendete Zwischenergebnisse wie
+                        \(\theta^{n-1}_{k-1}\) nicht doppelt berechnen, also statt dem obigen
+                        Baum einen Schaltkreis nach folgendem Pyramidenschema bauen:
+                    |> figure
+                        |> img
+                            style height:18em
+                            src ../img/circuits/majority-theta-dp.svg
+                            loading lazy
+                    |> p
+
+                        Um eine Analogie mit der Programmierpraxis zu bemühen: der Unterschied
+                        zwischen den beiden Konstruktionen für \(\theta^n_k\) per Baum versus
+                        per Pyramidenschema entspricht dem Unterschied zwischen dem
+                        rekursiven Code für \({n \choose k}\),
+                    |> pre
+                        class listing
+
+                        `def binomial(n,k):` `if k == 0 or k == n:` `return 1` 
+
+                        &ensp;`else:` `return binomial(n-1,k-1) + binomial(n-1,k)`
+                    der exponentielle Laufzeit aufweist, und der effizienten Implementierung mittels_Dynamic Programming_, bei welchem wir uns die Zwischenergebnisse merken.
+                    |> p
+
+                        Um Größe und Tiefe des Schaltkreises zu analysieren, machen wir
+                        eine grobe Abschätzung. Für jedes \(\theta^m_l\), das in unserer
+                        Pyramide vorkommt, brauchen wir 2 Gates; \(m\) kann die
+                        Werte \(0, \dots, n\) annehmen und \(l\) die Werte \(0,\dots,k\),
+                        also bekommen wir insgesamt höchstens \((n+1)(k+1)\) graue Kästchen
+                        und \(O(n^2)\) Gates.
+                        Die Tiefe ist \(O(n)\), da in jedem Schritt von grauem Kasten
+                        zu dem nächsttieferen der Wert von \(m\) abnimmt. Insgesamt also haben wir
+                        gezeigt:
+                    |> div
+                        class well container theorem
+                        |> span
+                            class numbered-title
+
+                            Theorem
+                            |> NumberedTitle
+
+                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                        Die Funktion
+                        \(\maj_n (x_1,\dots,x_n)\) kann mit einem Schaltkreis der Größe \(O(n^2)\),
+                        Tiefe \(O(n)\) und Fan-in 2 berechnet werden.
+                    |> h3
+
+                        Majority durch Zählen
+                    \(\maj_n(x_1,\dots,x_n)\) zu bestimmen sollte doch einfach sein: wir zählen die Anzahl der 1en
+                    und
+                    vergleichen sie mit \(\ceil{n}{2}\). Wie aber sollen wir zählen? Ganz einfach: mit einem
+                    Binäraddierer! Sei \(d = \ceil{\log_2(n+1)}\) die Anzahl der Bits in der Binärdarstellung von
+                    \(n\).
+                    Wir interpretieren jede Input-Variable \(x_i\) als \(d\)-stellige Binärzahl,
+                    wobei \(x_i = 1\) der Zahl \(000\dots 001\), also 1 entspricht, und \(x_i = 0\) der Zahl
+                    \(000\dots 0\), also 0, und addieren die dann auf:
+                    |> figure
+                        |> img
+                            style height:12em
+                            src ../img/circuits/majority-by-adding.svg
+                            loading lazy
+                    |> div
+                        class well well-lg numbered-exercise container
+                        |> span
+                            class numbered-title
+
+                            Übungsaufgabe
+                            |> NumberedTitle
+
+                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                        Bestimmen Sie asymptotisch die Größe und die Tiefe dieses Schaltkreises.
+                        Achten Sie besonders bei der Berechnung der Größe darauf, dass die untersten Add-Gadgets
+                        ja 1-stellige oder dann 2-stellige Zahlen addieren müssen und erst die weniger obersten Gadgets
+                        Zahlen mit $\Theta(\log n)$ Bits als Input bekommen.
+                    |> h3
+
+                        \(O(\log n)\) Tiefe mit 2-for-3-Addierern.
+                    Die vorherige Konstruktion mit den Addierern war schon deutlich effizienter
+                    als unsere pyramidenartige \(\theta^m_l\)-Konstruktion, allerdings wurde
+                    das Ziel, eine Tiefe von \(O (\log n)\) zu erreichen, wieder verfehlt, wenn auch
+                    knapp. Die Idee, die eine Tiefe von \(O (\log n)\) erreichen wird, ist ebenso
+                    einfach wie genial.
+                    |> div
+                        class well container theorem
+                        |> span
+                            class numbered-title
+
+                            Lemma (2-for-3 Adder)
+                        Es gibt einen Schaltkreis mit \(O(n)\) Gates,
+                        Tiefe 2 und Fan-In 2, der als Input drei
+                        \(n\)-stellige Binärzahlen \(x,y,z\) nimmt
+                        und zwei \(n+1\)-stellige Binärzahlen \(u, v\) ausgibt, so dass
+                        $$
+                        x + y + z = u + v
+                        $$
+                        gilt.
+                    |> div
+                        class well container
+
+                        *Beweis.*Ich demonstriere das Beweisprinzip erst einmal mit drei Zahlen in Basis 10:
+                        |> figure
+                            |> img
+                                style height:10em
+                                src ../img/circuits/2-for-3-adder-example.svg
+                                loading lazy
+                        |> p
+
+                            Wir addieren also pro Stelle drei (einstellige) Zahlen,
+                            führen den Übertrag (das Carry) aber nicht der weiter links stehenden Stelle
+                            zu, sondern sammeln alle Überträge und bilden daraus die \(n+1\)-stellige
+                            Zahl \(u\).
+                            Für Binärzahlen ist das natürlich noch einfacher:
+                            |> figure
+                                |> img
+                                    style height:15em
+                                    src ../img/circuits/2-for-3-adder-binary.svg
+                                    loading lazy
+                        Dieser Schaltkreis hat insgesamt \(O(n)\) Gates und Tiefe 2 (wobei wir
+                        die NOT-Gates im $\oplus$-Gate nicht mitzählen).
+                        |> span
+                            class qed
+
+                            \(\square\)
+                    Wir interpretieren nun die \(n\) Inputs
+                    \(x_1,\dots,x_n\) von Majoroty als einstellige Binärzahlen, sortieren sie in
+                    Dreiergruppen und machen per 2-for-3-Addierer daraus
+                    \( \ceil{\frac{2n}{3}}\) Zahlen. Dann machen wir (mit den mittlerweile
+                    2-stelligen Zahlen) weiter und bekommen circa
+                    \( \ceil{\frac{4n}{9}}\) Zahlen. Auf jeder Ebene schrumpft die Anzahl
+                    der Zahlen um einen Faktor von \(\frac{2}{3}\); nach
+                    \(
+                    \log_{3/2} n
+                    \)
+                    Ebenen haben wir schließlich noch zwei mittlerweile (\(\log n\))-stellige Zahlen, die
+                    wir mit einem "normalen" Binäraddierer addieren. Das Ergebnis vergleichen
+                    wir mit dem \(\geq\)-Schaltkreis mit \(\frac{k+1}{2}\). Was ist die
+                    Tiefe des Gesamtschaltkreises? Es ist
+                    \begin{align*}
+                    &amp;\log_{3/2} n \times \depth(\textnormal{2-for-3 adder}) \\
+                    +&
+                    \depth(\textnormal{Binäraddierer für ($\log n$)-stellige Zahlen}) \\
+                    +&
+                    \depth(\textnormal{$\geq$-Schaltkreis für ($\log n$)-stellige Zahlen} \\
+                    =&
+                    O(\log n) + O(\log \log n) + O(\log \log n) = O(\log n) \ .
+                    \end{align*}
+                    Die Größe des Schaltkreises wird dominiert von den 2-for-3-Addierern. Wir
+                    haben \(O(n)\) viele davon, allerdings hat jeder bis zu
+                    \(O(\log n)\) viele Gates, da wir ja (\(\log n\))-stellige Zahlen addieren müssen;
+                    wir haben insgesamt also \(O (n \log n)\) viele Gates.
+                    |> div
+                        class well container theorem
+                        |> span
+                            class numbered-title
+
+                            Theorem
+                            |> NumberedTitle
+
+                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                            .
+                        Die Konstruktion mit 2-for-3-Addierern gibt uns einen Schaltkreis
+                        für Majority mit Fan-in 2, Tiefe \(O(\log n)\) und
+                        Größe \(O (n \log n)\)
+                    |> div
+                        class well well-lg numbered-exercise container
+                        |> p
+                            |> span
+                                class numbered-title
+
+                                Übungsaufgabe
+                                |> NumberedTitle
+
+                                    &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                            Führen Sie eine genauere Abschätzung der Größe durch. Untersuchen Sie insbesondere:
+                        |> ol
+                            |> li
+
+                                Wieviele 2-for-3-Addierer haben Sie in Ebene $i$ des Baumes?
+                            |> li
+
+                                Wieviel Bits haben die Zahlen auf Ebene $i$, und wie groß muss daher
+                                der 2-for-3-Addierer sein?
+                            |> li
+
+                                Was ergibt sich insgesamt in Summe?
+                    |> p
+
+                        Wir haben nun also fast alle unserer Ziele erreicht. Allerdings hat
+                        die Konstruktion mit 2-for-3-Addierern einen Schönheitsfehler: sie ist nicht
+                        monoton. Warum sollten wir das wollen? Nun ja, Majority ist eine
+                        monotone Funktion, also ist es ja irgendwie verständlich, dass wir auch einen
+                        monotonen Schaltkreis wollen. Unser Pyramidenschema, in dem wir
+                        alle \(\theta^m_k\) berechnen, ist monoton, hat allerdings leider
+                        Tiefe \(\Omega(n)\).
+                    |> h3
+
+                        Monoton und polylogarithmische Tiefe durch Halbierung und Aufzählung.
+                    |> p
+
+                        Die Idee ist, dass wir, anstatt \(\theta^n_k\) aus
+                        \(x_n\), \(\theta^{n-1}_{k-1}\) und \(\theta^{n-1}_{k}\) zu berechnen,
+                        versuchen, irgendwie von \(n\) auf \(n/2\) runterzukommen. Dann könnten wir
+                        rekursiv weitermachen und müssten uns nur durch logarithmisch viele Werte von \(n\) wühlen.
+                        Wir sehen, dass wir \(k\) auf \(k+1\) Weisen als Summe zweier nichtnegativer
+                        Zahlen \(a+b = k\) schreiben können. Des weiteren zerlegen wir
+                        \(\mathbf{x} \in \{0,1\}^n\) in
+                        \(\mathbf{y} = (x_1, \dots, x_{n/2})\) und
+                        \(\mathbf{z} = (x_{n/2+1}, \dots, x_n)\) und sehen, dass
+                        \begin{align*}
+                        \sum_i x_i&amp;\geq k \quad \Longleftrightarrow \\
+                        \sum_i y_i&amp;\geq a \wedge \sum_j z_j \geq b
+                        \textnormal{ für Werte $a,b \geq 0$ mit $a + b = k$}
+                        \end{align*}
+                        und somit
+                        \begin{align*}
+                        \theta^n_k(\mathbf{x})&amp;= \bigvee_{a=0}^k
+                        ( \theta^{n/2}_a (\mathbf{y}) \wedge
+                        \theta^{n/2}_{k-a} (\mathbf{z}) )
+                        \end{align*}
+                        Wenn wir diese Konstruktion rekursiv fortsetzen, erhalten
+                        wir \(\log n\) Ebenen und somit auf den ersten Blick logarithmische
+                        Tiefe. Auf den zweiten Blick erkennen wir, dass wir etwas geschummelt haben:
+                        die \(\bigvee\)-Gates haben sehr großen Fan-in, nämlich bis zu \(n\). Um
+                        Fan-in 2 zu erreichen, müssen wir jedes \(\bigvee\)-Gate durch einen Binärbaum
+                        aus normalen \(\vee\)-Gates von Fan-in 2 ersetzen. Dies gibt uns zusätzlich
+                        Tiefe \(O(\log n)\) _pro \(\bigvee\)-Gate_; wir erhalten also insgesamt
+                        eine Tiefe von \(O(\log^2 n)\).
+                    |> div
+                        class well well-lg numbered-exercise container
+                        |> span
+                            class numbered-title
+
+                            Übungsaufgabe
+                            |> NumberedTitle
+
+                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                        dass polynomiell viele (in diesem Falle: \(O(n^2)\) viele) Gates ausreichen.
+                        Zeigen Sie, wie die gerade skizzierte Konstruktion so ausgeführt werden kann,
+                    |> h3
+
+                        Monoton und logarithmische Tiefe: Valiants probabilitische Konstruktion
+                    |> div
+                        class well container theorem
+                        |> span
+                            class numbered-title
+
+                            Theorem
+                            |> NumberedTitle
+
+                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                            .
+                        Es gibt einen monotonen Schaltkreis mit Fan-in 2, Tiefe \(O(\log n)\) und Größe
+                        \(\poly(n)\), der \(\maj_n\) berechnet.
+                    |> div
+                        class well container
+
+                        *Beweis.*Die Beweismethode, die wir verwenden, ist womöglich neu für Sie. Wir verwenden
+                        bei der Konstruktion des Schaltkreises _Zufall_; am Ende werden
+                        wir zeigen, dass dieser zufällige Schaltkreis mit hoher Wahrscheinlichkeit
+                        \(\maj_n\) auf allen möglichen \(2^n\) Inputs korrekt berechnen, und folgern
+                        daraus, das etwas, was mit hoher Wahrscheinlichkeit eintritt, auch existieren muss.
+                        Die Existenz folgt also schlussendlich aus einer Wahrscheinlichkeitsrechnung.
+                        Das heißt auch, dass ich Ihnen für konkretes \(n\), sagen wir \(n = 99\),
+                        nicht hinschreiben könnte, wie ein korrekter Schaltkreis aussähe; ich könnte
+                        die randomisierte Konstruktion durchführen und Ihnen erklären, das der
+                        resultierende Schaltkreis höchstwahrscheinlich korrekt ist.
+                        |> p
+
+                            Während des ganzen Beweises müssen Sie sich vor Augen halten, dass wir
+                            bei der Konstruktion des Schaltkreises \(C\) Zufall verwenden;
+                            wir nehmen nicht an, dass die Inputs \(x \in \{0,1\}^n \) in irgendeiner
+                            Weise zufällig sind. Wir verwenden also_Wahrscheinlichkeitsverteilungen über Schaltkreisen_, nicht
+                            von über Inputs. Zuerst definieren wir
+                            die _Signalstärke_ von Verteilungen über Schaltkreise.
+                        |> div
+                            class well subtheorem theorem
+                            |> span
+                                class numbered-title
+
+                                Definition
+                                |> NumberedTitle
+
+                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                &ensp;(Signalstärke)
+                            Sei \(\mathcal{C}\) eine Verteilung über Schaltkreise mit Input-Variablen
+                            \(x_1,\dots,x_n\). Wir sagen, dass \(\mathcal{C}\) _Signalstärke mindestens $\delta$_hat, wenn
+                            $$
+                            \forall x \in \{0,1\}: \quad \Pr_{C \in \mathcal{C}} [C(x) = \maj_n(x)]
+                            \geq \frac{1 + \delta}{2}
+                            $$
+                            gilt.
+                        |> p
+
+                            In Worten, wenn der zufällig ausgewählte Schaltkreis \(C\) den Wert
+                            \(\maj_n(x)\) besser als ein Münzwurf vorhersagt, und zwar um \(\delta/2\) besser.
+                            Wir können einen ganz einfachen (zufälligen Schaltkreis)
+                            bauen, der ein schwache aber positive Signalstärke hat.
+                        |> div
+                            class well subtheorem theorem
+                            |> span
+                                class numbered-title
+
+                                Lemma.
+                            Es gibt eine Wahrscheinlichkeitsverteilung \(\mathcal{C}_0\) über monotone Schaltkreise der
+                            Größe 1,
+                            die Signalstärke \(\frac{1}{n}\) hat.
+                            Genauer gesagt gilt für jeden Input \(x \in \{0,1\}^n\):
+                            ein nach dieser Verteilung zufällig ausgewählter Schaltkreis
+                            \(C \sim \mathcal{C}_0\) ist mit Wahrscheinlichkeit
+                            mindestens \(\frac{1}{2} + \frac{1}{2n}\) korrekt ist.
+                            Formal ausgedrückt:
+                            $$
+                            \forall \x \in \cube^n: \quad
+                            \Pr_{C \sim \mathcal{C}_0} [C(\x) = \maj_n(\x)] = \frac{1}{2} + \frac{1}{2n} \ .
+                            $$
+                        |> div
+                            class well subtheorem
+
+                            *Beweis.*Der Schaltkreis bzw. die Wahrscheinlichkeitsverteilung ist extrem einfach.
+                            Wir wählen zufällig einen Index \(I \in \{1,\dots,n\}\) und
+                            geben \(x_I\) als unseren Schaltkreis \(C\) (bestehend aus einem einzigen Input-Gate,
+                            das gleichzeitig das Output-Gate ist) aus. Dieser Schaltkreis
+                            ist natürlich monoton.
+                            |> p
+
+                                Beachten Sie, dass ich den Index groß geschrieben mit \(I\) bezeichne,
+                                nicht \(i\); das ist Konvention, weil \(I\) eine Zufallsvariable ist.
+                                Sei nun ein festes \(\x \in \{0,1\}\) gegeben. Mit welcher Wahrscheinlichkeit
+                                ist unser (recht primitiver) Schaltkreis korrekt?
+                            \begin{align*}
+                            C(\x)&amp;= \maj_n (\x) \quad \Longleftrightarrow \\
+                            x_I&amp;= \maj_n (\x) \ .
+                            \end{align*}
+                            Wir unterscheiden nun zwei Fälle. Wenn \(\maj_n(\x) = 1\) ist, dann
+                            gibt es mindestens \(k+1\) Indizes \(i\) mit \(x_i = 1\). Wenn wir
+                            mit \(I\) einen solchen ausgewählt haben, dann sind wir erfolgreich. Die
+                            Wahrscheinlichkeit hierfür ist
+                            \begin{align*}
+                            \Pr_{C \sim \mathcal{C}_0} [C(\x) = 1] = \Pr_{I \in [n]} [x_I = 1]&amp;= \frac{| \{i \in [n]\
+                            |
+                            \ x_i = 1\}}{n} \geq \frac{k+1}{n} \\
+                            &amp;= \frac{k+1}{2k+1} = \frac{k + \frac{1}{2} + \frac{1}{2}}{2k+1} \\
+                            &amp;= \frac{1}{2} + \frac{1}{2n} \ .
+                            \end{align*}
+                            Wenn nun \(\maj_n(\x) = 0\) ist, dann gibt es mindestens \(k+1\) Stellen \(i\) mit
+                            \(x_i = 0\), und somit ist \(C(\x)\) auch wieder mit Wahrscheinlichkeit mindestens
+                            \(\frac{k+1}{n+1}\) korrekt.
+                            |> span
+                                class qed
+
+                                \(\square\)
+                        |> p
+
+                            Um eine Analogie aus dem Alltag zu bemühen: wenn Sie für eine
+                            Wahlprognose _einen_ zufällig ausgewählten Bürger befragen, so
+                            ist das Ergebnis zwar nicht wirklich repräsentativ, aber immerhin leicht
+                            besser, als wenn Sie einfach raten würden. Unser zufälliger
+                            Schaltkreis sendet uns also ein schwaches aber positives Signal in die
+                            richtige Richtung. Die Signalstärke ist \(\frac{1}{n}\).
+                        |> p
+
+                            Die zweite Zutat ist nun ein "Signalverstäker".
+                            Angenommen, eine Verteilung \(\mathcal{C}\) hat Signalstärke \(\delta\), also
+                            $$
+                            \forall \x \in \{0,1\}^n : \quad
+                            \Pr_{C \sim \mathcal{C}} [C(\x) = \maj_n(\x)] \geq \frac{1+\delta}{2} \ .
+                            $$
+                            Dann können wir _drei_ Schaltkreise
+                            \(C_1, C_2, C_3 \sim \mathcal{C}\) unabhängig voneinander samplen und
+                            einen neuen Schaltkreis bauen: \(C'(\x) := \maj_3 (C_1(\x), C_2(\x), C_3(\x))\). Dies gibt
+                            uns wiederum eine Verteilung über Schaltkreise, die wir
+                            \(\mathcal{C}^{\otimes 3}\) nennen. Diese hat eine höhere Signalstärke:
+                        |> div
+                            class well subtheorem theorem
+                            |> span
+                                class numbered-title
+
+                                Lemma
+                            Falls \(\mathcal{C}\) eine Verteilung über Schaltkreise der Tiefe
+                            \(d\) und Größe \(s\) ist und \(\mathcal{C}\) Signalstärke \(\delta\) hat, dann gilt:
+                            |> ol
+                                |> li
+
+                                    alle Schaltkreise in \(\mathcal{C}^{\otimes 3}\) haben Tiefe
+                                    \(d+2\);
+                                |> li
+
+                                    alle Schaltkreise in \(\mathcal{C}^{\otimes 3}\) haben Größe
+                                    \(3s+4\);
+                                |> li
+
+                                    die Signalstärke von $\mathcal{C}^{\otimes 3}$ ist
+                                    $\frac{3}{2} \delta - \frac{1}{2}\delta^3$.
+                        |> div
+                            class well container-fluid
+                            |> p
+
+                                *Beweis.*Wir betrachten ein festes $\x \in \cube^n$ mit $\maj_n(\x) = 1$; der
+                                Fall $\maj_n(\x) = 0$ ist analog. Wir definieren
+                                nun $U := C_1(\x)$, $V := C_2(\x)$ und $W := C_3(\x)$. Da
+                                $C_1, C_2, C_3 \sim \mathcal{C}$ zufällige Schaltkreise sind, sind $U, V, W$
+                                Zufallsvariable
+                                über $\cube$, und zwar _unabhängig_, weil wir $C_1, C_2, C-3$ auch unabhängig
+                                gesampelt haben. Wir wissen: $\Pr[U=1] = \Pr[V=1] = \Pr[W=1] \geq \frac{1+\delta}{2} =:
+                                p$.
+                                Was ist nun $\Pr[\maj_3(U,V,W) = 1]$?
+                            \begin{align*}
+                            \Pr[\maj_3(U,V,W)=1]&amp;= \Pr[U=V=W=1] + \Pr[\textnormal{genau zwei von $\{U,V,W\}$ sind 1}]
+                            \\
+                            &amp;= p^3 + 3p^2 (1-p) = \pfrac{1 + \delta}{2}^3 + 3 \pfrac{1 + \delta}{2}^2 \frac{1 -
+                            \delta}{2} \\
+                            &amp;= \frac{1}{8} (4 + 6 \delta - 2 \delta^3) \\
+                            &amp;= \frac{1}{2} \left( 1 + \frac{3}{2} \delta - \frac{1}{2}\delta^3 \right) \ .
+                            \end{align*}
+                            |> p
+
+                                Die Signalstärke von $\mathcal{C}^{\otimes 3}$ ist also mindestens
+                                $\frac{3}{2} \delta - \frac{1}{2} \delta^3$.
+                                |> span
+                                    class qed
+
+                                    \(\square\)
+                        |> p
+
+                            Wir beginnen nun mit der Verteilung $\mathcal{C}_0$ über Schaltkreise der
+                            Größe 1 und definieren 
+                        \begin{align*}
+                        \mathcal{C}_{i+1} := (\mathcal{C}_i)^{\oplus 3} \ .
+                        \end{align*}
+                        |> p
+
+                            Zur Wiederholung: um $C \sim \mathcal{C}_{i+1}$ zu sampeln, sampeln wir unabhängig
+                            drei Schaltkreise $\sim \mathcal{C}_i$ und verknüpfen deren Output-Gates mit einem
+                            $\maj_3$-Gadget. Wenn $\mathcal{C}_i$ die Signalstärke $\delta_i$ hat, dann
+                            hat $\mathcal{C}_{i+1}$ Signalstärke
+                            $\frac{3}{2} \delta_i - \frac{1}{2} \delta_i^3$.
+                            Wenn $\delta_i \leq 1/2$ sein sollte, dann ist das mindestens $\frac{5}{4} \delta_i$.
+                            Daraus folgt, dass nach höchstens $i^* := \log_{5/4} n$ Rekursionsstufen eine Signalstärke
+                            von mindestens $1/2$ erreicht ist: $\mathcal{C}_{i^*}$ hat Signalstärke mindestens
+                            $1/2$.
+                        |> p
+
+                            Wenn wir jetzt die rekursive Konstruktion fortsetzen, steigt die Signalstärke weiter an und
+                            konvergiert gegen $1$: $\lim_{i \rightarrow \infty} \delta_i = 1$. Die Frage ist nur,
+                            wie schnell konvergiert es? Da wir nun nicht mehr an Wahrscheinlichkeiten interessiert sind,
+                            die
+                            knapp über $1/2$ liegen, sondern an solchen, die knapp unter $1$ liegen,
+                            führen wir einen Parameterwechsel durch: eine Verteilung $\mathcal{C}$ von Schaltkreisen
+                            mit Inputs $x_1,\dots,x_n$
+                            hat _Fehlerwahrscheinlichkeit $\epsilon$_, wenn
+                        \begin{align*}
+                        \forall \x \in \cube^n: \Pr_{C \sim \mathcal{C}}[ C(\x) = \maj_n(\x)] \geq 1 - \epsilon \ .
+                        \end{align*}
+                        |> p
+
+                            Eine Signalstärke von $\delta$ entspricht einer Fehlerwahrscheinlichkeit von
+                            $\frac{1-\delta}{2}$.
+                            Die Verteilung $\mathcal{C}_{i^*}$ hat also eine Fehlerwahrscheinlichkeit von
+                            höchstens $\frac{1 - 1/2}{2} = 1/4$. Das obige Lemma, nun aus der Sicht der
+                            Fehlerwahrscheinlichkeit,
+                            liest sich so:
+                        |> div
+                            class well container-fluid subtheorem
+                            |> p
+                                |> span
+                                    class numbered-title
+
+                                    Behauptung
+                                    |> NumberedTitle
+
+                                        &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    .
+                                &ensp;Wenn $\mathcal{C}$
+                                Fehlerwahrscheinlichkeit
+                                $\epsilon$ hat, dann hat $\mathcal{C}^{\otimes 3}$ Fehlerwahrscheinlichkeit
+                                $3 \epsilon^2$
+                        |> div
+                            class well container-fluid
+                            |> p
+
+                                *Beweis.* Wie im Beweis vom Lemma setzen wir
+                                $p := \frac{1+p}{2} = 1-\epsilon$ und erhalten
+                            \begin{align*}
+                            \Pr[\maj_3(U,V,W) = 1]&amp;= p^3 + 3 p^2 (1-p) =
+                            (1 - \epsilon^3) + 3 (1- \epsilon)^2 \epsilon = 1 - 3 \epsilon^2 \ .
+                            \end{align*}
+                            |> p
+
+                                Somit hat $\mathcal{C}^{\otimes 3}$ Fehlerwahrscheinlichkeit $3 \epsilon^2$.
+                                |> span
+                                    class qed
+
+                                    \(\square\)
+                        |> p
+
+                            Für $i^* := \log_{5/4} n$ hat $\mathcal{C}_{i^*}$ eine Fehlerwahrscheinlichkeit von
+                            höchstens $1/4$. Für $i^* + 1$ wird das zu $3 \pfrac{1}{4}^2 = \frac{3}{16}$ und
+                            für $i^* + 2$ zu $3 \pfrac{3}{16}^2 = \frac{27}{256} \leq \frac{1}{9}$.
+                            Wenn nun $\epsilon \leq \frac{1}{9}$ ist, dann gilt $3 \epsilon^2 \leq \epsilon^{3/2}$.
+                            Wir definieren $\epsilon_i := \frac{1 - \delta_i}{2}$, also die Fehlerwahrscheinlichkeit von
+                            $\mathcal{C}_i$. Es gilt also $\epsilon_{i+1} \leq (\epsilon_i)^{3/2}$ für alle $i \geq
+                            i^*+2$
+                            und somit
+                        \begin{align*}
+                        \epsilon_{i^*+2 + j} \leq \left(\epsilon_{i^*}\right)^{\pfrac{3}{2}^j} \leq
+                        \pfrac{1}{4}^{\pfrac{3}{2}^j} \ .
+                        \end{align*}
+                        |> p
+
+                            Qualitativ sehen wir: solange $\delta_i \leq 1/2$ gilt, wächst die Signalstärke exponentiell
+                            an. Dieses exponentielle Wachstum kann natürlich nicht beliebig weitergehen. Jenseits
+                            $\delta_i \leq 1/2$ hört das auf, dafür _fällt_ nun die Fehlerwahrscheinlichkeit_doppelt exponentiell_. Für $j^* := \log_{3/2} n$ gilt dann
+                        \begin{align*}
+                        \epsilon_{i^* + 2 + j^*} \leq \pfrac{1}{4}^{n} \lt 2^{-n} \ .
+                        \end{align*}
+                        |> p
+
+                            In Bildern:
+                        |> figure
+                            |> img
+                                style height:18em
+                                src ../img/circuits/majority-probability-labeled.svg
+                            |> br
+                            Graph der Funktion $p \mapsto p^3 + 3 p^2 (1-p)$
+                            |> hr
+                        |> figure
+                            |> img
+                                style height:18em
+                                src ../img/circuits/majority-probability-close-to-half-labeled.svg
+                            |> br
+                            Signalstärke $\delta$ wächst für $p \in [1/2, 3/4]$ exponentiell.
+                            |> hr
+                        |> figure
+                            |> img
+                                style height:18em
+                                src ../img/circuits/majority-probability-close-to-one-labeled.svg
+                            |> br
+                            Fehlerwahrscheinlichkeit $\epsilon$ fällt für $p \in [3/4, 1/2]$ doppelt
+                            exponentiell.
+                            |> hr
+                        |> p
+
+                            Wir setzen nun $k := i^* + 2 + j^* = \log_{5/4} n + 2 + \log_{3/2} n = O(\log n)$ und
+                            sehen, dass $\mathcal{C}_k$ eine Verteilung über Schaltkreise mit
+                            Tiefe $O(\log n)$ und Fehlerwahrscheinlichkeit kleiner als $2^{-n}$ ist.
+                            Was nun kommt, ist ein absolutes Standardargument in probabilitischen Beweisen:
+                            ein Union Bound. Das geht ungefähr so: wenn für jedes feste $\b \in \cube^n$
+                            ein Schaltkreis $C \mathcal{C}_k$ mit Wahrscheinlichkeit $\epsilon_k$ irrt,
+                            dann ist die Wahrscheinlichkeit, dass $C$ sich für irgendein $\x \in \cube^n$ irrt,
+                            höchstens
+                            $2^n \epsilon_k$. Formal: für jedes $\b \in \cube^n$ definieren wir
+                            $E_{\b}$ als die Menge der Schaltkreise mit Input-Variablen
+                            $x_1,\dots,x_n$, die sich auf $\b$ irren, also
+                        \begin{align*}
+                        E_{\b} := \{\textnormal{Schaltkreise } C \textnormal{ über } x_1, \dots, x_n \ | \ C(\b) \ne
+                        \maj_n(\b) \} \ .
+                        \end{align*}
+                        |> p
+
+                            Die Verteilung $\mathcal{C}_k$ existiert ja im Wahrscheinlichkeitsraum aller
+                            Boolescher Schaltkreise mit Inputs $x_1,\dots, x_n$. Die Menge $E_{\b}$
+                            ist somit ein _Ereignis_ in diesem Raum. Ein extrem unwahrscheinliches Ereignis:
+                        \begin{align*}
+                        \forall \b \in \cube^n: \Pr_{C \sim \mathcal{C}_k} [ C \in E_{\b} ] = \epsilon_k \lt 2^{n-} \ .
+                        \end{align*}
+                        |> p
+
+                            Oder kompakt ausgedrückt: $\Pr_{\mathcal{C}_k} [E_{\b}] \lt 2^n$. Wir haben nun
+                            ein Ereignis $E_{\b}$ für jedes $\b \in \cube^n$ und definieren
+                        \begin{align*}
+                        E := \bigcup_{\b \in \cube^n} E_{\b} \ .
+                        \end{align*}
+                        |> p
+
+                            Was ist $E$? Es ist die Menge der Schaltkreise, die sich auf mindestens einem $\b \in
+                            \cube^n$
+                            irren. Was ist das Komplement $\bar{E}$? Das ist die Menge der Schaltkreise, die sich
+                            auf keinem $\b \in \cube^n$ irren, also die Menge der Schaltkreise, die $\maj_n$ korrekt
+                            berechnen. Es gilt nun
+                        \begin{align*}
+                        \Pr_{\mathcal{C}_k}[E]&amp;= \Pr_{\mathcal{C}_k} \left[\bigcup_{\b \in \cube^n} E_{\b} \right] \\
+                        &amp;\leq \sum_{\b \in \cube^n} \Pr_{\mathcal{C}_k} [E_{\b}] \\
+                        &amp;= \sum_{b \in \cube^n} \epsilon_k\\
+                        &amp;\lt \sum_{b \in \cube^n} 2^{-n} = 2^n 2^{-n} = 1 \ .
+                        \end{align*}
+                        |> p
+
+                            Also $\Pr_{\mathcal{C}_k}[E] \lt 1$ und somit $\Pr_{\mathcal{C}_k}[\bar{E}] \gt 0$. Das
+                            bedeutet,
+                            dass ein zufälliger Schaltkreis $C \sim \mathcal{C}_K$ mit positiver Wahrscheinlichkeit
+                            die Funktion $\maj_n$ korrekt berechnet. Jeder Schaltkreis, der unter $\mathcal{C}_k$
+                            gesampelt werden kann, hat Tiefe $O(\log n)$, Fan-in 2 und ist monoton, und somit schließen
+                            wir:
+                            es gibt einen monotonen Schaltkreis $C$ mit Fan-in 2 und Tiefe $O(\log n)$, der $\maj_n$
+                            berechnet.
+                        |> p
+
+                            Es bleibt die Frage, wie groß dieser Schaltkreis $C$ ist. Seien wir hier bequem: ein
+                            Schaltkreis mit Fan-in 2 und einem Output-Gate hat höchstens $2^i$ Gates, die Abstand
+                            $i$ vom Output-Gate haben. Somit hat ein Schaltkreis mit Fan-in 2 und Tiefe $d$ höchstens
+                        \begin{align*}
+                        1 + 2 + 4 + \dots + 2^d = 2^{d+1}-1
+                        \end{align*}
+                        |> p
+
+                            Gates. Ein Schaltkreis mit Fan-in 2 und Tiefe $c \log_2 n$ hat also
+                            insgesamt höchstens $2^{c \log n + 1 } - 1 = O(n^c) = O(\poly(n))$ Gates.
+                            |> span
+                                class qed
+
+                                \(\square\)
+                    |> div
+                        class well well-lg numbered-exercise container
+                        |> p
+                            |> span
+                                class numbered-title
+
+                                Übungsaufgabe
+                                |> NumberedTitle
+
+                                    &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                            Präzisieren Sie die Größe von Valiants Schaltkreis und bestimmen ein $c \in \R$, so dass
+                            er die Größe $\Theta(n^c)$ hat.
+                    |> p
+
+                        Wir könnten nun noch ehrgeiziger sein und einen monotonen Schaltkreis mit Fan-in 2,
+                        Tiefe $O(\log n)$ und _linearer_ Größe $O(n)$ anstreben.

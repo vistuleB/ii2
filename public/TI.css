@@ -1,0 +1,28 @@
+body {
+  background-color: rgba(248, 244, 253, 1);
+  /*background-color: white;*/
+  font-family: "DejaVuSansMono";
+  font-size: 2em;
+}
+
+#link-to-toc a,
+#link-to-overview a {
+  display: block;
+}
+
+.theorem {
+  /* background-color: azure;  */
+}
+
+ol.nested {
+  counter-reset: item;
+  list-style-type: none;
+}
+
+ol.nested > li {
+  counter-increment: item;
+}
+
+ol.nested > li::before {
+  content: counters(item, ".") " - ";
+}

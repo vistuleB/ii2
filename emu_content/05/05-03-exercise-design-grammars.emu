@@ -1,0 +1,223 @@
+|> Section
+    title_gr Rechnerübung: Gute kontextfreie Grammatiken entwerfen
+    title_en exercise design grammars
+    number 5.3
+    counter DefCtr
+    counter ExoCtr
+    |> div
+        id link-to-toc
+        |> a
+            href ../vorlesungsskript
+
+            Inhaltsverzeichnis
+        |> a
+            href 05-02-cfg-to-pda
+
+            &lt;&lt; Kapitel 5.2
+    |> div
+        id link-to-overview
+        style text-align: end
+        |> a
+            href /
+
+            zur Kursübersicht
+        |> a
+            href 05-04-LL1-grammars
+
+            Kapitel 5.4 &gt;&gt;
+    |> div
+        id rightSideWrapper
+        |> div
+            class content
+            |> div
+                class chapter
+                |> div
+                    class subChapter
+                    |> h1
+                        class hidden-title
+                        |> span
+                            class subChapterTitle
+
+                            ::::ChapterCtr.::++SectionCtr 
+                            Rechnerübung: Gute kontextfreie Grammatiken entwerfen
+                    |> p
+
+                        Benutzen Sie die App 
+                        |> a
+                            href ../../demos/drawManualGrammar.html
+
+                            &ensp;drawManualGrammar.html 
+                        ,
+                        um mit kontextfreien Grammatik zu experimentieren: 
+                    |> figure
+                        |> a
+                            href ../../demos/drawManualGrammar.html
+                            |> img
+                                style height:20em
+                                src ../img/cfg-manual-screenshot-2.png
+                                loading lazy
+                    |> p
+
+                        Diese besteht aus folgenden Teilen:
+                    |> ol
+                        |> li
+
+                            Dem Eingabefenster für die Grammatik links oben. Hier können Sie Ihre eigene Grammatik
+                            eingeben.
+                        |> li
+
+                            Dem Eingabefenster für das Eingabewort.
+                        |> li
+
+                            Der Backtrack-Baum. Jeder Pfad im Backtrack-Baum ist der Versuch, das Eingabewort aus den
+                            Grammatikregeln per Linksableitung abzuleiten. Die Pfade, die in Sackgassen enden, sind rot
+                            markiert.
+                        |> li
+
+                            Der Ableitungsbaum. Für jeden Knoten \(w\) im Backtrack-Baum stellt der
+                            Pfad von Wurzel nach \(w\) eine Linksableitung dar. Wenn Sie auf \(w\) klicken,
+                            sehen Sie den entsprechenden Ableitungsbaum. Per Default wird die erste erfolgreiche
+                            Linksableitung in einen Ableitungsbaum umgewandelt und angezeigt (wenn es denn überhaupt
+                            eine
+                            erfolgreiche Ableitung gibt).
+                    |> div
+                        class well well-lg numbered-exercise container
+                        |> span
+                            class numbered-title
+
+                            Übungsaufgabe
+                            |> NumberedTitle
+
+                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                        Geben Sie folgende Grammatik in die App ein:
+                        |> pre
+
+                            S -> ;
+                            S -> "("S")"S ;
+                            S -> "(" S "]" S;
+                        |> p
+
+                            Was ist die erzeugte Sprache? Können Sie sie in Worten beschreiben?
+                        |> p
+
+                            Erzeugen Sie Wörter in dieser Sprache, für die der Backtrack-Baum viele rote
+                            Sackgassen enthält.
+                        |> p
+
+                            Schreiben Sie eine äquivalente Grammatik (d.h., die die gleiche Sprache erzeugt),
+                            für die es keine oder nur sehr kurze Sackgassen gibt.
+                            Testen Sie die beiden Grammatiken mit "großen" Eingabewörtern
+                            und schauen Sie, ob Sie Laufzeitunterschiede bemerken.
+                            (Hier erweist sich mein ineffizienter Code als Vorteil: eine schlechte Grammatik
+                            wird sofort bestraft).
+                    |> div
+                        class well well-lg numbered-exercise container
+                        |> span
+                            class numbered-title
+
+                            Übungsaufgabe
+                            |> NumberedTitle
+
+                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                        Schreiben Sie eine kontextfreie Grammatik für die Sprache aller
+                        "korrekten" URLs; also Folgen von mindestens zwei _Labels_, die
+                        durch `.` separiert sind. Sie können den "Regelvorschlag"
+                        ganz links unten in der App reinkopieren, um automatisch Regeln für alphanumerische
+                        Zeichen zu bekommen (allerdings verschlechtert das die Laufzeit; ich habe erstmal
+                        gar nicht auf Effizienz geachtet).
+                        |> p
+
+                            Geben Sie das Eingabewort `a.aaaaa.aaaa.aaaa.aaaa.aaaa` ein. Wie
+                            sieht Ihr Backtrack-Baum aus? Hat er viele Sackgassen? Können Sie Ihre Grammatik
+                            so abändern, dass sie zwar noch die gleiche Sprache erzeugt, aber keine / nur wenige
+                            Sackgassen hat?
+                    |> div
+                        class well well-lg numbered-exercise container
+                        |> span
+                            class numbered-title
+
+                            Übungsaufgabe
+                            |> NumberedTitle
+
+                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                        Entwerfen Sie eine Grammatik für arithmetische Ausdrücke im Racket-Stil, also
+                        |> pre
+
+                            (* (+ 2 3) (- 4 (* 2 4) 5)
+                            (+ 1 2 (* 2))
+                        |> p
+
+                            Leidet Ihre Grammatik an langen Sackgassen? Wenn ja, können Sie die Grammatik abändern?
+                            Haben Sie mittlerweile ein Schema erkannt, welche Konstrukte lange Sackgassen
+                            begünstigen?
+                    |> div
+                        class well well-lg numbered-exercise container
+                        |> span
+                            class numbered-title
+
+                            Übungsaufgabe
+                            |> NumberedTitle
+
+                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                        Wiederholen Sie die vorherige Übung für arithmetische Ausdrücke in der uns
+                        geläufigen Infix-Notation. Hierbei sollten die Konventionen Punkt-vor-Strich
+                        beachtet werden. Im Ableitungsbaum von
+                        |> pre
+
+                            2+3*(5+4)
+                        sollte sich das wiederspiegeln.
+                    |> div
+                        class well well-lg numbered-exercise container
+                        |> span
+                            class numbered-title
+
+                            Übungsaufgabe
+                            |> NumberedTitle
+
+                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                        *(Challenge)*Geben Sie die Grammatik hier ein:
+                        |> pre
+
+                            S -> "("S")"S;
+                            S -> "["S"("S;
+                            S -> ;
+                        Überlegen Sie, was diese "bedeutet". Sie sehen, die Grammatik ist
+                        nicht eindeutig. Das Wort `[([()(` hat zwei
+                        verschiedene Ableitungsbäume. Können Sie eine äquivalente_eindeutige_ Grammatik schreiben?
+                    |> div
+                        class well well-lg numbered-exercise container
+                        |> span
+                            class numbered-title
+
+                            Übungsaufgabe
+                            |> NumberedTitle
+
+                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                        *(Challenge)*Die folgende Grammatik hat User _babou_auf 
+                        |> a
+                            href https://cstheory.stackexchange.com/questions/22520/example-of-context-free-grammar-that-triggers-exponential-behaviour-without-memo
+
+                            &ensp;StackExchange 
+                        vorgeschlagen als Beispiel für eine eindeutige Grammatik,
+                        bei der Sie exponentiell große Backtrack-Bäume bekommen können:
+                        |> pre
+
+                            S ->  "a" X "b" | "a" X "c";
+                            X -> "a" | "a" X | "a" X X;
+                        Das ist aber keine Kunst, da die Grammatik uneindeutig ist.
+                        Können Sie eine _eindeutige_ Grammatik angebene, die ähnlich
+                        exponentielles Verhalten zeigt? Exponentiell heißt: mit jedem
+                        zusätlichen Zeichen des Eingabewortes kann die Größe des
+                        Backtrack-Baumes um einen Faktor \(R \gt 1\) wachsen.
+                    |> div
+                        class well well-lg numbered-exercise container
+                        |> span
+                            class numbered-title
+
+                            Übungsaufgabe
+                            |> NumberedTitle
+
+                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                        *(Super-Challenge; ich hab selbst keine Lösung)*.
+                        Finden Sie eine kontextfreie Sprache \(L\), für die _jede_ Grammatik,
+                        die \(L\) erzeugt, unter exponentiell großen Backtrack-Bäumen leidet.

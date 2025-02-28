@@ -1,0 +1,51 @@
+|> Section
+    title_gr Turing-Maschinen
+    title_en Turing machines
+    number 7.0
+    counter DefCtr
+    counter ExoCtr
+    |> div
+        id link-to-toc
+        |> a
+            href ../vorlesungsskript
+
+            Inhaltsverzeichnis
+        |> a
+            href 06-00-general-grammars
+
+            &lt;&lt; Kapitel 6.0
+    |> div
+        id link-to-overview
+        style text-align: end
+        |> a
+            href /
+
+            zur Kursübersicht
+        |> a
+            href 07-01-Turing-machines-definition
+
+            Kapitel 7.1 &gt;&gt;
+    |> div
+        id rightSideWrapper
+        |> div
+            class content
+            |> div
+                class chapter
+                |> h1
+                    class hidden-title
+                    |> span
+                        class chapterTitle
+
+                        ::++ChapterCtr. 
+                        Turing-Maschinen
+                |> p
+
+                    Wir haben in den vorherigen Kapitel mit primitiver Rekursion und \(\lambda\)-Kalkül
+                    zwei Modelle kennengelernt, die den Begriff der _Berechnung_ formalisieren.
+                    Das \(\lambda\)-Kalkül ist im Prinzip eine reduktion funktionaler Programmiersprachen
+                    auf das absolut essentielle. In diesem Kapitel lernen wir ein
+                    weiteres Modell für Berechnung kennen, das im Allgemeinen als Standardmodell
+                    gilt: die Turingmaschine. Anders als primitive Rekursion und \(\lambda\)-Kalkül
+                    sind Turingmaschinen auch eng mit dem Begriff des Laufzeitkomplexität und Speicherplatzkomplexität
+                    verbunden und bilden somit das Fundament der _Komplexitätstheorie_, die sich insbesondere
+                    mit dem Resourcenverbrauch bei Rechenprozessen beschäftigt.

@@ -1,0 +1,349 @@
+<div id="rightSideWrapper">
+
+        <div class="content">
+            <div class='chapter'>
+                <div class='subChapter'>
+                    <h1 class='hidden-title'>
+                        <span class='subChapterTitle'>4.4 Von einer regulären Grammatik zu einem endlichen Automaten</span>
+                    </h1>
+
+                    <p>
+                        In diesem Unterkapitel wollen wir das Gelernte an einem konkreten Beispiel anwenden.
+                        Wir beginnen (1) mit einer Beschreibung eines Formats in natürlicher Sprache; (2) basteln uns
+                        daraus
+                        mit Hilfe des "Baukastenprinzips" eine reguläre Sprache; (3) säubern diese, indem wir Regeln
+                        der Form \(X \rightarrow Y\) und \(X \rightarrow a\) eliminieren; (4) bauen einen
+                        nichtdeterministischen
+                        endlichen Automaten; (5) transformieren diesen in einen deterministischen endlichen Automaten.
+                    </p>
+
+                    <h2>1. Beschreibung des Formats in natürlicher Sprache</h2>
+
+                    <p>
+                        Unsere Sprache \(L\) soll so ähnlich sein wie die der erlaubten Domainnamen, allerdings mit ein
+                        paar Abänderungen,
+                        um die obigen Transformationen spannender zu machen. Ein Wort in unserer Sprache besteht aus
+                        einer
+                        nichtleeren Folge von <em>Labels</em> die jeweils durch einen <code>.</code> separiert sind.
+                        Jedes Label ist eine nichtleere Folge von Blöcken (ein nichtleerer String aus Buchstaben und
+                        Zahlen), separiert
+                        durch <code>:</code> oder <code>-</code> aber niemals durch beides innerhalb eines Blockes.
+                        Also:
+                    </p>
+
+                    <div style="text-align:center">
+                        <code>bla:bla:blue.xyz-12-zx.b:x:yyy:xxx:aaa</code>
+                    </div>
+                    ist ein Wort in \(L\), aber
+                    <div style='text-align:center'>
+                        <code>a:b-c.hello</code>
+                    </div>
+                    ist kein Wort in \(L\), da das erste Label die Separatoren <code>:</code> und <code>-</code> mischt.
+                    Habe ich
+                    \(L\) genau genug beschrieben? Stellen wir eine Meta-Frage: Was zählt überhaupt als <em>genaue
+                        Beschreibung</em> einer
+                    Sprache? Wir können uns dem Mund fusselig reden und Beispiele und Nicht-Beispiele angeben, am Ende
+                    aber werden
+                    wir irgendwann beginnen, formale Regeln aufzustellen, die unsere Sprache beschreiben - wir werden
+                    also im Prinzip
+                    eine <em>Grammatik</em> schreiben. Tun wir dies also.
+
+                    <h2>2. Eine reguläre Grammatik</h2>
+
+                    <p>
+                        Beginnen wir mit dem Alphabet.
+                        Da es 62 alphanumerische Zeichen gibt: <code>a..zA..Z0..9</code> und wir uns keine unnötige
+                        Arbeit machen wollen,
+                        beschränken wir uns auf ein Zeichen: <code>a</code>. Dazu kommen die Separatoren
+                        <code>:-.</code>. Also: \(\Sigma = \{a,.,:,-\}\). Stellen Sie sich einfach vor, \(a\) stehe
+                        für beliebige alphanumerische Zeichen. Sowohl Grammatik als auch Automaten lassen sich einfach
+                        anpassen.
+                        Wir beginnen ganz unten und schreiben eine Grammatik für
+                        Blöcke, also nichtleere Strings aus alphanumerischen Zeichen.
+                    </p>
+                    \begin{align*}
+                    B & \rightarrow a \ | \ aB
+                    \end{align*}
+                    <p>
+                        Als nächstes führen wir ein nichtterminales Symbole \(C\) für Labels mit <code>:</code> ein
+                        und ein Nichtterminal \(D\) für Labels mit <code>-</code>. Wir wählen die Buchstaben \(C,D\),
+                        weil
+                        <code>:</code> auf Englisch <em>colon</em> und <code>-</code> <em>dash</em> heißt.
+                        \(C\)-Labels können wir uns nach dem Baukastenprizip bauen, in dem
+                        wir <a href="./04-01-regular-grammars.html#operation-L(.L)*">Theorem 4.1.14</a> anwenden.
+                        Wir fügen zur "End-Produktion" \(B \rightarrow a\) eine weiter Produktion \(B \rightarrow a:B\)
+                        hinzu und
+                        tun das gleiche für \(B \rightarrow b\). Allerdings benennen wir \(B\) in \(C\) um, damit keine
+                        Verwechslungsgefahr mit
+                        dem ursprünglichen \(B\) aufkommt. Das gleiche machen wir für \(D\).
+                    </p>
+                    \begin{align*}
+                    C & \rightarrow a \ | \ aC \ | \ a{:}C \\
+                    D & \rightarrow a \ | \ aD \ | \ a{-}D \\
+                    T & \rightarrow C \ | D
+                    \end{align*}
+                    <p>
+                        Von \(L\) lassen sich nun also alle Labels ableiten. Wir brauchen nun zum Schluss wieder
+                        eine Folge von \(L\), mit <code>.</code> separiert, müssen also wieder
+                        <a href="./04-01-regular-grammars.html#operation-L(.L)*">Theorem 4.1.14</a> anwenden, dieses
+                        mal auf die von \(T\) erzeugte Sprache. Im Ergebnis benennen wir das Startsymbol in \(S\) um.
+                    </p>
+                    \begin{align*}
+                    S & \rightarrow C \ | \ D \\
+                    C & \rightarrow a \ | \ aC \ | \ a{:}C \ | a{.}S \ \\
+                    D & \rightarrow a \ | \ aD \ | \ a\text{-}D \ | \ a{.}S \\
+                    \end{align*}
+                    <p>
+                        Um eine "richtig" reguläre Sprache zu erhalten, entzerren wir die erweitert regulären
+                        Produktionen
+                        wie \(C \rightarrow a{:}C\). Dafür brauchen wir neue Symbole \(C', D', S'\):
+                    </p>
+                    \begin{align*}
+                    S & \rightarrow C \ | \ D \\
+                    C & \rightarrow a \ | \ aC \ | \ aC'\ | \ aS' \\
+                    C' & \rightarrow {:}C \\
+                    D & \rightarrow a \ | \ aD \ | \ a D' \ | \ aS' \\
+                    D' & \rightarrow \text{-}D \\
+                    S' & \rightarrow {.}S
+                    \end{align*}
+
+                    <h2>3. Die reguläre Grammatik säubern</h2>
+
+                    <p>
+                        Wir wollen nun alle Produktionen der Form \(Y \rightarrow x\) eliminieren. Hierfür nehmen wir
+                        uns
+                        <em>ein</em> neues Nichtterminal \(E\) und ersetzen \(Y \rightarrow x\) durch \(Y \rightarrow
+                        xE\)
+                        und fügen die Produktion \(E \rightarrow \epsilon\) hinzu.
+                    </p>
+                    \begin{align*}
+                    S & \rightarrow C \ | \ D \\
+                    C & \rightarrow aE \ | \ aC \ | \ aC'\ | \ aS' \\
+                    C' & \rightarrow {:}C \\
+                    D & \rightarrow aE \ | \ aD \ | \ a D' \ | \ aS' \\
+                    D' & \rightarrow \text{-}D \\
+                    S' & \rightarrow {.}S \\
+                    E & \rightarrow \epsilon
+                    \end{align*}
+
+                    <p>In einem zweiten Schritt wollen wir die Produktionen \(S \rightarrow C\) und \(S \rightarrow D\)
+                        eliminieren,
+                        sodass wir nur noch Produktionen der From \(X \rightarrow aY\) und \(E \rightarrow \epsilon\)
+                        haben.
+                        Wir gehen vor wie in <a href="./04-01-regular-grammars.html#theorem-regular-simplified">Theorem
+                            4.1.7</a> beschrieben.
+                        Wir ersetzen \(S \rightarrow C\) also durch alle Produktionen der Form \(S \rightarrow \alpha\),
+                        wobei
+                        \(\alpha\) eine Wortform ist, die sich aus \(C\) ableiten lässt und nicht nur aus einem
+                        einzelnen Nichtterminal
+                        besteht; dies trifft glücklicherweise auf <em>alle</em> rechten Seiten der \(C\)-Produktionen
+                        zu; gleiches gilt
+                        für \(D\). Wir erhalten:
+                    </p>
+                    \begin{align*}
+                    S & \rightarrow aE \ | \ aC \ | \ aC'\ | \ aS' \ | \ aD \ | \ a D' \\
+                    C & \rightarrow aE \ | \ aC \ | \ aC'\ | \ aS' \ \\
+                    C' & \rightarrow {:}C \\
+                    D & \rightarrow aE \ | \ aD \ | \ a D' \ | \ aS' \ \\
+                    D' & \rightarrow \text{-}D \\
+                    S' & \rightarrow {.}S \\
+                    E & \rightarrow \epsilon
+                    \end{align*}
+
+
+
+                    <h2>4. Einen nichtdeterministischen endlichen Automaten bauen</h2>
+
+                    <p>
+                        Dies sollte nun einfach sein. Wir erschaffen Zustände \(S, C, C', D, D', S', E\) und
+                        übersetzen jeden Grammatik-Pfeil in einen Automaten-Pfeil.
+                    </p>
+                    <figure>
+                        <img loading='lazy' src='../img/finite-state-automata/nfsm-example-03-big.svg'
+                            style='height:17em'>
+                    </figure>
+                    <p>Ich habe die Zeichen <code>.:-</code> rot unterlegt, weil man sie sonst kaum erkennen würde in
+                        dem Automaten.</p>
+
+                    <h2>5. Den nichtdeterministischen Automaten in einen deterministischen umwandeln</h2>
+
+                    <p>
+                        Unser nichtdeterministischer endlicher Automat hat Zustandsmenge \(Q = \{S, S', C, C', D, D',
+                        E\}\), also insgesamt
+                        sieben Zustände. Wenn wir genau nach Buch vorgingen, müssten wir den endlichen Automaten auf der
+                        Zustandsmenge \(2^Q\)
+                        definieren, er hätte also \(2^7 = 128\) viele Zustände. Das wäre jetzt für einen Rechner kein
+                        Problem, aber
+                        in diesem vorlesungsskript doch etwas ungünstig.
+                        Wir gehen <em>lazy</em> vor, erschaffen Zustände in \(2^Q\) also nur dann, wenn wir sie
+                        brauchen.
+                        Wir beginnen mit dem Zustand \(\{S\}\) und legen dann an jeden Zustand Kanten an, jeweils mit
+                        \(a, :, -, . \) beschriftet, und erschaffen, falls nötig, dabei neue Zustände. In der folgenden
+                        Animation
+                        sehen Sie manchmal den mit einem Kreuz markierten Fehlerzustand (trap state). Die akzeptierenden
+                        Zustände sind mit fettem Rand markiert.
+                    </p>
+                    <figure class='centered-figure well' id="figure-ColonDashPeriod">
+                        <div>
+                            <p>Der nichtdeterministische Automat</p>
+                            <img loading='lazy' src='../img/finite-state-automata/nfsm-example-03-big.svg'
+                                style='height:10em'>
+
+                        </div>
+                        <a class='left carousel-control-prev-icon' href='#nfsm-to-fsm' data-slide='prev'>
+                            <div class='carousel-nav-icon'>
+                                <img src='../img/carousel-prev-icon.svg'>
+                            </div>
+                        </a>
+                        <a class='right carousel-control-next-icon' href='#nfsm-to-fsm' data-slide='next'>
+                            <div class='carousel-nav-icon'>
+                                <img src='../img/carousel-next-icon.svg'>
+                            </div>
+                        </a>
+                        <div id='nfsm-to-fsm' class='carousel' data-interval='false' style='display:inline-block'>
+                            <ol class='carousel-indicators'>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='1' class='active'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='2'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='3'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='4'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='5'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='6'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='7'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='8'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='9'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='10'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='11'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='12'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='13'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='14'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='15'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='16'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='17'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='18'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='19'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='20'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='21'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='22'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='23'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='24'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='25'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='26'></li>
+                                <li data-target='#nfsm-to-fsm' data-slide-to='27'></li>
+                            </ol>
+                            <p>Der deterministische Automat, Schritt für Schritt gebaut: </p>
+                            <div class='carousel-inner' style='display:inline-block'>
+                                <div class='item active'><img src='../img/finite-state-automata/transformation/01.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/02.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/03.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/04.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/05.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/06.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/07.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/08.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/09.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/10.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/11.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/12.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/13.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/14.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/15.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/16.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/17.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/18.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/19.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/20.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/21.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/22.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/23.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/24.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/25.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/26.svg'
+                                        style='height:18em'></div>
+                                <div class='item'><img src='../img/finite-state-automata/transformation/27.svg'
+                                        style='height:18em'></div>
+                            </div class='carousel-inner'>
+                        </div class='carousel'>
+                    </figure>
+                    <p>
+                        Dieser Automat hat deutlich weniger also 128 Zustände, nämlich mit nur sieben genau so
+                        viele wie der nichtdeterministische (es ist Zufall, dass beide gleich viele Zustände haben;
+                        messen
+                        Sie dieser Tatsache keine Bedeutung bei). Wir könnten nun von diesem Automaten ausgehend
+                        wiederum eine reguläre Grammtik bauen, die in diesem Falle sogar einfacher und klarer
+                        wäre als die ursprüngliche. Wenn wir erweitert reguläre Grammatiken erlauben, so können
+                        wir den deterministischen Automaten besonders konzise in eine Grammatik fassen:
+                    </p>
+                    \begin{align*}
+                    S & \rightarrow aT \\
+                    T & \rightarrow {.}S \ | \ aT \ | \ {:}aC \ | \ \text{-}a D \\
+                    C & \rightarrow aC \ | \ {:}aC \ | \ {.}S \\
+                    D & \rightarrow aD \ | \ \text{-}aD \ | \ {.}S
+                    \end{align*}
+                    <p>
+                        Die Zustände des deterministischen Automaten beschreiben im Prinzip das, was wir uns merken
+                        müssen, wenn wir so einen String "parsen": Zustand \( \{C',C,E,D,D',S'\}\), der
+                        in der Grammatik dann zum Nichtterminal \(T\) wird, bedeutet beispielsweise
+                        <em>das Label hat schon begonnen, wir wissen aber noch nicht, ob es eines mit
+                            <code>:</code> oder eines mit <code>-</code> ist.
+                            Der Zustand \(\{C',C,E,S'\}\) bzw. das Nichtterminal \(C\) heißt dann
+                            <em>wir sind innerhalb eines Labels mit <code>:</code></em>.
+                        </em>
+                    </p>
+
+                    <div class='well well-lg numbered-exercise container'>
+                        <p>
+                            <span class='numbered-title'>Übungsaufgabe</span>
+                            Erinnern Sie sich an <a href="./04-03-nfsm#exercise-divisibility">Aufgabe 4.3.1</a>. Hier
+                            sehen
+                            Sie einen nichtdeterministischen endlichen Automaten für die Sprache \(L_4 \cup L_6\), also
+                            die Sprache aller Wörter \(1^n\) für ein \(n\), das durch 4 oder 6 teilbar ist.
+                            Da unser Alphabet \(\Sigma = \{1\}\) eh nur aus einem Zeichen besteht, habe ich auf die
+                            Beschriftung
+                            der Kanten verzichtet.
+                        </p>
+                        <figure>
+                            <img loading='lazy'
+                                src='../img/finite-state-automata/divisibility-automaton/divisibility.svg'
+                                style='height:14em'>
+                        </figure>
+                        <p>
+                            Dieser Automat hat 11 Zustände. Sein Potenzmengenautomat hätte also \(2^{11} = 2048\)
+                            Zustände.
+                            Führen Sie die Konstruktion <em>lazy</em> durch, indem Sie vom Startzustand \(\{S\}\)
+                            ausgehend die Folgezustände konstruieren. Wieviele Zustände bekommen Sie?
+                        </p>
+                    </div>
+
+
+                </div class="subchapter">
+
+            </div class='chapter'>
+
+
+        </div class="content">
+    </div class="rightSideWrapper">

@@ -1,0 +1,378 @@
+|> Section
+    title_gr Turing-Maschinen simulieren Turing-Maschinen: die universelle Turing-Maschine
+    title_en Turing universal
+    number 7.5
+    counter DefCtr
+    counter ExoCtr
+    |> div
+        id link-to-toc
+        |> a
+            href ../vorlesungsskript
+
+            Inhaltsverzeichnis
+        |> a
+            href 07-04-Turing-encoding
+
+            &lt;&lt; Kapitel 7.4
+    |> div
+        id link-to-overview
+        style text-align: end
+        |> a
+            href /
+
+            zur Kursübersicht
+        |> a
+            href 07-06-undecidability
+
+            Kapitel 7.6 &gt;&gt;
+    |> div
+        id rightSideWrapper
+        |> div
+            class content
+            |> div
+                class chapter
+                |> div
+                    class subChapter
+                    |> h1
+                        class hidden-title
+                        |> span
+                            class subChapterTitle
+
+                            ::::ChapterCtr.::++SectionCtr 
+                            Turing-Maschinen simulieren Turing-Maschinen: die universelle Turing-Maschine
+                    |> p
+
+                        Im letzten Teilkapitel haben wir gesehen, wie wir jede Turingmaschine $M
+                        $mit
+                        Eingabealphabet $\Sigma$ codieren können als
+                    \begin{align*}
+                    \enc(M) \in \Lambda^* \ ,
+                    \end{align*}
+                    |> p
+
+                        also als String über dem Codierungsalphabet
+                    \begin{align*}
+                    \Lambda := \writelambda
+                    \end{align*}
+                    |> p
+
+                        Diese Codierungsschema enthält implizit Codierungsfunktionen
+                        $\enc_Q : Q \rightarrow \{0,1\}^+$ und $\enc_\Gamma: \Gamma \rightarrow
+                        \Sigma \cup \{0,1\}^+$,
+                        die wir verwenden, um die Zustände und Arbeitszeichen von $M$ in
+                        $\Lambda$-Zeichen zu
+                        übersetzen.
+                        Für eine Konfiguration
+                    \begin{align*}
+                    C = u_1 \dots u_m q v_1 \dots v_n
+                    \end{align*}
+                    |> p
+
+                        der Maschine $M$ definieren wir die Codierung von $C$ als
+                    \begin{align*}
+                    \enc(C) := \enc_\Gamma(u_1) \texttt{#} \enc_\Gamma(u_2) \dots \texttt{#}
+                    \enc_\Gamma(u_m)\texttt{#}
+                    \enc_Q(q) \texttt{#} \enc_\Gamma(v_1)\texttt{#} \dots \texttt{#}
+                    \enc_\Gamma(v_n) \in \Lambda^* \ .
+                    \end{align*}
+                    |> p
+
+                        Das ist alles nicht besonders tiefgründig und dient allein dazu,
+                        sicherzustellen, dass wir
+                        die Konfigurationen von $M$ darstellen können in dem Alphabet $\Lambda$,
+                        das_unabhängig_ von $M$ ist. Dass wir also _jede_Turingmaschine
+                        $M$ mit Eingabealphabet $\Sigma$ und _jede_ ihrer Konfigurationen
+                        als Strings über _einem_ festen Alphabet $\Lambda$ darstellen
+                        können.
+                    |> p
+
+                        Eine Turingmaschine simulieren heißt nun, einen String
+                        $\enc(M)\texttt{;}w$ mit $w \in \Sigma^*$ zu lesen und
+                        daraus den String $\enc(\hat{\delta}^*_M (w))$ zu berechnen, also
+                        das Ergebnis $\hat{\delta}^*_M(w)$, passend codiert über dem Alphabet
+                        $\Lambda$.
+                        Das zentrale Ergebnis dieses Teilkapitels ist, dass wir diese Simulation
+                        selbst mit einer Turingmaschine implementieren können.
+                    |> div
+                        class well container theorem
+                        |> p
+                            |> span
+                                class numbered-title
+
+                                Theorem
+                                |> NumberedTitle
+
+                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                            &ensp;*(Universelle
+                            Turingmaschine).* Zu
+                            jedem
+                            endlichen Eingabealphabet $\Sigma$ sei
+                            $\Lambda := \writelambda$ das Codierungsalphabet. Es gibt es
+                            eine
+                            Turingmaschine $U = U_{\Sigma}$ mit Eingabealphabet
+                            $\Lambda$,
+                            so dass für alle $c \in \Lambda^*$ und $w \in \Sigma^*$
+                            die Turingmaschine $U$ mit Eingabewort $x \in \Lambda^*$
+                            folgendes tut:
+                        |> ul
+                            |> li
+
+                                Falls $x$ nicht die Form
+                                $\enc(M) \texttt{;} w$ mit $w \in \Sigma^*$ hat,
+                                lehnt sie ab;
+                            |> li
+
+                                Ansonsten, falls also $c = \enc(M)$ für eine Turingmaschine
+                                $M$ ist:
+                                |> ul
+                                    |> li
+
+                                        Falls $M$ mit Eingabewort $w$ nicht
+                                        terminiert, dann terminiert $U$ mit
+                                        Eingabewort $c \texttt{;} w$ auch nicht.
+                                    |> li
+
+                                        Falls $M$ mit Eingabewort $w$ eine
+                                        Endkonfiguration $C = uqv$ erreicht,
+                                        dann
+                                        erreicht $U$ mit
+                                        Eingabewort $c \texttt{;} w$ die
+                                        Endkonfiguration
+                                        $q\ \enc(C)$. Das heißt insbesondere,
+                                        dass $U$ genau dann akzeptiert, wenn $M$
+                                        akzeptiert, und genau dann ablehnt, wenn
+                                        $M$ ablehnt.
+                        |> p
+
+                            $U$ akzeptiert also die Sprache
+                        \begin{align*}
+                        \{ c w \ | \ w \in \Sigma^* \textnormal{ und } c = \enc(M) \textnormal{
+                        und $M$ akzeptiert $w$} \} \ .
+                        \end{align*}
+                    |> div
+                        style margin-bottom:1em
+                        class alert-info container
+                        |> p
+
+                            *Ein technischer aber letztendlich irrelevanter Punkt:* die Mengen
+                            $Q$ und $\Gamma$ der Turingmaschine $M$ können ja beliebige
+                            (endliche) Mengen sein,
+                            und weder $\Lambda$ noch die Turingmaschine $U$ haben "Kenntnis"
+                            von ihnen.
+                            Wir nehmen aber aus Gründen der Einfachheit an, dass $Q$ immer
+                            die Zustände
+                            $\qaccept$ und $\qreject$ enthält und auch $U$ diese Zustände
+                            verwendet.
+                            Daraus ergibt sich, dass für eine Endkonfiguration $uqv$ von $M$
+                            zwar $q \in \{\qaccept, \qreject\}$ gilt, allerdings $\enc(q)
+                            \in \{0,1\}^+$,
+                            da wir diese $M$-Zustände binär codieren. Somit ist
+                            $q\ \enc(uqv) \in \{\qaccept, \qreject\} \times \Lambda^*$ eine
+                            Endkonfiguration von $U$.
+                        |> p
+
+                            Des weiteren gehen wir davon aus, dass das Blank-Symbol $\Box$
+                            für alle
+                            Turingmaschinen $M$ mit Eingabealphabet $\Sigma$ das gleiche
+                            ist. Auch
+                            $U$ verwendet es. Wenn wir allerdings $M$ codieren, so wird auch
+                            $\Box$ als $\enc(\Box) \in \{0,1\}^+$ codiert, wie jedes
+                            Arbeitssymbol $z \in \Gamma
+                            \setminus \Sigma$ von $M$
+                            binär codiert wird. Das heißt insbesondere, dass
+                            für eine $M$-Konfiguration $C$ die Codierung $\enc(C)$ kein
+                            $\Box$ enthält (selbst
+                            wenn $C$ als Konfiguration von $M$ dies tut), und in der Tat ist
+                            ja
+                            $\enc(C) \in \Lambda^*$, und $\Lambda$ ist das Eingabealphabet
+                            von $U$ mit
+                            $\Box \not \in \Lambda$.
+                    |> div
+                        class well container
+                        |> p
+
+                            *Beweis.*Den Beweis in allen Details zu führen hieße, die Maschine $U$
+                            konkret als Turingmaschine
+                            zu implementieren. Wir tun dies nicht. Wir beschränken uns auf
+                            eine High-Level-Beschreibung
+                            ihrer Arbeitsweise.
+                    |> figure
+                        class centered-figure well container-fluid
+                        |> Carousel
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-01-01.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-01-02.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-01-03.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-01-04.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-02-01.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-01.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-02.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-03.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-04.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-05.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-06.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-07.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-08.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-09.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-10.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-11.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-12.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-13.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-14.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-15.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-16.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-17.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-18.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-19.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-20.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-21.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-22.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-23.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-24.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-25.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-26.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-27.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-28.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-29.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-30.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-31.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-32.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-33.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-34.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-35.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-36.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-37.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-38.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-39.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-40.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-41.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-42.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-43.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-44.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-45.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-46.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-47.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-48.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-49.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-50.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-51.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-52.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-53.svg
+                            |> img
+                                style height:22em
+                                src ../img/turing-machines/universal/universal-03-54.svg

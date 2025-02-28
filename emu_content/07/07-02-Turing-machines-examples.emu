@@ -1,0 +1,363 @@
+|> Section
+    title_gr Beispiele von Turingmaschinen
+    title_en Turing machines examples
+    number 7.2
+    counter DefCtr
+    counter ExoCtr
+    |> div
+        id link-to-toc
+        |> a
+            href ../vorlesungsskript
+
+            Inhaltsverzeichnis
+        |> a
+            href 07-01-Turing-machines-definition
+
+            &lt;&lt; Kapitel 7.1
+    |> div
+        id link-to-overview
+        style text-align: end
+        |> a
+            href /
+
+            zur Kursübersicht
+        |> a
+            href 07-03-Turing-variants
+
+            Kapitel 7.3 &gt;&gt;
+    |> div
+        id rightSideWrapper
+        |> div
+            class content
+            |> div
+                class chapter
+                |> div
+                    class subChapter
+                    |> h1
+                        class hidden-title
+                        |> span
+                            class subChapterTitle
+
+                            ::::ChapterCtr.::++SectionCtr 
+                            Beispiele von Turingmaschinen
+                    |> div
+                        class well container theorem
+                        |> span
+                            class numbered-title
+
+                            Beispiel
+                            |> NumberedTitle
+
+                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                        Betrachten wir die Sprache
+                        \begin{align*}
+                        \{a^n b^n c^n \ | \ n \geq 0 \}
+                        \end{align*}
+                        über dem Alphabet \(\{a,b,c\}\). Wir wollen eine Turingmaschine
+                        entwerfen, die diese Sprache entscheidet.
+                        |> p
+
+                            *Informelle Beschreibung.* Unsere Turingmaschine arbeitet
+                            in Phasen. In jeder Phase sucht die Maschine ein \(a\) und löscht es
+                            (ersetzt es durch ein \(X\)). Dann geht sie nach rechts und
+                            sucht und markiert ein \(b\); dann ein \(c\). Sobald sie das \(c\) markiert hat,
+                            geht sie wieder nach links. Dies beendet die Phase.
+                        Wenn die Maschine kein \(a\) mehr findet und auch kein \(b\) oder \(c\) mehr da ist,
+                        akzeptiert die Maschine.
+                        Wenn unterwegs ein "Fehler" geschieht, beispielsweise die Maschine ein \(b\) sucht
+                        aber keines findet, wechselt sie in den 
+                        |> tt
+
+                            reject
+                        -Zustand.
+                        |> p
+
+                            *Formellere Beschreibung.* Als Bandalphabet verwenden wir
+                            \begin{align*}
+                            \Gamma := \{a,b,c, X, \square\} \ .
+                            \end{align*}
+                        Das Symbol \(X\) heißt dann "hier stand mal \(a\), \(b\) oder \(c\), wir haben es aber bereits
+                        gelesen". Als Zustandsmenge verwenden wir
+                        \begin{align*}
+                        Q := \{\texttt{findA},\texttt{findB},\texttt{findC},\texttt{noA},
+                        \texttt{accept},\texttt{reject}\} \ .
+                        \end{align*}
+                        Die "Bedeutung" dieser Zustände ist:
+                        |> ul
+                            |> li
+                                |> tt
+
+                                    findA
+                                : gehe nach links, bis Du ein \(a\) findest, ersetze es durch \(X\) und
+                                wechsle dann
+                                in 
+                                |> tt
+
+                                    findB
+                                . Wenn Du allerdings in ein
+                                \(\square\) läufst, bist Du am linken Rand und es gibt keine \(a\) mehr; wechsle nach
+                                |> tt
+
+                                    noA
+                                &ensp;und gehe ein Feld nach rechts.
+                            |> li
+                                |> tt
+
+                                    findB
+                                : gehe nach rechts, bis Du ein \(b\) gefunden hast; ignoriere
+                                auf dem Weg alle \(a\) und alle \(X\); wenn Du \(b\) liest, ersetze es durch \(X\) und
+                                gehe nach
+                                |> tt
+
+                                    findC
+                                ;jedes andere Zeichen erzeugt einen Fehler.
+                            |> li
+                                |> tt
+
+                                    findC
+                                : gehe nach rechts, bis Du ein \(c\) gefunden hast;
+                                ignoriere derweil alle \(b\) und \(X\); wenn Du ein \(c\) liest,
+                                ersetze es durch \(X\) und gehe in Zustand 
+                                |> tt
+
+                                    findA
+                                .
+                            |> li
+                                |> tt
+
+                                    noA
+                                : wir stehen nun am Anfang des Bandinhalts und wissen,
+                                dass es kein \(a\) mehr gibt. Wir müssen jetzt überprüfen, dass es auch keine
+                                \(b,c\) mehr gibt. Also: gehe nach rechts, ignoriere alle \(X\). Wenn Du ein
+                                \(b\) oder \(c\) triffst, gehe nach 
+                                |> tt
+
+                                    reject
+                                . Wenn Du ein
+                                \(\square\) triffst, dann besteht das Wort nur noch aus \(X\). Wechsel nach
+                                |> tt
+
+                                    accept
+                                .
+                        |> p
+
+                            Wir können die Beschreibung jetzt formal als Funktion
+                            \(\delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \rls\) niederschreiben.
+                        |> figure
+                            |> img
+                                style height:12em
+                                src ../img/turing-machines/exampe-2-aabbcc/delta-table.svg
+                                loading lazy
+                        |> p
+
+                            Beachten Sie: manche Zellen sind leer. Damit meine ich, dass die Turingmaschine dort
+                            in den Zustand 
+                            |> tt
+
+                                reject
+                            &ensp;wechselt. Andere Zellen bestehen nur aus einem
+                            Buchstaben; so steht in der Zelle von \(\delta(\texttt{findA}, b)\) nur
+                            ein \(\texttt{R}\). Dies bedeutet, dass die Turingmaschine ihren Zustand nicht
+                            wechselt und einfach das gelesene Zeichen in die Zelle wieder reinschreibt. Dies
+                            ist reiner Syntaxzucker.
+                        |> p
+
+                            Auf der Webseite
+                            |> a
+                                href https://turingmachinesimulator.com
+
+                                &ensp;turingmachinesimulator.com 
+                            können Sie Ihre Turingmaschine eingeben und simulieren. Den Text für
+                            die gerade beschriebene finden in 
+                            |> a
+                                href ../code/turing machines/aabbcc.txt
+
+                                &ensp;aabbcc.txt 
+                            .
+                            Generell können Sie Regeln der Form
+                            \begin{align*}
+                            \delta(q,a) = (r, b, D)
+                            \end{align*}
+                            auf turingmachinesimulator.com als
+                            |> pre
+
+                                q, a
+                                r, b, D 
+                            angeben, wobei die Richtung \(D\) mit den Symbolen 
+                            |> tt
+
+                                <, -,&gt;
+                            &ensp;codiert wird.
+                    |> div
+                        id example-palindromes
+                        class well container theorem
+                        |> span
+                            class numbered-title
+
+                            Beispiel
+                            |> NumberedTitle
+
+                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                        Als zweites Beispiel nehmen wir die Palindromsprache
+                        \begin{align*}
+                        L := \{ w \in \{a,b\}^* \ | \ w = w^R \} \ ,
+                        \end{align*}
+                        wobei \(w^R\) das Kehrwort bedeutet, also \(aabba^R = abbaa\).
+                        |> p
+
+                            Unsere Maschine sucht das erste Zeichen, löscht es (ersetzt es durch \(\square\)
+                            und "merkt" es sich in ihrem Zustand.
+                            Dann geht sie zum rechten Rand und vergleicht es mit dem dortigen.
+                            Falls es passt, löscht sie es und geht wieder nach links zurück. Falls es nicht
+                            passt, wechselt sie in 
+                            |> tt
+
+                                reject
+                            .
+                            Wenn unsere Maschine das erste Zeichen sucht aber keines findet, dann hat
+                            sie alle Zeichen erfolgreich gelöscht und es hat sich also um ein
+                            Palindrom von gerader Länge gehandelt. Wenn die Maschine allerdings
+                            nach dem Löschen des linkesten Zeichens sofort am rechten Rand steht, dann
+                            stand dort nur noch ein einziges Zeichen und es hat sich um ein Palindrom ungerader
+                            Länge gehandelt.
+                        |> p
+
+                            Als Bandalphabet brauchen wir hier nur \(\Gamma = \{a,b,\square\}\). Als
+                            Zustandsmenge nehmen wir
+                            \begin{align*}
+                            Q = \{\texttt{next}, \texttt{readA}, \texttt{readB}, \texttt{killA}, \texttt{killB},
+                            \texttt{return}, \texttt{reject}, \texttt{accept}\}.
+                            \end{align*}
+                        |> ul
+                            |> li
+                                |> tt
+
+                                    next
+                                : ist der Anfangszustand. Die Maschine steht am linkesten Zeichen.
+                                Ist dieses \(\square\), so haben wir das "leere" Palindrom und wir wechseln
+                                nach 
+                                |> tt
+
+                                    accept
+                                . Ist es \(a\), wechseln wir nach 
+                                |> tt
+
+                                    readA
+                                &ensp;und gehen
+                                einen Schritt nach rechts; ist es
+                                \(b\), wechseln wir nach 
+                                |> tt
+
+                                    readB
+                                &ensp;und gehen nach rechts.
+                            |> li
+                                |> tt
+
+                                    readA, readB
+                                : wir gehen nach rechts, bis wir ein \(\square\) lesen,
+                                also den rechten Rand erreicht haben, und wechseln dann nach 
+                                |> tt
+
+                                    killA
+                                &ensp;bzw.
+                                |> tt
+
+                                    killB
+                                &ensp;und gehen einen Schritt nach links.
+                            |> li
+                                |> tt
+
+                                    killA, killB
+                                : hier weiß die Turingmaschine, was das linkeste Zeichen war,
+                                und dass dieses bereits gelöscht worden ist. Sie muss nun überprüfen, was
+                                das rechteste Zeichen ist. Wenn es "passt", löschen wir es und wechseln
+                                nach 
+                                |> tt
+
+                                    return
+                                ; wenn es "nicht passt", nach 
+                                |> tt
+
+                                    reject
+                                ; wenn es
+                                \(\square\) ist, dann haben wir das ganze Wort abgearbeitet und gehen nach
+                                |> tt
+
+                                    accept
+                                .
+                            |> li
+                                |> tt
+
+                                    return
+                                : gehe nach links, bis Du ein \(\square\) findest. Wechsle
+                                dann nach 
+                                |> tt
+
+                                    next
+                                .
+                        |> figure
+                            |> img
+                                style height:15em
+                                src ../img/turing-machines/exampe-2-aabbcc/delta-table-palindromes.svg
+                                loading lazy
+                    |> div
+                        class well well-lg numbered-exercise container
+                        |> span
+                            class numbered-title
+
+                            Übungsaufgabe
+                            |> NumberedTitle
+
+                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                        Implementieren Sie die Turingmaschine für die Palindromsprache auf
+                        |> a
+                            href https://turingmachinesimulator.com
+
+                            &ensp;turingmachinesimulator.com 
+                        .
+                    |> p
+
+                        Jetzt sind Sie dran.
+                    |> div
+                        id exercise-wcw
+                        class well well-lg numbered-exercise container
+                        |> span
+                            class numbered-title
+
+                            Übungsaufgabe
+                            |> NumberedTitle
+
+                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                        Schreiben Sie eine Turingmaschine (auf 
+                        |> a
+                            href https://turingmachinesimulator.com
+
+                            &ensp;turingmachinesimulator.com 
+                        ),
+                        die die folgende Sprache \(L \subseteq \{a,b,c\}\) entscheidet:
+                        \begin{align*}
+                        L := \{ w c w \ | \ w \in \{a,b\}^* \}
+                        \end{align*}
+                    |> div
+                        class well well-lg numbered-exercise container
+                        |> span
+                            class numbered-title
+
+                            Übungsaufgabe
+                            |> NumberedTitle
+
+                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                        Schreiben Sie auf 
+                        |> a
+                            href https://turingmachinesimulator.com
+
+                            &ensp;turingmachinesimulator.com 
+                        eine Turingmaschine für die Sprache
+                        \begin{align*}
+                        L := \{1^n \ | \ n = 2^d, d \geq 0\} \ .
+                        \end{align*}*Tip:* gehen Sie durch das Band und ersetzen jede zweite
+                        \(1\), die Sie sehen, durch ein \(X\). Wenn Sie rechts ankommen und eine
+                        ungerade Anzahl von Einsen gelesen haben, lehnen Sie ab. Wenn
+                        die Anzahl gerade ist, gehen Sie wieder nach ganz links; sie haben nun
+                        die Anzahl der Einsen halbiert. Sie akzeptieren, wenn
+                        Sie von links nach rechts durchgehend genau eine 1 gelesen haben.
