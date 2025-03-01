@@ -1,12 +1,21 @@
-import Section from "~/components/Section";
-import Paragraph from "~/components/Paragraph";
-import Container from "~/components/Container";
-import Carousel from "~/components/Carousel";
-import NumberedTitle from "~/components/NumberedTitle";
-const Article = () => {
-  return (
-    <Container>
-      <Section
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="data:,">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title></title>
+
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+   <link rel="stylesheet" type="text/css" href="../TI.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="../mathjax_setup.js"></script>
+   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+      <section
         count={41}
         title_gr="Turing-Maschinen"
         title_en="Turing machines"
@@ -15,10 +24,10 @@ const Article = () => {
         counter="ExoCtr"
         path="/lecture-notes41.tsx">
         <div id="link-to-toc">
-          <a href="../vorlesungsskript">
+          <a href="../vorlesungsskript.html">
             Inhaltsverzeichnis
           </a>
-          <a href="06-00-general-grammars">
+          <a href="06-00-general-grammars.html">
             &lt;&lt; Kapitel 6.0
           </a>
         </div>
@@ -28,7 +37,7 @@ const Article = () => {
           <a href="/">
             zur Kursübersicht
           </a>
-          <a href="07-01-Turing-machines-definition">
+          <a href="07-01-Turing-machines-definition.html">
             Kapitel 7.1 &gt;&gt;
           </a>
         </div>
@@ -41,31 +50,27 @@ const Article = () => {
                   Turing-Maschinen
                 </span>
               </h1>
-              <Paragraph>
+              <p>
                 Wir haben in den vorherigen Kapitel mit primitiver Rekursion und \(\lambda\)-Kalkül
-                zwei Modelle kennengelernt, die den Begriff der{" "}
+                zwei Modelle kennengelernt, die den Begriff der 
                 <i>
                   Berechnung
                 </i>
-                {" "}formalisieren.
+                 formalisieren.
                 Das \(\lambda\)-Kalkül ist im Prinzip eine reduktion funktionaler Programmiersprachen
                 auf das absolut essentielle. In diesem Kapitel lernen wir ein
                 weiteres Modell für Berechnung kennen, das im Allgemeinen als Standardmodell
                 gilt: die Turingmaschine. Anders als primitive Rekursion und \(\lambda\)-Kalkül
                 sind Turingmaschinen auch eng mit dem Begriff des Laufzeitkomplexität und Speicherplatzkomplexität
-                verbunden und bilden somit das Fundament der{" "}
+                verbunden und bilden somit das Fundament der 
                 <i>
                   Komplexitätstheorie
                 </i>
                 , die sich insbesondere
                 mit dem Resourcenverbrauch bei Rechenprozessen beschäftigt.
-              </Paragraph>
+              </p>
             </div>
           </div>
         </div>
-      </Section>
-    </Container>
-  );
-};
-
-export default Article;
+      </section>
+    </body>

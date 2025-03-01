@@ -1,12 +1,21 @@
-import Section from "~/components/Section";
-import Paragraph from "~/components/Paragraph";
-import Container from "~/components/Container";
-import Carousel from "~/components/Carousel";
-import NumberedTitle from "~/components/NumberedTitle";
-const Article = () => {
-  return (
-    <Container>
-      <Section
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="data:,">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title></title>
+
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+   <link rel="stylesheet" type="text/css" href="../TI.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="../mathjax_setup.js"></script>
+   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+      <section
         count={11}
         title_gr="Mengen, die so groß wie $\R$ sind"
         title_en="sets like R"
@@ -15,10 +24,10 @@ const Article = () => {
         counter="ExoCtr"
         path="/lecture-notes11.tsx">
         <div id="link-to-toc">
-          <a href="../vorlesungsskript">
+          <a href="../vorlesungsskript.html">
             Inhaltsverzeichnis
           </a>
-          <a href="02-02-examples-of-equipotent-sets">
+          <a href="02-02-examples-of-equipotent-sets.html">
             &lt;&lt; Kapitel 2.2
           </a>
         </div>
@@ -28,7 +37,7 @@ const Article = () => {
           <a href="/">
             zur Kursübersicht
           </a>
-          <a href="02-04-diagonalization">
+          <a href="02-04-diagonalization.html">
             Kapitel 2.4 &gt;&gt;
           </a>
         </div>
@@ -42,7 +51,7 @@ const Article = () => {
                     Mengen, die so groß wie \(\R\) sind
                   </span>
                 </h1>
-                <Paragraph>
+                <p>
                   Im letzten Kapitel haben wir viele Mengen kennengelernt, die abzählbar
                   unendlich sind, also gleichmächtig mit \(\N\). Hier werden wir nun
                   erkunden, welche Mengen gleichmächtig mit \(\R\) sind. In der
@@ -54,16 +63,16 @@ const Article = () => {
                   <i>
                     Kardinalität
                   </i>
-                  {" "}steht hier für
+                   steht hier für
                   <i>
                     Anzahl der Elemente
                   </i>
-                  {" "}(bzw. den Größenbegriff bei unendlichen
-                  Mengen), und{" "}
+                   (bzw. den Größenbegriff bei unendlichen
+                  Mengen), und 
                   <i>
                     Kontinuum
                   </i>
-                  {" "}steht für{" "}
+                   steht für 
                   <i>
                     die reellen Zahlen
                   </i>
@@ -71,32 +80,32 @@ const Article = () => {
                   Im nächsten Kapitel werden wir zeigen, dass es "echt mehr" reelle
                   Zahlen gibt als natürliche; dass also \(\R\) nicht abzählbar ist. Aber
                   eins nach dem anderen.
-                </Paragraph>
+                </p>
                 <div class="well container theorem">
-                  <Paragraph>
+                  <p>
                     <span class="numbered-title">
                       Beobachtung
                       <NumberedTitle>
-                        &ensp;2.3.1{" "}
+                        &ensp;2.3.1 
                       </NumberedTitle>
                     </span>
                     &ensp;Es gilt \(\R \approx
                     (0,1)\), wobei \((0,1)\) das offene Einheitsintervall ist.
-                  </Paragraph>
+                  </p>
                 </div>
                 <div class="well container">
-                  <Paragraph>
-                    {" "}{" "}
+                  <p>
+                      
                     <b>
                       Beweis.
                     </b>
                     Wir können eine Bijektion explizit hinschreiben:
-                  </Paragraph>
-                  $$\begin&#123;align*&#125; f : \R&amp;\rightarrow (0,1) \\ x&amp;\mapsto
-                  \frac&#123;e^x&#125;&#123;e^x + 1&#125; \end&#123;align*&#125;$$
-                  <Paragraph>
+                  </p>
+                  $$\begin{align*} f : \R&amp;\rightarrow (0,1) \\ x&amp;\mapsto
+                  \frac{e^x}{e^x + 1} \end{align*}$$
+                  <p>
                     Mit etwas reeller Analysis kann man nun zeigen:
-                  </Paragraph>
+                  </p>
                   <ul>
                     <li>
                       \(f\) ist stetig.
@@ -105,82 +114,82 @@ const Article = () => {
                       \(f\) ist streng monoton (z.B. weil \(f'(x) \gt 0\) gilt).
                     </li>
                     <li>
-                      \(\lim_&#123;x \rightarrow -\infty&#125; f(x) = 0\) und \(\lim_&#123;x \rightarrow
-                      \infty&#125; f(x) = 1\).
+                      \(\lim_{x \rightarrow -\infty} f(x) = 0\) und \(\lim_{x \rightarrow
+                      \infty} f(x) = 1\).
                     </li>
                   </ul>
-                  <Paragraph>
+                  <p>
                     Und somit ist \(f\) eine Bijektion von \(\R\) auf den Wertebereich von
                     \(f\), also \((0,1)\).
-                  </Paragraph>
+                  </p>
                   <span class="qed">
                     \(\square\)
                   </span>
                 </div>
                 <div class="well well-lg numbered-exercise container">
-                  <Paragraph>
+                  <p>
                     <span class="numbered-title">
                       Übungsaufgabe
                       <NumberedTitle>
-                        &ensp;2.3.1{" "}
+                        &ensp;2.3.1 
                       </NumberedTitle>
                     </span>
                     Zeigen Sie \(\R \approx \R^+\).
-                  </Paragraph>
+                  </p>
                 </div>
                 <div class="well well-lg numbered-exercise container">
-                  <Paragraph>
+                  <p>
                     <span class="numbered-title">
                       Übungsaufgabe
                       <NumberedTitle>
-                        &ensp;2.3.2{" "}
+                        &ensp;2.3.2 
                       </NumberedTitle>
                     </span>
                     Zeigen Sie, dass \(\R_0^+ \approx \R^+\) gilt. Sie müssen "die 0
                     verschwinden lassen".
-                  </Paragraph>
+                  </p>
                 </div>
                 <div class="well well-lg numbered-exercise container">
-                  <Paragraph>
+                  <p>
                     <span
                       id="exercise-open-closed-half-open"
                       class="numbered-title">
                       Übungsaufgabe
                       <NumberedTitle>
-                        &ensp;2.3.3{" "}
+                        &ensp;2.3.3 
                       </NumberedTitle>
                     </span>
                     Zeigen Sie, dass \([0,1]\), \([0,1)\), \((0,1]\) und \((0,1)\) alle
                     gleichmächtig sind.
-                  </Paragraph>
+                  </p>
                 </div>
-                <Paragraph>
-                  Wir führen nun eine neue Notation ein: \(\&#123;0,1\&#125;^&#123;\N&#125;\) ist die Menge
+                <p>
+                  Wir führen nun eine neue Notation ein: \(\{0,1\}^{\N}\) ist die Menge
                   aller unendlichen Folgen von \(0\) und \(1\). Formal gesehen bezeichnet
                   man für zwei Mengen \(A\) und \(B\) mit der Notation \(A^B\) die Menge aller
-                  Funktionen \(\phi : B \rightarrow A\). Ein Element aus \(\&#123;0,1\&#125;^&#123;\N&#125;\)
-                  wäre demnach eien Funktion \(\phi : \N \rightarrow \&#123;0,1\&#125;\). Diese
+                  Funktionen \(\phi : B \rightarrow A\). Ein Element aus \(\{0,1\}^{\N}\)
+                  wäre demnach eien Funktion \(\phi : \N \rightarrow \{0,1\}\). Diese
                   Objekte entsprechen genau den unendlichen \(0/1\)-Folgen, nämlich
                   \(\phi(0)\phi(1)\phi(2)\phi(3)\dots\). Der Unterschied ist rein
                   syntaktisch. Es ist allerdings bequemer, sich ein \(\phi \in
-                  \&#123;0,1\&#125;^&#123;\N&#125;\) als unendliche \(0/1\)-Folge vorzustellen.
-                </Paragraph>
+                  \{0,1\}^{\N}\) als unendliche \(0/1\)-Folge vorzustellen.
+                </p>
                 <div class="well container theorem">
-                  <Paragraph>
+                  <p>
                     <span
                       id="theorem-R-bitstrings"
                       class="numbered-title">
                       Theorem
                       <NumberedTitle>
-                        &ensp;2.3.2{" "}
+                        &ensp;2.3.2 
                       </NumberedTitle>
                     </span>
-                    \(\R \approx \&#123;0,1\&#125;^&#123;\N&#125;\).
-                  </Paragraph>
+                    \(\R \approx \{0,1\}^{\N}\).
+                  </p>
                 </div>
                 <div class="well container">
-                  <Paragraph>
-                    {" "}{" "}
+                  <p>
+                      
                     <b>
                       Beweis.
                     </b>
@@ -190,20 +199,20 @@ const Article = () => {
                       data-ref="exercise-open-closed-half-open"
                       class="reference" />
                     \(\R \approx [0,1)\) gilt, reicht es, eine Bijektion \(f : [0,1)
-                    \rightarrow \&#123;0,1\&#125;^&#123;\N&#125;\) zu konstruieren. So geht's:
-                  </Paragraph>
-                  <Paragraph>
+                    \rightarrow \{0,1\}^{\N}\) zu konstruieren. So geht's:
+                  </p>
+                  <p>
                     Jede Zahl \(0 \leq x \lt 1\) lässt sich als (unendliche) Binärzahl
                     \((x)_2\) schreiben, beispielsweise
-                  </Paragraph>
-                  $$\begin&#123;align*&#125; \pfrac&#123;1&#125;&#123;3&#125;_2 = 0.01010101\dots \end&#123;align*&#125;$$
-                  <Paragraph>
+                  </p>
+                  $$\begin{align*} \pfrac{1}{3}_2 = 0.01010101\dots \end{align*}$$
+                  <p>
                     Wir erhalten nun unsere unendliche \(0/1\)-Folge, indem wir die
                     führende Null und den Punkt abschneiden: \(f(1/3) = 010101\dots\). Das
                     geht für jede Zahl in \([0,1)\): \(f(1/2) = 100000\dots\), \(f(1/4) =
                     010000\dots\).
-                  </Paragraph>
-                  <Paragraph>
+                  </p>
+                  <p>
                     Die konstruierte Funktion \(f\) ist injektiv: zwei verschiedene \(0
                     \leq x \lt y \lt 1\) haben verschiedene Binärdarstellung und werden
                     somit zu zwie verschiedenen \(0/1\)-Folgen. Leider ist sie nicht
@@ -215,44 +224,44 @@ const Article = () => {
                     allerdings immer die mit einem unendlichen Schweif an Nullen, nie
                     mit Neunen (oder in Binär: Einsen). Definieren wir also \(X\), die
                     Menge aller \(0/1\)-Folgen mit einem unendlichen Schweif an Einsen:
-                  </Paragraph>
-                  $$\begin&#123;align*&#125; X := \&#123; a_1 a_2 a_3 \dots \in \&#123;0,1\&#125;^&#123;\N&#125; \ | \
-                  \exists\ n \geq 1: a_i = 1 \ \forall i \geq n\&#125; \end&#123;align*&#125;$$
-                  <Paragraph>
+                  </p>
+                  $$\begin{align*} X := \{ a_1 a_2 a_3 \dots \in \{0,1\}^{\N} \ | \
+                  \exists\ n \geq 1: a_i = 1 \ \forall i \geq n\} \end{align*}$$
+                  <p>
                     Unsere Funktion \(f\) ist eine Bijektion von \([0,1)\) nach
-                    \(\&#123;0,1\&#125;^&#123;\N&#125; \setminus X\). Um daraus eine Bijektion \(g : [0,1)
-                    \rightarrow \&#123;0,1\&#125;^&#123;\N&#125;\) zu bauen, müssen wir die Lücken füllen,
+                    \(\{0,1\}^{\N} \setminus X\). Um daraus eine Bijektion \(g : [0,1)
+                    \rightarrow \{0,1\}^{\N}\) zu bauen, müssen wir die Lücken füllen,
                     die \(f\) lässt - also \(X\).
-                  </Paragraph>
+                  </p>
                   <div class="well well-lg numbered-exercise container-fluid">
-                    <Paragraph>
+                    <p>
                       <span class="numbered-title">
                         Übungsaufgabe
                         <NumberedTitle>
-                          &ensp;2.3.4{" "}
+                          &ensp;2.3.4 
                         </NumberedTitle>
                       </span>
-                      Sei \(Y := \&#123; a_1 a_2 a_3 \dots \in \&#123;0,1\&#125;^&#123;\N&#125; \ | \ \exists\ n
-                      \geq 1: a_i = 0 \ \forall i \geq n\&#125;\) die Menge aller \(0/1\)-Folgen
+                      Sei \(Y := \{ a_1 a_2 a_3 \dots \in \{0,1\}^{\N} \ | \ \exists\ n
+                      \geq 1: a_i = 0 \ \forall i \geq n\}\) die Menge aller \(0/1\)-Folgen
                       mit einem unendlichen Schweif von Nullen. Offensichtlich gilt \(X
                       \approx Y\).
-                    </Paragraph>
-                    <Paragraph>
+                    </p>
+                    <p>
                       Zeigen Sie, dass \(Y \approx X \cup Y\) gilt.
-                    </Paragraph>
+                    </p>
                   </div>
                   <div class="well well-lg numbered-exercise container-fluid">
-                    <Paragraph>
+                    <p>
                       <span class="numbered-title">
                         Übungsaufgabe
                         <NumberedTitle>
-                          &ensp;2.3.5{" "}
+                          &ensp;2.3.5 
                         </NumberedTitle>
                       </span>
                       Verwenden Sie die vorherige Übungsaufgabe, um \(Y\) zu verdoppeln
-                      und somit eine Bijektion von \([0,1) \rightarrow \&#123;0,1\&#125;^&#123;\N&#125;\) zu
+                      und somit eine Bijektion von \([0,1) \rightarrow \{0,1\}^{\N}\) zu
                       konstruieren. Vielleicht hilft Ihnen folgendes Bild:
-                    </Paragraph>
+                    </p>
                     <figure>
                       <img
                         style="width: 80%"
@@ -263,60 +272,60 @@ const Article = () => {
                     \(\square\)
                   </span>
                 </div>
-                <Paragraph>
+                <p>
                   Als nächstes zeigen wir, dass \(\R \approx \R^2\) gilt. Dies ist schon
                   erstaunlich: der Zahlenstrahl und die zweidimensionale Ebene sollen
                   also gleichviele Elemente haben!
-                </Paragraph>
+                </p>
                 <div class="well container theorem">
-                  <Paragraph>
+                  <p>
                     <span
                       id="theorem-square-interval"
                       class="numbered-title">
                       Theorem
                       <NumberedTitle>
-                        &ensp;2.3.3{" "}
+                        &ensp;2.3.3 
                       </NumberedTitle>
                     </span>
                     Es gilt \(\R^2 \approx \R\).
-                  </Paragraph>
+                  </p>
                 </div>
                 <div class="well container">
-                  <Paragraph>
-                    {" "}{" "}
+                  <p>
+                      
                     <b>
                       Beweis.
                     </b>
-                    {" "}Mithilfe von
+                     Mithilfe von
                     <span
                       data-ref="theorem-R-bitstrings"
                       class="reference" />
                     &ensp;geht
-                    das ganz einfach. Da \(\R \approx \&#123;0,1\&#125;^\N\) gilt, reicht es
-                    nämlich, eine Bijektion \(\&#123;0,1\&#125;^\N \times \&#123;0,1\&#125;^\N \rightarrow
-                    \&#123;0,1\&#125;^\N\) zu konstruieren. Ein Element von \(\&#123;0,1\&#125;^\N \times
-                    \&#123;0,1\&#125;^\N\) besteht aus zwei unendlichen \(0/1\)-Folgen:
-                  </Paragraph>
-                  $$\begin&#123;align*&#125; (a,b) = (a_1 a_2 a_3 \dots, b_1 b_2 b_3 \dots) \ .
-                  \end&#123;align*&#125;$$
-                  <Paragraph>
-                    Wir müssen dieses Folgenpaar nun in{" "}
+                    das ganz einfach. Da \(\R \approx \{0,1\}^\N\) gilt, reicht es
+                    nämlich, eine Bijektion \(\{0,1\}^\N \times \{0,1\}^\N \rightarrow
+                    \{0,1\}^\N\) zu konstruieren. Ein Element von \(\{0,1\}^\N \times
+                    \{0,1\}^\N\) besteht aus zwei unendlichen \(0/1\)-Folgen:
+                  </p>
+                  $$\begin{align*} (a,b) = (a_1 a_2 a_3 \dots, b_1 b_2 b_3 \dots) \ .
+                  \end{align*}$$
+                  <p>
+                    Wir müssen dieses Folgenpaar nun in 
                     <i>
                       eine
                     </i>
-                    {" "}Folge codieren.
+                     Folge codieren.
                     Ganz klar:
-                  </Paragraph>
-                  $$\begin&#123;align*&#125; (a_1 a_2 a_3 \dots, b_1 b_2 b_3 \dots) \mapsto (a_1 b_1
-                  a_2 b_2 a_3 b_3 \dots) \end&#123;align*&#125;$$ Dies ist die gewünschte Bijektion
-                  \(\&#123;0,1\&#125;^\N \times \&#123;0,1\&#125;^\N \rightarrow \&#123;0,1\&#125;^\N\) .
+                  </p>
+                  $$\begin{align*} (a_1 a_2 a_3 \dots, b_1 b_2 b_3 \dots) \mapsto (a_1 b_1
+                  a_2 b_2 a_3 b_3 \dots) \end{align*}$$ Dies ist die gewünschte Bijektion
+                  \(\{0,1\}^\N \times \{0,1\}^\N \rightarrow \{0,1\}^\N\) .
                   <span class="qed">
                     \(\square\)
                   </span>
                 </div>
-                <Paragraph>
-                  Aus der Funktion \(f: \&#123;0,1\&#125;^&#123;\N&#125; \times \&#123;0,1\&#125;^&#123;\N&#125; \mapsto
-                  \&#123;0,1\&#125;^&#123;\N&#125;\) aus
+                <p>
+                  Aus der Funktion \(f: \{0,1\}^{\N} \times \{0,1\}^{\N} \mapsto
+                  \{0,1\}^{\N}\) aus
                   <span
                     data-ref="theorem-square-interval"
                     class="reference" />
@@ -324,21 +333,21 @@ const Article = () => {
                   \rightarrow [0,1)\) bauen. Wir nehmen zwei Zahlen \(0 \leq x,y \lt 1\),
                   schreiben sie in Binärdarstellung und vereinigen sie dann per
                   Reißverschlussverfahren zu einer Zahl, z.B.
-                </Paragraph>
-                $$\begin&#123;align*&#125; \left(\frac&#123;1&#125;&#123;3&#125;, \frac&#123;1&#125;&#123;2&#125;\right) =
-                (0.010\overline&#123;10&#125;\dots, 0.1)_2 \mapsto (010101\dots, 100000\dots)
-                \mapsto (01100010001000\dots) \mapsto (0.01\overline&#123;1000&#125;)_2 =: z\ .
-                \end&#123;align*&#125;$$
-                <Paragraph>
+                </p>
+                $$\begin{align*} \left(\frac{1}{3}, \frac{1}{2}\right) =
+                (0.010\overline{10}\dots, 0.1)_2 \mapsto (010101\dots, 100000\dots)
+                \mapsto (01100010001000\dots) \mapsto (0.01\overline{1000})_2 =: z\ .
+                \end{align*}$$
+                <p>
                   Um herauszufinden, um welche Zahl es sich bei \(z\) handelt,
                   multiplizieren wir sie mit 64:
-                </Paragraph>
-                $$\begin&#123;align*&#125; \end&#123;align*&#125;$$
-                <Paragraph>
+                </p>
+                $$\begin{align*} \end{align*}$$
+                <p>
                   Sie erreicht alle Zahlen bis auf diejenigen mit einem unendlichen
                   Schweif von Einsen. Sie ist hochgradig nichtstetig. Dennoch können wir
                   versuchen, sie zu plotten:
-                </Paragraph>
+                </p>
                 <figure>
                   <img
                     style="height: 20em"
@@ -351,59 +360,59 @@ const Article = () => {
                     rot/kräftig für hohe (nahe der 1).
                   </div>
                 </figure>
-                <Paragraph>
-                  Als nächstes versuche ich, die Umkehrfunktion \(f^&#123;-1&#125; : [0,1) \mapsto
+                <p>
+                  Als nächstes versuche ich, die Umkehrfunktion \(f^{-1} : [0,1) \mapsto
                   [0,1) \times [0,1)\) zu skizzieren. Das ist etwas schwierig, weil
-                  \(f^&#123;-1&#125;\) nicht stetig ist. Was macht \(f^&#123;-1&#125;(z)\)? Sie betrachtet \(z
+                  \(f^{-1}\) nicht stetig ist. Was macht \(f^{-1}(z)\)? Sie betrachtet \(z
                   \in [0,1)\) in Binärdarstellung und dröselt dann die unendlich vielen
                   Nachkommastellen auf. Die ungeraden bilden \(x\), die geraden bilden
                   \(y\). Beispielsweise für \(z = 1/7\) gilt
-                </Paragraph>
-                $$\begin&#123;align*&#125; \frac&#123;1&#125;&#123;7&#125; = (0.001001\overline&#123;001&#125;)_2 \mapsto
+                </p>
+                $$\begin{align*} \frac{1}{7} = (0.001001\overline{001})_2 \mapsto
                 001001001001\dots \mapsto (010010\dots, 001001\dots) \mapsto (
-                (0.\overline&#123;010&#125;)_2, (0.\overline&#123;001&#125;)) = \left(\frac&#123;2&#125;&#123;7&#125;,
-                \frac&#123;1&#125;&#123;7&#125;\right) \ , \end&#123;align*&#125;$$
-                <Paragraph>
-                  also \(f^&#123;-1&#125;(1/7) = (2/7, 1/7)\).
-                </Paragraph>
+                (0.\overline{010})_2, (0.\overline{001})) = \left(\frac{2}{7},
+                \frac{1}{7}\right) \ , \end{align*}$$
+                <p>
+                  also \(f^{-1}(1/7) = (2/7, 1/7)\).
+                </p>
                 <div class="well container theorem">
-                  <Paragraph>
+                  <p>
                     <span class="numbered-title">
                       Beobachtung
                       <NumberedTitle>
-                        &ensp;2.3.4{" "}
+                        &ensp;2.3.4 
                       </NumberedTitle>
                     </span>
                     &ensp;Die Funktion
-                    \(f^&#123;-1&#125;\) bildet
-                  </Paragraph>
+                    \(f^{-1}\) bildet
+                  </p>
                   <ul>
                     <li>
-                      \(\left[0,\frac&#123;1&#125;&#123;4&#125;\right)\) auf \(\left[0,\frac&#123;1&#125;&#123;2&#125;\right)
-                      \times \left[0,\frac&#123;1&#125;&#123;2&#125;\right)\) ab,
+                      \(\left[0,\frac{1}{4}\right)\) auf \(\left[0,\frac{1}{2}\right)
+                      \times \left[0,\frac{1}{2}\right)\) ab,
                     </li>
                     <li>
-                      \(\left[\frac&#123;1&#125;&#123;4&#125;,\frac&#123;1&#125;&#123;2&#125;\right)\) auf
-                      \(\left[0,\frac&#123;1&#125;&#123;2&#125;\right) \times \left[\frac&#123;1&#125;&#123;2&#125;,1\right)\),
+                      \(\left[\frac{1}{4},\frac{1}{2}\right)\) auf
+                      \(\left[0,\frac{1}{2}\right) \times \left[\frac{1}{2},1\right)\),
                     </li>
                     <li>
-                      \(\left[\frac&#123;1&#125;&#123;2&#125;,\frac&#123;3&#125;&#123;4&#125;\right)\) auf
-                      \(\left[\frac&#123;1&#125;&#123;2&#125;,1\right) \times \left[0,\frac&#123;1&#125;&#123;2&#125;\right)\) und
+                      \(\left[\frac{1}{2},\frac{3}{4}\right)\) auf
+                      \(\left[\frac{1}{2},1\right) \times \left[0,\frac{1}{2}\right)\) und
                     </li>
                     <li>
-                      \(\left[\frac&#123;3&#125;&#123;4&#125;,1\right)\) auf \(\left[\frac&#123;1&#125;&#123;2&#125;,1\right)
-                      \times \left[\frac&#123;1&#125;&#123;2&#125;,1\right)\).
+                      \(\left[\frac{3}{4},1\right)\) auf \(\left[\frac{1}{2},1\right)
+                      \times \left[\frac{1}{2},1\right)\).
                     </li>
                   </ul>
                 </div>
                 <div class="well container">
-                  <Paragraph>
-                    {" "}{" "}
+                  <p>
+                      
                     <b>
                       Beweis.
                     </b>
                     Wir zeigen den ersten Punkt. Sei \(0 \leq z \lt 1/2\) und \((x,y) =
-                    f^&#123;-1&#125;(z)\). Dann hat \(z\) die Binärdarstellung \(z =
+                    f^{-1}(z)\). Dann hat \(z\) die Binärdarstellung \(z =
                     (0.00z_3z_4z_5\dots)\). Die ersten beiden Bits nach dem Komma sind
                     \(0\), und somit sind die jeweils ersten Bits von \(x\) und \(y\) auch 0,
                     was \(x,y \lt 1/2\) bedeutet. Punkt 2 bis 4 folgen aus ähnlichen
@@ -411,26 +420,26 @@ const Article = () => {
                     <span class="qed">
                       \(\square\)
                     </span>
-                  </Paragraph>
+                  </p>
                 </div>
-                <Paragraph>
+                <p>
                   Wenn wir also \(z\) von \(0\) nach \(1\) wandern lassen, dann bewegt sich
-                  \(f^&#123;-1&#125;(z)\) von links unten nach links oben, springt dann nach rechts
+                  \(f^{-1}(z)\) von links unten nach links oben, springt dann nach rechts
                   unten und bewegt sich nach rechts oben. Grafisch stelle ich das wie
                   folgt (und etwas unbeholfen) dar:
-                </Paragraph>
+                </p>
                 <figure>
                   <img
                     style="height: 10em"
                     src="../img/infinite-sets/interval-to-square.svg" />
                 </figure>
-                <Paragraph>
+                <p>
                   Beachten Sie, dass die Verbindungslinien zwischen den Kreisen Sprünge
-                  sind, also Unstetigkeitsstellen von \(f^&#123;-1&#125;\). Innerhalb der
-                  Viertelintervalle (also z.B. innerhalb von \(\left[\frac&#123;1&#125;&#123;4&#125;,
-                  \frac&#123;1&#125;&#123;2&#125;\right)\)) sieht der Graph wieder ganz ähnlich aus. Hier
+                  sind, also Unstetigkeitsstellen von \(f^{-1}\). Innerhalb der
+                  Viertelintervalle (also z.B. innerhalb von \(\left[\frac{1}{4},
+                  \frac{1}{2}\right)\)) sieht der Graph wieder ganz ähnlich aus. Hier
                   sehen Sie die ersten paar Schritte dieser "Verfeinerung".
-                </Paragraph>
+                </p>
                 <figure class="centered-figure well container">
                   <Carousel>
                     <img
@@ -447,62 +456,62 @@ const Article = () => {
                       src="../img/infinite-sets/interval-to-square-animation/figures-01-04.svg" />
                   </Carousel>
                 </figure>
-                <Paragraph>
+                <p>
                   Wir wissen nun, dass \(\R \approx \R^2\) gilt. Ebenso können wir \(\R
-                  \approx \R^&#123;k&#125;\) für jedes \(k \in \N^+\) zeigen. Wie sieht es aber mit
-                  \(\R^&#123;\N&#125;\) aus? Das ist die Menge aller Funktionen \(\phi: \N
+                  \approx \R^{k}\) für jedes \(k \in \N^+\) zeigen. Wie sieht es aber mit
+                  \(\R^{\N}\) aus? Das ist die Menge aller Funktionen \(\phi: \N
                   \rightarrow \R\) oder, etwas freundlicher formuliert, die Menge aller
                   unendlichen Folgen reeller Zahlen: \(r_1, r_2, r_3, \dots\).
-                </Paragraph>
+                </p>
                 <div class="well container theorem">
-                  <Paragraph>
+                  <p>
                     <span class="numbered-title">
                       Theorem
                       <NumberedTitle>
-                        &ensp;2.3.5{" "}
+                        &ensp;2.3.5 
                       </NumberedTitle>
                     </span>
-                    &ensp;\(\R \approx \R^&#123;\N&#125;\).
-                  </Paragraph>
+                    &ensp;\(\R \approx \R^{\N}\).
+                  </p>
                 </div>
                 <div class="well container">
-                  <Paragraph>
-                    {" "}{" "}
+                  <p>
+                      
                     <b>
                       Beweis.
                     </b>
                     Da \(\R \approx \cuben\) gilt, reicht es, zu zeigen, dass
-                  </Paragraph>
-                  $$\begin&#123;align*&#125; \cuben \approx \left(\cuben\right)^&#123;\N&#125; \end&#123;align*&#125;$$
-                  <Paragraph>
+                  </p>
+                  $$\begin{align*} \cuben \approx \left(\cuben\right)^{\N} \end{align*}$$
+                  <p>
                     gilt. Interpretieren wir die rechte Seite: das sind unendliche
                     Folgen von "Dingern", und jedes Ding ist wiederum eine unendliche
                     Folge von 0/1. Wir können uns jedes Ding als (unendliche) Zeile
                     vorstellen und erhalten somit eine in beiden Richtungen unendliche
                     Tabelle. Wenn also \(r_i\) eine unendliche \(0/1\)-Folge ist und und
-                    \(r_&#123;i,j&#125;\) das \(j\)-te Bit der \(i\)-ten Folge, dann sieht unsere
+                    \(r_{i,j}\) das \(j\)-te Bit der \(i\)-ten Folge, dann sieht unsere
                     Tabelle so aus:
-                  </Paragraph>
+                  </p>
                   <figure>
                     <img
                       style="width: 40%"
                       src="../img/infinite-sets/table-infinite-sequences.svg" />
                   </figure>
-                  <Paragraph>
+                  <p>
                     Wir wollen jetzt eine Bijektion \(f : \cuben \times \cuben
                     \rightarrow \cuben\) definieren. Dafür wenden wir den gleichen Trick
                     an wie in dem Beweis, dass \(\N \approx \N \times \N\) ist: wir
                     zerlegen die Tabelle in Diagonalen und arbeiten jede separat ab:
-                  </Paragraph>
+                  </p>
                   <figure>
                     <img
                       style="width: 40%"
                       src="../img/infinite-sets/table-infinite-sequences-with-blue.svg" />
                   </figure>
-                  <Paragraph>
+                  <p>
                     Schließlich definieren wir unsere Folge \(s_1 s_2 s_3 \dots \in
                     \cuben\):
-                  </Paragraph>
+                  </p>
                   <figure>
                     <img
                       style="width: 40%"
@@ -512,111 +521,111 @@ const Article = () => {
                     \(\square\)
                   </span>
                 </div>
-                <Paragraph>
+                <p>
                   Wir haben also die Beweisidee von \(\N \times \N \approx \N\) recycelt.
                   Diese Beobachtung motiviert den folgenden, etwas kurz angebundenen
                   Beweis:
-                </Paragraph>
+                </p>
                 <div class="well container">
-                  <Paragraph>
-                    {" "}{" "}
+                  <p>
+                      
                     <b>
                       Zweiter Beweis.
                     </b>
                     Um zu zeigen, dass \(\R^\N \approx \R\) gilt, rechnen wir:
-                  </Paragraph>
-                  $$\begin&#123;align*&#125; \R^\N&amp;\approx \left(\cuben\right)^&#123;\N&#125; \\&amp;\approx
-                  \cube^&#123;\N \times \N&#125; \\&amp;\approx \cube^&#123;\N&#125; \\&amp;\approx \R \ .
-                  \end&#123;align*&#125;$$
+                  </p>
+                  $$\begin{align*} \R^\N&amp;\approx \left(\cuben\right)^{\N} \\&amp;\approx
+                  \cube^{\N \times \N} \\&amp;\approx \cube^{\N} \\&amp;\approx \R \ .
+                  \end{align*}$$
                   <span class="qed">
                     \(\square\)
                   </span>
                 </div>
-                <Paragraph>
-                  Dürfen wir das? Dürfen wir Rechenregeln wie \(\left(x^&#123;b&#125;\right)^c =
-                  x^&#123;b \cdot c&#125;\) so einfach anwenden? Noch grundlegender, und das ist
+                <p>
+                  Dürfen wir das? Dürfen wir Rechenregeln wie \(\left(x^{b}\right)^c =
+                  x^{b \cdot c}\) so einfach anwenden? Noch grundlegender, und das ist
                   auch ein Punkt im ersten Beweis, den ich unter den Teppich gekehrt
                   habe: Zwar wissen wir bereits, dass \(\R \approx \cuben\). Folgt aber
                   daraus bereits, dass \(\R^\N \approx \left(\cuben\right)^\N\)? Erstens
                   also: dürfen wir mit Plus, Mal und Hoch wie gewohnt rechnen? Und
                   dürfen wir in den resultierenden Ausdrücken equipotente Mengen
                   austauschen?
-                </Paragraph>
-                <Paragraph>
+                </p>
+                <p>
                   Bevor wir das als Theorem formulieren, überlegen wir uns kurz, was
                   denn die Analoga zu den arithmetischen Operationen sind. Am klarsten
                   ist die Multiplikation: die Zahlenmultiplikation \(a \cdot b\) hat als
                   mengentheoretisches Analog das Cartesische Produkt \(A \times B\), die
                   Menge aller Paare \((x,y)\) mit \(x \in A, y \in B\). Die Exponentiation
-                  \(a^b\) hat als Analog \(A^B\), die Menge aller{" "}
+                  \(a^b\) hat als Analog \(A^B\), die Menge aller 
                   <i>
                     Funktionen
                   </i>
-                  {" "}\(\phi:
+                   \(\phi:
                   B \rightarrow A\). Was ist das Analog zur Addition? Die Vereinigung \(A
-                  \cup B\) wäre zu kurz gegriffen, weil ja zum Beispiel \(\&#123;1,2,3\&#125; \cup
-                  \&#123;4,5\&#125;\) fünf Elemente hat, \(\&#123;1,2,3\&#125; \cup \&#123;1,2\&#125;\) aber nur drei.
-                  Das "richtige" Analog ist die{" "}
+                  \cup B\) wäre zu kurz gegriffen, weil ja zum Beispiel \(\{1,2,3\} \cup
+                  \{4,5\}\) fünf Elemente hat, \(\{1,2,3\} \cup \{1,2\}\) aber nur drei.
+                  Das "richtige" Analog ist die 
                   <i>
                     disjunkte Vereinigung
                   </i>
-                  {" "}\(A \uplus
+                   \(A \uplus
                   B\), die die Elemente von \(B\) erst einmal "markiert", um sie von denen
-                  von \(A\) unterscheidbar zu machen. Somit wäre also \(\&#123;1,2,3\&#125; \uplus
-                  \&#123;1,2\&#125; = \&#123;1,2,3,1',2'\&#125;\) eine Menge der Kardinalität 5. Formal kann
+                  von \(A\) unterscheidbar zu machen. Somit wäre also \(\{1,2,3\} \uplus
+                  \{1,2\} = \{1,2,3,1',2'\}\) eine Menge der Kardinalität 5. Formal kann
                   man \(A \uplus B\) so definieren;
-                </Paragraph>
-                $$\begin&#123;align*&#125; A \uplus B := \&#123; (a,0) \ | \ a \in A\&#125; \cup \&#123; (b,1) \ |
-                \ b \in B\&#125; \ . \end&#123;align*&#125;$$
+                </p>
+                $$\begin{align*} A \uplus B := \{ (a,0) \ | \ a \in A\} \cup \{ (b,1) \ |
+                \ b \in B\} \ . \end{align*}$$
                 <div class="well container theorem">
-                  <Paragraph>
+                  <p>
                     <span
                       id="calculating-with-cardinals"
                       class="numbered-title">
                       Theorem
                       <NumberedTitle>
-                        &ensp;2.3.6{" "}
+                        &ensp;2.3.6 
                       </NumberedTitle>
                     </span>
-                    {" "}{" "}
+                      
                     <b>
                       (mit Kardinalzahlen rechnen)
                     </b>
                     . Es gelten die
                     üblichen Rechenregeln:
-                  </Paragraph>
+                  </p>
                   <ol>
                     <li>
                       \(A \times (B \uplus C) \approx (A \times B) \uplus (A \times C)\),
                     </li>
                     <li>
-                      \(A^&#123;B&#125; \times A^&#123;C&#125; \approx A^&#123;B \uplus C&#125;\),
+                      \(A^{B} \times A^{C} \approx A^{B \uplus C}\),
                     </li>
                     <li>
-                      \(\left(A^&#123;B&#125;\right)^C \approx A^&#123;B \times C&#125;\),
+                      \(\left(A^{B}\right)^C \approx A^{B \times C}\),
                     </li>
                   </ol>
-                  <Paragraph>
+                  <p>
                     sowie Kommutativität und Assoziativität von \(\uplus\) und \(\times\).
-                  </Paragraph>
+                  </p>
                 </div>
-                <Paragraph>
+                <p>
                   Als zweites gilt, dass wir in so einem
                   "mengentheoretisch-arithmetischen" Ausdruck eine Menge \(A\) durch eine
                   äquipotente Menge \(A'\) ersetzen können:
-                </Paragraph>
+                </p>
                 <div class="well container theorem">
-                  <Paragraph>
+                  <p>
                     <span
                       id="replacing-equipotent-cardinals"
                       class="numbered-title">
                       Theorem
                       <NumberedTitle>
-                        &ensp;2.3.7{" "}
+                        &ensp;2.3.7 
                       </NumberedTitle>
                     </span>
                     Seien \(A, A', B\) Mengen und \(A \approx A'\). Dann gilt
-                  </Paragraph>
+                  </p>
                   <ol>
                     <li>
                       \(A \uplus B \approx A' \uplus B\) (und natürlich auch \(B \uplus A
@@ -627,24 +636,24 @@ const Article = () => {
                       \approx B \times A'\)).
                     </li>
                     <li>
-                      \(A^B \approx \left(A'\right)^&#123;B&#125;\).
+                      \(A^B \approx \left(A'\right)^{B}\).
                     </li>
                     <li>
-                      \(B^A \approx B^&#123;A'&#125;\).
+                      \(B^A \approx B^{A'}\).
                     </li>
                   </ol>
                 </div>
-                <Paragraph>
+                <p>
                   Beachten Sie, dass ich Punkt 3 und 4 nicht zu einem Punkt
                   zusammengefasst habe. Punkt 4 folgt nämlich nicht unmittelbar aus
                   Punkt 3 sondern erfordert einen separaten Beweis.
-                </Paragraph>
+                </p>
                 <div class="well well-lg numbered-exercise container">
-                  <Paragraph>
+                  <p>
                     <span class="numbered-title">
                       Übungsaufgabe
                       <NumberedTitle>
-                        &ensp;2.3.6{" "}
+                        &ensp;2.3.6 
                       </NumberedTitle>
                     </span>
                     &ensp;Beweisen Sie so
@@ -657,124 +666,124 @@ const Article = () => {
                       data-ref="replacing-equipotent-cardinals"
                       class="reference" />
                     , wie Sie wollen.
-                  </Paragraph>
-                  <Paragraph>
-                    {" "}{" "}
+                  </p>
+                  <p>
+                      
                     <b>
                       Hinweis.
                     </b>
-                    {" "}Die Beweise sind alle nicht wirklich
+                     Die Beweise sind alle nicht wirklich
                     schwierig. Sie müssen nur aufpassen, dass Sie sich nicht in der
                     Notation verlieren.
-                  </Paragraph>
+                  </p>
                 </div>
                 <h3>
-                  Die Partialordnung \(2^&#123;\N&#125;\).
+                  Die Partialordnung \(2^{\N}\).
                 </h3>
-                <Paragraph>
-                  Wir betrachten \(2^&#123;\N&#125;\), die Potenzmenge von \(\N\), also die Menge
+                <p>
+                  Wir betrachten \(2^{\N}\), die Potenzmenge von \(\N\), also die Menge
                   aller Teilmengen.
-                </Paragraph>
+                </p>
                 <div class="well well-lg numbered-exercise container">
-                  <Paragraph>
+                  <p>
                     <span class="numbered-title">
                       Übungsaufgabe
                       <NumberedTitle>
-                        &ensp;2.3.7{" "}
+                        &ensp;2.3.7 
                       </NumberedTitle>
                     </span>
-                    Zeigen Sie, dass \(2^&#123;\N&#125; \approx \cuben\) gilt.
-                  </Paragraph>
+                    Zeigen Sie, dass \(2^{\N} \approx \cuben\) gilt.
+                  </p>
                 </div>
-                <Paragraph>
+                <p>
                   Die Elemente von \(2^\N\), also Teilmengen \(A \subseteq \N\), sind nach
-                  Inklusion geordnet: \(A \subseteq B\). Somit ist \(\left(2^&#123;\N&#125;,
-                  \subseteq\right)\) eine Partialordnung. Eine{" "}
+                  Inklusion geordnet: \(A \subseteq B\). Somit ist \(\left(2^{\N},
+                  \subseteq\right)\) eine Partialordnung. Eine 
                   <i>
                     Kette
                   </i>
-                  {" "}in einer
+                   in einer
                   Partialordnung \((X, \preceq)\) ist eine Menge \(Z\), in der alle Elemente
                   paarweise vergleichbar sind. In diesem konkreten Beispiel heißt das:
-                  \(Z \subseteq 2^&#123;\N&#125;\) und für alle \(A, B \in Z\) gilt \(A \subseteq B\)
+                  \(Z \subseteq 2^{\N}\) und für alle \(A, B \in Z\) gilt \(A \subseteq B\)
                   oder \(B \subseteq A\). Erinnern Sie sich: \(A\) und \(B\) sind hier Mengen
                   natürlicher Zahlen, und \(Z\) ist eine Menge von Mengen natürlicher
-                  Zahlen. Eine{" "}
+                  Zahlen. Eine 
                   <i>
                     Antikette
                   </i>
-                  {" "}in einer Partialordnung \((X,\preceq)\)
+                   in einer Partialordnung \((X,\preceq)\)
                   ist eine Teilmenge \(Z \subseteq X\), in der je zwei Elemente
                   <i>
                     unvergleichbar
                   </i>
-                  {" "}sind. In diesem Beispiel heißt das: \(Z
+                   sind. In diesem Beispiel heißt das: \(Z
                   \subseteq 2^N\), und für alle \(A, B \in Z\) mit \(A \ne B\) gilt \(A \not
                   \subseteq B\) und \(B \not \subseteq A\). Hier ist ein Beispiel für eine
                   unendliche Kette:
-                </Paragraph>
-                $$\begin&#123;align*&#125; \&#123;\emptyset, \&#123;1\&#125;, \&#123;1,2\&#125;, \&#123;1,2,3\&#125;, \dots,
-                \&#123;1,2,\dots,k\&#125;, \dots \&#125; \end&#123;align*&#125;$$
-                <Paragraph>
+                </p>
+                $$\begin{align*} \{\emptyset, \{1\}, \{1,2\}, \{1,2,3\}, \dots,
+                \{1,2,\dots,k\}, \dots \} \end{align*}$$
+                <p>
                   Diese Kette hat zufälligerweise die Form \(A_0 \subseteq A_1 \subseteq
                   A_2 \subseteq \dots\), d.h., die Elemente der Kette sind schön
                   sortiert, von klein nach groß. Dies muss nicht so sein: sei \(k \N :=
-                  \&#123; k\cdot i \ | \ i \in \N\&#125;\) die Menge der Vielfachen von \(k\). Dann
+                  \{ k\cdot i \ | \ i \in \N\}\) die Menge der Vielfachen von \(k\). Dann
                   gilt \(1 \N \supseteq 2 \N \supseteq 4\N \supseteq 8\N \supseteq
                   \dots\), die Elemente sind also in "absteigender" Reihenfolge sortiert.
                   Beide Beispiele haben einen "Anfangspunkt". Das muss aber nicht so
-                  sein: sei \([k] := \&#123;1,2,\dots,k\&#125;\).
-                </Paragraph>
-                $$\begin&#123;align*&#125; \dots \subseteq 2\N \setminus [6] \subseteq 2\N \setminus
-                [4] \subseteq 2\N \setminus [2] \subseteq 2\N \subseteq 2\N \cup \&#123;1\&#125;
-                \subseteq 2\N \cup \&#123;1,3\&#125; \subseteq 2\N \cup \&#123;1,3,5\&#125; \subseteq \dots
-                \end&#123;align*&#125;$$
-                <Paragraph>
-                  Wenn wir ganz links noch \(\&#123;0\&#125;\) hinschreiben und ganz rechts noch
+                  sein: sei \([k] := \{1,2,\dots,k\}\).
+                </p>
+                $$\begin{align*} \dots \subseteq 2\N \setminus [6] \subseteq 2\N \setminus
+                [4] \subseteq 2\N \setminus [2] \subseteq 2\N \subseteq 2\N \cup \{1\}
+                \subseteq 2\N \cup \{1,3\} \subseteq 2\N \cup \{1,3,5\} \subseteq \dots
+                \end{align*}$$
+                <p>
+                  Wenn wir ganz links noch \(\{0\}\) hinschreiben und ganz rechts noch
                   \(\N\), dann haben wir ein weiteres, eventuell ungewohntes Phänomen: das
-                  Element \(\&#123;0\&#125;\) in der Kette hat keinen eindeutigen
+                  Element \(\{0\}\) in der Kette hat keinen eindeutigen
                   <i>
                     Nachfolger
                   </i>
-                  . Egal, welches \(A\) mit \(\&#123;0\&#125; \subsetneq A\) Sie
-                  wählen, sie finden immer noch ein \(B\) dazwischen: \(\&#123;0\&#125; \subsetneq B
+                  . Egal, welches \(A\) mit \(\{0\} \subsetneq A\) Sie
+                  wählen, sie finden immer noch ein \(B\) dazwischen: \(\{0\} \subsetneq B
                   \subsetneq A\).
-                </Paragraph>
+                </p>
                 <div class="well container theorem">
-                  <Paragraph>
+                  <p>
                     <span class="numbered-title">
                       Definition
                       <NumberedTitle>
-                        &ensp;2.3.8{" "}
+                        &ensp;2.3.8 
                       </NumberedTitle>
                     </span>
-                    {" "}{" "}
+                      
                     <b>
                       (Dichte Partialordnung)
                     </b>
-                    {" "}Eine Partialordnung
-                    \((X,\preceq)\) heißt{" "}
+                     Eine Partialordnung
+                    \((X,\preceq)\) heißt 
                     <i>
                       dicht
                     </i>
                     , wenn es für alle \(x,z \in X\) mit
                     \(x \prec z\) ein \(y \in X\) gibt mit \(x \prec y \prec z\).
-                  </Paragraph>
+                  </p>
                 </div>
-                <Paragraph>
+                <p>
                   Ein klassisches Beispiel für eine dichte Ordnung ist \((\Q, \lt)\). Wenn
-                  \(x \lt z\), dann ist \(x \lt \frac&#123;x+z&#125;&#123;2&#125; \lt z\). Sie finden also immer
+                  \(x \lt z\), dann ist \(x \lt \frac{x+z}{2} \lt z\). Sie finden also immer
                   etwas dazwischen. Die Ordnung \((\Z, \lt)\) ist nicht dicht: zwischen
                   \(7\) und \(8\) finden Sie nichts. Die Partialordnung \((2^\N, \subseteq)\)
-                  ist nicht dicht: es gilt \(\&#123;2\&#125; \subsetneq \&#123;2,3\&#125;\), aber es gibt
+                  ist nicht dicht: es gilt \(\{2\} \subsetneq \{2,3\}\), aber es gibt
                   keine Menge zwischen den beiden.
-                </Paragraph>
+                </p>
                 <div class="well well-lg numbered-exercise container">
-                  <Paragraph>
+                  <p>
                     <span class="numbered-title">
                       Übungsaufgabe
                       <NumberedTitle>
-                        &ensp;2.3.8{" "}
+                        &ensp;2.3.8 
                       </NumberedTitle>
                     </span>
                     Finden Sie in \((2^\N, \subseteq)\) eine Kette \(X\), so dass \((X,
@@ -783,15 +792,11 @@ const Article = () => {
                     gilt (d.h. \(X\) soll eine Kette sein) und zusätzlich ein \(B \in X\)
                     mit \(A \subsetneq B \subsetneq C\) (oder \(C \subseteq B \subsetneq
                     A\)).
-                  </Paragraph>
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </Section>
-    </Container>
-  );
-};
-
-export default Article;
+      </section>
+    </body>

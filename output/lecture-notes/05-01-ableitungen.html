@@ -1,12 +1,21 @@
-import Section from "~/components/Section";
-import Paragraph from "~/components/Paragraph";
-import Container from "~/components/Container";
-import Carousel from "~/components/Carousel";
-import NumberedTitle from "~/components/NumberedTitle";
-const Article = () => {
-  return (
-    <Container>
-      <Section
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="data:,">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title></title>
+
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+   <link rel="stylesheet" type="text/css" href="../TI.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="../mathjax_setup.js"></script>
+   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+      <section
         count={29}
         title_gr="Ableitungen und Ableitungsbäume"
         title_en="ableitungen"
@@ -15,10 +24,10 @@ const Article = () => {
         counter="ExoCtr"
         path="/lecture-notes29.tsx">
         <div id="link-to-toc">
-          <a href="../vorlesungsskript">
+          <a href="../vorlesungsskript.html">
             Inhaltsverzeichnis
           </a>
-          <a href="05-00-context-free-languages">
+          <a href="05-00-context-free-languages.html">
             &lt;&lt; Kapitel 5.0
           </a>
         </div>
@@ -28,7 +37,7 @@ const Article = () => {
           <a href="/">
             zur Kursübersicht
           </a>
-          <a href="05-02-cfg-to-pda">
+          <a href="05-02-cfg-to-pda.html">
             Kapitel 5.2 &gt;&gt;
           </a>
         </div>
@@ -46,31 +55,31 @@ const Article = () => {
                   <span class="numbered-title">
                     Definition
                     <NumberedTitle>
-                      &ensp;5.1.1{" "}
+                      &ensp;5.1.1 
                     </NumberedTitle>
                     &ensp;(Ableitung)
                   </span>
                   Sei \(G\) eine Grammatik mit Startsymbol \(S\). Die Ableitung eines
                   Wortes \(\alpha\) ist eine Sequenz von Wortformen \( w_0, w_1, \dots,
-                  w_n\) mit \(w_0 = S, w_n = \alpha\) und \(w_&#123;i-1&#125; \Longrightarrow
+                  w_n\) mit \(w_0 = S, w_n = \alpha\) und \(w_{i-1} \Longrightarrow
                   w_i\).
                 </div>
                 Das folgende Beispiel ist Beispiel 3.22 aus dem Buch von Aho und Ullman.
                 Wir betrachten die klassische kontextfreie Grammatik für arithmetische
-                Ausdrücke mit Klammerung: $$\begin&#123;align*&#125; (1)\ E \rightarrow&amp;E + T \\
+                Ausdrücke mit Klammerung: $$\begin{align*} (1)\ E \rightarrow&amp;E + T \\
                 (2)\ E \rightarrow&amp;T \\ (3)\ T \rightarrow&amp;T * F \\ (4)\ T
                 \rightarrow&amp;F \\ (5)\ F \rightarrow&amp;(E) \\ (6)\ F \rightarrow&amp;a \\
-                \end&#123;align*&#125;$$ wobei \(E\) das Startsymbol ist. Hier ist ein Beispiel
+                \end{align*}$$ wobei \(E\) das Startsymbol ist. Hier ist ein Beispiel
                 einer Ableitung von \(a * (a+a)\) von der obigen Grammatik.
-                $$\begin&#123;align*&#125; E&amp;\stackrel&#123;2&#125;&#123;\Longrightarrow&#125; T
-                \stackrel&#123;3&#125;&#123;\Longrightarrow&#125; T * F \stackrel&#123;4&#125;&#123;\Longrightarrow&#125; F * F
-                \stackrel&#123;6&#125;&#123;\Longrightarrow&#125; a * F&amp;\\&amp;\stackrel&#123;5&#125;&#123;\Longrightarrow&#125;
-                a * (E) \stackrel&#123;1&#125;&#123;\Longrightarrow&#125; a * (E + T)
-                \stackrel&#123;2&#125;&#123;\Longrightarrow&#125; a * (T + T)&amp;\\&
-                \stackrel&#123;4&#125;&#123;\Longrightarrow&#125; a * (F + T) \stackrel&#123;6&#125;&#123;\Longrightarrow&#125;
-                a * (a + T) \stackrel&#123;4&#125;&#123;\Longrightarrow&#125; a * (a + F)
-                \stackrel&#123;6&#125;&#123;\Longrightarrow&#125; a * (a + a)&amp;\end&#123;align*&#125;$$ Insbesondere
-                ist es eine{" "}
+                $$\begin{align*} E&amp;\stackrel{2}{\Longrightarrow} T
+                \stackrel{3}{\Longrightarrow} T * F \stackrel{4}{\Longrightarrow} F * F
+                \stackrel{6}{\Longrightarrow} a * F&amp;\\&amp;\stackrel{5}{\Longrightarrow}
+                a * (E) \stackrel{1}{\Longrightarrow} a * (E + T)
+                \stackrel{2}{\Longrightarrow} a * (T + T)&amp;\\&
+                \stackrel{4}{\Longrightarrow} a * (F + T) \stackrel{6}{\Longrightarrow}
+                a * (a + T) \stackrel{4}{\Longrightarrow} a * (a + F)
+                \stackrel{6}{\Longrightarrow} a * (a + a)&amp;\end{align*}$$ Insbesondere
+                ist es eine 
                 <i>
                   Linksableitung
                 </i>
@@ -80,84 +89,80 @@ const Article = () => {
                 ist, welches Nichtterminal expandiert werden muss). Die obige Ableitung
                 kann also kompakt durch die Zahlenfolge 23465124646 repräsentiert
                 werden.
-                <Paragraph>
+                <p>
                   Betrachten wir im Folgenden ein weiteres Beispiel einer Ableitung, in
-                  diesem Falle eine{" "}
+                  diesem Falle eine 
                   <i>
                     Rechtsableitung
                   </i>
                   , in der in jedem Schritt
                   das am weitesten rechts stehende Nichtterminal expandiert wird:
-                </Paragraph>
-                $$\begin&#123;align*&#125; E&amp;\stackrel&#123;2&#125;&#123;\Longrightarrow&#125; T
-                \stackrel&#123;3&#125;&#123;\Longrightarrow&#125; T * F \stackrel&#123;5&#125;&#123;\Longrightarrow&#125; T *
-                (E) \stackrel&#123;1&#125;&#123;\Longrightarrow&#125; T * (E+T)
-                \stackrel&#123;4&#125;&#123;\Longrightarrow&#125; T * (E+F)&amp;\\&
-                \stackrel&#123;6&#125;&#123;\Longrightarrow&#125; T * (E+a) \stackrel&#123;2&#125;&#123;\Longrightarrow&#125; T
-                * (T + a) \stackrel&#123;4&#125;&#123;\Longrightarrow&#125; T * (F + a)&amp;\\&
-                \stackrel&#123;6&#125;&#123;\Longrightarrow&#125; T * (a + a) \stackrel&#123;4&#125;&#123;\Longrightarrow&#125;
-                F * (a + a) \stackrel&#123;6&#125;&#123;\Longrightarrow&#125; a * (a + a)&amp;\end&#123;align*&#125;$$
+                </p>
+                $$\begin{align*} E&amp;\stackrel{2}{\Longrightarrow} T
+                \stackrel{3}{\Longrightarrow} T * F \stackrel{5}{\Longrightarrow} T *
+                (E) \stackrel{1}{\Longrightarrow} T * (E+T)
+                \stackrel{4}{\Longrightarrow} T * (E+F)&amp;\\&
+                \stackrel{6}{\Longrightarrow} T * (E+a) \stackrel{2}{\Longrightarrow} T
+                * (T + a) \stackrel{4}{\Longrightarrow} T * (F + a)&amp;\\&
+                \stackrel{6}{\Longrightarrow} T * (a + a) \stackrel{4}{\Longrightarrow}
+                F * (a + a) \stackrel{6}{\Longrightarrow} a * (a + a)&amp;\end{align*}$$
                 Rechtsableitungen können auch kompakt als Zahlenfolge repräsentiert
                 werden. Allerdings geben wir Rechtsableitungen immer in umgekehrter
                 Reihenfolge an, also von hinten nach vorne, in diesem Falle also nicht
                 2351... sondern 64642641532.
-                <Paragraph>
+                <p>
                   Beachten Sie, dass wir es hier mit einer eindeutigen Grammatik zu tun
                   haben, es also nur einen Syntaxbaum gibt:
-                </Paragraph>
+                </p>
                 <figure>
                   <img
                     style="height: 15em"
                     src="../img/cfg/syntax-tree-a*(a+a).svg"
                     loading="lazy" />
                 </figure>
-                <Paragraph>
+                <p>
                   Rechtsableitung und Linksableitung sowie deren Codierung als
                   Zahlenfolge spiegeln also nur zwei verschiedene Weisen wieder, den
                   Baum auszugeben.
-                </Paragraph>
+                </p>
                 <pre class="listing container">
-                  {" "}{" "}
+                    
                   <code>
                     def treeToLeftDerivation (tree):
                   </code>
-                  {" "}{" "}
+                    
                   <code>
                     print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
                   </code>
-                  {" "}{" "}
+                    
                   <code>
                     for child in tree.children (from left ro right):
                   </code>
-                  {" "}{" "}
+                    
                   <code>
                     treeToLeftDerivation(child)````def treeToRightDerivation (tree):
                   </code>
-                  {" "}{" "}
+                    
                   <code>
                     for child in tree.children (from left ro right):
                   </code>
-                  {" "}{" "}
+                    
                   <code>
                     treeToLeftDerivation(child)
                   </code>
-                  {" "}{" "}
+                    
                   <code>
                     print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
                   </code>
-                  {" "}{" "}
+                    
                 </pre>
-                <Paragraph>
+                <p>
                   Beachten Sie, dass wir in beiden Fällen die Liste Kinder von links
                   nach rechts durchgehen.
-                </Paragraph>
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </Section>
-    </Container>
-  );
-};
-
-export default Article;
+      </section>
+    </body>

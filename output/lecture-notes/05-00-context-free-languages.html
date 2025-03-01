@@ -1,12 +1,21 @@
-import Section from "~/components/Section";
-import Paragraph from "~/components/Paragraph";
-import Container from "~/components/Container";
-import Carousel from "~/components/Carousel";
-import NumberedTitle from "~/components/NumberedTitle";
-const Article = () => {
-  return (
-    <Container>
-      <Section
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="data:,">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title></title>
+
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+   <link rel="stylesheet" type="text/css" href="../TI.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="../mathjax_setup.js"></script>
+   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+      <section
         count={28}
         title_gr="Kontextfreie Sprachen"
         title_en="context free languages"
@@ -15,10 +24,10 @@ const Article = () => {
         counter="ExoCtr"
         path="/lecture-notes28.tsx">
         <div id="link-to-toc">
-          <a href="../vorlesungsskript">
+          <a href="../vorlesungsskript.html">
             Inhaltsverzeichnis
           </a>
-          <a href="04-07-exercises">
+          <a href="04-07-exercises.html">
             &lt;&lt; Kapitel 4.7
           </a>
         </div>
@@ -28,7 +37,7 @@ const Article = () => {
           <a href="/">
             zur Kursübersicht
           </a>
-          <a href="05-01-ableitungen">
+          <a href="05-01-ableitungen.html">
             Kapitel 5.1 &gt;&gt;
           </a>
         </div>
@@ -41,15 +50,11 @@ const Article = () => {
                   Kontextfreie Sprachen
                 </span>
               </h1>
-              <Paragraph>
+              <p>
                 Some introductory stuff about grammars.
-              </Paragraph>
+              </p>
             </div>
           </div>
         </div>
-      </Section>
-    </Container>
-  );
-};
-
-export default Article;
+      </section>
+    </body>

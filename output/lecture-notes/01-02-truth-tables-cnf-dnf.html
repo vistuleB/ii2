@@ -1,12 +1,21 @@
-import Section from "~/components/Section";
-import Paragraph from "~/components/Paragraph";
-import Container from "~/components/Container";
-import Carousel from "~/components/Carousel";
-import NumberedTitle from "~/components/NumberedTitle";
-const Article = () => {
-  return (
-    <Container>
-      <Section
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="data:,">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title></title>
+
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+   <link rel="stylesheet" type="text/css" href="../TI.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="../mathjax_setup.js"></script>
+   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+      <section
         count={3}
         title_gr="Wahrheitstabellen, CNF und DNF"
         title_en="truth tables cnf dnf"
@@ -15,10 +24,10 @@ const Article = () => {
         counter="ExoCtr"
         path="/lecture-notes3.tsx">
         <div id="link-to-toc">
-          <a href="../vorlesungsskript">
+          <a href="../vorlesungsskript.html">
             Inhaltsverzeichnis
           </a>
-          <a href="01-01-Fanin-Size-Depth">
+          <a href="01-01-Fanin-Size-Depth.html">
             &lt;&lt; Kapitel 1.1
           </a>
         </div>
@@ -28,7 +37,7 @@ const Article = () => {
           <a href="/">
             zur Kursübersicht
           </a>
-          <a href="01-03-binary-adder">
+          <a href="01-03-binary-adder.html">
             Kapitel 1.3 &gt;&gt;
           </a>
         </div>
@@ -42,7 +51,7 @@ const Article = () => {
                     Wahrheitstabellen, CNF und DNF
                   </span>
                 </h1>
-                <Paragraph>
+                <p>
                   Wir haben gesehen, dass jeder Schaltkreis eine Boolesche Funktion
                   berechnet. In diesem Abschnitt wollen wir zeigen, dass es umgekehrt
                   auch gilt: zu jeder Booleschen Funktion gibt es einen Schaltkreis (ja:
@@ -53,90 +62,90 @@ const Article = () => {
                   <i>
                     einem
                   </i>
-                  {" "}Ausgabewert, also \(f : \&#123;0,1\&#125;^n \rightarrow
-                  \&#123;0,1\&#125;\).
-                </Paragraph>
+                   Ausgabewert, also \(f : \{0,1\}^n \rightarrow
+                  \{0,1\}\).
+                </p>
                 Dies ist ein endliches Objekt, wir können es also codieren, indem wir
                 für jeden Eingabewert \( (x_1,\dots,x_n)\) den Ausgabewert angeben. Dies
-                nennt man eine{" "}
+                nennt man eine 
                 <i>
                   Wahrheitstabelle
                 </i>
-                {" "}(englisch
+                 (englisch
                 <i>
                   truth table
                 </i>
                 ). Hier sehen Sie ein Beispiel: $$
-                \begin&#123;array&#125;&#123;ccc|c&#125; x&amp;y&amp;z&amp;f \\\hline 0&amp;0&amp;0&amp;0 \\ 0&amp;0&amp;1&
+                \begin{array}{ccc|c} x&amp;y&amp;z&amp;f \\\hline 0&amp;0&amp;0&amp;0 \\ 0&amp;0&amp;1&
                 1 \\ 0&amp;1&amp;0&amp;1 \\ 0&amp;1&amp;1&amp;1 \\ 1&amp;0&amp;0&amp;1 \\ 1&amp;0&amp;1&amp;1 \\
-                1&amp;1&amp;0&amp;0 \\ 1&amp;1&amp;1&amp;1\\ \end&#123;array&#125; $$ Wie können wir von so
+                1&amp;1&amp;0&amp;0 \\ 1&amp;1&amp;1&amp;1\\ \end{array} $$ Wie können wir von so
                 einer Tabelle ausgehend einen Schaltkreis bauen, der diese Funktion
                 berechnet? Ich stelle Ihnen drei Herangehensweisen vor.
                 <h3 id="truth-table-top-down">
                   Rekursiv, top-down
                 </h3>
-                <Paragraph>
+                <p>
                   Wir teilen die Tabelle in die obere Hälfte (wo \(x=0\) gilt) und die
                   untere Hälfte:
-                </Paragraph>
-                $$\begin&#123;align*&#125; \color&#123;red&#125;&#123; \begin&#123;array&#125;&#123;ccc|c&#125; x&amp;y&amp;z&amp;f \\\hline
+                </p>
+                $$\begin{align*} \color{red}{ \begin{array}{ccc|c} x&amp;y&amp;z&amp;f \\\hline
                 0&amp;0&amp;0&amp;0 \\ 0&amp;0&amp;1&amp;1 \\ 0&amp;1&amp;0&amp;1 \\ 0&amp;1&amp;1&amp;1
-                \end&#123;array&#125; &#125;\\ \color&#123;blue&#125;&#123; \begin&#123;array&#125;&#123;ccc|c&#125; 1&amp;0&amp;0&amp;1 \\ 1&
-                0&amp;1&amp;1 \\ 1&amp;1&amp;0&amp;0 \\ 1&amp;1&amp;1&amp;1\\ \end&#123;array&#125; &#125; \end&#123;align*&#125;$$
+                \end{array} }\\ \color{blue}{ \begin{array}{ccc|c} 1&amp;0&amp;0&amp;1 \\ 1&
+                0&amp;1&amp;1 \\ 1&amp;1&amp;0&amp;0 \\ 1&amp;1&amp;1&amp;1\\ \end{array} } \end{align*}$$
                 Die obere, roten Hälfte kommt Ihnen vielleicht bekannt vor: es ist genau
                 die Wahrheitstabelle von \(y \vee z\). Der Wert von \(x\) ist im roten
                 Teil ja immer \(0\), also ist die obere Hälfte im Prinzip eine Funktion
                 mit zwei Variablen: \(y\) und \(z\); wir sagen also mal, die obere
-                Hälfte "ist"{" "}
+                Hälfte "ist" 
                 <span style="color: red">
                   \(y \vee z\)
                 </span>
                 . Die untere
                 Hälfte besteht auch aus drei Einsen und einer Null, allerdings ist die
                 Null mittendrin. Überprüfen Sie es, wenn ich Ihnen sage, dass die untere
-                Hälfte{" "}
+                Hälfte 
                 <span style="color: blue">
-                  \(\bar&#123;y&#125; \vee z\)
+                  \(\bar{y} \vee z\)
                 </span>
                 &ensp;ist (ich
-                schreibe im Fließtext übrigens gerne \(\bar&#123;y&#125;\) statt \(\neg y\), weil
+                schreibe im Fließtext übrigens gerne \(\bar{y}\) statt \(\neg y\), weil
                 das mir lesbarer erscheint). Insgesamt also:
                 <figure>
-                  f ={" "}
+                  f = 
                   <code>
                     if
                   </code>
-                  {" "}\(x\){" "}
+                   \(x\) 
                   <code>
                     then
                   </code>
-                  {" "}\(\bar&#123;y&#125; \vee z\)
+                   \(\bar{y} \vee z\)
                   <code>
                     else
                   </code>
-                  {" "}\(y \vee z\).
+                   \(y \vee z\).
                 </figure>
-                <Paragraph>
+                <p>
                   Jetzt können wir das mit unserem if-then-else-Schaltkreis kombinieren.
-                </Paragraph>
+                </p>
                 <div class="well well-lg numbered-exercise container">
                   <span class="numbered-title">
                     Übungsaufgabe
                     <NumberedTitle>
-                      &ensp;1.2.1{" "}
+                      &ensp;1.2.1 
                     </NumberedTitle>
                   </span>
-                  Führen Sie die Konstruktion zu Ende, indem Sie \(\bar&#123;y&#125; \vee z\) und
+                  Führen Sie die Konstruktion zu Ende, indem Sie \(\bar{y} \vee z\) und
                   \(y \vee z\) mit dem if-then-else-Schaltkreis kombinieren.
                 </div>
-                <Paragraph>
+                <p>
                   Können wir das mit beliebigen Funktionen machen? Ja klar! Wir gehen
                   wie folgt vor:
-                </Paragraph>
+                </p>
                 <ol>
                   <li>
-                    Teile die Tabelle in die oberen \(2^&#123;n-1&#125;\) Zeilen (für die \(x_1 =
-                    0\) gilt) und die unteren \(2^&#123;n-1&#125;\) Zeilen (für die \(x_1 = 1\)
+                    Teile die Tabelle in die oberen \(2^{n-1}\) Zeilen (für die \(x_1 =
+                    0\) gilt) und die unteren \(2^{n-1}\) Zeilen (für die \(x_1 = 1\)
                     gilt) auf.
                   </li>
                   <li>
@@ -155,57 +164,57 @@ const Article = () => {
                     insgesamt \(n\) Input-Variablen.
                   </li>
                 </ol>
-                <Paragraph>
+                <p>
                   An dieser Stelle zahlt es sich aus, eine formale Notation einzuführen:
-                </Paragraph>
+                </p>
                 <div class="well container theorem">
                   <span class="numbered-title">
                     Definition
                     <NumberedTitle>
-                      &ensp;1.2.1{" "}
+                      &ensp;1.2.1 
                     </NumberedTitle>
                   </span>
-                  Sei \(f: \&#123;0,1\&#125;^n \rightarrow \&#123;0,1\&#125;\) eine Boolesche Funktion, \(i
-                  \in \&#123;1,\dots,n\&#125;\) ein Index und \(b \in \&#123;0,1\&#125;\) ein Wert. Dann ist
-                  \(f|_&#123;x_i=b&#125;\) eine neue Funktion, und zwar $$\begin&#123;align*&#125; f|_&#123;x_i=b&#125;
-                  &amp;: \&#123;0,1\&#125;^&#123;n-1&#125; \rightarrow \&#123;0,1\&#125; \\ (x_1,\dots,x_&#123;i-1&#125;, x_&#123;i+1&#125;,
-                  \dots, x_n)&amp;\mapsto f(x_1,\dots,x_&#123;i-1&#125;, b, x_&#123;i+1&#125;, \dots, x_&#123;n&#125;) \
-                  . \end&#123;align*&#125;$$
-                  <Paragraph>
+                  Sei \(f: \{0,1\}^n \rightarrow \{0,1\}\) eine Boolesche Funktion, \(i
+                  \in \{1,\dots,n\}\) ein Index und \(b \in \{0,1\}\) ein Wert. Dann ist
+                  \(f|_{x_i=b}\) eine neue Funktion, und zwar $$\begin{align*} f|_{x_i=b}
+                  &amp;: \{0,1\}^{n-1} \rightarrow \{0,1\} \\ (x_1,\dots,x_{i-1}, x_{i+1},
+                  \dots, x_n)&amp;\mapsto f(x_1,\dots,x_{i-1}, b, x_{i+1}, \dots, x_{n}) \
+                  . \end{align*}$$
+                  <p>
                     In Worten: wir fixieren den \(i\)-ten Input auf den Wert \(b\) und
                     erhalten eine Funktion in den restlichen \(n-1\) Variablen.
-                  </Paragraph>
+                  </p>
                 </div>
-                <Paragraph>
+                <p>
                   Das Ergebnis ist im Allgemeinen sehr groß, aber was erwarten Sie bei
                   einer Tabelle mit \(2^n\) Zeilen?
-                </Paragraph>
+                </p>
                 <div class="well well-lg numbered-exercise container">
                   <span class="numbered-title">
                     Übungsaufgabe
                     <NumberedTitle>
-                      &ensp;1.2.2{" "}
+                      &ensp;1.2.2 
                     </NumberedTitle>
                   </span>
                   Führen Sie das rekursive Verfahren durch, um für die folgende Funktion
-                  auf 4 Variablen einen Schaltkreis zu bauen: $$ \begin&#123;array&#125;&#123;cccc|c&#125; u
+                  auf 4 Variablen einen Schaltkreis zu bauen: $$ \begin{array}{cccc|c} u
                   &amp;x&amp;y&amp;z&amp;f \\\hline 0&amp;0&amp;0&amp;0&amp;1 \\ 0&amp;0&amp;0&amp;1&amp;1 \\ 0&
                   0&amp;1&amp;0&amp;1 \\ 0&amp;0&amp;1&amp;1&amp;0 \\ 0&amp;1&amp;0&amp;0&amp;1 \\ 0&amp;1&amp;0&
                   1&amp;0 \\ 0&amp;1&amp;1&amp;0&amp;1 \\ 0&amp;1&amp;1&amp;1&amp;0\\ \hline 1&amp;0&amp;0&amp;0
                   &amp;0 \\ 1&amp;0&amp;0&amp;1&amp;0 \\ 1&amp;0&amp;1&amp;0&amp;1 \\ 1&amp;0&amp;1&amp;1&amp;1 \\
                   1&amp;1&amp;0&amp;0&amp;1 \\ 1&amp;1&amp;0&amp;1&amp;1 \\ 1&amp;1&amp;1&amp;0&amp;0 \\ 1&amp;1&
-                  1&amp;1&amp;0\\ \end&#123;array&#125; $$
+                  1&amp;1&amp;0\\ \end{array} $$
                 </div>
                 <h3>
                   Bottom-Up, als DNF
                 </h3>
-                <Paragraph>
+                <p>
                   Wenn Sie Rekursionshasser sind und generell lieber in`for`-Schleifen denken, dann wird die nächste Konstruktion
                   mehr nach Ihrem Geschmack sein. Im Prinzip werden wir alle
                   Kombinationen der Variablen auflisten, für die die Funktion 1 ausgibt.
                   Stellen Sie sich vor, wir haben drei Variable \(x,y,z\) und einen
                   AND-Ausdruck, der jede Variable oder deren Negation enthält, also zum
-                  Beispiel $$ x \wedge \bar&#123;y&#125; \wedge z \ . $$ Von den 8 möglichen
+                  Beispiel $$ x \wedge \bar{y} \wedge z \ . $$ Von den 8 möglichen
                   Input-Tupeln gibt es nur eins, für das dieser Ausdruck eine 1 ausgibt,
                   in diesem Falle \((1,0,1)\). Wir werden nun also für jede 1-Zeile
                   unserer Wahrheitstabelle einen solchen Ausdruck hinschreiben und diese
@@ -215,16 +224,16 @@ const Article = () => {
                     Term
                   </i>
                   .
-                </Paragraph>
-                $$ \begin&#123;array&#125;&#123;ccc|c|c&#125; x&amp;y&amp;z&amp;f&amp;&#123;\rm Term&#125;\\\hline 0&amp;0&amp;0&
-                0&amp;\\ 0&amp;0&amp;1&amp;1&amp;\bar&#123;x&#125; \wedge \bar&#123;y&#125; \wedge z \\ 0&amp;1&amp;0&amp;1
-                &amp;\bar&#123;x&#125; \wedge y \wedge \bar&#123;z&#125; \\ 0&amp;1&amp;1&amp;1&amp;\bar&#123;x&#125; \wedge y
-                \wedge z \\ 1&amp;0&amp;0&amp;1&amp;x \wedge \bar&#123;y&#125; \wedge \bar&#123;z&#125; \\ 1&amp;0&amp;1
-                &amp;1&amp;x \wedge \bar&#123;y&#125; \wedge z \\ 1&amp;1&amp;0&amp;0&amp;\\ 1&amp;1&amp;1&amp;1&amp;x
-                \wedge y \wedge z \\ \end&#123;array&#125; $$
-                <Paragraph>
+                </p>
+                $$ \begin{array}{ccc|c|c} x&amp;y&amp;z&amp;f&amp;{\rm Term}\\\hline 0&amp;0&amp;0&
+                0&amp;\\ 0&amp;0&amp;1&amp;1&amp;\bar{x} \wedge \bar{y} \wedge z \\ 0&amp;1&amp;0&amp;1
+                &amp;\bar{x} \wedge y \wedge \bar{z} \\ 0&amp;1&amp;1&amp;1&amp;\bar{x} \wedge y
+                \wedge z \\ 1&amp;0&amp;0&amp;1&amp;x \wedge \bar{y} \wedge \bar{z} \\ 1&amp;0&amp;1
+                &amp;1&amp;x \wedge \bar{y} \wedge z \\ 1&amp;1&amp;0&amp;0&amp;\\ 1&amp;1&amp;1&amp;1&amp;x
+                \wedge y \wedge z \\ \end{array} $$
+                <p>
                   Mit einem großen OR zusammengeführt ergibt das dann
-                </Paragraph>
+                </p>
                 <figure>
                   <img
                     style="height: 10em"
@@ -234,53 +243,53 @@ const Article = () => {
                 In diesem Schaltkreis habe ich die Input-Knoten mehrfach aufgeführt und
                 die NOT-Gates nicht explizit aufgeführt, damit kein "Kabelsalat"
                 entsteht. Beachten Sie auch, das jedes Gate (außer den Input-Gates)
-                genau{" "}
+                genau 
                 <i>
                   eine
                 </i>
-                {" "}ausgehende Kante hat. Konkret bedeutet dies, dass
-                man diesen Schaltkreis als{" "}
+                 ausgehende Kante hat. Konkret bedeutet dies, dass
+                man diesen Schaltkreis als 
                 <i>
                   logische Formel
                 </i>
-                {" "}hinschreiben kann:
-                $$ (\bar&#123;x&#125; \wedge \bar&#123;y&#125; \wedge z) \vee (\bar&#123;x&#125; \wedge y \wedge
-                \bar&#123;z&#125;) \vee (\bar&#123;x&#125; \wedge y \wedge z) \vee (x \wedge \bar&#123;y&#125; \wedge
-                \bar&#123;z&#125;) \vee (x \wedge \bar&#123;y&#125; \wedge z) \vee (x \wedge y \wedge z) $$
+                 hinschreiben kann:
+                $$ (\bar{x} \wedge \bar{y} \wedge z) \vee (\bar{x} \wedge y \wedge
+                \bar{z}) \vee (\bar{x} \wedge y \wedge z) \vee (x \wedge \bar{y} \wedge
+                \bar{z}) \vee (x \wedge \bar{y} \wedge z) \vee (x \wedge y \wedge z) $$
                 <div class="well container theorem">
                   <span class="numbered-title">
                     Definition
                     <NumberedTitle>
-                      &ensp;1.2.2{" "}
+                      &ensp;1.2.2 
                     </NumberedTitle>
                   </span>
-                  Ein{" "}
+                  Ein 
                   <i>
                     Literal
                   </i>
-                  {" "}ist eine Variable \(x\) oder deren Negation
-                  \(\bar&#123;x&#125;\). Ein{" "}
+                   ist eine Variable \(x\) oder deren Negation
+                  \(\bar{x}\). Ein 
                   <i>
                     Term
                   </i>
-                  {" "}ist ein AND (auch: Konjunktion) von
-                  Literalen (beispielsweise \(\bar&#123;x&#125; \wedge \bar&#123;y&#125; \wedge z)\). Eine
-                  Formel in{" "}
+                   ist ein AND (auch: Konjunktion) von
+                  Literalen (beispielsweise \(\bar{x} \wedge \bar{y} \wedge z)\). Eine
+                  Formel in 
                   <i>
                     disjunktiver Normalform
                   </i>
-                  {" "}(DNF) ist ein OR von
+                   (DNF) ist ein OR von
                   Termen.
-                  <Paragraph>
+                  <p>
                     Alternativ: eine DNF ist ein Schaltkreis der Tiefe 2 (wobei
                     NOT-Gates nicht mitzählen), dessen Output-Gate ein OR-Gate ist.
-                  </Paragraph>
+                  </p>
                 </div>
                 <div class="well well-lg numbered-exercise container">
                   <span class="numbered-title">
                     Übungsaufgabe
                     <NumberedTitle>
-                      &ensp;1.2.3{" "}
+                      &ensp;1.2.3 
                     </NumberedTitle>
                   </span>
                   Was, wenn einige der "mittleren" Gates (auf Tiefe 1) keine AND-Gates
@@ -288,7 +297,7 @@ const Article = () => {
                   <i>
                     keine
                   </i>
-                  {" "}DNF-Formel, nach der zweiten aber schon. Zeigen Sie,
+                   DNF-Formel, nach der zweiten aber schon. Zeigen Sie,
                   wie man OR-Gates auf Ebene 1 entfernen kann! Als konkretes Beispiel:
                   <figure>
                     <img
@@ -300,7 +309,7 @@ const Article = () => {
                 <h3>
                   Bottom-Up, als CNF
                 </h3>
-                <Paragraph>
+                <p>
                   Zu der eben demonstrierten Konstruktion gibt es noch eine weitere,
                   dazu duale Konstruktion. Bildlich gesprochen listet DNF-Konstruktion
                   alle Möglichkeiten auf, wie man eine 1 erhalten kann. Dual dazu können
@@ -308,19 +317,19 @@ const Article = () => {
                   <i>
                     keine
                   </i>
-                  {" "}davon ein, muss wohl eine 1 herauskommen. Wir gehen
+                   davon ein, muss wohl eine 1 herauskommen. Wir gehen
                   also in der Wahrheitstabelle alle Zeilen mit Wert 0 durch und
                   schreiben einen Ausdruck, der genau diese Zeile verbietet. So kann man
-                  den Ausdruck \( (\bar&#123;x&#125; \vee \bar&#123;y&#125; \vee z)\) verstehen als
+                  den Ausdruck \( (\bar{x} \vee \bar{y} \vee z)\) verstehen als
                   "\((x,y,z)\) darf nicht \((1,1,0)\) sein." An dem obigen Beispiel
                   ergibt dies:
-                </Paragraph>
-                $$ \begin&#123;array&#125;&#123;ccc|c|c&#125; x&amp;y&amp;z&amp;f&amp;&#123;\rm Term&#125;\\\hline 0&amp;0&amp;0&
+                </p>
+                $$ \begin{array}{ccc|c|c} x&amp;y&amp;z&amp;f&amp;{\rm Term}\\\hline 0&amp;0&amp;0&
                 0&amp;x \vee y \vee z \\ 0&amp;0&amp;1&amp;1&amp;\\ 0&amp;1&amp;0&amp;1&amp;\\ 0&amp;1&amp;1&
-                1&amp;\\ 1&amp;0&amp;0&amp;1&amp;\\ 1&amp;0&amp;1&amp;1&amp;\\ 1&amp;1&amp;0&amp;0&amp;\bar&#123;x&#125;
-                \vee \bar&#123;y&#125; \vee z\\ 1&amp;1&amp;1&amp;1&amp;\\ \end&#123;array&#125; $$ Einen Ausdruck
-                der Form \(\bar&#123;x&#125; \vee \bar&#123;y&#125; \vee z\), also ein OR von Literaten,
-                nennt man auch eine{" "}
+                1&amp;\\ 1&amp;0&amp;0&amp;1&amp;\\ 1&amp;0&amp;1&amp;1&amp;\\ 1&amp;1&amp;0&amp;0&amp;\bar{x}
+                \vee \bar{y} \vee z\\ 1&amp;1&amp;1&amp;1&amp;\\ \end{array} $$ Einen Ausdruck
+                der Form \(\bar{x} \vee \bar{y} \vee z\), also ein OR von Literaten,
+                nennt man auch eine 
                 <i>
                   Klausel
                 </i>
@@ -337,35 +346,35 @@ const Article = () => {
                   <span class="numbered-title">
                     Definition
                     <NumberedTitle>
-                      &ensp;1.2.3{" "}
+                      &ensp;1.2.3 
                     </NumberedTitle>
                   </span>
-                  Eine Formel in{" "}
+                  Eine Formel in 
                   <i>
                     konjunktiver Normalform
                   </i>
-                  {" "}(CNF) ist ein AND von
+                   (CNF) ist ein AND von
                   Klauseln.
-                  <Paragraph>
+                  <p>
                     Alternativ: eine CNF-Formel ist ein Schaltkreis der Tiefe 2 (wobei
                     NOT-Gates nicht mitzählen), dessen Output-Gate ein AND-Gate ist.
-                  </Paragraph>
+                  </p>
                 </div>
-                <Paragraph>
+                <p>
                   In diesem konkreten Beispiel ist die CNF viel kürzer als die DNF (das
                   ist Zufall; ich habe meine Tabelle mit Zufallswerten erzeugt).
                   Allerdings können wir, ausgehend von der "rohen" DNF (oder CNF), diese
                   noch nachträglich bearbeiten und kleiner machen. Zum Beispiel können
                   wir "nebeneinanderstehende" Terme zu einem einzigen zusammenziehen,
                   z.B. :
-                </Paragraph>
-                $$ (\bar&#123;x&#125; \wedge y \wedge \bar&#123;z&#125;) \vee (\bar&#123;x&#125; \wedge y \wedge z)
-                \equiv \bar&#123;x&#125; \wedge y \ . $$
+                </p>
+                $$ (\bar{x} \wedge y \wedge \bar{z}) \vee (\bar{x} \wedge y \wedge z)
+                \equiv \bar{x} \wedge y \ . $$
                 <div class="well well-lg numbered-exercise container">
                   <span class="numbered-title">
                     Übungsaufgabe
                     <NumberedTitle>
-                      &ensp;1.2.4{" "}
+                      &ensp;1.2.4 
                     </NumberedTitle>
                   </span>
                   Minimieren Sie die obige DNF (die mit den 6 Termen), indem Sie gewisse
@@ -375,27 +384,27 @@ const Article = () => {
                   <span class="numbered-title">
                     Übungsaufgabe
                     <NumberedTitle>
-                      &ensp;1.2.5{" "}
+                      &ensp;1.2.5 
                     </NumberedTitle>
                   </span>
-                  Zeigen Sie, dass es zu jeder Booleschen Funktion \(f: \&#123;0,1\&#125;^n
-                  \rightarrow \&#123;0,1\&#125;\) eine äquivalente DNF-Formel mit höchstens
-                  \(2^&#123;n-1&#125;\) Termen gibt.
+                  Zeigen Sie, dass es zu jeder Booleschen Funktion \(f: \{0,1\}^n
+                  \rightarrow \{0,1\}\) eine äquivalente DNF-Formel mit höchstens
+                  \(2^{n-1}\) Termen gibt.
                 </div>
                 <div class="well well-lg numbered-exercise container">
                   <span class="numbered-title">
                     Übungsaufgabe
                     <NumberedTitle>
-                      &ensp;1.2.6{" "}
+                      &ensp;1.2.6 
                     </NumberedTitle>
                   </span>
                   Zeigen Sie, dass jede DNF-Formel für die Boolesche Funktion \(x_1
-                  \oplus \dots \oplus x_n\) genau \(2^&#123;n-1&#125;\) Terme besitzen muss.
+                  \oplus \dots \oplus x_n\) genau \(2^{n-1}\) Terme besitzen muss.
                 </div>
-                <Paragraph>
+                <p>
                   Sie haben eventuell von Methoden zur Minimierung von DNFs bzw. CNFs
                   oder Schaltkreisen im Allgemeinen gehört, z.B. Karnaugh-Diagramme.
-                  Dies sind{" "}
+                  Dies sind 
                   <i>
                     Heuristiken
                   </i>
@@ -404,26 +413,26 @@ const Article = () => {
                   <i>
                     Algorithmen
                   </i>
-                  {" "}in dem Sinne). Die genaue Komplexität dieser
+                   in dem Sinne). Die genaue Komplexität dieser
                   Optimierungsprobleme ist in der Tat Gegenstand aktiver Forschung,
-                </Paragraph>
+                </p>
                 <ol>
                   <li>
-                    Wenn die Funktion (1) bereits als{" "}
+                    Wenn die Funktion (1) bereits als 
                     <i>
                       Boolesche Formel
                     </i>
-                    {" "}vorliegt
+                     vorliegt
                     (also Schaltkreise, in denen außer den Eingabe-Gates alle Gates nur
                     eine ausgehende Kante haben), so ist das Minimierungsproblem
-                    \(Sigma_2^&#123;P&#125;\)-vollständig, siehe
+                    \(Sigma_2^{P}\)-vollständig, siehe
                     <a href="http://users.cms.caltech.edu/~umans/papers/BU07.pdf">
                       &ensp;Buchfuhrer, David; Umans, Christopher (January 2011),
                       <i>
                         The complexity of Boolean formula minimization
                       </i>
-                      {" "}(JCSS
-                      2011){" "}
+                       (JCSS
+                      2011) 
                     </a>
                     .
                   </li>
@@ -438,7 +447,7 @@ const Article = () => {
                         NP-Hardness of Circuit Minimization for Multi-Output
                         Functions
                       </i>
-                      , (CCC 2020){" "}
+                      , (CCC 2020) 
                     </a>
                     .
                   </li>
@@ -452,9 +461,5 @@ const Article = () => {
             </div>
           </div>
         </div>
-      </Section>
-    </Container>
-  );
-};
-
-export default Article;
+      </section>
+    </body>

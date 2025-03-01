@@ -1,12 +1,21 @@
-import Section from "~/components/Section";
-import Paragraph from "~/components/Paragraph";
-import Container from "~/components/Container";
-import Carousel from "~/components/Carousel";
-import NumberedTitle from "~/components/NumberedTitle";
-const Article = () => {
-  return (
-    <Container>
-      <Section
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="data:,">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title></title>
+
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+   <link rel="stylesheet" type="text/css" href="../TI.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="../mathjax_setup.js"></script>
+   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+      <section
         count={48}
         title_gr="Mehr über Unentscheidbarkeit: Das Postsche Korrespondenzproblem"
         title_en="Post correspondence problem"
@@ -15,10 +24,10 @@ const Article = () => {
         counter="ExoCtr"
         path="/lecture-notes48.tsx">
         <div id="link-to-toc">
-          <a href="../vorlesungsskript">
+          <a href="../vorlesungsskript.html">
             Inhaltsverzeichnis
           </a>
-          <a href="07-06-undecidability">
+          <a href="07-06-undecidability.html">
             &lt;&lt; Kapitel 7.6
           </a>
         </div>
@@ -28,7 +37,7 @@ const Article = () => {
           <a href="/">
             zur Kursübersicht
           </a>
-          <a href="07-08-PCP-applications">
+          <a href="07-08-PCP-applications.html">
             Kapitel 7.8 &gt;&gt;
           </a>
         </div>
@@ -42,7 +51,7 @@ const Article = () => {
                     Mehr über Unentscheidbarkeit: Das Postsche Korrespondenzproblem
                   </span>
                 </h1>
-                <Paragraph>
+                <p>
                   Die Unentscheidbarkeit des Halteproblems
                   mag auf den ersten Blick esoterisch anmuten. Es taucht
                   ja nur auf, weil die Problemstellung irgendwie
@@ -51,19 +60,19 @@ const Article = () => {
                   und der Mathematik auf, auch bei Fragestellungen, die
                   auf den ersten Blick nichts mit Turingmaschinen zu tun
                   haben und völlig harmlos wirken. Wie zum Beispiel
-                  das rein kombinatorische{" "}
+                  das rein kombinatorische 
                   <i>
                     Postsche Korrespondenzproblem.
                   </i>
-                  {" "}{" "}
-                </Paragraph>
-                <Paragraph>
+                    
+                </p>
+                <p>
                   Im Postschen Korrespondenzproblem haben wir endlich
-                  viele Kärtchen (auch{" "}
+                  viele Kärtchen (auch 
                   <i>
                     Kacheln
                   </i>
-                  {" "}genannt) gegeben,
+                   genannt) gegeben,
                   die oben und unten jeweils ein Wort haben. Wir müssen
                   die Kärtchen so nebeneinander legen, dass oben und unten
                   das gleiche Wort entsteht; jedes Kärtchen kann beliebig
@@ -71,7 +80,7 @@ const Article = () => {
                   Im folgenden Beispiel
                   wird das beige-farbene Kärtchen zweimal
                   verwendet:
-                </Paragraph>
+                </p>
                 <figure class="centered-figure well container">
                   <Carousel>
                     <img
@@ -103,19 +112,19 @@ const Article = () => {
                       src="../img/pcp/example-wikipedia/09.svg" />
                   </Carousel>
                 </figure>
-                <Paragraph>
+                <p>
                   (Diese Beispielinstanz ist von
                   <a href="https://en.wikipedia.org/wiki/Post_correspondence_problem">
-                    &ensp;Wikipedia{" "}
+                    &ensp;Wikipedia 
                   </a>
                   ;
                   die graphische Darstellung stammt von mir.)
-                </Paragraph>
-                <Paragraph>
+                </p>
+                <p>
                   Schauen wir uns ein weiteres, komplizierteres Beispiel an.
                   Hier führen wir eine Sonderregel ein, nämlich
                   dass man mit der türkisen Kachel (der ersten) anfangen muss:
-                </Paragraph>
+                </p>
                 <figure class="centered-figure well container">
                   <Carousel>
                     <img
@@ -195,25 +204,25 @@ const Article = () => {
                       src="../img/pcp/example-expo/25.svg" />
                   </Carousel>
                 </figure>
-                <Paragraph>
+                <p>
                   Können Sie das zweie PCP-Puzzle lösen und zu Ende führen?
                   Informell sehen wir bereits: um das Puzzle zu lösen, müssen
-                  wir die \(\texttt&#123;x&#125;\) loswerden. Das geht nur, indem wir
-                  jedes \(\texttt&#123;x&#125;\) mit Hilfe des fünften (beigefarbenen)
-                  Kärtchens nach rechts schieben, bis es auf ein \(\texttt&#123;a&#125;\)
+                  wir die \(\texttt{x}\) loswerden. Das geht nur, indem wir
+                  jedes \(\texttt{x}\) mit Hilfe des fünften (beigefarbenen)
+                  Kärtchens nach rechts schieben, bis es auf ein \(\texttt{a}\)
                   stösst, wo wir es mit dem sechsten (violetten) verschwinden
-                  lassen können. Jedes \(\texttt&#123;x&#125;\) verdoppelt also die Anzahl
+                  lassen können. Jedes \(\texttt{x}\) verdoppelt also die Anzahl
                   der Einsen. Dieses PCP "berechnet" in gewisser Weise die
                   Funktion \(n \mapsto 2^n\). In ganz ähnlicher Weise
                   können wir zu jeder Turingmaschine ein PCP-Puzzle bauen,
                   das diese Maschine "simuliert". Aber eins nach dem anderen.
                   Wir beginnen mit Terminologie.
-                </Paragraph>
+                </p>
                 <div class="well container theorem">
                   <span class="numbered-title">
                     Definition
                     <NumberedTitle>
-                      &ensp;7.7.1{" "}
+                      &ensp;7.7.1 
                     </NumberedTitle>
                     &ensp;(Postsches Korrespondenz-Problem, PCP)
                   </span>
@@ -224,11 +233,11 @@ const Article = () => {
                       <i>
                         Kachel
                       </i>
-                      {" "}(auch{" "}
+                       (auch 
                       <i>
                         Kärtchen
                       </i>
-                      {" "}genannt) ist ein
+                       genannt) ist ein
                       Paar \((\alpha : \beta) \in \Sigma^* \times \Sigma^*\).
                       Hier bezeichnet \(\alpha\) das Wort auf der oberen Hälfte der Kachel
                       und \(\beta\) das auf der unteren.
@@ -239,26 +248,26 @@ const Article = () => {
                     </li>
                     <li>
                       Eine Kachelung ist eine Folge \(s\) von Kacheln aus \(S\), also
-                      $$\begin&#123;align*&#125;
-                      s = (\alpha_&#123;1&#125; : \beta_&#123;1&#125;) (\alpha_&#123;2&#125; : \beta_&#123;2&#125;) \dots
-                      (\alpha_&#123;m&#125; : \beta_&#123;m&#125;)
-                      \end&#123;align*&#125;$$
+                      $$\begin{align*}
+                      s = (\alpha_{1} : \beta_{1}) (\alpha_{2} : \beta_{2}) \dots
+                      (\alpha_{m} : \beta_{m})
+                      \end{align*}$$
                       Für eine Kachelung \(s\) definieren wir den
                       <i>
                         oberen Teil
                       </i>
-                      {" "}\(\top(s)\) und den
+                       \(\top(s)\) und den
                       <i>
                         unteren Teil
                       </i>
-                      {" "}\(\bottom(s)\):
-                      $$\begin&#123;align*&#125;
+                       \(\bottom(s)\):
+                      $$\begin{align*}
                       \top(s)&amp;:= \alpha_1 \alpha_2 \dots \alpha_m \\
                       \bottom(s)&amp;:= \beta_1 \beta_2 \dots \beta_m \\
-                      \end&#123;align*&#125;$$
+                      \end{align*}$$
                     </li>
                     <li>
-                      Eine Kachelung \(s\) ist eine{" "}
+                      Eine Kachelung \(s\) ist eine 
                       <i>
                         Lösung
                       </i>
@@ -266,88 +275,88 @@ const Article = () => {
                     </li>
                   </ul>
                 </div>
-                <Paragraph>
+                <p>
                   Illustrieren wir die Definitionen noch einmal
                   anhand des ersten Beispiels:
-                </Paragraph>
+                </p>
                 <figure>
                   <img
                     style="height:12em"
                     src="../img/pcp/example-wikipedia/04.svg" />
                 </figure>
-                <Paragraph>
+                <p>
                   Das Puzzle besteht aus drei Kacheln:
-                  $$\begin&#123;align*&#125;
+                  $$\begin{align*}
                   k_1&amp;:= (a : baa) \\
                   k_2&amp;:= (ab : aa) \\
                   k_3&amp;:= (bba : bb) \ .
-                  \end&#123;align*&#125;$$
+                  \end{align*}$$
                   Oben sehen wir eine Kachelung \(s := k_3 k_2 k_3\) und
-                  $$\begin&#123;align*&#125;
+                  $$\begin{align*}
                   \top(s)&amp;= bbaabbba \\
                   \bottom(s)&amp;= bbaabb \ .
-                  \end&#123;align*&#125;$$
+                  \end{align*}$$
                   Die Kachelung \(k_3 k_2 k_3\) ist noch keine Lösung, aber
                   \(k_3 k_2 k_3 k_1\) ist eine.
-                </Paragraph>
-                <Paragraph>
+                </p>
+                <p>
                   Für ein festes \(\Sigma\) können wir natürlich ein PCP-Puzzle
                   codieren, indem wir die Menge \(S\) der Kacheln
-                  codieren, z.B. über dem Alphabet \(\Sigma \cup \&#123;(, :, )\&#125;\).
+                  codieren, z.B. über dem Alphabet \(\Sigma \cup \{(, :, )\}\).
                   Das erste Beispielpuzzle \(S\) wäre dann
-                </Paragraph>
-                $$\begin&#123;align*&#125;
+                </p>
+                $$\begin{align*}
                 \enc(S) := (a:baa)(ab:aa)(bba:bb)
-                \end&#123;align*&#125;$$
+                \end{align*}$$
                 Somit können wir das Postsche Korrespondenzproblem formal
                 als Sprache definieren:
-                $$\begin&#123;align*&#125;
-                &#123;\rm PCP&#125; := \&#123; \enc(S) \ | \ S \textnormal&#123; ist ein PCP-Puzzle und hat eine Lösung&#125; \&#125; \ .
-                \end&#123;align*&#125;$$
+                $$\begin{align*}
+                {\rm PCP} := \{ \enc(S) \ | \ S \textnormal{ ist ein PCP-Puzzle und hat eine Lösung} \} \ .
+                \end{align*}$$
                 <div class="well container theorem">
                   <span class="numbered-title">
                     Theorem
                     <NumberedTitle>
-                      &ensp;7.7.2{" "}
+                      &ensp;7.7.2 
                     </NumberedTitle>
                   </span>
                   PCP ist unentscheidbar.
                 </div>
                 <div class="well container">
-                  {" "}{" "}
+                    
                   <b>
                     Beweis.
                   </b>
-                  Wir zeigen: wenn PCP entscheidbar{" "}
+                  Wir zeigen: wenn PCP entscheidbar 
                   <i>
                     wäre
                   </i>
-                  , dann{" "}
+                  , dann 
                   <i>
                     wäre
                   </i>
                   auch \(\halt\) entscheidbar. Da letzteres jedoch unentscheidbar
                   ist, muss auch PCP unentscheidbar sein.
-                  <Paragraph>
+                  <p>
                     Mehr im Detail: für eine Turingmaschine
                     \(M\) und ein Eingabewort \(x\) konstruieren wir
                     ein Puzzle \(S\), so dass \(S\) genau dann eine
                     Lösung hat, wenn \(M(x)\) akzeptiert. Ein
                     Entscheidungsalgorithmus für das PCP könnte
                     somit auch \(\halt\) entscheiden.
-                  </Paragraph>
-                  <Paragraph>
+                  </p>
+                  <p>
                     Wie so oft in ähnlichen Beweisen machen wir einen
-                    Zwischenschritt. Das{" "}
+                    Zwischenschritt. Das 
                     <i>
                       Modifizierte Postsche
                       Korrespondenzproblem (MPCP)
                     </i>
-                    {" "}ist genau das gleiche wie das PCP,
+                     ist genau das gleiche wie das PCP,
                     nur dass es in \(S\) eine markierte Startkachel gibt
                     und jede Lösung mit dieser Startkachel beginnen muss.
                     Es ist also ein "strengeres" Problem als das PCP.
-                  </Paragraph>
+                  </p>
                   <div class="well subtheorem theorem">
                     <span class="numbered-title">
                       Lemma
@@ -358,7 +367,7 @@ const Article = () => {
                     hat genau dann, wenn \(S'\) eine Lösung hat.
                   </div>
                   <div class="well subtheorem">
-                    {" "}{" "}
+                      
                     <b>
                       Beweis.
                     </b>
@@ -386,7 +395,7 @@ const Article = () => {
                         src="../img/pcp/mpcp-to-pcp-02.svg"
                         loading="lazy" />
                     </figure>
-                    <Paragraph>
+                    <p>
                       Die gesternten Kacheln zwingen uns nun dazu,
                       mit der markierten zu beginnen, da diese ja die
                       einzige ist, wo das erste Symbol oben und unten
@@ -396,14 +405,14 @@ const Article = () => {
                       \(S\)-Kachelung rechts unten ein *, rechts oben aber nicht.
                       Wir erstellen nun eine weitere Kachel, die
                       am rechten Rand und nur dort eingesetzt werden kann:
-                    </Paragraph>
+                    </p>
                     <figure>
                       <img
                         style="height:4em"
                         src="../img/pcp/mpcp-to-pcp-03.svg"
                         loading="lazy" />
                     </figure>
-                    <Paragraph>
+                    <p>
                       Sie sehen: die letzte Kachel ist die einzige, die
                       am rechten Rand stehen kann. Sollte
                       nun das MPCP-Puzzle \(S\) eine Lösung haben (die dann
@@ -425,52 +434,52 @@ const Article = () => {
                       <span class="qed">
                         \(\square\)
                       </span>
-                    </Paragraph>
+                    </p>
                   </div>
-                  <Paragraph>
+                  <p>
                     Nun wissen wir also, dass wir den "Spieler" zwingen können,
                     mit einer bestimmten Kachel zu beginnen, ohne dies
                     explizit in die Spielregeln aufnehmen zu müssen. Unser
                     Ziel ist nun: gegeben eine Turingmaschine \(M\) und
                     ein Inputwort \(x\), darauf aufbauend ein
                     MPCP-Puzzle \(S\) zu konstruieren, das genau dann eine
-                    Lösung hat, wenn \(M(x) = \texttt&#123;accept&#125;\) gilt.
-                  </Paragraph>
-                  <Paragraph>
-                    Erinneren wir uns: eine{" "}
+                    Lösung hat, wenn \(M(x) = \texttt{accept}\) gilt.
+                  </p>
+                  <p>
+                    Erinneren wir uns: eine 
                     <i>
                       Konfiguration
                     </i>
-                    {" "}einer
+                     einer
                     Turingmaschine ist eine Folge
-                    $$\begin&#123;align*&#125;
-                    w_1 w_2 \dots w_&#123;j-1&#125; q w_j \dots w_m
-                    \end&#123;align*&#125;$$
+                    $$\begin{align*}
+                    w_1 w_2 \dots w_{j-1} q w_j \dots w_m
+                    \end{align*}$$
                     mit
                     \(w_i \in \Gamma\) und \(q \in Q\). Die Bedeutung ist,
                     dass auf dem Band das Wort \(w_1 w_2 \dots w_m\) steht,
                     die Turingmaschine im Zustand \(q\) ist und der
                     Schreib-Lese-Kopf über den Zeichen \(w_j\) steht.
-                    Wir schreiben also den Zustand unmittelbar{" "}
+                    Wir schreiben also den Zustand unmittelbar 
                     <i>
                       links
                     </i>
                     von dem Zeichen, über dem er steht.
                     Wenn das Eingabewort \(x_1 \dots x_n\) und
                     \(q_0 \in Q\) der Startzustand, dann ist
-                    $$\begin&#123;align*&#125;
+                    $$\begin{align*}
                     C_0 := q_0 x_1 \dots x_n
-                    \end&#123;align*&#125;$$
+                    \end{align*}$$
                     die Startkonfiguration.
                     Die Berechnung einer Turingmaschine ist nun
                     eine Folge von Konfigurationen, die wir mit dem
                     \(\#\)-Zeichen separieren, also
-                  </Paragraph>
-                  $$\begin&#123;align*&#125;
+                  </p>
+                  $$\begin{align*}
                   \#\# C_0 \# C_1 \# C_2 \# C_3 \# \dots \# C_t
-                  \end&#123;align*&#125;$$
+                  \end{align*}$$
                   Zwei aufeinanderfolgende Konfigurationen
-                  \(C_i, C_&#123;i+1&#125;\) unterscheiden sich nur in der unmittelbaren
+                  \(C_i, C_{i+1}\) unterscheiden sich nur in der unmittelbaren
                   Umgebung des Schreib-Lese-Kopfes. Der Rest ist in beiden
                   Konfigurationen identisch. Die Idee ist nun, zuerst eine Startkachel
                   <figure>
@@ -486,9 +495,9 @@ const Article = () => {
                   zu legen. Hierfür brauchen wir "Kopierkacheln", die es uns
                   erlauben, Zeichen in die Folgekonfiguration zu kopieren und
                   "Kopf-Kacheln", die die Aktion am Schreib-Lese-Kopf simulieren.
-                  $$\begin&#123;align*&#125;
-                  \delta(q_0, x_1) = (q_1, y, \texttt&#123;R&#125;)
-                  \end&#123;align*&#125;$$
+                  $$\begin{align*}
+                  \delta(q_0, x_1) = (q_1, y, \texttt{R})
+                  \end{align*}$$
                   ist, dann würden wir folgende Kachel erzeugen und wie folgt
                   einsetzen:
                   <figure class="centered-figure">
@@ -519,19 +528,19 @@ const Article = () => {
                         src="../img/pcp/step-right/08.svg" />
                     </Carousel>
                   </figure>
-                  <Paragraph>
+                  <p>
                     Was geschieht nun? Für das Symbol \(q_1\), das ja einen Zustand
                     bezeichnet, gibt es keine Kopierkachel. Wenn nun
                     beispielsweise
-                    $$\begin&#123;align*&#125;
-                    \delta(q_1, x_2) = (q_3, z, \texttt&#123;L&#125;)
-                    \end&#123;align*&#125;$$
+                    $$\begin{align*}
+                    \delta(q_1, x_2) = (q_3, z, \texttt{L})
+                    \end{align*}$$
                     gilt, dann müssten wir den Kopf wieder nach links verschieben, und
                     er würde wiederum ganz am Anfang der Konfiguration stehen. Es war
                     also ein Fehler, \(y\) per Kopierkachel zu kopieren. Wir
                     machen es rückgängig und legen eine der Regel
-                    \(\delta(q_1, x_2) = (q_3, z, \texttt&#123;L&#125;)\) entsprechende Kopfkachel:
-                  </Paragraph>
+                    \(\delta(q_1, x_2) = (q_3, z, \texttt{L})\) entsprechende Kopfkachel:
+                  </p>
                   <figure class="centered-figure">
                     <Carousel>
                       <img
@@ -551,54 +560,54 @@ const Article = () => {
                         src="../img/pcp/step-left/05.svg" />
                     </Carousel>
                   </figure>
-                  <Paragraph>
+                  <p>
                     Hier brauchen wir halt eine Kopfkachel \((q_2yz:yq_1x_2)\) für
                     <i>
                       jedes
                     </i>
-                    {" "}Bandsymbol \(y\), da die Regel immer anzuwenden ist,
+                     Bandsymbol \(y\), da die Regel immer anzuwenden ist,
                     egal, welches Symbol \(y\) links vom Schreib-Lese-Kopf steht.
-                  </Paragraph>
-                  <Paragraph>
+                  </p>
+                  <p>
                     Fassen wir zusammen, was wir bis jetzt gesehen haben. Wir
                     konstruieren Kopierkacheln \((x:x)\), die es dem Spieler erlauben,
                     die Konfiguration zu kopieren; Kopfkacheln, die den Spieler zwingen,
                     in der Umgebung des Schreib-Lese-Kopfes den Regeln
                     der Turingmaschine zu folgen; und eine Startkachel, die die
                     Startkonfiguration abbildet. Also:
-                  </Paragraph>
+                  </p>
                   <figure>
                     <img
                       style="height:20em"
                       src="../img/pcp/almost-all-tiles.svg"
                       loading="lazy" />
                   </figure>
-                  <Paragraph>
+                  <p>
                     Wir sind noch nicht ganz fertig. Wir brauchen noch Regeln
                     für den Fall, dass der Schreib-Lese-Kopf am Rand des Bandinhaltes steht,
-                    konkret also die "Umgebung" des Kopfes ein \(\texttt&#123;#&#125;\)-Zeichen
+                    konkret also die "Umgebung" des Kopfes ein \(\texttt{#}\)-Zeichen
                     beinhaltet. Wir können entweder weitere Kopf-Kacheln entwerfen, die
                     diese Fälle behandeln, oder aber "Bandwrweiterungskacheln", die
                     uns erlauben, der Konfiguration \(C\) links oder rechts ein
                     Leersymbol \(\_\) anzuhängen. Ich überlasse es an dieser
                     Stelle dem Leser / der Leserin, die Details hierfür auszuarbeiten.
-                  </Paragraph>
-                  <Paragraph>
+                  </p>
+                  <p>
                     Ganz zum Schluss müssen wir noch beschreiben, was geschieht, wenn die
                     Maschine in den akzeptierenden Zustand \(q^*\) wechselt.
                     Wir erschaffen Kacheln, die erlauben, alle Bandsymbole zu löschen,
                     bis das Band leer ist:
-                  </Paragraph>
+                  </p>
                   <figure>
                     <img
                       style="height:6em"
                       src="../img/pcp/tile-delete-symbols.svg"
                       loading="lazy" />
                   </figure>
-                  <Paragraph>
+                  <p>
                     und ganz am Schluss eine Kachel \((\# : q^* \# \#)\), um alles
                     abzuschließen. Die letzten zwei Schritte sehen dann so aus:
-                  </Paragraph>
+                  </p>
                   <figure class="centered-figure">
                     <Carousel>
                       <img
@@ -612,31 +621,27 @@ const Article = () => {
                         src="../img/pcp/finish-03.svg" />
                     </Carousel>
                   </figure>
-                  <Paragraph>
+                  <p>
                     Strenggenommen müssten wir jetzt beweisen, dass das MPCP-Puzzle genau dann lösbar ist, wenn
                     die Turingmaschine akzeptiert. Hierfür könnten wir zum Beispiel zeigen, dass, wenn
                     \(s\) eine Kachelung ist, in welcher \(\top(s)\) und \(\bottom(s)\) beide auf dem Zeichen
                     \(\#\) enden und wenn \(\bottom(s)\) nicht das Zeichen \(q^*\) enthält, dann ist
-                    $$\begin&#123;align*&#125;
-                    \top(s)&amp;= \#\# C_0 \# C_1 \# \dots \# C_&#123;j+1&#125;\# \\
+                    $$\begin{align*}
+                    \top(s)&amp;= \#\# C_0 \# C_1 \# \dots \# C_{j+1}\# \\
                     \bottom(s)&amp;= \#\# C_0 \# C_1 \# \dots \# C_j\# \\
-                    \end&#123;align*&#125;$$
+                    \end{align*}$$
                     wobei \(C_0 = q_0 x_1 \dots x_n\) die Startkonfiguration der Turingmaschine ist
-                    und jedes \(C_&#123;i+1&#125;\) die Folgekonfiguration von \(C_i\); dass also die Teillösung
+                    und jedes \(C_{i+1}\) die Folgekonfiguration von \(C_i\); dass also die Teillösung
                     \(s\) des Puzzles getreu die Berechnung der Turingmaschine abbildet.
                     Wir ersparen uns weitere Details.
                     <span class="qed">
                       \(\square\)
                     </span>
-                  </Paragraph>
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </Section>
-    </Container>
-  );
-};
-
-export default Article;
+      </section>
+    </body>

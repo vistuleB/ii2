@@ -1,12 +1,21 @@
-import Section from "~/components/Section";
-import Paragraph from "~/components/Paragraph";
-import Container from "~/components/Container";
-import Carousel from "~/components/Carousel";
-import NumberedTitle from "~/components/NumberedTitle";
-const Article = () => {
-  return (
-    <Container>
-      <Section
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="data:,">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title></title>
+
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+   <link rel="stylesheet" type="text/css" href="../TI.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="../mathjax_setup.js"></script>
+   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+      <section
         count={31}
         title_gr="Rechnerübung: Gute kontextfreie Grammatiken entwerfen"
         title_en="exercise design grammars"
@@ -15,10 +24,10 @@ const Article = () => {
         counter="ExoCtr"
         path="/lecture-notes31.tsx">
         <div id="link-to-toc">
-          <a href="../vorlesungsskript">
+          <a href="../vorlesungsskript.html">
             Inhaltsverzeichnis
           </a>
-          <a href="05-02-cfg-to-pda">
+          <a href="05-02-cfg-to-pda.html">
             &lt;&lt; Kapitel 5.2
           </a>
         </div>
@@ -28,7 +37,7 @@ const Article = () => {
           <a href="/">
             zur Kursübersicht
           </a>
-          <a href="05-04-LL1-grammars">
+          <a href="05-04-LL1-grammars.html">
             Kapitel 5.4 &gt;&gt;
           </a>
         </div>
@@ -42,14 +51,14 @@ const Article = () => {
                     Rechnerübung: Gute kontextfreie Grammatiken entwerfen
                   </span>
                 </h1>
-                <Paragraph>
-                  Benutzen Sie die App{" "}
+                <p>
+                  Benutzen Sie die App 
                   <a href="../../demos/drawManualGrammar.html">
-                    &ensp;drawManualGrammar.html{" "}
+                    &ensp;drawManualGrammar.html 
                   </a>
                   ,
-                  um mit kontextfreien Grammatik zu experimentieren:{" "}
-                </Paragraph>
+                  um mit kontextfreien Grammatik zu experimentieren: 
+                </p>
                 <figure>
                   <a href="../../demos/drawManualGrammar.html">
                     <img
@@ -58,9 +67,9 @@ const Article = () => {
                       loading="lazy" />
                   </a>
                 </figure>
-                <Paragraph>
+                <p>
                   Diese besteht aus folgenden Teilen:
-                </Paragraph>
+                </p>
                 <ol>
                   <li>
                     Dem Eingabefenster für die Grammatik links oben. Hier können Sie Ihre eigene Grammatik
@@ -87,68 +96,68 @@ const Article = () => {
                   <span class="numbered-title">
                     Übungsaufgabe
                     <NumberedTitle>
-                      &ensp;5.3.1{" "}
+                      &ensp;5.3.1 
                     </NumberedTitle>
                   </span>
                   Geben Sie folgende Grammatik in die App ein:
                   <pre>
-                    S -&gt; ;
-                    S -&gt; "("S")"S ;
-                    S -&gt; "(" S "]" S;
+                    S -> ;
+                    S -> "("S")"S ;
+                    S -> "(" S "]" S;
                   </pre>
-                  <Paragraph>
+                  <p>
                     Was ist die erzeugte Sprache? Können Sie sie in Worten beschreiben?
-                  </Paragraph>
-                  <Paragraph>
+                  </p>
+                  <p>
                     Erzeugen Sie Wörter in dieser Sprache, für die der Backtrack-Baum viele rote
                     Sackgassen enthält.
-                  </Paragraph>
-                  <Paragraph>
+                  </p>
+                  <p>
                     Schreiben Sie eine äquivalente Grammatik (d.h., die die gleiche Sprache erzeugt),
                     für die es keine oder nur sehr kurze Sackgassen gibt.
                     Testen Sie die beiden Grammatiken mit "großen" Eingabewörtern
                     und schauen Sie, ob Sie Laufzeitunterschiede bemerken.
                     (Hier erweist sich mein ineffizienter Code als Vorteil: eine schlechte Grammatik
                     wird sofort bestraft).
-                  </Paragraph>
+                  </p>
                 </div>
                 <div class="well well-lg numbered-exercise container">
                   <span class="numbered-title">
                     Übungsaufgabe
                     <NumberedTitle>
-                      &ensp;5.3.2{" "}
+                      &ensp;5.3.2 
                     </NumberedTitle>
                   </span>
                   Schreiben Sie eine kontextfreie Grammatik für die Sprache aller
-                  "korrekten" URLs; also Folgen von mindestens zwei{" "}
+                  "korrekten" URLs; also Folgen von mindestens zwei 
                   <i>
                     Labels
                   </i>
                   , die
-                  durch{" "}
+                  durch 
                   <code>
                     .
                   </code>
-                  {" "}separiert sind. Sie können den "Regelvorschlag"
+                   separiert sind. Sie können den "Regelvorschlag"
                   ganz links unten in der App reinkopieren, um automatisch Regeln für alphanumerische
                   Zeichen zu bekommen (allerdings verschlechtert das die Laufzeit; ich habe erstmal
                   gar nicht auf Effizienz geachtet).
-                  <Paragraph>
-                    Geben Sie das Eingabewort{" "}
+                  <p>
+                    Geben Sie das Eingabewort 
                     <code>
                       a.aaaaa.aaaa.aaaa.aaaa.aaaa
                     </code>
-                    {" "}ein. Wie
+                     ein. Wie
                     sieht Ihr Backtrack-Baum aus? Hat er viele Sackgassen? Können Sie Ihre Grammatik
                     so abändern, dass sie zwar noch die gleiche Sprache erzeugt, aber keine / nur wenige
                     Sackgassen hat?
-                  </Paragraph>
+                  </p>
                 </div>
                 <div class="well well-lg numbered-exercise container">
                   <span class="numbered-title">
                     Übungsaufgabe
                     <NumberedTitle>
-                      &ensp;5.3.3{" "}
+                      &ensp;5.3.3 
                     </NumberedTitle>
                   </span>
                   Entwerfen Sie eine Grammatik für arithmetische Ausdrücke im Racket-Stil, also
@@ -156,17 +165,17 @@ const Article = () => {
                     (* (+ 2 3) (- 4 (* 2 4) 5)
                     (+ 1 2 (* 2))
                   </pre>
-                  <Paragraph>
+                  <p>
                     Leidet Ihre Grammatik an langen Sackgassen? Wenn ja, können Sie die Grammatik abändern?
                     Haben Sie mittlerweile ein Schema erkannt, welche Konstrukte lange Sackgassen
                     begünstigen?
-                  </Paragraph>
+                  </p>
                 </div>
                 <div class="well well-lg numbered-exercise container">
                   <span class="numbered-title">
                     Übungsaufgabe
                     <NumberedTitle>
-                      &ensp;5.3.4{" "}
+                      &ensp;5.3.4 
                     </NumberedTitle>
                   </span>
                   Wiederholen Sie die vorherige Übung für arithmetische Ausdrücke in der uns
@@ -181,18 +190,18 @@ const Article = () => {
                   <span class="numbered-title">
                     Übungsaufgabe
                     <NumberedTitle>
-                      &ensp;5.3.5{" "}
+                      &ensp;5.3.5 
                     </NumberedTitle>
                   </span>
-                  {" "}{" "}
+                    
                   <b>
                     (Challenge)
                   </b>
                   Geben Sie die Grammatik hier ein:
                   <pre>
-                    S -&gt; "("S")"S;
-                    S -&gt; "["S"("S;
-                    S -&gt; ;
+                    S -> "("S")"S;
+                    S -> "["S"("S;
+                    S -> ;
                   </pre>
                   Überlegen Sie, was diese "bedeutet". Sie sehen, die Grammatik ist
                   nicht eindeutig. Das Wort `[([()(` hat zwei
@@ -200,39 +209,39 @@ const Article = () => {
                   <i>
                     eindeutige
                   </i>
-                  {" "}Grammatik schreiben?
+                   Grammatik schreiben?
                 </div>
                 <div class="well well-lg numbered-exercise container">
                   <span class="numbered-title">
                     Übungsaufgabe
                     <NumberedTitle>
-                      &ensp;5.3.6{" "}
+                      &ensp;5.3.6 
                     </NumberedTitle>
                   </span>
-                  {" "}{" "}
+                    
                   <b>
                     (Challenge)
                   </b>
-                  Die folgende Grammatik hat User{" "}
+                  Die folgende Grammatik hat User 
                   <i>
                     babou
                   </i>
-                  auf{" "}
+                  auf 
                   <a href="https://cstheory.stackexchange.com/questions/22520/example-of-context-free-grammar-that-triggers-exponential-behaviour-without-memo">
-                    &ensp;StackExchange{" "}
+                    &ensp;StackExchange 
                   </a>
                   vorgeschlagen als Beispiel für eine eindeutige Grammatik,
                   bei der Sie exponentiell große Backtrack-Bäume bekommen können:
                   <pre>
-                    S -&gt;  "a" X "b" | "a" X "c";
-                    X -&gt; "a" | "a" X | "a" X X;
+                    S ->  "a" X "b" | "a" X "c";
+                    X -> "a" | "a" X | "a" X X;
                   </pre>
                   Das ist aber keine Kunst, da die Grammatik uneindeutig ist.
-                  Können Sie eine{" "}
+                  Können Sie eine 
                   <i>
                     eindeutige
                   </i>
-                  {" "}Grammatik angebene, die ähnlich
+                   Grammatik angebene, die ähnlich
                   exponentielles Verhalten zeigt? Exponentiell heißt: mit jedem
                   zusätlichen Zeichen des Eingabewortes kann die Größe des
                   Backtrack-Baumes um einen Faktor \(R \gt 1\) wachsen.
@@ -241,28 +250,24 @@ const Article = () => {
                   <span class="numbered-title">
                     Übungsaufgabe
                     <NumberedTitle>
-                      &ensp;5.3.7{" "}
+                      &ensp;5.3.7 
                     </NumberedTitle>
                   </span>
-                  {" "}{" "}
+                    
                   <b>
                     (Super-Challenge; ich hab selbst keine Lösung)
                   </b>
                   .
-                  Finden Sie eine kontextfreie Sprache \(L\), für die{" "}
+                  Finden Sie eine kontextfreie Sprache \(L\), für die 
                   <i>
                     jede
                   </i>
-                  {" "}Grammatik,
+                   Grammatik,
                   die \(L\) erzeugt, unter exponentiell großen Backtrack-Bäumen leidet.
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </Section>
-    </Container>
-  );
-};
-
-export default Article;
+      </section>
+    </body>

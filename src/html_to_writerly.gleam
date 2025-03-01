@@ -44,7 +44,7 @@ fn construct_left_nav(prev_file: Option(String)) {
   let toc_link = vp.V(
     blame_us("toc link"),
     "a",
-    [vp.BlamedAttribute(blame_us("toc link attribute"), "href", "../vorlesungsskript")], [vp.T(blame_us("toc link text node"),
+    [vp.BlamedAttribute(blame_us("toc link attribute"), "href", "../vorlesungsskript.html")], [vp.T(blame_us("toc link text node"),
       [
         vp.BlamedContent(blame_us("toc link content"), "Inhaltsverzeichnis")
       ]
@@ -54,14 +54,13 @@ fn construct_left_nav(prev_file: Option(String)) {
 
   let prev_section_link = case prev_file {
     option.Some(prev_file) -> {
-      let prev_file_name = string.drop_end(prev_file, 5)
-      let assert [prev_number_first, prev_number_second, ..] = string.split(prev_file_name, "-")
+      let assert [prev_number_first, prev_number_second, ..] = string.split(prev_file, "-")
       let prev_number = string.join([remove_0_at_start(prev_number_first), remove_0_at_start(prev_number_second)], ".")
 
       [vp.V(
         blame_us("Prev section link"),
         "a",
-        [vp.BlamedAttribute(blame_us("Prev section attribute"), "href", prev_file_name)], [vp.T(blame_us("Prev section text node"),
+        [vp.BlamedAttribute(blame_us("Prev section attribute"), "href", prev_file)], [vp.T(blame_us("Prev section text node"),
           [
             vp.BlamedContent(blame_us("Prev section content"), "&lt;&lt; Kapitel " <> prev_number)
           ]
@@ -90,15 +89,14 @@ fn construct_right_nav(next_file: Option(String)) {
 
   let next_section_link = case next_file {
     option.Some(next_file) -> {
-     let next_file_name = string.drop_end(next_file, 5)
-      let assert [next_number_first, next_number_second, ..] = string.split(next_file_name, "-")
+      let assert [next_number_first, next_number_second, ..] = string.split(next_file, "-")
       let next_number = string.join([remove_0_at_start(next_number_first), remove_0_at_start(next_number_second)], ".")
 
       [vp.V(
         blame_us("next section link"),
         "a",
         [
-          vp.BlamedAttribute(blame_us("next section attribute"), "href", next_file_name)
+          vp.BlamedAttribute(blame_us("next section attribute"), "href", next_file)
         ], [vp.T(blame_us("next section text node"),
           [
             vp.BlamedContent(blame_us("next section content"), "Kapitel " <> next_number <> " &gt;&gt;")
@@ -203,7 +201,7 @@ fn emitter(
 
   let root = vp.V(
     blame_us("Root"),
-    "Section",
+    "section",
     [
       vp.BlamedAttribute(blame_us("section title"), "title_gr", title_german),
       vp.BlamedAttribute(blame_us("section title"), "title_en", title_en),

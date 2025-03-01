@@ -1,274 +1,462 @@
-import TOCItem from "./TOCItem";
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="data:,">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title></title>
 
-const TOCAuthorSuppliedContent = () => {
-  return (
-    <>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="./lecture-notes.css" />
+   <link rel="stylesheet" type="text/css" href="./TI.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="./mathjax_setup.js"></script>
+   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+  <div>
+        <p>
+          <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html">
+            zur Kursübersicht
+          </a>
+        </p>
+      </div>
+      <div class="container" style="text-align: center;">
+        <div style="text-align: center; margin-bottom: 4em;">
+          <h1>
+            <span class="coursename"></span>Theoretische Informatik 2 -
+            Vorlesungsskript
+          </h1>
+          <h3>Bachelor-Studium Informatik</h3>
+          <h3>Dominik Scheder, TU Chemnitz</h3>
+        </div>
+        <div class="row content">
+          <div class="col-sm-3 sidenav" id="course-list"></div>
+          <div class="col-sm-9 text-left">
+            <div id="table-of-content-div"></div>
       <div id="Chapters">
         <ul style="list-style: none">
-          <TOCItem
-            label="Boolesche Schaltkreise"
-            on_mobile="Boolesche Schaltkreise"
-            number={1.0}
-            href="01-00-Boolean-circuits" />
-          <TOCItem
-            label="Größe, Tiefe, Fan-In"
-            on_mobile="Größe, Tiefe, Fan-In"
-            number={1.1}
-            href="01-01-Fanin-Size-Depth" />
-          <TOCItem
-            label="Wahrheitstabellen, CNF und DNF"
-            on_mobile="Wahrheitstabellen, CNF und DNF"
-            number={1.2}
-            href="01-02-truth-tables-cnf-dnf" />
-          <TOCItem
-            label="Binär-Addierer"
-            on_mobile="Binär-Addierer"
-            number={1.3}
-            href="01-03-binary-adder" />
-          <TOCItem
-            label="Monotone Funktionen und monotone Schaltkreise"
-            on_mobile="Monotone Funktionen und monotone Schaltkreise"
-            number={1.4}
-            href="01-04-monotone-circuits" />
-          <TOCItem
-            label="Majority"
-            on_mobile="Majority"
-            number={1.5}
-            href="01-05-majority" />
-          <TOCItem
-            label="Untere und obere Schranken"
-            on_mobile="Untere und obere Schranken"
-            number={1.6}
-            href="01-06-lower-and-upper-bounds" />
-          <TOCItem
-            label="Unendliche Mengen"
-            on_mobile="Unendliche Mengen"
-            number={2.0}
-            href="02-00-infinite-sets" />
-          <TOCItem
-            label="Wer ist größer?"
-            on_mobile="Wer ist größer?"
-            number={2.1}
-            href="02-01-comparing-sizes" />
-          <TOCItem
-            label="Beispiele abzählbar unendlicher Mengen"
-            on_mobile="Beispiele abzählbar unendlicher Mengen"
-            number={2.2}
-            href="02-02-examples-of-equipotent-sets" />
-          <TOCItem
-            label="Mengen, die so groß wie $\R$ sind"
-            on_mobile="Mengen, die so groß wie $\R$ sind"
-            number={2.3}
-            href="02-03-sets-like-R" />
-          <TOCItem
-            label="Die Cantorsche Diagonalisation: $\N \not \approx \R$"
-            on_mobile="Die Cantorsche Diagonalisation: $\N \not \approx \R$"
-            number={2.4}
-            href="02-04-diagonalization" />
-          <TOCItem
-            label="Das Schröder-Bernstein-Theorem"
-            on_mobile="Das Schröder-Bernstein-Theorem"
-            number={2.5}
-            href="02-05-Schroeder-Bernstein" />
-          <TOCItem
-            label="Der Trichotomiesatz"
-            on_mobile="Der Trichotomiesatz"
-            number={2.6}
-            href="02-06-Trichotomiesatz" />
-          <TOCItem
-            label="Berechenbarkeit und natürliche Zahlen"
-            on_mobile="Berechenbarkeit und natürliche Zahlen"
-            number={3.0}
-            href="03-00-Computability-NaturalNumbers" />
-          <TOCItem
-            label="Primitive Rekursion: Motivation und Definitionen"
-            on_mobile="Primitive Rekursion: Motivation und Definitionen"
-            number={3.1}
-            href="03-01-primitive-recursion-definitions" />
-          <TOCItem
-            label="Primitive Rekursion: Konstruktionen und Tricks"
-            on_mobile="Primitive Rekursion: Konstruktionen und Tricks"
-            number={3.2}
-            href="03-02-primitive-recursion-constructions" />
-          <TOCItem
-            label="Primitive Rekursion kann nicht alles: die éter-Ackermann-Funktion"
-            on_mobile="Primitive Rekursion kann nicht alles: die éter-Ackermann-Funktion"
-            number={3.3}
-            href="03-03-ackermann" />
-          <TOCItem
-            label="Ein Schritt weiter:  while-Schleifen und \(\mu\)-Rekursion"
-            on_mobile="Ein Schritt weiter:  while-Schleifen und \(\mu\)-Rekursion"
-            number={3.4}
-            href="03-04-mu-recursion" />
-          <TOCItem
-            label="Formale Sprachen - Einführung und Beispiele"
-            on_mobile="Formale Sprachen - Einführung und Beispiele"
-            number={4.0}
-            href="04-00-formal-languages" />
-          <TOCItem
-            label="Reguläre Grammatiken"
-            on_mobile="Reguläre Grammatiken"
-            number={4.1}
-            href="04-01-regular-grammars" />
-          <TOCItem
-            label="Endliche Automaten"
-            on_mobile="Endliche Automaten"
-            number={4.2}
-            href="04-02-finite-state-machines" />
-          <TOCItem
-            label="Nichtdeterministische Endliche Automaten"
-            on_mobile="Nichtdeterministische Endliche Automaten"
-            number={4.3}
-            href="04-03-nfsm" />
-          <TOCItem
-            label="Von einer regulären Grammatik zu einem endlichen Automaten"
-            on_mobile="Von einer regulären Grammatik zu einem endlichen Automaten"
-            number={4.4}
-            href="04-04-regular-grammar-to-fsm" />
-          <TOCItem
-            label="Reguläre Ausdrücke"
-            on_mobile="Reguläre Ausdrücke"
-            number={4.5}
-            href="04-05-regular-expressions" />
-          <TOCItem
-            label="Die Grenzen regulärer Sprachen"
-            on_mobile="Die Grenzen regulärer Sprachen"
-            number={4.6}
-            href="04-06-limitations-of-regular-grammars" />
-          <TOCItem
-            label="Übungsaufgaben"
-            on_mobile="Übungsaufgaben"
-            number={4.7}
-            href="04-07-exercises" />
-          <TOCItem
-            label="Kontextfreie Sprachen"
-            on_mobile="Kontextfreie Sprachen"
-            number={5.0}
-            href="05-00-context-free-languages" />
-          <TOCItem
-            label="Ableitungen und Ableitungsbäume"
-            on_mobile="Ableitungen und Ableitungsbäume"
-            number={5.1}
-            href="05-01-ableitungen" />
-          <TOCItem
-            label="Kontextfreie Grammatiken und Kellerautomaten"
-            on_mobile="Kontextfreie Grammatiken und Kellerautomaten"
-            number={5.2}
-            href="05-02-cfg-to-pda" />
-          <TOCItem
-            label="Rechnerübung: Gute kontextfreie Grammatiken entwerfen"
-            on_mobile="Rechnerübung: Gute kontextfreie Grammatiken entwerfen"
-            number={5.3}
-            href="05-03-exercise-design-grammars" />
-          <TOCItem
-            label="LL(\(k\))-Grammatiken"
-            on_mobile="LL(\(k\))-Grammatiken"
-            number={5.4}
-            href="05-04-LL1-grammars" />
-          <TOCItem
-            label="LR-Parser per Hand entwerfen"
-            on_mobile="LR-Parser per Hand entwerfen"
-            number={5.5}
-            href="05-05-a-LR-parsing-by-hand" />
-          <TOCItem
-            label="Einen Parser in Java implementieren"
-            on_mobile="Einen Parser in Java implementieren"
-            number={5.6}
-            href="05-06-b-Parser-in-Java" />
-          <TOCItem
-            label="LR-Grammatiken"
-            on_mobile="LR-Grammatiken"
-            number={5.7}
-            href="05-07-c-LR-grammars" />
-          <TOCItem
-            label="Linker Rand, Blüten und die DK-Grammatik"
-            on_mobile="Linker Rand, Blüten und die DK-Grammatik"
-            number={5.8}
-            href="05-08-d-linker-Rand-und-Bluete" />
-          <TOCItem
-            label="Der DK-Automat"
-            on_mobile="Der DK-Automat"
-            number={5.9}
-            href="05-09-dk-automat" />
-          <TOCItem
-            label="Allgemeine kontextfreie Sprachen parsen"
-            on_mobile="Allgemeine kontextfreie Sprachen parsen"
-            number={5.10}
-            href="05-10-general-parsing" />
-          <TOCItem
-            label="Die Grenzen kontextfreier Sprachen"
-            on_mobile="Die Grenzen kontextfreier Sprachen"
-            number={5.11}
-            href="05-11-not-context-free" />
-          <TOCItem
-            label="Allgemeine Grammatiken"
-            on_mobile="Allgemeine Grammatiken"
-            number={6.0}
-            href="06-00-general-grammars" />
-          <TOCItem
-            label="Turing-Maschinen"
-            on_mobile="Turing-Maschinen"
-            number={7.0}
-            href="07-00-Turing-machines" />
-          <TOCItem
-            label="Turingmaschinen: Formale Definition und Beispiele"
-            on_mobile="Turingmaschinen: Formale Definition und Beispiele"
-            number={7.1}
-            href="07-01-Turing-machines-definition" />
-          <TOCItem
-            label="Beispiele von Turingmaschinen"
-            on_mobile="Beispiele von Turingmaschinen"
-            number={7.2}
-            href="07-02-Turing-machines-examples" />
-          <TOCItem
-            label="Variationen: Mehrband-Maschinen, nichtdeterministische Maschinen"
-            on_mobile="Variationen: Mehrband-Maschinen, nichtdeterministische Maschinen"
-            number={7.3}
-            href="07-03-Turing-variants" />
-          <TOCItem
-            label="Die universelle Turingmaschine"
-            on_mobile="Die universelle Turingmaschine"
-            number={7.4}
-            href="07-04-Turing-encoding" />
-          <TOCItem
-            label="Turing-Maschinen simulieren Turing-Maschinen: die universelle Turing-Maschine"
-            on_mobile="Turing-Maschinen simulieren Turing-Maschinen: die universelle Turing-Maschine"
-            number={7.5}
-            href="07-05-Turing-universal" />
-          <TOCItem
-            label="Turingmaschinen, Haltproblem und Unentscheidbarkeit"
-            on_mobile="Turingmaschinen, Haltproblem und Unentscheidbarkeit"
-            number={7.6}
-            href="07-06-undecidability" />
-          <TOCItem
-            label="Mehr über Unentscheidbarkeit: Das Postsche Korrespondenzproblem"
-            on_mobile="Mehr über Unentscheidbarkeit: Das Postsche Korrespondenzproblem"
-            number={7.7}
-            href="07-07-Post-correspondence-problem" />
-          <TOCItem
-            label="Anwendungen des Postschen Korrespondenzproblems"
-            on_mobile="Anwendungen des Postschen Korrespondenzproblems"
-            number={7.8}
-            href="07-08-PCP-applications" />
-          <TOCItem
-            label="Komplexitätstheorie"
-            on_mobile="Komplexitätstheorie"
-            number={8.0}
-            href="08-00-Complexity-Theory" />
-          <TOCItem
-            label="Das Zeithierarchietheorem"
-            on_mobile="Das Zeithierarchietheorem"
-            number={8.1}
-            href="08-01-Time-hierarchy-theorem" />
-          <TOCItem
-            label="Appendix - Manual für das Schreiben dieses Skripts"
-            on_mobile="Appendix - Manual für das Schreiben dieses Skripts"
-            number={9.0}
-            href="09-00-appendix" />
+          <li style="margin-left: 0">
+            <span>
+              1.0 - 
+            </span>
+            <a href="lecture-notes/01-00-Boolean-circuits.html">
+              Boolesche Schaltkreise
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              1.1 - 
+            </span>
+            <a href="lecture-notes/01-01-Fanin-Size-Depth.html">
+              Größe, Tiefe, Fan-In
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              1.2 - 
+            </span>
+            <a href="lecture-notes/01-02-truth-tables-cnf-dnf.html">
+              Wahrheitstabellen, CNF und DNF
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              1.3 - 
+            </span>
+            <a href="lecture-notes/01-03-binary-adder.html">
+              Binär-Addierer
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              1.4 - 
+            </span>
+            <a href="lecture-notes/01-04-monotone-circuits.html">
+              Monotone Funktionen und monotone Schaltkreise
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              1.5 - 
+            </span>
+            <a href="lecture-notes/01-05-majority.html">
+              Majority
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              1.6 - 
+            </span>
+            <a href="lecture-notes/01-06-lower-and-upper-bounds.html">
+              Untere und obere Schranken
+            </a>
+          </li>
+          <li style="margin-left: 0">
+            <span>
+              2.0 - 
+            </span>
+            <a href="lecture-notes/02-00-infinite-sets.html">
+              Unendliche Mengen
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              2.1 - 
+            </span>
+            <a href="lecture-notes/02-01-comparing-sizes.html">
+              Wer ist größer?
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              2.2 - 
+            </span>
+            <a href="lecture-notes/02-02-examples-of-equipotent-sets.html">
+              Beispiele abzählbar unendlicher Mengen
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              2.3 - 
+            </span>
+            <a href="lecture-notes/02-03-sets-like-R.html">
+              Mengen, die so groß wie $\R$ sind
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              2.4 - 
+            </span>
+            <a href="lecture-notes/02-04-diagonalization.html">
+              Die Cantorsche Diagonalisation: $\N \not \approx \R$
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              2.5 - 
+            </span>
+            <a href="lecture-notes/02-05-Schroeder-Bernstein.html">
+              Das Schröder-Bernstein-Theorem
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              2.6 - 
+            </span>
+            <a href="lecture-notes/02-06-Trichotomiesatz.html">
+              Der Trichotomiesatz
+            </a>
+          </li>
+          <li style="margin-left: 0">
+            <span>
+              3.0 - 
+            </span>
+            <a href="lecture-notes/03-00-Computability-NaturalNumbers.html">
+              Berechenbarkeit und natürliche Zahlen
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              3.1 - 
+            </span>
+            <a href="lecture-notes/03-01-primitive-recursion-definitions.html">
+              Primitive Rekursion: Motivation und Definitionen
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              3.2 - 
+            </span>
+            <a href="lecture-notes/03-02-primitive-recursion-constructions.html">
+              Primitive Rekursion: Konstruktionen und Tricks
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              3.3 - 
+            </span>
+            <a href="lecture-notes/03-03-ackermann.html">
+              Primitive Rekursion kann nicht alles: die éter-Ackermann-Funktion
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              3.4 - 
+            </span>
+            <a href="lecture-notes/03-04-mu-recursion.html">
+              Ein Schritt weiter:  while-Schleifen und \(\mu\)-Rekursion
+            </a>
+          </li>
+          <li style="margin-left: 0">
+            <span>
+              4.0 - 
+            </span>
+            <a href="lecture-notes/04-00-formal-languages.html">
+              Formale Sprachen - Einführung und Beispiele
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              4.1 - 
+            </span>
+            <a href="lecture-notes/04-01-regular-grammars.html">
+              Reguläre Grammatiken
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              4.2 - 
+            </span>
+            <a href="lecture-notes/04-02-finite-state-machines.html">
+              Endliche Automaten
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              4.3 - 
+            </span>
+            <a href="lecture-notes/04-03-nfsm.html">
+              Nichtdeterministische Endliche Automaten
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              4.4 - 
+            </span>
+            <a href="lecture-notes/04-04-regular-grammar-to-fsm.html">
+              Von einer regulären Grammatik zu einem endlichen Automaten
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              4.5 - 
+            </span>
+            <a href="lecture-notes/04-05-regular-expressions.html">
+              Reguläre Ausdrücke
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              4.6 - 
+            </span>
+            <a href="lecture-notes/04-06-limitations-of-regular-grammars.html">
+              Die Grenzen regulärer Sprachen
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              4.7 - 
+            </span>
+            <a href="lecture-notes/04-07-exercises.html">
+              Übungsaufgaben
+            </a>
+          </li>
+          <li style="margin-left: 0">
+            <span>
+              5.0 - 
+            </span>
+            <a href="lecture-notes/05-00-context-free-languages.html">
+              Kontextfreie Sprachen
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              5.1 - 
+            </span>
+            <a href="lecture-notes/05-01-ableitungen.html">
+              Ableitungen und Ableitungsbäume
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              5.2 - 
+            </span>
+            <a href="lecture-notes/05-02-cfg-to-pda.html">
+              Kontextfreie Grammatiken und Kellerautomaten
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              5.3 - 
+            </span>
+            <a href="lecture-notes/05-03-exercise-design-grammars.html">
+              Rechnerübung: Gute kontextfreie Grammatiken entwerfen
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              5.4 - 
+            </span>
+            <a href="lecture-notes/05-04-LL1-grammars.html">
+              LL(\(k\))-Grammatiken
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              5.5 - 
+            </span>
+            <a href="lecture-notes/05-05-a-LR-parsing-by-hand.html">
+              LR-Parser per Hand entwerfen
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              5.6 - 
+            </span>
+            <a href="lecture-notes/05-06-b-Parser-in-Java.html">
+              Einen Parser in Java implementieren
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              5.7 - 
+            </span>
+            <a href="lecture-notes/05-07-c-LR-grammars.html">
+              LR-Grammatiken
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              5.8 - 
+            </span>
+            <a href="lecture-notes/05-08-d-linker-Rand-und-Bluete.html">
+              Linker Rand, Blüten und die DK-Grammatik
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              5.9 - 
+            </span>
+            <a href="lecture-notes/05-09-dk-automat.html">
+              Der DK-Automat
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              5.10 - 
+            </span>
+            <a href="lecture-notes/05-10-general-parsing.html">
+              Allgemeine kontextfreie Sprachen parsen
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              5.11 - 
+            </span>
+            <a href="lecture-notes/05-11-not-context-free.html">
+              Die Grenzen kontextfreier Sprachen
+            </a>
+          </li>
+          <li style="margin-left: 0">
+            <span>
+              6.0 - 
+            </span>
+            <a href="lecture-notes/06-00-general-grammars.html">
+              Allgemeine Grammatiken
+            </a>
+          </li>
+          <li style="margin-left: 0">
+            <span>
+              7.0 - 
+            </span>
+            <a href="lecture-notes/07-00-Turing-machines.html">
+              Turing-Maschinen
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              7.1 - 
+            </span>
+            <a href="lecture-notes/07-01-Turing-machines-definition.html">
+              Turingmaschinen: Formale Definition und Beispiele
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              7.2 - 
+            </span>
+            <a href="lecture-notes/07-02-Turing-machines-examples.html">
+              Beispiele von Turingmaschinen
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              7.3 - 
+            </span>
+            <a href="lecture-notes/07-03-Turing-variants.html">
+              Variationen: Mehrband-Maschinen, nichtdeterministische Maschinen
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              7.4 - 
+            </span>
+            <a href="lecture-notes/07-04-Turing-encoding.html">
+              Die universelle Turingmaschine
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              7.5 - 
+            </span>
+            <a href="lecture-notes/07-05-Turing-universal.html">
+              Turing-Maschinen simulieren Turing-Maschinen: die universelle Turing-Maschine
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              7.6 - 
+            </span>
+            <a href="lecture-notes/07-06-undecidability.html">
+              Turingmaschinen, Haltproblem und Unentscheidbarkeit
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              7.7 - 
+            </span>
+            <a href="lecture-notes/07-07-Post-correspondence-problem.html">
+              Mehr über Unentscheidbarkeit: Das Postsche Korrespondenzproblem
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              7.8 - 
+            </span>
+            <a href="lecture-notes/07-08-PCP-applications.html">
+              Anwendungen des Postschen Korrespondenzproblems
+            </a>
+          </li>
+          <li style="margin-left: 0">
+            <span>
+              8.0 - 
+            </span>
+            <a href="lecture-notes/08-00-Complexity-Theory.html">
+              Komplexitätstheorie
+            </a>
+          </li>
+          <li style="margin-left: 40px">
+            <span>
+              8.1 - 
+            </span>
+            <a href="lecture-notes/08-01-Time-hierarchy-theorem.html">
+              Das Zeithierarchietheorem
+            </a>
+          </li>
+          <li style="margin-left: 0">
+            <span>
+              9.0 - 
+            </span>
+            <a href="lecture-notes/09-00-appendix.html">
+              Appendix - Manual für das Schreiben dieses Skripts
+            </a>
+          </li>
         </ul>
       </div>
-    </>
-  );
-};
-
-export default TOCAuthorSuppliedContent;
+</div>
+</div>
+</div>
+</div>
+</body>

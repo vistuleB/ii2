@@ -1,12 +1,21 @@
-import Section from "~/components/Section";
-import Paragraph from "~/components/Paragraph";
-import Container from "~/components/Container";
-import Carousel from "~/components/Carousel";
-import NumberedTitle from "~/components/NumberedTitle";
-const Article = () => {
-  return (
-    <Container>
-      <Section
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="data:,">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title></title>
+
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+   <link rel="stylesheet" type="text/css" href="../TI.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="../mathjax_setup.js"></script>
+   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+      <section
         count={46}
         title_gr="Turing-Maschinen simulieren Turing-Maschinen: die universelle Turing-Maschine"
         title_en="Turing universal"
@@ -15,10 +24,10 @@ const Article = () => {
         counter="ExoCtr"
         path="/lecture-notes46.tsx">
         <div id="link-to-toc">
-          <a href="../vorlesungsskript">
+          <a href="../vorlesungsskript.html">
             Inhaltsverzeichnis
           </a>
-          <a href="07-04-Turing-encoding">
+          <a href="07-04-Turing-encoding.html">
             &lt;&lt; Kapitel 7.4
           </a>
         </div>
@@ -28,7 +37,7 @@ const Article = () => {
           <a href="/">
             zur Kursübersicht
           </a>
-          <a href="07-06-undecidability">
+          <a href="07-06-undecidability.html">
             Kapitel 7.6 &gt;&gt;
           </a>
         </div>
@@ -42,42 +51,42 @@ const Article = () => {
                     Turing-Maschinen simulieren Turing-Maschinen: die universelle Turing-Maschine
                   </span>
                 </h1>
-                <Paragraph>
+                <p>
                   Im letzten Teilkapitel haben wir gesehen, wie wir jede Turingmaschine \(M
                   \)mit
                   Eingabealphabet \(\Sigma\) codieren können als
-                </Paragraph>
-                $$\begin&#123;align*&#125;
+                </p>
+                $$\begin{align*}
                 \enc(M) \in \Lambda^* \ ,
-                \end&#123;align*&#125;$$
-                <Paragraph>
+                \end{align*}$$
+                <p>
                   also als String über dem Codierungsalphabet
-                </Paragraph>
-                $$\begin&#123;align*&#125;
+                </p>
+                $$\begin{align*}
                 \Lambda := \writelambda
-                \end&#123;align*&#125;$$
-                <Paragraph>
+                \end{align*}$$
+                <p>
                   Diese Codierungsschema enthält implizit Codierungsfunktionen
-                  \(\enc_Q : Q \rightarrow \&#123;0,1\&#125;^+\) und \(\enc_\Gamma: \Gamma \rightarrow
-                  \Sigma \cup \&#123;0,1\&#125;^+\),
+                  \(\enc_Q : Q \rightarrow \{0,1\}^+\) und \(\enc_\Gamma: \Gamma \rightarrow
+                  \Sigma \cup \{0,1\}^+\),
                   die wir verwenden, um die Zustände und Arbeitszeichen von \(M\) in
                   \(\Lambda\)-Zeichen zu
                   übersetzen.
                   Für eine Konfiguration
-                </Paragraph>
-                $$\begin&#123;align*&#125;
+                </p>
+                $$\begin{align*}
                 C = u_1 \dots u_m q v_1 \dots v_n
-                \end&#123;align*&#125;$$
-                <Paragraph>
+                \end{align*}$$
+                <p>
                   der Maschine \(M\) definieren wir die Codierung von \(C\) als
-                </Paragraph>
-                $$\begin&#123;align*&#125;
-                \enc(C) := \enc_\Gamma(u_1) \texttt&#123;#&#125; \enc_\Gamma(u_2) \dots \texttt&#123;#&#125;
-                \enc_\Gamma(u_m)\texttt&#123;#&#125;
-                \enc_Q(q) \texttt&#123;#&#125; \enc_\Gamma(v_1)\texttt&#123;#&#125; \dots \texttt&#123;#&#125;
+                </p>
+                $$\begin{align*}
+                \enc(C) := \enc_\Gamma(u_1) \texttt{#} \enc_\Gamma(u_2) \dots \texttt{#}
+                \enc_\Gamma(u_m)\texttt{#}
+                \enc_Q(q) \texttt{#} \enc_\Gamma(v_1)\texttt{#} \dots \texttt{#}
                 \enc_\Gamma(v_n) \in \Lambda^* \ .
-                \end&#123;align*&#125;$$
-                <Paragraph>
+                \end{align*}$$
+                <p>
                   Das ist alles nicht besonders tiefgründig und dient allein dazu,
                   sicherzustellen, dass wir
                   die Konfigurationen von \(M\) darstellen können in dem Alphabet \(\Lambda\),
@@ -85,38 +94,38 @@ const Article = () => {
                   <i>
                     unabhängig
                   </i>
-                  {" "}von \(M\) ist. Dass wir also{" "}
+                   von \(M\) ist. Dass wir also 
                   <i>
                     jede
                   </i>
                   Turingmaschine
-                  \(M\) mit Eingabealphabet \(\Sigma\) und{" "}
+                  \(M\) mit Eingabealphabet \(\Sigma\) und 
                   <i>
                     jede
                   </i>
-                  {" "}ihrer Konfigurationen
-                  als Strings über{" "}
+                   ihrer Konfigurationen
+                  als Strings über 
                   <i>
                     einem
                   </i>
-                  {" "}festen Alphabet \(\Lambda\) darstellen
+                   festen Alphabet \(\Lambda\) darstellen
                   können.
-                </Paragraph>
-                <Paragraph>
+                </p>
+                <p>
                   Eine Turingmaschine simulieren heißt nun, einen String
-                  \(\enc(M)\texttt&#123;;&#125;w\) mit \(w \in \Sigma^*\) zu lesen und
-                  daraus den String \(\enc(\hat&#123;\delta&#125;^*_M (w))\) zu berechnen, also
-                  das Ergebnis \(\hat&#123;\delta&#125;^*_M(w)\), passend codiert über dem Alphabet
+                  \(\enc(M)\texttt{;}w\) mit \(w \in \Sigma^*\) zu lesen und
+                  daraus den String \(\enc(\hat{\delta}^*_M (w))\) zu berechnen, also
+                  das Ergebnis \(\hat{\delta}^*_M(w)\), passend codiert über dem Alphabet
                   \(\Lambda\).
                   Das zentrale Ergebnis dieses Teilkapitels ist, dass wir diese Simulation
                   selbst mit einer Turingmaschine implementieren können.
-                </Paragraph>
+                </p>
                 <div class="well container theorem">
-                  <Paragraph>
+                  <p>
                     <span class="numbered-title">
                       Theorem
                       <NumberedTitle>
-                        &ensp;7.5.1{" "}
+                        &ensp;7.5.1 
                       </NumberedTitle>
                     </span>
                     &ensp;
@@ -124,21 +133,21 @@ const Article = () => {
                       (Universelle
                       Turingmaschine).
                     </b>
-                    {" "}Zu
+                     Zu
                     jedem
                     endlichen Eingabealphabet \(\Sigma\) sei
                     \(\Lambda := \writelambda\) das Codierungsalphabet. Es gibt es
                     eine
-                    Turingmaschine \(U = U_&#123;\Sigma&#125;\) mit Eingabealphabet
+                    Turingmaschine \(U = U_{\Sigma}\) mit Eingabealphabet
                     \(\Lambda\),
                     so dass für alle \(c \in \Lambda^*\) und \(w \in \Sigma^*\)
                     die Turingmaschine \(U\) mit Eingabewort \(x \in \Lambda^*\)
                     folgendes tut:
-                  </Paragraph>
+                  </p>
                   <ul>
                     <li>
                       Falls \(x\) nicht die Form
-                      \(\enc(M) \texttt&#123;;&#125; w\) mit \(w \in \Sigma^*\) hat,
+                      \(\enc(M) \texttt{;} w\) mit \(w \in \Sigma^*\) hat,
                       lehnt sie ab;
                     </li>
                     <li>
@@ -148,14 +157,14 @@ const Article = () => {
                         <li>
                           Falls \(M\) mit Eingabewort \(w\) nicht
                           terminiert, dann terminiert \(U\) mit
-                          Eingabewort \(c \texttt&#123;;&#125; w\) auch nicht.
+                          Eingabewort \(c \texttt{;} w\) auch nicht.
                         </li>
                         <li>
                           Falls \(M\) mit Eingabewort \(w\) eine
                           Endkonfiguration \(C = uqv\) erreicht,
                           dann
                           erreicht \(U\) mit
-                          Eingabewort \(c \texttt&#123;;&#125; w\) die
+                          Eingabewort \(c \texttt{;} w\) die
                           Endkonfiguration
                           \(q\ \enc(C)\). Das heißt insbesondere,
                           dass \(U\) genau dann akzeptiert, wenn \(M\)
@@ -165,23 +174,23 @@ const Article = () => {
                       </ul>
                     </li>
                   </ul>
-                  <Paragraph>
+                  <p>
                     \(U\) akzeptiert also die Sprache
-                  </Paragraph>
-                  $$\begin&#123;align*&#125;
-                  \&#123; c w \ | \ w \in \Sigma^* \textnormal&#123; und &#125; c = \enc(M) \textnormal&#123;
-                  und $M$ akzeptiert $w$&#125; \&#125; \ .
-                  \end&#123;align*&#125;$$
+                  </p>
+                  $$\begin{align*}
+                  \{ c w \ | \ w \in \Sigma^* \textnormal{ und } c = \enc(M) \textnormal{
+                  und $M$ akzeptiert $w$} \} \ .
+                  \end{align*}$$
                 </div>
                 <div
                   style="margin-bottom:1em"
                   class="alert-info container">
-                  <Paragraph>
-                    {" "}{" "}
+                  <p>
+                      
                     <b>
                       Ein technischer aber letztendlich irrelevanter Punkt:
                     </b>
-                    {" "}die Mengen
+                     die Mengen
                     \(Q\) und \(\Gamma\) der Turingmaschine \(M\) können ja beliebige
                     (endliche) Mengen sein,
                     und weder \(\Lambda\) noch die Turingmaschine \(U\) haben "Kenntnis"
@@ -191,19 +200,19 @@ const Article = () => {
                     \(\qaccept\) und \(\qreject\) enthält und auch \(U\) diese Zustände
                     verwendet.
                     Daraus ergibt sich, dass für eine Endkonfiguration \(uqv\) von \(M\)
-                    zwar \(q \in \&#123;\qaccept, \qreject\&#125;\) gilt, allerdings \(\enc(q)
-                    \in \&#123;0,1\&#125;^+\),
+                    zwar \(q \in \{\qaccept, \qreject\}\) gilt, allerdings \(\enc(q)
+                    \in \{0,1\}^+\),
                     da wir diese \(M\)-Zustände binär codieren. Somit ist
-                    \(q\ \enc(uqv) \in \&#123;\qaccept, \qreject\&#125; \times \Lambda^*\) eine
+                    \(q\ \enc(uqv) \in \{\qaccept, \qreject\} \times \Lambda^*\) eine
                     Endkonfiguration von \(U\).
-                  </Paragraph>
-                  <Paragraph>
+                  </p>
+                  <p>
                     Des weiteren gehen wir davon aus, dass das Blank-Symbol \(\Box\)
                     für alle
                     Turingmaschinen \(M\) mit Eingabealphabet \(\Sigma\) das gleiche
                     ist. Auch
                     \(U\) verwendet es. Wenn wir allerdings \(M\) codieren, so wird auch
-                    \(\Box\) als \(\enc(\Box) \in \&#123;0,1\&#125;^+\) codiert, wie jedes
+                    \(\Box\) als \(\enc(\Box) \in \{0,1\}^+\) codiert, wie jedes
                     Arbeitssymbol \(z \in \Gamma
                     \setminus \Sigma\) von \(M\)
                     binär codiert wird. Das heißt insbesondere, dass
@@ -214,11 +223,11 @@ const Article = () => {
                     \(\enc(C) \in \Lambda^*\), und \(\Lambda\) ist das Eingabealphabet
                     von \(U\) mit
                     \(\Box \not \in \Lambda\).
-                  </Paragraph>
+                  </p>
                 </div>
                 <div class="well container">
-                  <Paragraph>
-                    {" "}{" "}
+                  <p>
+                      
                     <b>
                       Beweis.
                     </b>
@@ -227,7 +236,7 @@ const Article = () => {
                     zu implementieren. Wir tun dies nicht. Wir beschränken uns auf
                     eine High-Level-Beschreibung
                     ihrer Arbeitsweise.
-                  </Paragraph>
+                  </p>
                 </div>
                 <figure class="centered-figure well container-fluid">
                   <Carousel>
@@ -414,9 +423,5 @@ const Article = () => {
             </div>
           </div>
         </div>
-      </Section>
-    </Container>
-  );
-};
-
-export default Article;
+      </section>
+    </body>

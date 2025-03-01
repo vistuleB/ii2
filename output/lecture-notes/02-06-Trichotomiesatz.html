@@ -1,12 +1,21 @@
-import Section from "~/components/Section";
-import Paragraph from "~/components/Paragraph";
-import Container from "~/components/Container";
-import Carousel from "~/components/Carousel";
-import NumberedTitle from "~/components/NumberedTitle";
-const Article = () => {
-  return (
-    <Container>
-      <Section
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="data:,">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title></title>
+
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+   <link rel="stylesheet" type="text/css" href="../TI.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="../mathjax_setup.js"></script>
+   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+      <section
         count={14}
         title_gr="Der Trichotomiesatz"
         title_en="Trichotomiesatz"
@@ -15,10 +24,10 @@ const Article = () => {
         counter="ExoCtr"
         path="/lecture-notes14.tsx">
         <div id="link-to-toc">
-          <a href="../vorlesungsskript">
+          <a href="../vorlesungsskript.html">
             Inhaltsverzeichnis
           </a>
-          <a href="02-05-Schroeder-Bernstein">
+          <a href="02-05-Schroeder-Bernstein.html">
             &lt;&lt; Kapitel 2.5
           </a>
         </div>
@@ -28,7 +37,7 @@ const Article = () => {
           <a href="/">
             zur Kursübersicht
           </a>
-          <a href="03-00-Computability-NaturalNumbers">
+          <a href="03-00-Computability-NaturalNumbers.html">
             Kapitel 3.0 &gt;&gt;
           </a>
         </div>
@@ -42,14 +51,14 @@ const Article = () => {
                     Der Trichotomiesatz
                   </span>
                 </h1>
-                <Paragraph>
+                <p>
                   Rekapitulieren wir: für zwei Mengen \(A\) und \(B\) schreiben \(A \leq B\),
                   wenn es eine injektive Funktion \(f : A \rightarrow B\) gibt. Das \(\leq\)
                   schaut wie eine Partialordnung aus.
-                </Paragraph>
+                </p>
                 <ol>
                   <li>
-                    Es ist reflexiv, weil \(A \leq A\) gilt: Die Identität \(&#123;\rm id&#125;_A: A
+                    Es ist reflexiv, weil \(A \leq A\) gilt: Die Identität \({\rm id}_A: A
                     \rightarrow A\) ist injektiv.
                   </li>
                   <li>
@@ -64,30 +73,30 @@ const Article = () => {
                     immerhin \(A \approx B\).
                   </li>
                 </ol>
-                <Paragraph>
+                <p>
                   Wenn wir also equipotente Mengen als identifisch betrachten, dann ist
                   \(\leq\) tatsächlich eine Partialordnung. Ist es eine totale Ordnung?
                   Gilt also immer \(A \leq B\) oder \(B \leq A\)? Dies klingt
                   offensichtlich, ist es aber nicht. Aber wahr ist es, wenn auch nicht
                   ganz einfach zu beweisen.
-                </Paragraph>
+                </p>
                 <div class="well container theorem">
-                  <Paragraph>
+                  <p>
                     <span class="numbered-title">
                       Theorem
                       <NumberedTitle>
-                        &ensp;2.6.1{" "}
+                        &ensp;2.6.1 
                       </NumberedTitle>
                     </span>
-                    {" "}{" "}
+                      
                     <b>
                       (Trichotomiesatz der Mengenlehre).
                     </b>
-                    {" "}Seien \(A\) und
+                     Seien \(A\) und
                     \(B\) zwei Mengen. Dann gibt es eine injektive Funktion \(f : A
                     \rightarrow B\) oder eine injektive Funktion \(g : A \rightarrow B\).
                     Es gilt also immer genau einer der drei folgenden Fälle:
-                  </Paragraph>
+                  </p>
                   <ol>
                     <li>
                       \(A \lt B\),
@@ -101,8 +110,8 @@ const Article = () => {
                   </ol>
                 </div>
                 <div class="well container">
-                  <Paragraph>
-                    {" "}{" "}
+                  <p>
+                      
                     <b>
                       (Unvollständiger) Beweis.
                     </b>
@@ -110,39 +119,39 @@ const Article = () => {
                     injektiv) konstruieren, so lohnt es sich oft, die gestellten
                     Bedingungen zu relaxieren und sich langsam zu einer "richtigen"
                     Lösung hinzutasten.
-                  </Paragraph>
-                  <Paragraph>
+                  </p>
+                  <p>
                     Wir müssen zuerst uns in Erinnerung rufen, was eine
                     <i>
                       Funktion
                     </i>
-                    {" "}formal ist. \(A \times B := \&#123; (a,b) \ | \ a \in A,
-                    b \in B\&#125;\), die Menge aller Paare, heißt das
+                     formal ist. \(A \times B := \{ (a,b) \ | \ a \in A,
+                    b \in B\}\), die Menge aller Paare, heißt das
                     <i>
                       cartesische Produkt
                     </i>
-                    . Eine{" "}
+                    . Eine 
                     <i>
                       Relation
                     </i>
-                    {" "}ist eine
+                     ist eine
                     Teilmenge \(R \subseteq A \times B\).
-                  </Paragraph>
+                  </p>
                   <div class="well container-fluid subtheorem">
-                    <Paragraph>
+                    <p>
                       <span class="numbered-title">
                         Definition
                         <NumberedTitle>
-                          &ensp;2.6.2{" "}
+                          &ensp;2.6.2 
                         </NumberedTitle>
                         .
                       </span>
                       &ensp;Eine Relation \(R
                       \subseteq A \times B\) heißt
-                    </Paragraph>
+                    </p>
                     <ul>
                       <li>
-                        {" "}{" "}
+                          
                         <i>
                           Funktion
                         </i>
@@ -151,7 +160,7 @@ const Article = () => {
                         statt \(R\) und schreiben \(f(a)\), um dieses \(b\) zu benennen.
                       </li>
                       <li>
-                        {" "}{" "}
+                          
                         <i>
                           Matching
                         </i>
@@ -159,151 +168,151 @@ const Article = () => {
                         <i>
                           höchstens
                         </i>
-                        {" "}ein \(b \in B\) gibt mit \((a,b) \in R\) und
+                         ein \(b \in B\) gibt mit \((a,b) \in R\) und
                         umgekehrt für jedes \(b \in B\) höchstens ein \(a \in A\) mit \((a,b)
                         \in R\).
                       </li>
                       <li>
-                        Wenn \(R\) ein Matching ist, dann{" "}
+                        Wenn \(R\) ein Matching ist, dann 
                         <i>
                           sättigt
                         </i>
-                        {" "}\(R\) die Menge
-                        \(A\), wenn es für{" "}
+                         \(R\) die Menge
+                        \(A\), wenn es für 
                         <i>
                           jedes
                         </i>
-                        {" "}\(a \in A\) ein \(b \in B\) mit
-                        \((a,b) \in R\) gibt; es{" "}
+                         \(a \in A\) ein \(b \in B\) mit
+                        \((a,b) \in R\) gibt; es 
                         <i>
                           sättigt
                         </i>
-                        {" "}\(B\), wenn es für
+                         \(B\), wenn es für
                         <i>
                           jedes
                         </i>
-                        {" "}\(b \in B\) ein \(a \in A\) gibt mit \((a,b) \in R\).
+                         \(b \in B\) ein \(a \in A\) gibt mit \((a,b) \in R\).
                       </li>
                     </ul>
                   </div>
-                  <Paragraph>
+                  <p>
                     Wir beobachten: wenn \(R\) ein Matching ist und die Menge \(A\) sättigt,
                     dann ist \(R\) eine injektive Funktion, und umgekehrt. Wenn \(R\) ein
                     Matching ist und sowohl \(A\) als auch \(B\) sättigt, dann ist \(R\) eine
                     bijektive Funktion.
-                  </Paragraph>
-                  <Paragraph>
-                    Wir betrachten nun die Menge \(\mathcal&#123;M&#125;\) aller Matchings in \(A
+                  </p>
+                  <p>
+                    Wir betrachten nun die Menge \(\mathcal{M}\) aller Matchings in \(A
                     \times B\):
-                  </Paragraph>
-                  $$\begin&#123;align*&#125; \mathcal&#123;M&#125; := \&#123; R \subseteq A \times B \ | \ R
-                  \textnormal&#123; ist ein Matching&#125;\&#125; \ . \end&#123;align*&#125;$$
-                  <Paragraph>
-                    \((\mathcal&#123;M&#125;, \subseteq)\) ist eine Partialordnung.
-                  </Paragraph>
+                  </p>
+                  $$\begin{align*} \mathcal{M} := \{ R \subseteq A \times B \ | \ R
+                  \textnormal{ ist ein Matching}\} \ . \end{align*}$$
+                  <p>
+                    \((\mathcal{M}, \subseteq)\) ist eine Partialordnung.
+                  </p>
                   <div class="well container-fluid subtheorem">
-                    <Paragraph>
+                    <p>
                       <span class="numbered-title">
                         Beobachtung
                         <NumberedTitle>
-                          &ensp;2.6.3{" "}
+                          &ensp;2.6.3 
                         </NumberedTitle>
                         .
                       </span>
                       &ensp;Wenn \(R \in
-                      \mathcal&#123;M&#125;\) ein maximales Element in der Partialordnung
-                      \((\mathcal&#123;M&#125;, \subseteq)\) ist, dann sättigt es \(A\) oder \(B\) (oder
+                      \mathcal{M}\) ein maximales Element in der Partialordnung
+                      \((\mathcal{M}, \subseteq)\) ist, dann sättigt es \(A\) oder \(B\) (oder
                       beide). Wenn es \(A\) sättigt, dann ist es eine injektive Funktion
                       \(A \rightarrow B\) und es gilt somit \(A \leq B\). Wenn es \(B\)
-                      sättigt, dann ist \(R^&#123;-1&#125; := \&#123; (b,a) \ | \ (a,b) \in R\&#125;\) eine
+                      sättigt, dann ist \(R^{-1} := \{ (b,a) \ | \ (a,b) \in R\}\) eine
                       injektive Funktion \(B \rightarrow A\) und es gilt \(B \leq A\).
-                    </Paragraph>
+                    </p>
                   </div>
                   <div class="well container">
-                    <Paragraph>
-                      {" "}{" "}
+                    <p>
+                        
                       <b>
                         Beweis.
                       </b>
                       Nehmen wir an, dass es weder \(A\) noch \(B\) sättigt. Dann gibt es
                       also ein \(a \in A\), das mit keinem \(b' \in B\) "gepaart" ist, und
                       auch ein \(b \in B\), das mit keinem \(a' \in A\) gepaart ist. Also
-                      ist \(R \cup \&#123;(a,b)\&#125;\) auch ein Matching, und \(R\) ist nicht
+                      ist \(R \cup \{(a,b)\}\) auch ein Matching, und \(R\) ist nicht
                       maximal.
-                    </Paragraph>
+                    </p>
                     <span class="qed">
                       \(\square\)
                     </span>
                   </div>
-                  <Paragraph>
+                  <p>
                     Wir bekommen also unsere gewünschte injektive Funktion, solange wir
-                    ein maximales Element in der Partialordnung \((\mathcal&#123;M&#125;,
+                    ein maximales Element in der Partialordnung \((\mathcal{M},
                     \subseteq)\) vorweisen können. Aber Vorsicht: nicht jede
                     Partialordnung hat ein maximales Element! Ein Gegenbeispiel ist
                     \((\N, \leq)\). Es gibt immer größere natürliche Zahlen, aber kein
                     maximales Element. Die Gefahr ist also, dass es unendliche
                     aufsteigende Folgen \(a_1 \lt a_2 \lt a_3 \t \dots\) geben kann, für
                     die man keine obere Schranke findet.
-                  </Paragraph>
+                  </p>
                   <div class="well container-fluid subtheorem">
-                    <Paragraph>
+                    <p>
                       <span class="numbered-title">
                         Definition
                         <NumberedTitle>
-                          &ensp;2.6.4{" "}
+                          &ensp;2.6.4 
                         </NumberedTitle>
                         .
                       </span>
                       &ensp;Sei \((X, \preceq)\)
                       eine Partialordnung und \(S \subseteq X\) eine Menge. Ein Element \(x
-                      \in X\) ist eine{" "}
+                      \in X\) ist eine 
                       <i>
                         obere Schranke für \(S\)
                       </i>
-                      {" "}wenn
-                    </Paragraph>
-                    $$\begin&#123;align*&#125; s \leq x \quad \forall s \in S \end&#123;align*&#125;$$
-                    <Paragraph>
+                       wenn
+                    </p>
+                    $$\begin{align*} s \leq x \quad \forall s \in S \end{align*}$$
+                    <p>
                       gilt. Dabei ist unerheblich, ob die obere Schranke \(x\) selbst in
                       \(S\) ist oder nicht.
-                    </Paragraph>
+                    </p>
                   </div>
-                  <Paragraph>
+                  <p>
                     Die unendliche aufsteigende Folge \(1,2,3,\dots\) hat
                     <i>
                       keine obere Schranke
                     </i>
-                    {" "}in \(\N\). Somit gibt es auch kein
-                    maximales Element. Was nun mit \((\mathcal&#123;M&#125;, \subseteq)\)? Wenn \(M_1
+                     in \(\N\). Somit gibt es auch kein
+                    maximales Element. Was nun mit \((\mathcal{M}, \subseteq)\)? Wenn \(M_1
                     \subseteq M_2 \subseteq M_3 \subseteq \dots\) eine unendliche Folge
                     von Matchings ist, dann können wir die doch alle zusammenwerfen:
                     \(M_1 \cup M_2 \cup M_3 \cup \dots\) und erhalten ein (vielleicht)
                     größeres. Dies gilt nicht nur für unendliche Folgen, sondern ganz
                     allgemein für Ketten in dieser Partialordnung (also Mengen paarweise
                     vergleichbarer Elemente).
-                  </Paragraph>
+                  </p>
                   <div class="well container-fluid subtheorem">
-                    <Paragraph>
+                    <p>
                       <span class="numbered-title">
                         Beobachtung
                         <NumberedTitle>
-                          &ensp;2.6.5{" "}
+                          &ensp;2.6.5 
                         </NumberedTitle>
                         .
                       </span>
                       &ensp;Sei \(S \subseteq
-                      \mathcal&#123;M&#125;\) eine Kette in \((\mathcal&#123;M&#125;, \subseteq)\), also eine
+                      \mathcal{M}\) eine Kette in \((\mathcal{M}, \subseteq)\), also eine
                       Menge von Matchings, so dass für alle \(M_1, M_2 \in S\) gilt: \(M_1
                       \subseteq M_2\) oder \(M_2 \subseteq M_1\). Dann ist
-                    </Paragraph>
-                    $$\begin&#123;align*&#125; \bigcup_&#123;M \in S&#125; M \end&#123;align*&#125;$$
-                    <Paragraph>
+                    </p>
+                    $$\begin{align*} \bigcup_{M \in S} M \end{align*}$$
+                    <p>
                       selbst ein Matching.
-                    </Paragraph>
+                    </p>
                   </div>
-                  <Paragraph>
+                  <p>
                     Wir gehen nun wie folgt vor: wir starten mit einem beliebigen \(M_0
-                    \in \mathcal&#123;M&#125;\); solange dies nicht maximal ist, finden wir ein
+                    \in \mathcal{M}\); solange dies nicht maximal ist, finden wir ein
                     größeres: \(M_1 \supsetneq M_0\); und wieder und wieder. Dies ergibt
                     im schlimmsten Fall eine unendliche Folge \(M_0 \subsetneq M_1
                     \subsetneq ...\) Wir bilden nun \(M'_0 := M_0 \cup M_1 \cup \dots\),
@@ -312,9 +321,9 @@ const Article = () => {
                     Wir müssen also diesen "Schritt zur Unendlichkeit" wiederholen,
                     selbst wiederum unendlich mal. Endet das irgendwann? Die Antwort ist
                     "ja", allerdings brauchen wir dafür ein großes Geschütz:
-                  </Paragraph>
+                  </p>
                   <div class="well container-fluid subtheorem">
-                    <Paragraph>
+                    <p>
                       <span class="numbered-title">
                         Zornsches Lemma.
                       </span>
@@ -322,22 +331,22 @@ const Article = () => {
                       \preceq)\) eine Partialordnung. Wenn jede Kette \(S \subseteq X\)
                       eine obere Schranke \(x \in X\) hat, dann enthält \(X\) mindestens ein
                       maximales Element.
-                    </Paragraph>
+                    </p>
                   </div>
-                  <Paragraph>
+                  <p>
                     Wir sind nun fertig! Wir können das Zornsche Lemma auf
-                    \((\mathcal&#123;M&#125;, \subseteq)\) anwenden und erhalten ein maximales
+                    \((\mathcal{M}, \subseteq)\) anwenden und erhalten ein maximales
                     Matching. Dies sättigt \(A\) oder \(B\) und gibt uns somit eine
                     injektive Funktion \(A \rightarrow B\) oder \(B \rightarrow A\).
                     <span class="qed">
                       \(\square\)
                     </span>
-                  </Paragraph>
+                  </p>
                 </div>
                 <h3>
                   Zornsches Lemma, Auswahlaxiom und die axiomatische Mengenlehre
                 </h3>
-                <Paragraph>
+                <p>
                   Glauben Sie das, was das Zornsche Lemma besagt? Bei unendlichen Mengen
                   verlässt und leider schnell die Intuition, oder schlimmer: sie wird
                   trügerisch. Gegen Ende des 19. Jahrhunderts tauchten in der
@@ -346,30 +355,26 @@ const Article = () => {
                   Man begann, an der mathematischen Intuition zu zweifeln und wollte ein
                   genaues Regelwerk definieren, welche Rechen- und Beweisschritte in der
                   Mathematik erlaubt seien. In moderner Sprache: wann wollte die gesamte
-                  Mathematik{" "}
+                  Mathematik 
                   <i>
                     axiomatisieren
                   </i>
                   . Treibende Kraft hinter diesem
                   Vorhaben war der deutsche Mathematiker
                   <a href="https://de.wikipedia.org/wiki/David_Hilbert">
-                    &ensp;David Hilbert{" "}
+                    &ensp;David Hilbert 
                   </a>
                   , und somit ist es auch als
                   <a href="https://de.wikipedia.org/wiki/Hilbertprogramm">
-                    &ensp;Hilbertprogramm{" "}
+                    &ensp;Hilbertprogramm 
                   </a>
                   bekannt. Das Bestreben, mathematisches Beweisen und somit auch Rechnen
                   zu mechanisieren, trug maßgeblich zur Entwicklung der Informatik und
                   des Computers bei.
-                </Paragraph>
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </Section>
-    </Container>
-  );
-};
-
-export default Article;
+      </section>
+    </body>

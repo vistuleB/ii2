@@ -1,3 +1,4 @@
+import desugarers/generate_ti2_table_of_contents_html
 import gleam/string
 import desugarers/generate_ti2_table_of_contents
 import gleam/option
@@ -251,10 +252,10 @@ pub fn our_pipeline() -> List(Pipe) {
     handles_generate_ids.handles_generate_ids(),
     // 23
     define_article_output_path.define_article_output_path(
-      #("Section", "/lecture-notes", "tsx", "path"),
+      #("section", "/lecture-notes", "tsx", "path"),
     ),
     // 24
-    handles_generate_dictionary.handles_generate_dictionary([#("Section", "path")]),
+    handles_generate_dictionary.handles_generate_dictionary([#("section", "path")]),
     // 25
     handles_substitute.handles_substitute(),
     // more
@@ -266,14 +267,16 @@ pub fn our_pipeline() -> List(Pipe) {
     // 28
     // rename_tag.rename_tag(#("VerticalChunk", "Paragraph")),
     // 29
-    rename_tag.rename_tag(#("p", "Paragraph")),
+    // rename_tag.rename_tag(#("p", "Paragraph")),
     // 30
     unwrap_tag_when_child_of_tags.unwrap_tag_when_child_of_tags(
-      #("Paragraph", ["span", "code", "tt", "figcaption", "em"]),
+      #("p", ["span", "code", "tt", "figcaption", "em"]),
     ),
     // 31
-    generate_ti2_table_of_contents.generate_ti2_table_of_contents(
-      #("TOCAuthorSuppliedContent", "TOCItem", option.None),
+    generate_ti2_table_of_contents_html.generate_ti2_table_of_contents(
+      #("TOCAuthorSuppliedContent", "li", option.None),
     ),
+    // rename_tag.rename_tag(#("Section", "section")),
+
   ]
 }

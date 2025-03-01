@@ -1,12 +1,21 @@
-import Section from "~/components/Section";
-import Paragraph from "~/components/Paragraph";
-import Container from "~/components/Container";
-import Carousel from "~/components/Carousel";
-import NumberedTitle from "~/components/NumberedTitle";
-const Article = () => {
-  return (
-    <Container>
-      <Section
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="data:,">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title></title>
+
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+   <link rel="stylesheet" type="text/css" href="../TI.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="../mathjax_setup.js"></script>
+   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+      <section
         count={8}
         title_gr="Unendliche Mengen"
         title_en="infinite sets"
@@ -15,10 +24,10 @@ const Article = () => {
         counter="ExoCtr"
         path="/lecture-notes8.tsx">
         <div id="link-to-toc">
-          <a href="../vorlesungsskript">
+          <a href="../vorlesungsskript.html">
             Inhaltsverzeichnis
           </a>
-          <a href="01-06-lower-and-upper-bounds">
+          <a href="01-06-lower-and-upper-bounds.html">
             &lt;&lt; Kapitel 1.6
           </a>
         </div>
@@ -28,7 +37,7 @@ const Article = () => {
           <a href="/">
             zur Kursübersicht
           </a>
-          <a href="02-01-comparing-sizes">
+          <a href="02-01-comparing-sizes.html">
             Kapitel 2.1 &gt;&gt;
           </a>
         </div>
@@ -41,7 +50,7 @@ const Article = () => {
                   Unendliche Mengen
                 </span>
               </h1>
-              <Paragraph>
+              <p>
                 Mit den Boolesche Schaltkreise haben wir bereits ein Modell für Berechnung kennengelernt.
                 Es ist abstrakt genug, um mathematisch rigorose Aussagen darüber zu treffen und über obere und
                 untere Schranken zu sprechen.
@@ -49,58 +58,54 @@ const Article = () => {
                 Ein entscheidender Nachteil Boolescher Schaltkreise jedoch: Sie müssen von Anfang an wissen, wie
                 groß
                 Ihr Input ist; also wie vielen Input-Variablen \(x_1, \dots, x_n\) Sie begegnen werden.
-                Für ein allgemeines Modell der Berechnung ist dies ungeeignet. Wir wollen ja{" "}
+                Für ein allgemeines Modell der Berechnung ist dies ungeeignet. Wir wollen ja 
                 <i>
                   ein
                 </i>
                 Computerprogramm, das beliebig große Eingaben verkraften kann. Ein Computerprogramm
-                soll also{" "}
+                soll also 
                 <i>
                   endlich
                 </i>
-                {" "}sein, aber für eine{" "}
+                 sein, aber für eine 
                 <i>
                   unendliche
                 </i>
-                {" "}Menge potentieller Eingaben
+                 Menge potentieller Eingaben
                 funktionieren.
                 In diesem Kapitel werden wir daher unendliche Mengen besser kennenlernen.
-              </Paragraph>
+              </p>
               <div class="well container theorem">
-                <Paragraph>
+                <p>
                   <span class="numbered-title">
                     Beispiel
                     <NumberedTitle>
-                      &ensp;2.0.1{" "}
+                      &ensp;2.0.1 
                     </NumberedTitle>
                   </span>
                   &ensp;Die Mengen \(\N, \Z, \Q, \R\) sind unendlich. Die
                   Mengen
-                  \(\&#123;a,e,i,o,u\&#125;\) und \(\&#123;0,1,2,3,4,5,6,7,8,9\&#125;\) sind endlich.
-                </Paragraph>
+                  \(\{a,e,i,o,u\}\) und \(\{0,1,2,3,4,5,6,7,8,9\}\) sind endlich.
+                </p>
               </div>
               <div class="well container theorem">
-                <Paragraph>
+                <p>
                   <span class="numbered-title" />
                   Die Menge
-                  $$\begin&#123;align*&#125;
-                  \&#123;0,1\&#125;^* := \&#123;\epsilon\&#125; \cup \&#123;0,1\&#125; \cup \&#123;00, 01, 10, 11\&#125; \cup \dots \cup \&#123;0,1\&#125;^n
+                  $$\begin{align*}
+                  \{0,1\}^* := \{\epsilon\} \cup \{0,1\} \cup \{00, 01, 10, 11\} \cup \dots \cup \{0,1\}^n
                   \cup
                   \dots \ ,
-                  \end&#123;align*&#125;$$
+                  \end{align*}$$
                   also die Menge aller endlichen Bit-Strings ist unendlich. Mit \(\epsilon\) bezeichnen wir hier den
                   leeren String.
                   Ganz generell: wenn \(\Sigma\) eine
                   nichtleere
                   Menge ist, dann ist \(\Sigma^*\), die Menge aller endlichen Strings über \(\Sigma\), unendlich.
-                </Paragraph>
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </Section>
-    </Container>
-  );
-};
-
-export default Article;
+      </section>
+    </body>

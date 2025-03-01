@@ -1,12 +1,21 @@
-import Section from "~/components/Section";
-import Paragraph from "~/components/Paragraph";
-import Container from "~/components/Container";
-import Carousel from "~/components/Carousel";
-import NumberedTitle from "~/components/NumberedTitle";
-const Article = () => {
-  return (
-    <Container>
-      <Section
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="data:,">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title></title>
+
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+   <link rel="stylesheet" type="text/css" href="../TI.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="../mathjax_setup.js"></script>
+   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+      <section
         count={15}
         title_gr="Berechenbarkeit und natürliche Zahlen"
         title_en="Computability NaturalNumbers"
@@ -15,10 +24,10 @@ const Article = () => {
         counter="ExoCtr"
         path="/lecture-notes15.tsx">
         <div id="link-to-toc">
-          <a href="../vorlesungsskript">
+          <a href="../vorlesungsskript.html">
             Inhaltsverzeichnis
           </a>
-          <a href="02-06-Trichotomiesatz">
+          <a href="02-06-Trichotomiesatz.html">
             &lt;&lt; Kapitel 2.6
           </a>
         </div>
@@ -28,7 +37,7 @@ const Article = () => {
           <a href="/">
             zur Kursübersicht
           </a>
-          <a href="03-01-primitive-recursion-definitions">
+          <a href="03-01-primitive-recursion-definitions.html">
             Kapitel 3.1 &gt;&gt;
           </a>
         </div>
@@ -41,58 +50,58 @@ const Article = () => {
                   Berechenbarkeit und natürliche Zahlen
                 </span>
               </h1>
-              <Paragraph>
+              <p>
                 Mit den Booleschen Schaltkreisen haben wir ein Modell kennengelernt, dass
-                die Berechnung von Booleschen Funkionen \(f: \&#123;0,1\&#125;^n \rightarrow \&#123;0,1\&#125;\) beschreibt.
+                die Berechnung von Booleschen Funkionen \(f: \{0,1\}^n \rightarrow \{0,1\}\) beschreibt.
                 Wir haben mehrere Beweisen gesehen, dass es für jede Boolesche Funktion einen
-                Schaltkreis gibt. Unsere Zielsetzung war durchweg{" "}
+                Schaltkreis gibt. Unsere Zielsetzung war durchweg 
                 <i>
                   komplexitätstheoretisch
                 </i>
                 : wir
                 wollten möglichst kleine Schaltkreise von möglichst geringer Tiefe entwerfen.
                 Würden wir tiefer in die Schaltkreiskomplexität einsteigen, so würden wir uns fast
-                ausschließlich mit{" "}
+                ausschließlich mit 
                 <i>
                   negativen
                 </i>
-                {" "}Zielen beschäftigen: zu zeigen, dass es zu bestimmten
+                 Zielen beschäftigen: zu zeigen, dass es zu bestimmten
                 Funktionen eben nicht Schaltkreise mit \(S\) Gates und in Tiefe \(d\) gibt; wir
-                würden uns zum Großteil mit{" "}
+                würden uns zum Großteil mit 
                 <i>
                   unteren Schranken
                 </i>
-                {" "}beschäftigen.
-              </Paragraph>
-              <Paragraph>
-                Boolesche Funktionen sind immer{" "}
+                 beschäftigen.
+              </p>
+              <p>
+                Boolesche Funktionen sind immer 
                 <i>
                   endliche
                 </i>
-                {" "}Objekte. In der Berechenbarkeitstheorie
-                geht es im Grunde um die Frage: welche{" "}
+                 Objekte. In der Berechenbarkeitstheorie
+                geht es im Grunde um die Frage: welche 
                 <i>
                   unendlichen
                 </i>
-                {" "}Funktionen können wir überhaupt
+                 Funktionen können wir überhaupt
                 berechnen? Und was gilt denn überhaupt als zulässiges Modell für Berechenbarkeit?
-              </Paragraph>
-              <Paragraph>
+              </p>
+              <p>
                 Wenn wir nun also über Funktionen \(f: X \rightarrow Y\) auf unendlichen Mengen sprechen und uns
                 fragen,
-                welche durch eine{" "}
+                welche durch eine 
                 <i>
                   endliche Rechenvorschrift
                 </i>
-                {" "}beschrieben werden können, dann
+                 beschrieben werden können, dann
                 müssen wir erst einmal entscheiden, mit welcher unendlichen Menge wir uns beschäftigen.
                 Eine Bedingung sollte zum Beispiel sein, dass wir Input und Output vollständig hinschreiben können.
                 (Denn wenn der Input bereits unendlich groß wäre, wie sollten wir überhaupt über Berechenbarkeit
                 sprechen?)
                 Für uns als Informatiker wäre doch folgende Menge am naheliegendsten:
-                $$\begin&#123;align*&#125;
-                \&#123;0,1\&#125;^* \ ,
-                \end&#123;align*&#125;$$
+                $$\begin{align*}
+                \{0,1\}^* \ ,
+                \end{align*}$$
                 also die Menge aller beliebig langen aber endlichen Bit-Strings. Wir können alle möglichen Dinge
                 (Wörter, Programme, Dateien, natürliche Zahlen, rationale Zahlen) als solche Bit-Strings codieren.
                 Die ersten Wissenschaftler, die sich mit Berechenbarkeit beschäftigten, kamen allerdings
@@ -102,33 +111,29 @@ const Article = () => {
                 </i>
                 die ersten Rechner gebaut wurden. Daher beschäftigten sich die ersten Forscher auch mit einer
                 anderen, uns sehr vertrauten Menge:
-                $$\begin&#123;align*&#125;
-                \mathbb&#123;N&#125; \ ,
-                \end&#123;align*&#125;$$
+                $$\begin{align*}
+                \mathbb{N} \ ,
+                \end{align*}$$
                 den natürlichen Zahlen. Im letzten Kapitel haben wir ja unter anderen bewiesen, dass diese
                 gleichmächtig sind:
-                \(\&#123;0,1\&#125;^* \cong \N\) und haben auch eine Bijektion kennengelernt, beispielsweise
-                $$\begin&#123;align*&#125;
-                f : \&#123;0,1\&#125;^*&amp;\rightarrow \N \\
+                \(\{0,1\}^* \cong \N\) und haben auch eine Bijektion kennengelernt, beispielsweise
+                $$\begin{align*}
+                f : \{0,1\}^*&amp;\rightarrow \N \\
                 (x_1, \dots, x_n)&amp;\mapsto (1 x_1\dots x_n)_2 - 1\ ,
-                \end&#123;align*&#125;$$
+                \end{align*}$$
                 wir stellen also dem Bitstring \(x_1,\dots,x_n\) eine 1 voran und interpretieren das Ergebnis als
                 natürliche Zahl;
                 dann ziehen wir 1 ab.
                 Es ist also für die Entwicklung eines Berechenbarkeitsbegriffs mehr oder weniger egal, ob wir mit
-                \(\N\) oder \(\&#123;0,1\&#125;^*\) arbeiten - sofern die obige Bijektion \(f\) selbst "berechenbar" ist.
-              </Paragraph>
-              <Paragraph>
+                \(\N\) oder \(\{0,1\}^*\) arbeiten - sofern die obige Bijektion \(f\) selbst "berechenbar" ist.
+              </p>
+              <p>
                 Wir werden in diesem Kapitel mehrere Berechenbarkeitsmodelle für Funktionen
                 \(f: \N \rightarrow \N\) kennenlernen. Die beste Einstellung Ihrerseits ist, diese Modelle
                 als primitive, sehr reduzierte Programmiersprachen zu betrachten.
-              </Paragraph>
+              </p>
             </div>
           </div>
         </div>
-      </Section>
-    </Container>
-  );
-};
-
-export default Article;
+      </section>
+    </body>

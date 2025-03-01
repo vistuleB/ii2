@@ -1,12 +1,21 @@
-import Section from "~/components/Section";
-import Paragraph from "~/components/Paragraph";
-import Container from "~/components/Container";
-import Carousel from "~/components/Carousel";
-import NumberedTitle from "~/components/NumberedTitle";
-const Article = () => {
-  return (
-    <Container>
-      <Section
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="data:,">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title></title>
+
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+   <link rel="stylesheet" type="text/css" href="../TI.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="../mathjax_setup.js"></script>
+   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+      <section
         count={20}
         title_gr="Formale Sprachen - Einführung und Beispiele"
         title_en="formal languages"
@@ -15,10 +24,10 @@ const Article = () => {
         counter="ExoCtr"
         path="/lecture-notes20.tsx">
         <div id="link-to-toc">
-          <a href="../vorlesungsskript">
+          <a href="../vorlesungsskript.html">
             Inhaltsverzeichnis
           </a>
-          <a href="03-04-mu-recursion">
+          <a href="03-04-mu-recursion.html">
             &lt;&lt; Kapitel 3.4
           </a>
         </div>
@@ -28,7 +37,7 @@ const Article = () => {
           <a href="/">
             zur Kursübersicht
           </a>
-          <a href="04-01-regular-grammars">
+          <a href="04-01-regular-grammars.html">
             Kapitel 4.1 &gt;&gt;
           </a>
         </div>
@@ -42,61 +51,61 @@ const Article = () => {
                 </span>
               </h1>
               <div class="subChapter">
-                <Paragraph>
-                  Hier sehen Sie einige Beispiele für gültige und ungültige Email-Adressen. Mit{" "}
+                <p>
+                  Hier sehen Sie einige Beispiele für gültige und ungültige Email-Adressen. Mit 
                   <i>
                     gültig
                   </i>
                   meine ich, dass sie syntaktisch korrekt sind, ungeachtet, ob ein Konto mit dieser Email-Adresse
                   besteht.
-                </Paragraph>
+                </p>
                 <pre class="container">
-                  thomas.schmitz@hszg.de{" "}
+                  thomas.schmitz@hszg.de 
                   <span class="comment">
                     Gültig
                   </span>
-                  dominik@cs.sjtu.edu.cn{" "}
+                  dominik@cs.sjtu.edu.cn 
                   <span class="comment">
                     Gültig
                   </span>
-                  raffaela@mayer@gmail.com{" "}
+                  raffaela@mayer@gmail.com 
                   <span class="comment">
                     Ungültig: @ kommt zweimal vor
                   </span>
-                  lorenz.klein@greatest/company/in/the/world.com{" "}
+                  lorenz.klein@greatest/company/in/the/world.com 
                   <span class="comment">
                     Ungültig: Domain-Name darf kein / enthalten
                   </span>
-                  .schlaumeier@gmail.com{" "}
+                  .schlaumeier@gmail.com 
                   <span class="comment">
                     Ungültig: Google will kein . an erster Stelle
                   </span>
                 </pre>
-                <Paragraph>
+                <p>
                   Hier sehen Sie den Teil eines HTML-Dokuments. Beachten Sie die typische
                   hierarchisch-geschachtelte
                   Struktur (sie müssen es nicht im Detail lesen):
-                </Paragraph>
+                </p>
                 <style>
                   .StartTag,
-                  .EndTag &#123;
+                  .EndTag {
                   color: blue;
-                  &#125;
+                  }
                   .AttributeValueDoubleQuote,
-                  .AttributeValueSingleQuote &#123;
+                  .AttributeValueSingleQuote {
                   color: orange
-                  &#125;
-                  .RawText &#123;
+                  }
+                  .RawText {
                   font-style: italic;
-                  &#125;
-                  .AttributeName &#123;
+                  }
+                  .AttributeName {
                   color: limegreen;
-                  &#125;
+                  }
                 </style>
                 <pre class="container">
                   <span class="RawText" />
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="StartTag">
                     div
@@ -134,12 +143,12 @@ const Article = () => {
                     '
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LineBreak" />
                   <span class="RawText" />
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="StartTag">
                     div
@@ -161,33 +170,33 @@ const Article = () => {
                     '
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LineBreak" />
                   <span class="RawText" />
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="StartTag">
                     p
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="RawText">
                     \(110 x + 794\)
                   </span>
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="EndTag">
                     /p
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="StartTag">
                     img
@@ -229,23 +238,23 @@ const Article = () => {
                     '
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LineBreak" />
                   <span class="RawText" />
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="EndTag">
                     /div
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LineBreak" />
                   <span class="RawText" />
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="StartTag">
                     div
@@ -267,33 +276,33 @@ const Article = () => {
                     '
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LineBreak" />
                   <span class="RawText" />
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="StartTag">
                     p
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="RawText">
                     \(502 x + 121\)
                   </span>
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="EndTag">
                     /p
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="StartTag">
                     img
@@ -335,23 +344,23 @@ const Article = () => {
                     '
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LineBreak" />
                   <span class="RawText" />
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="EndTag">
                     /div
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LineBreak" />
                   <span class="RawText" />
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="StartTag">
                     div
@@ -373,33 +382,33 @@ const Article = () => {
                     '
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LineBreak" />
                   <span class="RawText" />
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="StartTag">
                     p
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="RawText">
                     \(617 x + 5\)
                   </span>
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="EndTag">
                     /p
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="StartTag">
                     img
@@ -441,23 +450,23 @@ const Article = () => {
                     '
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LineBreak" />
                   <span class="RawText" />
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="EndTag">
                     /div
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LineBreak" />
                   <span class="RawText" />
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="StartTag">
                     div
@@ -479,33 +488,33 @@ const Article = () => {
                     '
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LineBreak" />
                   <span class="RawText" />
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="StartTag">
                     p
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="RawText">
                     \(815 x + 562\)
                   </span>
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="EndTag">
                     /p
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="StartTag">
                     img
@@ -547,23 +556,23 @@ const Article = () => {
                     '
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LineBreak" />
                   <span class="RawText" />
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="EndTag">
                     /div
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LineBreak" />
                   <span class="RawText" />
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="StartTag">
                     div
@@ -585,33 +594,33 @@ const Article = () => {
                     '
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LineBreak" />
                   <span class="RawText" />
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="StartTag">
                     p
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="RawText">
                     \(868 x + 858\)
                   </span>
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="EndTag">
                     /p
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="StartTag">
                     img
@@ -653,23 +662,23 @@ const Article = () => {
                     '
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LineBreak" />
                   <span class="RawText" />
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="EndTag">
                     /div
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LineBreak" />
                   <span class="RawText" />
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="StartTag">
                     div
@@ -691,33 +700,33 @@ const Article = () => {
                     '
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LineBreak" />
                   <span class="RawText" />
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="StartTag">
                     p
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="RawText">
                     \(915 x + 320\)
                   </span>
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="EndTag">
                     /p
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="StartTag">
                     img
@@ -759,22 +768,22 @@ const Article = () => {
                     '
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LineBreak" />
                   <span class="RawText" />
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="EndTag">
                     /div
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="LineBreak" />
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="EndTag">
                     /div
@@ -796,73 +805,73 @@ const Article = () => {
                     '
                   </span>
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                 </pre>
-                <Paragraph>
+                <p>
                   Hier sehen Sie einen Ausschnitt aus einem Elm-Programm (auch diesen müssen Sie nicht im
                   Detail lesen):
-                </Paragraph>
+                </p>
                 <pre class="listing container">
-                  {" "}{" "}
+                    
                   <code>
-                    find : Bst -&gt; String -&gt; Maybe String``find tree key =
+                    find : Bst -> String -> Maybe String``find tree key =
                   </code>
-                  {" "}{" "}
+                    
                   <code>
                     case tree of
                   </code>
-                  {" "}{" "}
+                    
                   <code>
-                    Empty _ -&gt;
+                    Empty _ ->
                   </code>
-                  {" "}{" "}
+                    
                   <code>
                     Nothing``
                   </code>
-                  {" "}{" "}
+                    
                   <code>
-                    Node ( keyHere, valueHere ) leftChild rightChild -&gt;
+                    Node ( keyHere, valueHere ) leftChild rightChild ->
                   </code>
-                  {" "}{" "}
+                    
                   <code>
                     if key == keyHere then
                   </code>
-                  {" "}{" "}
+                    
                   <code>
                     Just valueHere``
                   </code>
-                  {" "}{" "}
+                    
                   <code>
                     else if key&lt; keyHere then
                   </code>
-                  {" "}{" "}
+                    
                   <code>
                     find leftChild key``
                   </code>
-                  {" "}{" "}
+                    
                   <code>
                     else
                   </code>
-                  {" "}{" "}
+                    
                   <code>
                     find rightChild key
                   </code>
-                  {" "}{" "}
+                    
                 </pre>
-                <Paragraph>
+                <p>
                   Als letztes Beispiel sehen Sie hier eine svg-Datei. Dies ist ein Dateiformat für Vektorgrafiken.
                   In
                   diesem
-                  Falle ein Kreis mit einer Geraden:{" "}
+                  Falle ein Kreis mit einer Geraden: 
                   <img
                     style="height:4em"
                     src="../img/svg-example.svg" />
-                </Paragraph>
+                </p>
                 <pre class="listing container">
                   <span class="LineBreak" />
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="AttributeName">
                     ?
@@ -903,7 +912,7 @@ const Article = () => {
                     ?xml
                   </span>
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   <span class="RawText" />
                   `
@@ -930,7 +939,7 @@ const Article = () => {
                     svg
                   </span>
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   `
                   `
@@ -1012,7 +1021,7 @@ const Article = () => {
                   `
                   <span class="LineBreak" />
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="DoubleQuote">
                     "
@@ -1034,7 +1043,7 @@ const Article = () => {
                   `
                   <span class="LineBreak" />
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="DoubleQuote">
                     "
@@ -1056,7 +1065,7 @@ const Article = () => {
                     g
                   </span>
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   `
                   `
@@ -1082,13 +1091,13 @@ const Article = () => {
                     circle
                   </span>
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   `
                   `
                   <span class="LineBreak" />
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="AttributeName">
                     /
@@ -1164,14 +1173,14 @@ const Article = () => {
                     path
                   </span>
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   `
                   `
                   <span class="LineBreak" />
                   <span class="RawText" />
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="AttributeName">
                     /
@@ -1196,37 +1205,37 @@ const Article = () => {
                   `
                   <span class="LineBreak" />
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="EndTag">
                     /g
                   </span>
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   `
                   `
                   <span class="LineBreak" />
                   <span class="GreaterThanBracket">
-                    &gt;
+                    >
                   </span>
                   <span class="EndTag">
                     /svg
                   </span>
                   <span class="LessThanBracket">
-                    &lt;
+                    <
                   </span>
                   `
                   `
                 </pre>
-                <Paragraph>
-                  Was haben diese vier Beispiele gemeinsam? Es handelt sich in allen Fällen um{" "}
+                <p>
+                  Was haben diese vier Beispiele gemeinsam? Es handelt sich in allen Fällen um 
                   <i>
                     Daten
                   </i>
                   , die
                   in
-                  einem bestimmten festgelegten{" "}
+                  einem bestimmten festgelegten 
                   <i>
                     Format
                   </i>
@@ -1240,32 +1249,32 @@ const Article = () => {
                   Methoden, Algorithmen entwickeln, um
                   Daten, die in einem bestimmten Format vorliegen, zu verarbeiten; ja auch erst einmal überhaupt
                   Begriffe festlegen, wie man solche Formate definiert.
-                </Paragraph>
+                </p>
                 <h2>
                   Korrekte Email-Adressen
                 </h2>
-                <Paragraph>
+                <p>
                   Kommen wir auf unser erstes, einfachstes Beispiel zurück: die Email-Adressen. Können Sie
                   möglichst
                   präzise und möglichst formal beschreiben, wie eine korrekte
                   Email-Adresse auszusehen hat? Hier versuche ich es einmal:
-                </Paragraph>
+                </p>
                 <div class="well container">
-                  Eine Emailadresse besteht aus einem{" "}
+                  Eine Emailadresse besteht aus einem 
                   <i>
                     Benutzernamen
                   </i>
-                  {" "}und einem{" "}
+                   und einem 
                   <i>
                     Domainnamen
                   </i>
                   , die
                   mit
-                  einem{" "}
+                  einem 
                   <code>
                     @
                   </code>
-                  {" "}verbunden sind.
+                   verbunden sind.
                   Der Benutzername ist ein nichtleerer String bestehend aus Groß- und Kleinbuchstaben, Zahlen, und
                   Punkten (
                   <code>
@@ -1274,7 +1283,7 @@ const Article = () => {
                   ).
                   Erster und letzter Buchstaben dürfen keine Punkte sein, außerdem dürfen keine zwei Punkte
                   nebeneinander stehen.
-                  Der Domainname ist eine Folge von mindestenes zwei{" "}
+                  Der Domainname ist eine Folge von mindestenes zwei 
                   <i>
                     Labels
                   </i>
@@ -1286,14 +1295,14 @@ const Article = () => {
                   </code>
                   ).
                 </div>
-                <Paragraph>
+                <p>
                   Die genauen Regeln mögen von Anbieter zu Anbieter variieren; ich habe mich mal an das gehalten,
                   was
-                  ich experimentell bei{" "}
+                  ich experimentell bei 
                   <code>
                     gmail.com
                   </code>
-                  {" "}herausgefunden
+                   herausgefunden
                   habe. Die obige Beschreibung ist (hoffentlich) verständlich und präzise und unzweideutig.
                   Allerdings
                   ist sie in natürlicher Sprache verfasst;
@@ -1306,725 +1315,725 @@ const Article = () => {
                   eindeutig beschreiben können.
                   Ich werde dies nun Schritt für Schritt entwickeln, erst informell anhand des
                   Email-Adressen-Beispiels und dann, im nächsten Kapitel, formal und abstrakt.
-                </Paragraph>
-                <Paragraph>
-                  Eine Emailadresse ist von der Form{" "}
+                </p>
+                <p>
+                  Eine Emailadresse ist von der Form 
                   <i>
                     Benutzername
                   </i>
-                  {" "}{" "}
+                    
                   <code>
                     @
                   </code>
-                  {" "}{" "}
+                    
                   <i>
                     Domainnname
                   </i>
                   . Dies
-                  können wir als{" "}
+                  können wir als 
                   <i>
                     Ableitungsregel
                   </i>
-                  {" "}darstellen:
-                </Paragraph>
+                   darstellen:
+                </p>
                 <pre class="container">
-                  &lt;EmailAdress&gt;{" "}
+                  &lt;EmailAdress> 
                   <b>
-                    -&gt;
+                    ->
                   </b>
-                  &lt;User&gt; @&lt;Domain&gt;
+                  &lt;User> @&lt;Domain>
                 </pre>
-                <Paragraph>
-                  Wie können wir nun beispielsweise eine ähnliche Ableitungsregeln für `&lt;Domain&gt;`erstellen? Eine{" "}
+                <p>
+                  Wie können wir nun beispielsweise eine ähnliche Ableitungsregeln für `<Domain>`erstellen? Eine 
                   <code>
-                    &lt;Domain&gt;
+                    <Domain>
                   </code>
-                  {" "}soll
-                  eine Folge aus mindestens zwei{" "}
+                   soll
+                  eine Folge aus mindestens zwei 
                   <code>
-                    &lt;Label&gt;
+                    <Label>
                   </code>
-                  {" "}sein, jeweils durch einen`.`separiert. Wir erreichen dies, indem wir einen an Rekursion
+                   sein, jeweils durch einen`.`separiert. Wir erreichen dies, indem wir einen an Rekursion
                   erinnernden Trick anwenden: entweder gibt es genau zwei Labels oder die Domain beginnt mit einem
                   Label,
-                  gefolgt von einem Punkt und wiederum einer{" "}
+                  gefolgt von einem Punkt und wiederum einer 
                   <i>
                     Folge von mindestens zwei durch `.`separierten Labels
                   </i>
                   ,
                   also wiederum etwas, das wie ein Domainname aussieht. Daher:
-                </Paragraph>
+                </p>
                 <pre class="container">
-                  &lt;Domain&gt;{" "}
+                  <Domain> 
                   <b>
-                    -&gt;
+                    ->
                   </b>
-                  &lt;Label&gt; .&lt;Label&gt;
-                  &lt;Domain&gt;{" "}
+                  &lt;Label> .&lt;Label>
+                  <Domain> 
                   <b>
-                    -&gt;
+                    ->
                   </b>
-                  &lt;Label&gt; .&lt;Domain&gt;
+                  &lt;Label> .&lt;Domain>
                 </pre>
-                <Paragraph>
-                  Wir geben also{" "}
+                <p>
+                  Wir geben also 
                   <i>
                     zwei
                   </i>
-                  {" "}Möglichkeiten an, wie mit einem{" "}
+                   Möglichkeiten an, wie mit einem 
                   <code>
-                    &lt;Domain&gt;
+                    <Domain>
                   </code>
-                  {" "}zu
+                   zu
                   verfahren ist.
-                  Was ist nun `&lt;Label&gt;`? Dies ist eine nichtleere Folge von in Domainnamen
+                  Was ist nun `<Label>`? Dies ist eine nichtleere Folge von in Domainnamen
                   erlaubten
                   Zeichen.
-                  Diese sind alphanumerisch (Buchstaben und Zahlen) und der Strich{" "}
+                  Diese sind alphanumerisch (Buchstaben und Zahlen) und der Strich 
                   <code>
                     -
                   </code>
-                  {" "}(in der Praxis
+                   (in der Praxis
                   sind
                   eventuell noch weitere Zeichen erlaubt;
                   im Ernstfall hängt dies davon ab, was die Domain Name Server des jeweiligen Landes / der
                   jeweiligen
                   Top-Level-Domain erlauben, siehe
-                  zum Beispiel{" "}
+                  zum Beispiel 
                   <a href="https://en.wikipedia.org/wiki/Internationalized_domain_name">
                     &ensp;Wikipedia:
-                    Internationalized Domain Name{" "}
+                    Internationalized Domain Name 
                   </a>
                   ).
-                  Wie formulieren wir{" "}
+                  Wie formulieren wir 
                   <i>
                     nichtleere Folge von ...
                   </i>
-                  {" "}mit unserer `--&gt;`-Notation?
+                   mit unserer `-->`-Notation?
                   Wieder mit dem Rekursionstrick:
-                </Paragraph>
+                </p>
                 <pre class="container">
-                  &lt;Label&gt;{" "}
+                  <Label> 
                   <b>
-                    -&gt;
+                    ->
                   </b>
-                  &lt;AlphaNumOrDash&gt;
-                  &lt;Label&gt;{" "}
+                  &lt;AlphaNumOrDash>
+                  <Label> 
                   <b>
-                    -&gt;
+                    ->
                   </b>
-                  &lt;AlphaNumOrDash&gt;&lt;Label&gt;
-                  &lt;AlphaNumOrDash&gt;{" "}
+                  &lt;AlphaNumOrDash>&lt;Label>
+                  <AlphaNumOrDash> 
                   <b>
-                    -&gt;
+                    ->
                   </b>
-                  &lt;AlphaNum&gt;
-                  &lt;AlphaNumOrDash&gt;{" "}
+                  &lt;AlphaNum>
+                  <AlphaNumOrDash> 
                   <b>
-                    -&gt;
+                    ->
                   </b>
-                  {" "}-{" "}
+                   - 
                 </pre>
-                <Paragraph>
-                  Nun müssen wir noch Regeln für{" "}
+                <p>
+                  Nun müssen wir noch Regeln für 
                   <code>
-                    &lt;AlphaNum&gt;
+                    <AlphaNum>
                   </code>
-                  {" "}angeben. Hier führen wir eine
+                   angeben. Hier führen wir eine
                   weitere
                   Konvention ein: nämlich, dass wir
                   verschiedene Alternativen mit einem senkrechten Strich | separieren:
-                </Paragraph>
+                </p>
                 <pre class="container">
-                  &lt;AlphaNum&gt;{" "}
+                  <AlphaNum> 
                   <b>
-                    -&gt;
+                    ->
                   </b>
-                  {" "}a{" "}
-                  <b>
-                    |
-                  </b>
-                  {" "}b{" "}
+                   a 
                   <b>
                     |
                   </b>
-                  {" "}c{" "}
+                   b 
                   <b>
                     |
                   </b>
-                  {" "}d{" "}
+                   c 
                   <b>
                     |
                   </b>
-                  {" "}e{" "}
+                   d 
                   <b>
                     |
                   </b>
-                  {" "}f{" "}
+                   e 
                   <b>
                     |
                   </b>
-                  {" "}g{" "}
+                   f 
                   <b>
                     |
                   </b>
-                  {" "}h{" "}
+                   g 
                   <b>
                     |
                   </b>
-                  {" "}i{" "}
+                   h 
                   <b>
                     |
                   </b>
-                  {" "}j{" "}
+                   i 
                   <b>
                     |
                   </b>
-                  {" "}k{" "}
+                   j 
                   <b>
                     |
                   </b>
-                  {" "}l{" "}
+                   k 
                   <b>
                     |
                   </b>
-                  {" "}m{" "}
+                   l 
                   <b>
                     |
                   </b>
-                  {" "}n{" "}
+                   m 
                   <b>
                     |
                   </b>
-                  {" "}o{" "}
+                   n 
                   <b>
                     |
                   </b>
-                  {" "}p{" "}
+                   o 
                   <b>
                     |
                   </b>
-                  {" "}q{" "}
+                   p 
                   <b>
                     |
                   </b>
-                  {" "}r{" "}
+                   q 
                   <b>
                     |
                   </b>
-                  {" "}s{" "}
+                   r 
                   <b>
                     |
                   </b>
-                  {" "}t{" "}
+                   s 
                   <b>
                     |
                   </b>
-                  {" "}u{" "}
+                   t 
                   <b>
                     |
                   </b>
-                  {" "}v{" "}
+                   u 
                   <b>
                     |
                   </b>
-                  {" "}w{" "}
+                   v 
                   <b>
                     |
                   </b>
-                  {" "}x{" "}
+                   w 
                   <b>
                     |
                   </b>
-                  {" "}y{" "}
+                   x 
                   <b>
                     |
                   </b>
-                  {" "}z
-                  &lt;AlphaNum&gt;{" "}
-                  <b>
-                    -&gt;
-                  </b>
-                  {" "}A{" "}
+                   y 
                   <b>
                     |
                   </b>
-                  {" "}B{" "}
+                   z
+                  <AlphaNum> 
+                  <b>
+                    ->
+                  </b>
+                   A 
                   <b>
                     |
                   </b>
-                  {" "}C{" "}
+                   B 
                   <b>
                     |
                   </b>
-                  {" "}D{" "}
+                   C 
                   <b>
                     |
                   </b>
-                  {" "}E{" "}
+                   D 
                   <b>
                     |
                   </b>
-                  {" "}F{" "}
+                   E 
                   <b>
                     |
                   </b>
-                  {" "}G{" "}
+                   F 
                   <b>
                     |
                   </b>
-                  {" "}H{" "}
+                   G 
                   <b>
                     |
                   </b>
-                  {" "}I{" "}
+                   H 
                   <b>
                     |
                   </b>
-                  {" "}J{" "}
+                   I 
                   <b>
                     |
                   </b>
-                  {" "}K{" "}
+                   J 
                   <b>
                     |
                   </b>
-                  {" "}L{" "}
+                   K 
                   <b>
                     |
                   </b>
-                  {" "}M{" "}
+                   L 
                   <b>
                     |
                   </b>
-                  {" "}N{" "}
+                   M 
                   <b>
                     |
                   </b>
-                  {" "}O{" "}
+                   N 
                   <b>
                     |
                   </b>
-                  {" "}P{" "}
+                   O 
                   <b>
                     |
                   </b>
-                  {" "}Q{" "}
+                   P 
                   <b>
                     |
                   </b>
-                  {" "}R{" "}
+                   Q 
                   <b>
                     |
                   </b>
-                  {" "}S{" "}
+                   R 
                   <b>
                     |
                   </b>
-                  {" "}T{" "}
+                   S 
                   <b>
                     |
                   </b>
-                  {" "}U{" "}
+                   T 
                   <b>
                     |
                   </b>
-                  {" "}V{" "}
+                   U 
                   <b>
                     |
                   </b>
-                  {" "}W{" "}
+                   V 
                   <b>
                     |
                   </b>
-                  {" "}X{" "}
+                   W 
                   <b>
                     |
                   </b>
-                  {" "}Y{" "}
+                   X 
                   <b>
                     |
                   </b>
-                  {" "}Z
-                  &lt;AlphaNum&gt;{" "}
-                  <b>
-                    -&gt;
-                  </b>
-                  {" "}0{" "}
+                   Y 
                   <b>
                     |
                   </b>
-                  {" "}1{" "}
+                   Z
+                  <AlphaNum> 
+                  <b>
+                    ->
+                  </b>
+                   0 
                   <b>
                     |
                   </b>
-                  {" "}2{" "}
+                   1 
                   <b>
                     |
                   </b>
-                  {" "}3{" "}
+                   2 
                   <b>
                     |
                   </b>
-                  {" "}4{" "}
+                   3 
                   <b>
                     |
                   </b>
-                  {" "}5{" "}
+                   4 
                   <b>
                     |
                   </b>
-                  {" "}6{" "}
+                   5 
                   <b>
                     |
                   </b>
-                  {" "}7{" "}
+                   6 
                   <b>
                     |
                   </b>
-                  {" "}8{" "}
+                   7 
                   <b>
                     |
                   </b>
-                  {" "}9
+                   8 
+                  <b>
+                    |
+                  </b>
+                   9
                 </pre>
-                <Paragraph>
-                  Beachten Sie: ich habe hier absichtlich nicht`&lt;AlphaNum&gt;{" "}
+                <p>
+                  Beachten Sie: ich habe hier absichtlich nicht`<AlphaNum> 
                   <b>
-                    -&gt;
+                    ->
                   </b>
-                  {" "}a{" "}
-                  <b>
-                    |
-                  </b>
-                  {" "}...{" "}
+                   a 
                   <b>
                     |
                   </b>
-                  {" "}z`geschrieben, weil ich in diesem Beispiel wirklich alles ausschreiben wollte und mit der
+                   ... 
+                  <b>
+                    |
+                  </b>
+                   z`geschrieben, weil ich in diesem Beispiel wirklich alles ausschreiben wollte und mit der
                   ...-Notation
                   schon wieder etwas menschen- aber nicht maschinenlesbares
                   eingeführt hätte.
-                </Paragraph>
-                <Paragraph>
-                  Wir brauchen noch Regeln für `&lt;User&gt;`. Dies ist ein nichtleerer String aus
+                </p>
+                <p>
+                  Wir brauchen noch Regeln für `<User>`. Dies ist ein nichtleerer String aus
                   alphanumerischen Zeichen und dem Punkt `.`, wobei
                   der Punkt nicht am Anfang und nicht am Ende stehen darf. Also: eine nichtleere Folge von
                   <i>
                     Namensblöcken
                   </i>
-                  , die jeweils durch{" "}
+                  , die jeweils durch 
                   <code>
                     .
                   </code>
-                  {" "}separiert sind,
+                   separiert sind,
                   wobei ein Namensblock eine nichtleere Folge alphanumerischer Zeichen ist.
-                </Paragraph>
+                </p>
                 <pre class="container">
-                  &lt;User&gt;{" "}
+                  <User> 
                   <b>
-                    -&gt;
+                    ->
                   </b>
-                  &lt;NameBlock&gt;{" "}
-                  <b>
-                    |
-                  </b>
-                  &lt;NameBlock&gt; .&lt;User&gt;
-                  &lt;NameBlock&gt;{" "}
-                  <b>
-                    -&gt;
-                  </b>
-                  &lt;AlphaNum&gt;{" "}
+                  &lt;NameBlock> 
                   <b>
                     |
                   </b>
-                  &lt;AlphaNum&gt;&lt;NameBlock&gt;
+                  &lt;NameBlock> .&lt;User>
+                  <NameBlock> 
+                  <b>
+                    ->
+                  </b>
+                  &lt;AlphaNum> 
+                  <b>
+                    |
+                  </b>
+                  &lt;AlphaNum>&lt;NameBlock>
                 </pre>
-                <Paragraph>
+                <p>
                   Nun haben wir unser Emailformat vollständig beschrieben. Das gesamte Regelwerk sehen Sie hier
                   noch
                   einmal im Ganzen:
-                </Paragraph>
+                </p>
                 <pre
                   id="email-context-free-grammar"
                   class="container listing">
-                  {" "}{" "}
+                    
                   <code>
-                    &lt;EmailAddress&gt;{" "}
+                    <EmailAddress> 
                     <b>
-                      -&gt;
+                      ->
                     </b>
-                    {" "}&lt;User&gt; @&lt;Domain&gt;``&lt;Domain&gt;{" "}
+                     &lt;User> @&lt;Domain>``<Domain> 
                     <b>
-                      -&gt;
+                      ->
                     </b>
-                    {" "}&lt;Label&gt; .&lt;Label&gt;{" "}
-                    <b>
-                      |
-                    </b>
-                    &lt;Label&gt; .&lt;Domain&gt;``&lt;User&gt;{" "}
-                    <b>
-                      -&gt;
-                    </b>
-                    {" "}&lt;NameBlock&gt;{" "}
+                     &lt;Label> .&lt;Label> 
                     <b>
                       |
                     </b>
-                    &lt;NameBlock&gt; .&lt;User&gt;``&lt;NameBlock&gt;{" "}
+                    &lt;Label> .&lt;Domain>``<User> 
                     <b>
-                      -&gt;
+                      ->
                     </b>
-                    {" "}&lt;AlphaNum&gt;{" "}
-                    <b>
-                      |
-                    </b>
-                    &lt;AlphaNum&gt;&lt;NameBlock&gt;``&lt;Label&gt;{" "}
-                    <b>
-                      -&gt;
-                    </b>
-                    {" "}&lt;AlphaNumOrDash&gt;{" "}
+                     &lt;NameBlock> 
                     <b>
                       |
                     </b>
-                    &lt;AlphaNumOrDash&gt;&lt;Label&gt;``&lt;AlphaNumOrDash&gt;{" "}
+                    &lt;NameBlock> .&lt;User>``<NameBlock> 
                     <b>
-                      -&gt;
+                      ->
                     </b>
-                    {" "}&lt;AlphaNum&gt;{" "}
+                     &lt;AlphaNum> 
                     <b>
                       |
                     </b>
-                    {" "}-
+                    &lt;AlphaNum>&lt;NameBlock>``<Label> 
+                    <b>
+                      ->
+                    </b>
+                     &lt;AlphaNumOrDash> 
+                    <b>
+                      |
+                    </b>
+                    &lt;AlphaNumOrDash>&lt;Label>``<AlphaNumOrDash> 
+                    <b>
+                      ->
+                    </b>
+                     &lt;AlphaNum> 
+                    <b>
+                      |
+                    </b>
+                     -
                   </code>
-                  {" "}{" "}
+                    
                   <code>
-                    &lt;AlphaNum&gt;{" "}
+                    <AlphaNum> 
                     <b>
-                      -&gt;
+                      ->
                     </b>
-                    {" "}a{" "}
-                    <b>
-                      |
-                    </b>
-                    {" "}b{" "}
+                     a 
                     <b>
                       |
                     </b>
-                    {" "}c{" "}
+                     b 
                     <b>
                       |
                     </b>
-                    {" "}d{" "}
+                     c 
                     <b>
                       |
                     </b>
-                    {" "}e{" "}
+                     d 
                     <b>
                       |
                     </b>
-                    {" "}f{" "}
+                     e 
                     <b>
                       |
                     </b>
-                    {" "}g{" "}
+                     f 
                     <b>
                       |
                     </b>
-                    {" "}h{" "}
+                     g 
                     <b>
                       |
                     </b>
-                    {" "}i{" "}
+                     h 
                     <b>
                       |
                     </b>
-                    {" "}j{" "}
+                     i 
                     <b>
                       |
                     </b>
-                    {" "}k{" "}
+                     j 
                     <b>
                       |
                     </b>
-                    {" "}l{" "}
+                     k 
                     <b>
                       |
                     </b>
-                    {" "}m{" "}
+                     l 
                     <b>
                       |
                     </b>
-                    {" "}n{" "}
+                     m 
                     <b>
                       |
                     </b>
-                    {" "}o{" "}
+                     n 
                     <b>
                       |
                     </b>
-                    {" "}p{" "}
+                     o 
                     <b>
                       |
                     </b>
-                    {" "}q{" "}
+                     p 
                     <b>
                       |
                     </b>
-                    {" "}r{" "}
+                     q 
                     <b>
                       |
                     </b>
-                    {" "}s{" "}
+                     r 
                     <b>
                       |
                     </b>
-                    {" "}t{" "}
+                     s 
                     <b>
                       |
                     </b>
-                    {" "}u{" "}
+                     t 
                     <b>
                       |
                     </b>
-                    {" "}v{" "}
+                     u 
                     <b>
                       |
                     </b>
-                    {" "}w{" "}
+                     v 
                     <b>
                       |
                     </b>
-                    {" "}x{" "}
+                     w 
                     <b>
                       |
                     </b>
-                    {" "}y{" "}
+                     x 
                     <b>
                       |
                     </b>
-                    {" "}z``&lt;AlphaNum&gt;{" "}
-                    <b>
-                      -&gt;
-                    </b>
-                    {" "}A{" "}
+                     y 
                     <b>
                       |
                     </b>
-                    {" "}B{" "}
+                     z``<AlphaNum> 
+                    <b>
+                      ->
+                    </b>
+                     A 
                     <b>
                       |
                     </b>
-                    {" "}C{" "}
+                     B 
                     <b>
                       |
                     </b>
-                    {" "}D{" "}
+                     C 
                     <b>
                       |
                     </b>
-                    {" "}E{" "}
+                     D 
                     <b>
                       |
                     </b>
-                    {" "}F{" "}
+                     E 
                     <b>
                       |
                     </b>
-                    {" "}G{" "}
+                     F 
                     <b>
                       |
                     </b>
-                    {" "}H{" "}
+                     G 
                     <b>
                       |
                     </b>
-                    {" "}I{" "}
+                     H 
                     <b>
                       |
                     </b>
-                    {" "}J{" "}
+                     I 
                     <b>
                       |
                     </b>
-                    {" "}K{" "}
+                     J 
                     <b>
                       |
                     </b>
-                    {" "}L{" "}
+                     K 
                     <b>
                       |
                     </b>
-                    {" "}M{" "}
+                     L 
                     <b>
                       |
                     </b>
-                    {" "}N{" "}
+                     M 
                     <b>
                       |
                     </b>
-                    {" "}O{" "}
+                     N 
                     <b>
                       |
                     </b>
-                    {" "}P{" "}
+                     O 
                     <b>
                       |
                     </b>
-                    {" "}Q{" "}
+                     P 
                     <b>
                       |
                     </b>
-                    {" "}R{" "}
+                     Q 
                     <b>
                       |
                     </b>
-                    {" "}S{" "}
+                     R 
                     <b>
                       |
                     </b>
-                    {" "}T{" "}
+                     S 
                     <b>
                       |
                     </b>
-                    {" "}U{" "}
+                     T 
                     <b>
                       |
                     </b>
-                    {" "}V{" "}
+                     U 
                     <b>
                       |
                     </b>
-                    {" "}W{" "}
+                     V 
                     <b>
                       |
                     </b>
-                    {" "}X{" "}
+                     W 
                     <b>
                       |
                     </b>
-                    {" "}Y{" "}
+                     X 
                     <b>
                       |
                     </b>
-                    {" "}Z
+                     Y 
+                    <b>
+                      |
+                    </b>
+                     Z
                   </code>
-                  {" "}{" "}
+                    
                 </pre>
                 <h2>
                   Ein Beispiel einer formalen Grammatik und einer Ableitung
                 </h2>
-                <Paragraph>
-                  Was Sie hier sehen, nennt man eine{" "}
+                <p>
+                  Was Sie hier sehen, nennt man eine 
                   <i>
                     formale Grammatik
                   </i>
                   . Ihre Bestandteile sind:
-                </Paragraph>
+                </p>
                 <ul>
                   <li>
                     Das Alphabet \(\Sigma\) aller verwendeten Zeichen, in unserem
-                    Fall also \(\Sigma = \&#123;a,\dots,z,A,\dots,Z,.,-,@\&#125;\). Wir nennen \(\Sigma\) die Menge
-                    der{" "}
+                    Fall also \(\Sigma = \{a,\dots,z,A,\dots,Z,.,-,@\}\). Wir nennen \(\Sigma\) die Menge
+                    der 
                     <i>
                       terminalen Symbole
                     </i>
@@ -2033,11 +2042,11 @@ const Article = () => {
                   <li>
                     Eine Menge \(N\) abstrakter Symbole, hier
                     $$
-                    N = \&#123;\texttt&#123;&lt;EmailAddress&gt;,&lt;Domain&gt;,
-                    &lt;User&gt;,&lt;NameBlock&gt;,&lt;Label&gt;,&lt;AlphaNumOrDash&gt;,&lt;AlphaNum&gt;&#125;
-                    \&#125; \ .
+                    N = \{\texttt{<EmailAddress>,&lt;Domain>,
+                    &lt;User>,<NameBlock>,<Label>,<AlphaNumOrDash>,<AlphaNum>}
+                    \} \ .
                     $$
-                    Diese Menge nennen wir die{" "}
+                    Diese Menge nennen wir die 
                     <i>
                       nichtterminalen Symbole
                     </i>
@@ -2047,11 +2056,11 @@ const Article = () => {
                     nicht gleichzeitig Terminalsymbol und Nichtterminalsymbol sein.
                   </li>
                   <li>
-                    Eine Menge \(P\) von Regeln, auch{" "}
+                    Eine Menge \(P\) von Regeln, auch 
                     <i>
                       Produktionen
                     </i>
-                    {" "}genannt, wobei jede Regel die Form
+                     genannt, wobei jede Regel die Form
                     \(X \rightarrow \alpha\) hat, wobei \(\alpha\) eine beliebig lange endliche Folge von
                     Symbolen
                     in \(\Sigma \cup N\) ist.
@@ -2060,16 +2069,16 @@ const Article = () => {
                     Ein Startsymbol \(S \in N\), das angibt, wo wir mit unserer Ableitung beginnen sollen. Im
                     obigen
                     Beispiel
-                    sind wir ja an Emailadressen interessiert, also ist{" "}
+                    sind wir ja an Emailadressen interessiert, also ist 
                     <code>
-                      &lt;EmailAddress&gt;
+                      <EmailAddress>
                     </code>
-                    {" "}das
+                     das
                     Startsymbol.
                   </li>
                 </ul>
-                <Paragraph>
-                  Wenn wir nun so eine Grammatik gegeben haben, können wir Wörter{" "}
+                <p>
+                  Wenn wir nun so eine Grammatik gegeben haben, können wir Wörter 
                   <i>
                     ableiten
                   </i>
@@ -2081,132 +2090,132 @@ const Article = () => {
                   denn es soll ja mehr als
                   eine Email-Adresse geben. Hier ist ein Beispiel für eine Ableitung basierend auf der obigen
                   Grammatik:
-                </Paragraph>
+                </p>
                 <pre class="container">
-                  {" "}{" "}
+                    
                   <code>
-                    &lt;EmailAddress&gt;{" "}
+                    <EmailAddress> 
                     <b>
-                      -&gt;
+                      ->
                     </b>
-                    &lt;User&gt;@&lt;Domain&gt;
+                    &lt;User>@<Domain>
                   </code>
-                  {" "}{" "}
+                    
                   <code>
-                    {" "}{" "}
+                      
                     <b>
-                      -&gt;
+                      ->
                     </b>
-                    &lt;NameBlock&gt;.&lt;User&gt;@&lt;Domain&gt;
+                    &lt;NameBlock>.<User>@<Domain>
                   </code>
-                  {" "}
+                   
                   &ensp;`
                   <b>
-                    -&gt;
+                    ->
                   </b>
-                  &lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Domain&gt;` 
+                  &lt;NameBlock>.<NameBlock>@<Domain>` 
                   &ensp;`
                   <b>
-                    -&gt;
+                    ->
                   </b>
-                  &lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Domain&gt;` 
+                  &lt;NameBlock>.<NameBlock>@<Label>.<Domain>` 
                   &ensp;`
                   <b>
-                    -&gt;
+                    ->
                   </b>
-                  &lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;` 
+                  &lt;NameBlock>.<NameBlock>@<Label>.<Label>.<Label>` 
                   &ensp;`
                   <b>
-                    -&gt;
+                    ->
                   </b>
-                  &lt;AlphaNum&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;` 
+                  &lt;AlphaNum>.<NameBlock>@<Label>.<Label>.<Label>` 
                   &ensp;`
                   <b>
-                    -&gt;
+                    ->
                   </b>
-                  &lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;` 
+                  &lt;AlphaNum>.<AlphaNum>@<Label>.<Label>.<Label>` 
                   &ensp;`
                   <b>
-                    -&gt;
+                    ->
                   </b>
-                  &lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;Label&gt;.&lt;Label&gt;` 
+                  &lt;AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<Label>.<Label>` 
                   &ensp;`
                   <b>
-                    -&gt;
+                    ->
                   </b>
-                  &lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;Label&gt;` 
+                  &lt;AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<Label>` 
                   &ensp;`
                   <b>
-                    -&gt;
+                    ->
                   </b>
-                  &lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;Label&gt;` 
+                  &lt;AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash><Label>` 
                   &ensp;`
                   <b>
-                    -&gt;
+                    ->
                   </b>
-                  &lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt;` 
+                  &lt;AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash><AlphaNumOrDash>` 
                   &ensp;`
                   <b>
-                    -&gt;
+                    ->
                   </b>
-                  {" "}d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt;` 
+                   d.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash><AlphaNumOrDash>` 
                   &ensp;`
                   <b>
-                    -&gt;
+                    ->
                   </b>
-                  {" "}d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;e`{" "}
+                   d.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash>e` 
                   <code>
-                    {" "}{" "}
+                      
                     <b>
-                      -&gt;
+                      ->
                     </b>
-                    {" "}d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de
+                     d.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.de
                   </code>
-                  {" "}{" "}
+                    
                   <code>
-                    {" "}{" "}
+                      
                     <b>
-                      -&gt;
+                      ->
                     </b>
-                    {" "}d.s@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de
+                     d.s@<AlphaNumOrDash>.<AlphaNumOrDash>.de
                   </code>
-                  {" "}{" "}
+                    
                   <code>
-                    {" "}{" "}
+                      
                     <b>
-                      -&gt;
+                      ->
                     </b>
-                    {" "}d.s@&lt;AlphaNumOrDash&gt;.b.de
+                     d.s@<AlphaNumOrDash>.b.de
                   </code>
-                  {" "}{" "}
+                    
                   <code>
-                    {" "}{" "}
+                      
                     <b>
-                      -&gt;
+                      ->
                     </b>
-                    {" "}d.s@a.b.de
+                     d.s@a.b.de
                   </code>
-                  {" "}{" "}
+                    
                 </pre>
-                <Paragraph>
-                  Nach dem gleichen Schema könnten wir{" "}
+                <p>
+                  Nach dem gleichen Schema könnten wir 
                   <code>
                     d.s.@-.-.--
                   </code>
-                  {" "}ableiten, was
+                   ableiten, was
                   darauf schließen lässt, dass unsere Grammatik nicht wirklich das
-                  tut, was wir beabsichtigen, dass sie nämlich{" "}
+                  tut, was wir beabsichtigen, dass sie nämlich 
                   <i>
                     zu viele
                   </i>
-                  {" "}Emailadressen
+                   Emailadressen
                   herleitet, auch solche, die wir nicht als zulässige Adressen gelten lassen wollen.
-                </Paragraph>
+                </p>
                 <div class="well well-lg numbered-exercise container">
                   <span class="numbered-title">
                     Übungsaufgabe
                     <NumberedTitle>
-                      &ensp;4.0.1{" "}
+                      &ensp;4.0.1 
                     </NumberedTitle>
                   </span>
                   Formulieren Sie weitere Regeln, um unsinnige Domainnamen wie `-.-.--`zu verbieten. Wie müssen Sie die obige Grammatik ändern?
@@ -2214,70 +2223,70 @@ const Article = () => {
                 <h1>
                   Terminologie, formale Definitionen und Beispiele
                 </h1>
-                <Paragraph>
+                <p>
                   Im letzten Abschnitt haben wir die Regeln für die Bildung syntaktisch korrekter
                   Emailadressen formalisiert. Zwar unvollständig, doch hoffe ich, dass das allgemeine
                   Schema klar geworden ist. Wir werden nun alles formaler und abstrakter definieren.
-                </Paragraph>
+                </p>
                 <h2>
                   Alphabet
                 </h2>
-                <Paragraph>
+                <p>
                   Wenn wir über formale Sprachen reden, so liegt immer eine (endliche) Menge von
                   Symbolen zugrunde, das Alphabet \(\Sigma\). Im Emailadressen-Beispiel war (\Sigma) recht groß:
-                  die 52 Buchstaben; 10 Ziffern; die Zeichen{" "}
+                  die 52 Buchstaben; 10 Ziffern; die Zeichen 
                   <code>
                     @ . -
                   </code>
-                  {" "}
+                   
                   . Für Java-Programme oder
                   andere Programmiersprachen kämen
-                  noch weitere Zeichen hinzu, zum Beispiel{" "}
+                  noch weitere Zeichen hinzu, zum Beispiel 
                   <code>
-                    + - / \ &#123; &#125;
+                    + - / \ { }
                   </code>
-                  {" "}
+                   
                   &ensp;und so weiter;
                   wenn wir alle Unicode-Zeichen miteinschließen, landen wir im Millionenbereich.
                   In den theoretischen Beispielen, die in diesem Kurs folgen werden, ist das Alphabet fast immer
-                  viel kleiner: typische Alphabete zum Beispiel sind \( \&#123;0,1\&#125;\) , \(\&#123;a,b,c,d\&#125;\) oder auch
-                  \(\&#123;1\&#125;\), ein Alphabet mit nur einem Zeichen.
-                </Paragraph>
-                <Paragraph>
+                  viel kleiner: typische Alphabete zum Beispiel sind \( \{0,1\}\) , \(\{a,b,c,d\}\) oder auch
+                  \(\{1\}\), ein Alphabet mit nur einem Zeichen.
+                </p>
+                <p>
                   Für ein Alphabet \(\Sigma\) bezeichnen wir mit \(\Sigma^*\) die Menge aller
-                  endlichen Strings über diesem Alphabet; das schließt den{" "}
+                  endlichen Strings über diesem Alphabet; das schließt den 
                   <i>
                     leeren String
                   </i>
-                  {" "}mit ein,
+                   mit ein,
                   den wir mit \(\epsilon\) bezeichnen. So ist beispielsweise
                   $$
-                  \&#123;a,b\&#125;^* = \&#123;\epsilon, a, b, aa, ab, ba, bb, aaa, aab, aba, ...\&#125;
+                  \{a,b\}^* = \{\epsilon, a, b, aa, ab, ba, bb, aaa, aab, aba, ...\}
                   $$
                   Ein Element \(x \in \Sigma^*\), also einen endlichen String aus \(\Sigma\)-Symbolen,
-                  bezeichnen wir als{" "}
+                  bezeichnen wir als 
                   <i>
                     Wort über \(\Sigma\)
                   </i>
                   .
                   Mit \(\Sigma^+\) bezeichnen wir die Menge aller nichtleeren Strings, also
-                  \(\Sigma^+ = \Sigma^* \setminus \&#123;\epsilon\&#125;\).
-                </Paragraph>
+                  \(\Sigma^+ = \Sigma^* \setminus \{\epsilon\}\).
+                </p>
                 <h2>
                   Sprachen
                 </h2>
-                <Paragraph>
-                  Eine Teilmenge \(L \subseteq \Sigma\) bezeichnen wir in diesem Kontext als{" "}
+                <p>
+                  Eine Teilmenge \(L \subseteq \Sigma\) bezeichnen wir in diesem Kontext als 
                   <i>
                     Sprache
                   </i>
-                  {" "}und
-                  kürzen Sie oft mit \(L\) ab, was für{" "}
+                   und
+                  kürzen Sie oft mit \(L\) ab, was für 
                   <i>
                     language
                   </i>
-                  {" "}steht. Beispiele für Sprachen wären
-                </Paragraph>
+                   steht. Beispiele für Sprachen wären
+                </p>
                 <ol>
                   <li>
                     Die Sprache aller syntaktisch korrekten Emailadressen.
@@ -2294,19 +2303,19 @@ const Article = () => {
                     abbrechen.
                   </li>
                   <li>
-                    Die Sprache aller Wörter über \(\&#123;a,b\&#125;\), die gleich viele \(a\)'s wie \(b\)'s enthalten.
+                    Die Sprache aller Wörter über \(\{a,b\}\), die gleich viele \(a\)'s wie \(b\)'s enthalten.
                   </li>
                   <li>
-                    Die Sprache aller Palindrome über \(\&#123;a,b,c,d\&#125;\), also Wörter, die von vorne wie hinten
+                    Die Sprache aller Palindrome über \(\{a,b,c,d\}\), also Wörter, die von vorne wie hinten
                     gelesen gleich aussehen.
                   </li>
                 </ol>
-                <Paragraph>
+                <p>
                   Wir wollen herausfinden, welche Arten von Sprachen wir mit den im letzten Abschnitt eingeführen
                   Regelwerk
                   aus Ableitungen beschreiben können. Für die gerade aufgelisteten sechs Sprachen lautet die
                   Antwort
-                </Paragraph>
+                </p>
                 <ol>
                   <li>
                     Ja, können wir.
@@ -2334,40 +2343,40 @@ const Article = () => {
                   <span class="numbered-title">
                     Definition
                     <NumberedTitle>
-                      &ensp;4.0.1{" "}
+                      &ensp;4.0.1 
                     </NumberedTitle>
                   </span>
-                  {" "}{" "}
+                    
                   <b>
                     (Kontextfreie Grammatik).
                   </b>
-                  Eine{" "}
+                  Eine 
                   <i>
                     kontextfreie Grammatik
                   </i>
-                  {" "}besteht aus
+                   besteht aus
                   <ol>
                     <li>
-                      einem endlichen Alphabet \(\Sigma\), den{" "}
+                      einem endlichen Alphabet \(\Sigma\), den 
                       <i>
                         terminalen Symbolen
                       </i>
                       ;
                     </li>
                     <li>
-                      einer dazu disjunkten endlichen Menge \(N\), genannt die{" "}
+                      einer dazu disjunkten endlichen Menge \(N\), genannt die 
                       <i>
                         nichtterminalen
                         Symbole
                       </i>
-                      ;{" "}
+                      ; 
                     </li>
                     <li>
-                      einer endlichen Menge \(P\) von{" "}
+                      einer endlichen Menge \(P\) von 
                       <i>
                         Produktionsregeln
                       </i>
-                      {" "}der Form
+                       der Form
                       \(X \rightarrow \alpha\) mit \(X \in N\) und \(\alpha \in (\Sigma \cup \N)^*\);
                       formal also \(P \subseteq N \times (\Sigma \cup \N)^*\).
                     </li>
@@ -2377,73 +2386,73 @@ const Article = () => {
                   </ol>
                   Die Grammatik \(G\) ist also ein 4-Tupel \((\Sigma, N, P, S)\).
                 </div>
-                <Paragraph>
-                  Woher der Name{" "}
+                <p>
+                  Woher der Name 
                   <i>
                     kontextfrei
                   </i>
-                  {" "}kommt, werden Sie hoffentlich verstehen, wenn wir
+                   kommt, werden Sie hoffentlich verstehen, wenn wir
                   <i>
                     Ableitungen
                   </i>
-                  {" "}definiert haben.
+                   definiert haben.
                   Die Tradition will es, dass wir für die terminalen Symbole
                   Zahlen oder lateinsiche Kleinbuchstaben und für die nichtterminalen Symbole
                   lateinische Großbuchstaben verwenden.
                   Dies ist eine Konvention, die hilfreich ist, solange wir auf abstrakt-theoretischer
                   Ebene über formale Grammatiken sprechen; wenn Sie z.B. eine Grammatik
                   für Java erstellen wollen, dann wird \(\Sigma\) natürlich auch Großbuchstaben enthalten.
-                </Paragraph>
+                </p>
                 <div class="well container theorem">
                   <span class="numbered-title">
                     Beispiel
                     <NumberedTitle>
-                      &ensp;4.0.2{" "}
+                      &ensp;4.0.2 
                     </NumberedTitle>
                   </span>
-                  Wir betrachten die Grammatik \(G = (\&#123;a,b\&#125;, \&#123;S, A, B\&#125;, P, S)\) mit den Produktionsregeln
-                  $$\begin&#123;align*&#125;
+                  Wir betrachten die Grammatik \(G = (\{a,b\}, \{S, A, B\}, P, S)\) mit den Produktionsregeln
+                  $$\begin{align*}
                   S&amp;\rightarrow A B \\
                   A&amp;\rightarrow \epsilon \ | \ a A \\
                   B&amp;\rightarrow \epsilon \ | \ b B \ . \\
-                  \end&#123;align*&#125;$$
+                  \end{align*}$$
                   Formal sind die Produktionsregeln \(P\) eine Teilmenge von \( N \times (\Sigma \cup \N)^*\),
                   also
                   $$
-                  P = \&#123; (S, AB), (A, \epsilon), (A, aA), (B, \epsilon), (B, bB) \&#125; \ .
+                  P = \{ (S, AB), (A, \epsilon), (A, aA), (B, \epsilon), (B, bB) \} \ .
                   $$
                   Für konkrete Beispiele wie die gerade betrachtete Grammatik jedoch verwenden wir einfach die
                   Pfeilschreibweise \(S \rightarrow AB, \dots\). Hier ist
-                  eine{" "}
+                  eine 
                   <i>
                     Ableitung
                   </i>
-                  {" "}basierend auf der Grammatik:
-                  $$\begin&#123;align*&#125;
+                   basierend auf der Grammatik:
+                  $$\begin{align*}
                   S \Rightarrow AB \Rightarrow aAB \Rightarrow aAbB \Rightarrow aAbbB
                   \Rightarrow aAbb \Rightarrow abb \ .
-                  \end&#123;align*&#125;$$
-                  <Paragraph>
+                  \end{align*}$$
+                  <p>
                     In jedem Schritt wählen wir ein Nichtterminal aus, zum Beispiel im zweiten Schritt \(A\),
                     und wenden eine Regel an, zum Beispiel \(A \rightarrow aA\). Dadurch
                     wird \(AB\) zu \(aAB\).
                     Wir setzen diese Ableitungsschritte so lange fort, bis nur noch terminale Symbole
                     übrigbleiben. Dann hat sich ein Wort \(\alpha \in \Sigma^*\) ergeben.
-                  </Paragraph>
+                  </p>
                 </div>
                 <div class="well container theorem">
                   <span class="numbered-title">
                     Definition
                     <NumberedTitle>
-                      &ensp;4.0.3{" "}
+                      &ensp;4.0.3 
                     </NumberedTitle>
                   </span>
                   Gegeben sei eine kontextfreie Grammatik \(G = (\Sigma, N, P, S)\).
-                  Ein String \(\alpha \in (\Sigma \cup N)^*\) heißt{" "}
+                  Ein String \(\alpha \in (\Sigma \cup N)^*\) heißt 
                   <i>
                     Wortform
                   </i>
-                  {" "}(im Gegensatz
+                   (im Gegensatz
                   zu einem Wort \(x \in \Sigma^*)\).
                   Für zwei Wortformen \(\alpha , \beta\) schreiben wir
                   $$
@@ -2455,8 +2464,8 @@ const Article = () => {
                   \beta_2\)
                   mit Wortformen \(\alpha_1, \alpha_2, \beta_1, \gamma, \beta_2\) und einem Nichtterminal
                   \(X\) schreiben können, so dass \(X \rightarrow \gamma \) eine Produktionsregel in \(P\) ist.
-                  <Paragraph>
-                    Wenn wir \(\alpha = \beta\) "vorlesen", dann sagen wir{" "}
+                  <p>
+                    Wenn wir \(\alpha = \beta\) "vorlesen", dann sagen wir 
                     <i>
                       \(\beta\) kann aus \(\alpha\) in
                       einem Schritt abgeleitet werden
@@ -2464,80 +2473,80 @@ const Article = () => {
                     .
                     Wenn \(\beta\) aus \(\alpha\) in mehreren (im Extremfall null) Schritten
                     abgeleitet werden kann, so schreiben wir \(\alpha \Rightarrow^* \beta\).
-                  </Paragraph>
-                  <Paragraph>
+                  </p>
+                  <p>
                     Formal bedeutet \(\alpha \Rightarrow^* \beta\), dass es ein \(k \geq 0\) gibt
                     und "Zwischenwortformen" \(\alpha_0, \alpha_1, \dots, \alpha_k\) mit
                     \(\alpha = \alpha_0\) und \(\alpha_k = \beta\), sodass
-                    \(\alpha_i \Rightarrow \alpha_&#123;i+1&#125;\) für alle \(i = 0, 1, \dots, k-1\) gilt.
+                    \(\alpha_i \Rightarrow \alpha_{i+1}\) für alle \(i = 0, 1, \dots, k-1\) gilt.
                     Dies schließt den "trivialen" Fall \(k=0\) mit ein, in welchem \(\alpha = \beta\) gilt.
-                  </Paragraph>
+                  </p>
                 </div>
-                <Paragraph>
+                <p>
                   Nochmals: wenn \(\alpha\) die Form \(\alpha_1 X \alpha_2\) hat, dann dürfen Sie
                   das Nichtterminal \(X\) durch die rechte Seite einer Produktionsregel \(X \rightarrow \gamma\)
-                  ersetzen; Sie dürfen das unabhängig von dem{" "}
+                  ersetzen; Sie dürfen das unabhängig von dem 
                   <i>
                     Kontext
                   </i>
                   , in welchem \(X\) in
-                  der Wortform \(\alpha\) vorkommt. Daher rührt der Name{" "}
+                  der Wortform \(\alpha\) vorkommt. Daher rührt der Name 
                   <i>
                     kontextfreie Grammatik
                   </i>
                   .
-                </Paragraph>
-                <Paragraph>
-                  Beachten Sie, dass \(P\) per Definition eine{" "}
+                </p>
+                <p>
+                  Beachten Sie, dass \(P\) per Definition eine 
                   <i>
                     endliche Menge
                   </i>
-                  {" "}von Regeln
+                   von Regeln
                   sein muss, dass jedoch \(\Rightarrow\) im Allgemeinen unendlich ist. Bereits
                   für unsere einfache Grammatik mit den Produktionsregeln
-                </Paragraph>
-                $$\begin&#123;align*&#125;
+                </p>
+                $$\begin{align*}
                 S&amp;\rightarrow A B \\
                 A&amp;\rightarrow \epsilon \ | \ a A \\
                 B&amp;\rightarrow \epsilon \ | \ b B \ . \\
-                \end&#123;align*&#125;$$
+                \end{align*}$$
                 haben wir beispielsweise
-                $$\begin&#123;align*&#125;
+                $$\begin{align*}
                 A&amp;\rightarrow aA \\
                 aA&amp;\rightarrow aaA \\
                 aaA&amp;\rightarrow aaaA \\
                 \dots
-                \end&#123;align*&#125;$$
+                \end{align*}$$
                 und sehen, dass die Menge aller Paare \(\alpha \Rightarrow \beta\) unendlich ist.
                 <div class="well container theorem">
                   <span class="numbered-title">
                     Definition
                     <NumberedTitle>
-                      &ensp;4.0.4{" "}
+                      &ensp;4.0.4 
                     </NumberedTitle>
                   </span>
-                  {" "}{" "}
+                    
                   <b>
                     (Die von einer Grammatik erzeugte Sprache).
                   </b>
                   Sei \(G = (\Sigma, N, P, S) \) eine kontextfreie Grammatik. Die von \(G\) erzeugte Sprache
                   \(L(G)\) ist die Menge aller Wörter, die vom Startsymbol \(S\) abgeleitet werden können, also
-                  $$\begin&#123;align*&#125;
-                  L(G) := \&#123;x \in \Sigma^* \ | \ S \Rightarrow^* x\&#125; \ .
-                  \end&#123;align*&#125;$$
+                  $$\begin{align*}
+                  L(G) := \{x \in \Sigma^* \ | \ S \Rightarrow^* x\} \ .
+                  \end{align*}$$
                   Wenn es zu einer Sprache \(L \subseteq \Sigma^*\) eine kontextfreie Grammatik \(G\) mit
-                  \(L(G) = L\) gibt, so nennen wir \(L\) eine{" "}
+                  \(L(G) = L\) gibt, so nennen wir \(L\) eine 
                   <i>
                     kontextfreie Sprache
                   </i>
                   .
                 </div>
                 Beachten Sie, dass in dem obigen Beispiel die Wortform
-                \(aaAB\) zwar aus \(S\) abgeleitet werden kann, allerdings kein{" "}
+                \(aaAB\) zwar aus \(S\) abgeleitet werden kann, allerdings kein 
                 <i>
                   Wort
                 </i>
-                {" "}ist,
+                 ist,
                 da es noch nichtterminale Symbole enthält. Es gilt also \(aaAB \not \in L(G)\).
                 Oft können wir \(L(G)\) kompakt mit natürlicher Sprache beschreiben:
               </div>
@@ -2545,7 +2554,7 @@ const Article = () => {
                 <span class="numbered-title">
                   Beispiel
                   <NumberedTitle>
-                    &ensp;4.0.5{" "}
+                    &ensp;4.0.5 
                   </NumberedTitle>
                   .
                 </span>
@@ -2553,51 +2562,51 @@ const Article = () => {
                 Menge aller Wörter der Form \(a^* b^*\), also Wörter, in denen auf beliebig viele
                 \(a\)'s beliebig viele \(b\)'s folgen.
               </div>
-              <Paragraph>
+              <p>
                 Wir betrachten nun einige weitere Beispiele
-              </Paragraph>
+              </p>
               <div class="well container theorem">
                 <span class="numbered-title">
                   Beispiel
                   <NumberedTitle>
-                    &ensp;4.0.6{" "}
+                    &ensp;4.0.6 
                   </NumberedTitle>
                 </span>
-                Wir betrachten die Grammatik \(G_2 = (\&#123;a,b\&#125;, \&#123;S\&#125;, P, S)\) mit den Produktionsregeln
-                $$\begin&#123;align*&#125;
+                Wir betrachten die Grammatik \(G_2 = (\{a,b\}, \{S\}, P, S)\) mit den Produktionsregeln
+                $$\begin{align*}
                 S&amp;\rightarrow aSbS \\
                 S&amp;\rightarrow bSaS \\
                 S&amp;\rightarrow \epsilon \ .
-                \end&#123;align*&#125;$$
+                \end{align*}$$
                 Hier sind mögliche Ableitungen des Wortes \(abab\). Zur Verdeutlichung
                 schreiben wir über den Pfeil \(\Rightarrow\) die Nummer der Regel, die
                 wir angewendet haben:
-                $$\begin&#123;align*&#125;
-                S&amp;\stackrel&#123;(1)&#125;&#123;\Rightarrow&#125; aSbS
-                \stackrel&#123;(1)&#125;&#123;\Rightarrow&#125; aSbaSbS
-                \stackrel&#123;(3)&#125;&#123;\Rightarrow&#125; aSbaSb
-                \stackrel&#123;(3)&#125;&#123;\Rightarrow&#125; abaSb
-                \stackrel&#123;(3)&#125;&#123;\Rightarrow&#125; abab \\
-                S&amp;\stackrel&#123;(1)&#125;&#123;\Rightarrow&#125; aSbS
-                \stackrel&#123;(3)&#125;&#123;\Rightarrow&#125; abS
-                \stackrel&#123;(1)&#125;&#123;\Rightarrow&#125; abaSbS
-                \stackrel&#123;(3)&#125;&#123;\Rightarrow&#125; ababS
-                \stackrel&#123;(3)&#125;&#123;\Rightarrow&#125; abab \ .
-                \end&#123;align*&#125;$$
-                <Paragraph>
+                $$\begin{align*}
+                S&amp;\stackrel{(1)}{\Rightarrow} aSbS
+                \stackrel{(1)}{\Rightarrow} aSbaSbS
+                \stackrel{(3)}{\Rightarrow} aSbaSb
+                \stackrel{(3)}{\Rightarrow} abaSb
+                \stackrel{(3)}{\Rightarrow} abab \\
+                S&amp;\stackrel{(1)}{\Rightarrow} aSbS
+                \stackrel{(3)}{\Rightarrow} abS
+                \stackrel{(1)}{\Rightarrow} abaSbS
+                \stackrel{(3)}{\Rightarrow} ababS
+                \stackrel{(3)}{\Rightarrow} abab \ .
+                \end{align*}$$
+                <p>
                   Wir sehen also: das gleiche Wort kann mehrere Ableitungen haben.
-                  Da die Ersetzungsregeln{" "}
+                  Da die Ersetzungsregeln 
                   <i>
                     kontextfrei
                   </i>
-                  {" "}sind, spielt es keine Rolle, in welcher
+                   sind, spielt es keine Rolle, in welcher
                   Reihenfolge wir nichtterminale Symbole ersetzen. Wenn Sie scharf hinschauen,
                   werden Sie erkennen, dass die beiden Ableitungen "irgendwie gleich" sind, dass nur
                   die Ableitungen in anderer Reihenfolge durchgeführt worden sind. Ich werde
                   das in einem späteren Kapitel formal definieren, was ich mit damit meine.
                   Um Ordnung in das Chaos zu bringen, könnten wir uns zum Beispiel einigen,
                   dass man immer das am weitesten links stehende Nichtterminal ersetzen muss.
-                  Das nennt man eine{" "}
+                  Das nennt man eine 
                   <i>
                     Linksableitung
                   </i>
@@ -2605,33 +2614,33 @@ const Article = () => {
                   Einschränkung, da die Ersetzungsreihenfolge keine Rolle spielt.
                   Wir sehen, dass die zweite Ableitung des Wortes \(abab\) oben eine
                   Linksableitung ist; zusammen mit der Beschriftung
-                  \(\stackrel&#123;(i)&#125;&#123;\Rightarrow&#125;\), die die Nummer der angewendeten Regel
+                  \(\stackrel{(i)}{\Rightarrow}\), die die Nummer der angewendeten Regel
                   angibt, ist eindeutig, wie wir von \(S\) zum abgeleiteten Wort gekommen sind.
                   Betrachten Sie nun eine weitere Linksableitung \(S \Rightarrow^* abab\):
-                </Paragraph>
-                $$\begin&#123;align*&#125;
-                S&amp;\stackrel&#123;(1)&#125;&#123;\Rightarrow&#125; aSbS
-                \stackrel&#123;(2)&#125;&#123;\Rightarrow&#125; abSaSbS
-                \stackrel&#123;(3)&#125;&#123;\Rightarrow&#125; abaSbS
-                \stackrel&#123;(3)&#125;&#123;\Rightarrow&#125; ababS
-                \stackrel&#123;(3)&#125;&#123;\Rightarrow&#125; abab
-                \end&#123;align*&#125;$$
-                <Paragraph>
-                  Sehen Sie, dass diese Ableitung{" "}
+                </p>
+                $$\begin{align*}
+                S&amp;\stackrel{(1)}{\Rightarrow} aSbS
+                \stackrel{(2)}{\Rightarrow} abSaSbS
+                \stackrel{(3)}{\Rightarrow} abaSbS
+                \stackrel{(3)}{\Rightarrow} ababS
+                \stackrel{(3)}{\Rightarrow} abab
+                \end{align*}$$
+                <p>
+                  Sehen Sie, dass diese Ableitung 
                   <i>
                     qualitativ
                   </i>
-                  {" "}anders ist, da
+                   anders ist, da
                   wir hier auch die Regel \(S \rightarrow bSaS\) angewendet haben? Um die
                   Struktur der Ableitung zu verdeutlichen, könnten wir
                   die ersten beiden Ableitungen mit
                   Wort \(S \Rightarrow^* (ab)(ab)\) bezeichnen und die dritte mit Wort \(S \Rightarrow^* a(ba)b\).
-                </Paragraph>
+                </p>
               </div>
               <h2>
                 Ziele der Theorie der formalen Sprachen
               </h2>
-              <Paragraph>
+              <p>
                 Ganz allgemein gesagt wollen wir lernen, wie wir Sprachen formal beschreiben können;
                 wie wir, gegeben eine Grammatik \(G\) und ein Zielwort \(x\), eine Ableitung
                 \(G \Rightarrow^* x\) finden können. Anhand der Ableitungssequenz können wir
@@ -2640,74 +2649,70 @@ const Article = () => {
                 so wäre ein Ziel, aus der Ableitungssequenz \(G \Rightarrow^* x\) die Struktur
                 des Programms \(x\), also Klassenstruktur, Methoden, etc., ablesen zu können und schlussendlich
                 das Programm in ausführbaren Maschinencode kompilieren zu können.
-              </Paragraph>
+              </p>
               <div class="well container theorem">
                 <span class="numbered-title">
                   Algorithmisches Problem: Parsing
                 </span>
                 Gegeben eine (kontextfreie) Grammatik \(G\) und ein Zielwort \(x\),
                 finde eine Ableitung \(G \Rightarrow^* x\), falls es so eine gibt.
-                <Paragraph>
-                  Für einen String \(x\) eine Ableitung zu finden bezeichnen wir als{" "}
+                <p>
+                  Für einen String \(x\) eine Ableitung zu finden bezeichnen wir als 
                   <i>
                     parsen
                   </i>
                   ,
-                  das zugehörige Hauptwort als{" "}
+                  das zugehörige Hauptwort als 
                   <i>
                     Parsing
                   </i>
                   .
-                </Paragraph>
+                </p>
               </div>
-              <Paragraph>
-                {" "}{" "}
+              <p>
+                  
                 <b>
                   Die gute Nachricht:
                 </b>
                 Die gute Nachricht: wir kennen Algorithmen, die dieses
                 Problem im effizient lösen, wenn wir den "theoretischen" Effizienzbegriff
-                zugrund legen.{" "}
-              </Paragraph>
-              <Paragraph>
-                {" "}{" "}
+                zugrund legen. 
+              </p>
+              <p>
+                  
                 <b>
                   Die schlechte Nachricht:
                 </b>
-                {" "}wir kennen keinen Algorithmus,
+                 wir kennen keinen Algorithmus,
                 der das Parsing kontextfreier Sprachen in seiner ganzen Allgemeinheit
-                in{" "}
+                in 
                 <i>
                   linearer Zeit
                 </i>
-                {" "}erledigt, dessen Laufzeit also proportional zur Länge des Zielwortes
+                 erledigt, dessen Laufzeit also proportional zur Länge des Zielwortes
                 \(x\) ist. Dies ist aber, was wir in der Praxis, zum Beispiel bei Compilern, erwarten.
-              </Paragraph>
-              <Paragraph>
-                {" "}{" "}
+              </p>
+              <p>
+                  
                 <b>
                   Die gute Nachricht:
                 </b>
-                {" "}in fast allen praktisch relevanten Fällen haben
+                 in fast allen praktisch relevanten Fällen haben
                 wir es mit Grammatiken zu tun, die Parsing in linearer Zeit ermöglichen.
                 Und wenn wir Programmiersprachen, Datenformate etc. entwerfen, haben wir es ja in der Hand,
-                Sprache und Grammatik so anzulegen, dass effizientes Parsen möglich ist.{" "}
-              </Paragraph>
-              <Paragraph>
+                Sprache und Grammatik so anzulegen, dass effizientes Parsen möglich ist. 
+              </p>
+              <p>
                 Im nächsten Kapitel lernen wir eine stark eingeschränkte, aber dennoch sehr wichtige Klasse
                 kontextfreier Grammatik kennen, die allesamt ein sehr effizientes Parsing
-                erlauben: die sogenannten{" "}
+                erlauben: die sogenannten 
                 <i>
                   regulären
                 </i>
-                {" "}Grammatiken.{" "}
-              </Paragraph>
+                 Grammatiken. 
+              </p>
             </div>
           </div>
         </div>
-      </Section>
-    </Container>
-  );
-};
-
-export default Article;
+      </section>
+    </body>
