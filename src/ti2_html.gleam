@@ -116,7 +116,19 @@ fn ti2_section_emitter(
       // ],
       [
         BlamedLine(blame_us("ti2_fragment_emitter"), 0, "<!DOCTYPE html>\n<html>\n<head>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"icon\" href=\"data:,\">\n   <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n   <title></title>\n\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n   <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">\n   <link rel=\"stylesheet\" type=\"text/css\" href=\"../lecture-notes.css\" />\n   <link rel=\"stylesheet\" type=\"text/css\" href=\"../TI.css\" />\n   <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>\n   <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\"></script>\n   <script type=\"text/javascript\" src=\"../mathjax_setup.js\"></script>\n   <script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "
+        <link rel=\"icon\" href=\"data:,\">
+        \n   <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">
+        \n   <title></title>
+        \n\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+        \n   <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">
+        \n   <link rel=\"stylesheet\" type=\"text/css\" href=\"../lecture-notes.css\" />
+        \n   <link rel=\"stylesheet\" type=\"text/css\" href=\"../TI.css\" />
+        \n   <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>
+        \n </script>
+        \n   <script type=\"text/javascript\" src=\"../mathjax_setup.js\"></script>
+        \n   <script type=\"text/javascript\" src=\"../carousel.js\"></script>
+        \n   <script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
         BlamedLine(blame_us("ti2_fragment_emitter"), 0, "</head>\n<body>"),
       ],
       vxml_parser.vxml_to_html_blamed_lines(fragment, 6),

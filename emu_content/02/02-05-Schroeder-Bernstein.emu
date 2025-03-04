@@ -110,19 +110,65 @@
                             $g$-Pfeile von jedem $b$ zu $f(b)$:
                         |> figure
                             class centered-figure well container-fluid
-                            |> Carousel
-                                |> img
-                                    style width: 100%
-                                    src ../img/infinite-sets/schroeder-bernstein-digraph-1.svg
-                                |> img
-                                    style width: 100%
-                                    src ../img/infinite-sets/schroeder-bernstein-digraph-2.svg
-                                |> img
-                                    style width: 100%
-                                    src ../img/infinite-sets/schroeder-bernstein-digraph-3.svg
-                                |> img
-                                    style width: 100%
-                                    src ../img/infinite-sets/schroeder-bernstein-digraph-4.svg
+                            |> a
+                                data-slide prev
+                                href #schroeder-bernstein
+                                class left carousel-control-prev-icon
+                                |> div
+                                    class carousel-nav-icon
+                                    |> img
+                                        src ../img/carousel-prev-icon.svg
+                            |> a
+                                data-slide next
+                                href #schroeder-bernstein
+                                class right carousel-control-next-icon
+                                |> div
+                                    class carousel-nav-icon
+                                    |> img
+                                        src ../img/carousel-next-icon.svg
+                            |> div
+                                style display: inline-block
+                                data-interval false
+                                class carousel
+                                id schroeder-bernstein
+                                |> ol
+                                    class carousel-indicators
+                                    |> li
+                                        class active
+                                        data-slide-to 1
+                                        data-target #schroeder-bernstein
+                                    |> li
+                                        data-slide-to 2
+                                        data-target #schroeder-bernstein
+                                    |> li
+                                        data-slide-to 3
+                                        data-target #schroeder-bernstein
+                                    |> li
+                                        data-slide-to 4
+                                        data-target #schroeder-bernstein
+                                |> div
+                                    style display: inline-block
+                                    class carousel-inner
+                                    |> div
+                                        class item active
+                                        |> img
+                                            style width: 100%
+                                            src ../img/infinite-sets/schroeder-bernstein-digraph-1.svg
+                                    |> div
+                                        class item
+                                        |> img
+                                            style width: 100%
+                                            src ../img/infinite-sets/schroeder-bernstein-digraph-2.svg
+                                    |> div
+                                        class item
+                                        |> img
+                                            style width: 100%
+                                            src ../img/infinite-sets/schroeder-bernstein-digraph-3.svg
+                                    |> div
+                                        class item
+                                        |> img
+                                            style width: 100%
+                                            src ../img/infinite-sets/schroeder-bernstein-digraph-4.svg
                         |> p
 
                             Wenn wir die Menge $A \cup B$ zusammen mit den $f$- und $g$-Pfeilen
@@ -137,16 +183,57 @@
                             den vom Typ (2) jedoch $g^{-1}$:
                         |> figure
                             class centered-figure well container-fluid
-                            |> Carousel
-                                |> img
-                                    style width: 100%
-                                    src ../img/infinite-sets/schroeder-bernstein-bijektion-1.svg
-                                |> img
-                                    style width: 100%
-                                    src ../img/infinite-sets/schroeder-bernstein-bijektion-2.svg
-                                |> img
-                                    style width: 100%
-                                    src ../img/infinite-sets/schroeder-bernstein-bijektion-3.svg
+                            |> a
+                                data-slide prev
+                                href #schroeder-bernstein-bijektion
+                                class left carousel-control-prev-icon
+                                |> div
+                                    class carousel-nav-icon
+                                    |> img
+                                        src ../img/carousel-prev-icon.svg
+                            |> a
+                                data-slide next
+                                href #schroeder-bernstein-bijektion
+                                class right carousel-control-next-icon
+                                |> div
+                                    class carousel-nav-icon
+                                    |> img
+                                        src ../img/carousel-next-icon.svg
+                            |> div
+                                style display: inline-block
+                                data-interval false
+                                class carousel
+                                id schroeder-bernstein-bijektion
+                                |> ol
+                                    class carousel-indicators
+                                    |> li
+                                        class active
+                                        data-slide-to 1
+                                        data-target #schroeder-bernstein-bijektion
+                                    |> li
+                                        data-slide-to 2
+                                        data-target #schroeder-bernstein-bijektion
+                                    |> li
+                                        data-slide-to 3
+                                        data-target #schroeder-bernstein-bijektion
+                                |> div
+                                    style display: inline-block
+                                    class carousel-inner
+                                    |> div
+                                        class item active
+                                        |> img
+                                            style width: 100%
+                                            src ../img/infinite-sets/schroeder-bernstein-bijektion-1.svg
+                                    |> div
+                                        class item
+                                        |> img
+                                            style width: 100%
+                                            src ../img/infinite-sets/schroeder-bernstein-bijektion-2.svg
+                                    |> div
+                                        class item
+                                        |> img
+                                            style width: 100%
+                                            src ../img/infinite-sets/schroeder-bernstein-bijektion-3.svg
                         |> p
 
                             Formalisieren wir das ein bisschen. Wir definieren eine Folge $X_0,

@@ -22,7 +22,6 @@ pub fn html_pipeline() -> List(Pipe) {
     remove_chapter_number_from_title(),
     trim_spaces_around_newlines(),
     replace_multiple_spaces_by_one(),
-    ti2_carousel_component(),
     remove_empty_lines(),
     extract_starting_and_ending_spaces(["i", "b", "strong", "em", "code", "a"]),
     insert_bookend_text([#("a", " ", " ")]),
@@ -40,7 +39,7 @@ pub fn html_pipeline() -> List(Pipe) {
     insert_ti2_counter_commands(#("::::ChapterCtr.::++SectionCtr", #("class", "subChapterTitle"), [], None)),
     insert_ti2_counter_commands(#("::::ChapterCtr.::::SectionCtr.::++ExoCtr", #("class", "numbered-title"), ["Übungsaufgabe"], Some("NumberedTitle"))),
     insert_ti2_counter_commands(#("::::ChapterCtr.::::SectionCtr.::++DefCtr", #("class", "numbered-title"), ["Definition", "Beobachtung", "Theorem", "Beispiel", "Behauptung"], Some("NumberedTitle"))),
-    fix_ti2_local_links(),
+    // fix_ti2_local_links(),
 
     // insert_string_at_end_of([#("em", " ")]),
   ]
