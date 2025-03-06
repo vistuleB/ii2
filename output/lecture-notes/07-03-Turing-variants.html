@@ -25,23 +25,25 @@
         
    <script type="text/javascript" src="../carousel.js"></script>
         
+   <script type="text/javascript" src="../numbered-title.js"></script>
+        
    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
       <section
-        count={44}
+        count={45}
         title_gr="Variationen: Mehrband-Maschinen, nichtdeterministische Maschinen"
         title_en="Turing variants"
         number={7.3}
         counter="DefCtr"
         counter="ExoCtr"
-        path="/lecture-notes44.tsx">
+        path="/lecture-notes45.tsx">
         <div id="link-to-toc">
           <a href="../vorlesungsskript.html">
             Inhaltsverzeichnis
           </a>
-          <a href="07-02-Turing-machines-examples.html">
-            &lt;&lt; Kapitel 7.2
+          <a href="07-03-Turing-encoding.html">
+            &lt;&lt; Kapitel 7.3
           </a>
         </div>
         <div
@@ -50,8 +52,8 @@
           <a href="/">
             zur Kursübersicht
           </a>
-          <a href="07-04-Turing-encoding.html">
-            Kapitel 7.4 &gt;&gt;
+          <a href="07-05-Turing-universal.html">
+            Kapitel 7.5 &gt;&gt;
           </a>
         </div>
         <div id="rightSideWrapper">
@@ -60,7 +62,7 @@
               <div class="subChapter">
                 <h1 class="hidden-title">
                   <span class="subChapterTitle">
-                    7.3 
+                    7.4 
                     Variationen: Mehrband-Maschinen, nichtdeterministische Maschinen
                   </span>
                 </h1>
@@ -164,7 +166,7 @@
                   <span class="numbered-title">
                     Beispiel
                     <NumberedTitle>
-                      &ensp;7.3.1 
+                      &ensp;7.4.1 
                     </NumberedTitle>
                   </span>
                   Entwerfen wir nun eine Turingmaschine für die Palindromsprache
@@ -216,7 +218,7 @@
                   <span class="numbered-title">
                     Übungsaufgabe
                     <NumberedTitle>
-                      &ensp;7.3.1 
+                      &ensp;7.4.1 
                     </NumberedTitle>
                   </span>
                   Schreiben Sie eine Mehrband-Turingmaschine, die Binärzahlen addiert.
@@ -291,7 +293,7 @@
                   <span class="numbered-title">
                     Theorem
                     <NumberedTitle>
-                      &ensp;7.3.2 
+                      &ensp;7.4.2 
                     </NumberedTitle>
                   </span>
                     
@@ -756,7 +758,7 @@
                   <span class="numbered-title">
                     Übungsaufgabe
                     <NumberedTitle>
-                      &ensp;7.3.2 
+                      &ensp;7.4.2 
                     </NumberedTitle>
                   </span>
                   Schreiben Sie auf
@@ -789,7 +791,7 @@
                   Bereits im Kapitel über reguläre Sprachen haben wir gesehen, dass
                   Nichtdeterminismus hilfreich ist, wenn wir Dinge beschreiben wollen,
                   auch wenn es kein realistisches Modell für Rechenmaschinen darstellt.
-                  Die Sprache aller Wörter über \(\{a,b\}\), die das Teilwort \(aababaa\)
+                  Die Sprache aller Wörter über $\{a,b\}$, die das Teilwort \(aababaa\)
                   enthalten, kann man beispielsweise leicht mit dem folgenden Automaten
                   beschreiben:
                   <figure>
@@ -858,7 +860,7 @@
                   <span class="numbered-title">
                     Definition
                     <NumberedTitle>
-                      &ensp;7.3.3 
+                      &ensp;7.4.3 
                     </NumberedTitle>
                   </span>
                     
@@ -912,7 +914,7 @@
                   <span class="numbered-title">
                     Beispiel
                     <NumberedTitle>
-                      &ensp;7.3.4 
+                      &ensp;7.4.4 
                     </NumberedTitle>
                   </span>
                   Beim Teilsummenproblem haben wir eine Liste von Waren (alles Unikate)
@@ -956,7 +958,7 @@
                     erreichen, wo auf dem ersten Band der Kopf auf dem : steht und auf
                     dem zweiten Band $$\begin{align*} + 6 + 19 + 58 + 1 + 13 \end{align*}$$
                     aber eben auch jede beliebige andere Summe. Im Zustand
-                    \(\texttt{add}\) aufgerufen, muss nun die Turingmaschine alle diese
+                    $\texttt{add}$ aufgerufen, muss nun die Turingmaschine alle diese
                     Zahlen auf dem zweiten Band addieren (lästig, geht aber irgendwie)
                     und dann in einer dritten Phase mit der Zahl rechts vom :
                     vergleichen. Stimmen sie überein, akzeptiert die Turingmaschine,
@@ -1025,7 +1027,7 @@
                   <span class="numbered-title">
                     Theorem
                     <NumberedTitle>
-                      &ensp;7.3.5 
+                      &ensp;7.4.5 
                     </NumberedTitle>
                   </span>
                     

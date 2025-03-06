@@ -25,6 +25,8 @@
         
    <script type="text/javascript" src="../carousel.js"></script>
         
+   <script type="text/javascript" src="../numbered-title.js"></script>
+        
    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
@@ -202,12 +204,12 @@
                   </i>
                   , wo uns nur
                   eine Ja/Nein-Antwort interessiert, wird die Antwort durch den Entzustand angegeben:
-                  der Zustand \(\qaccept\) entspricht einem 
+                  der Zustand $\qaccept$ entspricht einem 
                   <i>
                     Ja
                   </i>
                   , der Zustand
-                  \(\qreject\) entspricht einem 
+                  $\qreject$ entspricht einem 
                   <i>
                     Nein
                   </i>
@@ -218,7 +220,7 @@
                     Ausgabe der Turingmaschine
                   </i>
                    den Inhalt des Bandes zu dem
-                  Zeitpunkt, da die Maschine den Zustand \(\qaccept\) erreicht.
+                  Zeitpunkt, da die Maschine den Zustand $\qaccept$ erreicht.
                   Was brauchen wir also, um so eine Turingmaschine
                   und ihre Arbeitsweise zu beschreiben?
                 </p>
@@ -288,7 +290,7 @@
                       nicht zu bewegen.
                     </li>
                     <li>
-                      Zwei besonderen Zuständen \(\qaccept\) und \(\qreject\).
+                      Zwei besonderen Zuständen $\qaccept$ und $\qreject$.
                     </li>
                   </ol>
                 </div>
@@ -354,7 +356,7 @@
                   </i>
                    \(C = uqv\) ist \(q\), also der innere
                   Zustand, in dem sich die Maschine gerade befindet.
-                  Wir bezeichnen mit \(\state(C)\). Formal:
+                  Wir bezeichnen mit $\state(C)$. Formal:
                   $$\begin{align*}
                   \state: \mathcal{C}&amp;\rightarrow Q \\
                   uqv&amp;\mapsto q \ .
@@ -364,12 +366,12 @@
                   <i>
                     akzeptierende Endkonfiguration
                   </i>
-                   wenn \(\state(C) = \qaccept\) ist;
+                   wenn $\state(C) = \qaccept$ ist;
                   eine 
                   <i>
                     ablehnende Endkonfiguration
                   </i>
-                   , wenn \(\state(C) = \qreject\) ist.
+                   , wenn $\state(C) = \qreject$ ist.
                   In beiden Fällen ist \(C\) eine 
                   <i>
                     Endkonfiguration
@@ -377,7 +379,7 @@
                   .
                 </div>
                 <p>
-                  Wenn also das Eingabewort \(w \in \Sigma^*\) und \(\qstart\) der Startzustand ist, dann ist
+                  Wenn also das Eingabewort \(w \in \Sigma^*\) und $\qstart$ der Startzustand ist, dann ist
                   $$\begin{align*}
                   C_{\rm start} = \qstart{} w
                   \end{align*}$$
@@ -433,12 +435,12 @@
                       loading="lazy" />
                   </figure>
                   <p>
-                    Alternativ können wir auch der Turingmaschine verbieten, das Blank-Symbol \(\Box\) jemals
+                    Alternativ können wir auch der Turingmaschine verbieten, das Blank-Symbol $\Box$ jemals
                     zu schreiben. Dann wäre also
-                    \(\delta: Q \times \Gamma \rightarrow Q \times (\Gamma \setminus \{\Box\}) \times \lsr\).
+                    $\delta: Q \times \Gamma \rightarrow Q \times (\Gamma \setminus \{\Box\}) \times \lsr$.
                     All diese Betrachtungsweisen unterscheiden sich nicht wesentlich. Wir bleiben
-                    bei unserem "alten" \(\delta\), erlauben also, \(\Box\) zu schreiben, und
-                    leben damit, dass \(uqv\) und \(\Box \Box u q v \Box\) formal zwei verschiedene Konfigurationen
+                    bei unserem "alten" $\delta$, erlauben also, $\Box$ zu schreiben, und
+                    leben damit, dass $uqv$ und $\Box \Box u q v \Box$ formal zwei verschiedene Konfigurationen
                     sind, auch wenn beide irgendwie das selbe beschreiben.
                   </p>
                 </div>
@@ -476,9 +478,9 @@
                 \hat{\delta}(abAq_2bba\#)&amp;= abAaq_3ba\# \\
                 \end{align*}$$
                 gelten. Sie sehen:
-                Die Definition von \(\hat{\delta}\) ist nichts wirklich Tiefgründiges, sondern einfach
+                Die Definition von $\hat{\delta}$ ist nichts wirklich Tiefgründiges, sondern einfach
                 eine Implementierung der Turingmaschinen-Momentaufnahme mit uns bereits
-                geläufigen mathematischen "Datenstrukturen" (hier: der Menge \(\Gamma^* \times Q \times \Gamma^*\)).
+                geläufigen mathematischen "Datenstrukturen" (hier: der Menge $\Gamma^* \times Q \times \Gamma^*$).
                 Stellen Sie sich einfach
                 vor, Sie müssten eine Turingmaschine in Java implementieren. Dann würden Sie es wahrscheilich
                 irgendwie so ähnlich machen.
@@ -494,7 +496,7 @@
                 also die Konfiguration, die die Turingmaschine nach \(i\) Rechenschritten erreicht hat.
                 Weiterhin definieren wir
                 \(\hat{\delta}^* (C)\) als die Endkonfiguration, die bei wiederholter
-                Anwendung von \(\hat{\delta}\) schlussendlich erreicht wird.
+                Anwendung von $\hat{\delta}$ schlussendlich erreicht wird.
                 Hier taucht ein Problem auf: es ist nicht gesagt, dass die Turingmaschine,
                 von Konfiguration \(C\) beginnend, überhaupt irgendwann in einer Endkonfiguration landen
                 wird. Daher kann \(\hat{\delta}^*\) auch 
@@ -510,14 +512,14 @@
                 \end{cases}
                 \end{align*}$$
                 <p>
-                  Nochmal zur Verdeutlichung: wenn \(\delta^{(i)}(C)\) eine Endkonfiguration ist,
-                  dann ist auch \(\delta^{(j)}(C)\) eine, für jedes \(j \geq i\), weil
-                  wir \(\hat{\delta}(C') = C'\) für jede Endkonfiguration \(C'\) definiert haben.
+                  Nochmal zur Verdeutlichung: wenn $\delta^{(i)}(C)$ eine Endkonfiguration ist,
+                  dann ist auch $\delta^{(j)}(C)$ eine, für jedes $j \geq i$, weil
+                  wir $\hat{\delta}(C') = C'$ für jede Endkonfiguration $C'$ definiert haben.
                   Es spielt also in der obigen Formulierung
                   <i>
-                    wenn es ein \(i\) gibt
+                    wenn es ein $i$ gibt
                   </i>
-                   keine Rolle, welches solche \(i\) wir wählen.
+                   keine Rolle, welches solche $i$ wir wählen.
                 </p>
                 Für ein Eingabewort \(x \in \Sigma^*\) können wir nun das Ergebnis der Berechnung
                 von Turingmaschine \(M\) auf \(x = x_1 \dots x_n\) definieren:
@@ -635,7 +637,7 @@
                   x \in L \Longleftrightarrow f_M(x) = \texttt{accept}
                   \end{align*}$$
                   für alle \(x \in \Sigma^*\) gilt. Das heißt, dass \(M\) für \(x \not \in \Sigma^*\)
-                  entweder irgendwann den Endzustand \(\qreject\) erreicht oder
+                  entweder irgendwann den Endzustand $\qreject$ erreicht oder
                   nie einen Endzustand erreicht.
                   <p>
                     Eine Sprache \(L \subseteq \Sigma^*\) heißt 
@@ -696,12 +698,12 @@
                       ist also weder Teil das Eingabealphabets noch des Ausgabealphabets.
                     </li>
                     <li>
-                      \(M\) terminiert für jedes \(x \in \Sigma^*\).
+                      $M$ terminiert für jedes $x \in \Sigma^*$.
                     </li>
                     <li>
-                      &ensp;In der Endkonfiguration \(\hat{M}(x)\) steht auf dem Arbeitsband das
+                      &ensp;In der Endkonfiguration $\hat{M}(x)$ steht auf dem Arbeitsband das
                       Wort \(g(x) \in \Sigma_2^*\) und der Kopf steht ganz links, also
-                      \(\hat{M}(x) = \qaccept{} g(x)\).
+                      $\hat{M}(x) = \qaccept{} g(x)$.
                     </li>
                   </ol>
                 </div>

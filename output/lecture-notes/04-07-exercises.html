@@ -25,6 +25,8 @@
         
    <script type="text/javascript" src="../carousel.js"></script>
         
+   <script type="text/javascript" src="../numbered-title.js"></script>
+        
    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
@@ -75,10 +77,10 @@
                         &ensp;4.7.1 
                       </NumberedTitle>
                     </span>
-                    Sei \(\Sigma = \{\sigma_1, \sigma_2, \dots, \sigma_k\}\) ein endliches Alphabet. Wir
-                    können jedes Zeichen \(\sigma_i \in \Sigma\) als
-                    natürliche Zahl \(i\) codieren. Ein Wort \(\alpha \in \Sigma^*\)
-                    wird somit zu einer Folge \((a_1, a_2, \dots, a_n) \in \N^*\), was
+                    Sei $\Sigma = \{\sigma_1, \sigma_2, \dots, \sigma_k\}$ ein endliches Alphabet. Wir
+                    können jedes Zeichen $\sigma_i \in \Sigma$ als
+                    natürliche Zahl $i$ codieren. Ein Wort $\alpha \in \Sigma^*$
+                    wird somit zu einer Folge $(a_1, a_2, \dots, a_n) \in \N^*$, was
                     wir wiederum mit den Methoden aus
                     <a href="02-02-examples-of-equipotent-sets.html">
                       &ensp;Kapitel 2.2 
@@ -87,8 +89,8 @@
                     <i>
                       eine
                     </i>
-                     natürliche Zahl \(\bar{\alpha}\) codieren können.
-                    Mittels dieser Codierung wird eine Sprache \(L \subseteq \Sigma^*\)
+                     natürliche Zahl $\bar{\alpha}$ codieren können.
+                    Mittels dieser Codierung wird eine Sprache $L \subseteq \Sigma^*$
                     zu einer Funktion
                   </p>
                   $$\begin{align*}
@@ -100,18 +102,18 @@
                   \end{cases}
                   \end{align*}$$
                   <p>
-                    Sei \(L\) eine reguläre Sprache. Zeigen Sie, dass \(f_L\) primitiv rekursiv ist!
+                    Sei $L$ eine reguläre Sprache. Zeigen Sie, dass $f_L$ primitiv rekursiv ist!
                   </p>
                 </div>
                 <h3>
                   Reguläre Sprachen und Schaltkreise
                 </h3>
                 <p>
-                  Wir können jedes Zeichen \(\sigma \in \Sigma\) als
-                  Bitstring \(x_{\sigma} \in \cube^k\) codieren, mit \(k = \ceil{\log_2|\Sigma|}\), und
-                  damit jedes \(\alpha = (a_1, \dots, a_n) \in \Sigma^*\) als \(x_a \in \cube^*\) mit \(nk\) Bits.
-                  Smit wird jede Sprache \(L \subseteq \Sigma^*\) zu einer Funktion
-                  \(f_L : \cube^* \rightarrow \cube\) mittels
+                  Wir können jedes Zeichen $\sigma \in \Sigma$ als
+                  Bitstring $x_{\sigma} \in \cube^k$ codieren, mit $k = \ceil{\log_2|\Sigma|}$, und
+                  damit jedes $\alpha = (a_1, \dots, a_n) \in \Sigma^*$ als $x_a \in \cube^*$ mit $nk$ Bits.
+                  Smit wird jede Sprache $L \subseteq \Sigma^*$ zu einer Funktion
+                  $f_L : \cube^* \rightarrow \cube$ mittels
                 </p>
                 $$\begin{align*}
                 f_L : \cube^*&amp;\rightarrow \cube \\
@@ -122,13 +124,13 @@
                 \end{cases}
                 \end{align*}$$
                 <p>
-                  Für festes \(n\) definieren wir \(f_L^n : \cube^n \rightarrow \cube\) als die
-                  Restriktion von \(f_L\) auf \(\cube\), also die Funktion, die nur \(n\)-Bit-Strings
+                  Für festes $n$ definieren wir $f_L^n : \cube^n \rightarrow \cube$ als die
+                  Restriktion von $f_L$ auf $\cube$, also die Funktion, die nur $n$-Bit-Strings
                   als Input akzeptiert.
                 </p>
                 <p>
-                  Zeigen Sie: wenn \(L \subseteq \Sigma^*\) regulär ist, dann gibt es für
-                  jedes \(n\) einen Schaltkreis \(C\) mit \(O(n)\) Gates, der \(f_L\) berechnet.
+                  Zeigen Sie: wenn $L \subseteq \Sigma^*$ regulär ist, dann gibt es für
+                  jedes $n$ einen Schaltkreis $C$ mit $O(n)$ Gates, der $f_L$ berechnet.
                 </p>
               </div>
               <div class="well well-lg numbered-exercise container">
@@ -139,8 +141,8 @@
                       &ensp;4.7.2 
                     </NumberedTitle>
                   </span>
-                  Verbessern Sie die obige Konstruktion: Ihr Schaltkreis \(C\) sollte nun
-                  Tiefe \(O(\log(n))\) haben und vorzugsweise immer noch \(O(n)\) Gates.
+                  Verbessern Sie die obige Konstruktion: Ihr Schaltkreis $C$ sollte nun
+                  Tiefe $O(\log(n))$ haben und vorzugsweise immer noch $O(n)$ Gates.
                 </p>
               </div>
               <div class="well well-lg numbered-exercise container">
@@ -164,17 +166,17 @@
                   einen "Lesekopf", mit dem er auf einem Zeichen des Eingabewortes steht
                   (anfangs auf dem ersten). In jedem Schritt kann er nach rechts oder links
                   wechseln. Es gibt zwei spezielle Zeichen, die markieren, wo das
-                  Wort aufhört: \(\lt\) und \(\gt\). Die Zustandsübergangsfunktion ist also
+                  Wort aufhört: $\lt$ und $\gt$. Die Zustandsübergangsfunktion ist also
                 </p>
                 $$\begin{align*}
                 \delta: Q \times (\Sigma \cup \{\lt, \gt\}) \rightarrow Q \times \{L, R\} \ .
                 \end{align*}$$
                 <p>
-                  Wenn z.B. \(\delta(q, x) = (r, L)\) ist, dann heißt das: 
+                  Wenn z.B. $\delta(q, x) = (r, L)$ ist, dann heißt das: 
                   <i>
                     wenn Du im
-                    Zustand \(q\) bist und der Lesekopf ein \(x\) liest, dann wechsle in den
-                    Zustand \(r\) und gehe nach links.
+                    Zustand $q$ bist und der Lesekopf ein $x$ liest, dann wechsle in den
+                    Zustand $r$ und gehe nach links.
                   </i>
                     
                 </p>
@@ -182,18 +184,18 @@
                   Der Automat hat genau einen akzeptierenden und einen ablehnenden Zustand.
                   Wenn ein solcher Zustand erreicht wird, hält der Automat an und gibt
                   1 bzw. 0 aus.
-                  Die von so einem Automaten \(M\) akzeptierte Sprache \(L(M)\) ist dann definiert als
-                  die Menge aller Wörter \(\alpha\), die \(M\) in einen akzeptierenden
-                  Zustand bringen. Beachten Sie, dass \(M\) möglicherweise in eine Endlosschleife
-                  geraten kann. In diesem Falle ist \(\alpha\) 
+                  Die von so einem Automaten $M$ akzeptierte Sprache $L(M)$ ist dann definiert als
+                  die Menge aller Wörter $\alpha$, die $M$ in einen akzeptierenden
+                  Zustand bringen. Beachten Sie, dass $M$ möglicherweise in eine Endlosschleife
+                  geraten kann. In diesem Falle ist $\alpha$ 
                   <i>
                     kein
                   </i>
-                   Wort in \(L(M)\).
+                   Wort in $L(M)$.
                 </p>
                 <p>
-                  Zeigen Sie, dass \(L(M)\) eine reguläre Sprache ist. Dass man also aus \(M\)
-                  einen neuen Automaten \(M'\) bauen kann, der nur nach rechts laufen kann.
+                  Zeigen Sie, dass $L(M)$ eine reguläre Sprache ist. Dass man also aus $M$
+                  einen neuen Automaten $M'$ bauen kann, der nur nach rechts laufen kann.
                 </p>
               </div>
               <div class="well well-lg numbered-exercise container">
@@ -204,14 +206,14 @@
                       &ensp;4.7.4 
                     </NumberedTitle>
                   </span>
-                  Sei \(\Sigma = \{1,2, \dots, k\}\) und \(L\) die Sprache aller
+                  Sei $\Sigma = \{1,2, \dots, k\}$ und $L$ die Sprache aller
                   Wörter, in denen mindestens ein Zeichen fehlt, also
                 </p>
                 $$\begin{align*}
                 L = \bigcup_{i=1}^k (\Sigma \setminus \{i\})^*
                 \end{align*}$$
                 <p>
-                  Zeigen Sie, dass ein endlicher Automat für \(L\) mindestens \(2^k\) Zustände braucht.
+                  Zeigen Sie, dass ein endlicher Automat für $L$ mindestens $2^k$ Zustände braucht.
                 </p>
               </div>
               <div class="well well-lg numbered-exercise container">
@@ -222,7 +224,7 @@
                       &ensp;4.7.5 
                     </NumberedTitle>
                   </span>
-                  Schreiben Sie eine reguläre Grammatik für \(L\) mit höchstens \(k+1\) Nichtterminalen.
+                  Schreiben Sie eine reguläre Grammatik für $L$ mit höchstens $k+1$ Nichtterminalen.
                 </p>
               </div>
               <div class="well well-lg numbered-exercise container">
@@ -237,13 +239,13 @@
                   <b>
                     (Challange.)
                   </b>
-                  Sei \(L\) die Sprache aus der vorherigen Aufgabe und
-                  \(\bar{L} = \Sigma^* \setminus L\) ihr Komplement. \(\bar{L}\) ist also
-                  die Sprache aller Wörter, in denen jedes Zeichen aus \(\Sigma\) mindestens
+                  Sei $L$ die Sprache aus der vorherigen Aufgabe und
+                  $\bar{L} = \Sigma^* \setminus L$ ihr Komplement. $\bar{L}$ ist also
+                  die Sprache aller Wörter, in denen jedes Zeichen aus $\Sigma$ mindestens
                   einmal vorkommt.
                 </p>
                 <p>
-                  Zeigen Sie, dass jede reguläre Grammatik für \(\bar{L}\) mindestens \(2^k\)
+                  Zeigen Sie, dass jede reguläre Grammatik für $\bar{L}$ mindestens $2^k$
                   Nichtterminale benötigt.
                 </p>
               </div>

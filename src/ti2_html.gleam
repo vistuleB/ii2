@@ -128,6 +128,7 @@ fn ti2_section_emitter(
         \n </script>
         \n   <script type=\"text/javascript\" src=\"../mathjax_setup.js\"></script>
         \n   <script type=\"text/javascript\" src=\"../carousel.js\"></script>
+        \n   <script type=\"text/javascript\" src=\"../numbered-title.js\"></script>
         \n   <script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
         BlamedLine(blame_us("ti2_fragment_emitter"), 0, "</head>\n<body>"),
       ],

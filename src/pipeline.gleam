@@ -167,10 +167,10 @@ pub fn our_pipeline() -> List(Pipe) {
       #("ClosingLatexPara", "\\)"),
     ]),
 
-     split_by_indexed_regexes(
-      #([#(single_dollar_indexed_regex, "SingleDollar")], ["MathBlock"]),
+    split_by_indexed_regexes(
+      #([#(single_dollar_indexed_regex, "SingleDollar")], ["MathBlock", "Math"]),
     ),
-    pair_bookends(#(["SingleDollar"], ["SingleDollar"], "Math")),
+    pair_bookends(#(["SingleDollar"], ["SingleDollar"], "Math_dolar")),
     fold_tags_into_text([#("SingleDollar", "$")]),
 
     // ************************
@@ -201,7 +201,7 @@ pub fn our_pipeline() -> List(Pipe) {
           #(opening_single_underscore_indexed_regex, "OpeningUnderscore"),
           #(closing_single_underscore_indexed_regex, "ClosingUnderscore"),
         ],
-        ["MathBlock", "Math"],
+        ["MathBlock", "Math", "Math_dolar"],
       ),
     ),
     // 15
@@ -241,10 +241,11 @@ pub fn our_pipeline() -> List(Pipe) {
     prepend_append_to_text_children_of.prepend_append_to_text_children_of([
       #("$$", "$$", "MathBlock"),
       #("\\(", "\\)", "Math"),
+      #("$", "$", "Math_dolar"),
     ]),
     // 20
     fold_tag_contents_into_text.fold_tag_contents_into_text([
-      "MathBlock", "Math",
+      "MathBlock", "Math", "Math_dolar"
     ]),
     // 21
     counters_substitute_and_assign_handles(),
