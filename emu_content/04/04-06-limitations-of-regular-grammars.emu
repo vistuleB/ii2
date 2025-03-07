@@ -1,5 +1,5 @@
 |> section
-    title_gr Die Grenzen regulärer Sprachen
+    title_gr Grenzen regulärer Sprachen
     title_en limitations of regular grammars
     number 4.6
     counter DefCtr
@@ -38,7 +38,7 @@
                         |> span
                             class subChapterTitle
 
-                            ::::ChapterCtr.::++SectionCtr 
+                            ::::ChapterCtr.::++SectionCtr
                             Die Grenzen regulärer Sprachen
                     |> p
 
@@ -57,7 +57,7 @@
                             Beispiel
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Sei \(L\) die Sprache aller Wörter über dem Alphabet \(\Sigma = \{a,b\}\), die die Form
                         \(a^n b^n\) haben; also eine beliebig lange Folge von \(a\)s, gefolgt von genau so vielen
                         \(b\)s.
@@ -81,7 +81,7 @@
                                 Übungsaufgabe
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                             Versuchen Sie ein paar Minuten, eine reguläre Grammatik für \(L\) zu schreiben oder
                             versuchen Sie,
                             zu argumentieren, dass das nicht möglich ist.
@@ -206,7 +206,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         *\(M\)-Äquivalenz*Sei \(M= (\Sigma, Q, \qstart, F, \delta\) ein (deterministischer) endlicher Automat. Zwei Wörter
                         \(\alpha, \beta \in \Sigma^* \) sind_\(M\)-äquivalent_, geschrieben
                         \begin{align*}
@@ -235,7 +235,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         *\(L\)-Äquivalenz*Sei \(L \subseteq \Sigma^*\) eine Sprache. Zwei Wörter \(\alpha, \beta \in \Sigma^*\) sind_\(L\)-äquivalent_, geschrieben
                         \begin{align*}
                         \alpha \equiv_L \beta \ ,
@@ -251,7 +251,7 @@
                             Beobachtung
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Sei \(L\) die vom endlichen Automaten \(M\) akzeptierte Sprache.
                         Wenn \(\alpha \equiv_M \beta\) gilt, dann auch \(\alpha \equiv_L \beta\).
                     |> div
@@ -295,7 +295,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Sei \(L \subseteq \Sigma^*\). Der _Index von \(L\)_ ist die Anzahl von Äquivalenzklassen
                         der Relation
                         \(\equiv_L\), also die größtmögliche Anzahl gegenseitig nichtäquivalenter Wörter
@@ -308,7 +308,7 @@
                             Beobachtung
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Sei \(M\) ein endlicher Automat von \(L\) die von ihm akzeptierte Sprache.
                         Dann ist der Index von \(L\) höchstens die Anzahl \(|Q|\) von Zuständen.
                         Im Umkehrschluss heißt das: wenn \(L\) unendlichen Index hat, dann gibt es keinen endlichen
@@ -345,7 +345,7 @@
                             Beispiel
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Die Sprache \(L = \{a^n b^n \ | \ n \geq 0\}\) ist nicht regulär.
                         |> p
 
@@ -362,7 +362,7 @@
                             Beispiel
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Sei \(L \subseteq \{a,b\}^*\) die Sprache aller Palindrome. Also der Wörter \(\alpha\) mit
                         \(\alpha = \alpha^R\), wobei \(\alpha^R\) das Wort \(\alpha\) in umgekehrter Reihnfolge gelesen
                         ist.
@@ -380,7 +380,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Betrachten Sie die Sprache aller \(\alpha\in \{a,b\}^*\), die gleich viele \(a\)'s wie \(b\)'s
                         haben:
                         \begin{align*}
@@ -399,7 +399,7 @@
                             Theorem
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Eine Sprache \(L \subseteq \Sigma^*\) ist genau dann regulär, wenn sie endlichen Index hat.
                     |> div
                         class well container
@@ -476,7 +476,7 @@
                             Beispiel
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Der nichtdeterministische endliche Automat
                         |> figure
                             |> img
@@ -495,7 +495,7 @@
                                 Behauptung
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             Die Sprache \(L\) hat Index 16. Alle Wörter in \(\{0,1\}^4\) sind nicht \(L\)-äquivalent.
                         |> div
                             class well subtheorem

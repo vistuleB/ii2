@@ -20,9 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
       prevButton = prevButton.item(0);
     }
 
-    console.log(nextButton);
-    console.log(nextButton.item(0));
-
     if (nextButton.item(1)) {
       goToLastButton = nextButton.item(1);
       nextButton = nextButton.item(0);

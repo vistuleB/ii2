@@ -1,5 +1,5 @@
 |> section
-    title_gr Binär-Addierer
+    title_gr 
     title_en binary adder
     number 1.3
     counter DefCtr
@@ -38,7 +38,7 @@
                         |> span
                             class subChapterTitle
 
-                            ::::ChapterCtr.::++SectionCtr 
+                            ::::ChapterCtr.::++SectionCtr
                             Binär-Addierer
                     |> h3
 
@@ -125,7 +125,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Bauen Sie einen Schaltkreis 
                         |> tt
 
@@ -242,7 +242,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             &ensp;(Carry propagate / generate für Intervalle)
                         Sei \(I = \{a,a+1, \dots, b\}\) ein Intervall natürlicher Zahlen. Die Werte
                         \(p_I\) und \(g_I\) sind wie folgt definiert:
@@ -307,7 +307,7 @@
                             Beobachtung
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Wenn wir \([a,b] = [a,i] \cup [i+1,b] \) schreiben für \(a \lt i \lt b\), dann gilt
                         \begin{align*}
                         p_{[a,b]}&amp;= g_{[i+1,b]} \vee (p_{[a,i]} \wedge p_{[i+1,b]}) \ , \\
@@ -338,7 +338,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Ein Binärintervall ist eine Menge natürlicher Zahlen der Form
                         $$
                         \{ c \cdot 2^d, c \cdot 2^d + 1, \dots, c \cdot 2^{d} + 2^{d} - 1\}
@@ -361,7 +361,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Seit \(n = 2^d-1\). Wie viele Binärintervalle gibt es in
                         \(\{0,\dots,n-1\}\)?
                     |> div
@@ -618,7 +618,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Bauen Sie einen Schaltkreis für die Boolesche Funktion
                         "less-than":
                         \begin{align*}

@@ -23,8 +23,7 @@ pub fn html_pipeline() -> List(Pipe) {
     trim_spaces_around_newlines(),
     replace_multiple_spaces_by_one(),
     remove_empty_lines(),
-    extract_starting_and_ending_spaces(["i", "b", "strong", "em", "code", "a"]),
-    insert_bookend_text([#("a", " ", " ")]),
+    extract_starting_and_ending_spaces(["i", "b", "strong", "em", "code"]),
     insert_bookend_text_if_no_attributes([
       #("i", "_", "_"),
       #("em", "_", "_"),

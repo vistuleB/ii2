@@ -1,5 +1,5 @@
 |> section
-    title_gr Majority
+    title_gr 
     title_en majority
     number 1.5
     counter DefCtr
@@ -38,7 +38,7 @@
                         |> span
                             class subChapterTitle
 
-                            ::::ChapterCtr.::++SectionCtr 
+                            ::::ChapterCtr.::++SectionCtr
                             Majority
                     Unser Ziel in diesem Teilkapitel ist es, Schaltkreise für die Majority-Funktion zu bauen:
                     |> figure
@@ -72,7 +72,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Sei \(n\) eine ungerade Zahl. Zeigen Sie, dass \(\maj_n\) für genau
                         die Hälfte aller \(2^n\) möglichen Eingaben eine 1 ausgibt (und für die
                         andere Hälfte eine 0).
@@ -196,7 +196,7 @@
                     |> a
                         href ../sub-pages/01-monotone.html
 
-                        &ensp;Lösungen zu den Übungsaufgaben 
+                        Lösungen zu den Übungsaufgaben
                     &ensp;dargestellt.
                     Insbesondere definieren wir Verallgemeinerungen von \(\maj_n\) wie folgt:
                     \begin{align*}
@@ -278,7 +278,7 @@
                             Theorem
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Die Funktion
                         \(\maj_n (x_1,\dots,x_n)\) kann mit einem Schaltkreis der Größe \(O(n^2)\),
                         Tiefe \(O(n)\) und Fan-in 2 berechnet werden.
@@ -306,7 +306,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Bestimmen Sie asymptotisch die Größe und die Tiefe dieses Schaltkreises.
                         Achten Sie besonders bei der Berechnung der Größe darauf, dass die untersten Add-Gadgets
                         ja 1-stellige oder dann 2-stellige Zahlen addieren müssen und erst die weniger obersten Gadgets
@@ -395,7 +395,7 @@
                             Theorem
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             .
                         Die Konstruktion mit 2-for-3-Addierern gibt uns einen Schaltkreis
                         für Majority mit Fan-in 2, Tiefe \(O(\log n)\) und
@@ -409,7 +409,7 @@
                                 Übungsaufgabe
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                             Führen Sie eine genauere Abschätzung der Größe durch. Untersuchen Sie insbesondere:
                         |> ol
                             |> li
@@ -472,7 +472,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         dass polynomiell viele (in diesem Falle: \(O(n^2)\) viele) Gates ausreichen.
                         Zeigen Sie, wie die gerade skizzierte Konstruktion so ausgeführt werden kann,
                     |> h3
@@ -486,7 +486,7 @@
                             Theorem
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             .
                         Es gibt einen monotonen Schaltkreis mit Fan-in 2, Tiefe \(O(\log n)\) und Größe
                         \(\poly(n)\), der \(\maj_n\) berechnet.
@@ -519,7 +519,7 @@
                                 Definition
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
                                 &ensp;(Signalstärke)
                             Sei \(\mathcal{C}\) eine Verteilung über Schaltkreise mit Input-Variablen
                             \(x_1,\dots,x_n\). Wir sagen, dass \(\mathcal{C}\) _Signalstärke mindestens $\delta$_hat, wenn
@@ -707,7 +707,7 @@
                                     Behauptung
                                     |> NumberedTitle
 
-                                        &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                        ::::ChapterCtr.::::SectionCtr.::++DefCtr
                                     .
                                 &ensp;Wenn $\mathcal{C}$
                                 Fehlerwahrscheinlichkeit
@@ -857,7 +857,7 @@
                                 Übungsaufgabe
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                             Präzisieren Sie die Größe von Valiants Schaltkreis und bestimmen ein $c \in \R$, so dass
                             er die Größe $\Theta(n^c)$ hat.
                     |> p

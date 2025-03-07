@@ -1,5 +1,5 @@
 |> section
-    title_gr Wahrheitstabellen, CNF und DNF
+    title_gr CNF und DNF
     title_en truth tables cnf dnf
     number 1.2
     counter DefCtr
@@ -38,7 +38,7 @@
                         |> span
                             class subChapterTitle
 
-                            ::::ChapterCtr.::++SectionCtr 
+                            ::::ChapterCtr.::++SectionCtr
                             Wahrheitstabellen, CNF und DNF
                     |> p
 
@@ -104,7 +104,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Führen Sie die Konstruktion zu Ende, indem Sie \(\bar{y} \vee z\) und
                         \(y \vee z\) mit dem if-then-else-Schaltkreis kombinieren.
                     |> p
@@ -148,7 +148,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Sei \(f: \{0,1\}^n \rightarrow \{0,1\}\) eine Boolesche Funktion, \(i
                         \in \{1,\dots,n\}\) ein Index und \(b \in \{0,1\}\) ein Wert. Dann ist
                         \(f|_{x_i=b}\) eine neue Funktion, und zwar \begin{align*} f|_{x_i=b}
@@ -171,7 +171,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Führen Sie das rekursive Verfahren durch, um für die folgende Funktion
                         auf 4 Variablen einen Schaltkreis zu bauen: $$ \begin{array}{cccc|c} u
                         &amp;x&amp;y&amp;z&amp;f \\\hline 0&amp;0&amp;0&amp;0&amp;1 \\ 0&amp;0&amp;0&amp;1&amp;1 \\ 0&
@@ -226,7 +226,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Ein _Literal_ ist eine Variable \(x\) oder deren Negation
                         \(\bar{x}\). Ein _Term_ ist ein AND (auch: Konjunktion) von
                         Literalen (beispielsweise \(\bar{x} \wedge \bar{y} \wedge z)\). Eine
@@ -244,7 +244,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Was, wenn einige der "mittleren" Gates (auf Tiefe 1) keine AND-Gates
                         sind, sondern auch OR-Gates? Dann wäre dies nach der ersten Definition_keine_ DNF-Formel, nach der zweiten aber schon. Zeigen Sie,
                         wie man OR-Gates auf Ebene 1 entfernen kann! Als konkretes Beispiel:
@@ -288,7 +288,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Eine Formel in _konjunktiver Normalform_ (CNF) ist ein AND von
                         Klauseln.
                         |> p
@@ -313,7 +313,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Minimieren Sie die obige DNF (die mit den 6 Termen), indem Sie gewisse
                         Paare von Termen zu einem kürzeren zusammenfassen.
                     |> div
@@ -324,7 +324,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Zeigen Sie, dass es zu jeder Booleschen Funktion \(f: \{0,1\}^n
                         \rightarrow \{0,1\}\) eine äquivalente DNF-Formel mit höchstens
                         \(2^{n-1}\) Termen gibt.
@@ -336,7 +336,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Zeigen Sie, dass jede DNF-Formel für die Boolesche Funktion \(x_1
                         \oplus \dots \oplus x_n\) genau \(2^{n-1}\) Terme besitzen muss.
                     |> p
@@ -356,7 +356,7 @@
                             |> a
                                 href http://users.cms.caltech.edu/~umans/papers/BU07.pdf
 
-                                &ensp;Buchfuhrer, David; Umans, Christopher (January 2011),_The complexity of Boolean formula minimization_ (JCSS
+                                Buchfuhrer, David; Umans, Christopher (January 2011),_The complexity of Boolean formula minimization_ (JCSS
                                 2011) 
                             .
                         |> li
@@ -368,8 +368,8 @@
                             |> a
                                 href https://drops.dagstuhl.de/opus/volltexte/2020/12574/pdf/LIPIcs-CCC-2020-22.pdf
 
-                                &ensp;Ilango, Loff, and Oliveira._NP-Hardness of Circuit Minimization for Multi-Output
-                                Functions_, (CCC 2020) 
+                                Ilango, Loff, and Oliveira._NP-Hardness of Circuit Minimization for Multi-Output
+                                Functions_, (CCC 2020)
                             .
                     Beachten Sie, dass (2) algorithmisch einfacher ist: durch die
                     "verschwenderische" Darstellung der Funktion als Tabelle ist bereits der

@@ -1,5 +1,5 @@
 |> section
-    title_gr Endliche Automaten
+    title_gr Automaten
     title_en finite state machines
     number 4.2
     counter DefCtr
@@ -38,7 +38,7 @@
                         |> span
                             class subChapterTitle
 
-                            ::::ChapterCtr.::++SectionCtr 
+                            ::::ChapterCtr.::++SectionCtr
                             Endliche Automaten
                     |> p
 
@@ -315,7 +315,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         *(Endlicher Automat, Finite State Machine).*Ein endlicher Automat besteht aus einem endlichen Eingabealphaet \(\Sigma\), einer endlichen
                         Menge \(Q\) von Zuständen,
                         einem Startzustand \(\qstart \in Q\), einer Menge \(F \subseteq Q\) von akzeptierenden
@@ -345,7 +345,7 @@
                             Beispiel
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Betrachten wir den endlichen Automaten
                         |> figure
                             |> img
@@ -423,7 +423,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         *(Erweiterte Zuständsübergangsfunktion)*.
                         Für einen endlichen Automaten \((\Sigma, Q, \qstart, F, \delta)\) definieren wir
                         die _erweiterte Zustandsübergangsfunktion_ \(\hat{\delta}: Q \times \Sigma^* \rightarrow
@@ -447,7 +447,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         *(Akzeptierte Sprache).*Sei \(M = (\Sigma, Q, \qstart, F, \delta)\) ein endlicher Automat. Die von \(M\) akzeptierte
                         Sprache
                         ist
@@ -462,7 +462,7 @@
                             Beispiel
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Der endliche Automat, den wir oben bereits eingeführt haben:
                         |> figure
                             |> img
@@ -479,7 +479,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Ändern Sie den Automaten aus dem letzten Beispiel so ab, dass die Bedingung _"die auf \(x\)
                         enden"_ entfällt, er also
                         alle Wörter akzeptiert, die die Folge \(xy\) nicht enthalten.
@@ -491,7 +491,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Zeichnen Sie einen Automaten für die Sprache aller Wörter über \(\{a,b,c,d\}\), die
                         die Folge \(a,b,c,d\) enthalten.
                     |> div
@@ -502,7 +502,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Zeichnen Sie einen Automaten für die Sprache aller Wörter über \(\{a,b,c,d\}\), die
                         genau vier \(a\) enthalten.
                     |> h2
@@ -536,7 +536,7 @@
                             Theorem
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Sei \(M = (\Sigma, Q, \qstart, F, \delta)\) ein endlicher Automat. Dann gibt es eine reguläre
                         Grammatik
                         \(G = (\Sigma, N, P, S)\) mit \(L(G) = L(M)\).
@@ -567,7 +567,7 @@
                                 Behauptung
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             Sei \(\alpha \in \Sigma^*\) und \(q, q' \in Q\). Dann gilt
                             \(q \stackrel{\alpha}{\rightarrow} q'\) genau dann,
                             wenn \(q \Rightarrow^* \alpha q'\) in Grammatik \(G'\) gilt.
@@ -740,7 +740,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Schreiben Sie zu folgendem Automaten über dem Alphabet \(\Sigma = \{0,1,2,3,4,5,6,7,8,9\}\) eine
                         äquivalente reguläre Grammatik:
                         |> figure
@@ -768,13 +768,13 @@
                             Beispiel
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Betrachten wir die 
                         |> a
                             href ./04-01-regular-grammars.html#example-aaabb
 
-                            &ensp;reguläre Grammatik aus
-                            dem vorherigen Kapitel 4.1 
+                            reguläre Grammatik aus
+                            dem vorherigen Kapitel 4.1
                         :
                         \begin{align*}
                         S&amp;\rightarrow \epsilon \ |\ a S \ | \ b T \\
@@ -819,14 +819,14 @@
                             Beispiel
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Betrachten wir die 
                         |> a
                             href ./04-01-regular-grammars.html#example-xxx1yyy
 
-                            &ensp;reguläre Grammatik
+                            reguläre Grammatik
                             aus
-                            dem vorherigen Kapitel 4.1 
+                            dem vorherigen Kapitel 4.1
                         :
                         \begin{align*}
                         A&amp;\rightarrow 0 A \ | 1 A \ | 1 B \\

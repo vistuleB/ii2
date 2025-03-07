@@ -1,5 +1,5 @@
 |> section
-    title_gr Reguläre Grammatiken
+    title_gr Grammatiken
     title_en regular grammars
     number 4.1
     counter DefCtr
@@ -38,7 +38,7 @@
                         |> span
                             class subChapterTitle
 
-                            ::::ChapterCtr.::++SectionCtr 
+                            ::::ChapterCtr.::++SectionCtr
                             Reguläre Grammatiken
                     |> p
 
@@ -57,7 +57,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Eine kontextfreie Sprache \(G = (\Sigma, N, P, S)\) heißt_regulär_, wenn jede Produktion eine der folgenden vier Formen
                         hat: \begin{align*} X&amp;\rightarrow aY \\ X&amp;\rightarrow a \\ X&
                         \rightarrow Y \\ X&amp;\rightarrow \epsilon \end{align*} Eine Sprache
@@ -71,7 +71,7 @@
                             Beispiel
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Die folgende Grammatik über dem Alphabet \(\Sigma = \{1\}\), den
                         nichtterminalen Symbolen \(\{E,O\}\) und den Regeln \begin{align*} E&
                         \rightarrow 1O \ | \ \epsilon \\ O&amp;\rightarrow 1E \end{align*}
@@ -86,7 +86,7 @@
                             Beispiel
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Die folgende Grammatik haben wir bereits im letzten Abschnitt
                         kennengelernt. Sie ist nicht regulär: \begin{align*} S&amp;\rightarrow A
                         B \\ A&amp;\rightarrow \epsilon \ | \ a A \\ B&amp;\rightarrow \epsilon \
@@ -120,7 +120,7 @@
                             Beobachtung
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Sei \(G = (\Sigma, N, P, S)\) eine reguläre Grammatik und \(S
                         \Rightarrow^* \alpha\) eine Ableitung einer Wortform \(\alpha \in
                         (\Sigma \cup N)^*\). Dann hat \(\alpha\) die Form \(y X\) für \(y \in
@@ -138,7 +138,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Betrachten Sie die Gramatik über \(\Sigma = \{0,1\}\): \begin{align*}
                         S&amp;\rightarrow 1 S \ | \ 0 S \ | \ 0 \end{align*} Leiten Sie das Wort
                         \(11010\) ab. Beschreiben Sie in eigenen Worten die erzeugte Sprache.
@@ -151,7 +151,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Betrachten Sie die Grammatik über \(\Sigma = \{0,1\}\): \begin{align*}
                         A&amp;\rightarrow 0 A \ | 1 A \ | 1 B \\ B&amp;\rightarrow 0 C \ | 1 C \\
                         C&amp;\rightarrow 0 D \ | 1 D \\ D&amp;\rightarrow 0 E \ | 1 E \\ E&
@@ -166,7 +166,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Betrachten Sie das Alphabet \(\Sigma = \{1\}\) und die Sprache $$ L :=
                         \{1^n \ | \ \textnormal{ $n$ ist durch 3 teilbar} \} \ . $$ Schreiben
                         Sie eine reguläre Grammatik für \(L\).
@@ -178,7 +178,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Betrachten Sie die Sprache \begin{align*} L := \{x \in \{a,b\}^* \ | \
                         \textnormal{in $x$ kommt $b$ mindestens 4 mal vor }\} \ \end{align*}
                         und entwerfen Sie eine reguläre Grammatik für \(L\).
@@ -190,7 +190,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Sei \(\Sigma = \{a,b,.\}\) und \(L \subseteq \Sigma^*\) die Sprache
                         aller Strings der Form $$ x_1 . x_2 . x_3 . \cdots . x_n $$ wobei \(n
                         \geq 2\) und jedes \(x_i \in \{a,b\}^+\), also zum Beispiel`a.bba.aba` aber nicht `aba` und auch nicht`a.b..a`Entwerfen Sie eine reguläre Grammatik für diese Sprache.
@@ -202,12 +202,12 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Unsere
                         |> a
                             href ./04-00-formal-languages.html#email-context-free-grammar
 
-                            &ensp;Grammatik für korrekte Emailadressen 
+                            Grammatik für korrekte Emailadressen
                         im letzten Abschnitt war _nicht_ regulär. Allerdings können wir
                         eine reguläre Grammatik angeben, die die gleiche Sprache erzeugt.
                         |> p
@@ -239,7 +239,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Eine Grammatik \(G = (\Sigma, N, P, S)\) heißt_erweitert regulär_, wenn jede Produktion eine der folgenden
                         Formen hat: \begin{align*} X&amp;\rightarrow \alpha Y \\ X&amp;\rightarrow
                         \alpha \\ \end{align*} hat, wobei \(X \in N\) und \(\alpha \in
@@ -254,7 +254,7 @@
                             Theorem
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Sei \(G = (\Sigma, N, P, S)\) eine erweitert reguläre Grammatik. Dann
                         existiert eine reguläre Grammatik \(G' = (\Sigma, N', P', S)\), die
                         die gleiche Sprache erzeugt: \(L(G) = L(G')\).
@@ -293,7 +293,7 @@
                         |> a
                             href #def-regular
 
-                            &ensp;Definition 4.1 
+                            Definition 4.1
                         &ensp;hat jede Produktion in einer
                         regulären Grammatik eine der folgenden vier Formen: \begin{align*} 1.
                         \quad X&amp;\rightarrow aY \\ 2. \quad X&amp;\rightarrow a \\ 3. \quad X&
@@ -311,7 +311,7 @@
                                 Theorem
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             Sei \(G = (\Sigma, N, P, S)\) eine reguläre Grammatik. Dann gibt es
                             eine äquivalente reguläre Grammatik \(G' = (\Sigma, N', P', S)\),
                             die nur Regeln vom Typ 1 und 4 enthält.
@@ -373,7 +373,7 @@
                                 Beobachtung
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             Wenn \(N_{k+1}(X) = N_k(X)\), dann ist \(N_k(X) = N_{k+1}(X) =
                             N_{k+2}(X)= \dots\)
                         |> p
@@ -394,7 +394,7 @@
                                 Übungsaufgabe
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                             Sei \(\Sigma = \{a,b,c\}\). Die Grammatik mit den Regeln \(A
                             \rightarrow \epsilon \ | \ b A \ | \ c A\) erzeugt die Sprache aller
                             Wörter, die kein \(a\) enthalten. Die Grammatik \(B \rightarrow
@@ -422,7 +422,7 @@
                                 Übungsaufgabe
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                             Betrachten Sie die folgende Grammatik über \(\Sigma =
                             \{a_1,a_2,\dots,a_n\}\) mit den Nichtterminalsymbolen \(\{S, A_1,
                             A_2, \dots, A_n\}\) und den insgesamt \(3n-1\) Produktionen
@@ -504,7 +504,7 @@
                                 Definition
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             *(Kleenesche Hülle).*Seien \(L_1, L_2 \in \Sigma^*\) zwei Sprachen. Die
                             Verknüpfungssprache \(L_1 \circ L_2\) ist definiert als
                             \begin{align*} L_1 \circ L_2 := \{ \alpha \beta \ | \ \alpha \in
@@ -567,7 +567,7 @@
                                 Definition
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             Sei \(L \subseteq \Sigma^*\). Die Sprache \(L^n\) ist die Menge
                             \begin{align*} L^n := \{ \alpha_1 \alpha_2 \dots \alpha_n \ | \
                             \alpha_i \in L \ \forall 1 \leq i \leq n \} \ . \end{align*}
@@ -611,7 +611,7 @@
                                 Übungsaufgabe
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                             Hier sehen Sie einen URL mit Query-String:
                             |> p
 
@@ -656,7 +656,7 @@
                                 Theorem
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             Sei \(L \subseteq \Sigma^*\) eine reguläre Sprache und \(c \not \in
                             \Sigma\) ein neues Terminalsymbol. Die Sprache aller nichtleeren
                             Folgen von \(L\)-Wörten, die durch \(c\) separiert sind, also formal

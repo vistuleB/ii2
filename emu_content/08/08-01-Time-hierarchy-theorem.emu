@@ -1,5 +1,5 @@
 |> section
-    title_gr Das Zeithierarchietheorem
+    title_gr Zeithierarchietheorem
     title_en Time hierarchy theorem
     number 8.1
     counter DefCtr
@@ -38,7 +38,7 @@
                         |> span
                             class subChapterTitle
 
-                            ::::ChapterCtr.::++SectionCtr 
+                            ::::ChapterCtr.::++SectionCtr
                             Das Zeithierarchietheorem
                     |> p
 
@@ -50,7 +50,7 @@
                         |> a
                             href 07-03-Turing-universal.html
 
-                            &ensp;Kapitel 7.5. 
+                            Kapitel 7.5.
                         &ensp;Unsere Implementierung hatte insgesamt
                         fünf Bänder verwendet: (1) ein Band, um die Regeln von $M$ zu speichern (also die Funktion
                         $\delta$);
@@ -75,7 +75,7 @@
                         |> a
                             href 07-05-undecidability.html
 
-                            &ensp;Kapitel 7.7 
+                            Kapitel 7.7
                         &ensp;gesehen, dass wir als Codierungsalphabet
                         $\Sigma$ selbst nehmen können, also $\enc(M) \in \Sigma^*$, solange $\Sigma$ mindestens zwei
                         Zeichen enthält.
@@ -89,7 +89,7 @@
                                 Theorem
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             &ensp;Für jedes Alphabet $\Sigma$ mit mindestens zwei
                             Zeichen
                             und jedes $k \geq 1$ gibt es eine Turingmaschine $U$ mit $k+2$ Bändern, die folgendes kann:
@@ -167,7 +167,7 @@
                                 Definition
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             &ensp;*(Zeitbudgetiertes
                             Halteproblem).*Sei $\Sigma$ ein endliches Alphabet. Wir definieren die Sprache
                             \begin{align*}
@@ -198,7 +198,7 @@
                                 Beobachtung
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             &ensp;$\bhalt \in \TIME_{k+3}(n)$. 
                     |> div
                         class well container
@@ -237,7 +237,7 @@
                                 Behauptung
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             &ensp;*(nicht ganz
                             korrekt).* $\bnegdiag \in \TIME_{k+3}(t)$.
                     |> p
@@ -261,7 +261,7 @@
                                 Definition
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             &ensp;Eine Funktion $t: \N \rightarrow \N$ heißt_zeitkonstruierbar_, wenn es eine Turingmaschine gibt, die aus dem Eingabewort $1^n$
                             das Ausgabewort $1^{t(n)}$ berechnet und selbst maximal $O(t(n))$ Schritte läuft.
                     |> div
@@ -273,7 +273,7 @@
                                 Behauptung
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             &ensp;*(jetzt korrekt).* Sei
                             $t: \N \rightarrow \N$ zeitkonstruierbar, monoton steigend und $t(n) \geq n$. Dann gilt
                             $\bnegdiag \in \TIME_{k+3}(t)$.
@@ -313,7 +313,7 @@
                             |> a
                                 href #theorem-universal
 
-                                &ensp;Theorem 8.1.1 
+                                Theorem 8.1.1
                             &ensp;höchstens
                             $C \cdot |\enc(M)| \cdot (n + s(n))$ Schritte.
                             Da $s(n) \geq n$ gilt, sind dies höchstens $2C \cdot |\enc(M)| \cdot s(n)
@@ -361,7 +361,7 @@
                                 Theorem
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             *(Zeithierarchiesatz, Rohversion).*Seien $s, t: \N \rightarrow \N$
                             zeitkonstruierbare Funktionen mit $s(n) \geq n$ und
                             $s \in o(t)$ (also $\lim_{n \rightarrow \infty} s(n)/t(n)
@@ -390,7 +390,7 @@
                                 Theorem
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             &ensp;*(Zeithierarchiesatz).*Seien $s, t: \N \rightarrow \N$ mit $s(n) \geq n$ und $s \log s \in o(t)$. Dann gilt
                             $\TIME(s) \subsetneq \TIME(t)$.
                     |> p
@@ -409,5 +409,5 @@
                                 Übungsaufgabe
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                             Zeigen Sie, dass $n \mapsto n^2$ und $n \mapsto 2^n$ zeitkonstruierbar sind.

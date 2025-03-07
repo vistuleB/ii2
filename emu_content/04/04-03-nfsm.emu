@@ -1,5 +1,5 @@
 |> section
-    title_gr Nichtdeterministische Endliche Automaten
+    title_gr Endliche Automaten
     title_en nfsm
     number 4.3
     counter DefCtr
@@ -38,7 +38,7 @@
                         |> span
                             class subChapterTitle
 
-                            ::::ChapterCtr.::++SectionCtr 
+                            ::::ChapterCtr.::++SectionCtr
                             Nichtdeterministische Endliche Automaten
                     |> p
 
@@ -64,7 +64,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         *(Nichtdeterministischer endlicher Automat, non-deterministic finite state machine)*Ein nichtdeterministischer endlicher Automat besteht aus
                         |> ul
                             |> li
@@ -99,7 +99,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         *(Erweiterte Zuständsübergangsfunktion)*.
                         |> p
 
@@ -125,7 +125,7 @@
                             Beobachtung
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Sei \(M = (\Sigma, Q, \qstart, F, \delta)\) ein nichtdeterministischer
                         endlicher Automat. Dann gibt es eine reguläre Grammatik \(G\) mit
                         \(L(G) = L(M)\).
@@ -136,7 +136,7 @@
                         |> a
                             href ./04-02-finite-state-machines.html#theorem-fsm-regular
 
-                            &ensp;Theorem 4.2.5 
+                            Theorem 4.2.5
                         ; wir haben nämlich in jenem Beweis nirgends verwendet, dass
                         \(\delta\) eine _Funktion_ ist, und daher geht mit einem
                         \(\delta\), das eine _Relation_ ist, alles ganz genau gleich.
@@ -151,7 +151,7 @@
                             Theorem
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Sei \(G = (\Sigma, N, P, S)\) eine reguläre Grammatik. Dann gibt es
                         einen nichtdeterministischen endlichen Automaten \(M\) mit \(L(G) =
                         L(M)\).
@@ -176,7 +176,7 @@
                             |> a
                                 href ./04-01-regular-grammars.html#theorem-regular-simplified
 
-                                &ensp;Theorem 4.1.7 
+                                Theorem 4.1.7
                             , welches uns erlaubt, Regeln der Form \(X \rightarrow Y\) und \(X
                             \rightarrow a\) zu eliminieren.
                             |> span
@@ -191,14 +191,14 @@
                             Beispiel
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         |> p
 
                             Wir betrachten abermals die
                             |> a
                                 href ./04-01-regular-grammars.html#example-aaabb
 
-                                &ensp;reguläre Grammatik aus dem vorherigen Kapitel 4.1 
+                                reguläre Grammatik aus dem vorherigen Kapitel 4.1
                             : \begin{align*} S&amp;\rightarrow \epsilon \ |\ a S \ | \ b T \\ T&
                             \rightarrow \epsilon \ | \ b T \ \end{align*} und auch den
                             (falschen) endlichen Automaten, den wir im letzten Kapitel dafür
@@ -215,7 +215,7 @@
                             |> a
                                 href #theorem-nfsm-regular
 
-                                &ensp;Theorem 4.3.4 
+                                Theorem 4.3.4
                             bauen können. Die Zustandsübergangsrelation \(\delta\) ist $$ \delta
                             = \{(S,a,S), (S,b,S), (T,b,T) \} \ . $$ Jeder Zustand ist ein
                             Endzustand, allerdings heißt das nicht, dass der Automat jedes Wort
@@ -231,14 +231,14 @@
                             Beispiel
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         |> p
 
                             Wir betrachten die
                             |> a
                                 href ./04-01-regular-grammars.html#exercise-no-a-or-no-b
 
-                                &ensp;reguläre Grammatik aus Übungsaufgabe 4.1.7 
+                                reguläre Grammatik aus Übungsaufgabe 4.1.7
                             :
                         \begin{align*} S&amp;\rightarrow A \ | \ B \\ A&amp;\rightarrow \epsilon \
                         | \ b A \ | \ c A \\ B&amp;\rightarrow \epsilon \ | \ a B \ | \ c B
@@ -272,7 +272,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Sei \(\Sigma = \{1\}\) und \(L_k := \{1^n \ | \textnormal{ $n$ ist
                         durch $k$ teilbar} \}\). Schreiben Sie für \(L_k\) einen
                         deterministischen endlichen Automaten.
@@ -550,7 +550,7 @@
                             Theorem
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         *(Einen nichtdeterministischen endlichen Automaten deterministisch
                         machen).*Sei \(M = (\Sigma, Q, \qstart, F, \delta)\) ein nichtdeterministischer
                         Automat; dann heiße der deterministische Automat \(M' = (\Sigma, 2^Q,
@@ -574,7 +574,7 @@
                             Theorem
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Zu jeder regulären Sprache \(L\) gibt es einen deterministischen
                         endlichen Automaten \(M\) mit \(L(M) = L\).
                     |> div
@@ -585,7 +585,7 @@
                             Beispiel
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Der obige nichtdeterminische Automaten \(M\), der die Sprache aller
                         Wörter, deren viertletztes Zeichen eine 1 ist, akzeptiert, hat fünf
                         Zustände. Sein Potenzmengenautomat \(M'\) hätte also \(2^5 = 32\).

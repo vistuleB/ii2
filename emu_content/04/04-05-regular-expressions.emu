@@ -1,5 +1,5 @@
 |> section
-    title_gr Reguläre Ausdrücke
+    title_gr Ausdrücke
     title_en regular expressions
     number 4.5
     counter DefCtr
@@ -38,7 +38,7 @@
                         |> span
                             class subChapterTitle
 
-                            ::::ChapterCtr.::++SectionCtr 
+                            ::::ChapterCtr.::++SectionCtr
                             Reguläre Ausdrücke
                     |> p
 
@@ -52,7 +52,7 @@
                         |> a
                             href ./04-01-regular-grammars.html#baukasten
 
-                            &ensp;Kapitel 4.1 
+                            Kapitel 4.1
                         &ensp;das
                         Baukastenprinzip kennengelernt:
                     |> ol
@@ -104,7 +104,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Sei \(\Sigma\) einendliches Alphabet. Die regulären Audrücke über \(\Sigma\) sind induktiv
                         definiert wie folgt und beschreiben folgende Sprachen:
                         |> ul
@@ -124,7 +124,7 @@
                                 |> a
                                     href ./04-01-regular-grammars.html#baukasten
 
-                                    &ensp;Kapitel 4.1 
+                                    Kapitel 4.1
                                 &ensp;gesehen haben).
                             |> li
 
@@ -157,7 +157,7 @@
                         |> a
                             href ./04-01-regular-grammars.html#baukasten
 
-                            &ensp;Kapitel 4.1 
+                            Kapitel 4.1
                         wissen wir,
                         dass Alterantive, Konkatenation und Kleenesche Hülle wiederum reguläre Sprachen erzeugen.
                         Wir erhalten das folgende Ergebnis:
@@ -180,7 +180,7 @@
                             Beispiel
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Nehmen wir die Sprache der Wörter der Form `bla:bla:blu.xyz-12-ab.b:x` aus dem
                         letzten Kapitel. Sie erinnern sich:
                         eine endliche Folge von _Labels_, wo ein Label eine nichtleere Folge von Blöcken ist, die
@@ -232,12 +232,12 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Laden Sie sich 
                         |> a
                             href ../code/regular-expressions/TestRegex.java
 
-                            &ensp;TestRegex.java 
+                            TestRegex.java
                         &ensp;herunter,
                         kompilieren und starten Sie es.
                         |> pre
@@ -276,7 +276,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         In der Praxis gibt es bei reguläre Ausdrücken viele Abkürzung, so beschreibt`[a-z]` beispielsweise die Menge aller Kleinbuchstaben,`[aoeiuy]` beschreibt die Menge \{a,o,e,i,u,y\} etc.
                         Der reguläre Ausdruck `[a-z]*[aeiuoy][a-z]*` beschreibt also die
                         Menge aller Wörter, die mindesten einen Vokal enthalten.
@@ -286,15 +286,15 @@
                             |> a
                                 href https://www.w3schools.com/java/java_regex.asp
 
-                                &ensp;W3Schools 
+                                W3Schools
                         und
                         |> div
                             style text-align:center
                             |> a
                                 href https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
 
-                                &ensp;Patternl.html
-                                auf der Java-API 
+                                Patternl.html
+                                auf der Java-API
                             ,
                         lassen sich aber bitte nicht von der Menge an Details erschlagen.
                         |> p
@@ -309,7 +309,7 @@
                     |> a
                         href #regex-to-grammar
 
-                        &ensp;Lemma 4.5.2 
+                        Lemma 4.5.2
                     :
                     |> div
                         class well container theorem
@@ -319,7 +319,7 @@
                             Theorem
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Sei \(L\) eine reguläre Sprache. Dann gibt es einen regulären Ausdruck \(R\), der \(L\)
                         beschreibt,
                         also
@@ -380,7 +380,7 @@
                                 Definition
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             *(Verallgemeinerter nichtdeterministischer endlicher Automat, VNEA).*Ein VNEA besteht aus einem Alphabet \(\Sigma\), einer Zustandsmenge \(Q\), einen
                             Startzustand \(\qstart \in Q\), einem
                             akzeptierenden Zustand \(q_{\rm end} \in Q \setminus \{\qstart\}\), einer
@@ -499,7 +499,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Wandeln Sie nach dem eben beschriebenen Schema den Automaten
                         |> figure
                             |> img

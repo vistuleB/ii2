@@ -1,5 +1,5 @@
 |> section
-    title_gr Monotone Funktionen und monotone Schaltkreise
+    title_gr Funktionen und monotone Schaltkreise
     title_en monotone circuits
     number 1.4
     counter DefCtr
@@ -38,7 +38,7 @@
                         |> span
                             class subChapterTitle
 
-                            ::::ChapterCtr.::++SectionCtr 
+                            ::::ChapterCtr.::++SectionCtr
                             Monotone Funktionen und monotone Schaltkreise
                     |> p
 
@@ -72,7 +72,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Eine Boolesche Funktion \(f: \{0,1\}^n \rightarrow \{0,1\}\) heißt_monoton_, wenn
                         $$
                         \forall \mathbf{x} \leq \mathbf{y} \in \{0,1\}^n \ : \
@@ -88,7 +88,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Welche der Booleschen Funktionen \(\wedge, \vee, \neg, \oplus, \maj\) sind monoton?
                     |> p
 
@@ -136,7 +136,7 @@
                             Theorem
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Zu jeder monotonen Funktion \(f: \{0,1\}^n \rightarrow \{0,1\}\) gibt es einen monotonen
                         Schaltkreis (also ohne NOT-Gates), der \(f\) berechnet.
                     |> div
@@ -147,7 +147,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Beweisen Sie das Theorem. *Tip.* Gehen Sie meine oben skizzierten drei
                         Konstruktionen durch (Rekursiv, DNF, CNF) und versuchen Sie, sie so zu modifizieren,
                         dass Sie alle NOT-Gates loswerden.
@@ -159,7 +159,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Finden Sie alle monotonen Funktionen in zwei Variablen.
                         Wie sieht es mit allen monotonen Funktionen in _drei_ Variablen aus?
                         |> p
@@ -183,7 +183,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         &ensp;*(Challenge).*Bauen Sie einen Schaltkreis mit drei Input-Variablen \(x,y,z\), der drei
                         Output-Gates hat, die \(\bar{x}, \bar{y}, \bar{z}\) berechnen.
                         Ihr Schaltkreis darf _höchstens zwei NOT-Gates_ einhalten,
@@ -212,7 +212,7 @@
                             Theorem
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Zu jeder monotonen Funktion \(f: \{0,1\}^n \rightarrow \{0,1\}\) gibt es einen monotonen
                         Schaltkreis (also ohne NOT-Gates), der \(f\) berechnet.
                     |> p
@@ -238,7 +238,7 @@
                         |> a
                             href https://de.wikipedia.org/wiki/Beweis_(Mathematik)#Beweismethoden
 
-                            &ensp;Wikipedia 
+                            Wikipedia
                         &ensp;aufgeführt
                         sind.
                         Diesen zur Seite stehen die nicht wirklich formalisierbaren Beweistechniken oder Beweisstrategien,
@@ -268,7 +268,7 @@
                             |> a
                                 href ../vorlesungsskript.html#truth-table-top-down
 
-                                &ensp;Top-Down-Methode 
+                                Top-Down-Methode
                             , wie wir
                             aus einer Wahrheitstabelle einen Schaltkreis bauen:
                         |> div
@@ -279,7 +279,7 @@
                                 Theorem
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             Zu jeder Booleschen Funktion \(f: \{0,1\}^n \rightarrow \{0,1\}\) gibt es
                             einen Schaltkreis \(C\), der \(f\) berechnet.
                         |> p
@@ -297,7 +297,7 @@
                             |> a
                                 href #after-sub-proof
 
-                                &ensp;runterspringen. 
+                                runterspringen.
                         |> div
                             class well container-fluid
                             |> p
@@ -339,7 +339,7 @@
                                     Theorem
                                     |> NumberedTitle
 
-                                        &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                        ::::ChapterCtr.::::SectionCtr.::++DefCtr
                                     &ensp;1.4.4, alternative Formulierung
                                 Für jede natürliche Zahl \(n\) gilt: zu jeder Booleschen Funktion
                                 \(f: \{0,1\}^n \rightarrow \{0,1\}\) gibt es einen Schaltkreis \(C\), der
@@ -423,7 +423,7 @@
                                         href https://en.wikipedia.org/wiki/Abuse_of_notation
 
                                         _with abuse of
-                                        notation_ 
+                                        notation_
                                     ,
                                     womit die Autoren andeuten, dass sie ihre Notation nicht ganz korrekt anwenden, aber
                                     davon ausgehen, dass Leser oder Leserin (die ja Menschen sind und keine Compiler),
@@ -521,7 +521,7 @@
                         |> a
                             href #theorem-1
 
-                            &ensp;Theorem 1.4.3 
+                            Theorem 1.4.3
                         &ensp;zu. 
                     |> div
                         class well container
@@ -612,7 +612,7 @@
                                 Behauptung
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
                                 .
                             Für alle \(x_1,\dots,x_n\) gilt
                             $$
@@ -771,7 +771,7 @@
                                 Behauptung
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
                                 .
                             Für alle \(x_1,\dots,x_n\) gilt
                             \(T_{\mathbf{a}} \leq T'_{\mathbf{a}}\).
@@ -805,7 +805,7 @@
                                 Behauptung
                                 |> NumberedTitle
 
-                                    &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             \(F \equiv F'\), d.h. sie berechnen beide dieselbe Funktion, nämlich \(f\).
                         |> div
                             class well subtheorem

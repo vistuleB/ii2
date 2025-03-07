@@ -1,5 +1,5 @@
 |> section
-    title_gr Variationen: Mehrband-Maschinen, nichtdeterministische Maschinen
+    title_gr Mehrband-Maschinen, nichtdeterministische Maschinen
     title_en Turing variants
     number 7.3
     counter DefCtr
@@ -38,7 +38,7 @@
                         |> span
                             class subChapterTitle
 
-                            ::::ChapterCtr.::++SectionCtr 
+                            ::::ChapterCtr.::++SectionCtr
                             Variationen: Mehrband-Maschinen, nichtdeterministische Maschinen
                     |> h2
 
@@ -138,14 +138,14 @@
                             Beispiel
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Entwerfen wir nun eine Turingmaschine für die Palindromsprache
                         \begin{align*} L := \{ w \in \{a,b\}^* \ | \ w = w^R \} \ ,
                         \end{align*} In
                         |> a
                             href ./04-01-Turing-machines-examples.html#example-palindromes
 
-                            &ensp;Beispiel 4.2.2 
+                            Beispiel 4.2.2
                         haben wir dafür eine Einband-Turingmaschine geschrieben. Deren
                         Nachteil war, dass sie ständig zwischen dem linken und rechten Rand
                         hin-und-herlaufen musste.
@@ -175,12 +175,12 @@
                         |> a
                             href https://turingmachinesimulator.com
 
-                            &ensp;turingmachinesimulator.com 
+                            turingmachinesimulator.com
                         finden Sie in
                         |> a
                             href ../code/turing machines/palindrome-multiple-tapes.txt
 
-                            &ensp;palindrome-multiple-tapes.txt 
+                            palindrome-multiple-tapes.txt
                         .
                     |> div
                         class well well-lg numbered-exercise container
@@ -190,7 +190,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Schreiben Sie eine Mehrband-Turingmaschine, die Binärzahlen addiert.
                         Wenn also beispielsweise 
                         |> tt
@@ -254,7 +254,7 @@
                             Theorem
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         *(Einband-Turingmaschine simuliert Mehrband-Turingmaschine)*. Sei \(M\) eine Turingmaschine mit \(k\) Bändern, wovon eines ein
                         designiertes Ausgabeband ist. Dann gibt es eine Einband-Turingmaschine
                         \(M'\) mit folgenden Eigenschaften:
@@ -531,7 +531,7 @@
                     |> a
                         href https://turingmachinesimulator.com
 
-                        &ensp;turingmachinesimulator.com 
+                        turingmachinesimulator.com
                     :
                     |> pre
                         class listing container
@@ -546,7 +546,7 @@
                         |> a
                             href ../code/turing machines/replace-b-by-bc.txt
 
-                            &ensp;replace-b-by-bc.txt 
+                            replace-b-by-bc.txt
                         Können wir unserer Turingmaschine die Funktionalität geben, eine Zelle _einzufügen_ und alles von Kopf bis zum linken Ende um
                         eins nach links zu verschieben bzw. das analoge, aber nach rechts? Wir
                         sind freie Menschen, wir können definieren, was wir wollen, müssen uns
@@ -592,12 +592,12 @@
                         |> a
                             href ../code/turing machines/go-left-go-right.txt
 
-                            &ensp;go-left-go-right.txt 
+                            go-left-go-right.txt
                         , geben Sie sie auf
                         |> a
                             href https://turingmachinesimulator.com
 
-                            &ensp;turingmachinesimulator.com 
+                            turingmachinesimulator.com
                         ein und starten Sie sie mit dem Eingabewort \(xxx\).
                     |> p
 
@@ -621,7 +621,7 @@
                         |> a
                             href ../code/turing machines/insert-z-before-y.txt
 
-                            &ensp;insert-z-before-y.txt 
+                            insert-z-before-y.txt
                         ansehen. Geben Sie beispielsweise 
                         |> tt
 
@@ -675,12 +675,12 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Schreiben Sie auf
                         |> a
                             href https://turingmachinesimulator.com
 
-                            &ensp;turingmachinesimulator.com 
+                            turingmachinesimulator.com
                         eine Mehrband-Turingmaschine, die Inputs der Form \begin{align*} k [
                         k_1 : v_1; k_2 : v_2; \dots ; k_n : v_n ] \end{align*} entgegennimmt,
                         für \(k, k_1, \dots, k_n, v_1, \dots, v_n \in \{0,1\}^n \), also
@@ -762,7 +762,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         *(Akzeptieren und Entscheiden bei nichtdeterministischen Turingmaschinen).*Eine nichtdeterministische Turingmaschine \(M\) akzeptiert die Sprache
                         \(L\) wenn \begin{align*} x \in L \Longleftrightarrow M \textnormal {
                         akzeptiert } x \end{align*} Für jedes \(x \not \in L\) gibt es also
@@ -790,7 +790,7 @@
                             Beispiel
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Beim Teilsummenproblem haben wir eine Liste von Waren (alles Unikate)
                         mit Preisen \(p_1, p_2, \dots, p_n\) und ein Guthaben \(g\) gegeben
                         und wollen wissen, ob wir unser Guthaben exakt ausgeben können. Ob es
@@ -873,7 +873,7 @@
                             Theorem
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         *(Nichtdeterministische Turingmaschinen deterministischsimulieren)*Sei \(M\) eine nichtdeterministische Turingmaschine. Dann gibt es eine
                         deterministische Maschine \(M'\) mit \(L(M) = L(M')\), d.h. \(M'\)
                         akzeptiert \(x\) genau dann, wenn \(M\) es akzeptiert.

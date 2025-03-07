@@ -1,5 +1,5 @@
 |> section
-    title_gr Primitive Rekursion: Motivation und Definitionen
+    title_gr Rekursion: Motivation und Definitionen
     title_en primitive recursion definitions
     number 3.1
     counter DefCtr
@@ -38,7 +38,7 @@
                         |> span
                             class subChapterTitle
 
-                            ::::ChapterCtr.::++SectionCtr 
+                            ::::ChapterCtr.::++SectionCtr
                             Primitive Rekursion: Motivation und Definitionen
                     |> p
 
@@ -98,7 +98,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         *(Komposition)*Sei \(f: \N^k \rightarrow \N\) und
                         \(g_1, \dots, g_k: \N^l \rightarrow \N\). Dann ist
                         \(\comp(f, g_1, \dots, g_k)\) die Funktion
@@ -125,7 +125,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         *Primitive Rekursion*Seien \(g: \N^k \rightarrow \N\) und \(h: \N^{k+2} \rightarrow \N\). Wir
                         definieren eine neue Funktion $f: \N^{k+1} \rightarrow \N$ wie folgt:
                         \begin{align*}
@@ -158,7 +158,7 @@
                         |> a
                             href ../code/primitive-recursion/primrec.py
 
-                            &ensp;primrec.py 
+                            primrec.py
                         &ensp;auf
                         Ihrem Rechner.
                         Diese Datei stellt ein Framework für die Implementierung primitiv rekursiver Funktionen zur
@@ -246,7 +246,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Zeigen Sie, dass die folgenden Funktionen primitiv-rekursiv sind, und implementieren Sie sie
                         in meinem Python-Framework, so wie ich Addition mit`add = PrimRec (p0, Comp(succ,p0))`implementiert habe:
                         |> ol
@@ -275,13 +275,13 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Wenn Sie die vorherige Übungsaufgabe gelöst (oder darüber aufgegeben) haben,
                         sehen Sie sich die Datei
                         |> a
                             href ../code/primitive-recursion/stockpile.py
 
-                            &ensp;stockpile.py 
+                            stockpile.py
                         &ensp;an,
                         in der ich diese Funktionen zum Großteil implementiert habe (basierend auf
                         den Übungen, die wir direkt in der Vorlesung gemacht haben).

@@ -1,5 +1,5 @@
 |> section
-    title_gr LL(\(k\))-Grammatiken
+    title_gr 
     title_en LL1 grammars
     number 5.4
     counter DefCtr
@@ -38,7 +38,7 @@
                         |> span
                             class subChapterTitle
 
-                            ::::ChapterCtr.::++SectionCtr 
+                            ::::ChapterCtr.::++SectionCtr
                             LL(\(k\))-Grammatiken
                     |> div
                         class well container theorem
@@ -48,7 +48,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         *Grenzform*Sei \(G = (\Sigma, N, S, P)\) eine kontextfreie Grammatik.
                         Eine Wortform \(A \alpha\) - also eine Wortform, die mit einem Nichtterminal beginnt -
                         heißt _Grenzform_, wenn es ein \(w \in \Sigma^*\) gibt, so dass
@@ -72,7 +72,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Für ein Wort \(w \in \Sigma^*\) und eine natürliche Zahl \(k \in \N\)
                         sei \(\first_k(w)\) wie folgt definiert:
                         \begin{align*}
@@ -91,7 +91,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         *LL(\(k\))-Grammatiken*Eine kontextfreie Grammatik \(G = (\Sigma, N, S, P)\) ist eine
                         LL(\(k\))-Grammatik, wenn für jede Grenzform \(A \alpha\) und für jedes Paar
                         \begin{align*}
@@ -118,7 +118,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Negieren Sie die Definition, d.h., schreiben Sie eine Aussage der Form_Wenn \(G\) nicht LL(\(k\)) ist, dann gibt es..._
                     |> div
                         class well container theorem
@@ -128,7 +128,7 @@
                             Beispiel
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Die Klammern-Grammatik
                         \begin{align*}
                         S&amp;\step{1} \epsilon \\
@@ -205,7 +205,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         (Beispiel 5.3 aus _The Theory of Parsing, Translation, and Compiling_ von Alfred V. Aho
                         und Jeffrey D. Ullman).
                         Betrachten wir die Grammatik
@@ -231,7 +231,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Schreiben Sie eine äquivalente Grammatik zu der vorherigen Sprache, die LL(1) ist.
                         (Warnung: Ich weiß nicht, ob das überhaupt geht).
                     |> div
@@ -243,7 +243,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Betrachten wir die Grammatik \(G\):
                         \begin{align*}
                         S&amp;\step{1} a S b \\
@@ -261,7 +261,7 @@
                             |> a
                                 href ../../demos/drawManualGrammar.html
 
-                                &ensp;Parser-Simulator 
+                                Parser-Simulator
                             ein und finden Wörter mit langen Sackgassen.
                         |> p
 
@@ -275,7 +275,7 @@
                             Übungsaufgabe
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++ExoCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                         Sei \(t \in \N\) eine feste, im Voraus bekannte Zahl.
                         Betrachten wir die Sprache
                         \begin{align*}
@@ -290,7 +290,7 @@
                             |> a
                                 href ../../demos/drawManualGrammar.html
 
-                                &ensp;Parser-Simulator 
+                                Parser-Simulator
                             &ensp;ein
                             und schauen, wie lang die Sackgassen werden können.
                         |> p
@@ -315,7 +315,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Sei eine kontextfreie Grammatik \(G = (\Sigma, N, S, P)\) und eine
                         Wortform \(\alpha \in (\Sigma \cup N)^*\) gegeben.
                         Wir definieren
@@ -331,7 +331,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                             /Beobachtung
                         Eine Grammatik \(G\) ist LL\((k)\) genau dann, wenn
                         für alle Grenzformen \(A \alpha\) und alle
@@ -498,7 +498,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Seien \(K, L \subseteq \Sigma^*\) zwei Mengen.
                         Mit \(K \circ L\) bezeichnen wir die Menge
                         \begin{align*}
@@ -529,7 +529,7 @@
                             Beispiel
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Sei
                         \begin{align*}
                         K&amp;:= \{\epsilon, a, ab, aba\} \\
@@ -552,7 +552,7 @@
                             Beobachtung
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         *- Wie man \(\First_k(\alpha)\) berechnet.*Sei eine Wortform \(\alpha\) gegeben, also
                         \(\alpha \in (\Sigma \cup N)^*\). Wir berechnen
                         \(\First_k(\alpha)\), indem wir als erstes
@@ -618,7 +618,7 @@
                             Beobachtung
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Sei \(X\) ein Nichtterminal und
                         \begin{align*}
                         X&amp;\rightarrow \alpha_1 \\
@@ -661,7 +661,7 @@
                             Definition
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Sei \(\sigma\) ein Symbol und \(d \in \N\). Dann ist
                         \begin{align*}
                         \First_k^{(d)}(\sigma) := \{\first_k(w) \ | \ \textnormal{ es gibt einen Ableitungsbaum für
@@ -675,7 +675,7 @@
                             Beispiel
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Sei unsere Grammatik
                         \begin{align*}
                         S&amp;\rightarrow Xa \\
@@ -748,7 +748,7 @@
                             Beobachtung
                             |> NumberedTitle
 
-                                &ensp;::::ChapterCtr.::::SectionCtr.::++DefCtr 
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
                         Falls \(\First_{k}^{(d-1)}(X)=\First_{k}^{(d)}(X)\) für alle \(X \in N\), dann gilt
                         \begin{align*}
                         \First_k (X) = \First_k^{(d)}(X)
