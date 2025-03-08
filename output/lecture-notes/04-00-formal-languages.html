@@ -1,35 +1,22 @@
 <!DOCTYPE html>
 <html>
+<html>
 <head>
-  
-        <link rel="icon" href="data:,">
-        
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        
-   <title></title>
-        
-
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        
-   <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
-        
-   <link rel="stylesheet" type="text/css" href="../TI.css" />
-        
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        
- </script>
-        
-   <script type="text/javascript" src="../mathjax_setup.js"></script>
-        
-   <script type="text/javascript" src="../carousel.js"></script>
-        
-   <script type="text/javascript" src="../numbered-title.js"></script>
-        
-   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <link rel="icon" href="data:,">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+  <link rel="stylesheet" type="text/css" href="../TI.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="../mathjax_setup.js"></script>
+  <script type="text/javascript" src="../mathjax_setup.js"></script>
+  <script type="text/javascript" src="../carousel.js"></script>
+  <script type="text/javascript" src="../numbered-title.js"></script>
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
-<body>
+</body>
       <section
         count={20}
         title_gr="Sprachen - Einführung und Beispiele"
@@ -75,23 +62,23 @@
                   besteht.
                 </p>
                 <pre class="container">
-                  thomas.schmitz@hszg.de 
+                  thomas.schmitz@hszg.de                              
                   <span class="comment">
                     Gültig
                   </span>
-                  dominik@cs.sjtu.edu.cn 
+                  dominik@cs.sjtu.edu.cn                              
                   <span class="comment">
                     Gültig
                   </span>
-                  raffaela@mayer@gmail.com 
+                  raffaela@mayer@gmail.com                            
                   <span class="comment">
                     Ungültig: @ kommt zweimal vor
                   </span>
-                  lorenz.klein@greatest/company/in/the/world.com 
+                  lorenz.klein@greatest/company/in/the/world.com      
                   <span class="comment">
                     Ungültig: Domain-Name darf kein / enthalten
                   </span>
-                  .schlaumeier@gmail.com 
+                  .schlaumeier@gmail.com                              
                   <span class="comment">
                     Ungültig: Google will kein . an erster Stelle
                   </span>
@@ -828,51 +815,51 @@
                   Detail lesen):
                 </p>
                 <pre class="listing container">
-                    
+                  
                   <code>
                     find : Bst -> String -> Maybe String``find tree key =
                   </code>
-                    
+                   
                   <code>
                     case tree of
                   </code>
-                    
+                   
                   <code>
                     Empty _ ->
                   </code>
-                    
+                   
                   <code>
                     Nothing``
                   </code>
-                    
+                   
                   <code>
                     Node ( keyHere, valueHere ) leftChild rightChild ->
                   </code>
-                    
+                   
                   <code>
                     if key == keyHere then
                   </code>
-                    
+                   
                   <code>
                     Just valueHere``
                   </code>
-                    
+                   
                   <code>
                     else if key&lt; keyHere then
                   </code>
-                    
+                   
                   <code>
                     find leftChild key``
                   </code>
-                    
+                   
                   <code>
                     else
                   </code>
-                    
+                   
                   <code>
                     find rightChild key
                   </code>
-                    
+                  
                 </pre>
                 <p>
                   Als letztes Beispiel sehen Sie hier eine svg-Datei. Dies ist ein Dateiformat für Vektorgrafiken.
@@ -1336,11 +1323,11 @@
                   <i>
                     Benutzername
                   </i>
-                    
+                  
                   <code>
                     @
                   </code>
-                    
+                  
                   <i>
                     Domainnname
                   </i>
@@ -1772,13 +1759,13 @@
                 <pre
                   id="email-context-free-grammar"
                   class="container listing">
-                    
+                  
                   <code>
-                    <EmailAddress> 
+                    <EmailAddress>    
                     <b>
                       ->
                     </b>
-                     &lt;User> @&lt;Domain>``<Domain> 
+                     &lt;User> @&lt;Domain>``<Domain>          
                     <b>
                       ->
                     </b>
@@ -1786,7 +1773,7 @@
                     <b>
                       |
                     </b>
-                    &lt;Label> .&lt;Domain>``<User> 
+                    &lt;Label> .&lt;Domain>``<User>            
                     <b>
                       ->
                     </b>
@@ -1794,7 +1781,7 @@
                     <b>
                       |
                     </b>
-                    &lt;NameBlock> .&lt;User>``<NameBlock> 
+                    &lt;NameBlock> .&lt;User>``<NameBlock>       
                     <b>
                       ->
                     </b>
@@ -1802,7 +1789,7 @@
                     <b>
                       |
                     </b>
-                    &lt;AlphaNum>&lt;NameBlock>``<Label> 
+                    &lt;AlphaNum>&lt;NameBlock>``<Label>           
                     <b>
                       ->
                     </b>
@@ -1810,7 +1797,7 @@
                     <b>
                       |
                     </b>
-                    &lt;AlphaNumOrDash>&lt;Label>``<AlphaNumOrDash> 
+                    &lt;AlphaNumOrDash>&lt;Label>``<AlphaNumOrDash>  
                     <b>
                       ->
                     </b>
@@ -1820,9 +1807,9 @@
                     </b>
                      -
                   </code>
-                    
+                   
                   <code>
-                    <AlphaNum> 
+                    <AlphaNum>        
                     <b>
                       ->
                     </b>
@@ -1926,7 +1913,7 @@
                     <b>
                       |
                     </b>
-                     z``<AlphaNum> 
+                     z``<AlphaNum>        
                     <b>
                       ->
                     </b>
@@ -2032,7 +2019,7 @@
                     </b>
                      Z
                   </code>
-                    
+                  
                 </pre>
                 <h2>
                   Ein Beispiel einer formalen Grammatik und einer Ableitung
@@ -2107,17 +2094,17 @@
                   Grammatik:
                 </p>
                 <pre class="container">
-                    
+                  
                   <code>
-                    <EmailAddress> 
+                    <EmailAddress>  
                     <b>
                       ->
                     </b>
                     &lt;User>@<Domain>
                   </code>
-                    
+                   
                   <code>
-                      
+                    
                     <b>
                       ->
                     </b>
@@ -2180,37 +2167,37 @@
                   </b>
                    d.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash>e` 
                   <code>
-                      
+                    
                     <b>
                       ->
                     </b>
                      d.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.de
                   </code>
-                    
+                   
                   <code>
-                      
+                    
                     <b>
                       ->
                     </b>
                      d.s@<AlphaNumOrDash>.<AlphaNumOrDash>.de
                   </code>
-                    
+                   
                   <code>
-                      
+                    
                     <b>
                       ->
                     </b>
                      d.s@<AlphaNumOrDash>.b.de
                   </code>
-                    
+                   
                   <code>
-                      
+                    
                     <b>
                       ->
                     </b>
                      d.s@a.b.de
                   </code>
-                    
+                   
                 </pre>
                 <p>
                   Nach dem gleichen Schema könnten wir 
@@ -2361,7 +2348,7 @@
                       4.0.1
                     </NumberedTitle>
                   </span>
-                    
+                  
                   <b>
                     (Kontextfreie Grammatik).
                   </b>
@@ -2540,7 +2527,7 @@
                       4.0.4
                     </NumberedTitle>
                   </span>
-                    
+                  
                   <b>
                     (Die von einer Grammatik erzeugte Sprache).
                   </b>
@@ -2685,7 +2672,7 @@
                 </p>
               </div>
               <p>
-                  
+                
                 <b>
                   Die gute Nachricht:
                 </b>
@@ -2694,7 +2681,7 @@
                 zugrund legen. 
               </p>
               <p>
-                  
+                
                 <b>
                   Die schlechte Nachricht:
                 </b>
@@ -2708,7 +2695,7 @@
                 \(x\) ist. Dies ist aber, was wir in der Praxis, zum Beispiel bei Compilern, erwarten.
               </p>
               <p>
-                  
+                
                 <b>
                   Die gute Nachricht:
                 </b>

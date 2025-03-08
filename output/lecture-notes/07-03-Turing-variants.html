@@ -1,35 +1,22 @@
 <!DOCTYPE html>
 <html>
+<html>
 <head>
-  
-        <link rel="icon" href="data:,">
-        
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        
-   <title></title>
-        
-
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        
-   <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
-        
-   <link rel="stylesheet" type="text/css" href="../TI.css" />
-        
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        
- </script>
-        
-   <script type="text/javascript" src="../mathjax_setup.js"></script>
-        
-   <script type="text/javascript" src="../carousel.js"></script>
-        
-   <script type="text/javascript" src="../numbered-title.js"></script>
-        
-   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <link rel="icon" href="data:,">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+  <link rel="stylesheet" type="text/css" href="../TI.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="../mathjax_setup.js"></script>
+  <script type="text/javascript" src="../mathjax_setup.js"></script>
+  <script type="text/javascript" src="../carousel.js"></script>
+  <script type="text/javascript" src="../numbered-title.js"></script>
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
-<body>
+</body>
       <section
         count={45}
         title_gr="Mehrband-Maschinen, nichtdeterministische Maschinen"
@@ -234,7 +221,7 @@
                   </tt>
                   .
                   <p>
-                      
+                    
                     <b>
                       Tip.
                     </b>
@@ -263,7 +250,7 @@
                   </p>
                 </div>
                 <p>
-                    
+                  
                   <b>
                     Berechnete Sprache, berechnete Funktion.
                   </b>
@@ -296,7 +283,7 @@
                       7.4.2
                     </NumberedTitle>
                   </span>
-                    
+                  
                   <b>
                     (Einband-Turingmaschine simuliert Mehrband-Turingmaschine)
                   </b>
@@ -319,7 +306,7 @@
                   </p>
                 </div>
                 <div class="well container">
-                    
+                  
                   <b>
                     Beweis.
                   </b>
@@ -591,7 +578,7 @@
                 </a>
                 :
                 <pre class="listing container">
-                    
+                  
                   <code>
                     name: replace
                     <i>
@@ -599,27 +586,27 @@
                     </i>
                     by_c``init: init
                   </code>
-                    
+                   
                   <code>
                     accept: accept
                   </code>
-                    
+                   
                   <code>
                     ``init, a``init, a, >
                   </code>
-                    
+                   
                   <code>
                     ``init, b``init, c, >
                   </code>
-                    
+                   
                   <code>
                     ``init, _
                   </code>
-                    
+                   
                   <code>
                     accept, _, >
                   </code>
-                    
+                   
                 </pre>
                 <p>
                   Ungleich schwieriger ist die Aufgabe, jedes \(b\) durch ein \(bc\) zu
@@ -674,7 +661,7 @@
                   q,  x, _
                   r', x, _, -, -
                   r', _, c
-                  r,  c, _ 
+                  r,  c, _   
                   <span class="comment">
                     // für jedes Zeichen c
                   </span>
@@ -772,7 +759,7 @@
                   und akzeptiert, wenn es ein \(i\) gibt mit \(k = k_i\) und in diesem
                   Falle \(v_i\) auf das Ausgabeband schreibt.
                   <p>
-                      
+                    
                     <b>
                       Tip:
                     </b>
@@ -863,7 +850,7 @@
                       7.4.3
                     </NumberedTitle>
                   </span>
-                    
+                  
                   <b>
                     (Akzeptieren und Entscheiden bei nichtdeterministischen Turingmaschinen).
                   </b>
@@ -983,39 +970,39 @@
                   Programmiersprache: er probiert alle Möglichkeiten durch.
                 </p>
                 <pre class="listing container">
-                    
+                  
                   <code>
                     module SubsetSum exposing (..)``````subsetSum : List Int -> Int -> Bool``subsetSum prices amount =
                   </code>
-                    
+                   
                   <code>
                     case ( prices, amount ) of
                   </code>
-                    
+                   
                   <code>
                     ( [], 0 ) ->
                   </code>
-                    
+                   
                   <code>
                     True``
                   </code>
-                    
+                   
                   <code>
                     ( x :: rest, _ ) ->
                   </code>
-                    
+                   
                   <code>
                     subsetSum rest amount || subsetSum rest (amount - x)``
                   </code>
-                    
+                   
                   <code>
                     ( [], _ ) ->
                   </code>
-                    
+                   
                   <code>
                     False
                   </code>
-                    
+                  
                 </pre>
                 <p>
                   Auf einer deterministischen Turingmaschine wäre das deutlich
@@ -1030,7 +1017,7 @@
                       7.4.5
                     </NumberedTitle>
                   </span>
-                    
+                  
                   <b>
                     (Nichtdeterministische Turingmaschinen deterministischsimulieren)
                   </b>
@@ -1044,7 +1031,7 @@
                   </p>
                 </div>
                 <div class="well container">
-                    
+                  
                   <b>
                     Beweis.
                   </b>

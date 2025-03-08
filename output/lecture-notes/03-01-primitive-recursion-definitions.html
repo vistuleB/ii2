@@ -1,35 +1,22 @@
 <!DOCTYPE html>
 <html>
+<html>
 <head>
-  
-        <link rel="icon" href="data:,">
-        
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        
-   <title></title>
-        
-
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        
-   <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
-        
-   <link rel="stylesheet" type="text/css" href="../TI.css" />
-        
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        
- </script>
-        
-   <script type="text/javascript" src="../mathjax_setup.js"></script>
-        
-   <script type="text/javascript" src="../carousel.js"></script>
-        
-   <script type="text/javascript" src="../numbered-title.js"></script>
-        
-   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <link rel="icon" href="data:,">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+  <link rel="stylesheet" type="text/css" href="../TI.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="../mathjax_setup.js"></script>
+  <script type="text/javascript" src="../mathjax_setup.js"></script>
+  <script type="text/javascript" src="../carousel.js"></script>
+  <script type="text/javascript" src="../numbered-title.js"></script>
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
-<body>
+</body>
       <section
         count={16}
         title_gr="Rekursion: Motivation und Definitionen"
@@ -122,7 +109,7 @@
                   \end{align*}$$
                   Auch die Stelligkeit \(n\) lasse ich oft weg und schreibe einfach \(\pi_k\) statt \(\pi^n_k\).
                 </p>
-                  
+                
                 <b>
                   Kombinatoren.
                 </b>
@@ -135,7 +122,7 @@
                       3.1.1
                     </NumberedTitle>
                   </span>
-                    
+                  
                   <b>
                     (Komposition)
                   </b>
@@ -166,7 +153,7 @@
                       3.1.2
                     </NumberedTitle>
                   </span>
-                    
+                  
                   <b>
                     Primitive Rekursion
                   </b>
@@ -186,35 +173,35 @@
                   Wenn Sie Rekursionshasser sind, dann können Sie sich es als Funktion mit einer`for`-Schleife
                   vorstellen, in der nur eine lokale Variable erlaubt ist:
                   <pre class="listing">
-                      
+                    
                     <code>
                       def PrimRec(g, h):
                     </code>
-                      
+                     
                     <code>
                       def f(t,*x):
                     </code>
-                      
+                         
                     <code>
                       temp = g(*x)
                     </code>
-                      
+                         
                     <code>
                       for i in range(t):
                     </code>
-                      
+                     
                     <code>
                       temp = h(temp, i, *x)
                     </code>
-                      
+                         
                     <code>
                       return temp
                     </code>
-                      
+                     
                     <code>
                       return f
                     </code>
-                      
+                     
                   </pre>
                   Die Forderung, dass man nur 
                   <i>
@@ -290,15 +277,15 @@
                   <pre
                     style="color:red; background-color: yellow;"
                     class="listing">
-                      
+                    
                     <code>
                       def add(x,y):
                     </code>
-                      
+                     
                     <code>
                       return x + y
                     </code>
-                      
+                    
                   </pre>
                   <p>
                     schreiben, denn unsere "Programmiersprache" ist Primitive Rekursion, nicht Python! Wir
@@ -325,11 +312,11 @@
                     \(g = \pi_0\) und \(h = {\comp}(\succ, \pi_0)\), also
                   </p>
                   <pre class="listing">
-                      
+                    
                     <code>
                       p0 = Proj(0)``add = PrimRec (p0, Comp(succ,p0))
                     </code>
-                      
+                    
                   </pre>
                 </div>
                 <div class="well well-lg numbered-exercise container">
@@ -356,7 +343,7 @@
                     </li>
                   </ol>
                   <p>
-                      
+                    
                     <b>
                       Tip:
                     </b>
@@ -385,25 +372,25 @@
                   </p>
                   <ul>
                     <li>
-                        
+                      
                       <code>
                         isPositive
                       </code>
-                        
+                      
                     </li>
                     <li>
-                        
+                      
                       <code>
                         greaterThan, lessThan, greaterEqual, lessEqual
                       </code>
-                        
+                      
                     </li>
                     <li>
-                        
+                      
                       <code>
                         max, min
                       </code>
-                        
+                      
                     </li>
                     <li>
                       `ifThenElse(x,y,z)`: dies soll \(z\) zurückliefern, falls

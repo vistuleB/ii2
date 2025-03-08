@@ -1,35 +1,22 @@
 <!DOCTYPE html>
 <html>
+<html>
 <head>
-  
-        <link rel="icon" href="data:,">
-        
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        
-   <title></title>
-        
-
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        
-   <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
-        
-   <link rel="stylesheet" type="text/css" href="../TI.css" />
-        
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        
- </script>
-        
-   <script type="text/javascript" src="../mathjax_setup.js"></script>
-        
-   <script type="text/javascript" src="../carousel.js"></script>
-        
-   <script type="text/javascript" src="../numbered-title.js"></script>
-        
-   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <link rel="icon" href="data:,">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+  <link rel="stylesheet" type="text/css" href="../TI.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="../mathjax_setup.js"></script>
+  <script type="text/javascript" src="../mathjax_setup.js"></script>
+  <script type="text/javascript" src="../carousel.js"></script>
+  <script type="text/javascript" src="../numbered-title.js"></script>
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
-<body>
+</body>
       <section
         count={38}
         title_gr="kontextfreie Sprachen parsen"
@@ -69,19 +56,19 @@
                 <p>
                   Wir haben drei Methoden kennengelernt, kontextfreie Sprachen zu parsen:
                   rekursiver Abstieg (mit Demoseite 
-                  <a href="../../demos/drawManualGrammar.html">
+                  <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html">
                     drawManualGrammar.html
                   </a>
                   ),
                   die LL-Parser (die die Mengen \(\First_k(X)\) berechnen, wie
                   auf 
-                  <a href="../../demos/drawFirstComputation.html">
+                  <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawFirstComputation.html">
                     drawFirstComputation.html
                   </a>
                   &ensp;demonstriert),
                   und die LR-Parser (die die Teilbäume auf den Stack legen und nach Blüten suchen,
                   hier die Demoseite 
-                  <a href="../../demos/drawLR0ParserPrefixArithmetic.html">
+                  <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawLR0ParserPrefixArithmetic.html">
                     drawLR0ParserPrefixArithmetic
                   </a>
                   für arithmetische Ausdrücke).
@@ -321,11 +308,11 @@
                     \step{} w_i \textnormal{ ist eine Produktion in $G$}\}\)
                   </li>
                   <li>
-                      
+                    
                     <code>
                       for l = 2 .. n
                     </code>
-                      
+                    
                     <ol
                       type="I"
                       class="">
@@ -335,11 +322,11 @@
                           type="i"
                           class="">
                           <li>
-                              
+                            
                             <code>
                               k := i+l
                             </code>
-                              
+                             
                             <span class="comment">
                               # wir betrachten das Interval
                               w[i:k] der Länge l
@@ -352,16 +339,16 @@
                             Initialisiere \(N_{i,k} := \emptyset\)
                           </li>
                           <li>
-                              
+                            
                             <code>
                               for j = i+1 .. k-1:
                             </code>
-                              
+                            
                             <ol
                               type={1}
                               class="">
                               <li>
-                                  
+                                
                                 <code>
                                   for all productions
                                 </code>
@@ -375,41 +362,41 @@
                                 </ol>
                               </li>
                               <li>
-                                  
+                                
                                 <code>
                                   end for all productions
                                 </code>
-                                  
+                                
                               </li>
                             </ol>
                           </li>
                           <li>
-                              
+                            
                             <code>
                               end for j
                             </code>
-                              
+                            
                           </li>
                         </ol>
                       </li>
                       <li>
-                          
+                        
                         <code>
                           end for k
                         </code>
-                          
+                         
                       </li>
                     </ol>
                   </li>
                   <li>
-                      
+                    
                     <code>
                       end for i
                     </code>
-                      
+                     
                   </li>
                   <li>
-                      
+                    
                     <code>
                       return True if
                     </code>
@@ -417,7 +404,7 @@
                     <code>
                       else return False
                     </code>
-                      
+                    
                   </li>
                 </ul>
                 <p>
@@ -450,7 +437,7 @@
                   \(g \cdot n^3\).
                 </div>
                 <p>
-                    
+                  
                   <b>
                     Achtung:
                   </b>

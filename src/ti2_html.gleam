@@ -63,14 +63,6 @@ fn ti2_splitter(
         ),
       ],
       list.index_map(chapter_vxmls, fn(vxml, index) {
-        // use title_attr <- infra.on_none_on_some(
-        //   infra.get_attribute_by_name(vxml, "title_en"),
-        //   with_on_none: Error(Ti2SplitterError(Message(tp <> " missing title_en attribute")))
-        // )
-        // use number_attribute <- infra.on_none_on_some(
-        //   infra.get_attribute_by_name(item, "number"),
-        //   with_on_none: Error(Ti2SplitterError(Message(tp <> " missing number attribute")))
-        // )
         let assert Some(title_attr) = infra.get_attribute_by_name(vxml, "title_en")
         let assert Some(number_attribute) = infra.get_attribute_by_name(vxml, "number")
         let section_name = 
@@ -103,34 +95,25 @@ fn ti2_section_emitter(
 
   let lines =
     list.flatten([
-      // [
-      //   case fragment_type {
-      //     Chapter(_) ->
-      //       BlamedLine(
-      //         blame_us("ti2_fragment_emitter"),
-      //         0,
-      //         "<!DOCTYPE html>\n<html>\n<head>\n",
-      //       )
-      //     _ -> panic as "bad fragment_type"
-      //   },
-      // ],
       [
-        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "<!DOCTYPE html>\n<html>\n<head>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "
-        <link rel=\"icon\" href=\"data:,\">
-        \n   <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">
-        \n   <title></title>
-        \n\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-        \n   <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">
-        \n   <link rel=\"stylesheet\" type=\"text/css\" href=\"../lecture-notes.css\" />
-        \n   <link rel=\"stylesheet\" type=\"text/css\" href=\"../TI.css\" />
-        \n   <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>
-        \n </script>
-        \n   <script type=\"text/javascript\" src=\"../mathjax_setup.js\"></script>
-        \n   <script type=\"text/javascript\" src=\"../carousel.js\"></script>
-        \n   <script type=\"text/javascript\" src=\"../numbered-title.js\"></script>
-        \n   <script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "</head>\n<body>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "<!DOCTYPE html>\n<html>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "<html>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "<head>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"icon\" href=\"data:,\">"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<title></title>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"../lecture-notes.css\" />"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"../TI.css\" />"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script type=\"text/javascript\" src=\"../mathjax_setup.js\"></script>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script type=\"text/javascript\" src=\"../mathjax_setup.js\"></script>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script type=\"text/javascript\" src=\"../carousel.js\"></script>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script type=\"text/javascript\" src=\"../numbered-title.js\"></script>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "</head>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "</body>"),
       ],
       vxml_parser.vxml_to_html_blamed_lines(fragment, 6),
       [
@@ -150,11 +133,43 @@ fn toc_emitter(
   let lines =
     list.flatten([
       [
-        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "<!DOCTYPE html>\n<html>\n<head>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"icon\" href=\"data:,\">\n   <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n   <title></title>\n\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n   <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">\n   <link rel=\"stylesheet\" type=\"text/css\" href=\"./lecture-notes.css\" />\n   <link rel=\"stylesheet\" type=\"text/css\" href=\"./TI.css\" />\n   <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>\n   <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\"></script>\n   <script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>\n   <script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "</head>\n<body>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<div>\n        <p>\n          <a href=\"https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html\">\n            zur Kursübersicht\n          </a>\n        </p>\n      </div>\n      <div class=\"container\" style=\"text-align: center;\">\n        <div style=\"text-align: center; margin-bottom: 4em;\">\n          <h1>\n            <span class=\"coursename\"></span>Theoretische Informatik 2 -\n            Vorlesungsskript\n          </h1>\n          <h3>Bachelor-Studium Informatik</h3>\n          <h3>Dominik Scheder, TU Chemnitz</h3>\n        </div>\n        <div class=\"row content\">\n          <div class=\"col-sm-3 sidenav\" id=\"course-list\"></div>\n          <div class=\"col-sm-9 text-left\">\n            <div id=\"table-of-content-div\"></div>"),
+         BlamedLine(blame_us("ti2_fragment_emitter"), 0, "<!DOCTYPE html>\n<html>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "<html>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "<head>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"icon\" href=\"data:,\">"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<title></title>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">"),
 
+         
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"lecture-notes.css\" />"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"landing-ages.css\" />"),
+
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"TI.css\" />"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script type=\"text/javascript\" src=\"./carousel.js\"></script>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script type=\"text/javascript\" src=\"./numbered-title.js\"></script>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "</head>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "<body>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<div>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "<p>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 6, "<a href=\"https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html\">"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 6, "<a href=\"https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html\">zur Kursübersicht</a></p></div>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "<div class=\"container\" style=\"text-align: center;\">"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "<div style=\"text-align: center; margin-bottom: 4em;\">"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "<h1>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "<span class=\"coursename\"></span>Theoretische Informatik 2 - Vorlesungsskript"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "</h1>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "<h3>Bachelor-Studium Informatik</h3>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "</div>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "<div class=\"row content\">"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "<div class=\"col-sm-3 sidenav\" id=\"course-list\"></div>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "<div class=\"col-sm-9 text-left\">"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "<div id=\"table-of-content-div\"></div>"),
       ],
       vxml_parser.vxmls_to_html_blamed_lines(fragment |> infra.get_children, 6),
       [
