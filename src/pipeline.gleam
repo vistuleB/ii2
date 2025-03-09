@@ -247,6 +247,8 @@ pub fn our_pipeline() -> List(Pipe) {
       #("pre", "p"),
       #("ul", "p"),
       #("ol", "p"),
+      #("p", "p"),
+      #("figure", "p"),
     ]),
     // 31
     generate_ti2_table_of_contents_html(

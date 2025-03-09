@@ -1778,9 +1778,9 @@
                         &lt;EmailAdress&gt; *-&gt;*&lt;User&gt; @&lt;Domain&gt;
                     |> p
 
-                        Wie können wir nun beispielsweise eine ähnliche Ableitungsregeln für `<Domain>`
-                        erstellen? Eine `<Domain>` soll
-                        eine Folge aus mindestens zwei `<Label>` sein, jeweils durch einen
+                        Wie können wir nun beispielsweise eine ähnliche Ableitungsregeln für `&lt;Domain&gt;`
+                        erstellen? Eine `&lt;Domain&gt;` soll
+                        eine Folge aus mindestens zwei `&lt;Label&gt;` sein, jeweils durch einen
                         `.`
                         separiert. Wir erreichen dies, indem wir einen an Rekursion
                         erinnernden Trick anwenden: entweder gibt es genau zwei Labels oder die Domain beginnt mit einem
@@ -1795,9 +1795,9 @@
                         &lt;Domain&gt; *-&gt;*&lt;Label&gt; .&lt;Domain&gt;
                     |> p
 
-                        Wir geben also _zwei_ Möglichkeiten an, wie mit einem `<Domain>` zu
+                        Wir geben also _zwei_ Möglichkeiten an, wie mit einem `&lt;Domain&gt;` zu
                         verfahren ist.
-                        Was ist nun `<Label>`? Dies ist eine nichtleere Folge von in Domainnamen
+                        Was ist nun `&lt;Label&gt;`? Dies ist eine nichtleere Folge von in Domainnamen
                         erlaubten
                         Zeichen.
                         Diese sind alphanumerisch (Buchstaben und Zahlen) und der Strich `-` (in der Praxis
@@ -1813,7 +1813,7 @@
                             Wikipedia:
                             Internationalized Domain Name
                         ).
-                        Wie formulieren wir _nichtleere Folge von ..._ mit unserer `-->`-Notation?
+                        Wie formulieren wir _nichtleere Folge von ..._ mit unserer `--&gt;`-Notation?
                         Wieder mit dem Rekursionstrick:
                     |> pre
                         class container
@@ -1824,7 +1824,7 @@
                         &lt;AlphaNumOrDash&gt; *-&gt;* - 
                     |> p
 
-                        Nun müssen wir noch Regeln für `<AlphaNum>` angeben. Hier führen wir eine
+                        Nun müssen wir noch Regeln für `&lt;AlphaNum&gt;` angeben. Hier führen wir eine
                         weitere
                         Konvention ein: nämlich, dass wir
                         verschiedene Alternativen mit einem senkrechten Strich | separieren:
@@ -1837,14 +1837,14 @@
                     |> p
 
                         Beachten Sie: ich habe hier absichtlich nicht
-                        `<AlphaNum> *->* a *|* ... *|* z`
+                        `&lt;AlphaNum&gt; *-&gt;* a *|* ... *|* z`
                         geschrieben, weil ich in diesem Beispiel wirklich alles ausschreiben wollte und mit der
                         ...-Notation
                         schon wieder etwas menschen- aber nicht maschinenlesbares
                         eingeführt hätte.
                     |> p
 
-                        Wir brauchen noch Regeln für `<User>`. Dies ist ein nichtleerer String aus
+                        Wir brauchen noch Regeln für `&lt;User&gt;`. Dies ist ein nichtleerer String aus
                         alphanumerischen Zeichen und dem Punkt `.`, wobei
                         der Punkt nicht am Anfang und nicht am Ende stehen darf. Also: eine nichtleere Folge von
                         _Namensblöcken_, die jeweils durch `.` separiert sind,
@@ -1888,8 +1888,8 @@
 
                             Eine Menge \(N\) abstrakter Symbole, hier
                             $$
-                            N = \{\texttt{<EmailAddress>,&lt;Domain>,
-                            &lt;User>,<NameBlock>,<Label>,<AlphaNumOrDash>,<AlphaNum>}
+                            N = \{\texttt{&lt;EmailAddress&gt;,&lt;Domain&gt;,
+                            &lt;User&gt;,&lt;NameBlock&gt;,&lt;Label&gt;,&lt;AlphaNumOrDash&gt;,&lt;AlphaNum&gt;}
                             \} \ .
                             $$
                             Diese Menge nennen wir die _nichtterminalen Symbole_. Wir verlangen, dass \(N \cap
@@ -1907,7 +1907,7 @@
                             Ein Startsymbol \(S \in N\), das angibt, wo wir mit unserer Ableitung beginnen sollen. Im
                             obigen
                             Beispiel
-                            sind wir ja an Emailadressen interessiert, also ist `<EmailAddress>` das
+                            sind wir ja an Emailadressen interessiert, also ist `&lt;EmailAddress&gt;` das
                             Startsymbol.
                     |> p
 

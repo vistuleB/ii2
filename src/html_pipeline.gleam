@@ -23,10 +23,14 @@ pub fn html_pipeline() -> List(Pipe) {
     identity(),
     // 2
     find_replace_in_descendants_of([
-      #("pre", [
+      #("div", [
         #("<", "&lt;"),
         #(">", "&gt;"),
-      ])
+      ]),
+      // #("code", [
+      //   #("<", "&lt;"),
+      //   #(">", "&gt;"),
+      // ])
     ]),
     // 3
     remove_chapter_number_from_title(),

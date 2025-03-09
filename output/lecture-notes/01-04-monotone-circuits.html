@@ -139,13 +139,15 @@
                 sein, dass ein Schaltkreis ohne Negation immer eine monotone
                 Funktion berechnet. Allerdings stimmt der Umkehrschluss nicht.
                 Der Schaltkreis
-                <figure>
-                  <img
-                    style="height: 10em"
-                    src="../img/circuits/monotone-or-not.svg"
-                    loading="lazy"
-                  />
-                </figure>
+              </p>
+              <figure>
+                <img
+                  style="height: 10em"
+                  src="../img/circuits/monotone-or-not.svg"
+                  loading="lazy"
+                />
+              </figure>
+              <p>
                 ist nicht monoton (beachten Sie hinter der
                 \(\bar{y}\)-Schreibweise versteckte NOT-Gate), ist aber
                 äquivalent zu der offensichtlich monotonen Funktion \(x\).
@@ -561,25 +563,29 @@ return false;
                   Induktionshypothese gibt es also monotone Schaltkreise für
                   \(f_0\) und \(f_1\). Wir kombinieren diese mit einem
                   `if-then-else`-Gate und erhalten:
-                  <figure>
-                    <img
-                      style="height: 15em"
-                      src="../img/circuits/top-down-if-then-else-2.svg"
-                      loading="lazy"
-                    />
-                  </figure>
+                </p>
+                <figure>
+                  <img
+                    style="height: 15em"
+                    src="../img/circuits/top-down-if-then-else-2.svg"
+                    loading="lazy"
+                  />
+                </figure>
+                <p>
                   Die "durchgetrichenen" Kabel bedeuten, dass hier mehrere Kabel
                   parallel laufen (also hier \(n-1\) viele). Erkennen Sie das
                   Problem mit der Konstruktion? Klar: das `if-then-else`-Gate
                   ist nicht monoton. Unser Schaltkreis schaut also in
                   Wirklichkeit so aus:
-                  <figure>
-                    <img
-                      style="height: 18em"
-                      src="../img/circuits/top-down-if-then-else-3.svg"
-                      loading="lazy"
-                    />
-                  </figure>
+                </p>
+                <figure>
+                  <img
+                    style="height: 18em"
+                    src="../img/circuits/top-down-if-then-else-3.svg"
+                    loading="lazy"
+                  />
+                </figure>
+                <p>
                   und enthält ein NOT-Gate. Aber klar: wir können natürlich
                   nicht die Konstruktion aus dem vorherigen Beweis wiederholen
                   und hoffen, dass alles klappt. Die Beweistechnik heißt ja auch
@@ -590,13 +596,15 @@ return false;
                   eine NOT-Gate entfernen? Spontan fallen mir zwei Wege ein: wir
                   können das NOT-Gate einfach durch ein gate-loses Kabel
                   ersetzen oder das Kabel einfach ganz weglassen, also:
-                  <figure>
-                    <img
-                      style="height: 18em"
-                      src="../img/circuits/top-down-if-then-else-4.svg"
-                      loading="lazy"
-                    />
-                  </figure>
+                </p>
+                <figure>
+                  <img
+                    style="height: 18em"
+                    src="../img/circuits/top-down-if-then-else-4.svg"
+                    loading="lazy"
+                  />
+                </figure>
+                <p>
                   Der linke Schaltkreis gibt uns, als Formel geschrieben, $$ (x
                   \wedge f_1) \vee (x \wedge f_0) \equiv x \wedge (f_1 \vee f_0)
                   \ . $$ Ich erlaube mir hier, aus Bequemlichkeit einfach
@@ -614,13 +622,15 @@ return false;
                   rechte \(\wedge\)-Gate hat nur einen Input, kann also
                   weggelassen werden (d.h. durch ein Kabel ersetzt werden); wir
                   erhalten den monotonen Schaltkreis
-                  <figure>
-                    <img
-                      style="height: 18em"
-                      src="../img/circuits/top-down-if-then-else-monotone.svg"
-                      loading="lazy"
-                    />
-                  </figure>
+                </p>
+                <figure>
+                  <img
+                    style="height: 18em"
+                    src="../img/circuits/top-down-if-then-else-monotone.svg"
+                    loading="lazy"
+                  />
+                </figure>
+                <p>
                   bzw. als Formel: $$ (x_1 \wedge f_1) \vee f_0 \ . $$ Wir
                   müssen nun zeigen, dass dies wirklich \(f\) berechnet, also
                 </p>
@@ -679,15 +689,15 @@ return false;
                   Lesbarkeit statt \(f(x_1,\dots,x_n)\) einfach \(f\)
                   schreiben); per Induktion können wir für \(f_1, f_0\) monotone
                   Schaltkreise finden, und somit ist
-                  <figure>
-                    <img
-                      style="height: 18em"
-                      src="../img/circuits/top-down-if-then-else-monotone-finished.svg"
-                      loading="lazy"
-                    />
-                  </figure>
-                  ein monotoner Schaltkreis für \(f\).
                 </p>
+                <figure>
+                  <img
+                    style="height: 18em"
+                    src="../img/circuits/top-down-if-then-else-monotone-finished.svg"
+                    loading="lazy"
+                  />
+                </figure>
+                <p>ein monotoner Schaltkreis für \(f\).</p>
                 <span class="qed">\(\square\)</span>
               </div>
               <div class="well container">
