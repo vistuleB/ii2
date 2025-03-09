@@ -61,7 +61,7 @@ window.MathJax = {
       u: "\\mathbf{u}",
       v: "\\mathbf{v}",
       w: "\\mathbf{w}",
-      fcube: "\\cube^n \\\rightarrow \\cube",
+      fcube: "\\cube^n \\rightarrow \\cube",
       pred: "\\textnormal{pred}",
       pair: "\\textnormal{pair}",
       first: "\\textnormal{first}",

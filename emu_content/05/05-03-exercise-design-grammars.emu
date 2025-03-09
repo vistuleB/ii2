@@ -85,16 +85,17 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Geben Sie folgende Grammatik in die App ein:
                         |> pre
 
-                            S -> ;
-                            S -> "("S")"S ;
-                            S -> "(" S "]" S;
+                            S -&gt; ;
+                            S -&gt; "("S")"S ;
+                            S -&gt; "(" S "]" S;
                         |> p
 
                             Was ist die erzeugte Sprache? Können Sie sie in Worten beschreiben?
@@ -115,10 +116,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Schreiben Sie eine kontextfreie Grammatik für die Sprache aller
                         "korrekten" URLs; also Folgen von mindestens zwei _Labels_, die
                         durch `.` separiert sind. Sie können den "Regelvorschlag"
@@ -136,10 +138,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Entwerfen Sie eine Grammatik für arithmetische Ausdrücke im Racket-Stil, also
                         |> pre
 
@@ -155,10 +158,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Wiederholen Sie die vorherige Übung für arithmetische Ausdrücke in der uns
                         geläufigen Infix-Notation. Hierbei sollten die Konventionen Punkt-vor-Strich
                         beachtet werden. Im Ableitungsbaum von
@@ -171,29 +175,35 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                        *(Challenge)*Geben Sie die Grammatik hier ein:
+                            &ensp;
+                        *(Challenge)*
+                        Geben Sie die Grammatik hier ein:
                         |> pre
 
-                            S -> "("S")"S;
-                            S -> "["S"("S;
-                            S -> ;
+                            S -&gt; "("S")"S;
+                            S -&gt; "["S"("S;
+                            S -&gt; ;
                         Überlegen Sie, was diese "bedeutet". Sie sehen, die Grammatik ist
                         nicht eindeutig. Das Wort `[([()(` hat zwei
-                        verschiedene Ableitungsbäume. Können Sie eine äquivalente_eindeutige_ Grammatik schreiben?
+                        verschiedene Ableitungsbäume. Können Sie eine äquivalente
+                        _eindeutige_ Grammatik schreiben?
                     |> div
                         class well well-lg numbered-exercise container
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                        *(Challenge)*Die folgende Grammatik hat User _babou_auf 
+                            &ensp;
+                        *(Challenge)*
+                        Die folgende Grammatik hat User _babou_
+                        auf 
                         |> a
                             href https://cstheory.stackexchange.com/questions/22520/example-of-context-free-grammar-that-triggers-exponential-behaviour-without-memo
 
@@ -202,8 +212,8 @@
                         bei der Sie exponentiell große Backtrack-Bäume bekommen können:
                         |> pre
 
-                            S ->  "a" X "b" | "a" X "c";
-                            X -> "a" | "a" X | "a" X X;
+                            S -&gt;  "a" X "b" | "a" X "c";
+                            X -&gt; "a" | "a" X | "a" X X;
                         Das ist aber keine Kunst, da die Grammatik uneindeutig ist.
                         Können Sie eine _eindeutige_ Grammatik angebene, die ähnlich
                         exponentielles Verhalten zeigt? Exponentiell heißt: mit jedem
@@ -214,10 +224,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         *(Super-Challenge; ich hab selbst keine Lösung)*.
                         Finden Sie eine kontextfreie Sprache \(L\), für die _jede_ Grammatik,
                         die \(L\) erzeugt, unter exponentiell großen Backtrack-Bäumen leidet.

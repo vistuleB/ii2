@@ -69,10 +69,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Sei \(n\) eine ungerade Zahl. Zeigen Sie, dass \(\maj_n\) für genau
                         die Hälfte aller \(2^n\) möglichen Eingaben eine 1 ausgibt (und für die
                         andere Hälfte eine 0).
@@ -126,7 +127,11 @@
                             data-counter theorem
                             data-label mid-level-lower-bound
 
-                            Lemma.
+                            Lemma 
+                            |> NumberedTitle
+
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;.
                         Es gilt
                         $$
                         {n \choose {\ceil{n/2}}} \geq \frac{2^n}{n+1} \ .
@@ -134,7 +139,8 @@
                     |> div
                         class well container
 
-                        *Beweis.*Sei \(k \in \{1,\dots,n\}\). Vergleichen wir \({n \choose k}\) mit \({n \choose k-1}\):
+                        *Beweis.*
+                        Sei \(k \in \{1,\dots,n\}\). Vergleichen wir \({n \choose k}\) mit \({n \choose k-1}\):
                         \begin{align*}
                         \frac{{n \choose k}}{{n \choose k-1}}&amp;=
                         \frac{ \frac{n!}{k! (n-k)!}}{\frac{n!}{ (k-1)! (n-k+1)!}} = \frac{n-k+1}{k}
@@ -255,10 +261,17 @@
                     |> pre
                         class listing
 
-                        `def binomial(n,k):` `if k == 0 or k == n:` `return 1` 
+                        `def binomial(n,k):`
 
-                        &ensp;`else:` `return binomial(n-1,k-1) + binomial(n-1,k)`
-                    der exponentielle Laufzeit aufweist, und der effizienten Implementierung mittels_Dynamic Programming_, bei welchem wir uns die Zwischenergebnisse merken.
+                        &ensp;`if k == 0 or k == n:`
+
+                        &ensp;`return 1` 
+
+                        &ensp;`else:`
+
+                        &ensp;`return binomial(n-1,k-1) + binomial(n-1,k)`
+                    der exponentielle Laufzeit aufweist, und der effizienten Implementierung mittels
+                    _Dynamic Programming_, bei welchem wir uns die Zwischenergebnisse merken.
                     |> p
 
                         Um Größe und Tiefe des Schaltkreises zu analysieren, machen wir
@@ -275,10 +288,11 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Die Funktion
                         \(\maj_n (x_1,\dots,x_n)\) kann mit einem Schaltkreis der Größe \(O(n^2)\),
                         Tiefe \(O(n)\) und Fan-in 2 berechnet werden.
@@ -303,10 +317,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Bestimmen Sie asymptotisch die Größe und die Tiefe dieses Schaltkreises.
                         Achten Sie besonders bei der Berechnung der Größe darauf, dass die untersten Add-Gadgets
                         ja 1-stellige oder dann 2-stellige Zahlen addieren müssen und erst die weniger obersten Gadgets
@@ -324,7 +339,11 @@
                         |> span
                             class numbered-title
 
-                            Lemma (2-for-3 Adder)
+                            Lemma 
+                            |> NumberedTitle
+
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;&ensp;(2-for-3 Adder)
                         Es gibt einen Schaltkreis mit \(O(n)\) Gates,
                         Tiefe 2 und Fan-In 2, der als Input drei
                         \(n\)-stellige Binärzahlen \(x,y,z\) nimmt
@@ -336,7 +355,8 @@
                     |> div
                         class well container
 
-                        *Beweis.*Ich demonstriere das Beweisprinzip erst einmal mit drei Zahlen in Basis 10:
+                        *Beweis.*
+                        Ich demonstriere das Beweisprinzip erst einmal mit drei Zahlen in Basis 10:
                         |> figure
                             |> img
                                 style height:10em
@@ -392,11 +412,11 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            .
+                            &ensp;.
                         Die Konstruktion mit 2-for-3-Addierern gibt uns einen Schaltkreis
                         für Majority mit Fan-in 2, Tiefe \(O(\log n)\) und
                         Größe \(O (n \log n)\)
@@ -406,10 +426,11 @@
                             |> span
                                 class numbered-title
 
-                                Übungsaufgabe
+                                Übungsaufgabe 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                &ensp;
                             Führen Sie eine genauere Abschätzung der Größe durch. Untersuchen Sie insbesondere:
                         |> ol
                             |> li
@@ -469,10 +490,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         dass polynomiell viele (in diesem Falle: \(O(n^2)\) viele) Gates ausreichen.
                         Zeigen Sie, wie die gerade skizzierte Konstruktion so ausgeführt werden kann,
                     |> h3
@@ -483,17 +505,18 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            .
+                            &ensp;.
                         Es gibt einen monotonen Schaltkreis mit Fan-in 2, Tiefe \(O(\log n)\) und Größe
                         \(\poly(n)\), der \(\maj_n\) berechnet.
                     |> div
                         class well container
 
-                        *Beweis.*Die Beweismethode, die wir verwenden, ist womöglich neu für Sie. Wir verwenden
+                        *Beweis.*
+                        Die Beweismethode, die wir verwenden, ist womöglich neu für Sie. Wir verwenden
                         bei der Konstruktion des Schaltkreises _Zufall_; am Ende werden
                         wir zeigen, dass dieser zufällige Schaltkreis mit hoher Wahrscheinlichkeit
                         \(\maj_n\) auf allen möglichen \(2^n\) Inputs korrekt berechnen, und folgern
@@ -508,7 +531,8 @@
                             Während des ganzen Beweises müssen Sie sich vor Augen halten, dass wir
                             bei der Konstruktion des Schaltkreises \(C\) Zufall verwenden;
                             wir nehmen nicht an, dass die Inputs \(x \in \{0,1\}^n \) in irgendeiner
-                            Weise zufällig sind. Wir verwenden also_Wahrscheinlichkeitsverteilungen über Schaltkreisen_, nicht
+                            Weise zufällig sind. Wir verwenden also
+                            _Wahrscheinlichkeitsverteilungen über Schaltkreisen_, nicht
                             von über Inputs. Zuerst definieren wir
                             die _Signalstärke_ von Verteilungen über Schaltkreise.
                         |> div
@@ -516,13 +540,14 @@
                             |> span
                                 class numbered-title
 
-                                Definition
+                                Definition 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;(Signalstärke)
+                                &ensp;&ensp;(Signalstärke)
                             Sei \(\mathcal{C}\) eine Verteilung über Schaltkreise mit Input-Variablen
-                            \(x_1,\dots,x_n\). Wir sagen, dass \(\mathcal{C}\) _Signalstärke mindestens $\delta$_hat, wenn
+                            \(x_1,\dots,x_n\). Wir sagen, dass \(\mathcal{C}\) _Signalstärke mindestens $\delta$_
+                            hat, wenn
                             $$
                             \forall x \in \{0,1\}: \quad \Pr_{C \in \mathcal{C}} [C(x) = \maj_n(x)]
                             \geq \frac{1 + \delta}{2}
@@ -539,7 +564,11 @@
                             |> span
                                 class numbered-title
 
-                                Lemma.
+                                Lemma 
+                                |> NumberedTitle
+
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;.
                             Es gibt eine Wahrscheinlichkeitsverteilung \(\mathcal{C}_0\) über monotone Schaltkreise der
                             Größe 1,
                             die Signalstärke \(\frac{1}{n}\) hat.
@@ -555,7 +584,8 @@
                         |> div
                             class well subtheorem
 
-                            *Beweis.*Der Schaltkreis bzw. die Wahrscheinlichkeitsverteilung ist extrem einfach.
+                            *Beweis.*
+                            Der Schaltkreis bzw. die Wahrscheinlichkeitsverteilung ist extrem einfach.
                             Wir wählen zufällig einen Index \(I \in \{1,\dots,n\}\) und
                             geben \(x_I\) als unseren Schaltkreis \(C\) (bestehend aus einem einzigen Input-Gate,
                             das gleichzeitig das Output-Gate ist) aus. Dieser Schaltkreis
@@ -614,7 +644,11 @@
                             |> span
                                 class numbered-title
 
-                                Lemma
+                                Lemma 
+                                |> NumberedTitle
+
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             Falls \(\mathcal{C}\) eine Verteilung über Schaltkreise der Tiefe
                             \(d\) und Größe \(s\) ist und \(\mathcal{C}\) Signalstärke \(\delta\) hat, dann gilt:
                             |> ol
@@ -634,7 +668,8 @@
                             class well container-fluid
                             |> p
 
-                                *Beweis.*Wir betrachten ein festes $\x \in \cube^n$ mit $\maj_n(\x) = 1$; der
+                                *Beweis.*
+                                Wir betrachten ein festes $\x \in \cube^n$ mit $\maj_n(\x) = 1$; der
                                 Fall $\maj_n(\x) = 0$ ist analog. Wir definieren
                                 nun $U := C_1(\x)$, $V := C_2(\x)$ und $W := C_3(\x)$. Da
                                 $C_1, C_2, C_3 \sim \mathcal{C}$ zufällige Schaltkreise sind, sind $U, V, W$
@@ -704,11 +739,11 @@
                                 |> span
                                     class numbered-title
 
-                                    Behauptung
+                                    Behauptung 
                                     |> NumberedTitle
 
                                         ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                    .
+                                    &ensp;.
                                 &ensp;Wenn $\mathcal{C}$
                                 Fehlerwahrscheinlichkeit
                                 $\epsilon$ hat, dann hat $\mathcal{C}^{\otimes 3}$ Fehlerwahrscheinlichkeit
@@ -748,7 +783,8 @@
 
                             Qualitativ sehen wir: solange $\delta_i \leq 1/2$ gilt, wächst die Signalstärke exponentiell
                             an. Dieses exponentielle Wachstum kann natürlich nicht beliebig weitergehen. Jenseits
-                            $\delta_i \leq 1/2$ hört das auf, dafür _fällt_ nun die Fehlerwahrscheinlichkeit_doppelt exponentiell_. Für $j^* := \log_{3/2} n$ gilt dann
+                            $\delta_i \leq 1/2$ hört das auf, dafür _fällt_ nun die Fehlerwahrscheinlichkeit
+                            _doppelt exponentiell_. Für $j^* := \log_{3/2} n$ gilt dann
                         \begin{align*}
                         \epsilon_{i^* + 2 + j^*} \leq \pfrac{1}{4}^{n} \lt 2^{-n} \ .
                         \end{align*}
@@ -854,10 +890,11 @@
                             |> span
                                 class numbered-title
 
-                                Übungsaufgabe
+                                Übungsaufgabe 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                &ensp;
                             Präzisieren Sie die Größe von Valiants Schaltkreis und bestimmen ein $c \in \R$, so dass
                             er die Größe $\Theta(n^c)$ hat.
                     |> p

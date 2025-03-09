@@ -54,18 +54,22 @@
                             loading lazy
                     |> p
 
-                        Ein Pfeil beschreibt also nicht unbedingt einen Zustandsübergang, der_geschieht_, sondern einen, der _möglich_ ist. Formal
-                        gesprochen ist \(\delta\) nun keine Funktion mehr, sondern eine_Relation_:
+                        Ein Pfeil beschreibt also nicht unbedingt einen Zustandsübergang, der
+                        _geschieht_, sondern einen, der _möglich_ ist. Formal
+                        gesprochen ist \(\delta\) nun keine Funktion mehr, sondern eine
+                        _Relation_:
                     |> div
                         class well container theorem
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        *(Nichtdeterministischer endlicher Automat, non-deterministic finite state machine)*Ein nichtdeterministischer endlicher Automat besteht aus
+                            &ensp;
+                        *(Nichtdeterministischer endlicher Automat, non-deterministic finite state machine)*
+                        Ein nichtdeterministischer endlicher Automat besteht aus
                         |> ul
                             |> li
 
@@ -85,10 +89,13 @@
                                 \times Q\).
                         Formal gesehen ist also ein Automat ein Quintupel \(M = (\Sigma, Q,
                         \qstart, F, \delta)\).
-                    Von nun an bezeichnen wir endliche Automaten auch als_deterministische_ endliche Automaten, um den Unterschied zu den
+                    Von nun an bezeichnen wir endliche Automaten auch als
+                    _deterministische_ endliche Automaten, um den Unterschied zu den
                     nichtdeterministischen zu verdeutlichen. Wenn in einem deterministischen
-                    endlichen Automaten \(\delta(q,x) = q'\) war, so hatte das die Bedeutung_wenn der Automat im Zustand \(q\) ist und \(x\) liest, so geht er in Zustand \(q'\) über_; wenn nun in einem nichtdeterministischen Automaten \((q,x,q') \in
-                    \delta\) gilt, so bedeutet das,_wenn der Automat im Zustand \(q\) ist und \(x\) liest, so kann er in
+                    endlichen Automaten \(\delta(q,x) = q'\) war, so hatte das die Bedeutung
+                    _wenn der Automat im Zustand \(q\) ist und \(x\) liest, so geht er in Zustand \(q'\) über_; wenn nun in einem nichtdeterministischen Automaten \((q,x,q') \in
+                    \delta\) gilt, so bedeutet das,
+                    _wenn der Automat im Zustand \(q\) ist und \(x\) liest, so kann er in
                     Zustand \(q'\) übergehen_. Analog zu den deterministischen Automaten definieren wir eine
                     erweiterte Zustandsübergangsrelation.
                     |> div
@@ -96,15 +103,18 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         *(Erweiterte Zuständsübergangsfunktion)*.
                         |> p
 
                             Für einen nichtdeterministischen endlichen Automaten \((\Sigma, Q,
-                            \qstart, F, \delta)\) definieren wir die_erweiterte Zustandsübergangsrelation_\(\hat{\delta}\subseteq Q \times \Sigma^* \rightarrow Q\) als die
+                            \qstart, F, \delta)\) definieren wir die
+                            _erweiterte Zustandsübergangsrelation_
+                            \(\hat{\delta}\subseteq Q \times \Sigma^* \rightarrow Q\) als die
                             Menge aller Zustand-Wort-Zustand-Tripel \((q,x_1 x_2 \dots
                             x_n,q')\), für die wir Zwischenzustände \(q = \qstart, q_1, q_2,
                             \dots, q_n = q'\) finden können mit $$ (\qstart, x_1, q_1), (q_1,
@@ -122,10 +132,11 @@
                         |> span
                             class numbered-title
 
-                            Beobachtung
+                            Beobachtung 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Sei \(M = (\Sigma, Q, \qstart, F, \delta)\) ein nichtdeterministischer
                         endlicher Automat. Dann gibt es eine reguläre Grammatik \(G\) mit
                         \(L(G) = L(M)\).
@@ -148,17 +159,19 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Sei \(G = (\Sigma, N, P, S)\) eine reguläre Grammatik. Dann gibt es
                         einen nichtdeterministischen endlichen Automaten \(M\) mit \(L(G) =
                         L(M)\).
                     |> div
                         class well container
 
-                        *Beweis.*Unser Automat hat als Zustandsmenge \(N\), die Menge der
+                        *Beweis.*
+                        Unser Automat hat als Zustandsmenge \(N\), die Menge der
                         nichtterminalen Symbole und als Startzustand \(S\), das Startsymbol
                         der Grammatik \(G\). Wir definieren \(\delta\), indem wir jeden
                         \(G\)-Pfeil in einem \(M\)-Pfeil umwandeln: eine Produktion $$ X
@@ -188,10 +201,11 @@
                         |> span
                             class numbered-title
 
-                            Beispiel
+                            Beispiel 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         |> p
 
                             Wir betrachten abermals die
@@ -228,10 +242,11 @@
                         |> span
                             class numbered-title
 
-                            Beispiel
+                            Beispiel 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         |> p
 
                             Wir betrachten die
@@ -269,10 +284,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Sei \(\Sigma = \{1\}\) und \(L_k := \{1^n \ | \textnormal{ $n$ ist
                         durch $k$ teilbar} \}\). Schreiben Sie für \(L_k\) einen
                         deterministischen endlichen Automaten.
@@ -534,7 +550,8 @@
 
                         Treten Sie einen Schritt zurück und betrachten, was wir mit \(\Delta\)
                         definiert haben: wir haben eine Zustandsübergangsfunktion definiert,
-                        die nun aber nicht auf Zuständen sondern auf Zustands_mengen_operiert. Das heißt, im Gegensatz zu \(\delta\), das eine Funktion
+                        die nun aber nicht auf Zuständen sondern auf Zustands_mengen_
+                        operiert. Das heißt, im Gegensatz zu \(\delta\), das eine Funktion
                         \(\delta: Q \times \Sigma \rightarrow Q\) ist, ist \begin{align*}
                         \Delta: 2^Q \times \Sigma \rightarrow 2^Q \ . \end{align*} Wenn Sie
                         die Schreibweise \(2^Q\) nicht kennen: dies ist die Potenzmenge von
@@ -547,12 +564,14 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         *(Einen nichtdeterministischen endlichen Automaten deterministisch
-                        machen).*Sei \(M = (\Sigma, Q, \qstart, F, \delta)\) ein nichtdeterministischer
+                        machen).*
+                        Sei \(M = (\Sigma, Q, \qstart, F, \delta)\) ein nichtdeterministischer
                         Automat; dann heiße der deterministische Automat \(M' = (\Sigma, 2^Q,
                         \{\qstart\}, \mathcal{F}, \Delta)\) mit Endzustandsmenge
                         \(\mathcal{F}\) definiert als \begin{align*} \mathcal{F} := \{X
@@ -571,10 +590,11 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Zu jeder regulären Sprache \(L\) gibt es einen deterministischen
                         endlichen Automaten \(M\) mit \(L(M) = L\).
                     |> div
@@ -582,10 +602,11 @@
                         |> span
                             class numbered-title
 
-                            Beispiel
+                            Beispiel 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Der obige nichtdeterminische Automaten \(M\), der die Sprache aller
                         Wörter, deren viertletztes Zeichen eine 1 ist, akzeptiert, hat fünf
                         Zustände. Sein Potenzmengenautomat \(M'\) hätte also \(2^5 = 32\).
@@ -594,7 +615,8 @@
                         dass man \(M'\) mit 16 Zuständen implementieren kann (die anderen,
                         die, die nicht \(A\) enthalten, sind _unerreichbar_). Da 16
                         immer noch recht groß für eine Abbildung ist, nehmen wir uns die
-                        Sprache aller Wörter, deren _drittletztes Zeichen_eine 1 ist. Der nichtdeterministische Automat hierfür ist
+                        Sprache aller Wörter, deren _drittletztes Zeichen_
+                        eine 1 ist. Der nichtdeterministische Automat hierfür ist
                         |> figure
                             |> img
                                 style height: 10em
@@ -774,7 +796,8 @@
                             Zeichen 000 stellen, also \(\alpha\) durch \(000\alpha\) ersetzen,
                             dann codiert jeder Zustand genau die letzten drei Zeichen des
                             Eingabewortes, die der Automat gelesen hat. Der Zustand \(ACD\)
-                            bedeutet zum Beispiel_die letzten drei Zeichen waren \(110\)_
+                            bedeutet zum Beispiel
+                            _die letzten drei Zeichen waren \(110\)_
                     |> p
 
                         Im folgenden Unterkapitel werden wir alle Transformationen, die wir

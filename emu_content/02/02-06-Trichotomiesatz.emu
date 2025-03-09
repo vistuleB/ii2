@@ -74,10 +74,11 @@
                             |> span
                                 class numbered-title
 
-                                Theorem
+                                Theorem 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             *(Trichotomiesatz der Mengenlehre).* Seien $A$ und
                             $B$ zwei Mengen. Dann gibt es eine injektive Funktion $f : A
                             \rightarrow B$ oder eine injektive Funktion $g : A \rightarrow B$.
@@ -96,14 +97,17 @@
                         class well container
                         |> p
 
-                            *(Unvollständiger) Beweis.*Will man ein Objekt mit gewissen Eigenschaften (hier: Funktion,
+                            *(Unvollständiger) Beweis.*
+                            Will man ein Objekt mit gewissen Eigenschaften (hier: Funktion,
                             injektiv) konstruieren, so lohnt es sich oft, die gestellten
                             Bedingungen zu relaxieren und sich langsam zu einer "richtigen"
                             Lösung hinzutasten.
                         |> p
 
-                            Wir müssen zuerst uns in Erinnerung rufen, was eine_Funktion_ formal ist. $A \times B := \{ (a,b) \ | \ a \in A,
-                            b \in B\}$, die Menge aller Paare, heißt das_cartesische Produkt_. Eine _Relation_ ist eine
+                            Wir müssen zuerst uns in Erinnerung rufen, was eine
+                            _Funktion_ formal ist. $A \times B := \{ (a,b) \ | \ a \in A,
+                            b \in B\}$, die Menge aller Paare, heißt das
+                            _cartesische Produkt_. Eine _Relation_ ist eine
                             Teilmenge $R \subseteq A \times B$.
                         |> div
                             class well container-fluid subtheorem
@@ -111,11 +115,11 @@
                                 |> span
                                     class numbered-title
 
-                                    Definition
+                                    Definition 
                                     |> NumberedTitle
 
                                         ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                    .
+                                    &ensp;.
                                 &ensp;Eine Relation $R
                                 \subseteq A \times B$ heißt
                             |> ul
@@ -126,14 +130,16 @@
                                     statt $R$ und schreiben $f(a)$, um dieses $b$ zu benennen.
                                 |> li
 
-                                    _Matching_, wenn es für jedes $a \in A$_höchstens_ ein $b \in B$ gibt mit $(a,b) \in R$ und
+                                    _Matching_, wenn es für jedes $a \in A$
+                                    _höchstens_ ein $b \in B$ gibt mit $(a,b) \in R$ und
                                     umgekehrt für jedes $b \in B$ höchstens ein $a \in A$ mit $(a,b)
                                     \in R$.
                                 |> li
 
                                     Wenn $R$ ein Matching ist, dann _sättigt_ $R$ die Menge
                                     $A$, wenn es für _jedes_ $a \in A$ ein $b \in B$ mit
-                                    $(a,b) \in R$ gibt; es _sättigt_ $B$, wenn es für_jedes_ $b \in B$ ein $a \in A$ gibt mit $(a,b) \in R$.
+                                    $(a,b) \in R$ gibt; es _sättigt_ $B$, wenn es für
+                                    _jedes_ $b \in B$ ein $a \in A$ gibt mit $(a,b) \in R$.
                         |> p
 
                             Wir beobachten: wenn $R$ ein Matching ist und die Menge $A$ sättigt,
@@ -155,11 +161,11 @@
                                 |> span
                                     class numbered-title
 
-                                    Beobachtung
+                                    Beobachtung 
                                     |> NumberedTitle
 
                                         ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                    .
+                                    &ensp;.
                                 &ensp;Wenn $R \in
                                 \mathcal{M}$ ein maximales Element in der Partialordnung
                                 $(\mathcal{M}, \subseteq)$ ist, dann sättigt es $A$ oder $B$ (oder
@@ -171,7 +177,8 @@
                             class well container
                             |> p
 
-                                *Beweis.*Nehmen wir an, dass es weder $A$ noch $B$ sättigt. Dann gibt es
+                                *Beweis.*
+                                Nehmen wir an, dass es weder $A$ noch $B$ sättigt. Dann gibt es
                                 also ein $a \in A$, das mit keinem $b' \in B$ "gepaart" ist, und
                                 auch ein $b \in B$, das mit keinem $a' \in A$ gepaart ist. Also
                                 ist $R \cup \{(a,b)\}$ auch ein Matching, und $R$ ist nicht
@@ -196,11 +203,11 @@
                                 |> span
                                     class numbered-title
 
-                                    Definition
+                                    Definition 
                                     |> NumberedTitle
 
                                         ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                    .
+                                    &ensp;.
                                 &ensp;Sei $(X, \preceq)$
                                 eine Partialordnung und $S \subseteq X$ eine Menge. Ein Element $x
                                 \in X$ ist eine _obere Schranke für $S$_ wenn
@@ -211,7 +218,8 @@
                                 $S$ ist oder nicht.
                         |> p
 
-                            Die unendliche aufsteigende Folge $1,2,3,\dots$ hat_keine obere Schranke_ in $\N$. Somit gibt es auch kein
+                            Die unendliche aufsteigende Folge $1,2,3,\dots$ hat
+                            _keine obere Schranke_ in $\N$. Somit gibt es auch kein
                             maximales Element. Was nun mit $(\mathcal{M}, \subseteq)$? Wenn $M_1
                             \subseteq M_2 \subseteq M_3 \subseteq \dots$ eine unendliche Folge
                             von Matchings ist, dann können wir die doch alle zusammenwerfen:
@@ -225,11 +233,11 @@
                                 |> span
                                     class numbered-title
 
-                                    Beobachtung
+                                    Beobachtung 
                                     |> NumberedTitle
 
                                         ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                    .
+                                    &ensp;.
                                 &ensp;Sei $S \subseteq
                                 \mathcal{M}$ eine Kette in $(\mathcal{M}, \subseteq)$, also eine
                                 Menge von Matchings, so dass für alle $M_1, M_2 \in S$ gilt: $M_1

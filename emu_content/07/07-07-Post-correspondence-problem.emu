@@ -425,16 +425,17 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;(Postsches Korrespondenz-Problem, PCP)
+                            &ensp;&ensp;(Postsches Korrespondenz-Problem, PCP)
                         Sei \(\Sigma\) ein endliches Alphabet.
                         |> ul
                             |> li
 
-                                Eine_Kachel_ (auch _Kärtchen_ genannt) ist ein
+                                Eine
+                                _Kachel_ (auch _Kärtchen_ genannt) ist ein
                                 Paar \((\alpha : \beta) \in \Sigma^* \times \Sigma^*\).
                                 Hier bezeichnet \(\alpha\) das Wort auf der oberen Hälfte der Kachel
                                 und \(\beta\) das auf der unteren.
@@ -449,14 +450,17 @@
                                 s = (\alpha_{1} : \beta_{1}) (\alpha_{2} : \beta_{2}) \dots
                                 (\alpha_{m} : \beta_{m})
                                 \end{align*}
-                                Für eine Kachelung \(s\) definieren wir den_oberen Teil_ \(\top(s)\) und den_unteren Teil_ \(\bottom(s)\):
+                                Für eine Kachelung \(s\) definieren wir den
+                                _oberen Teil_ \(\top(s)\) und den
+                                _unteren Teil_ \(\bottom(s)\):
                                 \begin{align*}
                                 \top(s)&amp;:= \alpha_1 \alpha_2 \dots \alpha_m \\
                                 \bottom(s)&amp;:= \beta_1 \beta_2 \dots \beta_m \\
                                 \end{align*}
                             |> li
 
-                                Eine Kachelung \(s\) ist eine _Lösung_des Puzzles, wenn \(\top(s) = \bottom(s)\) gilt.
+                                Eine Kachelung \(s\) ist eine _Lösung_
+                                des Puzzles, wenn \(\top(s) = \bottom(s)\) gilt.
                     |> p
 
                         Illustrieren wir die Definitionen noch einmal
@@ -499,15 +503,18 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         PCP ist unentscheidbar.
                     |> div
                         class well container
 
-                        *Beweis.*Wir zeigen: wenn PCP entscheidbar _wäre_, dann _wäre_auch \(\halt\) entscheidbar. Da letzteres jedoch unentscheidbar
+                        *Beweis.*
+                        Wir zeigen: wenn PCP entscheidbar _wäre_, dann _wäre_
+                        auch \(\halt\) entscheidbar. Da letzteres jedoch unentscheidbar
                         ist, muss auch PCP unentscheidbar sein.
                         |> p
 
@@ -521,7 +528,8 @@
 
                             Wie so oft in ähnlichen Beweisen machen wir einen
                             Zwischenschritt. Das _Modifizierte Postsche
-                            Korrespondenzproblem (MPCP)_ ist genau das gleiche wie das PCP,
+                            Korrespondenzproblem (MPCP)
+                            _ ist genau das gleiche wie das PCP,
                             nur dass es in \(S\) eine markierte Startkachel gibt
                             und jede Lösung mit dieser Startkachel beginnen muss.
                             Es ist also ein "strengeres" Problem als das PCP.
@@ -530,7 +538,11 @@
                             |> span
                                 class numbered-title
 
-                                Lemma
+                                Lemma 
+                                |> NumberedTitle
+
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             Gegeben ein MPCP-Puzzle \(S\), so können wir ein
                             (normales) PCP-Puzzle \(S'\) erstellen,
                             mit der Eigenschaft, dass \(S\) eine Lösung
@@ -538,7 +550,8 @@
                         |> div
                             class well subtheorem
 
-                            *Beweis.*Im MPCP zwingen uns bereits die Spielregeln, mit der
+                            *Beweis.*
+                            Im MPCP zwingen uns bereits die Spielregeln, mit der
                             markierten Startkachel zu beginnen. Wir müssen
                             nun, von \(S\) ausgehend, ein ähnliches Puzzle bauen,
                             in welchem es zwar keine Startkachel gibt, aber dennoch
@@ -621,7 +634,8 @@
                             dass auf dem Band das Wort \(w_1 w_2 \dots w_m\) steht,
                             die Turingmaschine im Zustand \(q\) ist und der
                             Schreib-Lese-Kopf über den Zeichen \(w_j\) steht.
-                            Wir schreiben also den Zustand unmittelbar _links_von dem Zeichen, über dem er steht.
+                            Wir schreiben also den Zustand unmittelbar _links_
+                            von dem Zeichen, über dem er steht.
                             Wenn das Eingabewort \(x_1 \dots x_n\) und
                             \(q_0 \in Q\) der Startzustand, dann ist
                             \begin{align*}
@@ -832,7 +846,8 @@
                                             src ../img/pcp/step-left/05.svg
                         |> p
 
-                            Hier brauchen wir halt eine Kopfkachel \((q_2yz:yq_1x_2)\) für_jedes_ Bandsymbol \(y\), da die Regel immer anzuwenden ist,
+                            Hier brauchen wir halt eine Kopfkachel \((q_2yz:yq_1x_2)\) für
+                            _jedes_ Bandsymbol \(y\), da die Regel immer anzuwenden ist,
                             egal, welches Symbol \(y\) links vom Schreib-Lese-Kopf steht.
                         |> p
 

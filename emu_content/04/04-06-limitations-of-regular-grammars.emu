@@ -54,10 +54,11 @@
                         |> span
                             class numbered-title
 
-                            Beispiel
+                            Beispiel 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Sei \(L\) die Sprache aller Wörter über dem Alphabet \(\Sigma = \{a,b\}\), die die Form
                         \(a^n b^n\) haben; also eine beliebig lange Folge von \(a\)s, gefolgt von genau so vielen
                         \(b\)s.
@@ -78,10 +79,11 @@
                             |> span
                                 class numbered-title
 
-                                Übungsaufgabe
+                                Übungsaufgabe 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                &ensp;
                             Versuchen Sie ein paar Minuten, eine reguläre Grammatik für \(L\) zu schreiben oder
                             versuchen Sie,
                             zu argumentieren, dass das nicht möglich ist.
@@ -121,7 +123,8 @@
 
                             Formal sind all diese Modelle gleich mächtig: wir können ein Modell in ein anderes umwandeln,
                             ohne
-                            das die erzeugte bzw. akzeptierte Sprache sich ändern. Wenn wir nun zeigen wollen:_\(L\) ist nicht regulär_, dann können wir das _einfachste_ Modell nehmen und
+                            das die erzeugte bzw. akzeptierte Sprache sich ändern. Wenn wir nun zeigen wollen:
+                            _\(L\) ist nicht regulär_, dann können wir das _einfachste_ Modell nehmen und
                             dagegen argumentieren. Nach meinem Darfürhalten sind endliche Automaten das einfachste der
                             fünf aufgeführten
                             Modelle. Also:
@@ -196,19 +199,23 @@
                         dass man
                         bei _allen_ nicht-regulären Sprachen ein solches Argument anführen kann. Die Hauptarbeit
                         besteht nun darin, Konzepte wie _der Automat kann \(\alpha\) nicht von \(\alpha'\)
-                        unterscheiden_und _der Automat muss aber \(\gamma\) von \(\gamma'\) unterscheiden können_ zu
+                        unterscheiden_
+                        und _der Automat muss aber \(\gamma\) von \(\gamma'\) unterscheiden können_ zu
                         formalisieren.
                     |> div
                         class well container theorem
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        *\(M\)-Äquivalenz*Sei \(M= (\Sigma, Q, \qstart, F, \delta\) ein (deterministischer) endlicher Automat. Zwei Wörter
-                        \(\alpha, \beta \in \Sigma^* \) sind_\(M\)-äquivalent_, geschrieben
+                            &ensp;
+                        *\(M\)-Äquivalenz*
+                        Sei \(M= (\Sigma, Q, \qstart, F, \delta\) ein (deterministischer) endlicher Automat. Zwei Wörter
+                        \(\alpha, \beta \in \Sigma^* \) sind
+                        _\(M\)-äquivalent_, geschrieben
                         \begin{align*}
                         \alpha \equiv_M \beta \ ,
                         \end{align*}
@@ -232,11 +239,14 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        *\(L\)-Äquivalenz*Sei \(L \subseteq \Sigma^*\) eine Sprache. Zwei Wörter \(\alpha, \beta \in \Sigma^*\) sind_\(L\)-äquivalent_, geschrieben
+                            &ensp;
+                        *\(L\)-Äquivalenz*
+                        Sei \(L \subseteq \Sigma^*\) eine Sprache. Zwei Wörter \(\alpha, \beta \in \Sigma^*\) sind
+                        _\(L\)-äquivalent_, geschrieben
                         \begin{align*}
                         \alpha \equiv_L \beta \ ,
                         \end{align*}
@@ -248,16 +258,18 @@
                         |> span
                             class numbered-title
 
-                            Beobachtung
+                            Beobachtung 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Sei \(L\) die vom endlichen Automaten \(M\) akzeptierte Sprache.
                         Wenn \(\alpha \equiv_M \beta\) gilt, dann auch \(\alpha \equiv_L \beta\).
                     |> div
                         class well container
 
-                        *Beweis.*Nehmen wir an \(\alpha \equiv_M \beta\); es gibt also einen Zustand \(q\) mit
+                        *Beweis.*
+                        Nehmen wir an \(\alpha \equiv_M \beta\); es gibt also einen Zustand \(q\) mit
                         \begin{align*}
                         \qstart \Step{\alpha} q \textnormal{ und } \qstart \Step{\beta} q
                         \end{align*}
@@ -270,7 +282,8 @@
                         \begin{align*}
                         \qstart \Step{\alpha\gamma} q' \textnormal{ und } \qstart \Step{\beta\gamma} q'
                         \end{align*}
-                        Abhängig davon, ob \(q' \in F\) oder nicht, sind \(\alpha\gamma\) und \(\alpha\beta\) entweder_beide in \(L\)_ oder _beide nicht in \(L\)_. In anderen Worten: \(\alpha \equiv_L
+                        Abhängig davon, ob \(q' \in F\) oder nicht, sind \(\alpha\gamma\) und \(\alpha\beta\) entweder
+                        _beide in \(L\)_ oder _beide nicht in \(L\)_. In anderen Worten: \(\alpha \equiv_L
                         \beta\).
                         |> span
                             class qed
@@ -292,10 +305,11 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Sei \(L \subseteq \Sigma^*\). Der _Index von \(L\)_ ist die Anzahl von Äquivalenzklassen
                         der Relation
                         \(\equiv_L\), also die größtmögliche Anzahl gegenseitig nichtäquivalenter Wörter
@@ -305,10 +319,11 @@
                         |> span
                             class numbered-title
 
-                            Beobachtung
+                            Beobachtung 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Sei \(M\) ein endlicher Automat von \(L\) die von ihm akzeptierte Sprache.
                         Dann ist der Index von \(L\) höchstens die Anzahl \(|Q|\) von Zuständen.
                         Im Umkehrschluss heißt das: wenn \(L\) unendlichen Index hat, dann gibt es keinen endlichen
@@ -316,7 +331,8 @@
                     |> div
                         class well container
 
-                        *Beweis.*Wenn der Index von \(L\) größer wäre als \(|Q|\), dann hieße das, dass wir
+                        *Beweis.*
+                        Wenn der Index von \(L\) größer wäre als \(|Q|\), dann hieße das, dass wir
                         \(k := |Q|+1\) nicht \(L\)-äquivalente \(\alpha_1, \dots, \alpha_{|Q|+1}\) finden können.
                         Sei \(q_i := \hat{\delta}(\qstart, \alpha_i)\) der Zustand, in dem der Automat landet,
                         wenn er das Eingabewort \(\alpha_i\) abarbeitet. Die Zustände
@@ -342,10 +358,11 @@
                         |> span
                             class numbered-title
 
-                            Beispiel
+                            Beispiel 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Die Sprache \(L = \{a^n b^n \ | \ n \geq 0\}\) ist nicht regulär.
                         |> p
 
@@ -359,10 +376,11 @@
                         |> span
                             class numbered-title
 
-                            Beispiel
+                            Beispiel 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Sei \(L \subseteq \{a,b\}^*\) die Sprache aller Palindrome. Also der Wörter \(\alpha\) mit
                         \(\alpha = \alpha^R\), wobei \(\alpha^R\) das Wort \(\alpha\) in umgekehrter Reihnfolge gelesen
                         ist.
@@ -377,10 +395,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Betrachten Sie die Sprache aller \(\alpha\in \{a,b\}^*\), die gleich viele \(a\)'s wie \(b\)'s
                         haben:
                         \begin{align*}
@@ -396,15 +415,17 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Eine Sprache \(L \subseteq \Sigma^*\) ist genau dann regulär, wenn sie endlichen Index hat.
                     |> div
                         class well container
 
-                        *Beweis.*Eine Richtung haben wir bereits weiter oben gezeigt: wenn es zu \(L\) einen endlichen Automaten
+                        *Beweis.*
+                        Eine Richtung haben wir bereits weiter oben gezeigt: wenn es zu \(L\) einen endlichen Automaten
                         mit Zustandsmenge \(Q\) gibt, dann ist der Index von \(L\) höchstens \(|Q|\).
                         |> p
 
@@ -473,10 +494,11 @@
                         |> span
                             class numbered-title
 
-                            Beispiel
+                            Beispiel 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Der nichtdeterministische endliche Automat
                         |> figure
                             |> img
@@ -492,15 +514,17 @@
                             |> span
                                 class numbered-title
 
-                                Behauptung
+                                Behauptung 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             Die Sprache \(L\) hat Index 16. Alle Wörter in \(\{0,1\}^4\) sind nicht \(L\)-äquivalent.
                         |> div
                             class well subtheorem
 
-                            *Beweis.*Seien \(\alpha:= a_1 a_2 a_3 a_4, \beta := b_1 b_2 b_3 b_4 \in \{0,1\}^4\) zwei verschiedene
+                            *Beweis.*
+                            Seien \(\alpha:= a_1 a_2 a_3 a_4, \beta := b_1 b_2 b_3 b_4 \in \{0,1\}^4\) zwei verschiedene
                             Wörter. Dann gibt es ein
                             \(1 \leq i \leq 4\) mit \(a_i = 0\) und \(b_i = 1\) (oder umgekehrt).
                             Sei \(\gamma = 0^{5-i}\), also ein String bestehend aus \(5-i\) Nullen. Das viertletzte

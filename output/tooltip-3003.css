@@ -1,0 +1,64 @@
+.tooltip-3003-container {
+  position: relative;
+}
+
+.tooltip-3003-text:hover {
+  background-color: #bfb;
+  padding: 5px;
+  margin: -5px;
+  border-radius: 10px;
+}
+
+.tooltip-3003 {
+  font-family: Arial, sans-serif;
+  font-style: normal;
+  line-height: 1.6;
+  font-size: 12px;
+  visibility: hidden;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  width: 200px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+  color: #4fc3f7;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tooltip-3003::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.tooltip-3003::before {
+  content: "";
+  position: absolute;
+  bottom: -20px; /* Adjust based on distance to trigger text */
+  left: 0;
+  width: 100%;
+  height: 20px; /* Height of the bridge */
+  background-color: transparent; /* Invisible */
+}
+
+.tooltip-3003:hover {
+  text-decoration: underline;
+}
+
+.tooltip-3003-container:hover .tooltip-3003 {
+  visibility: visible;
+  opacity: 1;
+}

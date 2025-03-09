@@ -56,7 +56,8 @@
                             loading lazy
                     |> p
 
-                        Diese Darstellung einer Partialordnung als gerichteter Graph bezeichnet man auch als_Hasse-Diagramm_ (ich verzichte hier auf eine formale Definition).
+                        Diese Darstellung einer Partialordnung als gerichteter Graph bezeichnet man auch als
+                        _Hasse-Diagramm_ (ich verzichte hier auf eine formale Definition).
                         Es gilt nun \(\mathbf{x} \leq \mathbf{y}\), wenn Sie im Hasse-Diagramm einen
                         Pfad von \(\mathbf{x}\) nach \(\mathbf{y}\) finden.
                     |> p
@@ -69,11 +70,13 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        Eine Boolesche Funktion \(f: \{0,1\}^n \rightarrow \{0,1\}\) heißt_monoton_, wenn
+                            &ensp;
+                        Eine Boolesche Funktion \(f: \{0,1\}^n \rightarrow \{0,1\}\) heißt
+                        _monoton_, wenn
                         $$
                         \forall \mathbf{x} \leq \mathbf{y} \in \{0,1\}^n \ : \
                         f(\mathbf{x}) \leq f(\mathbf{y}) \ .
@@ -85,10 +88,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Welche der Booleschen Funktionen \(\wedge, \vee, \neg, \oplus, \maj\) sind monoton?
                     |> p
 
@@ -133,10 +137,11 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Zu jeder monotonen Funktion \(f: \{0,1\}^n \rightarrow \{0,1\}\) gibt es einen monotonen
                         Schaltkreis (also ohne NOT-Gates), der \(f\) berechnet.
                     |> div
@@ -144,10 +149,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Beweisen Sie das Theorem. *Tip.* Gehen Sie meine oben skizzierten drei
                         Konstruktionen durch (Rekursiv, DNF, CNF) und versuchen Sie, sie so zu modifizieren,
                         dass Sie alle NOT-Gates loswerden.
@@ -156,10 +162,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Finden Sie alle monotonen Funktionen in zwei Variablen.
                         Wie sieht es mit allen monotonen Funktionen in _drei_ Variablen aus?
                         |> p
@@ -180,11 +187,13 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                        &ensp;*(Challenge).*Bauen Sie einen Schaltkreis mit drei Input-Variablen \(x,y,z\), der drei
+                            &ensp;
+                        &ensp;*(Challenge).*
+                        Bauen Sie einen Schaltkreis mit drei Input-Variablen \(x,y,z\), der drei
                         Output-Gates hat, die \(\bar{x}, \bar{y}, \bar{z}\) berechnen.
                         Ihr Schaltkreis darf _höchstens zwei NOT-Gates_ einhalten,
                         aber beliebig viele AND- und OR-Gates.
@@ -209,10 +218,11 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Zu jeder monotonen Funktion \(f: \{0,1\}^n \rightarrow \{0,1\}\) gibt es einen monotonen
                         Schaltkreis (also ohne NOT-Gates), der \(f\) berechnet.
                     |> p
@@ -276,10 +286,11 @@
                             |> span
                                 class numbered-title
 
-                                Theorem
+                                Theorem 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             Zu jeder Booleschen Funktion \(f: \{0,1\}^n \rightarrow \{0,1\}\) gibt es
                             einen Schaltkreis \(C\), der \(f\) berechnet.
                         |> p
@@ -302,7 +313,8 @@
                             class well container-fluid
                             |> p
 
-                                *Beweis.*Als _Beweismethode_ verwenden wir Induktion über \(n\), die Anzahl der Variablen.
+                                *Beweis.*
+                                Als _Beweismethode_ verwenden wir Induktion über \(n\), die Anzahl der Variablen.
                             |> div
                                 class alert-info
 
@@ -336,11 +348,11 @@
                                 |> span
                                     class numbered-title
 
-                                    Theorem
+                                    Theorem 
                                     |> NumberedTitle
 
                                         ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                    &ensp;1.4.4, alternative Formulierung
+                                    &ensp;&ensp;1.4.4, alternative Formulierung
                                 Für jede natürliche Zahl \(n\) gilt: zu jeder Booleschen Funktion
                                 \(f: \{0,1\}^n \rightarrow \{0,1\}\) gibt es einen Schaltkreis \(C\), der
                                 \(f\) berechnet.
@@ -442,7 +454,8 @@
                             |> div
                                 class well subtheorem
 
-                                *Induktionshypothese.*Zu jeder Booleschen Funktion in \(n-1\) Variablen
+                                *Induktionshypothese.*
+                                Zu jeder Booleschen Funktion in \(n-1\) Variablen
                                 gibt es einen äquivalenten Schaltkreis.
                             |> p
 
@@ -450,7 +463,8 @@
                             |> div
                                 class well subtheorem
 
-                                *Ziel des Induktionsschritts.*Zu jeder Booleschen Funktion in \(n\) Variablen
+                                *Ziel des Induktionsschritts.*
+                                Zu jeder Booleschen Funktion in \(n\) Variablen
                                 gibt es einen äquivalenten Schaltkreis.
                             |> p
 
@@ -473,7 +487,8 @@
                                 Da \(f_0\) und \(f_1\) jeweils nur \(n-1\) Input-Variablen haben,
                                 können wir die Induktionshypothese anwenden und folgern,
                                 dass es Boolesche Schaltkreise für sie gibt.
-                                Nach _Zerlegen in \(f_0, f_1\)_ und_Anwenden der Induktionshypothese_ müssen wir nun
+                                Nach _Zerlegen in \(f_0, f_1\)_ und
+                                _Anwenden der Induktionshypothese_ müssen wir nun
                                 die Teilergebnisse wieder _sinnvoll zusammenfügen_. Dies
                                 tun wir in diesem Falle mit einem `if-then-else`-Gate:
                             |> figure
@@ -526,7 +541,8 @@
                     |> div
                         class well container
 
-                        *Theorem 1.4.3, nochmals.*Zu jeder monotonen Funktion \(f: \{0,1\}^n \rightarrow \{0,1\}\) gibt es einen monotonen
+                        *Theorem 1.4.3, nochmals.*
+                        Zu jeder monotonen Funktion \(f: \{0,1\}^n \rightarrow \{0,1\}\) gibt es einen monotonen
                         Schaltkreis (also ohne NOT-Gates), der \(f\) berechnet.
                     |> div
                         class well container
@@ -567,7 +583,8 @@
                                     src ../img/circuits/top-down-if-then-else-3.svg
                                     loading lazy
                             und enthält ein NOT-Gate. Aber klar: wir können natürlich nicht die Konstruktion aus dem
-                            vorherigen Beweis wiederholen und hoffen, dass alles klappt. Die Beweistechnik heißt ja auch_Bekanntes abwandeln_, nicht _Bekanntes kritiklos wiederholen_. Wie
+                            vorherigen Beweis wiederholen und hoffen, dass alles klappt. Die Beweistechnik heißt ja auch
+                            _Bekanntes abwandeln_, nicht _Bekanntes kritiklos wiederholen_. Wie
                             können wir den obigen Schaltkreis abwandeln, dass er monoton wird, also das eine NOT-Gate
                             entfernen? Spontan fallen mir zwei Wege ein: wir können das NOT-Gate einfach
                             durch ein gate-loses Kabel ersetzen oder das Kabel einfach ganz weglassen, also:
@@ -609,11 +626,11 @@
                             |> span
                                 class numbered-title
 
-                                Behauptung
+                                Behauptung 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                .
+                                &ensp;.
                             Für alle \(x_1,\dots,x_n\) gilt
                             $$
                             f(x_1,\dots,x_n) = (x_1 \wedge f_1(x_2,\dots,x_n)) \vee f_0(x_2,\dots,x_n) \ .
@@ -621,7 +638,8 @@
                         |> div
                             class well subtheorem
 
-                            *Beweis.*Wir machen eine Fallunterscheidung nach dem Wert von \(x_1\).
+                            *Beweis.*
+                            Wir machen eine Fallunterscheidung nach dem Wert von \(x_1\).
                             |> ul
                                 |> li
 
@@ -691,10 +709,12 @@
                     |> div
                         class well container
 
-                        *Zweiter Beweis. Bottom-Up, Konstruktion einer DNF-Formel.*Als Beweisstrategie verwende ich wieder _Bekanntes abwandeln._
+                        *Zweiter Beweis. Bottom-Up, Konstruktion einer DNF-Formel.*
+                        Als Beweisstrategie verwende ich wieder _Bekanntes abwandeln._
                         |> p
 
-                            *Das Bekannte.*Erinnern Sie sich an die Konstruktion einer DNF-Formel auf Basis der gegebenen
+                            *Das Bekannte.*
+                            Erinnern Sie sich an die Konstruktion einer DNF-Formel auf Basis der gegebenen
                             Wahrheitstabelle. Für jedes \(n\)-Tupel \(\mathbf{a} := a_1,\dots,a_n) \in \{0,1\}^n\),
                             für welches \(f\) den Wert 1 ausgibt, konstruieren wir einen DNF-Term \(T_{\mathbf{a}}\),
                             der auf \(\mathbf{a}\) eine 1 ausgibt und sonst überall eine 0.
@@ -768,17 +788,18 @@
                             |> span
                                 class numbered-title
 
-                                Behauptung
+                                Behauptung 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                .
+                                &ensp;.
                             Für alle \(x_1,\dots,x_n\) gilt
                             \(T_{\mathbf{a}} \leq T'_{\mathbf{a}}\).
                         |> div
                             class well subtheorem
 
-                            *Beweis.*Definieren wir zusätzlich noch \(T''_{\mathbf{a}} := \bigwedge_{i \in O_{\mathbf{a}}}
+                            *Beweis.*
+                            Definieren wir zusätzlich noch \(T''_{\mathbf{a}} := \bigwedge_{i \in O_{\mathbf{a}}}
                             \bar{x}_i\),
                             dann können wir \(T_{\mathbf{a}} = T'_{\mathbf{a}} \wedge T''_{\mathbf{a}}\) schreiben.
                             Und jetzt ist \(T'_{\mathbf{a}} \wedge T''_{\mathbf{a}} \leq T'_{\mathbf{a}}\)
@@ -802,15 +823,17 @@
                             |> span
                                 class numbered-title
 
-                                Behauptung
+                                Behauptung 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             \(F \equiv F'\), d.h. sie berechnen beide dieselbe Funktion, nämlich \(f\).
                         |> div
                             class well subtheorem
 
-                            *Beweis.*Um zu zeigen, dass beide dieselbe Funktion berechnen, müssen
+                            *Beweis.*
+                            Um zu zeigen, dass beide dieselbe Funktion berechnen, müssen
                             wir zeigen, dass
                             $$
                             F(\mathbf{x}) = F'(\mathbf{x}) \textnormal{ für alle $\mathbf{x} \in \{0,1\}^n$. }
@@ -847,7 +870,8 @@
                                 Nehmen wir also an, dass \(F'(\mathbf{x}) = 1\) ist.
                             |> p
 
-                                *Strategie: was haben wir?*Es ist immer gut, Dinge konkret "in der Hand zu haben". In diesem Falle?
+                                *Strategie: was haben wir?*
+                                Es ist immer gut, Dinge konkret "in der Hand zu haben". In diesem Falle?
                                 Wir wissen ja, dass
                                 \(F' = \bigvee_{\mathbf{a} \in \sat(f)} T'_{\mathbf{a}} \) ist. Wenn nun
                                 also die linke Seite, \(F'\), den Wert 1 annimmt, dann muss es auf der rechten

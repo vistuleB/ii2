@@ -48,11 +48,13 @@
                         viele Schaltkreise), die sie berechnen. Wir werden insgesamt drei
                         Konstruktionen sehen. Als erstes lassen Sie uns überlegen, wie man
                         eine Boolesche Funktion im Allgemeinen aufschreibt/codiert.
-                        Beschränken wir uns erst einmal auf Boolesche Funktionen mit_einem_ Ausgabewert, also \(f : \{0,1\}^n \rightarrow
+                        Beschränken wir uns erst einmal auf Boolesche Funktionen mit
+                        _einem_ Ausgabewert, also \(f : \{0,1\}^n \rightarrow
                         \{0,1\}\).
                     Dies ist ein endliches Objekt, wir können es also codieren, indem wir
                     für jeden Eingabewert \( (x_1,\dots,x_n)\) den Ausgabewert angeben. Dies
-                    nennt man eine _Wahrheitstabelle_ (englisch_truth table_). Hier sehen Sie ein Beispiel: $$
+                    nennt man eine _Wahrheitstabelle_ (englisch
+                    _truth table_). Hier sehen Sie ein Beispiel: $$
                     \begin{array}{ccc|c} x&amp;y&amp;z&amp;f \\\hline 0&amp;0&amp;0&amp;0 \\ 0&amp;0&amp;1&
                     1 \\ 0&amp;1&amp;0&amp;1 \\ 0&amp;1&amp;1&amp;1 \\ 1&amp;0&amp;0&amp;1 \\ 1&amp;0&amp;1&amp;1 \\
                     1&amp;1&amp;0&amp;0 \\ 1&amp;1&amp;1&amp;1\\ \end{array} $$ Wie können wir von so
@@ -92,7 +94,8 @@
                     das mir lesbarer erscheint). Insgesamt also:
                     |> figure
 
-                        f = `if` \(x\) `then` \(\bar{y} \vee z\)`else` \(y \vee z\).
+                        f = `if` \(x\) `then` \(\bar{y} \vee z\)
+                        `else` \(y \vee z\).
                     |> p
 
                         Jetzt können wir das mit unserem if-then-else-Schaltkreis kombinieren.
@@ -101,10 +104,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Führen Sie die Konstruktion zu Ende, indem Sie \(\bar{y} \vee z\) und
                         \(y \vee z\) mit dem if-then-else-Schaltkreis kombinieren.
                     |> p
@@ -145,10 +149,11 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Sei \(f: \{0,1\}^n \rightarrow \{0,1\}\) eine Boolesche Funktion, \(i
                         \in \{1,\dots,n\}\) ein Index und \(b \in \{0,1\}\) ein Wert. Dann ist
                         \(f|_{x_i=b}\) eine neue Funktion, und zwar \begin{align*} f|_{x_i=b}
@@ -168,10 +173,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Führen Sie das rekursive Verfahren durch, um für die folgende Funktion
                         auf 4 Variablen einen Schaltkreis zu bauen: $$ \begin{array}{cccc|c} u
                         &amp;x&amp;y&amp;z&amp;f \\\hline 0&amp;0&amp;0&amp;0&amp;1 \\ 0&amp;0&amp;0&amp;1&amp;1 \\ 0&
@@ -185,7 +191,8 @@
                         Bottom-Up, als DNF
                     |> p
 
-                        Wenn Sie Rekursionshasser sind und generell lieber in`for`-Schleifen denken, dann wird die nächste Konstruktion
+                        Wenn Sie Rekursionshasser sind und generell lieber in
+                        `for`-Schleifen denken, dann wird die nächste Konstruktion
                         mehr nach Ihrem Geschmack sein. Im Prinzip werden wir alle
                         Kombinationen der Variablen auflisten, für die die Funktion 1 ausgibt.
                         Stellen Sie sich vor, wir haben drei Variable \(x,y,z\) und einen
@@ -195,7 +202,8 @@
                         in diesem Falle \((1,0,1)\). Wir werden nun also für jede 1-Zeile
                         unserer Wahrheitstabelle einen solchen Ausdruck hinschreiben und diese
                         dann in einem großen OR zusammenführen. Einen Ausdruck, der aus einem
-                        AND von Variablen oder deren Negation besteht, nennt man auch einen_Term_.
+                        AND von Variablen oder deren Negation besteht, nennt man auch einen
+                        _Term_.
                     $$ \begin{array}{ccc|c|c} x&amp;y&amp;z&amp;f&amp;{\rm Term}\\\hline 0&amp;0&amp;0&
                     0&amp;\\ 0&amp;0&amp;1&amp;1&amp;\bar{x} \wedge \bar{y} \wedge z \\ 0&amp;1&amp;0&amp;1
                     &amp;\bar{x} \wedge y \wedge \bar{z} \\ 0&amp;1&amp;1&amp;1&amp;\bar{x} \wedge y
@@ -223,10 +231,11 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Ein _Literal_ ist eine Variable \(x\) oder deren Negation
                         \(\bar{x}\). Ein _Term_ ist ein AND (auch: Konjunktion) von
                         Literalen (beispielsweise \(\bar{x} \wedge \bar{y} \wedge z)\). Eine
@@ -241,12 +250,14 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Was, wenn einige der "mittleren" Gates (auf Tiefe 1) keine AND-Gates
-                        sind, sondern auch OR-Gates? Dann wäre dies nach der ersten Definition_keine_ DNF-Formel, nach der zweiten aber schon. Zeigen Sie,
+                        sind, sondern auch OR-Gates? Dann wäre dies nach der ersten Definition
+                        _keine_ DNF-Formel, nach der zweiten aber schon. Zeigen Sie,
                         wie man OR-Gates auf Ebene 1 entfernen kann! Als konkretes Beispiel:
                         |> figure
                             |> img
@@ -261,7 +272,8 @@
                         Zu der eben demonstrierten Konstruktion gibt es noch eine weitere,
                         dazu duale Konstruktion. Bildlich gesprochen listet DNF-Konstruktion
                         alle Möglichkeiten auf, wie man eine 1 erhalten kann. Dual dazu können
-                        wir alle Möglichkeiten auflisten, wie man eine 0 erhalten kann; tritt_keine_ davon ein, muss wohl eine 1 herauskommen. Wir gehen
+                        wir alle Möglichkeiten auflisten, wie man eine 0 erhalten kann; tritt
+                        _keine_ davon ein, muss wohl eine 1 herauskommen. Wir gehen
                         also in der Wahrheitstabelle alle Zeilen mit Wert 0 durch und
                         schreiben einen Ausdruck, der genau diese Zeile verbietet. So kann man
                         den Ausdruck \( (\bar{x} \vee \bar{y} \vee z)\) verstehen als
@@ -285,10 +297,11 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Eine Formel in _konjunktiver Normalform_ (CNF) ist ein AND von
                         Klauseln.
                         |> p
@@ -310,10 +323,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Minimieren Sie die obige DNF (die mit den 6 Termen), indem Sie gewisse
                         Paare von Termen zu einem kürzeren zusammenfassen.
                     |> div
@@ -321,10 +335,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Zeigen Sie, dass es zu jeder Booleschen Funktion \(f: \{0,1\}^n
                         \rightarrow \{0,1\}\) eine äquivalente DNF-Formel mit höchstens
                         \(2^{n-1}\) Termen gibt.
@@ -333,10 +348,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Zeigen Sie, dass jede DNF-Formel für die Boolesche Funktion \(x_1
                         \oplus \dots \oplus x_n\) genau \(2^{n-1}\) Terme besitzen muss.
                     |> p
@@ -344,7 +360,8 @@
                         Sie haben eventuell von Methoden zur Minimierung von DNFs bzw. CNFs
                         oder Schaltkreisen im Allgemeinen gehört, z.B. Karnaugh-Diagramme.
                         Dies sind _Heuristiken_, die hilfreich sind, aber nicht
-                        garantieren können, eine optimale Lösung zu finden (es sind also keine_Algorithmen_ in dem Sinne). Die genaue Komplexität dieser
+                        garantieren können, eine optimale Lösung zu finden (es sind also keine
+                        _Algorithmen_ in dem Sinne). Die genaue Komplexität dieser
                         Optimierungsprobleme ist in der Tat Gegenstand aktiver Forschung,
                     |> ol
                         |> li
@@ -356,7 +373,8 @@
                             |> a
                                 href http://users.cms.caltech.edu/~umans/papers/BU07.pdf
 
-                                Buchfuhrer, David; Umans, Christopher (January 2011),_The complexity of Boolean formula minimization_ (JCSS
+                                Buchfuhrer, David; Umans, Christopher (January 2011),
+                                _The complexity of Boolean formula minimization_ (JCSS
                                 2011) 
                             .
                         |> li
@@ -368,7 +386,8 @@
                             |> a
                                 href https://drops.dagstuhl.de/opus/volltexte/2020/12574/pdf/LIPIcs-CCC-2020-22.pdf
 
-                                Ilango, Loff, and Oliveira._NP-Hardness of Circuit Minimization for Multi-Output
+                                Ilango, Loff, and Oliveira.
+                                _NP-Hardness of Circuit Minimization for Multi-Output
                                 Functions_, (CCC 2020)
                             .
                     Beachten Sie, dass (2) algorithmisch einfacher ist: durch die

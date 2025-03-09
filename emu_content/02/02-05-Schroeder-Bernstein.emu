@@ -60,10 +60,11 @@
                             |> span
                                 class numbered-title
 
-                                Definition
+                                Definition 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             &ensp;Seien $A$ und $B$
                             zwei Mengen. Wir schreiben $A \leq B$, wenn es eine injektive
                             Funktion $f : A \rightarrow B$ gibt. Falls $A \leq B$ und $A \not
@@ -89,10 +90,11 @@
                             |> span
                                 class numbered-title
 
-                                Theorem
+                                Theorem 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             *(Schröder-Bernstein-Theorem).* Seien $A$ und $B$
                             zwei Mengen. Wenn $A \leq B$ und $B \leq A$ gilt, dann gilt $A
                             \approx B$. In Worten: wenn es injektive Funktionen $f: A
@@ -102,7 +104,8 @@
                         class well container
                         |> p
 
-                            *Beweis.*Wir tun so, als ob $A \cap B = \emptyset$ gälte. Falls dies nicht
+                            *Beweis.*
+                            Wir tun so, als ob $A \cap B = \emptyset$ gälte. Falls dies nicht
                             der Fall sein sollte, können wir $A$ durch $A \times \{0\} = \{
                             (a,0) \ | \ a \in A\}$ ersetzen und $B$ durch $A \times \{1\} = \{
                             (b,1) \ | \ b \in B\}$. Wir betrachten nun die Menge $A \cup B$ und
@@ -263,18 +266,19 @@
                                 |> span
                                     class numbered-title
 
-                                    Behauptung
+                                    Behauptung 
                                     |> NumberedTitle
 
                                         ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                    &ensp;1.
+                                    &ensp;&ensp;1.
                                 &ensp;$g^{-1}(a)$ ist
                                 definiert für jedes $a \in A'$.
                         |> div
                             class well container-fluid
                             |> p
 
-                                *Beweis.*Wenn $a \in A'$ gilt, dann gilt $a \in X_{2i+1}$, also für einen
+                                *Beweis.*
+                                Wenn $a \in A'$ gilt, dann gilt $a \in X_{2i+1}$, also für einen
                                 ungeraden Index. Nach Konstruktion gilt $X_{2i+1} = g(X_{2i})$,
                                 die Menge aller Bilder von $X_{2i}$ unter $g$; daher gibt es zu $a
                                 \in X_{2i+1}$ auch ein $b \in X_{2i}$ mit $g(b) = a$. In andere
@@ -293,18 +297,19 @@
                                 |> span
                                     class numbered-title
 
-                                    Behauptung
+                                    Behauptung 
                                     |> NumberedTitle
 
                                         ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                    &ensp;2.
+                                    &ensp;&ensp;2.
                                 &ensp;$h$ ist
                                 injektiv.
                         |> div
                             class well container-fluid
                             |> p
 
-                                *Beweis.*Seien $a, a' \in A$ zwei verschiedene Elemente. Wir unterscheiden
+                                *Beweis.*
+                                Seien $a, a' \in A$ zwei verschiedene Elemente. Wir unterscheiden
                                 drei Fälle: (1) Wenn $a, a' \in A \setminus A'$, dann gilt $h(a) =
                                 f(a) \ne f(a') = h(a')$, weil $f$ injektiv ist. (2) Wenn $a, a'
                                 \in A$, dann gilt $h(a) = g^{-1}(a) =: b$ und $h(a') = g^{-1}(a')
@@ -330,18 +335,19 @@
                                 |> span
                                     class numbered-title
 
-                                    Behauptung
+                                    Behauptung 
                                     |> NumberedTitle
 
                                         ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                    &ensp;3.
+                                    &ensp;&ensp;3.
                                 &ensp;$h$ ist
                                 surjektiv.
                         |> div
                             class well container-fluid
                             |> p
 
-                                *Beweis.*Wir unterscheiden zwei Fälle. (1) Wenn $b \in X_0 \cup X_2 \cup
+                                *Beweis.*
+                                Wir unterscheiden zwei Fälle. (1) Wenn $b \in X_0 \cup X_2 \cup
                                 X_4 \cup \dots$ ist, also sagen wir $b \in X_{2i}$, dann sei $a :=
                                 f(b)$. Es gilt $a \in X_{2i+1}$ und daher $h(a) = g^{-1}(a) = b$.
                                 Das Element $b$ hat also ein Urbild, nämlich $a$.

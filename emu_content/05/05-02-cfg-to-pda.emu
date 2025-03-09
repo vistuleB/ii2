@@ -45,17 +45,19 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Zu jeder kontextfreien Grammatik \(G = (\Sigma, N, S, P)\) gibt es
                         einen Kellerautomaten \(M = (\Sigma, Q, \Gamma, \qstart, \delta)\), der
                         die gleiche Sprache akzeptiert, also \(L(G) = L(M)\).
                     |> div
                         class well container
 
-                        *Beweis.*Der Beweis ist vergleichsweise einfach, weil wir die Grammatik eins zu eins in
+                        *Beweis.*
+                        Der Beweis ist vergleichsweise einfach, weil wir die Grammatik eins zu eins in
                         Automatentransitionen übersetzen können.
                         Die Idee ist, dass die Symbole auf dem Stack, von unten nach oben gelesen, zu jedem Zeitpunkt
                         eine Wortform bilden, aus der der noch nicht gelesene Teil des Restwortes ableitbar ist.
@@ -96,10 +98,11 @@
                         |> span
                             class numbered-title
 
-                            Beispiel
+                            Beispiel 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Betrachten wir die Grammatik
                         \begin{align*}
                         S&amp;\rightarrow A \ | \ B \ | \ C \ | \ \epsilon \\
@@ -486,11 +489,11 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            .
+                            &ensp;.
                         Zu jedem Kellerautomaten \(M\) gibt es eine kontextfreie Grammatik \(G\)
                         mit \(L(M) = L(G)\).
                     |> p
@@ -499,7 +502,8 @@
                     |> div
                         class well container
 
-                        *Beweis.*Sei \(M = (\Sigma, Q, \Gamma, \qstart, F, \delta)\) der Kellerautomat.
+                        *Beweis.*
+                        Sei \(M = (\Sigma, Q, \Gamma, \qstart, F, \delta)\) der Kellerautomat.
                         Als erstes führen wir drei Schönheitsoperation durch:
                         |> ol
                             |> li
@@ -621,10 +625,11 @@
                         |> span
                             class numbered-title
 
-                            Beispiel
+                            Beispiel 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Wir betrachten die Sprache
                         \begin{align*}
                         a^m b (a|b)^* b a^m

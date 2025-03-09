@@ -113,7 +113,8 @@
                         werden).
                     |> p
 
-                        Wie groß ist dieser Schaltkreis? Wenn wir jedes \(\oplus\)- und \(M\)-Gate als _ein_Gate
+                        Wie groß ist dieser Schaltkreis? Wenn wir jedes \(\oplus\)- und \(M\)-Gate als _ein_
+                        Gate
                         zählen, so haben wir insgesamt \(2n\) innere Gates und \(2n\) Input-Gates.
                         Wenn wir darauf bestehen, \(\oplus\)- und \(M\)-Gates aus AND/OR/NOT zu basteln,
                         haben wir mehr, allerdings in jedem Fall \(O(n)\) viele.
@@ -122,10 +123,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Bauen Sie einen Schaltkreis 
                         |> tt
 
@@ -158,7 +160,8 @@
 
                         Tiefenmässig hat uns der obige Addierer nicht befriedigt. Das Problem ist, dass das Carry
                         im schlimmsten Fall von ganz rechts nach ganz links durchrasseln muss,
-                        zum Beispiel wenn man \(11111111 + 00000001\) berechnet. So einen Addierer nennt man_ripple-carry adder_.
+                        zum Beispiel wenn man \(11111111 + 00000001\) berechnet. So einen Addierer nennt man
+                        _ripple-carry adder_.
                     |> p
 
                         Geringere Tiefe erreicht man mit _Carry Lookahead_. Hier versuchen wir,
@@ -224,7 +227,8 @@
                     |> p
 
                         Effizientere Lösungen beginnen oft mit einer guten Definition. In diesem Falle ist das die
-                        Verallgemeinerung von _Carry Generate \(g_i\)_ und _Carry Propagate \(p_i\)_von Indizes auf Intervalle. Für ein Interval
+                        Verallgemeinerung von _Carry Generate \(g_i\)_ und _Carry Propagate \(p_i\)_
+                        von Indizes auf Intervalle. Für ein Interval
                         \([a,b] := \{a, a+1, \dots, b\}\) definieren wir Funktionen
                         \(g_{[a,b]}\) und \(p_{[a,b]}\) in den Variablen \(x_{a},\dots,x_{b}, y_a, \dots, y_b\)
                         wie folgt:
@@ -239,11 +243,11 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;(Carry propagate / generate für Intervalle)
+                            &ensp;&ensp;(Carry propagate / generate für Intervalle)
                         Sei \(I = \{a,a+1, \dots, b\}\) ein Intervall natürlicher Zahlen. Die Werte
                         \(p_I\) und \(g_I\) sind wie folgt definiert:
                         |> ul
@@ -304,10 +308,11 @@
                         |> span
                             class numbered-title
 
-                            Beobachtung
+                            Beobachtung 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Wenn wir \([a,b] = [a,i] \cup [i+1,b] \) schreiben für \(a \lt i \lt b\), dann gilt
                         \begin{align*}
                         p_{[a,b]}&amp;= g_{[i+1,b]} \vee (p_{[a,i]} \wedge p_{[i+1,b]}) \ , \\
@@ -329,16 +334,18 @@
                         können.
                         Das Problem: es gibt zu viele Intervalle, nämlich \(1 + 2 + \dots + n = {n+1 \choose 2} =
                         \Theta(n^2)\) viele.
-                        Der Trick: wir beschränken uns auf besonders schöne Intervalle, nämlich_Binärintervalle_.
+                        Der Trick: wir beschränken uns auf besonders schöne Intervalle, nämlich
+                        _Binärintervalle_.
                     |> div
                         class well container theorem
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Ein Binärintervall ist eine Menge natürlicher Zahlen der Form
                         $$
                         \{ c \cdot 2^d, c \cdot 2^d + 1, \dots, c \cdot 2^{d} + 2^{d} - 1\}
@@ -358,10 +365,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Seit \(n = 2^d-1\). Wie viele Binärintervalle gibt es in
                         \(\{0,\dots,n-1\}\)?
                     |> div
@@ -369,7 +377,11 @@
                         |> span
                             class numbered-title
 
-                            Lemma
+                            Lemma 
+                            |> NumberedTitle
+
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Es gibt einen Schaltkreis mit Input-Gates \(x_0,\dots,x_{n-1}, y_0, \dots, y_{n-1}\) mit
                         Größe \(6n - 4 \in O(n)\) und Tiefe \(2\, \ceil{\log_2 n} + 1 \ \in O(\log n)\) und
                         Output-Gates
@@ -377,7 +389,8 @@
                     |> div
                         class well container
 
-                        *Beweis.*Ein Binärintervall, zum Beispiel \([32,47]\) können wir
+                        *Beweis.*
+                        Ein Binärintervall, zum Beispiel \([32,47]\) können wir
                         als Vereinigung von zwei kleineren Binärintervallen schreiben, hier
                         \([32,47] = [32,39] \cup [40,47]\). In unserer Sternchen-Notation:
                         $$
@@ -453,7 +466,11 @@
                         |> span
                             class numbered-title
 
-                            Lemma
+                            Lemma 
+                            |> NumberedTitle
+
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Es gibt einen Schaltkreis der Größe \(2n\) und
                         Tiefe \(2 \ceil{\log_2 n} - 2 = O(\log n)\), der die \(p_I, g_I\) für Binärintervalle
                         als Inputs nimmt und daraus \(g_{[0,k]}\) berechnet für jedes
@@ -461,7 +478,8 @@
                     |> div
                         class well container
 
-                        *Beweis.*Die Idee ist, dass wir jedes \([0,k]\) als Vereinigung
+                        *Beweis.*
+                        Die Idee ist, dass wir jedes \([0,k]\) als Vereinigung
                         von wenigen Binärintervallen schreiben können, zum Beispiel
                         \begin{align*}
                         [0,9]&amp;= [0,7] \cup [8,9] \ , \\
@@ -615,10 +633,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Bauen Sie einen Schaltkreis für die Boolesche Funktion
                         "less-than":
                         \begin{align*}

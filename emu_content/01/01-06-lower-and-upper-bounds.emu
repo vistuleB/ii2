@@ -55,10 +55,11 @@
                             |> span
                                 class numbered-title
 
-                                Theorem
+                                Theorem 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             &ensp;*(Shannon).* Es gibt
                             Boolesche Funktionen $f$, die keine Schaltkreise kleiner
                             als $\Omega(2^n / n)$ haben.
@@ -66,7 +67,8 @@
                         class well container
                         |> p
 
-                            *Beweis.*Die Beweismethode ist vielleicht neu für Sie, aber in der Komplexitätstheorie und
+                            *Beweis.*
+                            Die Beweismethode ist vielleicht neu für Sie, aber in der Komplexitätstheorie und
                             Kombinatorik
                             sehr wichtig. Wir stellen uns zwei _Zählaufgaben_: (1) wie viele Boolesche
                             Funktion $f : \fcube$ gibt es? (2) Wie viele Boolesche Schaltkreise
@@ -90,10 +92,11 @@
                                 |> span
                                     class numbered-title
 
-                                    Behauptung
+                                    Behauptung 
                                     |> NumberedTitle
 
                                         ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                    &ensp;
                                 &ensp;Sei $s \geq n \geq 1$. Dann gibt es
                                 höchstens
                                 $s^{2s+1}$ Schaltkreise mit $n$ Input-Variablen, Fan-in 2 und $s$ Gates. 
@@ -101,7 +104,8 @@
                             class well container-fluid
                             |> p
 
-                                *Beweis.*Wir bauen den Schaltkreis, indem wir erst einmal $s$ Gates unbeschriftet "hinmalen".
+                                *Beweis.*
+                                Wir bauen den Schaltkreis, indem wir erst einmal $s$ Gates unbeschriftet "hinmalen".
                                 Um nun zu entscheiden, was für ein Schaltkreis das sein soll, müssen wir Entscheidungen
                                 treffen:
                             |> ol
@@ -176,10 +180,11 @@
                             |> span
                                 class numbered-title
 
-                                Übungsaufgabe
+                                Übungsaufgabe 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                &ensp;
                             In Theorem und Beweis sprechen wir die ganze Zeit nur von Schaltkreisen
                             mit Fan-in 2. Was geschieht, wenn wir beliebigen Fan-in erlauben?
                             Wie ändern sich Aussage und Beweis?
@@ -242,10 +247,11 @@
                             |> span
                                 class numbered-title
 
-                                Übungsaufgabe
+                                Übungsaufgabe 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                &ensp;
                             Formal gesehen ist Graphenfärbbarkeit eine Sprache
                             $L \subseteq \Sigma^*$ über einem Alphabet $\Sigma$, dass uns
                             erlaubt, Graphen zu codieren. Wie können wir $L$ als Boolesche Funktion darstellen?
@@ -265,17 +271,19 @@
                             |> span
                                 class numbered-title
 
-                                Theorem
+                                Theorem 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             &ensp;*(Lupanov)*. Für jede Boolesche
                             Funktion in $n$ Variablen gibt es einen Schaltkreis mit Fan-in 2 und $O(2^n / n)$ Gates.
                     |> div
                         class well container
                         |> p
 
-                            *Beweis.*Der Beweis fußt auf zwei Kernideen: erstens bauen wir den Schaltkreis nicht
+                            *Beweis.*
+                            Der Beweis fußt auf zwei Kernideen: erstens bauen wir den Schaltkreis nicht
                             mit AND- und OR- und NOT-Gates, sondern mit AND- und XOR-Gates. Da wir
                             nach vollendeter Konstruktion jedes XOR-Gates durch einen kleinen Schaltkreis
                             aus vier AND/OR/NOT-Gates ersetzen können, spielt dies keine Rolle (der Faktor
@@ -293,7 +301,8 @@
                             dass wir alle Werte modulo 2 auswerten, also in dem endlichen Körper
                             $\F_2$ arbeiten. Wir brauchen daher auch keine höheren Potenzen:
                             $x^2$ und $x$ ergeben für alle $x \in \{0,1\}$ die gleichen Werte.
-                            Wenn wir in $\F_2$ rechnen, können wir uns also auf _multilineare_Polynome beschränken. Führen wir Polynome formal ein:
+                            Wenn wir in $\F_2$ rechnen, können wir uns also auf _multilineare_
+                            Polynome beschränken. Führen wir Polynome formal ein:
                             wir haben eine Menge $x_1, \dots, x_n$ von Variablen;
                             ein Monom in diesem Variablen ist ein Produkt aus Variablen, also
                             $\prod_{i \in I} x_i$ für eine Menge $I \subseteq [n]$.
@@ -308,10 +317,11 @@
                                 |> span
                                     class numbered-title
 
-                                    Übungsaufgabe
+                                    Übungsaufgabe 
                                     |> NumberedTitle
 
                                         ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                    &ensp;
                                 Zeigen Sie, dass sich jede Boolesche Funktion $f$
                                 als $\F_2$-Polynom schreiben lässt.
                             |> p
@@ -334,11 +344,13 @@
                                 |> span
                                     class numbered-title
 
-                                    Übungsaufgabe
+                                    Übungsaufgabe 
                                     |> NumberedTitle
 
                                         ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                Zeigen Sie, dass sich jede Funktion $f :\fcube$ _eindeutig_als multilineares $\F_2$-Polynom schreiben lässt. In anderen Worten:
+                                    &ensp;
+                                Zeigen Sie, dass sich jede Funktion $f :\fcube$ _eindeutig_
+                                als multilineares $\F_2$-Polynom schreiben lässt. In anderen Worten:
                                 wenn $p$ und $q$ zwei verschiedene multilineare Polynome sind, dann
                                 berechnen sie verschiedene Funktionen.
                         |> p
@@ -359,17 +371,19 @@
                         \end{align*}
                         |> p
 
-                            Gates. Allerdings ist das eine ungenaue Rechnung: Selbst wenn _alle_$2^n$ Monome vertreten sind, bestehen nicht alle Monome aus $n$ Variablen.
+                            Gates. Allerdings ist das eine ungenaue Rechnung: Selbst wenn _alle_
+                            $2^n$ Monome vertreten sind, bestehen nicht alle Monome aus $n$ Variablen.
                         |> div
                             class well well-lg numbered-exercise container
                             |> p
                                 |> span
                                     class numbered-title
 
-                                    Übungsaufgabe
+                                    Übungsaufgabe 
                                     |> NumberedTitle
 
                                         ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                    &ensp;
                                 Rechnen Sie genauer! Wenn Sie alle Monome berechnen wollen,
                                 brauchen Sie
                             \begin{align*}
@@ -389,9 +403,13 @@
                                 |> span
                                     class numbered-title
 
-                                    Lemma
+                                    Lemma 
+                                    |> NumberedTitle
+
+                                        ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                    &ensp;
                                 &ensp;Es gibt einen
-                                Schaltkreis $C_n$ mit $n$ Input-Gates $x_1,\dots,x_n$ und
+                                Schaltkreis $C_n$ mit $n$ Input-Gates $x_1, \dots, x_n$ und
                                 $2^n$ Output-Gates, eines für jedes Monom $x^{I}$, der
                                 $2^n$ Gates hat.
                             |> figure
@@ -402,7 +420,8 @@
                             class well container-fluid
                             |> p
 
-                                *Beweis.*Die Idee ist: wenn wir $x_1 x_2 x_3 x_4$ berechnen wollen,
+                                *Beweis.*
+                                Die Idee ist: wenn wir $x_1 x_2 x_3 x_4$ berechnen wollen,
                                 brauchen wir drei AND-Gates. Allerdings müssen wir
                                 $x_1 x_2 x_3$ eh berechnen, da wir ja _alle_ Monome
                                 wollen. Wenn wir also einen Schaltkreis für $x_1 x_2 x_3$ haben,
@@ -497,7 +516,11 @@
                                 |> span
                                     class numbered-title
 
-                                    Lemma.
+                                    Lemma 
+                                    |> NumberedTitle
+
+                                        ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                    &ensp;
                                 &ensp;Es gibt einen
                                 Schaltkreis mit Input-Gates $z_1,\dots,z_k$ und $2^{2^k}$ Output-Gates, einen
                                 für jede Funktion $g: \{0,1\}^k \rightarrow \{0,1\}$. Der Schaltkreis hat
@@ -508,10 +531,11 @@
                                 |> span
                                     class numbered-title
 
-                                    Übungsaufgabe
+                                    Übungsaufgabe 
                                     |> NumberedTitle
 
                                         ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                    &ensp;
                                 Beweisen Sie das Lemma. Konstrukieren Sie zuerst wie
                                 im vorherigen Lemma einen Schaltkreis, der Ihnen alle
                                 Monome berechnet.
@@ -521,10 +545,11 @@
                                 |> span
                                     class numbered-title
 
-                                    Übungsaufgabe
+                                    Übungsaufgabe 
                                     |> NumberedTitle
 
                                         ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                    &ensp;
                                 Zeigen Sie, dass die obige Konstruktion verbessert werden kann, indem
                                 Sie einen Schaltkreis mit nur $2^{2^k}$ Gates bauen.
                             |> p

@@ -49,11 +49,11 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            .
+                            &ensp;
                         Die _Größe_ eines Schaltkreises ist die Anzahl seiner Gates, also die Anzahl
                         der Knoten im zugrundeliegenden DAG.
                         Die _Teife_ ist die Länge des längsten gerichteten Pfades von einem Input- zu einem
@@ -91,17 +91,19 @@
                     |> p
 
                         In beiden Fällen ersetzen wir ein AND-Gate von Fan-in \(n\) durch
-                        \(n-1\) AND-Gates von je Fan-in 2. Wenn wir allerdings die _Tiefe_betrachten, so sehen wir, dass der linke Schaltkreis Tiefe \(n-1\) hat,
+                        \(n-1\) AND-Gates von je Fan-in 2. Wenn wir allerdings die _Tiefe_
+                        betrachten, so sehen wir, dass der linke Schaltkreis Tiefe \(n-1\) hat,
                         der rechte jedoch nur \(\ceil{\log_2(n)}\). Ganz allgemein stellen wir fest:
                     |> div
                         class well container theorem
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Sei \(C\) ein Schaltkreis Maximum-Fan-in \(k\), Größe \(s\) und Tiefe \(d\).
                         Dann gibt es einen äquivalenten Schaltkreis \(C'\) mit Maximum-Fan-in \(2\),
                         Größe höchstens \(s (k-1)\) und Tiefe höchstens \(d \ceil {\log_2 k}\).
