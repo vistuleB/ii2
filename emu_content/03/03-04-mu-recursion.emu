@@ -114,11 +114,22 @@
                     |> p
 
                         Eine Einschränkung primitiv-rekursiver Funktionen ist also, dass wir immer vor der Schleife
-                        angeben müssen, wie oft diese durchlaufen werden soll. Es gibt also keine`while`-Schleifen. Führen wir diese nun ein.
+                        angeben müssen, wie oft diese durchlaufen werden soll. Es gibt also keine
+                        `while`-Schleifen. Führen wir diese nun ein.
                     |> pre
                         class listing
 
-                        `def While (condition, step):` `def f(x):`  `temp = x`  `while (condition(temp)):`   `temp = step(temp)`  `return temp` 
+                        `def While (condition, step):`
+
+                        &ensp;`def f(x):`
+
+                        &ensp;&ensp;`temp = x`
+
+                        &ensp;&ensp;`while (condition(temp)):`
+
+                        &ensp;&ensp;&ensp;`temp = step(temp)`
+
+                        &ensp;&ensp;`return temp` 
 
                         &ensp;`return f` 
                     |> div
@@ -127,11 +138,13 @@
                             |> span
                                 class numbered-title
 
-                                Übungsaufgabe
+                                Übungsaufgabe 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            Schreiben Sie mit Hilfe von `While`, `PrimRec` und `Comp`eine Funktion `collatzList`, die aus einer Zahl
+                                &ensp;
+                            Schreiben Sie mit Hilfe von `While`, `PrimRec` und `Comp`
+                            eine Funktion `collatzList`, die aus einer Zahl
                             die Collatz-Folge baut, also
                         |> pre
                             |> code

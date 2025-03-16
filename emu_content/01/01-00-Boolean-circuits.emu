@@ -50,7 +50,9 @@
                         loading lazy
                 Von links nach rechts sind dies: das Und-Gatter (_and-gate_), Oder-Gatter (_or-gate_) und
                 das
-                Nicht-Gatter (_not-gate_). In C, C++ und Java kennen Sie diese Booleschen Operatoren als`&&`, `||` und `!`. Was diese Operatoren_tun_, können wir als _Wahrheitstabelle_ darstellen.
+                Nicht-Gatter (_not-gate_). In C, C++ und Java kennen Sie diese Booleschen Operatoren als
+                `&&`, `||` und `!`. Was diese Operatoren
+                _tun_, können wir als _Wahrheitstabelle_ darstellen.
                 Wir listen alle Kombinationen für \(x,y\) auf und schreiben in jede Zeile
                 auch den Wert, den der Operator ausgibt.
                 $$
@@ -111,10 +113,11 @@
                     |> span
                         class numbered-title
 
-                        Übungsaufgabe
+                        Übungsaufgabe 
                         |> NumberedTitle
 
                             ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                        &ensp;
                     Bauen Sie folgende Gates aus And-, Or- und Not-Gates zusammen:
                     |> ol
                         |> li
@@ -204,14 +207,16 @@
                     |> span
                         class numbered-title
 
-                        Definition
+                        Definition 
                         |> NumberedTitle
 
                             ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                        &ensp;
                     &ensp;*(Boolesche Schaltkreise)*
                     |> p
 
-                        Ein Boolescher Schaltkreis ist ein gerichteter, azyklischer Graph (englisch_directed acyclic graph_, kurz _DAG_), in welchem jeder
+                        Ein Boolescher Schaltkreis ist ein gerichteter, azyklischer Graph (englisch
+                        _directed acyclic graph_, kurz _DAG_), in welchem jeder
                         Knoten entweder
                         |> ul
                             |> li
@@ -233,7 +238,8 @@
                     bringt.
                     Wenn wir allen Input-Variablen eines Schaltkreises \(C\) einen Wahrheitswert zugewiesen bekommen
                     haben,
-                    dann können wir den Schaltkreis von "unten" (Input-Gates) nach "oben" (Output-Gates)_auswerten_,
+                    dann können wir den Schaltkreis von "unten" (Input-Gates) nach "oben" (Output-Gates)
+                    _auswerten_,
                     indem eben jeder mit OR/AND/NOT beschriftete
                     Knoten den ihm zugeordnete Booleschen Operator auswertet. Es ist klar, dass
                     der Schaltkreis \(C\) eine _Funktion_ \(f_C : \{0,1\}^n \rightarrow \{0,1\}^m\) berechnet.
@@ -243,10 +249,11 @@
                     |> span
                         class numbered-title
 
-                        Beobachtung
+                        Beobachtung 
                         |> NumberedTitle
 
                             ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                        &ensp;
                     Ein Schaltkreis \(C\) mit \(n\) Input-Gates und \(m\) Output-Gates berechnet
                     eine Funktion \(f_C : \{0,1\}^n \rightarrow \{0,1\}^m\).
                 |> p
@@ -261,10 +268,11 @@
                     |> span
                         class numbered-title
 
-                        Definition
+                        Definition 
                         |> NumberedTitle
 
                             ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                        &ensp;
                     Zwei Boolesche Schaltkreise \(C, C'\) heißen äquivalent, wenn
                     \(f_C = f_{C'}\), wenn sie also die gleiche Funktion berechnen. Wir schreiben
                     \(C \equiv C'\).

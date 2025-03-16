@@ -45,7 +45,10 @@
                         Im letzten Kapitel haben wir viele Mengen kennengelernt, die abzählbar
                         unendlich sind, also gleichmächtig mit $\N$. Hier werden wir nun
                         erkunden, welche Mengen gleichmächtig mit $\R$ sind. In der
-                        mathematischen Fachsprache sagt man: sie haben die_Kardinalität des Kontinuums_. Das Wort_Kardinalität_ steht hier für_Anzahl der Elemente_ (bzw. den Größenbegriff bei unendlichen
+                        mathematischen Fachsprache sagt man: sie haben die
+                        _Kardinalität des Kontinuums_. Das Wort
+                        _Kardinalität_ steht hier für
+                        _Anzahl der Elemente_ (bzw. den Größenbegriff bei unendlichen
                         Mengen), und _Kontinuum_ steht für _die reellen Zahlen_.
                         Im nächsten Kapitel werden wir zeigen, dass es "echt mehr" reelle
                         Zahlen gibt als natürliche; dass also $\R$ nicht abzählbar ist. Aber
@@ -56,17 +59,19 @@
                             |> span
                                 class numbered-title
 
-                                Beobachtung
+                                Beobachtung 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             &ensp;Es gilt $\R \approx
                             (0,1)$, wobei $(0,1)$ das offene Einheitsintervall ist.
                     |> div
                         class well container
                         |> p
 
-                            *Beweis.*Wir können eine Bijektion explizit hinschreiben:
+                            *Beweis.*
+                            Wir können eine Bijektion explizit hinschreiben:
                         \begin{align*} f : \R&amp;\rightarrow (0,1) \\ x&amp;\mapsto
                         \frac{e^x}{e^x + 1} \end{align*}
                         |> p
@@ -97,10 +102,11 @@
                             |> span
                                 class numbered-title
 
-                                Übungsaufgabe
+                                Übungsaufgabe 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                &ensp;
                             Zeigen Sie $\R \approx \R^+$.
                     |> div
                         class well well-lg numbered-exercise container
@@ -108,10 +114,11 @@
                             |> span
                                 class numbered-title
 
-                                Übungsaufgabe
+                                Übungsaufgabe 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                &ensp;
                             Zeigen Sie, dass $\R_0^+ \approx \R^+$ gilt. Sie müssen "die 0
                             verschwinden lassen".
                     |> div
@@ -121,10 +128,11 @@
                                 id exercise-open-closed-half-open
                                 class numbered-title
 
-                                Übungsaufgabe
+                                Übungsaufgabe 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                &ensp;
                             Zeigen Sie, dass $[0,1]$, $[0,1)$, $(0,1]$ und $(0,1)$ alle
                             gleichmächtig sind.
                     |> p
@@ -145,16 +153,18 @@
                                 id theorem-R-bitstrings
                                 class numbered-title
 
-                                Theorem
+                                Theorem 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             $\R \approx \{0,1\}^{\N}$.
                     |> div
                         class well container
                         |> p
 
-                            *Beweis.*Die Beweisidee ist einfach, allerdings gehen erst einmal ein paar
+                            *Beweis.*
+                            Die Beweisidee ist einfach, allerdings gehen erst einmal ein paar
                             Dinge schief, die man wieder flicken muss. Da laut
                             |> span
                                 data-ref exercise-open-closed-half-open
@@ -199,10 +209,11 @@
                                 |> span
                                     class numbered-title
 
-                                    Übungsaufgabe
+                                    Übungsaufgabe 
                                     |> NumberedTitle
 
                                         ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                    &ensp;
                                 Sei $Y := \{ a_1 a_2 a_3 \dots \in \{0,1\}^{\N} \ | \ \exists\ n
                                 \geq 1: a_i = 0 \ \forall i \geq n\}$ die Menge aller $0/1$-Folgen
                                 mit einem unendlichen Schweif von Nullen. Offensichtlich gilt $X
@@ -216,10 +227,11 @@
                                 |> span
                                     class numbered-title
 
-                                    Übungsaufgabe
+                                    Übungsaufgabe 
                                     |> NumberedTitle
 
                                         ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                    &ensp;
                                 Verwenden Sie die vorherige Übungsaufgabe, um $Y$ zu verdoppeln
                                 und somit eine Bijektion von $[0,1) \rightarrow \{0,1\}^{\N}$ zu
                                 konstruieren. Vielleicht hilft Ihnen folgendes Bild:
@@ -243,10 +255,11 @@
                                 id theorem-square-interval
                                 class numbered-title
 
-                                Theorem
+                                Theorem 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             Es gilt $\R^2 \approx \R$.
                     |> div
                         class well container
@@ -331,10 +344,11 @@
                             |> span
                                 class numbered-title
 
-                                Beobachtung
+                                Beobachtung 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             &ensp;Die Funktion
                             $f^{-1}$ bildet
                         |> ul
@@ -358,7 +372,8 @@
                         class well container
                         |> p
 
-                            *Beweis.*Wir zeigen den ersten Punkt. Sei $0 \leq z \lt 1/2$ und $(x,y) =
+                            *Beweis.*
+                            Wir zeigen den ersten Punkt. Sei $0 \leq z \lt 1/2$ und $(x,y) =
                             f^{-1}(z)$. Dann hat $z$ die Binärdarstellung $z =
                             (0.00z_3z_4z_5\dots)$. Die ersten beiden Bits nach dem Komma sind
                             $0$, und somit sind die jeweils ersten Bits von $x$ und $y$ auch 0,
@@ -459,16 +474,18 @@
                             |> span
                                 class numbered-title
 
-                                Theorem
+                                Theorem 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             &ensp;$\R \approx \R^{\N}$.
                     |> div
                         class well container
                         |> p
 
-                            *Beweis.*Da $\R \approx \cuben$ gilt, reicht es, zu zeigen, dass
+                            *Beweis.*
+                            Da $\R \approx \cuben$ gilt, reicht es, zu zeigen, dass
                         \begin{align*} \cuben \approx \left(\cuben\right)^{\N} \end{align*}
                         |> p
 
@@ -514,7 +531,8 @@
                         class well container
                         |> p
 
-                            *Zweiter Beweis.*Um zu zeigen, dass $\R^\N \approx \R$ gilt, rechnen wir:
+                            *Zweiter Beweis.*
+                            Um zu zeigen, dass $\R^\N \approx \R$ gilt, rechnen wir:
                         \begin{align} \R^\N&amp;\approx \left(\cuben\right)^{\N} \\&amp;\approx
                         \cube^{\N \times \N} \\&amp;\approx \cube^{\N} \\&amp;\approx \R \ .
                         \end{align}
@@ -557,10 +575,11 @@
                                 id calculating-with-cardinals
                                 class numbered-title
 
-                                Theorem
+                                Theorem 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             *(mit Kardinalzahlen rechnen)*. Es gelten die
                             üblichen Rechenregeln:
                         |> ol
@@ -588,10 +607,11 @@
                                 id replacing-equipotent-cardinals
                                 class numbered-title
 
-                                Theorem
+                                Theorem 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             Seien $A, A', B$ Mengen und $A \approx A'$. Dann gilt
                         |> ol
                             |> li
@@ -619,10 +639,11 @@
                             |> span
                                 class numbered-title
 
-                                Übungsaufgabe
+                                Übungsaufgabe 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                &ensp;
                             &ensp;Beweisen Sie so
                             viele Punkte von
                             |> span
@@ -651,10 +672,11 @@
                             |> span
                                 class numbered-title
 
-                                Übungsaufgabe
+                                Übungsaufgabe 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                &ensp;
                             Zeigen Sie, dass $2^{\N} \approx \cuben$ gilt.
                     |> p
 
@@ -667,7 +689,8 @@
                         oder $B \subseteq A$. Erinnern Sie sich: $A$ und $B$ sind hier Mengen
                         natürlicher Zahlen, und $Z$ ist eine Menge von Mengen natürlicher
                         Zahlen. Eine _Antikette_ in einer Partialordnung $(X,\preceq)$
-                        ist eine Teilmenge $Z \subseteq X$, in der je zwei Elemente_unvergleichbar_ sind. In diesem Beispiel heißt das: $Z
+                        ist eine Teilmenge $Z \subseteq X$, in der je zwei Elemente
+                        _unvergleichbar_ sind. In diesem Beispiel heißt das: $Z
                         \subseteq 2^N$, und für alle $A, B \in Z$ mit $A \ne B$ gilt $A \not
                         \subseteq B$ und $B \not \subseteq A$. Hier ist ein Beispiel für eine
                         unendliche Kette:
@@ -691,7 +714,8 @@
 
                         Wenn wir ganz links noch $\{0\}$ hinschreiben und ganz rechts noch
                         $\N$, dann haben wir ein weiteres, eventuell ungewohntes Phänomen: das
-                        Element $\{0\}$ in der Kette hat keinen eindeutigen_Nachfolger_. Egal, welches $A$ mit $\{0\} \subsetneq A$ Sie
+                        Element $\{0\}$ in der Kette hat keinen eindeutigen
+                        _Nachfolger_. Egal, welches $A$ mit $\{0\} \subsetneq A$ Sie
                         wählen, sie finden immer noch ein $B$ dazwischen: $\{0\} \subsetneq B
                         \subsetneq A$.
                     |> div
@@ -700,10 +724,11 @@
                             |> span
                                 class numbered-title
 
-                                Definition
+                                Definition 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             *(Dichte Partialordnung)* Eine Partialordnung
                             $(X,\preceq)$ heißt _dicht_, wenn es für alle $x,z \in X$ mit
                             $x \prec z$ ein $y \in X$ gibt mit $x \prec y \prec z$.
@@ -721,10 +746,11 @@
                             |> span
                                 class numbered-title
 
-                                Übungsaufgabe
+                                Übungsaufgabe 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                &ensp;
                             Finden Sie in $(2^\N, \subseteq)$ eine Kette $X$, so dass $(X,
                             \subseteq)$ dicht ist. Also: eine Menge $X$, so dass für alle $A,C
                             \in X$ mit $A \ne C$ entweder $A \subsetneq C$ oder $C \subsetneq A$

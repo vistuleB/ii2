@@ -53,7 +53,8 @@
                         Bandes lesen und schreiben kann und man deswegen ständig zwischen
                         verschiedenen Stellen hin- und herfahren muss. Es bietet sich daher
                         an, an etwas allgemeineres Modell einer Rechenmaschine zu definieren,
-                        das dann auch leichter zu programmieren ist. Dies ist die_Mehrband-Turingmaschine_.
+                        das dann auch leichter zu programmieren ist. Dies ist die
+                        _Mehrband-Turingmaschine_.
                     |> p
 
                         Eine Mehrband-Turingmaschine ist wie eine Turingmaschine, nur dass sie
@@ -135,10 +136,11 @@
                         |> span
                             class numbered-title
 
-                            Beispiel
+                            Beispiel 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Entwerfen wir nun eine Turingmaschine für die Palindromsprache
                         \begin{align*} L := \{ w \in \{a,b\}^* \ | \ w = w^R \} \ ,
                         \end{align*} In
@@ -187,10 +189,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Schreiben Sie eine Mehrband-Turingmaschine, die Binärzahlen addiert.
                         Wenn also beispielsweise 
                         |> tt
@@ -229,11 +232,13 @@
                             \(\square\) reinlaufen. Wie ist dieser Fall zu behandeln?
                     |> p
 
-                        *Berechnete Sprache, berechnete Funktion.*Die Begriffe des Akzpetierens und Ablehnens definieren wir genau wie
+                        *Berechnete Sprache, berechnete Funktion.*
+                        Die Begriffe des Akzpetierens und Ablehnens definieren wir genau wie
                         für die Einband-Turingmaschinen. Eine formale Definition der
                         Konfiguration ersparen wir uns jedoch. Wenn unsere
                         Mehrband-Turingmaschine nicht nur akzeptieren / ablehnen, sondern
-                        etwas_berechnen_ soll, also eine Funktion \begin{align*} f :
+                        etwas
+                        _berechnen_ soll, also eine Funktion \begin{align*} f :
                         \Sigma_1 \rightarrow \Sigma_2 \ , \end{align*} dann bauen wir sie per
                         Konvention so, dass sie ein designiertes Ausgabeband hat, auf dem nach
                         Abschluss der Berechnung das Ausgabewort \(f(x)\) steht.
@@ -251,10 +256,11 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         *(Einband-Turingmaschine simuliert Mehrband-Turingmaschine)*. Sei \(M\) eine Turingmaschine mit \(k\) Bändern, wovon eines ein
                         designiertes Ausgabeband ist. Dann gibt es eine Einband-Turingmaschine
                         \(M'\) mit folgenden Eigenschaften:
@@ -274,7 +280,8 @@
                     |> div
                         class well container
 
-                        *Beweis.*Der erste Trick ist, dass wir die \(k\) Bänder von \(M\)
+                        *Beweis.*
+                        Der erste Trick ist, dass wir die \(k\) Bänder von \(M\)
                         "zusammenkleben" in ein neues Band, in welcher jede Zelle \(k\)
                         Symbole enthalten kann:
                         |> figure
@@ -303,7 +310,8 @@
 
                             Das neue Bandalphabet ist also nicht \(\Gamma^k\) sondern \((\Gamma
                             \times \{\texttt{head}, \texttt{nohead}\} )^k\). Wo steht nun aber
-                            denn der Kopf von \(M'\)? Jetzt kommt der schwierige Teil: um_einen_ Schritt von \(M\) zu simulieren, muss \(M'\) von ganz
+                            denn der Kopf von \(M'\)? Jetzt kommt der schwierige Teil: um
+                            _einen_ Schritt von \(M\) zu simulieren, muss \(M'\) von ganz
                             links nach ganz rechts laufen und alle Informationen über die \(k\)
                             \(M\)-Köpfe sammeln. Dann von rechts nach links gehen und die
                             ausführen.
@@ -536,11 +544,28 @@
                     |> pre
                         class listing container
 
-                        `name: replace_b_by_c``init: init` `accept: accept` ```init, a``init, a, >` ```init, b``init, c, >` ```init, _` `accept, _, >` 
+                        `name: replace_b_by_c`
+                        `init: init` 
+
+                        `accept: accept` 
+
+                        ``
+                        `init, a`
+                        `init, a, &gt;` 
+
+                        ``
+                        `init, b`
+                        `init, c, &gt;` 
+
+                        ``
+                        `init, _` 
+
+                        `accept, _, &gt;` 
                     |> p
 
                         Ungleich schwieriger ist die Aufgabe, jedes \(b\) durch ein \(bc\) zu
-                        ersetzen, weil wir hier etwas_einfügen_ wollen. Auf einer Einband-Turingmaschine müssen wir
+                        ersetzen, weil wir hier etwas
+                        _einfügen_ wollen. Auf einer Einband-Turingmaschine müssen wir
                         für jedes \(b\) alles, was rechts davon kommt, um eine Zelle nach
                         rechts verschieben. Meinen Quelltext finden sie in
                         |> a
@@ -563,7 +588,8 @@
                     |> p
 
                         In diesem Fall ahnen Sie es wohl bereits: es ist nur Syntaxzucker. Die
-                        Funktionalität des_Einfügens/Verschiebens_ können wir leicht mit zwei Bändern
+                        Funktionalität des
+                        _Einfügens/Verschiebens_ können wir leicht mit zwei Bändern
                         simulieren. Wir halten uns einfach an die Konvention, dass auf Band 1
                         der Kopf immer auf dem linkesten Zeichen steht und auf Band 2 der Kopf
                         jenseits des rechtesten. \begin{align*} \delta(q,x) = (r,y,\texttt{R})
@@ -572,7 +598,7 @@
                         class container
 
                         q, x, _
-                        r, _, x, >, > 
+                        r, _, x, &gt;, &gt; 
                     Eine Linksbewegung ist etwas schwieriger zu implementieren. Aus
                     \(\delta(q,x) = (r,y,\texttt{L})\) wird
                     |> pre
@@ -608,9 +634,9 @@
                         class container
 
                         q,   x, _
-                        r'', _, z, >, >
+                        r'', _, z, &gt;, &gt;
                         r'', c, _
-                        r,   c, y, -, > 
+                        r,   c, y, -, &gt; 
                         |> span
                             class comment
 
@@ -640,7 +666,8 @@
                         Die Dictionary-Maschine
                     |> p
 
-                        Ein fundamentale Datenstruktur beim Programmieren sind_Dictionaries_, die Key-Value-Paare speichern:
+                        Ein fundamentale Datenstruktur beim Programmieren sind
+                        _Dictionaries_, die Key-Value-Paare speichern:
                     |> pre
                         class container
                         |> code
@@ -672,10 +699,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Schreiben Sie auf
                         |> a
                             href https://turingmachinesimulator.com
@@ -742,14 +770,17 @@
                         \begin{align*} C \Step{}^* C' \end{align*} wenn wir von \(C\) in einer
                         Folge von Schritten nach \(C'\) kommen können, also \begin{align*} C =
                         C_0 \Step{} C_1 \Step{} C_2 \Step{} \dots \Step{} C' \end{align*} Wir
-                        sagen auch:_Die Konfiguration \(C'\) ist von \(C\) aus erreichbar_.
+                        sagen auch:
+                        _Die Konfiguration \(C'\) ist von \(C\) aus erreichbar_.
                     |> p
 
                         Für ein Eingabewort \(x\) sie \(C_x := \texttt{start} x\) die
-                        Startkonfiguration. Eine nichtdeterministische Turingmaschine_akzeptiert_ \(x\), wenn es eine akzeptierende Endkonfiguration
+                        Startkonfiguration. Eine nichtdeterministische Turingmaschine
+                        _akzeptiert_ \(x\), wenn es eine akzeptierende Endkonfiguration
                         \(C_{\rm accept}\) gibt mit \begin{align*} C_x \Step{}^* C_{\rm
                         accept} \end{align*} wenn es also (mindestens) eine akzeptierende
-                        Konfiguration gibt, die von \(C_x\) aus erreichbar ist. Dabei kann es_mehrere_ erreichbare akzeptierende Konfigurationen geben, Es
+                        Konfiguration gibt, die von \(C_x\) aus erreichbar ist. Dabei kann es
+                        _mehrere_ erreichbare akzeptierende Konfigurationen geben, Es
                         kann sogar eine ablehnende Konfiguration \(C_x \Step{}^* C_{\rm
                         reject}\) geben. Spielt keine Rolle: solange es einen Weg \(C_x
                         \Step{}^* C_{\rm accept}\) gibt, sagen wir, dass \(M\) das Eingabewort
@@ -759,11 +790,13 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        *(Akzeptieren und Entscheiden bei nichtdeterministischen Turingmaschinen).*Eine nichtdeterministische Turingmaschine \(M\) akzeptiert die Sprache
+                            &ensp;
+                        *(Akzeptieren und Entscheiden bei nichtdeterministischen Turingmaschinen).*
+                        Eine nichtdeterministische Turingmaschine \(M\) akzeptiert die Sprache
                         \(L\) wenn \begin{align*} x \in L \Longleftrightarrow M \textnormal {
                         akzeptiert } x \end{align*} Für jedes \(x \not \in L\) gibt es also
                         keine akzeptierende Konfiguration \(C\) mit \(C_x \Rightarrow C\).
@@ -777,9 +810,13 @@
                         class alert-warning
 
                         Oft wird händeringend versucht, zu erklären, was denn eine
-                        nichtdeterministische Turingmaschine_tut_. Da lesen Sie dann beispielsweise, dass die_alle Möglichkeiten gleichzeitig ausprobiert_ oder den
-                        richtigen Pfad von einem _Engel_ gesagt bekommt oder_errät_. Ich stelle mir lieber vor, dass eine
-                        nichtdeterministische Turingmaschine gar nichts "tut" sondern_Spielregeln_ definiert, wie man "ziehen" kann. Man gewinnt,
+                        nichtdeterministische Turingmaschine
+                        _tut_. Da lesen Sie dann beispielsweise, dass die
+                        _alle Möglichkeiten gleichzeitig ausprobiert_ oder den
+                        richtigen Pfad von einem _Engel_ gesagt bekommt oder
+                        _errät_. Ich stelle mir lieber vor, dass eine
+                        nichtdeterministische Turingmaschine gar nichts "tut" sondern
+                        _Spielregeln_ definiert, wie man "ziehen" kann. Man gewinnt,
                         wenn man in einer akzeptierenden Konfiguration landet.
                     |> p
                     |> div
@@ -787,10 +824,11 @@
                         |> span
                             class numbered-title
 
-                            Beispiel
+                            Beispiel 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Beim Teilsummenproblem haben wir eine Liste von Waren (alles Unikate)
                         mit Preisen \(p_1, p_2, \dots, p_n\) und ein Guthaben \(g\) gegeben
                         und wollen wissen, ob wir unser Guthaben exakt ausgeben können. Ob es
@@ -858,7 +896,27 @@
                     |> pre
                         class listing container
 
-                        `module SubsetSum exposing (..)``````subsetSum : List Int -> Int -> Bool``subsetSum prices amount =` `case ( prices, amount ) of` `( [], 0 ) ->` `True``` `( x :: rest, _ ) ->` `subsetSum rest amount || subsetSum rest (amount - x)``` `( [], _ ) ->` `False`
+                        `module SubsetSum exposing (..)`
+                        ``
+                        ``
+                        `subsetSum : List Int -&gt; Int -&gt; Bool`
+                        `subsetSum prices amount =`
+
+                        &ensp;`case ( prices, amount ) of`
+
+                        &ensp;`( [], 0 ) -&gt;`
+
+                        &ensp;`True`
+                        ``
+
+                        &ensp;`( x :: rest, _ ) -&gt;`
+
+                        &ensp;`subsetSum rest amount || subsetSum rest (amount - x)`
+                        ``
+
+                        &ensp;`( [], _ ) -&gt;`
+
+                        &ensp;`False`
                     |> p
 
                         Auf einer deterministischen Turingmaschine wäre das deutlich
@@ -870,11 +928,13 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        *(Nichtdeterministische Turingmaschinen deterministischsimulieren)*Sei \(M\) eine nichtdeterministische Turingmaschine. Dann gibt es eine
+                            &ensp;
+                        *(Nichtdeterministische Turingmaschinen deterministischsimulieren)*
+                        Sei \(M\) eine nichtdeterministische Turingmaschine. Dann gibt es eine
                         deterministische Maschine \(M'\) mit \(L(M) = L(M')\), d.h. \(M'\)
                         akzeptiert \(x\) genau dann, wenn \(M\) es akzeptiert.
                         |> p
@@ -885,7 +945,8 @@
                     |> div
                         class well container
 
-                        *Beweis.*Als erstes führen wir eine kosmetische Änderung unserer
+                        *Beweis.*
+                        Als erstes führen wir eine kosmetische Änderung unserer
                         nichtdeterministischen Maschine durch: wir wollen, dass es für jedes
                         \((q,c)\) genau zwei Möglichkeiten gibt, also \begin{align*} (q,c)&
                         \rightarrow (q_1, c_1, D_1) \\ (q,c)&amp;\rightarrow (q_2, c_2, D_2) \ ,

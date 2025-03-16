@@ -81,7 +81,8 @@
                     |> div
                         style text-align:center
 
-                        *Frage:*Können _alle_ regulären Sprachen nach diesem Baukastenprinzip erstellt werden?
+                        *Frage:*
+                        Können _alle_ regulären Sprachen nach diesem Baukastenprinzip erstellt werden?
                     |> p
 
                         Damit diese Frage überhaupt die Chance hat, mit _ja_ beantwortet zu werden, müssen wir
@@ -101,10 +102,11 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Sei \(\Sigma\) einendliches Alphabet. Die regulären Audrücke über \(\Sigma\) sind induktiv
                         definiert wie folgt und beschreiben folgende Sprachen:
                         |> ul
@@ -147,12 +149,14 @@
 
                         In konkreten fällen lassen gerne die Klammerung weg, wenn keine Verwechslungsgefahr besteht.
                         Auch
-                        gehen wir davon aus, dass die Operatoren die Präzedenz \(^*\) vor \(\circ\) vor \(|\) haben (wie_hoch_ vor _Punkt_ vor _Strich_ in der Arithmetik), sodass beispielsweise
+                        gehen wir davon aus, dass die Operatoren die Präzedenz \(^*\) vor \(\circ\) vor \(|\) haben (wie
+                        _hoch_ vor _Punkt_ vor _Strich_ in der Arithmetik), sodass beispielsweise
                         der Ausdruck \( a^*b|c^*\) die Bedeutung von \((((a^*)b)(c^*))\) hat, genauso wie wir
                         in der Arithmetik \(a^2 b + c^3\) statt \( (((a^2)b) + c^3) \) schreiben.
                     |> p
 
-                        Die von den atomaren Ausdrücken beschriebenen Sprachen sind alle regulär, da sie alle_endliche Sprachen_ sind.
+                        Die von den atomaren Ausdrücken beschriebenen Sprachen sind alle regulär, da sie alle
+                        _endliche Sprachen_ sind.
                         Dank unserer Vorarbeit aus 
                         |> a
                             href ./04-01-regular-grammars.html#baukasten
@@ -167,7 +171,11 @@
                         |> span
                             class numbered-title
 
-                            Lemma
+                            Lemma 
+                            |> NumberedTitle
+
+                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Die von einem regulären Ausdruck \(R\) beschriebene Sprache \(L(R)\) ist regulär.
                     |> p
 
@@ -177,10 +185,11 @@
                         |> span
                             class numbered-title
 
-                            Beispiel
+                            Beispiel 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Nehmen wir die Sprache der Wörter der Form `bla:bla:blu.xyz-12-ab.b:x` aus dem
                         letzten Kapitel. Sie erinnern sich:
                         eine endliche Folge von _Labels_, wo ein Label eine nichtleere Folge von Blöcken ist, die
@@ -199,7 +208,8 @@
                             \begin{align*}
                             B : = a^+
                             \end{align*}
-                            Für ein Label müssen wir uns entscheiden, ob wir die Blöcke mit `:` oder`-` separieren; wir
+                            Für ein Label müssen wir uns entscheiden, ob wir die Blöcke mit `:` oder
+                            `-` separieren; wir
                             erhalten den regulären Ausdruck \(T\) für Labels ist also
                             \begin{align*}
                             T := B ({:}B)^* | B (\text{-}B)^*
@@ -214,7 +224,8 @@
                             was wir in unserer Grammatik bzw. dem nichtdeterministischen Automaten für \(L\) getan
                             haben, während \(T'\) eher
                             die Arbeitsweise des determinisitschen Automaten reflektiert (wir lesen erst einmal einen
-                            Block und erst, wenn wir zum ersten mal auf`:` oder `-` stoßen, entscheiden wir uns für den "Typ" des Labels).
+                            Block und erst, wenn wir zum ersten mal auf
+                            `:` oder `-` stoßen, entscheiden wir uns für den "Typ" des Labels).
                             Schlussendlich ist ein Wort in der Sprache eine mit `.` separierte Folge von
                             Labels, also:
                             \begin{align*}
@@ -229,10 +240,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Laden Sie sich 
                         |> a
                             href ../code/regular-expressions/TestRegex.java
@@ -273,11 +285,14 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                        In der Praxis gibt es bei reguläre Ausdrücken viele Abkürzung, so beschreibt`[a-z]` beispielsweise die Menge aller Kleinbuchstaben,`[aoeiuy]` beschreibt die Menge \{a,o,e,i,u,y\} etc.
+                            &ensp;
+                        In der Praxis gibt es bei reguläre Ausdrücken viele Abkürzung, so beschreibt
+                        `[a-z]` beispielsweise die Menge aller Kleinbuchstaben,
+                        `[aoeiuy]` beschreibt die Menge \{a,o,e,i,u,y\} etc.
                         Der reguläre Ausdruck `[a-z]*[aeiuoy][a-z]*` beschreibt also die
                         Menge aller Wörter, die mindesten einen Vokal enthalten.
                         Lesen Sie hierfür unter Anderem
@@ -316,10 +331,11 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Sei \(L\) eine reguläre Sprache. Dann gibt es einen regulären Ausdruck \(R\), der \(L\)
                         beschreibt,
                         also
@@ -331,7 +347,8 @@
                     |> div
                         class well container
 
-                        *Beweis.*Zunächst skizzieren wir die Beweisidee. Da \(L\) regulär ist, gibt es einen
+                        *Beweis.*
+                        Zunächst skizzieren wir die Beweisidee. Da \(L\) regulär ist, gibt es einen
                         nichtdeterministischen endlichen
                         Automaten \(M\), die \(L\) akzeptiert. Wir werden nun \(M\) Schritt für Schritt in einen
                         regulären Ausdruck
@@ -377,11 +394,13 @@
                             |> span
                                 class numbered-title
 
-                                Definition
+                                Definition 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            *(Verallgemeinerter nichtdeterministischer endlicher Automat, VNEA).*Ein VNEA besteht aus einem Alphabet \(\Sigma\), einer Zustandsmenge \(Q\), einen
+                                &ensp;
+                            *(Verallgemeinerter nichtdeterministischer endlicher Automat, VNEA).*
+                            Ein VNEA besteht aus einem Alphabet \(\Sigma\), einer Zustandsmenge \(Q\), einen
                             Startzustand \(\qstart \in Q\), einem
                             akzeptierenden Zustand \(q_{\rm end} \in Q \setminus \{\qstart\}\), einer
                             Menge von gerichteten Kanten
@@ -496,10 +515,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Wandeln Sie nach dem eben beschriebenen Schema den Automaten
                         |> figure
                             |> img

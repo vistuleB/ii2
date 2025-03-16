@@ -145,7 +145,8 @@
                     |> div
                         class well container subtheorem
 
-                        *Warten Sie!*Scrollen Sie erst weiter, wenn Sie den Baum oben lang genug angeschaut haben!
+                        *Warten Sie!*
+                        Scrollen Sie erst weiter, wenn Sie den Baum oben lang genug angeschaut haben!
                         Versuchen Sie selbst, die spezielle Form dieses Baumes möglichst
                         formal zu beschreiben!
                     |> div
@@ -172,12 +173,13 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;/ Beobachtung
-                        *(Stamm, linker Rand, Blüte, Front, rechter Rest)*Sei \(S \Step{}^* \gamma\) eine Rechtsableitung, \(\gamma\) also
+                            &ensp;&ensp;/ Beobachtung
+                        *(Stamm, linker Rand, Blüte, Front, rechter Rest)*
+                        Sei \(S \Step{}^* \gamma\) eine Rechtsableitung, \(\gamma\) also
                         eine gültige Wortform, und
                         \(\mathcal{T}\) der Ableitungsbaum von \(\gamma\).
                         Der _Stamm_ ist der Pfad von der Wurzel zu jenem inneren Knoten \(u\),
@@ -367,10 +369,11 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Für eine kontextfreie Grammatik \(G\) definieren wir
                         die Sprache \(\Front(G) \subseteq (\Sigma \cup N)^*\):
                         \begin{align*}
@@ -391,7 +394,11 @@
                             |> span
                                 class numbered-title
 
-                                Lemma
+                                Lemma 
+                                |> NumberedTitle
+
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             Die Sprache $\Front(G)$ ist regulär.
                             Insbesondere gibt es eine erweitert reguläre Grammatik \(\hat{G}\) für
                             $\Front(G)$, so dass die Blüte genau die im letzen Ableitungsschritt
@@ -426,10 +433,11 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Sei \(G = (\Sigma, N, S, P)\) eine kontextfreie Grammatik. Die
                         Front-Grammatik oder DK-Grammatik von \(G\) ist
                         die _erweitert reguläre_ Grammatik \(\hat{G} = (\Sigma \cup N, \hat{N}, \hat{S},
@@ -453,10 +461,11 @@
                         |> span
                             class numbered-title
 
-                            Beobachtung
+                            Beobachtung 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         \(\hat{G}\) erzeugt die Sprache
                         \(\Front(G)\).
                     |> div
@@ -464,10 +473,11 @@
                         |> span
                             class numbered-title
 
-                            Beispiel
+                            Beispiel 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Für unsere Grammatik \(G\) oben ergeben sich folgende Produktionen
                         \(\hat{P}\) in \(\hat{G}\):
                         \begin{align*}
@@ -511,7 +521,8 @@
                             class numbered-title
 
                             Algorithmus
-                        *- Der \(LR(0)\)-Parser.*Starte mit einem leerem Stack. Sei
+                        *- Der \(LR(0)\)-Parser.*
+                        Starte mit einem leerem Stack. Sei
                         \(\gamma\) der Inhalt des Stacks zu einem Zeitpunkt.
                         |> ol
                             |> li
@@ -537,10 +548,11 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Wenn der \(LR(0)\)-Parser akzeptiert, dann hat er eine Linksreduktion
                         \(w \rstep{}^* S\) und somit eine Rechtsableitung konstruiert; es gilt
                         also \(w \in L(G)\).
@@ -554,9 +566,11 @@
                         class well container
                         |> p
 
-                            *Beweis.*Der erste Teil der Bedeutung ist einfach zu sehen.
+                            *Beweis.*
+                            Der erste Teil der Bedeutung ist einfach zu sehen.
                             Jeder Reduktionsschritt ist ein Linksreduktionsschritt, und
-                            wenn man Ende $S$ steht, waren es auch alles_korrekte_ Linksreduktionsschritte.
+                            wenn man Ende $S$ steht, waren es auch alles
+                            _korrekte_ Linksreduktionsschritte.
                         |> p
 
                             Der zweite Teil ist schwieriger. Wir nehmen also
@@ -573,11 +587,13 @@
                             Invariante gilt:
                         |> p
 
-                            *Behauptung.*(i) \(\gamma w\) ist eine gültige Wortform. (ii)
+                            *Behauptung.*
+                            (i) \(\gamma w\) ist eine gültige Wortform. (ii)
                             \(\gamma\) ist ein Präfix von \(\front(\gamma w)\).
                         |> p
 
-                            *Beweis.*Die Behauptung gilt offensichtlich am Anfang, da
+                            *Beweis.*
+                            Die Behauptung gilt offensichtlich am Anfang, da
                             $\gamma = \epsilon$ und \(w\in L\) ist und
                             somit $\gamma w = w$ eine gültige Wortform ist. Des weiteren
                             ist der Stack leer, also \(\gamma = \epsilon\), und daher

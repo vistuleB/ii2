@@ -45,11 +45,11 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;(Ableitung)
+                            &ensp;&ensp;(Ableitung)
                         Sei \(G\) eine Grammatik mit Startsymbol \(S\). Die Ableitung eines
                         Wortes \(\alpha\) ist eine Sequenz von Wortformen \( w_0, w_1, \dots,
                         w_n\) mit \(w_0 = S, w_n = \alpha\) und \(w_{i-1} \Longrightarrow
@@ -109,7 +109,21 @@
                     |> pre
                         class listing container
 
-                        `def treeToLeftDerivation (tree):` `print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)` `for child in tree.children (from left ro right):` `treeToLeftDerivation(child)````def treeToRightDerivation (tree):` `for child in tree.children (from left ro right):` `treeToLeftDerivation(child)` `print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)`
+                        `def treeToLeftDerivation (tree):`
+
+                        &ensp;`print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)`
+
+                        &ensp;`for child in tree.children (from left ro right):`
+
+                        &ensp;`treeToLeftDerivation(child)`
+                        ``
+                        `def treeToRightDerivation (tree):`
+
+                        &ensp;`for child in tree.children (from left ro right):`
+
+                        &ensp;`treeToLeftDerivation(child)`
+
+                        &ensp;`print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)`
                     |> p
 
                         Beachten Sie, dass wir in beiden Fällen die Liste Kinder von links

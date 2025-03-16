@@ -58,7 +58,8 @@
                                 href ../javascript/table-of-contents.js
 
                                 table-of-contents.js
-                            . Just follow the format there. Then add the linked file. Best to
+                            .
+                            Just follow the format there. Then add the linked file. Best to
                             copy an existing file, a "chapter" or a "subchapter" file, depending
                             on the new file you want to create. The ordering in which they
                             appear (in the table of content and in the link structure given by
@@ -90,20 +91,23 @@
                             and here is the source code:
                             |> pre
 
-                                <div class='well container theorem'>
-                                &lt;p><span class='numbered-title' id="sauer-shelah-lemma" data-label-title="Lemma">Lemma</span>
-                                &lt;strong>(Sauer-Shelah lemma).&lt;/strong>Let $A \subseteq \{0,1\}^n$. If $|A| \gt {\rm vol}(n,r-1)$ then
-                                there exists some set $I \subseteq [n]$ of indices with $|I| \geq r$ such that</p>
+                                &lt;div class='well container theorem'&gt;
+                                &lt;p&gt;&lt;span class='numbered-title' id="sauer-shelah-lemma" data-label-title="Lemma"&gt;Lemma&lt;/span&gt;
+                                &lt;strong&gt;(Sauer-Shelah lemma).&lt;/strong&gt;Let $A \subseteq \{0,1\}^n$. If $|A| \gt {\rm vol}(n,r-1)$ then
+                                there exists some set $I \subseteq [n]$ of indices with $|I| \geq r$ such that&lt;/p&gt;
                                 \begin{align*}
                                 \{ \mathbf{x}_I \ | \ \mathbf{x} \in A\} = \{0,1\}^r \ ,
                                 \end{align*}
                                 in other words, the set $I$ of coordinates is shattered.
-                                </div class='well container theorem'>
-                            You must give the environment `div` the class`theorem` and the title `span` the class`nunbered-title`, otherwise the automatic numbering will
+                                &lt;/div class='well container theorem'&gt;
+                            You must give the environment `div` the class
+                            `theorem` and the title `span` the class
+                            `nunbered-title`, otherwise the automatic numbering will
                             not work.
                             |> p
 
-                                The attributes `id="sauer-shelah-lemma"` and`data-label-title="Lemma"` are necessarily for
+                                The attributes `id="sauer-shelah-lemma"` and
+                                `data-label-title="Lemma"` are necessarily for
                                 automatic referencing. Here is how you create a reference:
                             |> div
                                 class well container
@@ -121,7 +125,7 @@
                             and here is the source code:
                             |> pre
 
-                                Remember that&lt;span class="reference" data-ref="theorem-N-N^2"></span> shows that $\N$ and $\N^2$ are equipotent.
+                                Remember that&lt;span class="reference" data-ref="theorem-N-N^2"&gt;&lt;/span&gt; shows that $\N$ and $\N^2$ are equipotent.
                         |> p
 
                             To work, the `id` of a theorem (or a general environment)
@@ -134,7 +138,8 @@
                             , we
                             would have to read the file containing it. So we'd have to write
                             code that, while loading Chapter 9, loads all chapters of referenced
-                            environments. Potentially, this forces the browser to load_the entire lecture notes_ each time a single file is loaded.
+                            environments. Potentially, this forces the browser to load
+                            _the entire lecture notes_ each time a single file is loaded.
                             This would take too much time, so we use a precompilation step:
                         |> p
 
@@ -145,7 +150,9 @@
                                 put-all-in-one-page.html
                             that loads the table of content and all chapters (which takes quite
                             a substantial amount of time, like 20 seconds or so) and extracts
-                            all environments with class `theorem` or`exercise` that have also class`numbered-title` and numbers them. If the environment has
+                            all environments with class `theorem` or
+                            `exercise` that have also class
+                            `numbered-title` and numbers them. If the environment has
                             the attribute `data-label-title`, then it adds an entry
                             to a global dictionary. At the end, when all has been loaded, the
                             web page will show this dictionary as a json object.
@@ -175,4 +182,5 @@
                             |> pre
 
                                 &ensp;http-server .  --cors
-                            Once this server is running, go to`http://localhost:8080` in your browser.
+                            Once this server is running, go to
+                            `http://localhost:8080` in your browser.

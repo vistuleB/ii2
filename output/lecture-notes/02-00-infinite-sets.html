@@ -1,113 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<html>
-<head>
-  <link rel="icon" href="data:,">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
-  <link rel="stylesheet" type="text/css" href="../TI.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script type="text/javascript" src="../mathjax_setup.js"></script>
-  <script type="text/javascript" src="../mathjax_setup.js"></script>
-  <script type="text/javascript" src="../carousel.js"></script>
-  <script type="text/javascript" src="../numbered-title.js"></script>
-  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-</head>
-</body>
-      <section
-        count={8}
-        title_gr="Mengen"
-        title_en="infinite sets"
-        number={2.0}
-        counter="DefCtr"
-        counter="ExoCtr"
-        path="/lecture-notes8.tsx">
-        <div id="link-to-toc">
-          <a href="../vorlesungsskript.html">
-            Inhaltsverzeichnis
-          </a>
-          <a href="01-06-lower-and-upper-bounds.html">
-            &lt;&lt; Kapitel 1.6
-          </a>
-        </div>
-        <div
-          id="link-to-overview"
-          style="text-align: end">
-          <a href="/">
-            zur Kursübersicht
-          </a>
-          <a href="02-01-comparing-sizes.html">
-            Kapitel 2.1 &gt;&gt;
-          </a>
-        </div>
-        <div id="rightSideWrapper">
-          <div class="content">
-            <div class="chapter">
-              <h1 class="hidden-title">
-                <span class="chapterTitle">
-                  2.
-                  Unendliche Mengen
-                </span>
-              </h1>
+  <head>
+    <link rel="icon" href="data:," />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+    <link rel="stylesheet" type="text/css" href="../TI.css" />
+    <link rel="stylesheet" type="text/css" href="../tooltip-3003.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../numbered-title.js"></script>
+    <script type="text/javascript" src="../mathjax_setup.js"></script>
+    <script type="text/javascript" src="../carousel.js"></script>
+    <script type="text/javascript" src="../sendCmdTo3003.js"></script>
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+  </head>
+  <body>
+    <section
+      count="{8}"
+      title_gr="Mengen"
+      title_en="infinite sets"
+      number="{2.0}"
+      counter="DefCtr"
+      counter="ExoCtr"
+      path="/lecture-notes8.tsx"
+    >
+      <div id="link-to-toc">
+        <a href="../vorlesungsskript.html">Inhaltsverzeichnis</a
+        ><a href="01-06-lower-and-upper-bounds.html">&lt;&lt; Kapitel 1.6</a>
+      </div>
+      <div id="link-to-overview" style="text-align: end">
+        <a href="/">zur Kursübersicht</a
+        ><a href="02-01-comparing-sizes.html">Kapitel 2.1 &gt;&gt;</a>
+      </div>
+      <div id="rightSideWrapper">
+        <div class="content">
+          <div class="chapter">
+            <h1 class="hidden-title">
+              <span class="chapterTitle">2. Unendliche Mengen </span>
+            </h1>
+            <p>
+              Mit den Boolesche Schaltkreise haben wir bereits ein Modell für
+              Berechnung kennengelernt. Es ist abstrakt genug, um mathematisch
+              rigorose Aussagen darüber zu treffen und über obere und untere
+              Schranken zu sprechen. Gleichzeitig ist es sehr konkret und nah an
+              seiner physikalischen Realisierung. Ein entscheidender Nachteil
+              Boolescher Schaltkreise jedoch: Sie müssen von Anfang an wissen,
+              wie groß Ihr Input ist; also wie vielen Input-Variablen $x_1,
+              \dots, x_n$ Sie begegnen werden. Für ein allgemeines Modell der
+              Berechnung ist dies ungeeignet. Wir wollen ja
+              <i>ein</i>
+              Computerprogramm, das beliebig große Eingaben verkraften kann. Ein
+              Computerprogramm soll also
+              <i>endlich</i>
+              sein, aber für eine
+              <i>unendliche</i>
+              Menge potentieller Eingaben funktionieren. In diesem Kapitel
+              werden wir daher unendliche Mengen besser kennenlernen.
+            </p>
+            <div class="well container theorem">
               <p>
-                Mit den Boolesche Schaltkreise haben wir bereits ein Modell für Berechnung kennengelernt.
-                Es ist abstrakt genug, um mathematisch rigorose Aussagen darüber zu treffen und über obere und
-                untere Schranken zu sprechen.
-                Gleichzeitig ist es sehr konkret und nah an seiner physikalischen Realisierung.
-                Ein entscheidender Nachteil Boolescher Schaltkreise jedoch: Sie müssen von Anfang an wissen, wie
-                groß
-                Ihr Input ist; also wie vielen Input-Variablen $x_1, \dots, x_n$ Sie begegnen werden.
-                Für ein allgemeines Modell der Berechnung ist dies ungeeignet. Wir wollen ja 
-                <i>
-                  ein
-                </i>
-                Computerprogramm, das beliebig große Eingaben verkraften kann. Ein Computerprogramm
-                soll also 
-                <i>
-                  endlich
-                </i>
-                 sein, aber für eine 
-                <i>
-                  unendliche
-                </i>
-                 Menge potentieller Eingaben
-                funktionieren.
-                In diesem Kapitel werden wir daher unendliche Mengen besser kennenlernen.
+                <span class="numbered-title"
+                  >Beispiel <NumberedTitle>2.0.1</NumberedTitle>
+                </span>
+                Die Mengen $\N, \Z, \Q, \R$ sind unendlich. Die Mengen
+                $\{a,e,i,o,u\}$ und $\{0,1,2,3,4,5,6,7,8,9\}$ sind endlich.
               </p>
-              <div class="well container theorem">
-                <p>
-                  <span class="numbered-title">
-                    Beispiel
-                    <NumberedTitle>
-                      2.0.1
-                    </NumberedTitle>
-                  </span>
-                  &ensp;Die Mengen $\N, \Z, \Q, \R$ sind unendlich. Die
-                  Mengen
-                  $\{a,e,i,o,u\}$ und $\{0,1,2,3,4,5,6,7,8,9\}$ sind endlich.
-                </p>
-              </div>
-              <div class="well container theorem">
-                <p>
-                  <span class="numbered-title" />
-                  Die Menge
-                  $$\begin{align*}
-                  \{0,1\}^* := \{\epsilon\} \cup \{0,1\} \cup \{00, 01, 10, 11\} \cup \dots \cup \{0,1\}^n
-                  \cup
-                  \dots \ ,
-                  \end{align*}$$
-                  also die Menge aller endlichen Bit-Strings ist unendlich. Mit $\epsilon$ bezeichnen wir hier den
-                  leeren String.
-                  Ganz generell: wenn $\Sigma$ eine
-                  nichtleere
-                  Menge ist, dann ist $\Sigma^*$, die Menge aller endlichen Strings über $\Sigma$, unendlich.
-                </p>
-              </div>
+            </div>
+            <div class="well container theorem">
+              <p>
+                <span class="numbered-title"></span>Die Menge $$\begin{align*}
+                \{0,1\}^* := \{\epsilon\} \cup \{0,1\} \cup \{00, 01, 10, 11\}
+                \cup \dots \cup \{0,1\}^n \cup \dots \ , \end{align*}$$ also die
+                Menge aller endlichen Bit-Strings ist unendlich. Mit $\epsilon$
+                bezeichnen wir hier den leeren String. Ganz generell: wenn
+                $\Sigma$ eine nichtleere Menge ist, dann ist $\Sigma^*$, die
+                Menge aller endlichen Strings über $\Sigma$, unendlich.
+              </p>
             </div>
           </div>
         </div>
-      </section>
-    </body>
+      </div>
+    </section>
+  </body>
+</html>

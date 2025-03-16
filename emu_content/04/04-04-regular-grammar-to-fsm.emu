@@ -89,7 +89,8 @@
                         Beginnen wir mit dem Alphabet.
                         Da es 62 alphanumerische Zeichen gibt: `a..zA..Z0..9` und wir uns keine unnötige
                         Arbeit machen wollen,
-                        beschränken wir uns auf ein Zeichen: `a`. Dazu kommen die Separatoren`:-.`. Also: \(\Sigma = \{a,.,:,-\}\). Stellen Sie sich einfach vor, \(a\) stehe
+                        beschränken wir uns auf ein Zeichen: `a`. Dazu kommen die Separatoren
+                        `:-.`. Also: \(\Sigma = \{a,.,:,-\}\). Stellen Sie sich einfach vor, \(a\) stehe
                         für beliebige alphanumerische Zeichen. Sowohl Grammatik als auch Automaten lassen sich einfach
                         anpassen.
                         Wir beginnen ganz unten und schreiben eine Grammatik für
@@ -101,7 +102,8 @@
 
                         Als nächstes führen wir ein nichtterminales Symbole \(C\) für Labels mit `:` ein
                         und ein Nichtterminal \(D\) für Labels mit `-`. Wir wählen die Buchstaben \(C,D\),
-                        weil`:` auf Englisch _colon_ und `-` _dash_ heißt.
+                        weil
+                        `:` auf Englisch _colon_ und `-` _dash_ heißt.
                         \(C\)-Labels können wir uns nach dem Baukastenprizip bauen, in dem
                         wir 
                         |> a
@@ -153,7 +155,8 @@
                     |> p
 
                         Wir wollen nun alle Produktionen der Form \(Y \rightarrow x\) eliminieren. Hierfür nehmen wir
-                        uns_ein_ neues Nichtterminal \(E\) und ersetzen \(Y \rightarrow x\) durch \(Y \rightarrow
+                        uns
+                        _ein_ neues Nichtterminal \(E\) und ersetzen \(Y \rightarrow x\) durch \(Y \rightarrow
                         xE\)
                         und fügen die Produktion \(E \rightarrow \epsilon\) hinzu.
                     \begin{align*}
@@ -505,20 +508,25 @@
 
                         Die Zustände des deterministischen Automaten beschreiben im Prinzip das, was wir uns merken
                         müssen, wenn wir so einen String "parsen": Zustand \( \{C',C,E,D,D',S'\}\), der
-                        in der Grammatik dann zum Nichtterminal \(T\) wird, bedeutet beispielsweise_das Label hat schon begonnen, wir wissen aber noch nicht, ob es eines mit`:` oder eines mit `-` ist.
-                        Der Zustand \(\{C',C,E,S'\}\) bzw. das Nichtterminal \(C\) heißt dann`:`_wir sind innerhalb eines Labels mit 
+                        in der Grammatik dann zum Nichtterminal \(T\) wird, bedeutet beispielsweise
+                        _das Label hat schon begonnen, wir wissen aber noch nicht, ob es eines mit
+                        `:` oder eines mit `-` ist.
+                        Der Zustand \(\{C',C,E,S'\}\) bzw. das Nichtterminal \(C\) heißt dann
+                        `:`_wir sind innerhalb eines Labels mit 
 
-                        _._
+                        _.
+                        _
                     |> div
                         class well well-lg numbered-exercise container
                         |> p
                             |> span
                                 class numbered-title
 
-                                Übungsaufgabe
+                                Übungsaufgabe 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                &ensp;
                             Erinnern Sie sich an 
                             |> a
                                 href ./04-03-nfsm#exercise-divisibility

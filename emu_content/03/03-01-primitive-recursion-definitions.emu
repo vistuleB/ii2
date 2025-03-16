@@ -66,7 +66,8 @@
                         die Operation \(x \mapsto x+1\) bereits eine nicht ganz triviale Operation, sie erfordert
                         beispielsweise Schleifen (von rechts nach links durchgehen), if-then-else-Ausdrücke (gibt es ein
                         Carry?)
-                        etc. Daher sollten Sie so tun, also würden wir natürliche Zahlen in _unärer Schreibweise_(auhc Steinzeitnotation genannt)
+                        etc. Daher sollten Sie so tun, also würden wir natürliche Zahlen in _unärer Schreibweise_
+                        (auhc Steinzeitnotation genannt)
                         darstellen, also vier \( = 1111\), sieben = \(= 1111111\). Jezt
                         brauchen wir für succ kein if-then-else und keine Schleifen, denn
                         \(\succ(x) = 1x\).
@@ -88,18 +89,21 @@
                         \pi^3_1: (x,y,z) \mapsto y \ .
                         \end{align*}
                         Auch die Stelligkeit \(n\) lasse ich oft weg und schreibe einfach \(\pi_k\) statt \(\pi^n_k\).
-                    *Kombinatoren.*Die primitive Rekursion stellt zwei Kombinatoren zur Verfügung: Komposition (Verknüpfung) und
+                    *Kombinatoren.*
+                    Die primitive Rekursion stellt zwei Kombinatoren zur Verfügung: Komposition (Verknüpfung) und
                     primitive Rekursion.
                     |> div
                         class well container theorem
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        *(Komposition)*Sei \(f: \N^k \rightarrow \N\) und
+                            &ensp;
+                        *(Komposition)*
+                        Sei \(f: \N^k \rightarrow \N\) und
                         \(g_1, \dots, g_k: \N^l \rightarrow \N\). Dann ist
                         \(\comp(f, g_1, \dots, g_k)\) die Funktion
                         \begin{align*}
@@ -122,11 +126,13 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        *Primitive Rekursion*Seien \(g: \N^k \rightarrow \N\) und \(h: \N^{k+2} \rightarrow \N\). Wir
+                            &ensp;
+                        *Primitive Rekursion*
+                        Seien \(g: \N^k \rightarrow \N\) und \(h: \N^{k+2} \rightarrow \N\). Wir
                         definieren eine neue Funktion $f: \N^{k+1} \rightarrow \N$ wie folgt:
                         \begin{align*}
                         f : \N^{k+1}&amp;\rightarrow \N \\
@@ -139,12 +145,25 @@
                         \(f := \primrec(g,h)\).
                     |> p
 
-                        Wenn Sie Rekursionshasser sind, dann können Sie sich es als Funktion mit einer`for`-Schleife
+                        Wenn Sie Rekursionshasser sind, dann können Sie sich es als Funktion mit einer
+                        `for`-Schleife
                         vorstellen, in der nur eine lokale Variable erlaubt ist:
                         |> pre
                             class listing
 
-                            `def PrimRec(g, h):` `def f(t,*x):`     `temp = g(*x)`     `for i in range(t):` `temp = h(temp, i, *x)`     `return temp` `return f` 
+                            `def PrimRec(g, h):`
+
+                            &ensp;`def f(t,*x):`
+
+                            &ensp;&ensp;&ensp;&ensp;&ensp;`temp = g(*x)`
+
+                            &ensp;&ensp;&ensp;&ensp;&ensp;`for i in range(t):`
+
+                            &ensp;`temp = h(temp, i, *x)`
+
+                            &ensp;&ensp;&ensp;&ensp;&ensp;`return temp`
+
+                            &ensp;`return f` 
                         Die Forderung, dass man nur _eine_ lokale Variable durch die Schleife führen darf, scheint
                         sehr restriktiv; es ist aber wohl die einfachste Form einer Schleife, die wirklich etwas
                         "schleifenhaftes" tut.
@@ -213,7 +232,9 @@
                             style color:red; background-color: yellow;
                             class listing
 
-                            `def add(x,y):` `return x + y`
+                            `def add(x,y):`
+
+                            &ensp;`return x + y`
                         |> p
 
                             schreiben, denn unsere "Programmiersprache" ist Primitive Rekursion, nicht Python! Wir
@@ -237,18 +258,22 @@
                         |> pre
                             class listing
 
-                            `p0 = Proj(0)``add = PrimRec (p0, Comp(succ,p0))`
+                            `p0 = Proj(0)`
+                            `add = PrimRec (p0, Comp(succ,p0))`
                     |> div
                         class well well-lg numbered-exercise container
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Zeigen Sie, dass die folgenden Funktionen primitiv-rekursiv sind, und implementieren Sie sie
-                        in meinem Python-Framework, so wie ich Addition mit`add = PrimRec (p0, Comp(succ,p0))`implementiert habe:
+                        in meinem Python-Framework, so wie ich Addition mit
+                        `add = PrimRec (p0, Comp(succ,p0))`
+                        implementiert habe:
                         |> ol
                             |> li
 
@@ -272,10 +297,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Wenn Sie die vorherige Übungsaufgabe gelöst (oder darüber aufgegeben) haben,
                         sehen Sie sich die Datei
                         |> a

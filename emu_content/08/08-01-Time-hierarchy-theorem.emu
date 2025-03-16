@@ -56,7 +56,8 @@
                         $\delta$);
                         (2) ein Band, um den Zustand von $M$ zu speichern; (3) um den akzeptierenden Zustand $\qaccept$
                         von $M$
-                        zu speichern; (4) und (5) um das Band von $M$ zu simulieren. Für letzteres hatten wir_zwei_ Bänder
+                        zu speichern; (4) und (5) um das Band von $M$ zu simulieren. Für letzteres hatten wir
+                        _zwei_ Bänder
                         verwendet, weil das uns erlaubte, effizient Zeichen _einzufügen_ statt einfach zu
                         überschreiben.
                         Wie wir aber gesehen hatten, können wir (4) und (5) mit einem Band bewältigen, indem wir zu
@@ -86,10 +87,11 @@
                             |> span
                                 class numbered-title
 
-                                Theorem
+                                Theorem 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             &ensp;Für jedes Alphabet $\Sigma$ mit mindestens zwei
                             Zeichen
                             und jedes $k \geq 1$ gibt es eine Turingmaschine $U$ mit $k+2$ Bändern, die folgendes kann:
@@ -164,12 +166,14 @@
                             |> span
                                 class numbered-title
 
-                                Definition
+                                Definition 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             &ensp;*(Zeitbudgetiertes
-                            Halteproblem).*Sei $\Sigma$ ein endliches Alphabet. Wir definieren die Sprache
+                            Halteproblem).*
+                            Sei $\Sigma$ ein endliches Alphabet. Wir definieren die Sprache
                             \begin{align*}
                             \bhalt := \{ \enc(M) 1^b 0 x \ | \
                             U \textnormal{ akzeptiert $\enc(M)x$ innerhalb von $b$ Schritten}
@@ -195,16 +199,18 @@
                             |> span
                                 class numbered-title
 
-                                Beobachtung
+                                Beobachtung 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             &ensp;$\bhalt \in \TIME_{k+3}(n)$. 
                     |> div
                         class well container
                         |> p
 
-                            *Beweis.*Wir nehmen die universelle Turingmaschine $U$, die $k$-Band-Turingmaschinen simulieren kann,
+                            *Beweis.*
+                            Wir nehmen die universelle Turingmaschine $U$, die $k$-Band-Turingmaschinen simulieren kann,
                             und statten sie mit einem
                             Stoppuhrband aus. Sie hat nun also $k+3$ Bänder. Sei $n = |\enc(M)| + b + 1 + |x|$ die Länge
                             des Eingabewortes.
@@ -234,10 +240,11 @@
                             |> span
                                 class numbered-title
 
-                                Behauptung
+                                Behauptung 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             &ensp;*(nicht ganz
                             korrekt).* $\bnegdiag \in \TIME_{k+3}(t)$.
                     |> p
@@ -258,11 +265,13 @@
                             |> span
                                 class numbered-title
 
-                                Definition
+                                Definition 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;Eine Funktion $t: \N \rightarrow \N$ heißt_zeitkonstruierbar_, wenn es eine Turingmaschine gibt, die aus dem Eingabewort $1^n$
+                                &ensp;
+                            &ensp;Eine Funktion $t: \N \rightarrow \N$ heißt
+                            _zeitkonstruierbar_, wenn es eine Turingmaschine gibt, die aus dem Eingabewort $1^n$
                             das Ausgabewort $1^{t(n)}$ berechnet und selbst maximal $O(t(n))$ Schritte läuft.
                     |> div
                         class well container theorem
@@ -270,10 +279,11 @@
                             |> span
                                 class numbered-title
 
-                                Behauptung
+                                Behauptung 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             &ensp;*(jetzt korrekt).* Sei
                             $t: \N \rightarrow \N$ zeitkonstruierbar, monoton steigend und $t(n) \geq n$. Dann gilt
                             $\bnegdiag \in \TIME_{k+3}(t)$.
@@ -287,7 +297,11 @@
                             |> span
                                 class numbered-title
 
-                                Lemma
+                                Lemma 
+                                |> NumberedTitle
+
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             &ensp;Sei $s: \N \rightarrow \N$ eine Funktion mit
                             $s(n) \geq n$ und
                             $s = o(t)$, also $\lim_{n \rightarrow \infty} \frac{s(n)}{t(n)} = 0$. Dann
@@ -296,7 +310,8 @@
                         class well container
                         |> p
 
-                            *Beweis.*Wir nehmen an, es gäbe eine Turingmaschine $M$, die $\bnegdiag$ in Zeit $s$ entscheidet und
+                            *Beweis.*
+                            Wir nehmen an, es gäbe eine Turingmaschine $M$, die $\bnegdiag$ in Zeit $s$ entscheidet und
                             leiten einen Widerspruch her. Sei $x := \enc(M)$. Wir wählen eine natürliche Zahl $m$,
                             deren genauen Wert wir weiter unten diskutieren und setzen $b := t(|x| + m)$. Wir fragen uns
                             nun: ist $x1^m \in \bnegdiag$?
@@ -358,11 +373,13 @@
                             |> span
                                 class numbered-title
 
-                                Theorem
+                                Theorem 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            *(Zeithierarchiesatz, Rohversion).*Seien $s, t: \N \rightarrow \N$
+                                &ensp;
+                            *(Zeithierarchiesatz, Rohversion).*
+                            Seien $s, t: \N \rightarrow \N$
                             zeitkonstruierbare Funktionen mit $s(n) \geq n$ und
                             $s \in o(t)$ (also $\lim_{n \rightarrow \infty} s(n)/t(n)
                             = 0$). Dann gilt 
@@ -387,11 +404,13 @@
                             |> span
                                 class numbered-title
 
-                                Theorem
+                                Theorem 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;*(Zeithierarchiesatz).*Seien $s, t: \N \rightarrow \N$ mit $s(n) \geq n$ und $s \log s \in o(t)$. Dann gilt
+                                &ensp;
+                            &ensp;*(Zeithierarchiesatz).*
+                            Seien $s, t: \N \rightarrow \N$ mit $s(n) \geq n$ und $s \log s \in o(t)$. Dann gilt
                             $\TIME(s) \subsetneq \TIME(t)$.
                     |> p
 
@@ -406,8 +425,9 @@
                             |> span
                                 class numbered-title
 
-                                Übungsaufgabe
+                                Übungsaufgabe 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                &ensp;
                             Zeigen Sie, dass $n \mapsto n^2$ und $n \mapsto 2^n$ zeitkonstruierbar sind.

@@ -1,229 +1,185 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<html>
-<head>
-  <link rel="icon" href="data:,">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
-  <link rel="stylesheet" type="text/css" href="../TI.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script type="text/javascript" src="../mathjax_setup.js"></script>
-  <script type="text/javascript" src="../mathjax_setup.js"></script>
-  <script type="text/javascript" src="../carousel.js"></script>
-  <script type="text/javascript" src="../numbered-title.js"></script>
-  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-</head>
-</body>
-      <section
-        count={50}
-        title_gr=""
-        title_en="Complexity Theory"
-        number={8.0}
-        counter="DefCtr"
-        counter="ExoCtr"
-        path="/lecture-notes50.tsx">
-        <div id="link-to-toc">
-          <a href="../vorlesungsskript.html">
-            Inhaltsverzeichnis
-          </a>
-          <a href="07-08-PCP-applications.html">
-            &lt;&lt; Kapitel 7.8
-          </a>
-        </div>
-        <div
-          id="link-to-overview"
-          style="text-align: end">
-          <a href="/">
-            zur Kursübersicht
-          </a>
-          <a href="08-01-Time-hierarchy-theorem.html">
-            Kapitel 8.1 &gt;&gt;
-          </a>
-        </div>
-        <div id="rightSideWrapper">
-          <div class="content">
-            <div class="chapter">
-              <div class="subChapter">
-                <h1 class="hidden-title">
-                  <span class="chapterTitle">
-                    8.
-                    Komplexitätstheorie
+  <head>
+    <link rel="icon" href="data:," />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+    <link rel="stylesheet" type="text/css" href="../TI.css" />
+    <link rel="stylesheet" type="text/css" href="../tooltip-3003.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../numbered-title.js"></script>
+    <script type="text/javascript" src="../mathjax_setup.js"></script>
+    <script type="text/javascript" src="../carousel.js"></script>
+    <script type="text/javascript" src="../sendCmdTo3003.js"></script>
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+  </head>
+  <body>
+    <section
+      count="{50}"
+      title_gr=""
+      title_en="Complexity Theory"
+      number="{8.0}"
+      counter="DefCtr"
+      counter="ExoCtr"
+      path="/lecture-notes50.tsx"
+    >
+      <div id="link-to-toc">
+        <a href="../vorlesungsskript.html">Inhaltsverzeichnis</a
+        ><a href="07-08-PCP-applications.html">&lt;&lt; Kapitel 7.8</a>
+      </div>
+      <div id="link-to-overview" style="text-align: end">
+        <a href="/">zur Kursübersicht</a
+        ><a href="08-01-Time-hierarchy-theorem.html">Kapitel 8.1 &gt;&gt;</a>
+      </div>
+      <div id="rightSideWrapper">
+        <div class="content">
+          <div class="chapter">
+            <div class="subChapter">
+              <h1 class="hidden-title">
+                <span class="chapterTitle">8. Komplexitätstheorie </span>
+              </h1>
+              <p>
+                Turingmaschinen erlauben uns, den Resourcenverbrauch einer
+                Berechnung zu quantifizieren: zum einen die <i>Zeit</i>, also
+                die Anzahl der Schritte, die die Turingmaschine durchführt, bis
+                sie anhält; zum anderen der <i>Speicherplatz</i>, also die
+                Anzahl der Zellen auf dem Band (oder den Bändern), die im
+                Verlauf der Berechnung beschrieben werden. Beides sind Maße, die
+                tatsächlich im echten Leben relevant sind. Turingmaschinen
+                erlauben uns, diese genau zu quantifizieren und die
+                Zeitkomplexität und Speicherkomplexität eines Problems zu
+                untersuchen. In diesem Kapitel werden wir uns zum Großteil auf
+                Zeitkomplexität beschränken.
+              </p>
+              <p>
+                Es gibt weitere Resourcen, die man mit Turingmaschinen nicht
+                wirklich quantifizieren kann:
+              </p>
+              <ul>
+                <li>
+                  <b>I/O-Komplexität.</b>
+                  In echten Rechnern haben wir eine Hierarchie von
+                  Speichermedien. Den extrem schnellen Prozessorcache; schnellen
+                  Cache; den vergleichsweise langsamen Hauptstpeicher (RAM);
+                  eventuell sogar einen externen Festplattenspeichern, der um
+                  Größenordnungen langsamer ist.
+                </li>
+                <li>
+                  <b>Kommunikationskomplexität.</b>
+                  Bei verteilten Anwendungen (Cloud Computing) ist die
+                  limitierende Resource eventuell gar nicht die Rechenkapazität
+                  sondern das
+
+                  <i>Netzwerk</i>, über das die Daten ausgetauscht werden.
+                </li>
+              </ul>
+              <p>
+                Also: Turingmaschinen sind zwar universell in dem Sinne, dass
+                sie wohl alle physikalisch realisierbaren Rechnermodelle
+                simulieren können (ich sage <i>wohl</i>, weil wir nicht wissen,
+                was alles physikalisch realisierbar ist). Allerdings ist es
+                möglich, dass Sie, abhängig von Ihrem Anwendungsfeld, ein
+                abgewandeltes oder völlig anderes Modell benötigen, um den
+                Resourcenverbrauch modellieren zu können.
+              </p>
+              <p>
+                Dennoch: in diesem Kapitel beschränken wir uns auf die Resource
+                <i>Zeit</i>, und daher sind Turingmaschinen das Modell der Wahl.
+              </p>
+              <h2>Zeitkomplexitätsklassen</h2>
+              <p>
+                Wir beschränken uns der Einfachheit halber auf das
+                Eingabealphabet $\Sigma = \{0,1\}$ und auf
+                Entscheidungsprobleme, wo uns also nur eine Ja/Nein-Antwort
+                interessiert.
+              </p>
+              <div class="well container theorem">
+                <p>
+                  <span class="numbered-title"
+                    >Definition <NumberedTitle>8.0.1</NumberedTitle>
                   </span>
-                </h1>
-                <p>
-                  Turingmaschinen erlauben uns, den Resourcenverbrauch einer Berechnung zu quantifizieren:
-                  zum einen die 
-                  <i>
-                    Zeit
-                  </i>
-                  , also die Anzahl der Schritte, die die Turingmaschine
-                  durchführt, bis sie anhält; zum anderen der 
-                  <i>
-                    Speicherplatz
-                  </i>
-                  , also die Anzahl
-                  der Zellen auf dem Band (oder den Bändern), die im Verlauf der Berechnung beschrieben werden.
-                  Beides sind Maße, die tatsächlich im echten Leben relevant sind. Turingmaschinen erlauben uns,
-                  diese genau zu quantifizieren und die Zeitkomplexität und Speicherkomplexität eines Problems
-                  zu untersuchen. In diesem Kapitel werden wir uns zum Großteil auf Zeitkomplexität beschränken.
-                </p>
-                <p>
-                  Es gibt weitere Resourcen, die man mit Turingmaschinen nicht wirklich quantifizieren kann:
+                  Sei $t: \N \rightarrow \N$. Eine Turingmaschinen $M$
+
+                  <i>entscheidet</i>
+                  eine Sprache $L \subseteq \Sigma^*$ in Zeit $t$ wenn
                 </p>
                 <ul>
                   <li>
-                    
-                    <b>
-                      I/O-Komplexität.
-                    </b>
-                     In echten Rechnern haben wir eine Hierarchie von
-                    Speichermedien. Den extrem schnellen Prozessorcache; schnellen Cache; den vergleichsweise
-                    langsamen
-                    Hauptstpeicher (RAM); eventuell sogar einen externen Festplattenspeichern, der um
-                    Größenordnungen langsamer ist.
+                    sie die Sprache entscheidet, also $x \in L
+                    \Longleftrightarrow f_M(x) = \texttt{accept}$ und
                   </li>
                   <li>
-                    
-                    <b>
-                      Kommunikationskomplexität.
-                    </b>
-                     Bei verteilten Anwendungen (Cloud Computing) ist
-                    die limitierende Resource eventuell gar nicht die Rechenkapazität sondern das
-                    <i>
-                      Netzwerk
-                    </i>
-                    , über
-                    das die Daten ausgetauscht werden.
+                    für jede Eingabe $x$ in maximal $O(t(|x|))$ Schritten
+                    terminiert.
                   </li>
                 </ul>
+                <p>Wir definieren nun</p>
+                $$\begin{align*} \TIME_k(t) := \{L \subseteq \Sigma^* \ | \
+                \textnormal{es gibt eine $k$-Band-TM $M$, die $L$ in Zeit $t$
+                entscheidet}\} \end{align*}$$
+                <p>und schließlich</p>
+                $$\begin{align*} \TIME(t) := \bigcup_{k \geq 1} \TIME_k(t) \ .
+                \end{align*}$$
+              </div>
+              <p>
+                Falls Sie sich nicht mehr genau an die $O$-Notation erinnern
+                können: in diesem Zusammenhang heißt das, dass es Konstanten $c$
+                und $d$ gibt, so dass $M$ in maximal $c t(|x|) + d$ Schritten
+                terminiert. Die Konstanten $c$ und $d$ dürfen von $M$ abhängen,
+                aber nicht von der Eingabe $x$ oder der Länge $|x|$. Wir haben
+                in
+                <a href="07-02-Turing-variants.html">Kapitel 7.3</a>
+                gezeigt, wie man eine $k$-Band-Turingmaschine $M$ durch eine
+                Ein-Band-Turingmaschine $M'$. Der Aufwand war quadratisch: wenn
+                $M$ innerhalb von $t$ Schritten terminiert, so terminiert $M'$
+                innerhalb von $c t^2$ Schritten, wobei $c$ eine Konstante ist,
+                die von $M$ abhängt. Mit unser neuen Notation können wir das
+                sehr konzis schreiben:
+              </p>
+              <div class="well container theorem">
                 <p>
-                  Also: Turingmaschinen sind zwar universell in dem Sinne, dass sie wohl alle physikalisch
-                  realisierbaren
-                  Rechnermodelle simulieren können (ich sage 
-                  <i>
-                    wohl
-                  </i>
-                  , weil wir nicht wissen, was alles
-                  physikalisch realisierbar ist). Allerdings ist es möglich, dass Sie, abhängig von Ihrem
-                  Anwendungsfeld, ein abgewandeltes oder völlig anderes Modell benötigen, um den
-                  Resourcenverbrauch modellieren zu können.
+                  <span class="numbered-title"
+                    >Theorem <NumberedTitle>8.0.2</NumberedTitle>
+                  </span>
+
+                  <b>($k$-Band zu $1$-Band).</b>
+                  Sei $t: \N \rightarrow \N$. Dann gilt $\TIME_k(t) \subseteq
+                  \TIME_1(t^2)$.
                 </p>
+              </div>
+              <p>
+                Der quadratische Overhead wird tatsächlich störend, wenn man
+                Zeit als Resource untersucht. Daher gibt es eine bessere
+                Simulation; die benötigt allerdings zwei Bänder (Oder drei? Weiß
+                ich gerade nicht exakt) und die Konstruktion ist deutlich
+                komplizierter. Daher vorerst ohne Beweis:
+              </p>
+              <div id="k-tape-to-2-tape" class="well container theorem">
                 <p>
-                  Dennoch: in diesem Kapitel beschränken wir uns auf die Resource 
-                  <i>
-                    Zeit
-                  </i>
-                  , und daher
-                  sind Turingmaschinen das Modell der Wahl.
+                  <span class="numbered-title"
+                    >Theorem <NumberedTitle>8.0.3</NumberedTitle>
+                  </span>
+
+                  <b>($k$-Band zu $2$-Band; ohne Beweis). </b>
+                  Sei $t: \N \rightarrow \N$. Dann gilt $\TIME_k(t) \subseteq
+                  \TIME_2(t \log t)$.
                 </p>
-                <h2>
-                  Zeitkomplexitätsklassen
-                </h2>
-                <p>
-                  Wir beschränken uns der Einfachheit halber auf das Eingabealphabet $\Sigma = \{0,1\}$ und
-                  auf Entscheidungsprobleme, wo uns also nur eine Ja/Nein-Antwort interessiert.
-                </p>
-                <div class="well container theorem">
-                  <p>
-                    <span class="numbered-title">
-                      Definition
-                      <NumberedTitle>
-                        8.0.1
-                      </NumberedTitle>
-                    </span>
-                    &ensp;Sei $t: \N \rightarrow \N$. Eine
-                    Turingmaschinen $M$
-                    <i>
-                      entscheidet
-                    </i>
-                     eine Sprache $L \subseteq \Sigma^*$ in Zeit $t$ wenn
-                  </p>
-                  <ul>
-                    <li>
-                      sie die Sprache entscheidet, also $x \in L \Longleftrightarrow f_M(x) = \texttt{accept}$
-                      und
-                    </li>
-                    <li>
-                      für jede Eingabe $x$ in maximal $O(t(|x|))$ Schritten terminiert.
-                    </li>
-                  </ul>
-                  <p>
-                    Wir definieren nun
-                  </p>
-                  $$\begin{align*}
-                  \TIME_k(t) := \{L \subseteq \Sigma^* \ | \
-                  \textnormal{es gibt eine $k$-Band-TM $M$, die $L$ in Zeit $t$ entscheidet}\}
-                  \end{align*}$$
-                  <p>
-                    und schließlich
-                  </p>
-                  $$\begin{align*}
-                  \TIME(t) := \bigcup_{k \geq 1} \TIME_k(t) \ .
-                  \end{align*}$$
-                </div>
-                <p>
-                  Falls Sie sich nicht mehr genau an die $O$-Notation erinnern können: in diesem Zusammenhang
-                  heißt das, dass es Konstanten $c$ und $d$ gibt, so dass $M$ in maximal
-                  $c t(|x|) + d$ Schritten terminiert. Die Konstanten $c$ und $d$ dürfen von $M$ abhängen, aber
-                  nicht von der Eingabe $x$ oder der Länge $|x|$.
-                  Wir haben in 
-                  <a href="07-02-Turing-variants.html">
-                    Kapitel 7.3
-                  </a>
-                  &ensp;gezeigt, wie man eine
-                  $k$-Band-Turingmaschine $M$ durch eine
-                  Ein-Band-Turingmaschine $M'$. Der Aufwand war quadratisch: wenn $M$ innerhalb von $t$ Schritten
-                  terminiert, so terminiert $M'$ innerhalb von $c t^2$ Schritten, wobei $c$ eine Konstante ist,
-                  die
-                  von $M$ abhängt. Mit unser neuen Notation können wir das sehr konzis schreiben:
-                </p>
-                <div class="well container theorem">
-                  <p>
-                    <span class="numbered-title">
-                      Theorem
-                      <NumberedTitle>
-                        8.0.2
-                      </NumberedTitle>
-                    </span>
-                    &ensp;
-                    <b>
-                      ($k$-Band zu $1$-Band).
-                    </b>
-                    Sei $t: \N \rightarrow \N$. Dann gilt
-                    $\TIME_k(t) \subseteq \TIME_1(t^2)$.
-                  </p>
-                </div>
-                <p>
-                  Der quadratische Overhead wird tatsächlich störend, wenn man Zeit als Resource untersucht.
-                  Daher gibt es eine bessere Simulation; die benötigt allerdings zwei Bänder (Oder drei? Weiß ich
-                  gerade nicht
-                  exakt) und die Konstruktion ist deutlich komplizierter. Daher vorerst ohne Beweis:
-                </p>
-                <div
-                  id="k-tape-to-2-tape"
-                  class="well container theorem">
-                  <p>
-                    <span class="numbered-title">
-                      Theorem
-                      <NumberedTitle>
-                        8.0.3
-                      </NumberedTitle>
-                    </span>
-                    &ensp;
-                    <b>
-                      ($k$-Band zu $2$-Band; ohne
-                      Beweis).
-                    </b>
-                     Sei
-                    $t: \N \rightarrow \N$. Dann gilt $\TIME_k(t) \subseteq \TIME_2(t \log t)$.
-                  </p>
-                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </body>
+      </div>
+    </section>
+  </body>
+</html>

@@ -48,7 +48,8 @@
                         scheinen (wie die Fibonacci-Zahlen), ja sogar Dinge, die über den
                         Bereich der natürlichen Zahlen hinausgehen, wie zum Beispiel das Sortieren
                         eines beliebig langen Arrays. Kernpunkt war die Erkenntnis, dass wir
-                        komplexere "Datenstrukturen" wie _Paare von natürlichen Zahlen_als _eine_ natürliche Zahl codieren können und somit
+                        komplexere "Datenstrukturen" wie _Paare von natürlichen Zahlen_
+                        als _eine_ natürliche Zahl codieren können und somit
                         der primitiven Rekursion zugänglich machen können.
                     |> p
 
@@ -82,11 +83,13 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        *(Péter-Ackermann-Funktion).*\begin{align*}
+                            &ensp;
+                        *(Péter-Ackermann-Funktion).*
+                        \begin{align*}
                         A(m,n)&amp;:= \begin{cases}
                         n+1&amp;\textnormal{ if $m=0$,} \\
                         A(m-1,1)&amp;\textnormal{ if $m \geq 1, n=0$} \\
@@ -149,15 +152,17 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Sei \(m \in \N\) gegeben. Die Funktion \(A_m\) ist primitiv rekursiv.
                     |> div
                         class well container
 
-                        *Beweis.*Wir verwenden Induktion über \(m\). Für \(m=0\) gilt \(A_0(n)= n+1\) und somit
+                        *Beweis.*
+                        Wir verwenden Induktion über \(m\). Für \(m=0\) gilt \(A_0(n)= n+1\) und somit
                         \(A_0 = \succ\). Sei nun also \(m \geq 1\). Wir sehen, dass
                         \begin{align*}
                         A_m(t) = A_{m-1} (A(m,t-1)) \ .
@@ -209,10 +214,11 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Die Ackermann-Péter-Funktion ist nicht primitiv rekursiv.
                     Mein Beweis paraphrasiert im Wesentlichen den auf
                     |> a
@@ -225,7 +231,8 @@
                         Theorem 3.3.2 im Widerspruch steht. Theorem 3.3.3 besagt, dass \(A_m\) primitiv rekursiv ist,
                         für jedes \(m\). Die Zahl \(m\) ist hier also _Teil der Aussage_, nicht
                         Eingabeparameter der Funktion; die Funktion \(A_m\) hat nur _einen_ Eingabeparameter.
-                        Theorem 3.3.3 hingegen macht eine Aussage über _eine_ Funktion \(A(m,n)\) mit_zwei_ Eingabeparametern, und \(m\) ist nun einer dieser beiden.
+                        Theorem 3.3.3 hingegen macht eine Aussage über _eine_ Funktion \(A(m,n)\) mit
+                        _zwei_ Eingabeparametern, und \(m\) ist nun einer dieser beiden.
                     |> p
 
                         Anders ausgedrückt: sie können zwar jedes einzelne \(A_m\) in der "Programmiersprache" der
@@ -235,7 +242,8 @@
                         der primitiven Rekursion.
                     |> p
 
-                        *Beweisidee.*Für jedes feste \(m\) ist die ein-parametrige Funktion \(A_m := n \mapsto A(m,n)\)
+                        *Beweisidee.*
+                        Für jedes feste \(m\) ist die ein-parametrige Funktion \(A_m := n \mapsto A(m,n)\)
                         primitiv rekursiv und
                         kann als Funktion mit \(m\) verschachtelten `for`-Schleifen betrachtet werden.
                         Es wird sich herausstellen, dass \(A_m\) in gewisser Weise die am schnellsten wachsende
@@ -247,7 +255,8 @@
                         class well container
                         |> p
 
-                            *Beweis.*Wir brauchen eine robuste Definition, was es heißt, dass eine Funktion \(f: \N \rightarrow \N \)
+                            *Beweis.*
+                            Wir brauchen eine robuste Definition, was es heißt, dass eine Funktion \(f: \N \rightarrow \N \)
                             schneller wächst als
                             \(g: \N^k \rightarrow \N\).
                         |> div
@@ -255,11 +264,11 @@
                             |> span
                                 class numbered-title
 
-                                Definition
+                                Definition 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                .
+                                &ensp;.
                             Sei \(f: \N \rightarrow \N\) und \(g: \N^k \rightarrow \N\). Die Funktion
                             \(f\) _majorisiert_ \(g\), wenn
                             \begin{align*}
@@ -282,7 +291,11 @@
                             |> span
                                 class numbered-title
 
-                                Lemma
+                                Lemma 
+                                |> NumberedTitle
+
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             Für jede primitiv rekursive Funktion \(f: \N^k \rightarrow \N\) gibt
                             es ein \(r \in \N\), so dass \(f\) von \(A_r\) majorisiert wird.
                         |> p
@@ -324,7 +337,8 @@
                             Wir schlussfolgern: \(A_2\) majorisiert jede Basisfunktion.
                         |> p
 
-                            *Induktionsschritt.*Wenn \(f\) keine Basisfunktion ist, dann wurde \(f\) mittels Komposition oder
+                            *Induktionsschritt.*
+                            Wenn \(f\) keine Basisfunktion ist, dann wurde \(f\) mittels Komposition oder
                             primitiver Rekursion konstruiert. Für jeden Fall führen wir eine getrennte Rechnung
                             durch.
                         |> p
@@ -368,16 +382,18 @@
                             |> span
                                 class numbered-title
 
-                                Behauptung
+                                Behauptung 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             \(f(t, \vec{x}) \leq A_{q+1} (t+x)\), wobei
                             \(x = \max(\vec{x}) = \max(x_1,\dots,x_n)\).
                         |> div
                             class well subtheorem
 
-                            *Beweis.*Wir verwenden Induktion über \(t\). Wenn \(t=0\) ist,
+                            *Beweis.*
+                            Wir verwenden Induktion über \(t\). Wenn \(t=0\) ist,
                             dann gilt
                             \begin{align*}
                             f(0,\vec{x})&amp;= g(\vec{x}) \lt A_q (x) \leq A_{q+1} (x) \ .

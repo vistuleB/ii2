@@ -54,11 +54,13 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        Eine kontextfreie Sprache \(G = (\Sigma, N, P, S)\) heißt_regulär_, wenn jede Produktion eine der folgenden vier Formen
+                            &ensp;
+                        Eine kontextfreie Sprache \(G = (\Sigma, N, P, S)\) heißt
+                        _regulär_, wenn jede Produktion eine der folgenden vier Formen
                         hat: \begin{align*} X&amp;\rightarrow aY \\ X&amp;\rightarrow a \\ X&
                         \rightarrow Y \\ X&amp;\rightarrow \epsilon \end{align*} Eine Sprache
                         \(L \subseteq \Sigma^*\) heißt _regulär_, wenn es eine reguläre
@@ -68,10 +70,11 @@
                         |> span
                             class numbered-title
 
-                            Beispiel
+                            Beispiel 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Die folgende Grammatik über dem Alphabet \(\Sigma = \{1\}\), den
                         nichtterminalen Symbolen \(\{E,O\}\) und den Regeln \begin{align*} E&
                         \rightarrow 1O \ | \ \epsilon \\ O&amp;\rightarrow 1E \end{align*}
@@ -83,10 +86,11 @@
                         |> span
                             class numbered-title
 
-                            Beispiel
+                            Beispiel 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Die folgende Grammatik haben wir bereits im letzten Abschnitt
                         kennengelernt. Sie ist nicht regulär: \begin{align*} S&amp;\rightarrow A
                         B \\ A&amp;\rightarrow \epsilon \ | \ a A \\ B&amp;\rightarrow \epsilon \
@@ -117,10 +121,11 @@
                         |> span
                             class numbered-title
 
-                            Beobachtung
+                            Beobachtung 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Sei \(G = (\Sigma, N, P, S)\) eine reguläre Grammatik und \(S
                         \Rightarrow^* \alpha\) eine Ableitung einer Wortform \(\alpha \in
                         (\Sigma \cup N)^*\). Dann hat \(\alpha\) die Form \(y X\) für \(y \in
@@ -135,10 +140,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Betrachten Sie die Gramatik über \(\Sigma = \{0,1\}\): \begin{align*}
                         S&amp;\rightarrow 1 S \ | \ 0 S \ | \ 0 \end{align*} Leiten Sie das Wort
                         \(11010\) ab. Beschreiben Sie in eigenen Worten die erzeugte Sprache.
@@ -148,10 +154,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Betrachten Sie die Grammatik über \(\Sigma = \{0,1\}\): \begin{align*}
                         A&amp;\rightarrow 0 A \ | 1 A \ | 1 B \\ B&amp;\rightarrow 0 C \ | 1 C \\
                         C&amp;\rightarrow 0 D \ | 1 D \\ D&amp;\rightarrow 0 E \ | 1 E \\ E&
@@ -163,10 +170,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Betrachten Sie das Alphabet \(\Sigma = \{1\}\) und die Sprache $$ L :=
                         \{1^n \ | \ \textnormal{ $n$ ist durch 3 teilbar} \} \ . $$ Schreiben
                         Sie eine reguläre Grammatik für \(L\).
@@ -175,10 +183,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Betrachten Sie die Sprache \begin{align*} L := \{x \in \{a,b\}^* \ | \
                         \textnormal{in $x$ kommt $b$ mindestens 4 mal vor }\} \ \end{align*}
                         und entwerfen Sie eine reguläre Grammatik für \(L\).
@@ -187,22 +196,27 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Sei \(\Sigma = \{a,b,.\}\) und \(L \subseteq \Sigma^*\) die Sprache
                         aller Strings der Form $$ x_1 . x_2 . x_3 . \cdots . x_n $$ wobei \(n
-                        \geq 2\) und jedes \(x_i \in \{a,b\}^+\), also zum Beispiel`a.bba.aba` aber nicht `aba` und auch nicht`a.b..a`Entwerfen Sie eine reguläre Grammatik für diese Sprache.
+                        \geq 2\) und jedes \(x_i \in \{a,b\}^+\), also zum Beispiel
+                        `a.bba.aba` aber nicht `aba` und auch nicht
+                        `a.b..a`
+                        Entwerfen Sie eine reguläre Grammatik für diese Sprache.
                     |> div
                         class well well-lg numbered-exercise container
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Unsere
                         |> a
                             href ./04-00-formal-languages.html#email-context-free-grammar
@@ -236,11 +250,13 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        Eine Grammatik \(G = (\Sigma, N, P, S)\) heißt_erweitert regulär_, wenn jede Produktion eine der folgenden
+                            &ensp;
+                        Eine Grammatik \(G = (\Sigma, N, P, S)\) heißt
+                        _erweitert regulär_, wenn jede Produktion eine der folgenden
                         Formen hat: \begin{align*} X&amp;\rightarrow \alpha Y \\ X&amp;\rightarrow
                         \alpha \\ \end{align*} hat, wobei \(X \in N\) und \(\alpha \in
                         \Sigma^*\) ist. Im Unterschied zu den eigentlich regulären Grammatiken
@@ -251,17 +267,19 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Sei \(G = (\Sigma, N, P, S)\) eine erweitert reguläre Grammatik. Dann
                         existiert eine reguläre Grammatik \(G' = (\Sigma, N', P', S)\), die
                         die gleiche Sprache erzeugt: \(L(G) = L(G')\).
                     |> div
                         class well container
 
-                        *Beweis.*Wir ersetzen einfach jede Regel der Form $$ X \rightarrow a_1 a_2
+                        *Beweis.*
+                        Wir ersetzen einfach jede Regel der Form $$ X \rightarrow a_1 a_2
                         \dots a_k Y $$ durch \(k\) reguläre Regeln: \begin{align*} X&
                         \rightarrow a_1 X_2 \\ X_2&amp;\rightarrow a_2 X_3 \\ \dots \\ X_k&
                         \rightarrow a_k Y \end{align*} wobei wir darauf achten, dass \(X_2,
@@ -308,17 +326,19 @@
                             |> span
                                 class numbered-title
 
-                                Theorem
+                                Theorem 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             Sei \(G = (\Sigma, N, P, S)\) eine reguläre Grammatik. Dann gibt es
                             eine äquivalente reguläre Grammatik \(G' = (\Sigma, N', P', S)\),
                             die nur Regeln vom Typ 1 und 4 enthält.
                         |> div
                             class well container
 
-                            *Beweis.*Produktionen vom Typ 2, also von der Form \(X \rightarrow a\) können
+                            *Beweis.*
+                            Produktionen vom Typ 2, also von der Form \(X \rightarrow a\) können
                             wir leicht eliminieren, indem wir ein neues Nichtterminalsymbol \(E
                             \not \in \Sigma \cup N\) einführen, jedes \(X \rightarrow a\) durch
                             \(X \rightarrow aE\) ersetzen und die Produktion \(E \rightarrow
@@ -361,19 +381,24 @@
                             iterativ wie folgt: \begin{align*} N_0 (X)&amp;:= \{X\} \ , \\ N_{k+1}
                             (X)&amp;:= N_k \cup \{Z \in N \ | \ \textnormal{ es gibt } Y \in
                             N_k(X) \textnormal{ mit } Y \rightarrow Z \} \ . \end{align*} Die
-                            Menge \(N_{k+1}(X)\) lässt sich also mit zwei geschachtelten`for`-Schleifen berechnen: eine über die \(Y \in N_k\)
+                            Menge \(N_{k+1}(X)\) lässt sich also mit zwei geschachtelten
+                            `for`-Schleifen berechnen: eine über die \(Y \in N_k\)
                             und eine über die Produktionen \(Y \rightarrow Z\). Um
-                            \(N_{k+1}(X)\) für_alle_\(X \in N\) zu berechnen, brauchen wir eine weitere`for`-Schleife. Wir berechnen nun \(N_{\geq k}\) für
+                            \(N_{k+1}(X)\) für
+                            _alle_
+                            \(X \in N\) zu berechnen, brauchen wir eine weitere
+                            `for`-Schleife. Wir berechnen nun \(N_{\geq k}\) für
                             steigende \(k\), bis keine weitere Veränderung eintritt.
                         |> div
                             class well container theorem
                             |> span
                                 class numbered-title
 
-                                Beobachtung
+                                Beobachtung 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             Wenn \(N_{k+1}(X) = N_k(X)\), dann ist \(N_k(X) = N_{k+1}(X) =
                             N_{k+2}(X)= \dots\)
                         |> p
@@ -391,10 +416,11 @@
                             |> span
                                 class numbered-title
 
-                                Übungsaufgabe
+                                Übungsaufgabe 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                &ensp;
                             Sei \(\Sigma = \{a,b,c\}\). Die Grammatik mit den Regeln \(A
                             \rightarrow \epsilon \ | \ b A \ | \ c A\) erzeugt die Sprache aller
                             Wörter, die kein \(a\) enthalten. Die Grammatik \(B \rightarrow
@@ -419,10 +445,11 @@
                             |> span
                                 class numbered-title
 
-                                Übungsaufgabe
+                                Übungsaufgabe 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                &ensp;
                             Betrachten Sie die folgende Grammatik über \(\Sigma =
                             \{a_1,a_2,\dots,a_n\}\) mit den Nichtterminalsymbolen \(\{S, A_1,
                             A_2, \dots, A_n\}\) und den insgesamt \(3n-1\) Produktionen
@@ -446,25 +473,34 @@
                         |> ul
                             |> li
 
-                                Ding 1, dann Ding 2, wie beispielsweise_Username, dann `@`, dann Domainname_
+                                Ding 1, dann Ding 2, wie beispielsweise
+                                _Username, dann `@`, dann Domainname_
                             |> li
 
-                                Ding, bliebig oft wiederholt, wie beispielsweise_eine beliebig lange Folge von Labels, mit`.` separiert._
+                                Ding, bliebig oft wiederholt, wie beispielsweise
+                                _eine beliebig lange Folge von Labels, mit
+                                `.` separiert._
                             |> li
 
-                                Ding 1 oder Ding 2. Beispielsweise_Bindestrich oder alphanumerisches Zeichen_.
+                                Ding 1 oder Ding 2. Beispielsweise
+                                _Bindestrich oder alphanumerisches Zeichen_.
                         |> div
                             class well container theorem
                             |> span
                                 class numbered-title
 
-                                Lemma
+                                Lemma 
+                                |> NumberedTitle
+
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             Seien \(L_1\) und \(L_2\) zwei reguläre Sprachen. Dann ist \(L_1
                             \cup L_2\) auch regulär.
                         |> div
                             class well container
 
-                            *Beweis.*Unsere Strategie ist, reguläre Grammatiken \(G_1\) für \(L_1\) und
+                            *Beweis.*
+                            Unsere Strategie ist, reguläre Grammatiken \(G_1\) für \(L_1\) und
                             \(G_2\) für \(L_2\) zu betrachten und daraus eine neue reguläre
                             Grammatik \(G\) für \(L_1 \cup L_2\) zu bauen. Aus \(G\) sollen also
                             genau diejenigen Strings ableitbar sein, die in \(L_1\) oder \(L_2\)
@@ -492,7 +528,8 @@
                                 \(\square\)
                         |> p
 
-                            In einem nächsten Schritt werden wir zeigen, dass Konstrukte wie_Ding 1, gefolgt von Ding 2_ 
+                            In einem nächsten Schritt werden wir zeigen, dass Konstrukte wie
+                            _Ding 1, gefolgt von Ding 2_ 
 
                             &ensp;mit regulären Grammatiken
                             realisierbar sind.
@@ -501,11 +538,13 @@
                             |> span
                                 class numbered-title
 
-                                Definition
+                                Definition 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            *(Kleenesche Hülle).*Seien \(L_1, L_2 \in \Sigma^*\) zwei Sprachen. Die
+                                &ensp;
+                            *(Kleenesche Hülle).*
+                            Seien \(L_1, L_2 \in \Sigma^*\) zwei Sprachen. Die
                             Verknüpfungssprache \(L_1 \circ L_2\) ist definiert als
                             \begin{align*} L_1 \circ L_2 := \{ \alpha \beta \ | \ \alpha \in
                             L_1, \beta \in L_2\} \ . \end{align*}
@@ -514,13 +553,18 @@
                             |> span
                                 class numbered-title
 
-                                Lemma
+                                Lemma 
+                                |> NumberedTitle
+
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             Seien \(L_1\) und \(L_2\) zwei reguläre Sprachen. Dann ist \(L_1
                             \circ L_2\) auch regulär.
                         |> div
                             class well container
 
-                            *Beweis.*Wir im letzten Beweis nehmen wir uns eine reguläre Grammatik \(G_1 =
+                            *Beweis.*
+                            Wir im letzten Beweis nehmen wir uns eine reguläre Grammatik \(G_1 =
                             (\Sigma, N_1, P_1, S_1)\) für \(L_1\) und \(G_2 = (\Sigma, N_2, P_2,
                             S_2)\) für \(L_2\). Ob die beiden Alphabete die gleichen sind, also
                             beide \(\Sigma\), oder zwei verschiedene, also \(\Sigma_1,
@@ -557,17 +601,19 @@
                                 class qed
 
                                 \(\square\)
-                        In einem dritten Lemma werden wir zeigen, dass die Konstruktion_Ding, beliebig oft wiederholt_ mit regulären Sprachen möglich
+                        In einem dritten Lemma werden wir zeigen, dass die Konstruktion
+                        _Ding, beliebig oft wiederholt_ mit regulären Sprachen möglich
                         ist.
                         |> div
                             class well container theorem
                             |> span
                                 class numbered-title
 
-                                Definition
+                                Definition 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             Sei \(L \subseteq \Sigma^*\). Die Sprache \(L^n\) ist die Menge
                             \begin{align*} L^n := \{ \alpha_1 \alpha_2 \dots \alpha_n \ | \
                             \alpha_i \in L \ \forall 1 \leq i \leq n \} \ . \end{align*}
@@ -581,12 +627,17 @@
                             |> span
                                 class numbered-title
 
-                                Lemma
+                                Lemma 
+                                |> NumberedTitle
+
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             Sei \(L\) eine reguläre Sprache. Dann ist \(L^*\) auch regulär.
                         |> div
                             class well container
 
-                            *Beweis.*Sei \(G = (\Sigma, N, P, S)\) eine reguläre Grammatik für \(L\). Wir
+                            *Beweis.*
+                            Sei \(G = (\Sigma, N, P, S)\) eine reguläre Grammatik für \(L\). Wir
                             könnten ein neues Startsymbol \(S'\) einführen und \begin{align*} S'
                             &amp;\rightarrow \epsilon \\ S'&amp;\rightarrow SS' \end{align*} als zwei
                             neue Regeln einführen. Natürlich geht das nicht, denn \(S'
@@ -608,10 +659,11 @@
                             |> span
                                 class numbered-title
 
-                                Übungsaufgabe
+                                Übungsaufgabe 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                &ensp;
                             Hier sehen Sie einen URL mit Query-String:
                             |> p
 
@@ -630,7 +682,8 @@
                                     Dem Domainnamen, hier `web1.hszg.de`.
                                 |> li
 
-                                    Optional nun einem Pfad, hier`/modulkatalog/index.php`.
+                                    Optional nun einem Pfad, hier
+                                    `/modulkatalog/index.php`.
                                 |> li
 
                                     Falls ein Pfad enthalten ist, dann optional ein `?`,
@@ -653,10 +706,11 @@
                             |> span
                                 class numbered-title
 
-                                Theorem
+                                Theorem 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             Sei \(L \subseteq \Sigma^*\) eine reguläre Sprache und \(c \not \in
                             \Sigma\) ein neues Terminalsymbol. Die Sprache aller nichtleeren
                             Folgen von \(L\)-Wörten, die durch \(c\) separiert sind, also formal
@@ -665,7 +719,8 @@
                         |> div
                             class well container
 
-                            *Beweis.*Dies folgt sofort aus den vorherigen Theorem, weil wir nur
+                            *Beweis.*
+                            Dies folgt sofort aus den vorherigen Theorem, weil wir nur
                             Konkatenation \(\circ\) und Kleenesche Hülle \(^*\) verwenden.
                             Dennoch lohne es sich, explizit für \(L'\) eine Grammatik zu bauen.
                             Es ist auch recht einfach. Sei \(G = \(\Sigma, N, P, S)\) eine
@@ -683,7 +738,8 @@
 
                                 Für jede \(G\)-Produktion der Form \(Y \rightarrow a\) fügen wir
                                 \(Y \rightarrow acS\) hinzu.
-                            Die neue Grammatik \(G'\) ist eine_erweitert reguläre Grammatik_, da Regeln wie \(Y \rightarrow
+                            Die neue Grammatik \(G'\) ist eine
+                            _erweitert reguläre Grammatik_, da Regeln wie \(Y \rightarrow
                             acS\) auf der rechten Seite zwei Terminalsymbole haben. Wir müssen
                             sie also erst noch in eine "richtig reguläre" umwandeln. In
                             konkreten Anwendungne empfiehlt es dazu, die Nichtterminale von

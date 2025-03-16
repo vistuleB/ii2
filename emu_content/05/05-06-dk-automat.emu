@@ -74,7 +74,8 @@
 
                         Diese übersetzen wir in einen verallgemeinert nichtdeterministischen
                         Automaten, bei dem jede Kante mit einem Wort $\beta \in (\Sigma \cup
-                        N)^*$, also aus _Terminalen_der Grammatik $\dk{G}$ beschriftet ist:
+                        N)^*$, also aus _Terminalen_
+                        der Grammatik $\dk{G}$ beschriftet ist:
                     |> figure
                         |> img
                             style height: 9em
@@ -105,7 +106,8 @@
                         Blüte und rechtem Rest erinnern, dann haben die Zwischenzustände eine
                         klare Bedeutung: der Zustand $4$ oben zum Beispiel bedeutet, dass der
                         Knoten $X$ im Stamm mit $a, B, c, D, e$ beschriftete Kinder hat und
-                        wir uns bereits entschieden haben, dass $a$, $B$ und $c$_Blätter_ sein sollen, also zum linken Rand gehören. Der
+                        wir uns bereits entschieden haben, dass $a$, $B$ und $c$
+                        _Blätter_ sein sollen, also zum linken Rand gehören. Der
                         Übergang $\boxed{4} \step{D} \boxed{5}$ entspricht dann der
                         Entscheidung, auch $D$ zu einem Blatt zu machen, während $\boxed{4}
                         \step{\epsilon} \dk{D}$ der Entscheidung entspricht, $D$ zu einem
@@ -286,10 +288,11 @@
                             |> span
                                 class numbered-title
 
-                                Definition
+                                Definition 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             &ensp;Für eine kontextfreie
                             Grammatik ist der nichtdeterministische DK-Automat (NDK-Automat) ein
                             nichtdeterministischer endlicher Automat mit $\epsilon$-Übergängen,
@@ -472,7 +475,8 @@
                         class well container
                         |> p
 
-                            *Beweisskizze.*Wir erinnern den Leser noch einmal an die alternative
+                            *Beweisskizze.*
+                            Wir erinnern den Leser noch einmal an die alternative
                             Charakterisierung von LR(0)-Sprachen, nämlich :
                         |> div
                             id lemma-characterization-LR0
@@ -484,7 +488,9 @@
                                     Lemma 5.7.5, noch einmal
                                 *
 
-                                **(LR(0), äquivalente Formulierung).*Eine Grammatik $G$ ist LR(0) genau dann, wenn für alle korrekten
+                                *
+                                *(LR(0), äquivalente Formulierung).*
+                                Eine Grammatik $G$ ist LR(0) genau dann, wenn für alle korrekten
                                 Linksreduktionsschritte $\alpha \beta w \rstep{} \alpha Xw$ und
                                 $\alpha' \beta' w' \rstep{} \alpha' X'w'$ gilt:
                             |> ol
@@ -503,7 +509,8 @@
                         |> p
 
                             Es ist nicht schwer zu sehen, dass (DK.1) äquivalent zu Punkt 1 des
-                            Lemmas ist. Wenden wir uns (DK.2) und Punkt 2 zu. Wenn Punkt 2_nicht_ gilt, dann gibt es korrekte Reduktionsschritte
+                            Lemmas ist. Wenden wir uns (DK.2) und Punkt 2 zu. Wenn Punkt 2
+                            _nicht_ gilt, dann gibt es korrekte Reduktionsschritte
                         \begin{align*} \alpha \beta w \rstep{} \alpha X w \\ \alpha \beta
                         \sigma w' = \alpha' \beta' w' \rstep{} \alpha' X' w' \end{align*}
                         |> p
@@ -526,10 +533,11 @@
                                 |> span
                                     class numbered-title
 
-                                    Übungsaufgabe
+                                    Übungsaufgabe 
                                     |> NumberedTitle
 
                                         ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                    &ensp;
                                 Zeigen Sie: wenn $G$ keine nutzlosen Nichtterminale hat, dann gibt
                                 es im NDK-Automaten für jeden Zustand $q$ eine Übergangsfolge $q
                                 \steps{v} q'$ zu einem akzeptierenden Zustand $q'$, wobei $v$

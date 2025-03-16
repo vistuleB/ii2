@@ -72,11 +72,13 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        *(formale Grammatik)*Eine formale Grammatik ist gegeben durch ein endliches Alphabet
+                            &ensp;
+                        *(formale Grammatik)*
+                        Eine formale Grammatik ist gegeben durch ein endliches Alphabet
                         \(\Sigma\) aus _Terminalsymbolen_, einer endlichen Menge
                         \(\N\) von _Nichtterminalen_, einem Startsymbol
                         \(S \in N\) und einer endlichen Menge an Produktionen
@@ -101,10 +103,11 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         *(Ableitung und erzeugte Sprache)*. Sei \(G\) eine formale
                         Grammtik und \(\gamma_1, \gamma_2 \in (\Sigma\cup N)^* \) zwei Wortformen.
                         Wir schreiben \(\gamma_1 \Step{} \gamma_2\), wenn wir
@@ -119,10 +122,11 @@
                         |> span
                             class numbered-title
 
-                            Beispiel
+                            Beispiel 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Betrachten wir die allgemeine Grammatik mit
                         Terminalalphabet \(\Sigma = \{a,b,c\}\), Nichtterminalsymbolen
                         \(N = \{S, A, B, C\}\), Startsymbol \(S\) und den Produktionen
@@ -172,10 +176,11 @@
                         |> span
                             class numbered-title
 
-                            Beispiel
+                            Beispiel 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Versuchen wir nun, eine allgemeine formale Grammatik für die Sprache
                         \begin{align*}
                         L = \{a^nb^nc^n \ | \ n \geq 0\}
@@ -289,10 +294,11 @@
                             |> span
                                 class numbered-title
 
-                                Behauptung
+                                Behauptung 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             Sei \(\#_{A,a}(\beta)\) die Anahl der \(A\) und \(a\) in der Wortform \(\beta\).
                             Wenn \(S \Step{} \beta\), dann gilt
                             |> ol
@@ -344,10 +350,11 @@
                         |> span
                             class numbered-title
 
-                            Beispiel
+                            Beispiel 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Im 
                         |> a
                             href ./05-10-not-context-free.html
@@ -409,10 +416,11 @@
                         |> span
                             class numbered-title
 
-                            Beispiel
+                            Beispiel 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Sei \(L\) die Sprache aller Wörter über
                         \(\Sigma = \{1\}\), deren Länge eine Quadratzahl ist.
                         Wir werden als erstes eine _Multiplikationsgrammatik_ erzeugen.
@@ -533,10 +541,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Geben Sie ein formale Grammatik für
                         \begin{align*}
                         L = \{w\texttt{:}w \ | \ w \in \{a,b\}^* \}
@@ -550,10 +559,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Sei \(L\) die Sprache über \(\Sigma = \{a,b,:,;\}\)
                         mit
                         \begin{align*}
@@ -568,7 +578,8 @@
                         \begin{align*}
                         abba\text{:}aaaaaaa\text{;}abbbb\text{;}abba\text{;}bbbb \in L \\
                         abba\text{:}aaaaaaa\text{;}abbbb\text{;}abbba\text{;}bbbb \not \in L \\
-                        \end{align*}*Tip:* das ist einfach, wenn Sie bereits eine Grammatik
+                        \end{align*}
+                        *Tip:* das ist einfach, wenn Sie bereits eine Grammatik
                         für das vorherige Problem haben. Erzeugen Sie
                         \(wXwY\) und lassen dann aus \(X\) und \(Y\) den Rest der Liste entstehen.
                     |> p

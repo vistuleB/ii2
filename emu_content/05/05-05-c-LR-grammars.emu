@@ -74,7 +74,8 @@
 
                         Da aus der Sicht unseres neuen Parsers die Rückwärtsanwendung einer Produktion
                         \(X \rightarrow \beta\), also der Schritt \(\alpha X \gamma \Leftarrow \alpha \beta \gamma\)
-                        einen _Fortschritt_darstellt und zeitlich auch
+                        einen _Fortschritt_
+                        darstellt und zeitlich auch
                         nach vorne geht, verwende ich ab jetzt ein neues Pfeilsymbol, das
                         von links nach rechts geht und daher dem in Europa üblichen Gefühlt,
                         dass die Zeit von links nach rechts verläuft, mehr entgegen kommt:
@@ -84,11 +85,13 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        *(Reduktion und Linksreduktion)*Seien
+                            &ensp;
+                        *(Reduktion und Linksreduktion)*
+                        Seien
                         \(\alpha, \beta, \gamma \in (\Sigma \cup N)^*\) Wortformen und
                         \(X \rightarrow \beta\) eine Produktion. Dann schreiben wir
                         \begin{align*}
@@ -104,7 +107,8 @@
                             \begin{align*}
                             \alpha \beta w \rstep{} \alpha X w \ .
                             \end{align*}
-                        Eine Folge von Linksreduktionsschritten nennen wir eine_Linksreduktion_. _Links_, weil wir uns
+                        Eine Folge von Linksreduktionsschritten nennen wir eine
+                        _Linksreduktion_. _Links_, weil wir uns
                         von links nach rechts in den terminalen Teil hineinarbeiten.
                         Wir werden im folgenden nur Linksreduktionsschritte betrachten und
                         sagen daher manchmal auch einfach nur Reduktionsschritt.
@@ -162,11 +166,13 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        *(Gültige Wortform, korrekter Reduktionsschritt)*Eine Wortform \(\gamma \in (\Sigma \cup N)^*\) heißt _gültig_,
+                            &ensp;
+                        *(Gültige Wortform, korrekter Reduktionsschritt)*
+                        Eine Wortform \(\gamma \in (\Sigma \cup N)^*\) heißt _gültig_,
                         wenn es eine Rechtsableitung
                         \begin{align*}
                         S \Step{R}^* \gamma
@@ -179,7 +185,8 @@
                         In diesem Fall ist natürlich $\alpha \beta w$ selbst gültig.
                         |> p
 
-                            Den Präfix $\alpha$ nennen wir eine_Front_ der gültigen Wortform $\alpha \beta w$.
+                            Den Präfix $\alpha$ nennen wir eine
+                            _Front_ der gültigen Wortform $\alpha \beta w$.
                             Wenn die Grammatik eindeutig ist, dann hat
                             jede gültige Wortform $\gamma$ genau eine Front, die wir
                             mit $\front(\gamma)$ bezeichnen.
@@ -194,7 +201,8 @@
                     |> div
                         class well container theorem
 
-                        *Wunsch.*Ob $\alpha \beta w \rstep{} \alpha X w$ gültig ist oder nicht,
+                        *Wunsch.*
+                        Ob $\alpha \beta w \rstep{} \alpha X w$ gültig ist oder nicht,
                         wollen wir allein auf Grund der Front $\alpha \beta$ entscheiden können, das heißt,
                         ohne $w$ betrachten zu müssen.
                     |> p
@@ -214,11 +222,13 @@
                     |> ol
                         |> li
 
-                            *Schlechter Fall 1:*Es gibt für eine Wortform \(\gamma\) zwei
+                            *Schlechter Fall 1:*
+                            Es gibt für eine Wortform \(\gamma\) zwei
                             korrekte Linksreduktionsschritte:
                             \(\gamma \rstep{} \gamma'\) und
                             \(\gamma \rstep{} \gamma''\).
-                            In diesem Falle gäbe es _zwei verschiedene_Rechtsableitungen
+                            In diesem Falle gäbe es _zwei verschiedene_
+                            Rechtsableitungen
                             \begin{align*}
                             S \Steps{R} \gamma' \Step{R} \gamma \Steps{R} w \in \Sigma^* \\
                             S \Steps{R} \gamma'' \Step{R} \gamma \Steps{R} w \in \Sigma^* \\
@@ -239,7 +249,8 @@
                                 dieser Fall nicht eintreten kann.
                         |> li
 
-                            *Schlechter Fall 2:*Der Linksreduktionsschritt
+                            *Schlechter Fall 2:*
+                            Der Linksreduktionsschritt
                             \begin{align*}
                             \alpha \beta w \rstep{} \alpha X w
                             \end{align*}
@@ -263,10 +274,11 @@
                         |> span
                             class numbered-title
 
-                            Beispiel
+                            Beispiel 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Erinnern Sie sich: unsere obige Grammatik
                         \begin{align*}
                         S&amp;\step{1} aS \\
@@ -297,11 +309,13 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        *(\(LR(0)\)-Grammatiken)*Eine kontextfreie Grammatik heißt \(LR(0)\)-Grammatik,
+                            &ensp;
+                        *(\(LR(0)\)-Grammatiken)*
+                        Eine kontextfreie Grammatik heißt \(LR(0)\)-Grammatik,
                         wenn keiner der obigen schlechten Fälle eintritt.
                         Formal, wenn (1) die Grammatik eindeutig ist und (2) wenn ein
                         korrekter Linksreduktionsschritt
@@ -330,8 +344,13 @@
                             |> span
                                 class numbered-title
 
-                                Lemma
-                            *(LR(0), äquivalente Formulierung).*Eine Grammatik $G$ ist LR(0) genau dann, wenn für
+                                Lemma 
+                                |> NumberedTitle
+
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
+                            *(LR(0), äquivalente Formulierung).*
+                            Eine Grammatik $G$ ist LR(0) genau dann, wenn für
                             alle korrekten Linksreduktionsschritte
                             $\alpha \beta w \rstep{} \alpha Xw$ und
                             $\alpha' \beta' w' \rstep{} \alpha' X'w'$ gilt:
@@ -355,7 +374,8 @@
                         class well container
                         |> p
 
-                            *Beweis.*Der Beweis ist leider etwas mechanisch und
+                            *Beweis.*
+                            Der Beweis ist leider etwas mechanisch und
                             repetitiv. Aber vielleicht ist es eine
                             gute Übung, ihn genau durchzugehen, um die
                             Definitionenen Linksreduktion, gültige Wortform etc.
@@ -432,7 +452,8 @@
                             class well container-fluid subtheorem
                             |> p
 
-                                *Beweis.*Als erstes zeigen wir, dass $G$ eindeutig ist; dass es
+                                *Beweis.*
+                                Als erstes zeigen wir, dass $G$ eindeutig ist; dass es
                                 also für jede gültige Wortform genau einen korrekten
                                 Linksreduktionsschritt gibt.
                                 Dafür nehmen wir dann, dass es von $\gamma$ aus
@@ -519,10 +540,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Zeigen Sie, dass die folgende Grammatik \(LR(0)\) ist:
                         \begin{align*}
                         S&amp;\rightarrow aS \\
@@ -537,10 +559,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Wir ändern die Grammatik etwas ab:
                         \begin{align*}
                         S&amp;\rightarrow aS \\
@@ -555,10 +578,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Zeigen Sie, dass die folgende Grammatik \(LR(0)\) ist:
                         \begin{align*}
                         S&amp;\rightarrow aS \\
@@ -600,7 +624,8 @@
 
                         *Hinweis.* Was nun folgt, ist mathematisch
                         recht herausfordernd. Lesen Sie daher gerne auch
-                        das Kapitel 2.4 (Deterministic context free languages) im Lehrbuch_Introduction to the Theory of Computing_ von Michael Sipser.
+                        das Kapitel 2.4 (Deterministic context free languages) im Lehrbuch
+                        _Introduction to the Theory of Computing_ von Michael Sipser.
                         Meine Darstellung des doch recht schwierigen Materials fußt auf diesem
                         Kapitel, weicht aber doch stark genug von Sipser ab, so dass es
                         womöglich hilfreich ist, beides zu lesen: dieses Vorlesungsskript und

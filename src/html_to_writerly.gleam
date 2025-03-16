@@ -140,7 +140,6 @@ fn title_from_vxml(vxml: VXML) -> String {
     |> result.unwrap(#("", ""))
     |> pair.second()
     |> remove_line_break_from_start
-    |> io.debug
     |> remove_line_break_from_end
 }
 
@@ -185,7 +184,6 @@ fn emitter(
   let assert [chapter_number, section_number] = filename |> string.split("-") |> list.take(2) |> list.map(remove_0_at_start) |> list.map(int.parse) |> list.map(result.unwrap(_, -1))
   let assert True = chapter_number >= 1
   let assert True = section_number >= 0
-
   let chapter_directory =  "emu_content/" <> chapter_number_as_string
 
   case section_number == 0 {
@@ -283,8 +281,7 @@ fn our_source_parser(lines: List(bl.BlamedLine), spotlight_args: List(#(String, 
 
 }
 
-
-pub fn html_to_writerly(path: String, amendments: vr.CommandLineAmendments(Bool)) {
+pub fn html_to_writerly(path: String, amendments: vr.CommandLineAmendments(Bool)) -> Nil {
   use #(dir, files) <- infra.on_error_on_ok(
     directory_files_else_file(path),
     fn(e) { io.print("failed to load files from " <> path <> ": " <> ins(e)) },
@@ -304,14 +301,17 @@ pub fn html_to_writerly(path: String, amendments: vr.CommandLineAmendments(Bool)
         Nil
       )
 
+      io.println("html_to_writerly converting " <> path <> " to writerly (?)")
+
       let parameters =
         vr.RendererParameters(
-          input_dir: io.debug(path),
+          input_dir: path,
           output_dir: option.Some("."),
           prettifying_option: False,
         )
         |> vr.amend_renderer_paramaters_by_command_line_amendment(amendments)
 
+      io.println("after amend_renderer...")
 
       let renderer =
         vr.Renderer(
@@ -324,15 +324,20 @@ pub fn html_to_writerly(path: String, amendments: vr.CommandLineAmendments(Bool)
           prettifier: prettifier,
         )
 
+      io.println("after renderer = ...")
+
       let debug_options =
         vr.empty_renderer_debug_options("../renderer_artifacts")
         |> vr.amend_renderer_debug_options_by_command_line_amendment(amendments, html_pipeline.html_pipeline())
 
+      io.println("after debug_options = ...")
+
       case vr.run_renderer(renderer, parameters, debug_options) {
-        Ok(Nil) -> {
-          io.println("\nprinted: " <> ins(file) <> " as html\n")
+        Ok(Nil) -> Nil
+        Error(error) -> {
+          io.println("\nrenderer error on path " <> path <> ":")
+          io.println(ins(error))
         }
-        Error(error) -> io.println("\nrenderer error: " <> ins(error) <> "\n")
       }
     }
   )

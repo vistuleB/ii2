@@ -149,9 +149,11 @@
                     |> p
 
                         Sie können sich das Band auch als Magnetband vorstellen, das nach vorn oder nach hinten gespult
-                        wird, anstatt dass der Kopf sich bewegt. Am Anfang steht auf dem Band das_Eingabewort_ und der Kopf auf dem ersten Symbol dieses Wortes. Die Turingmaschine
+                        wird, anstatt dass der Kopf sich bewegt. Am Anfang steht auf dem Band das
+                        _Eingabewort_ und der Kopf auf dem ersten Symbol dieses Wortes. Die Turingmaschine
                         wendet
-                        nun ihre Regeln an, bis Sie einen_Endzustand_ erreicht. Bei _Entscheidungsproblemen_, wo uns nur
+                        nun ihre Regeln an, bis Sie einen
+                        _Endzustand_ erreicht. Bei _Entscheidungsproblemen_, wo uns nur
                         eine Ja/Nein-Antwort interessiert, wird die Antwort durch den Entzustand angegeben:
                         der Zustand $\qaccept$ entspricht einem _Ja_, der Zustand
                         $\qreject$ entspricht einem _Nein_. Diese zwei Endzustände reichen im Allgemeinen
@@ -166,10 +168,11 @@
                             |> span
                                 class numbered-title
 
-                                Definition
+                                Definition 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             *(Turingmaschine).* Eine
                             Turingmaschine besteht aus folgenden Elementen:
                         |> ol
@@ -244,10 +247,11 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Die _Konfiguration_ einer Turingmaschine ist ein Element in
                         \(\Gamma^* \times Q \times \Gamma^*\), also
                         \begin{align*}
@@ -339,11 +343,13 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        *(erweiterte Zustandsübergangsfunktion)*Die erweiterte Zustandsübergangsfunktion einer Turingmaschine ist
+                            &ensp;
+                        *(erweiterte Zustandsübergangsfunktion)*
+                        Die erweiterte Zustandsübergangsfunktion einer Turingmaschine ist
                         \begin{align*}
                         \hat{\delta} : \mathcal{C} \rightarrow \mathcal{C} \
                         \end{align*}
@@ -399,7 +405,8 @@
                         Nochmal zur Verdeutlichung: wenn $\delta^{(i)}(C)$ eine Endkonfiguration ist,
                         dann ist auch $\delta^{(j)}(C)$ eine, für jedes $j \geq i$, weil
                         wir $\hat{\delta}(C') = C'$ für jede Endkonfiguration $C'$ definiert haben.
-                        Es spielt also in der obigen Formulierung_wenn es ein $i$ gibt_ keine Rolle, welches solche $i$ wir wählen.
+                        Es spielt also in der obigen Formulierung
+                        _wenn es ein $i$ gibt_ keine Rolle, welches solche $i$ wir wählen.
                     Für ein Eingabewort \(x \in \Sigma^*\) können wir nun das Ergebnis der Berechnung
                     von Turingmaschine \(M\) auf \(x = x_1 \dots x_n\) definieren:
                     \begin{align*}
@@ -421,7 +428,8 @@
 
                         Ein _Entscheidungsproblem_ ist eine Funktion \(P : \Sigma^* \rightarrow
                         \{\texttt{true}, \texttt{false}\}\), beispielsweise: _gegeben ein Wort,
-                        stellt dieses Wort ein korrektes Java-Programm dar?_oder _gegeben eine Zahl in Dezimalschreibweise, ist dies
+                        stellt dieses Wort ein korrektes Java-Programm dar?_
+                        oder _gegeben eine Zahl in Dezimalschreibweise, ist dies
                         eine Primzahl?_ Eine äquivalente Sichtweise ist die
                         eines Entscheidungsproblems als _Sprache_ \(L \subseteq \Sigma^*\).
                         Wir identifizieren \(L\) hier mit der Menge aller Wörter \(x\) mit
@@ -450,11 +458,14 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        *(Turingmaschine entscheidet eine Sprache)*Eine Turingmaschine \(M\)_entscheidet_ die Sprache \(L \subseteq \Sigma^*\) wenn
+                            &ensp;
+                        *(Turingmaschine entscheidet eine Sprache)*
+                        Eine Turingmaschine \(M\)
+                        _entscheidet_ die Sprache \(L \subseteq \Sigma^*\) wenn
                         |> ol
                             |> li
 
@@ -472,11 +483,13 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        *(Turingmaschine akzeptiert eine Sprache)*Eine Turingmaschine \(M\) _akzeptiert_ die Sprache
+                            &ensp;
+                        *(Turingmaschine akzeptiert eine Sprache)*
+                        Eine Turingmaschine \(M\) _akzeptiert_ die Sprache
                         \(L \subseteq \Sigma^*\) wenn
                         \begin{align*}
                         x \in L \Longleftrightarrow f_M(x) = \texttt{accept}
@@ -509,11 +522,13 @@
                         |> span
                             class numbered-title
 
-                            Definition
+                            Definition 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        *(Turingmaschine berechnet eine Funktion)*Seien \(\Sigma_1, \Sigma_2\) zwei endliche Alphabete und
+                            &ensp;
+                        *(Turingmaschine berechnet eine Funktion)*
+                        Seien \(\Sigma_1, \Sigma_2\) zwei endliche Alphabete und
                         \begin{align*}
                         g : \Sigma_1^* \rightarrow \Sigma_2^*
                         \end{align*}
@@ -558,17 +573,19 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Sei \(M\) eine Turingmaschine und \(L(M)\) die von ihr akzeptierte Sprache.
                         Dann gibt es eine formale Grammatik \(G\) mit \(L(G) = L(M)\). In anderen Worten:
                         formale Grammatiken sind mindestens so mächtig wie Turingmaschinen.
                     |> div
                         class well container
 
-                        *Beweis.*Die Idee ist, dass wir eine Grammatik \(G\) schreiben, die
+                        *Beweis.*
+                        Die Idee ist, dass wir eine Grammatik \(G\) schreiben, die
                         "in umgekehrter Reihenfolge" läuft, also
                         \begin{align*}
                         \texttt{\$} q_{\rm start} w \texttt{.} \Step{}^* S
@@ -610,10 +627,11 @@
                             |> span
                                 class numbered-title
 
-                                Beobachtung
+                                Beobachtung 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                &ensp;
                             Wenn \(\hat{\delta}^{(i)} (uqv) = u'q'v'\) gilt, die Turingmaschine also in
                             \(i\) Schritten von Konfiguration \(uqv\) nach \(u'q'v'\) übergeht, dann gilt in der gerade
                             entwickelten Grammatik auch

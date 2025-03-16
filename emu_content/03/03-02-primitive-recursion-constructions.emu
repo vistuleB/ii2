@@ -56,7 +56,8 @@
                     \({\rm add} = \primrec (\pi_0, \comp(\succ, \pi_0)) \) schreiben können. Beachten Sie, dass ich
                     hier die Indizierung immer bei 0 beginnen lasse, im Python-Code sowie im Mathematik-Modus (in der
                     Vorlesung hatte ich an der Tafel das oft bei 1 beginnen lassen, entschuldigen Sie die Inkonsistenz).
-                    Multiplikation geht nach dem gleichen Schema. Wir schreiben `mult`in der Schleifenform, wie sie die primitive Rekursion zulässt, und schreiben in Orange
+                    Multiplikation geht nach dem gleichen Schema. Wir schreiben `mult`
+                    in der Schleifenform, wie sie die primitive Rekursion zulässt, und schreiben in Orange
                     auch gleich die Funktionen \(g\) und \(h\) dazu:
                     |> pre
                         class container
@@ -158,7 +159,8 @@
                         Verfügung. Alles andere müssen wir als natürliche Zahlen nach einem von uns
                         selbst gewählten Schema codieren. Für Boolesche Werte ist das recht naheliegend.
                         Wir codieren `True` als 1 und `False` als 0.
-                        Unser erstes Prädikat, also Funktion mit Booleschem Ausgabewert, ist`isPositive`:
+                        Unser erstes Prädikat, also Funktion mit Booleschem Ausgabewert, ist
+                        `isPositive`:
                     |> pre
                         class container
 
@@ -295,7 +297,8 @@
                         b = a+b
                         a = b-a 
                     Doch selbst dann hätten wir immer noch zwei lokale Variable.
-                    Die Fibonacci-Zahlen rekursiv per`return F(n-1)+F(n-2)` scheint noch weiter weg zu sein
+                    Die Fibonacci-Zahlen rekursiv per
+                    `return F(n-1)+F(n-2)` scheint noch weiter weg zu sein
                     vom Paradigma der primitiven Rekursion; primitive Rekursion verzweigt sich nie.
                     Dennoch ist es möglich, `fib` primitiv rekursiv zu implementieren.
                     Hauptzutat hierbei ist es, dass wir _Paare_ als neue Datenstruktur

@@ -33,7 +33,7 @@ fn blame_us(message: String) -> Blame {
   Blame(message, -1, [])
 }
 
-fn prepand_0(number: String) {
+fn prepend_0(number: String) {
   case string.length(number) {
     1 -> "0" <> number
     _ -> number
@@ -68,10 +68,9 @@ fn ti2_splitter(
         let assert Some(title_attr) = infra.get_attribute_by_name(vxml, "title_en")
         let assert Some(number_attribute) = infra.get_attribute_by_name(vxml, "number")
         let section_name = 
-            number_attribute.value |> string.split(".") |> list.map(prepand_0) |> string.join("-") 
-            <> "-" 
-            <> title_attr.value |> string.replace(" ", "-")
-
+          number_attribute.value |> string.split(".") |> list.map(prepend_0) |> string.join("-") 
+          <> "-" 
+          <> title_attr.value |> string.replace(" ", "-")
         #(
           "lecture-notes/" <> section_name <> ".html",
           vxml,
@@ -98,28 +97,26 @@ fn ti2_section_emitter(
   let lines =
     list.flatten([
       [
-        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "<!DOCTYPE html>\n<html>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "<html>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "<head>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"icon\" href=\"data:,\">"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<title></title>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"../lecture-notes.css\" />"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"../TI.css\" />"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script type=\"text/javascript\" src=\"../mathjax_setup.js\"></script>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script type=\"text/javascript\" src=\"../mathjax_setup.js\"></script>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script type=\"text/javascript\" src=\"../carousel.js\"></script>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script type=\"text/javascript\" src=\"../numbered-title.js\"></script>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "</head>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "</body>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "<!DOCTYPE html>\n<html>\n<head>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "    <link rel=\"icon\" href=\"data:,\">
+    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">
+    <title></title>
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"../lecture-notes.css\" />
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"../TI.css\" />
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"../tooltip-3003.css\" />
+    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>
+    <script type=\"text/javascript\" src=\"../numbered-title.js\"></script>
+    <script type=\"text/javascript\" src=\"../mathjax_setup.js\"></script>
+    <script type=\"text/javascript\" src=\"../carousel.js\"></script>
+    <script type=\"text/javascript\" src=\"../sendCmdTo3003.js\"></script>
+    <script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "</head>\n<body>"),
       ],
-      vxml_parser.vxml_to_html_blamed_lines(fragment, 6),
+      vxml_parser.vxml_to_html_blamed_lines(fragment, 0, 2),
       [
-        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "</body>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "</body>"),
         BlamedLine(blame_us("ti2_fragment_emitter"), 0, ""),
       ],
     ])
@@ -135,47 +132,48 @@ fn toc_emitter(
   let lines =
     list.flatten([
       [
-         BlamedLine(blame_us("ti2_fragment_emitter"), 0, "<!DOCTYPE html>\n<html>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "<!DOCTYPE html>"),
         BlamedLine(blame_us("ti2_fragment_emitter"), 0, "<html>"),
         BlamedLine(blame_us("ti2_fragment_emitter"), 0, "<head>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"icon\" href=\"data:,\">"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<title></title>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"icon\" type=\"image/x-icon\" href=\"logo.png\">"),
+        // BlamedLine(blame_us("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">
+        //    <title></title>
+        //     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+        //    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">
+        //    <link rel=\"stylesheet\" type=\"text/css\" href=\"./lecture-notes.css\" />
+        //    <link rel=\"stylesheet\" type=\"text/css\" href=\"./TI.css\" />
+        //    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>
+        //    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\"></script>
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<meta charset=\"utf-8\">"),
         BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"),
         BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">"),
-
-         
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"lecture-notes.css\" />"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"landing-ages.css\" />"),
-
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"stylesheet\" href=\"lecture-notes.css\">"),
         BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"TI.css\" />"),
         BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\"></script>"),
         BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script type=\"text/javascript\" src=\"./carousel.js\"></script>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script type=\"text/javascript\" src=\"./numbered-title.js\"></script>"),
         BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
         BlamedLine(blame_us("ti2_fragment_emitter"), 0, "</head>"),
         BlamedLine(blame_us("ti2_fragment_emitter"), 0, "<body>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 2, "<div>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "<p>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 6, "<a href=\"https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html\">"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 6, "<a href=\"https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html\">zur Kursübersicht</a></p></div>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "<div class=\"container\" style=\"text-align: center;\">"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "<div style=\"text-align: center; margin-bottom: 4em;\">"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "<h1>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "<span class=\"coursename\"></span>Theoretische Informatik 2 - Vorlesungsskript"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "</h1>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "<h3>Bachelor-Studium Informatik</h3>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "</div>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "<div class=\"row content\">"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "<div class=\"col-sm-3 sidenav\" id=\"course-list\"></div>"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "<div class=\"col-sm-9 text-left\">"),
-        BlamedLine(blame_us("ti2_fragment_emitter"), 4, "<div id=\"table-of-content-div\"></div>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "  <div>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "    <p><a href=\"index.html\">zur Kursübersicht</a></p>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "  </div>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "  <div class=\"container\" style=\"text-align:center;\">"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "    <div style=\"text-align:center;margin-bottom:4em;\">"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "      <h1><span class=\"coursename\">Theoretische Informatik 2</span> - Vorlesungsskript</h1>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "      <h3>Bachelor-Studium Informatik</h3>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "      <h3>Dominik Scheder, TU Chemnitz</h3>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "    </div>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "    <div class=\"row content\">"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "      <div class=\"col-sm-9 text-left\">"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "        <div id=\"table-of-content-div\">"),
       ],
-      vxml_parser.vxmls_to_html_blamed_lines(fragment |> infra.get_children, 6),
+      fragment |> infra.get_children |> list.map(fn (vxml) {vxml_parser.vxml_to_html_blamed_lines(vxml, 8, 2)}) |> list.flatten,
       [
-        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "</div>\n</div>\n</div>\n</div>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "        </div>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "      </div>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "    </div>"),
+        BlamedLine(blame_us("ti2_fragment_emitter"), 0, "  </div>"),
         BlamedLine(blame_us("ti2_fragment_emitter"), 0, "</body>"),
         BlamedLine(blame_us("ti2_fragment_emitter"), 0, ""),
       ],
@@ -220,66 +218,38 @@ fn our_source_parser(lines: List(BlamedLine), spotlight_args: List(#(String, Str
   Ok(wp.vxmls_to_writerlys([filtered_vxml]))
 }
 
-fn cli_usage() {
-  io.println("command line options (mix & match any combination):")
-  io.println("")
+
+fn cli_usage_supplementary() {
   io.println("      --prettier")
   io.println("         -> run npm prettier on emitted content")
-  io.println("      --spotlight <path1> <path2> ...")
-  io.println("         -> spotlight the given paths before assembling")
-  io.println("      --debug-pipeline-<x>-<y>")
-  io.println("         -> print output of pipes number x up to y")
-  io.println("      --debug-pipeline-<x>")
-  io.println("         -> print output of pipe number x")
-  io.println("      --debug-pipeline-0-0")
-  io.println("         -> print output of all pipes")
-  io.println("      --debug-fragments-bl <local_path1> <local_path2> ...")
-  io.println("         -> print blamed lines of local paths")
-  io.println("      --debug-fragments-printed <local_path1> <local_path2> ...")
-  io.println("         -> print unprettified output files of local paths")
-  io.println(
-    "      --debug-fragments-prettified <local_path1> <local_path2> ...",
-  )
-  io.println("         -> print prettified output files of local paths")
 }
 
 pub fn main() {
-  // parse html first
   let args = argv.load().arguments
 
   case args {
     ["--parse-html", path, ..rest] -> {
       use amendments <- infra.on_error_on_ok(
-        io.debug(
-          vr.process_command_line_arguments(rest, [
-            #("--prettier", True),
-          ],
-          "../public/pages"),
-        ),
+        vr.process_command_line_arguments(rest, [#("--prettier", True)], "../public/pages"),
         fn(error) {
           io.println("")
           io.println("command line error: " <> ins(error))
           io.println("")
-          cli_usage()
+          vr.cli_usage()
+          cli_usage_supplementary()
         },
       )
-
-      let _ = html_to_writerly.html_to_writerly(path, amendments)
-      Nil
+      html_to_writerly.html_to_writerly(path, amendments)
     }
     _ -> {
       use amendments <- infra.on_error_on_ok(
-        io.debug(
-          vr.process_command_line_arguments(args, [
-            #("--prettier", True)
-          ],
-          "../emu_content"),
-        ),
+        vr.process_command_line_arguments(args, [#("--prettier", True)], "../emu_content"),
         fn(error) {
           io.println("")
           io.println("command line error: " <> ins(error))
           io.println("")
-          cli_usage()
+          vr.cli_usage()
+          cli_usage_supplementary()
         },
       )
       let renderer =
@@ -308,12 +278,9 @@ pub fn main() {
         ), pipeline.our_pipeline())
 
       case vr.run_renderer(renderer, parameters, debug_options) {
-        Ok(Nil) -> {
-          Nil
-        }
         Error(error) -> io.println("\nrenderer error: " <> ins(error) <> "\n")
+        _ -> Nil
       }
     }
   }
-
 }

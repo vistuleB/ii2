@@ -45,21 +45,21 @@
                         Wir haben drei Methoden kennengelernt, kontextfreie Sprachen zu parsen:
                         rekursiver Abstieg (mit Demoseite 
                         |> a
-                            href https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html
+                            href ../../demos/drawManualGrammar.html
 
                             drawManualGrammar.html
                         ),
                         die LL-Parser (die die Mengen \(\First_k(X)\) berechnen, wie
                         auf 
                         |> a
-                            href https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawFirstComputation.html
+                            href ../../demos/drawFirstComputation.html
 
                             drawFirstComputation.html
                         &ensp;demonstriert),
                         und die LR-Parser (die die Teilbäume auf den Stack legen und nach Blüten suchen,
                         hier die Demoseite 
                         |> a
-                            href https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawLR0ParserPrefixArithmetic.html
+                            href ../../demos/drawLR0ParserPrefixArithmetic.html
 
                             drawLR0ParserPrefixArithmetic
                         für arithmetische Ausdrücke).
@@ -123,10 +123,11 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Zu jeder kontextfreien Grammatik gibt es eine äquivalente Grammatik in
                         Chomsky-Normalform.
                     |> p
@@ -139,10 +140,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Finden Sie zu der folgenden kontextfreien Grammatik
                         \begin{align*}
                         S&amp;\rightarrow A \ | \ Bb \ | \ C \\
@@ -205,10 +207,12 @@
                         zunächst darauf, die Frage zu beantworten, ob den überhaupt \(S \Step{}^* w\) gilt,
                         und interessieren uns erst einmal nicht dafür eine solche Ableitung auch zu finden (in der
                         Algorithmik versteht man das als _Entscheidungsproblem_, im Gegensatz zu dem
-                        allgemeinerin_Suchproblem_).
+                        allgemeinerin
+                        _Suchproblem_).
                     |> p
 
-                        Der Entwurf eines Dynamic-Programming-Algorithmus beginnt oft mit der folgenden Frage:_Was sind sinnvolle Zwischenergebnisse?_ In unserem Falle sind Ableitungen der Form
+                        Der Entwurf eines Dynamic-Programming-Algorithmus beginnt oft mit der folgenden Frage:
+                        _Was sind sinnvolle Zwischenergebnisse?_ In unserem Falle sind Ableitungen der Form
                         \begin{align*}
                         X&amp;\Step{}^* u
                         \end{align*}
@@ -340,10 +344,11 @@
                         |> span
                             class numbered-title
 
-                            Beobachtung
+                            Beobachtung 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                            &ensp;
                         Sei \(n = |w|\) die Länge des Eingabewortes und \(g\) die Anzahl der Produktionen der Form
                         \(X \rightarrow YZ\). Dann ist die Laufzeit des CYK-Algorithmus proportional zu
                         \(g \cdot n^3\).

@@ -56,7 +56,9 @@
                         nicht. $U$ _akzeptiert_ die Sprache also, _entscheidet_ sie aber nicht. Wäre es
                         nicht schön, eine Turingmaschine zu haben, die diese Sprache entscheidet? Dann könnten wir jede
                         Turingmaschine simulieren und gleichzeitig Endlosschleifen und eventuell ganz allgemein
-                        "Programmierfehler" vorhersagen und abfangen. Wir werden zeigen, dass dies leider _nicht_möglich ist. In der Literatur ist dies als die _Unentscheidbarkeit des Halteproblems_(englisch _undecidability of the Halting problem_ bekannt).
+                        "Programmierfehler" vorhersagen und abfangen. Wir werden zeigen, dass dies leider _nicht_
+                        möglich ist. In der Literatur ist dies als die _Unentscheidbarkeit des Halteproblems_
+                        (englisch _undecidability of the Halting problem_ bekannt).
                     |> p
 
                         Als vorbereitenden Schritt schauen wir uns kurz die Codierungsfunktion nochmal genauer an. Wir
@@ -96,11 +98,13 @@
                         |> span
                             class numbered-title
 
-                            Theorem
+                            Theorem 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        *(Unentscheidbarkeit des Halteproblems).*Die Sprache \(\halt\) ist unentscheidbar.
+                            &ensp;
+                        *(Unentscheidbarkeit des Halteproblems).*
+                        Die Sprache \(\halt\) ist unentscheidbar.
                     |> p
 
                         Ich gebe erst einmal einen kurzen und knappen Widerspruchsbeweis. Falls das ihnen zu schnell
@@ -196,7 +200,9 @@
                         |> pre
                             class listing
 
-                            `def D(x):` `if H(xx) == accept then` 
+                            `def D(x):`
+
+                            &ensp;`if H(xx) == accept then` 
 
                             &ensp;`reject` 
 
@@ -259,7 +265,8 @@
                         die Unentscheidbarkeit von $\negdiag$ war ein Schritt auf diesem Weg. Dass $\halt$
                         unentscheidbar ist,
                         ist in der Tat relevant, denn daraus folgt (nicht direkt, aber mit ein paar technischen Tricks),
-                        dass im Prinzip_jede_ nichttriviale Frage über das Verhalten eines Programmcodes unentscheidbar ist.
+                        dass im Prinzip
+                        _jede_ nichttriviale Frage über das Verhalten eines Programmcodes unentscheidbar ist.
                         Also sind
                         auch Fragen wie "Kann das Programm abstürzen?" oder "Kann ein unautorisierter Nutzer Zugang zu
                         XYZ erhalten?" unentscheidbar.

@@ -49,10 +49,11 @@
                             |> span
                                 class numbered-title
 
-                                Übungsaufgabe
+                                Übungsaufgabe 
                                 |> NumberedTitle
 
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                                &ensp;
                             Sei $\Sigma = \{\sigma_1, \sigma_2, \dots, \sigma_k\}$ ein endliches Alphabet. Wir
                             können jedes Zeichen $\sigma_i \in \Sigma$ als
                             natürliche Zahl $i$ codieren. Ein Wort $\alpha \in \Sigma^*$
@@ -109,10 +110,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Verbessern Sie die obige Konstruktion: Ihr Schaltkreis $C$ sollte nun
                         Tiefe $O(\log(n))$ haben und vorzugsweise immer noch $O(n)$ Gates.
                 |> div
@@ -121,11 +123,13 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                        &ensp;*(Challenge).*Betrachten wir eine Variante des endlichen Automaten, bei der
+                            &ensp;
+                        &ensp;*(Challenge).*
+                        Betrachten wir eine Variante des endlichen Automaten, bei der
                         der Automat _zurückspulen_ kann. Der Automat hat also
                         einen "Lesekopf", mit dem er auf einem Zeichen des Eingabewortes steht
                         (anfangs auf dem ersten). In jedem Schritt kann er nach rechts oder links
@@ -138,7 +142,8 @@
 
                         Wenn z.B. $\delta(q, x) = (r, L)$ ist, dann heißt das: _wenn Du im
                         Zustand $q$ bist und der Lesekopf ein $x$ liest, dann wechsle in den
-                        Zustand $r$ und gehe nach links._
+                        Zustand $r$ und gehe nach links.
+                        _
                     |> p
 
                         Der Automat hat genau einen akzeptierenden und einen ablehnenden Zustand.
@@ -158,10 +163,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Sei $\Sigma = \{1,2, \dots, k\}$ und $L$ die Sprache aller
                         Wörter, in denen mindestens ein Zeichen fehlt, also
                     \begin{align*}
@@ -176,10 +182,11 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            &ensp;
                         Schreiben Sie eine reguläre Grammatik für $L$ mit höchstens $k+1$ Nichtterminalen.
                 |> div
                     class well well-lg numbered-exercise container
@@ -187,11 +194,13 @@
                         |> span
                             class numbered-title
 
-                            Übungsaufgabe
+                            Übungsaufgabe 
                             |> NumberedTitle
 
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                        &ensp;*(Challange.)*Sei $L$ die Sprache aus der vorherigen Aufgabe und
+                            &ensp;
+                        &ensp;*(Challange.)*
+                        Sei $L$ die Sprache aus der vorherigen Aufgabe und
                         $\bar{L} = \Sigma^* \setminus L$ ihr Komplement. $\bar{L}$ ist also
                         die Sprache aller Wörter, in denen jedes Zeichen aus $\Sigma$ mindestens
                         einmal vorkommt.
