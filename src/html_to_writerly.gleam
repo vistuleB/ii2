@@ -1,4 +1,4 @@
-import infrastructure
+import infrastructure as infra
 import simplifile
 import gleam/result
 import gleam/list
@@ -12,6 +12,7 @@ import vxml_renderer as vr
 import writerly_parser as wp
 import blamedlines as bl
 import gleam/string
+import desugarers/filter_nodes_by_attributes.{filter_nodes_by_attributes}
 
 const ins = string.inspect
 
@@ -147,7 +148,7 @@ fn get_title_internal(vxml: VXML) -> String {
 case vxml {
     vp.T(_, _) -> ""
     vp.V(_, _, _, children) -> {
-      case infrastructure.children_with_attr(vxml, "class", "subChapterTitle"), infrastructure.children_with_attr(vxml, "class", "chapterTitle") {
+      case infra.children_with_attr(vxml, "class", "subChapterTitle"), infra.children_with_attr(vxml, "class", "chapterTitle") {
         [found, ..], _ -> title_from_vxml(found) 
         _, [found, ..] -> title_from_vxml(found) 
         _, _ -> get_title(children)
@@ -254,14 +255,37 @@ fn directory_files_else_file(path: String) -> Result(#(String, List(String)), si
   }
 }
 
-fn our_source_parser(lines: List(bl.BlamedLine)) -> Result(VXML, vp.XMLMParseError) { 
+fn our_source_parser(lines: List(bl.BlamedLine), spotlight_args: List(#(String, String, String))) -> Result(VXML, vr.RendererError(a, String, b, c, d)) { 
+
   let path = bl.first_blame_filename(lines) |> result.unwrap("")
-  bl.blamed_lines_to_string(lines)
-    |> vp.xmlm_based_html_parser(path)
+  use vxml <- result.then(
+    bl.blamed_lines_to_string(lines)
+    |> vp.xmlm_based_html_parser(path) 
+    |> result.map_error(fn(e) { 
+      case e {
+        vp.XMLMIOError(s) -> vr.SourceParserError(s)
+        vp.XMLMParseError(s) -> vr.SourceParserError(s)
+        }
+      })
+  )
+  
+  let #(_, filter_vxmls) = filter_nodes_by_attributes(spotlight_args)
+  use filtered_vxml <- result.then(
+    filter_vxmls(vxml) |> result.map_error(fn(e: infra.DesugaringError) { 
+      case e {
+        infra.DesugaringError(_, message) -> vr.SourceParserError(message)
+        infra.GetRootError(message) -> vr.SourceParserError(message)
+      }
+    })
+  )
+
+  Ok(filtered_vxml)
+
 }
 
+
 pub fn html_to_writerly(path: String, amendments: vr.CommandLineAmendments(Bool)) {
-  use #(dir, files) <- infrastructure.on_error_on_ok(
+  use #(dir, files) <- infra.on_error_on_ok(
     directory_files_else_file(path),
     fn(e) { io.print("failed to load files from " <> path <> ": " <> ins(e)) },
   )
@@ -272,7 +296,13 @@ pub fn html_to_writerly(path: String, amendments: vr.CommandLineAmendments(Bool)
     files, 
     option.None, 
     fn(file, prev, next) {
-      let path = dir <> "/" <> io.debug(file)
+      let path = dir <> "/" <> file
+      use <- infra.on_false_on_true(
+        amendments.spotlight_args_files |> list.any(fn(f){
+          string.contains(path, f) || string.is_empty(f)
+        }) || list.is_empty(amendments.spotlight_args_files),
+        Nil
+      )
 
       let parameters =
         vr.RendererParameters(
@@ -282,10 +312,11 @@ pub fn html_to_writerly(path: String, amendments: vr.CommandLineAmendments(Bool)
         )
         |> vr.amend_renderer_paramaters_by_command_line_amendment(amendments)
 
+
       let renderer =
         vr.Renderer(
           assembler: wp.assemble_blamed_lines,
-          source_parser: our_source_parser,
+          source_parser: our_source_parser(_, amendments.spotlight_args),
           parsed_source_converter: fn(vxml) { [vxml] },
           pipeline: html_pipeline.html_pipeline(),
           splitter: fn(vxml) { splitter(vxml, file) },
@@ -295,8 +326,7 @@ pub fn html_to_writerly(path: String, amendments: vr.CommandLineAmendments(Bool)
 
       let debug_options =
         vr.empty_renderer_debug_options("../renderer_artifacts")
-        |> vr.amend_renderer_debug_options_by_command_line_amendment(io.debug(
-          amendments), html_pipeline.html_pipeline())
+        |> vr.amend_renderer_debug_options_by_command_line_amendment(amendments, html_pipeline.html_pipeline())
 
       case vr.run_renderer(renderer, parameters, debug_options) {
         Ok(Nil) -> {

@@ -10,6 +10,8 @@ import pipeline
 import vxml_parser.{type VXML, BlamedAttribute}
 import vxml_renderer as vr
 import writerly_parser as wp
+import gleam/result
+import desugarers/filter_nodes_by_attributes.{filter_nodes_by_attributes}
 
 const ins = string.inspect
 
@@ -194,6 +196,30 @@ fn ti2_emitter(
   }
 }
 
+fn our_source_parser(lines: List(BlamedLine), spotlight_args: List(#(String, String, String))) {
+  use writerlys <- result.then(
+    wp.parse_blamed_lines(lines) |> result.map_error(fn(e) {
+      let assert wp.WriterlyParseError(blame) = e
+      vr.SourceParserError("parse_blamed_lines failed " <> ins(blame))
+    })
+  )
+
+  wp.debug_print_writerlys("", writerlys)
+
+  use vxml <- result.then(
+    wp.writerlys_to_vxmls(writerlys) |> infra.get_root |> result.map_error(fn(e) { vr.SourceParserError(e) })
+  )
+
+  let #(_, filter_vxmls) = filter_nodes_by_attributes(spotlight_args)
+  use filtered_vxml <- result.then(
+    filter_vxmls(vxml) |> result.map_error(fn(e: infra.DesugaringError) { 
+      let assert infra.DesugaringError(_, message) = e
+      vr.SourceParserError(message) 
+    })
+  )
+  Ok(wp.vxmls_to_writerlys([filtered_vxml]))
+}
+
 fn cli_usage() {
   io.println("command line options (mix & match any combination):")
   io.println("")
@@ -227,7 +253,8 @@ pub fn main() {
         io.debug(
           vr.process_command_line_arguments(rest, [
             #("--prettier", True),
-          ]),
+          ],
+          "../public/pages"),
         ),
         fn(error) {
           io.println("")
@@ -244,8 +271,9 @@ pub fn main() {
       use amendments <- infra.on_error_on_ok(
         io.debug(
           vr.process_command_line_arguments(args, [
-            #("--prettier", True),
-          ]),
+            #("--prettier", True)
+          ],
+          "../emu_content"),
         ),
         fn(error) {
           io.println("")
@@ -256,8 +284,8 @@ pub fn main() {
       )
       let renderer =
         vr.Renderer(
-          assembler: wp.assemble_blamed_lines_advanced_mode(_, amendments.assemble_blamed_lines_selector_args),
-          source_parser: wp.parse_blamed_lines,
+          assembler: wp.assemble_blamed_lines_advanced_mode(_, amendments.spotlight_args_files),
+          source_parser: our_source_parser(_, amendments.spotlight_args),
           parsed_source_converter: wp.writerlys_to_vxmls,
           pipeline: pipeline.our_pipeline(),
           splitter: ti2_splitter,
