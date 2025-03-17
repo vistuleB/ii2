@@ -1,6 +1,4 @@
 import desugarers/find_replace
-import gleam/option
-
 import desugarers/generate_ti2_table_of_contents_html.{generate_ti2_table_of_contents_html}
 import desugarers/define_article_output_path.{define_article_output_path}
 import desugarers/break_lines_into_span_tooltips.{break_lines_into_span_tooltips}
@@ -251,9 +249,7 @@ pub fn our_pipeline() -> List(Pipe) {
       #("figure", "p"),
     ]),
     // 31
-    generate_ti2_table_of_contents_html(
-      #("TOCAuthorSuppliedContent", "li", option.None),
-    ),
+    generate_ti2_table_of_contents_html(#("TOCAuthorSuppliedContent", "li")),
     // break_lines_into_span_tooltips("emu_content/"),
   ]
 }

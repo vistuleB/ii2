@@ -253,9 +253,12 @@ fn directory_files_else_file(path: String) -> Result(#(String, List(String)), si
   }
 }
 
-fn our_source_parser(lines: List(bl.BlamedLine), spotlight_args: List(#(String, String, String))) -> Result(VXML, vr.RendererError(a, String, b, c, d)) { 
-
+fn our_source_parser(
+  lines: List(bl.BlamedLine),
+  spotlight_args: List(#(String, String, String))
+) -> Result(VXML, vr.RendererError(a, String, b, c, d)) { 
   let path = bl.first_blame_filename(lines) |> result.unwrap("")
+
   use vxml <- result.then(
     bl.blamed_lines_to_string(lines)
     |> vp.xmlm_based_html_parser(path) 
@@ -263,22 +266,19 @@ fn our_source_parser(lines: List(bl.BlamedLine), spotlight_args: List(#(String, 
       case e {
         vp.XMLMIOError(s) -> vr.SourceParserError(s)
         vp.XMLMParseError(s) -> vr.SourceParserError(s)
-        }
-      })
+      }
+    })
   )
   
-  let #(_, filter_vxmls) = filter_nodes_by_attributes(spotlight_args)
-  use filtered_vxml <- result.then(
-    filter_vxmls(vxml) |> result.map_error(fn(e: infra.DesugaringError) { 
+  filter_nodes_by_attributes(spotlight_args).desugarer(vxml)
+  |> result.map_error(
+    fn(e: infra.DesugaringError) { 
       case e {
         infra.DesugaringError(_, message) -> vr.SourceParserError(message)
         infra.GetRootError(message) -> vr.SourceParserError(message)
       }
-    })
+    }
   )
-
-  Ok(filtered_vxml)
-
 }
 
 pub fn html_to_writerly(path: String, amendments: vr.CommandLineAmendments(Bool)) -> Nil {
@@ -317,7 +317,7 @@ pub fn html_to_writerly(path: String, amendments: vr.CommandLineAmendments(Bool)
         vr.Renderer(
           assembler: wp.assemble_blamed_lines,
           source_parser: our_source_parser(_, amendments.spotlight_args),
-          parsed_source_converter: fn(vxml) { [vxml] },
+          // parsed_source_converter: fn(vxml) { [vxml] },
           pipeline: html_pipeline.html_pipeline(),
           splitter: fn(vxml) { splitter(vxml, file) },
           emitter: fn(pair) { emitter(pair, prev, next) },
