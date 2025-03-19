@@ -265,17 +265,12 @@ pub fn main() {
 
       let debug_options =
         vr.empty_renderer_debug_options("../renderer_artifacts")
-        |> vr.amend_renderer_debug_options_by_command_line_amendment(io.debug(
-          amendments
-        ), pipeline.our_pipeline())
-        |> io.debug
+        |> vr.amend_renderer_debug_options_by_command_line_amendment(amendments, pipeline.our_pipeline())
 
       case vr.run_renderer(renderer, parameters, debug_options) {
         Error(error) -> io.println("\nrenderer error: " <> ins(error) <> "\n")
         _ -> Nil
       }
-
-      Nil
     }
   }
 }
