@@ -1,18 +1,23 @@
-import desugarers/find_replace
-import desugarers/generate_ti2_table_of_contents_html.{generate_ti2_table_of_contents_html}
+import desugarers/concatenate_text_nodes.{concatenate_text_nodes}
+import desugarers/counters_substitute_and_assign_handles.{
+  counters_substitute_and_assign_handles,
+}
 import desugarers/define_article_output_path.{define_article_output_path}
-import desugarers/break_lines_into_span_tooltips.{break_lines_into_span_tooltips}
+import desugarers/find_replace
+import desugarers/fold_tag_contents_into_text.{fold_tag_contents_into_text}
+import desugarers/fold_tags_into_text.{fold_tags_into_text}
 import desugarers/free_children.{free_children}
+import desugarers/generate_ti2_table_of_contents_html.{
+  generate_ti2_table_of_contents_html,
+}
 import desugarers/handles_generate_dictionary.{handles_generate_dictionary}
 import desugarers/handles_generate_ids.{handles_generate_ids}
 import desugarers/handles_substitute.{handles_substitute}
-import desugarers/counters_substitute_and_assign_handles.{counters_substitute_and_assign_handles}
-import desugarers/concatenate_text_nodes.{concatenate_text_nodes}
-import desugarers/fold_tag_contents_into_text.{fold_tag_contents_into_text}
-import desugarers/fold_tags_into_text.{fold_tags_into_text}
 import desugarers/pair_bookends.{pair_bookends}
 import desugarers/prepend_append_to_text_children_of
-import desugarers/remove_vertical_chunks_with_no_text_child.{remove_vertical_chunks_with_no_text_child}
+import desugarers/remove_vertical_chunks_with_no_text_child.{
+  remove_vertical_chunks_with_no_text_child,
+}
 import desugarers/split_by_indexed_regexes.{split_by_indexed_regexes}
 import desugarers/unwrap_tag_when_child_of_tags.{unwrap_tag_when_child_of_tags}
 import desugarers/unwrap_tags.{unwrap_tags}
@@ -76,14 +81,8 @@ pub fn our_pipeline() -> List(Pipe) {
     split_by_indexed_regexes(
       #(
         [
-          #(
-            latex_opening_math_block_indexed_regex,
-            "OpeningLatexBlock",
-          ),
-          #(
-            latex_closing_math_block_indexed_regex,
-            "ClosingLatexBlock",
-          ),
+          #(latex_opening_math_block_indexed_regex, "OpeningLatexBlock"),
+          #(latex_closing_math_block_indexed_regex, "ClosingLatexBlock"),
         ],
         [],
       ),
@@ -93,7 +92,6 @@ pub fn our_pipeline() -> List(Pipe) {
       #("OpeningLatexBlock", "$$\\begin{align*}"),
       #("ClosingLatexBlock", "\\end{align*}$$"),
     ]),
-    
     // ************************
     // $$ *********************
     // ************************
@@ -106,7 +104,6 @@ pub fn our_pipeline() -> List(Pipe) {
     pair_bookends(#(["DoubleDollar"], ["DoubleDollar"], "MathBlock")),
     // 6
     fold_tags_into_text([#("DoubleDollar", "$$")]),
-
     unwrap_tags(["WriterlyBlankLine"]),
     // 10
     concatenate_text_nodes(),
@@ -129,7 +126,6 @@ pub fn our_pipeline() -> List(Pipe) {
         ["MathBlock"],
       ),
     ),
-   
     // ************************
     // $ and \( \) for inline math ******************
     // ************************
@@ -140,13 +136,11 @@ pub fn our_pipeline() -> List(Pipe) {
       #("OpeningLatexPara", "\\("),
       #("ClosingLatexPara", "\\)"),
     ]),
-
     split_by_indexed_regexes(
       #([#(single_dollar_indexed_regex, "SingleDollar")], ["MathBlock", "Math"]),
     ),
     pair_bookends(#(["SingleDollar"], ["SingleDollar"], "Math_dolar")),
     fold_tags_into_text([#("SingleDollar", "$")]),
-
     // ************************
     // _ & * & ` ******************
     // ************************
@@ -219,18 +213,23 @@ pub fn our_pipeline() -> List(Pipe) {
     ]),
     // 20
     fold_tag_contents_into_text.fold_tag_contents_into_text([
-      "MathBlock", "Math", "Math_dolar"
+      "MathBlock", "Math", "Math_dolar",
     ]),
     // 21
     counters_substitute_and_assign_handles(),
     // 22
     handles_generate_ids.handles_generate_ids(),
     // 23
-    define_article_output_path.define_article_output_path(
-      #("section", "/lecture-notes", "tsx", "path"),
-    ),
+    define_article_output_path.define_article_output_path(#(
+      "section",
+      "/lecture-notes",
+      "tsx",
+      "path",
+    )),
     // 24
-    handles_generate_dictionary.handles_generate_dictionary([#("section", "path")]),
+    handles_generate_dictionary.handles_generate_dictionary([
+      #("section", "path"),
+    ]),
     // 25
     handles_substitute.handles_substitute(),
     // 26
