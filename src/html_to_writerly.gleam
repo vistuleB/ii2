@@ -12,7 +12,6 @@ import vxml_renderer as vr
 import writerly_parser as wp
 import blamedlines as bl
 import gleam/string
-import desugarers/filter_nodes_by_attributes.{filter_nodes_by_attributes}
 
 const ins = string.inspect
 
@@ -245,34 +244,6 @@ fn directory_files_else_file(path: String) -> Result(#(String, List(String)), si
   }
 }
 
-fn our_source_parser(
-  lines: List(bl.BlamedLine),
-  spotlight_args: List(#(String, String, String))
-) -> Result(VXML, vr.RendererError(a, String, b, c, d)) { 
-  let path = bl.first_blame_filename(lines) |> result.unwrap("")
-
-  use vxml <- result.then(
-    bl.blamed_lines_to_string(lines)
-    |> vp.xmlm_based_html_parser(path) 
-    |> result.map_error(fn(e) { 
-      case e {
-        vp.XMLMIOError(s) -> vr.SourceParserError(s)
-        vp.XMLMParseError(s) -> vr.SourceParserError(s)
-      }
-    })
-  )
-  
-  filter_nodes_by_attributes(spotlight_args).desugarer(vxml)
-  |> result.map_error(
-    fn(e: infra.DesugaringError) { 
-      case e {
-        infra.DesugaringError(_, message) -> vr.SourceParserError(message)
-        infra.GetRootError(message) -> vr.SourceParserError(message)
-      }
-    }
-  )
-}
-
 pub fn html_to_writerly(path: String, amendments: vr.CommandLineAmendments) -> Nil {
   use #(dir, files) <- infra.on_error_on_ok(
     directory_files_else_file(path),
@@ -307,8 +278,7 @@ pub fn html_to_writerly(path: String, amendments: vr.CommandLineAmendments) -> N
       let renderer =
         vr.Renderer(
           assembler: wp.assemble_blamed_lines,
-          source_parser: our_source_parser(_, amendments.spotlight_args),
-          // parsed_source_converter: fn(vxml) { [vxml] },
+          source_parser: vr.default_html_source_parser(_, amendments.spotlight_args),
           pipeline: html_pipeline.html_pipeline(),
           splitter: fn(vxml) { splitter(vxml, file) },
           emitter: fn(pair) { emitter(pair, prev, next) },

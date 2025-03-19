@@ -10,8 +10,6 @@ import pipeline
 import vxml_parser.{type VXML, BlamedAttribute}
 import vxml_renderer as vr
 import writerly_parser as wp
-import gleam/result
-import desugarers/filter_nodes_by_attributes.{filter_nodes_by_attributes}
 
 const ins = string.inspect
 
@@ -182,7 +180,6 @@ fn toc_emitter(
   Ok(#(path, lines, fragment_type))
 }
 
-
 fn ti2_emitter(
   pair: #(String, VXML, FragmentType),
 ) -> Result(#(String, List(BlamedLine), FragmentType), Ti2EmitterError) {
@@ -193,23 +190,6 @@ fn ti2_emitter(
     TOCAuthorSuppliedContent -> toc_emitter(path, vxml, fragment_type)
   }
 }
-
-fn our_source_parser(lines: List(BlamedLine), spotlight_args: List(#(String, String, String))) {
-  use writerlys <- result.then(
-    wp.parse_blamed_lines(lines)
-    |> result.map_error(fn(e) { vr.SourceParserError(ins(e)) })
-  )
-
-  use vxml <- result.then(
-    wp.writerlys_to_vxmls(writerlys)
-    |> infra.get_root
-    |> result.map_error(fn(e) { vr.SourceParserError(e) })
-  )
-
-  filter_nodes_by_attributes(spotlight_args).desugarer(vxml)
-  |> result.map_error(fn(e: infra.DesugaringError) { vr.SourceParserError(ins(e)) })
-}
-
 
 fn cli_usage_supplementary() {
   io.println("      --prettier")
@@ -234,6 +214,12 @@ pub fn main() {
       html_to_writerly.html_to_writerly(path, amendments)
     }
 
+    ["--parse-html"] -> {
+      io.println("")
+      io.println("please provide path to html input")  // hint: it's public/pages/
+      io.println("")
+    }
+
     _ -> {
       use amendments <- infra.on_error_on_ok(
         vr.process_command_line_arguments(args, ["--prettier"]),
@@ -249,7 +235,7 @@ pub fn main() {
       let renderer =
         vr.Renderer(
           assembler: wp.assemble_blamed_lines_advanced_mode(_, amendments.spotlight_args_files),
-          source_parser: our_source_parser(_, amendments.spotlight_args),
+          source_parser: vr.default_writerly_source_parser(_, amendments.spotlight_args),
           pipeline: pipeline.our_pipeline(),
           splitter: ti2_splitter,
           emitter: ti2_emitter,
