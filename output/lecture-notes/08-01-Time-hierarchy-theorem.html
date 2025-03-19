@@ -1,11 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-      <link rel="icon" href="data:,">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <head>
+    <link rel="icon" href="data:," />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
     <link rel="stylesheet" type="text/css" href="../TI.css" />
     <link rel="stylesheet" type="text/css" href="../tooltip-3003.css" />
@@ -14,432 +17,387 @@
     <script type="text/javascript" src="../mathjax_setup.js"></script>
     <script type="text/javascript" src="../carousel.js"></script>
     <script type="text/javascript" src="../sendCmdTo3003.js"></script>
-    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-</head>
-<body>
-<section
-  count={51}
-  title_gr="Zeithierarchietheorem"
-  title_en="Time hierarchy theorem"
-  number={8.1}
-  counter="DefCtr"
-  counter="ExoCtr"
-  path="/lecture-notes51.tsx"
->
-  <div
-    id="link-to-toc"
-  >
-    <a
-      href="../vorlesungsskript.html"
-    >Inhaltsverzeichnis</a><a
-      href="08-00-Complexity-Theory.html"
-    >&lt;&lt; Kapitel 8.0</a>
-  </div>
-  <div
-    id="link-to-overview"
-    style="text-align: end"
-  >
-    <a
-      href="/"
-    >zur Kursübersicht</a><a
-      href="09-00-appendix.html"
-    >Kapitel 9.0 &gt;&gt;</a>
-  </div>
-  <div
-    id="rightSideWrapper"
-  >
-    <div
-      class="content"
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+  </head>
+  <body>
+    <section
+      count="{51}"
+      title_gr="Zeithierarchietheorem"
+      title_en="Time hierarchy theorem"
+      number="{8.1}"
+      counter="DefCtr"
+      counter="ExoCtr"
+      path="/lecture-notes51.tsx"
     >
-      <div
-        class="chapter"
-      >
-        <div
-          class="subChapter"
-        >
-          <h1
-            class="hidden-title"
-          >
-            <span
-              class="subChapterTitle"
-            >8.1
-              Das Zeithierarchietheorem
-            </span>
-          </h1>
-          <p>Das Zeithierarchietheorem besagt, dass es zu jeder "vernünftigen" Komplexitätsfunktion $t: \N
-            \rightarrow \N$
-            ein Entscheidungsproblem $L \subseteq \Sigma^*$ gibt, dass man in Zeit $t$ entscheiden kann,
-            aber nicht deutlich schneller. Was "vernünftig" bedeutet, wird weiter unten klar werden.
-            Wir betrachten noch einmal genauer die universelle Turingmaschine aus
-            <a
-              href="07-03-Turing-universal.html"
-            >Kapitel 7.5.</a>
-             Unsere Implementierung hatte insgesamt
-            fünf Bänder verwendet: (1) ein Band, um die Regeln von $M$ zu speichern (also die Funktion
-            $\delta$);
-            (2) ein Band, um den Zustand von $M$ zu speichern; (3) um den akzeptierenden Zustand $\qaccept$
-            von $M$
-            zu speichern; (4) und (5) um das Band von $M$ zu simulieren. Für letzteres hatten wir
-            
-            <i>zwei</i>
-             Bänder
-            verwendet, weil das uns erlaubte, effizient Zeichen 
-            <i>einzufügen</i>
-             statt einfach zu
-            überschreiben.
-            Wie wir aber gesehen hatten, können wir (4) und (5) mit einem Band bewältigen, indem wir zu
-            allererst
-            die Codierung $\enc(M)$ durchgehen und die Länge $l$ des längsten Bandzeichen bestimmen. Wir
-            verwenden dann auf Band (4) immer Blöcke der Länge $l$ für ein $M$-Zeichen und separieren diese
-            durch eine
-            Markierung $\texttt{#}$. Auch das Band (3) können wir uns sparen: den akzeptierenden Zustand
-            von $M$ können wir gleich am Anfang von (1) schreiben, ohne das die Simulation dadurch
-            nennenswert teurer würde. Wir kommen also mit 
-            <i>drei</i>
-             Bändern aus.
-            Allerdings hatten wir uns nur überlegt, wie man
-            Einband-Turingmaschinen $M$ simuliert. Es ist aber ziemlich einfach zu sehen, dass man
-            Codierung und Simulation ganz analog für $k$-Band-Turingmaschinen durchführen kann.
-            Die entsprechende Turingmaschine hat dann allerdings $k+2$ Bänder: $k$ Arbeitsbänder,
-            eins für den Zustand von $M$ und eins für $\enc(M)$. Darüberhinaus hatten wir in
-            <a
-              href="07-05-undecidability.html"
-            >Kapitel 7.7</a>
-             gesehen, dass wir als Codierungsalphabet
-            $\Sigma$ selbst nehmen können, also $\enc(M) \in \Sigma^*$, solange $\Sigma$ mindestens zwei
-            Zeichen enthält.
-          </p>
-          <div
-            id="theorem-universal"
-            class="well container theorem"
-          >
-            <p><span
-                class="numbered-title"
-              >Theorem <NumberedTitle>8.1.1</NumberedTitle>
-                 
-              </span>
-               Für jedes Alphabet $\Sigma$ mit mindestens zwei
-              Zeichen
-              und jedes $k \geq 1$ gibt es eine Turingmaschine $U$ mit $k+2$ Bändern, die folgendes kann:
-              sei $M$ eine beliebige $k$-Band-Turingmaschine mit Eingabealphabet $\Sigma$ und sei $x \in
-              \Sigma^*$.
-              Dann gilt
-            </p>
-            $$\begin{align*}
-            f_{U} (\enc(M)x) = f_M(x) \ .
-            \end{align*}$$
-            <p>Weiterhin gilt: wenn $M$ auf $x$ innerhalb von $s$ Schritten terminiert, dann
-              terminiert $U$ auf $\enc(M)x$ innerhalb von
-            </p>
-            $$\begin{align*}
-            C \cdot |\enc(M)| \cdot (|x| + s)
-            \end{align*}$$
-            <p>Schritten. Das $C$ ist hier eine <i>absolute Konstante</i>, hängt also weder von $M$ noch
-              von $\Sigma$ ab.
-            </p>
-          </div>
-          <p>Dass es so ein $U$ gibt, hatten wir ja schon gesehen. Gehen wir aber noch einmal die
-            Zeitschranke durch. In einer vorbereitenden Phase bestimmt $U$ die Länge $l$ des längsten
-            Bandzeichen von $M$. Dann schreibt es das Eingabewort $x_1 x_2 \dots x_n$ als Folge
-            von Blöcken der Länge $l$ auf das Arbeitsband. Zellen in einem Block, die nicht verwendet
-            werden,
-            werden mit einem $\texttt{-}$ gefüllt. Hier ein Beispiel für den Fall $l=4$:
-          </p>
-          $$\begin{align*}
-          \texttt{#}x_1 \texttt{-} \texttt{-} \texttt{-} \texttt{#} x_2 \texttt{-} \texttt{-}
-          \texttt{-} \texttt{#} x_3 \texttt{-} \texttt{-} \texttt{-} \texttt{#} \cdots \texttt{#} x_n
-          \texttt{-} \texttt{-} \texttt{-}
-          \texttt{#}
-          \end{align*}$$
-          <p>Diese Vorbereitungsphase benötigt maximal $C \cdot |\enc(M)| \cdot |x|$ Schritte. Um nun einen
-            Schritt von $M$ zu simulieren, müssen wir das gerade gelesene $M$-Zeichen $z$ auf Band 2
-            schreiben, so dass dann
-            dort $\enc(q)\texttt{,}\enc(z)$ steht. Das braucht $l+1$ Schritte.
-            Als nächstes müssen wir $\delta_M(q,z)$ bestimmen, müssen
-            wir $\enc(M)$ durchgehen und den Eintrag für $\enc(q)\texttt{,}\enc(z)$ suchen, was
-            maximal $2 \cdot \enc(M)$ Schritte benötigt. Dann müssen wir den Schritt ausführen, also
-            den neuen Zustand auf Band 2 schreiben, das neue Zeichen in den Block auf dem Arbeitsband
-            eintragen und den Kopf bewegen. All das benötigt maximal $C \cdot |\enc(M)|$ Schritte.
-          </p>
-          <h2>Untere Schranken für Zeitkomplexität
-          </h2>
-          <p>Wir wollen nun eine Sprache definieren, die wir in $t(n)$ Schritten entscheiden können aber
-            nicht deutlich schneller. Wir erinnern uns an $\halt$, die von der universellen Turingmaschine
-            $U$ akzeptierte Sprache:
-          </p>
-          $$\begin{align*}
-          \halt := L(U) =\{ \enc(M) w \ | \ M \textnormal{ akzeptiert } w\} \ .
-          \end{align*}$$
-          <p>und davon abgeleitete "Diagonalisierungssprache"
-          </p>
-          $$\begin{align*}
-          \negdiag := \{ \enc(M) \in \Sigma^* \ | \ \enc(M) \enc(M) \not \in \halt\}
-          \end{align*}$$
-          <p>Wir haben gesehen, dass $\negdiag$ nicht entscheidbar ist. Nun wollen
-            wir eine Version von $\negdiag$, die in $t$ Schritten entscheidbar ist,
-            aber nicht in sehr viel weniger. Dafür definieren wir uns ein 
-            <i>Halteproblem mit
-              Zeitbudget.
-            </i>
-          </p>
-          <div
-            class="well container theorem"
-          >
-            <p><span
-                class="numbered-title"
-              >Definition <NumberedTitle>8.1.2</NumberedTitle>
-                 
-              </span>
-               
-              <b>(Zeitbudgetiertes
-                Halteproblem).
-              </b>
-              Sei $\Sigma$ ein endliches Alphabet. Wir definieren die Sprache
-              $$\begin{align*}
-              \bhalt := \{ \enc(M) 1^b 0 x \ | \
-              U \textnormal{ akzeptiert $\enc(M)x$ innerhalb von $b$ Schritten}
-              \}
+      <div id="link-to-toc">
+        <a href="../vorlesungsskript.html">Inhaltsverzeichnis</a
+        ><a href="08-00-Complexity-Theory.html">&lt;&lt; Kapitel 8.0</a>
+      </div>
+      <div id="link-to-overview" style="text-align: end">
+        <a href="/">zur Kursübersicht</a
+        ><a href="09-00-appendix.html">Kapitel 9.0 &gt;&gt;</a>
+      </div>
+      <div id="rightSideWrapper">
+        <div class="content">
+          <div class="chapter">
+            <div class="subChapter">
+              <h1 class="hidden-title">
+                <span class="subChapterTitle"
+                  >8.1 Das Zeithierarchietheorem
+                </span>
+              </h1>
+              <p>
+                Das Zeithierarchietheorem besagt, dass es zu jeder
+                "vernünftigen" Komplexitätsfunktion $t: \N \rightarrow \N$ ein
+                Entscheidungsproblem $L \subseteq \Sigma^*$ gibt, dass man in
+                Zeit $t$ entscheiden kann, aber nicht deutlich schneller. Was
+                "vernünftig" bedeutet, wird weiter unten klar werden. Wir
+                betrachten noch einmal genauer die universelle Turingmaschine
+                aus
+                <a href="07-03-Turing-universal.html">Kapitel 7.5.</a>
+                Unsere Implementierung hatte insgesamt fünf Bänder verwendet:
+                (1) ein Band, um die Regeln von $M$ zu speichern (also die
+                Funktion $\delta$); (2) ein Band, um den Zustand von $M$ zu
+                speichern; (3) um den akzeptierenden Zustand $\qaccept$ von $M$
+                zu speichern; (4) und (5) um das Band von $M$ zu simulieren. Für
+                letzteres hatten wir
+
+                <i>zwei</i>
+                Bänder verwendet, weil das uns erlaubte, effizient Zeichen
+                <i>einzufügen</i>
+                statt einfach zu überschreiben. Wie wir aber gesehen hatten,
+                können wir (4) und (5) mit einem Band bewältigen, indem wir zu
+                allererst die Codierung $\enc(M)$ durchgehen und die Länge $l$
+                des längsten Bandzeichen bestimmen. Wir verwenden dann auf Band
+                (4) immer Blöcke der Länge $l$ für ein $M$-Zeichen und
+                separieren diese durch eine Markierung $\texttt{#}$. Auch das
+                Band (3) können wir uns sparen: den akzeptierenden Zustand von
+                $M$ können wir gleich am Anfang von (1) schreiben, ohne das die
+                Simulation dadurch nennenswert teurer würde. Wir kommen also mit
+                <i>drei</i>
+                Bändern aus. Allerdings hatten wir uns nur überlegt, wie man
+                Einband-Turingmaschinen $M$ simuliert. Es ist aber ziemlich
+                einfach zu sehen, dass man Codierung und Simulation ganz analog
+                für $k$-Band-Turingmaschinen durchführen kann. Die entsprechende
+                Turingmaschine hat dann allerdings $k+2$ Bänder: $k$
+                Arbeitsbänder, eins für den Zustand von $M$ und eins für
+                $\enc(M)$. Darüberhinaus hatten wir in
+                <a href="07-05-undecidability.html">Kapitel 7.7</a>
+                gesehen, dass wir als Codierungsalphabet $\Sigma$ selbst nehmen
+                können, also $\enc(M) \in \Sigma^*$, solange $\Sigma$ mindestens
+                zwei Zeichen enthält.
+              </p>
+              <div id="theorem-universal" class="well container theorem">
+                <p>
+                  <span class="numbered-title"
+                    >Theorem <NumberedTitle>8.1.1</NumberedTitle>
+                  </span>
+                  Für jedes Alphabet $\Sigma$ mit mindestens zwei Zeichen und
+                  jedes $k \geq 1$ gibt es eine Turingmaschine $U$ mit $k+2$
+                  Bändern, die folgendes kann: sei $M$ eine beliebige
+                  $k$-Band-Turingmaschine mit Eingabealphabet $\Sigma$ und sei
+                  $x \in \Sigma^*$. Dann gilt
+                </p>
+                $$\begin{align*} f_{U} (\enc(M)x) = f_M(x) \ . \end{align*}$$
+                <p>
+                  Weiterhin gilt: wenn $M$ auf $x$ innerhalb von $s$ Schritten
+                  terminiert, dann terminiert $U$ auf $\enc(M)x$ innerhalb von
+                </p>
+                $$\begin{align*} C \cdot |\enc(M)| \cdot (|x| + s)
+                \end{align*}$$
+                <p>
+                  Schritten. Das $C$ ist hier eine <i>absolute Konstante</i>,
+                  hängt also weder von $M$ noch von $\Sigma$ ab.
+                </p>
+              </div>
+              <p>
+                Dass es so ein $U$ gibt, hatten wir ja schon gesehen. Gehen wir
+                aber noch einmal die Zeitschranke durch. In einer vorbereitenden
+                Phase bestimmt $U$ die Länge $l$ des längsten Bandzeichen von
+                $M$. Dann schreibt es das Eingabewort $x_1 x_2 \dots x_n$ als
+                Folge von Blöcken der Länge $l$ auf das Arbeitsband. Zellen in
+                einem Block, die nicht verwendet werden, werden mit einem
+                $\texttt{-}$ gefüllt. Hier ein Beispiel für den Fall $l=4$:
+              </p>
+              $$\begin{align*} \texttt{#}x_1 \texttt{-} \texttt{-} \texttt{-}
+              \texttt{#} x_2 \texttt{-} \texttt{-} \texttt{-} \texttt{#} x_3
+              \texttt{-} \texttt{-} \texttt{-} \texttt{#} \cdots \texttt{#} x_n
+              \texttt{-} \texttt{-} \texttt{-} \texttt{#} \end{align*}$$
+              <p>
+                Diese Vorbereitungsphase benötigt maximal $C \cdot |\enc(M)|
+                \cdot |x|$ Schritte. Um nun einen Schritt von $M$ zu simulieren,
+                müssen wir das gerade gelesene $M$-Zeichen $z$ auf Band 2
+                schreiben, so dass dann dort $\enc(q)\texttt{,}\enc(z)$ steht.
+                Das braucht $l+1$ Schritte. Als nächstes müssen wir
+                $\delta_M(q,z)$ bestimmen, müssen wir $\enc(M)$ durchgehen und
+                den Eintrag für $\enc(q)\texttt{,}\enc(z)$ suchen, was maximal
+                $2 \cdot \enc(M)$ Schritte benötigt. Dann müssen wir den Schritt
+                ausführen, also den neuen Zustand auf Band 2 schreiben, das neue
+                Zeichen in den Block auf dem Arbeitsband eintragen und den Kopf
+                bewegen. All das benötigt maximal $C \cdot |\enc(M)|$ Schritte.
+              </p>
+              <h2>Untere Schranken für Zeitkomplexität</h2>
+              <p>
+                Wir wollen nun eine Sprache definieren, die wir in $t(n)$
+                Schritten entscheiden können aber nicht deutlich schneller. Wir
+                erinnern uns an $\halt$, die von der universellen Turingmaschine
+                $U$ akzeptierte Sprache:
+              </p>
+              $$\begin{align*} \halt := L(U) =\{ \enc(M) w \ | \ M \textnormal{
+              akzeptiert } w\} \ . \end{align*}$$
+              <p>und davon abgeleitete "Diagonalisierungssprache"</p>
+              $$\begin{align*} \negdiag := \{ \enc(M) \in \Sigma^* \ | \ \enc(M)
+              \enc(M) \not \in \halt\} \end{align*}$$
+              <p>
+                Wir haben gesehen, dass $\negdiag$ nicht entscheidbar ist. Nun
+                wollen wir eine Version von $\negdiag$, die in $t$ Schritten
+                entscheidbar ist, aber nicht in sehr viel weniger. Dafür
+                definieren wir uns ein
+                <i>Halteproblem mit Zeitbudget. </i>
+              </p>
+              <div class="well container theorem">
+                <p>
+                  <span class="numbered-title"
+                    >Definition <NumberedTitle>8.1.2</NumberedTitle>
+                  </span>
+
+                  <b>(Zeitbudgetiertes Halteproblem). </b>
+                  Sei $\Sigma$ ein endliches Alphabet. Wir definieren die
+                  Sprache $$\begin{align*} \bhalt := \{ \enc(M) 1^b 0 x \ | \ U
+                  \textnormal{ akzeptiert $\enc(M)x$ innerhalb von $b$
+                  Schritten} \} \end{align*}$$ Mit $1^b$ bezeichnen wir die
+                  Folge von $n$ vielen $1$en. Des Weiteren ist $M$ eine
+                  $k$-Band-Turingmaschine mit Eingabealphabet $\Sigma$ und $x
+                  \in \Sigma^*$ und $U$ die universelle Turingmaschine, die
+                  selbst $k+2$ Bänder hat. Wir sollten strenggenommen also
+                  $\bhalt_{\Sigma,k}$ definieren, unterlassen dies aber der
+                  Lesbarkeit halber.
+                </p>
+              </div>
+              <p>
+                Bitte erinnern Sie sich daran, dass unsere Codierung $\enc(M)$
+                immer mit dem Sonderzeichen $\texttt{;}$ endet, oder besser
+                gesagt: mit der Codierung von $\texttt{;} \in \Lambda$ über dem
+                Alphabet $\Sigma$ selbst. Eine Turingmaschine kann also, gegeben
+                ein Eingabewort $\enc(M)1^b 0 x$, dieses in die Bestandteile
+                $\enc(M)$, $1^b$, $0$ und $x$ zerlegen. Die $0$ dient dazu, das
+                "Budget" $1^b$ vom "inneren Eingabewort" $x$ abzugrenzen.
+              </p>
+              <div class="well container theorem">
+                <p>
+                  <span class="numbered-title"
+                    >Beobachtung <NumberedTitle>8.1.3</NumberedTitle>
+                  </span>
+                  $\bhalt \in \TIME_{k+3}(n)$.
+                </p>
+              </div>
+              <div class="well container">
+                <p>
+                  <b>Beweis.</b>
+                  Wir nehmen die universelle Turingmaschine $U$, die
+                  $k$-Band-Turingmaschinen simulieren kann, und statten sie mit
+                  einem Stoppuhrband aus. Sie hat nun also $k+3$ Bänder. Sei $n
+                  = |\enc(M)| + b + 1 + |x|$ die Länge des Eingabewortes. In
+                  $O(n)$ Schritten sorgt sie dafür, dass auf dem Eingabeband das
+                  Wort $\enc(M)x$ steht und auf dem Stoppuhrband das Budget
+                  $1^b$. Nun lassen wir die universelle Turingmaschine $U$
+                  laufen, nur dass wir in jedem Schritt den Kopf auf dem
+                  Stoppuhrband nach rechts verschieben. Wenn $U$ hält, dann hält
+                  unsere Turingmaschine auch und gibt das gleiche Ergebnis aus.
+                  Wenn wir das Ende des Stoppuhrbandes erreicht haben, haben wir
+                  unsere $b$ Schritte verbraucht und lehnen ab. Wir brauchen
+                  insgesamt $O(n+b) = O(n)$ Schritte.
+                </p>
+                <span class="qed">\(\square\)</span>
+              </div>
+              <p>
+                Sei nun $t: \N \rightarrow \N$ eine monoton steigende Funktion
+                mit $t(n) \geq n$. Wir definieren eine Zeitbudgetierte Version
+                der Diagonalisierungssprache:
+              </p>
+              $$\begin{align*} \bnegdiag := \{ \enc(M)1^m \ | \ \enc(M)1^{b} 0
+              \enc(M) 1^n \not \in \bhalt, \ b = t(|\enc(M)|+m) \}
               \end{align*}$$
-              Mit $1^b$ bezeichnen wir die Folge von $n$ vielen $1$en.
-              Des Weiteren ist $M$ eine $k$-Band-Turingmaschine mit Eingabealphabet $\Sigma$ und $x \in
-              \Sigma^*$ und
-              $U$ die universelle Turingmaschine, die selbst $k+2$ Bänder hat. Wir sollten strenggenommen
-              also
-              $\bhalt_{\Sigma,k}$ definieren, unterlassen dies aber der Lesbarkeit halber.
-            </p>
-          </div>
-          <p>Bitte erinnern Sie sich daran, dass unsere Codierung $\enc(M)$ immer mit dem Sonderzeichen
-            $\texttt{;}$ endet, oder besser gesagt: mit der Codierung von $\texttt{;} \in \Lambda$ über
-            dem Alphabet $\Sigma$ selbst. Eine Turingmaschine kann also, gegeben ein Eingabewort $\enc(M)1^b
-            0 x$, dieses
-            in die Bestandteile $\enc(M)$, $1^b$, $0$ und $x$ zerlegen. Die $0$ dient dazu, das "Budget"
-            $1^b$ vom "inneren Eingabewort" $x$ abzugrenzen.
-          </p>
-          <div
-            class="well container theorem"
-          >
-            <p><span
-                class="numbered-title"
-              >Beobachtung <NumberedTitle>8.1.3</NumberedTitle>
-                 
-              </span>
-               $\bhalt \in \TIME_{k+3}(n)$. 
-            </p>
-          </div>
-          <div
-            class="well container"
-          >
-            <p><b>Beweis.</b>
-              Wir nehmen die universelle Turingmaschine $U$, die $k$-Band-Turingmaschinen simulieren kann,
-              und statten sie mit einem
-              Stoppuhrband aus. Sie hat nun also $k+3$ Bänder. Sei $n = |\enc(M)| + b + 1 + |x|$ die Länge
-              des Eingabewortes.
-              In $O(n)$ Schritten sorgt sie dafür, dass auf dem Eingabeband das Wort $\enc(M)x$ steht und
-              auf dem Stoppuhrband das Budget $1^b$.
-              Nun lassen wir die universelle Turingmaschine $U$ laufen, nur dass wir in jedem Schritt den
-              Kopf auf dem Stoppuhrband nach rechts verschieben. Wenn $U$ hält, dann hält unsere
-              Turingmaschine auch und gibt das gleiche Ergebnis aus. Wenn wir das Ende des Stoppuhrbandes
-              erreicht haben, haben wir unsere $b$ Schritte verbraucht und lehnen ab. Wir brauchen
-              insgesamt
-              $O(n+b) = O(n)$ Schritte.
-            </p>
-            <span
-              class="qed"
-            >\(\square\)</span>
-          </div>
-          <p>Sei nun $t: \N \rightarrow \N$ eine monoton steigende Funktion mit $t(n) \geq n$.
-            Wir definieren eine Zeitbudgetierte Version der Diagonalisierungssprache:
-          </p>
-          $$\begin{align*}
-          \bnegdiag := \{ \enc(M)1^m \ | \ \enc(M)1^{b} 0 \enc(M) 1^n \not \in \bhalt, \ b = t(|\enc(M)|+m) \}
-          \end{align*}$$
-          <div
-            style="background-color: rgba(255,0,0,0.1);"
-            class="well container theorem"
-          >
-            <p><span
-                class="numbered-title"
-              >Behauptung <NumberedTitle>8.1.4</NumberedTitle>
-                 
-              </span>
-               
-              <b>(nicht ganz
-                korrekt).
-              </b>
-               $\bnegdiag \in \TIME_{k+3}(t)$.
-            </p>
-          </div>
-          <p>Sei $n := |\enc(M) + m|$ die Länge des Inputwortes.
-            Wir können $\bnegdiag$ entscheiden, indem wir aus $\enc(M)1^m$ den String
-            $\enc(M)1^b 0 \enc(M) 1^m$ berechnen und dann die Turingmaschine für $\bhalt$ laufen lassen,
-            welche $k+3$ Bänder hat und selbst $O(2|\enc(M)| + b + 1 + m) = O(|\enc(M)| + b) = O(b)$
-            Schritte
-            braucht. Die Vorbereitungsphase braucht ungefähr so lange, wie wir brauchen, um $b =
-            t(|\enc(M)+m|) = t(n)$ zu berechnen.
-            Übliche Zeitschranken $t$, die uns interessieren, wären zum Beispiel $n \log n$, $n^2$, $2^n$,
-            $n!$ oder $n^n$. All diese stellen kein Problem dar. Insgesamt sind wir auf der sicheren
-            Seite, wenn wir die Funktion $t$ selbst in $O(t)$ Schritten berechnen können.
-          </p>
-          <div
-            class="well container theorem"
-          >
-            <p><span
-                class="numbered-title"
-              >Definition <NumberedTitle>8.1.5</NumberedTitle>
-                 
-              </span>
-               Eine Funktion $t: \N \rightarrow \N$ heißt
-              
-              <i>zeitkonstruierbar</i>, wenn es eine Turingmaschine gibt, die aus dem Eingabewort $1^n$
-              das Ausgabewort $1^{t(n)}$ berechnet und selbst maximal $O(t(n))$ Schritte läuft.
-            </p>
-          </div>
-          <div
-            class="well container theorem"
-          >
-            <p><span
-                class="numbered-title"
-              >Behauptung <NumberedTitle>8.1.6</NumberedTitle>
-                 
-              </span>
-               
-              <b>(jetzt korrekt).</b>
-               Sei
-              $t: \N \rightarrow \N$ zeitkonstruierbar, monoton steigend und $t(n) \geq n$. Dann gilt
-              $\bnegdiag \in \TIME_{k+3}(t)$.
-            </p>
-          </div>
-          <p>So weit, so gut. Wonach wir allerdings aus sind, ist ein Beweis, dass $\bnegdiag$ nicht
-            signifikant schneller zu berechnen ist.
-          </p>
-          <div
-            class="well container theorem"
-          >
-            <p><span
-                class="numbered-title"
-              >Lemma <NumberedTitle>8.1.7</NumberedTitle>
-                 
-              </span>
-               Sei $s: \N \rightarrow \N$ eine Funktion mit
-              $s(n) \geq n$ und
-              $s = o(t)$, also $\lim_{n \rightarrow \infty} \frac{s(n)}{t(n)} = 0$. Dann
-              gilt $\bnegdiag \not \in \TIME_k(s)$.
-            </p>
-          </div>
-          <div
-            class="well container"
-          >
-            <p><b>Beweis.</b>
-              Wir nehmen an, es gäbe eine Turingmaschine $M$, die $\bnegdiag$ in Zeit $s$ entscheidet und
-              leiten einen Widerspruch her. Sei $x := \enc(M)$. Wir wählen eine natürliche Zahl $m$,
-              deren genauen Wert wir weiter unten diskutieren und setzen $b := t(|x| + m)$. Wir fragen uns
-              nun: ist $x1^m \in \bnegdiag$?
-            </p>
-            $$\begin{align*}
-            x1^m \in \bnegdiag&amp;\Longleftrightarrow \enc(M) 1^b 0 x1^m \not \in \bhalt \\
-            &\Longleftrightarrow U \textnormal{ lehnt $\enc(M)x1^m$ innerhalb von $b$ Schritten ab}
-            \end{align*}$$
-            <p>Langsam nun. Sei $n := |\enc(M)|+m$ die Länge des Wortes $x1^m$.
-              Nach Annahme terminiert $M$ auf dem Eingabewort $x1^m$ innerhalb von
-              $s(n)$ Schritten. Wenn $U$ die Maschine $M$ simuliert, braucht sie
-              nach 
-              <a
-                href="#theorem-universal"
-              >Theorem 8.1.1</a>
-               höchstens
-              $C \cdot |\enc(M)| \cdot (n + s(n))$ Schritte.
-              Da $s(n) \geq n$ gilt, sind dies höchstens $2C \cdot |\enc(M)| \cdot s(n)
-              = 2C \cdot |\enc(M)| \cdot s(|x|+m)$ Schritte.
-              Da $\lim_{n \rightarrow \infty} \frac{s(n)}{t(n)} = 0$ ist, ist auch 
-            </p>
-            $$\begin{align*}
-            \lim_{m \rightarrow \infty }\frac{2C \cdot |\enc(M)| \cdot s(|x|+m)}{t(|x|+m)} = 0 \ .
-            \end{align*}$$
-            <p>Wenn wir also $m$ hinreichend groß wählen, dann ist dieser Bruch kleiner als $1$,
-              und die Simulation terminiert also innerhalb von
-            </p>
-            $$\begin{align*}
-            2C \cdot |\enc(M)| \cdot s(|x|+m) \leq t(|x|+m) = b
-            \end{align*}$$
-            <p>Schritten.
-              Das heißt, dass die universelle Turingmaschine $U$ das Wort $\enc(M)x1^m$ innerhalb von $b$
-              Schritten ablehnt,
-              wenn sie es überhaupt irgendwann ablehnt. Also schließen wir weiter:
-            </p>
-            $$\begin{align*}
-            x1^m \in \bnegdiag&amp;\Longleftrightarrow \enc(M) 1^b 0 x1^m \not \in \bhalt \\
-            &\Longleftrightarrow U \textnormal{ lehnt $\enc(M)x1^m$ innerhalb von $b$ Schritten ab} \\
-            &\Longleftrightarrow U \textnormal{ lehnt $\enc(M)x1^m$ ab} \\
-            &amp;\Longleftrightarrow M \textnormal{ lehnt $x1^m$ ab} \\
-            \end{align*}$$
-            <p>und da ist er, der Widerspruch: $x1^m \in \bnegdiag \Longleftrightarrow f_M(x1^m) =
-              \texttt{reject}$, entgegen unserer Annahme, dass $M$ die Sprache $\bnegdiag$ entscheidet.
-              <span
-                class="qed"
-              >\(\square\)</span>
-            </p>
-          </div>
-          <p>Zusammenfassend erhalten wir die "Rohversion" des Zeithierarchiesatzes:
-          </p>
-          <div
-            class="well container theorem"
-          >
-            <p><span
-                class="numbered-title"
-              >Theorem <NumberedTitle>8.1.8</NumberedTitle>
-                 
-              </span><b>(Zeithierarchiesatz, Rohversion).</b>
-              Seien $s, t: \N \rightarrow \N$
-              zeitkonstruierbare Funktionen mit $s(n) \geq n$ und
-              $s \in o(t)$ (also $\lim_{n \rightarrow \infty} s(n)/t(n)
-              = 0$). Dann gilt 
-            </p>
-            $$\begin{align*}
-            \TIME_k(s) \subsetneq \TIME_{k+3}(t)
-            \end{align*}$$
-            <p>für alle $k \geq 1$.
-            </p>
-          </div>
-          <p>Zusammen mit der Simulation von $k$-Band-TMs durch $2$-Band-TMs folgt nun
-          </p>
-          $$\begin{align*}
-          \TIME(s) \subsetneq \TIME_2(s \log s) \subsetneq \TIME_5(t \log t)
-          \end{align*}$$
-          <p>oder, alternativ ausgedrückt:
-          </p>
-          <div
-            class="well container theorem"
-          >
-            <p><span
-                class="numbered-title"
-              >Theorem <NumberedTitle>8.1.9</NumberedTitle>
-                 
-              </span>
-               
-              <b>(Zeithierarchiesatz).</b>
-              Seien $s, t: \N \rightarrow \N$ mit $s(n) \geq n$ und $s \log s \in o(t)$. Dann gilt
-              $\TIME(s) \subsetneq \TIME(t)$.
-            </p>
-          </div>
-          <p>Bitte beachten Sie, dass wir diese Version nicht vollständig bewiesen habe, da ich
-            die effizientere Simulation einer $k$-Band-Turingmaschine durch eine $2$-Band-Turingmaschine,
-            also $\TIME_k(t) \subseteq \TIME_2(t \log t)$ nicht erklärt habe. Mit der ineffiziten, also
-            $\TIME_k(t) \subseteq \TIME_1(t^2)$, erhalten wir
-            einen Zeithierarchiesatz solange $s^2 \in o(t)$ ist.
-          </p>
-          <div
-            class="well well-lg numbered-exercise container"
-          >
-            <p><span
-                class="numbered-title"
-              >Übungsaufgabe <NumberedTitle>8.1.1</NumberedTitle>
-                 
-              </span>Zeigen Sie, dass $n \mapsto n^2$ und $n \mapsto 2^n$ zeitkonstruierbar sind.
-            </p>
+              <div
+                style="background-color: rgba(255, 0, 0, 0.1)"
+                class="well container theorem"
+              >
+                <p>
+                  <span class="numbered-title"
+                    >Behauptung <NumberedTitle>8.1.4</NumberedTitle>
+                  </span>
+
+                  <b>(nicht ganz korrekt). </b>
+                  $\bnegdiag \in \TIME_{k+3}(t)$.
+                </p>
+              </div>
+              <p>
+                Sei $n := |\enc(M) + m|$ die Länge des Inputwortes. Wir können
+                $\bnegdiag$ entscheiden, indem wir aus $\enc(M)1^m$ den String
+                $\enc(M)1^b 0 \enc(M) 1^m$ berechnen und dann die Turingmaschine
+                für $\bhalt$ laufen lassen, welche $k+3$ Bänder hat und selbst
+                $O(2|\enc(M)| + b + 1 + m) = O(|\enc(M)| + b) = O(b)$ Schritte
+                braucht. Die Vorbereitungsphase braucht ungefähr so lange, wie
+                wir brauchen, um $b = t(|\enc(M)+m|) = t(n)$ zu berechnen.
+                Übliche Zeitschranken $t$, die uns interessieren, wären zum
+                Beispiel $n \log n$, $n^2$, $2^n$, $n!$ oder $n^n$. All diese
+                stellen kein Problem dar. Insgesamt sind wir auf der sicheren
+                Seite, wenn wir die Funktion $t$ selbst in $O(t)$ Schritten
+                berechnen können.
+              </p>
+              <div class="well container theorem">
+                <p>
+                  <span class="numbered-title"
+                    >Definition <NumberedTitle>8.1.5</NumberedTitle>
+                  </span>
+                  Eine Funktion $t: \N \rightarrow \N$ heißt
+
+                  <i>zeitkonstruierbar</i>, wenn es eine Turingmaschine gibt,
+                  die aus dem Eingabewort $1^n$ das Ausgabewort $1^{t(n)}$
+                  berechnet und selbst maximal $O(t(n))$ Schritte läuft.
+                </p>
+              </div>
+              <div class="well container theorem">
+                <p>
+                  <span class="numbered-title"
+                    >Behauptung <NumberedTitle>8.1.6</NumberedTitle>
+                  </span>
+
+                  <b>(jetzt korrekt).</b>
+                  Sei $t: \N \rightarrow \N$ zeitkonstruierbar, monoton steigend
+                  und $t(n) \geq n$. Dann gilt $\bnegdiag \in \TIME_{k+3}(t)$.
+                </p>
+              </div>
+              <p>
+                So weit, so gut. Wonach wir allerdings aus sind, ist ein Beweis,
+                dass $\bnegdiag$ nicht signifikant schneller zu berechnen ist.
+              </p>
+              <div class="well container theorem">
+                <p>
+                  <span class="numbered-title"
+                    >Lemma <NumberedTitle>8.1.7</NumberedTitle>
+                  </span>
+                  Sei $s: \N \rightarrow \N$ eine Funktion mit $s(n) \geq n$ und
+                  $s = o(t)$, also $\lim_{n \rightarrow \infty}
+                  \frac{s(n)}{t(n)} = 0$. Dann gilt $\bnegdiag \not \in
+                  \TIME_k(s)$.
+                </p>
+              </div>
+              <div class="well container">
+                <p>
+                  <b>Beweis.</b>
+                  Wir nehmen an, es gäbe eine Turingmaschine $M$, die
+                  $\bnegdiag$ in Zeit $s$ entscheidet und leiten einen
+                  Widerspruch her. Sei $x := \enc(M)$. Wir wählen eine
+                  natürliche Zahl $m$, deren genauen Wert wir weiter unten
+                  diskutieren und setzen $b := t(|x| + m)$. Wir fragen uns nun:
+                  ist $x1^m \in \bnegdiag$?
+                </p>
+                $$\begin{align*} x1^m \in \bnegdiag&amp;\Longleftrightarrow
+                \enc(M) 1^b 0 x1^m \not \in \bhalt \\ &\Longleftrightarrow U
+                \textnormal{ lehnt $\enc(M)x1^m$ innerhalb von $b$ Schritten ab}
+                \end{align*}$$
+                <p>
+                  Langsam nun. Sei $n := |\enc(M)|+m$ die Länge des Wortes
+                  $x1^m$. Nach Annahme terminiert $M$ auf dem Eingabewort $x1^m$
+                  innerhalb von $s(n)$ Schritten. Wenn $U$ die Maschine $M$
+                  simuliert, braucht sie nach
+                  <a href="#theorem-universal">Theorem 8.1.1</a>
+                  höchstens $C \cdot |\enc(M)| \cdot (n + s(n))$ Schritte. Da
+                  $s(n) \geq n$ gilt, sind dies höchstens $2C \cdot |\enc(M)|
+                  \cdot s(n) = 2C \cdot |\enc(M)| \cdot s(|x|+m)$ Schritte. Da
+                  $\lim_{n \rightarrow \infty} \frac{s(n)}{t(n)} = 0$ ist, ist
+                  auch
+                </p>
+                $$\begin{align*} \lim_{m \rightarrow \infty }\frac{2C \cdot
+                |\enc(M)| \cdot s(|x|+m)}{t(|x|+m)} = 0 \ . \end{align*}$$
+                <p>
+                  Wenn wir also $m$ hinreichend groß wählen, dann ist dieser
+                  Bruch kleiner als $1$, und die Simulation terminiert also
+                  innerhalb von
+                </p>
+                $$\begin{align*} 2C \cdot |\enc(M)| \cdot s(|x|+m) \leq t(|x|+m)
+                = b \end{align*}$$
+                <p>
+                  Schritten. Das heißt, dass die universelle Turingmaschine $U$
+                  das Wort $\enc(M)x1^m$ innerhalb von $b$ Schritten ablehnt,
+                  wenn sie es überhaupt irgendwann ablehnt. Also schließen wir
+                  weiter:
+                </p>
+                $$\begin{align*} x1^m \in \bnegdiag&amp;\Longleftrightarrow
+                \enc(M) 1^b 0 x1^m \not \in \bhalt \\ &\Longleftrightarrow U
+                \textnormal{ lehnt $\enc(M)x1^m$ innerhalb von $b$ Schritten ab}
+                \\ &\Longleftrightarrow U \textnormal{ lehnt $\enc(M)x1^m$ ab}
+                \\ &amp;\Longleftrightarrow M \textnormal{ lehnt $x1^m$ ab} \\
+                \end{align*}$$
+                <p>
+                  und da ist er, der Widerspruch: $x1^m \in \bnegdiag
+                  \Longleftrightarrow f_M(x1^m) = \texttt{reject}$, entgegen
+                  unserer Annahme, dass $M$ die Sprache $\bnegdiag$ entscheidet.
+                  <span class="qed">\(\square\)</span>
+                </p>
+              </div>
+              <p>
+                Zusammenfassend erhalten wir die "Rohversion" des
+                Zeithierarchiesatzes:
+              </p>
+              <div class="well container theorem">
+                <p>
+                  <span class="numbered-title"
+                    >Theorem <NumberedTitle>8.1.8</NumberedTitle> </span
+                  ><b>(Zeithierarchiesatz, Rohversion).</b>
+                  Seien $s, t: \N \rightarrow \N$ zeitkonstruierbare Funktionen
+                  mit $s(n) \geq n$ und $s \in o(t)$ (also $\lim_{n \rightarrow
+                  \infty} s(n)/t(n) = 0$). Dann gilt
+                </p>
+                $$\begin{align*} \TIME_k(s) \subsetneq \TIME_{k+3}(t)
+                \end{align*}$$
+                <p>für alle $k \geq 1$.</p>
+              </div>
+              <p>
+                Zusammen mit der Simulation von $k$-Band-TMs durch $2$-Band-TMs
+                folgt nun
+              </p>
+              $$\begin{align*} \TIME(s) \subsetneq \TIME_2(s \log s) \subsetneq
+              \TIME_5(t \log t) \end{align*}$$
+              <p>oder, alternativ ausgedrückt:</p>
+              <div class="well container theorem">
+                <p>
+                  <span class="numbered-title"
+                    >Theorem <NumberedTitle>8.1.9</NumberedTitle>
+                  </span>
+
+                  <b>(Zeithierarchiesatz).</b>
+                  Seien $s, t: \N \rightarrow \N$ mit $s(n) \geq n$ und $s \log
+                  s \in o(t)$. Dann gilt $\TIME(s) \subsetneq \TIME(t)$.
+                </p>
+              </div>
+              <p>
+                Bitte beachten Sie, dass wir diese Version nicht vollständig
+                bewiesen habe, da ich die effizientere Simulation einer
+                $k$-Band-Turingmaschine durch eine $2$-Band-Turingmaschine, also
+                $\TIME_k(t) \subseteq \TIME_2(t \log t)$ nicht erklärt habe. Mit
+                der ineffiziten, also $\TIME_k(t) \subseteq \TIME_1(t^2)$,
+                erhalten wir einen Zeithierarchiesatz solange $s^2 \in o(t)$
+                ist.
+              </p>
+              <div class="well well-lg numbered-exercise container">
+                <p>
+                  <span class="numbered-title"
+                    >Übungsaufgabe <NumberedTitle>8.1.1</NumberedTitle> </span
+                  >Zeigen Sie, dass $n \mapsto n^2$ und $n \mapsto 2^n$
+                  zeitkonstruierbar sind.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-</body>
+    </section>
+  </body>
+</html>

@@ -222,7 +222,7 @@ pub fn main() {
   case args {
     ["--parse-html", path, ..rest] -> {
       use amendments <- infra.on_error_on_ok(
-        vr.process_command_line_arguments(rest, [#("--prettier", True)]),
+        vr.process_command_line_arguments(rest, []),
         fn(error) {
           io.println("")
           io.println("command line error: " <> ins(error))
@@ -233,9 +233,10 @@ pub fn main() {
       )
       html_to_writerly.html_to_writerly(path, amendments)
     }
+
     _ -> {
       use amendments <- infra.on_error_on_ok(
-        vr.process_command_line_arguments(args, [#("--prettier", True)]),
+        vr.process_command_line_arguments(args, ["--prettier"]),
         fn(error) {
           io.println("")
           io.println("command line error: " <> ins(error))
@@ -252,14 +253,13 @@ pub fn main() {
           pipeline: pipeline.our_pipeline(),
           splitter: ti2_splitter,
           emitter: ti2_emitter,
-          prettifier: vr.prettier_prettifier,
+          prettifier: vr.guarded_prettier_prettifier(amendments.user_args),
         )
 
       let parameters =
         vr.RendererParameters(
           input_dir: "./emu_content",
           output_dir: Some("./output"),
-          prettifying_option: False,
         )
         |> vr.amend_renderer_paramaters_by_command_line_amendment(amendments)
 

@@ -1,11 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-      <link rel="icon" href="data:,">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <head>
+    <link rel="icon" href="data:," />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
     <link rel="stylesheet" type="text/css" href="../TI.css" />
     <link rel="stylesheet" type="text/css" href="../tooltip-3003.css" />
@@ -14,70 +17,57 @@
     <script type="text/javascript" src="../mathjax_setup.js"></script>
     <script type="text/javascript" src="../carousel.js"></script>
     <script type="text/javascript" src="../sendCmdTo3003.js"></script>
-    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-</head>
-<body>
-<section
-  count={41}
-  title_gr=""
-  title_en="Turing machines"
-  number={7.0}
-  counter="DefCtr"
-  counter="ExoCtr"
-  path="/lecture-notes41.tsx"
->
-  <div
-    id="link-to-toc"
-  >
-    <a
-      href="../vorlesungsskript.html"
-    >Inhaltsverzeichnis</a><a
-      href="06-00-general-grammars.html"
-    >&lt;&lt; Kapitel 6.0</a>
-  </div>
-  <div
-    id="link-to-overview"
-    style="text-align: end"
-  >
-    <a
-      href="/"
-    >zur Kursübersicht</a><a
-      href="07-01-Turing-machines-definition.html"
-    >Kapitel 7.1 &gt;&gt;</a>
-  </div>
-  <div
-    id="rightSideWrapper"
-  >
-    <div
-      class="content"
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+  </head>
+  <body>
+    <section
+      count="{41}"
+      title_gr=""
+      title_en="Turing machines"
+      number="{7.0}"
+      counter="DefCtr"
+      counter="ExoCtr"
+      path="/lecture-notes41.tsx"
     >
-      <div
-        class="chapter"
-      >
-        <h1
-          class="hidden-title"
-        >
-          <span
-            class="chapterTitle"
-          >7.
-            Turing-Maschinen
-          </span>
-        </h1>
-        <p>Wir haben in den vorherigen Kapitel mit primitiver Rekursion und \(\lambda\)-Kalkül
-          zwei Modelle kennengelernt, die den Begriff der 
-          <i>Berechnung</i>
-           formalisieren.
-          Das \(\lambda\)-Kalkül ist im Prinzip eine reduktion funktionaler Programmiersprachen
-          auf das absolut essentielle. In diesem Kapitel lernen wir ein
-          weiteres Modell für Berechnung kennen, das im Allgemeinen als Standardmodell
-          gilt: die Turingmaschine. Anders als primitive Rekursion und \(\lambda\)-Kalkül
-          sind Turingmaschinen auch eng mit dem Begriff des Laufzeitkomplexität und Speicherplatzkomplexität
-          verbunden und bilden somit das Fundament der 
-          <i>Komplexitätstheorie</i>, die sich insbesondere
-          mit dem Resourcenverbrauch bei Rechenprozessen beschäftigt.
-        </p>
+      <div id="link-to-toc">
+        <a href="../vorlesungsskript.html">Inhaltsverzeichnis</a
+        ><a href="06-00-general-grammars.html">&lt;&lt; Kapitel 6.0</a>
       </div>
-    </div>
-  </div>
-</section>
-</body>
+      <div id="link-to-overview" style="text-align: end">
+        <a href="/">zur Kursübersicht</a
+        ><a href="07-01-Turing-machines-definition.html"
+          >Kapitel 7.1 &gt;&gt;</a
+        >
+      </div>
+      <div id="rightSideWrapper">
+        <div class="content">
+          <div class="chapter">
+            <h1 class="hidden-title">
+              <span class="chapterTitle">7. Turing-Maschinen </span>
+            </h1>
+            <p>
+              Wir haben in den vorherigen Kapitel mit primitiver Rekursion und
+              \(\lambda\)-Kalkül zwei Modelle kennengelernt, die den Begriff der
+              <i>Berechnung</i>
+              formalisieren. Das \(\lambda\)-Kalkül ist im Prinzip eine
+              reduktion funktionaler Programmiersprachen auf das absolut
+              essentielle. In diesem Kapitel lernen wir ein weiteres Modell für
+              Berechnung kennen, das im Allgemeinen als Standardmodell gilt: die
+              Turingmaschine. Anders als primitive Rekursion und
+              \(\lambda\)-Kalkül sind Turingmaschinen auch eng mit dem Begriff
+              des Laufzeitkomplexität und Speicherplatzkomplexität verbunden und
+              bilden somit das Fundament der
+              <i>Komplexitätstheorie</i>, die sich insbesondere mit dem
+              Resourcenverbrauch bei Rechenprozessen beschäftigt.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

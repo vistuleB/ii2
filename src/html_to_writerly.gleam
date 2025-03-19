@@ -220,14 +220,6 @@ fn emitter(
   Ok(#(chapter_directory <> "/" <> filename, wp.writerlys_to_blamed_lines(writerlys), Nil))
 }
 
-pub fn prettifier(
-  _: String,
-  _: #(String, d),
-  _: Bool,
-) -> Result(String, #(Int, String)) {
-  Ok("")
-}
-
 fn drop_slash_at_end(path: String) -> String {
   case string.ends_with(path, "/") {
     True -> string.drop_end(path, 1)
@@ -281,7 +273,7 @@ fn our_source_parser(
   )
 }
 
-pub fn html_to_writerly(path: String, amendments: vr.CommandLineAmendments(Bool)) -> Nil {
+pub fn html_to_writerly(path: String, amendments: vr.CommandLineAmendments) -> Nil {
   use #(dir, files) <- infra.on_error_on_ok(
     directory_files_else_file(path),
     fn(e) { io.print("failed to load files from " <> path <> ": " <> ins(e)) },
@@ -307,7 +299,6 @@ pub fn html_to_writerly(path: String, amendments: vr.CommandLineAmendments(Bool)
         vr.RendererParameters(
           input_dir: path,
           output_dir: option.Some("."),
-          prettifying_option: False,
         )
         |> vr.amend_renderer_paramaters_by_command_line_amendment(amendments)
 
@@ -321,7 +312,7 @@ pub fn html_to_writerly(path: String, amendments: vr.CommandLineAmendments(Bool)
           pipeline: html_pipeline.html_pipeline(),
           splitter: fn(vxml) { splitter(vxml, file) },
           emitter: fn(pair) { emitter(pair, prev, next) },
-          prettifier: prettifier,
+          prettifier: vr.empty_prettifier,
         )
 
       io.println("after renderer = ...")

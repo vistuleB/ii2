@@ -1,11 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-      <link rel="icon" href="data:,">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <head>
+    <link rel="icon" href="data:," />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
     <link rel="stylesheet" type="text/css" href="../TI.css" />
     <link rel="stylesheet" type="text/css" href="../tooltip-3003.css" />
@@ -14,209 +17,178 @@
     <script type="text/javascript" src="../mathjax_setup.js"></script>
     <script type="text/javascript" src="../carousel.js"></script>
     <script type="text/javascript" src="../sendCmdTo3003.js"></script>
-    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-</head>
-<body>
-<section
-  count={12}
-  title_gr="Cantorsche Diagonalisation: $\N \not \approx \R$"
-  title_en="diagonalization"
-  number={2.4}
-  counter="DefCtr"
-  counter="ExoCtr"
-  path="/lecture-notes12.tsx"
->
-  <div
-    id="link-to-toc"
-  >
-    <a
-      href="../vorlesungsskript.html"
-    >Inhaltsverzeichnis</a><a
-      href="02-03-sets-like-R.html"
-    >&lt;&lt; Kapitel 2.3</a>
-  </div>
-  <div
-    id="link-to-overview"
-    style="text-align: end"
-  >
-    <a
-      href="/"
-    >zur Kursübersicht</a><a
-      href="02-05-Schroeder-Bernstein.html"
-    >Kapitel 2.5 &gt;&gt;</a>
-  </div>
-  <div
-    id="rightSideWrapper"
-  >
-    <div
-      class="content"
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+  </head>
+  <body>
+    <section
+      count="{12}"
+      title_gr="Cantorsche Diagonalisation: $\N \not \approx \R$"
+      title_en="diagonalization"
+      number="{2.4}"
+      counter="DefCtr"
+      counter="ExoCtr"
+      path="/lecture-notes12.tsx"
     >
-      <div
-        class="chapter"
-      >
-        <div
-          class="subChapter"
-        >
-          <h1
-            class="hidden-title"
-          >
-            <span
-              class="subChapterTitle"
-            >2.4
-              Die Cantorsche Diagonalisation: $\N \not \approx \R$
-            </span>
-          </h1>
-          <p>Vielleicht war es überraschend zu sehen, dass $\N = \Q$ gilt, dass
-            also das "diskrete" $\N$ und das "dichte" $\Q$ sicht hinsichtlich
-            ihrer Größe (Fachsprache: Kardinalität) nicht unterscheiden. Könnte es
-            denn sein, dass jede unendliche Menge $A$ abzählbar ist, also $A
-            \approx \N$? Die Antwort ist ein klares 
-            <i>Nein</i>.
-          </p>
-          <div
-            class="well container theorem"
-          >
-            <p><span
-                class="numbered-title"
-              >Theorem <NumberedTitle>2.4.1</NumberedTitle>
-                 
-              </span><b>(Überabzählbarkeit der reellen Zahlen).</b>
-               $\N \not
-              \approx \R$.
-            </p>
-          </div>
-          <div
-            class="well container"
-          >
-            <p><b>Beweis.</b>
-               Da wir bereits $\R \approx \{0,1\}^{\N}$
-              gesehen haben, reicht es, $\N \not \approx \{0,1\}^{\N}$ zu zeigen.
-              Wir müssen also zeigen, dass es keine Bijektion $f : \N \rightarrow
-              \{0,1\}^{\N}$ gibt. Wie gehen wir vor? Wir nehmen an, man hätte uns
-              eine Funktion $f : \N \rightarrow \cuben$ gegeben, und müssen nun
-              zeigen, dass $f$ nicht bijektiv ist. Nicht bijektiv kann zwei Ding
-              heißen: nicht injektiv und nicht surjekiv. Injektiv kann eine solche
-              Funktion natürlich sein, beispielsweise die Funktion $n \mapsto 0^n
-              111111\dots$. Also ist unsere einzige Chance, zu zeigen, dass $f$
-              nicht surjektiv ist. Wir müssen also eine 0/1-Folge $\mathbf{b} =
-              b_0 b_1 b_2 b_3 \dots \in \{0,1\}^{\N}$ finden, die nicht im
-              Wertebereich (Englisch: 
-              <i>image</i>) von $f$ liegt: $\mathbf{b}
-              \not \in {\rm img}(f)$. Was wiederum bedeutet, dass für jedes $n \in
-              \N$ sich die unendliche 0/1-Folge $f(n)$ von $\mathbf{b}$
-              unterscheidet, also an mindestens einer Stelle.
-            </p>
-            <p>Wie können wir die Funktion $f$ darstellen? Jedes $f(n)$ ist eine
-              unendliche $0/1$-Folge. Also können wir uns $f$ als nach rechts und
-              nach unten unendliche Tabelle vorstellen. Hierbei schreiben wir
-              $f_i$ für $f(i)$ und $f_{i,j}$ für das $j$-te Glied der unendlichen
-              Folge $f_i$.
-            </p>
-            <figure>
-              <img
-                style="height: 12em"
-                src="../img/infinite-sets/cantor-table.svg"
-              >
-            </figure>
-            <p>Für ein Bit $b \in \{0,1\}$ bezeichnen wir mit $\bar{b}$ seine
-              Negation: $\bar{b} = 1 - b$. Wir betrachten jetzt die Diagonale der
-              Tabelle und negieren sie:
-            </p>
-            <figure>
-              <img
-                style="height: 12em"
-                src="../img/infinite-sets/cantor-diagonal.svg"
-              >
-            </figure>
-            <p>und erhalten eine Folge: $\mathbf{d} := \overline{f_{0,0}}\
-              \overline{f_{1,1}}\ \overline{f_{2,2}} \ \overline{f_{3,3}}\dots$.
-              Vergleichen wir nun $\mathbf{d}$ mit einer Zeile $f_n$ der obigen
-              Tabelle. Insbesondere, die $n$-ten Stellen der beiden Folgen. Die
-              $n$-te Stelle von $\mathbf{d}$ ist $\overline{f_{n,n}}$; die $n$-te
-              Stelle von $f_n$ ist $f_{n,n}$. Wir sehen also: $\mathbf{d}$ und
-              $f_n$ unterscheiden sich an der $n$-ten Stelle (und womöglich auch
-              noch anderswo), und daher gilt: $\mathbf{d} \ne f_n$. Da dies für
-              jedes $n$ gilt, folgern wir: die Folge $\mathbf{d}$ kommt nicht als
-              Zeile der Tabelle vor, und damit $\mathbf{d} \not \in {\rm img}(f)$.
-              Die Funktion $f$ ist nicht surjektiv.
-              <span
-                class="qed"
-              >\(\square\)</span>
-            </p>
-          </div>
-          <p>Weil in dem Beweis die Diagonale der Tabelle eine entscheidende Rolle
-            spielt, nennt man diese Beweistechnik auch das Cantorsche
-            Diagonalisierungsverfahren. Dies wird später, in Kapitel
-            <a
-              href="07-00-Turing-machines.html"
-            >7</a>
-             über Turingmaschinen und in
-            Kapitel ? über Komplexitätstheorie eine Rolle spielen, wenn wir z.B.
-            zeigen wollen, dass es Probleme gibt, an denen jedes Computerprogram
-            versagt.
-          </p>
-          <div
-            class="well well-lg numbered-exercise container"
-          >
-            <p><span
-                class="numbered-title"
-              >Übungsaufgabe <NumberedTitle>2.4.1</NumberedTitle>
-                 
-              </span>Zeigen Sie, dass es zu der Funktion $f: \N \rightarrow \cuben$ eine
-              Folge $\mathbf{d}$ gibt, die nicht nur nicht in ${\rm img}(f)$ ist,
-              sondern noch mehr: jede Folge $f_n$ unterscheidet sich von
-              $\mathbf{d}$ in unendlich vielen Stellen.
-            </p>
-          </div>
-          <div
-            class="well well-lg numbered-exercise container"
-          >
-            <p><span
-                class="numbered-title"
-              >Übungsaufgabe <NumberedTitle>2.4.2</NumberedTitle>
-                 
-              </span>Zeigen Sie ganz allgemein: für jede Menge $A$ gilt $A \not \approx
-              2^A$. Erinnerin Sie sich: $2^A$ ist die Potenzmenge von $A$, also
-              die Menge aller Untermengen.
-            </p>
-            <p><b>Tipp:</b>
-               Sie müssen den obigen Beweis auf die richtige
-              Weise abstrahieren, dann geht es ganz einfach.
-            </p>
-          </div>
-          <p>Die letzte Übung zeigt also: es gibt immer größere Mengen, ein oberes
-            Ende wird nie erreicht.
-          </p>
-          <div
-            class="well well-lg numbered-exercise container"
-          >
-            <p><span
-                class="numbered-title"
-              >Übungsaufgabe <NumberedTitle>2.4.3</NumberedTitle>
-                 
-              </span>Erinnern Sie sich an die Partialordnung $(2^\N, \subseteq)$. Zeigen
-              Sie, dass es in dieser Ordnung eine Antikette $X$ mit $X \approx \R$
-              gibt.
-            </p>
-          </div>
-          <div
-            class="well well-lg numbered-exercise container"
-          >
-            <p><span
-                class="numbered-title"
-              >Übungsaufgabe <NumberedTitle>2.4.4</NumberedTitle>
-                 
-              </span>
-               Zeigen Sie, dass
-              es in $(2^\N, \subseteq)$ eine 
-              <i>Kette</i>
-               $X$ mit $X \approx \R$
-              gibt.
-            </p>
+      <div id="link-to-toc">
+        <a href="../vorlesungsskript.html">Inhaltsverzeichnis</a
+        ><a href="02-03-sets-like-R.html">&lt;&lt; Kapitel 2.3</a>
+      </div>
+      <div id="link-to-overview" style="text-align: end">
+        <a href="/">zur Kursübersicht</a
+        ><a href="02-05-Schroeder-Bernstein.html">Kapitel 2.5 &gt;&gt;</a>
+      </div>
+      <div id="rightSideWrapper">
+        <div class="content">
+          <div class="chapter">
+            <div class="subChapter">
+              <h1 class="hidden-title">
+                <span class="subChapterTitle"
+                  >2.4 Die Cantorsche Diagonalisation: $\N \not \approx \R$
+                </span>
+              </h1>
+              <p>
+                Vielleicht war es überraschend zu sehen, dass $\N = \Q$ gilt,
+                dass also das "diskrete" $\N$ und das "dichte" $\Q$ sicht
+                hinsichtlich ihrer Größe (Fachsprache: Kardinalität) nicht
+                unterscheiden. Könnte es denn sein, dass jede unendliche Menge
+                $A$ abzählbar ist, also $A \approx \N$? Die Antwort ist ein
+                klares <i>Nein</i>.
+              </p>
+              <div class="well container theorem">
+                <p>
+                  <span class="numbered-title"
+                    >Theorem <NumberedTitle>2.4.1</NumberedTitle> </span
+                  ><b>(Überabzählbarkeit der reellen Zahlen).</b>
+                  $\N \not \approx \R$.
+                </p>
+              </div>
+              <div class="well container">
+                <p>
+                  <b>Beweis.</b>
+                  Da wir bereits $\R \approx \{0,1\}^{\N}$ gesehen haben, reicht
+                  es, $\N \not \approx \{0,1\}^{\N}$ zu zeigen. Wir müssen also
+                  zeigen, dass es keine Bijektion $f : \N \rightarrow
+                  \{0,1\}^{\N}$ gibt. Wie gehen wir vor? Wir nehmen an, man
+                  hätte uns eine Funktion $f : \N \rightarrow \cuben$ gegeben,
+                  und müssen nun zeigen, dass $f$ nicht bijektiv ist. Nicht
+                  bijektiv kann zwei Ding heißen: nicht injektiv und nicht
+                  surjekiv. Injektiv kann eine solche Funktion natürlich sein,
+                  beispielsweise die Funktion $n \mapsto 0^n 111111\dots$. Also
+                  ist unsere einzige Chance, zu zeigen, dass $f$ nicht surjektiv
+                  ist. Wir müssen also eine 0/1-Folge $\mathbf{b} = b_0 b_1 b_2
+                  b_3 \dots \in \{0,1\}^{\N}$ finden, die nicht im Wertebereich
+                  (Englisch:
+                  <i>image</i>) von $f$ liegt: $\mathbf{b} \not \in {\rm
+                  img}(f)$. Was wiederum bedeutet, dass für jedes $n \in \N$
+                  sich die unendliche 0/1-Folge $f(n)$ von $\mathbf{b}$
+                  unterscheidet, also an mindestens einer Stelle.
+                </p>
+                <p>
+                  Wie können wir die Funktion $f$ darstellen? Jedes $f(n)$ ist
+                  eine unendliche $0/1$-Folge. Also können wir uns $f$ als nach
+                  rechts und nach unten unendliche Tabelle vorstellen. Hierbei
+                  schreiben wir $f_i$ für $f(i)$ und $f_{i,j}$ für das $j$-te
+                  Glied der unendlichen Folge $f_i$.
+                </p>
+                <figure>
+                  <img
+                    style="height: 12em"
+                    src="../img/infinite-sets/cantor-table.svg"
+                  />
+                </figure>
+                <p>
+                  Für ein Bit $b \in \{0,1\}$ bezeichnen wir mit $\bar{b}$ seine
+                  Negation: $\bar{b} = 1 - b$. Wir betrachten jetzt die
+                  Diagonale der Tabelle und negieren sie:
+                </p>
+                <figure>
+                  <img
+                    style="height: 12em"
+                    src="../img/infinite-sets/cantor-diagonal.svg"
+                  />
+                </figure>
+                <p>
+                  und erhalten eine Folge: $\mathbf{d} := \overline{f_{0,0}}\
+                  \overline{f_{1,1}}\ \overline{f_{2,2}} \
+                  \overline{f_{3,3}}\dots$. Vergleichen wir nun $\mathbf{d}$ mit
+                  einer Zeile $f_n$ der obigen Tabelle. Insbesondere, die
+                  $n$-ten Stellen der beiden Folgen. Die $n$-te Stelle von
+                  $\mathbf{d}$ ist $\overline{f_{n,n}}$; die $n$-te Stelle von
+                  $f_n$ ist $f_{n,n}$. Wir sehen also: $\mathbf{d}$ und $f_n$
+                  unterscheiden sich an der $n$-ten Stelle (und womöglich auch
+                  noch anderswo), und daher gilt: $\mathbf{d} \ne f_n$. Da dies
+                  für jedes $n$ gilt, folgern wir: die Folge $\mathbf{d}$ kommt
+                  nicht als Zeile der Tabelle vor, und damit $\mathbf{d} \not
+                  \in {\rm img}(f)$. Die Funktion $f$ ist nicht surjektiv.
+                  <span class="qed">\(\square\)</span>
+                </p>
+              </div>
+              <p>
+                Weil in dem Beweis die Diagonale der Tabelle eine entscheidende
+                Rolle spielt, nennt man diese Beweistechnik auch das Cantorsche
+                Diagonalisierungsverfahren. Dies wird später, in Kapitel
+                <a href="07-00-Turing-machines.html">7</a>
+                über Turingmaschinen und in Kapitel ? über Komplexitätstheorie
+                eine Rolle spielen, wenn wir z.B. zeigen wollen, dass es
+                Probleme gibt, an denen jedes Computerprogram versagt.
+              </p>
+              <div class="well well-lg numbered-exercise container">
+                <p>
+                  <span class="numbered-title"
+                    >Übungsaufgabe <NumberedTitle>2.4.1</NumberedTitle> </span
+                  >Zeigen Sie, dass es zu der Funktion $f: \N \rightarrow
+                  \cuben$ eine Folge $\mathbf{d}$ gibt, die nicht nur nicht in
+                  ${\rm img}(f)$ ist, sondern noch mehr: jede Folge $f_n$
+                  unterscheidet sich von $\mathbf{d}$ in unendlich vielen
+                  Stellen.
+                </p>
+              </div>
+              <div class="well well-lg numbered-exercise container">
+                <p>
+                  <span class="numbered-title"
+                    >Übungsaufgabe <NumberedTitle>2.4.2</NumberedTitle> </span
+                  >Zeigen Sie ganz allgemein: für jede Menge $A$ gilt $A \not
+                  \approx 2^A$. Erinnerin Sie sich: $2^A$ ist die Potenzmenge
+                  von $A$, also die Menge aller Untermengen.
+                </p>
+                <p>
+                  <b>Tipp:</b>
+                  Sie müssen den obigen Beweis auf die richtige Weise
+                  abstrahieren, dann geht es ganz einfach.
+                </p>
+              </div>
+              <p>
+                Die letzte Übung zeigt also: es gibt immer größere Mengen, ein
+                oberes Ende wird nie erreicht.
+              </p>
+              <div class="well well-lg numbered-exercise container">
+                <p>
+                  <span class="numbered-title"
+                    >Übungsaufgabe <NumberedTitle>2.4.3</NumberedTitle> </span
+                  >Erinnern Sie sich an die Partialordnung $(2^\N, \subseteq)$.
+                  Zeigen Sie, dass es in dieser Ordnung eine Antikette $X$ mit
+                  $X \approx \R$ gibt.
+                </p>
+              </div>
+              <div class="well well-lg numbered-exercise container">
+                <p>
+                  <span class="numbered-title"
+                    >Übungsaufgabe <NumberedTitle>2.4.4</NumberedTitle>
+                  </span>
+                  Zeigen Sie, dass es in $(2^\N, \subseteq)$ eine
+                  <i>Kette</i>
+                  $X$ mit $X \approx \R$ gibt.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-</body>
+    </section>
+  </body>
+</html>

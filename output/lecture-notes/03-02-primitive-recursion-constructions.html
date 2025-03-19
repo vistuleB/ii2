@@ -1,11 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-      <link rel="icon" href="data:,">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <head>
+    <link rel="icon" href="data:," />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
     <link rel="stylesheet" type="text/css" href="../TI.css" />
     <link rel="stylesheet" type="text/css" href="../tooltip-3003.css" />
@@ -14,79 +17,65 @@
     <script type="text/javascript" src="../mathjax_setup.js"></script>
     <script type="text/javascript" src="../carousel.js"></script>
     <script type="text/javascript" src="../sendCmdTo3003.js"></script>
-    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-</head>
-<body>
-<section
-  count={17}
-  title_gr="Rekursion: Konstruktionen und Tricks"
-  title_en="primitive recursion constructions"
-  number={3.2}
-  counter="DefCtr"
-  counter="ExoCtr"
-  path="/lecture-notes17.tsx"
->
-  <div
-    id="link-to-toc"
-  >
-    <a
-      href="../vorlesungsskript.html"
-    >Inhaltsverzeichnis</a><a
-      href="03-01-primitive-recursion-definitions.html"
-    >&lt;&lt; Kapitel 3.1</a>
-  </div>
-  <div
-    id="link-to-overview"
-    style="text-align: end"
-  >
-    <a
-      href="/"
-    >zur Kursübersicht</a><a
-      href="03-03-ackermann.html"
-    >Kapitel 3.3 &gt;&gt;</a>
-  </div>
-  <div
-    id="rightSideWrapper"
-  >
-    <div
-      class="content"
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+  </head>
+  <body>
+    <section
+      count="{17}"
+      title_gr="Rekursion: Konstruktionen und Tricks"
+      title_en="primitive recursion constructions"
+      number="{3.2}"
+      counter="DefCtr"
+      counter="ExoCtr"
+      path="/lecture-notes17.tsx"
     >
-      <div
-        class="chapter"
-      >
-        <div
-          class="subChapter"
+      <div id="link-to-toc">
+        <a href="../vorlesungsskript.html">Inhaltsverzeichnis</a
+        ><a href="03-01-primitive-recursion-definitions.html"
+          >&lt;&lt; Kapitel 3.1</a
         >
-          <h1
-            class="hidden-title"
-          >
-            <span
-              class="subChapterTitle"
-            >3.2
-              Primitive Rekursion: Konstruktionen und Tricks
-            </span>
-          </h1>
-          <p>Ich beginne dieses Teilkapitel, manche der primitiv-rekursive Implementierungen in<a
-              href="../code/primitive-recursion/stockpile.py"
-            >stockpile.py</a>
-             zu erklären und
-            werde dann weitere, weniger offensichtliche Konstruktionen diskutieren.
-          </p>
-          <h2>Arithmetische Operationen
-          </h2>
-          Wir haben bereits gesehen, dass wir die Addition per
-          \({\rm add} = \primrec (\pi_0, \comp(\succ, \pi_0)) \) schreiben können. Beachten Sie, dass ich
-          hier die Indizierung immer bei 0 beginnen lasse, im Python-Code sowie im Mathematik-Modus (in der
-          Vorlesung hatte ich an der Tafel das oft bei 1 beginnen lassen, entschuldigen Sie die Inkonsistenz).
-          Multiplikation geht nach dem gleichen Schema. Wir schreiben 
-          <code>mult
-          </code>
-          
-          in der Schleifenform, wie sie die primitive Rekursion zulässt, und schreiben in Orange
-          auch gleich die Funktionen \(g\) und \(h\) dazu:
-<pre
-  class="container"
->
+      </div>
+      <div id="link-to-overview" style="text-align: end">
+        <a href="/">zur Kursübersicht</a
+        ><a href="03-03-ackermann.html">Kapitel 3.3 &gt;&gt;</a>
+      </div>
+      <div id="rightSideWrapper">
+        <div class="content">
+          <div class="chapter">
+            <div class="subChapter">
+              <h1 class="hidden-title">
+                <span class="subChapterTitle"
+                  >3.2 Primitive Rekursion: Konstruktionen und Tricks
+                </span>
+              </h1>
+              <p>
+                Ich beginne dieses Teilkapitel, manche der primitiv-rekursive
+                Implementierungen in<a
+                  href="../code/primitive-recursion/stockpile.py"
+                  >stockpile.py</a
+                >
+                zu erklären und werde dann weitere, weniger offensichtliche
+                Konstruktionen diskutieren.
+              </p>
+              <h2>Arithmetische Operationen</h2>
+              Wir haben bereits gesehen, dass wir die Addition per \({\rm add} =
+              \primrec (\pi_0, \comp(\succ, \pi_0)) \) schreiben können.
+              Beachten Sie, dass ich hier die Indizierung immer bei 0 beginnen
+              lasse, im Python-Code sowie im Mathematik-Modus (in der Vorlesung
+              hatte ich an der Tafel das oft bei 1 beginnen lassen,
+              entschuldigen Sie die Inkonsistenz). Multiplikation geht nach dem
+              gleichen Schema. Wir schreiben
+              <code>mult </code>
+
+              in der Schleifenform, wie sie die primitive Rekursion zulässt, und
+              schreiben in Orange auch gleich die Funktionen \(g\) und \(h\)
+              dazu:
+              <pre class="container">
 def mult(t,x):
 temp = 0 
 <span
@@ -97,26 +86,20 @@ temp = add(temp,x)
   class="comment"
 >= Comp(add, p_0, p2) (temp,i,x)</span>return temp
 </pre>
-          erinnern Sie sich daran: \(h\) muss immer eine Funktion in der lokalen Variable temp,
-          der Laufvariable \(i\) und \(\vec{x}\) sein. Daher:
-          $$\begin{align*}
-          {\rm mult} = \primrec(\zero, \comp({\rm add}, \pi_0, \pi_2))
-          \end{align*}$$
-          Genauso erhalten wir \(x^t\), indem wir statt bei 0 bei 1 beginnen und statt
-          \(x\) draufzuzählen, es draufmultiplizieren:
-          $$\begin{align*}
-          {\rm expReverse} = \primrec({\rm one}, \comp({\rm mult}, \pi_0, \pi_2))
-          \end{align*}$$
-          Allerdings gibt uns das \((t,x) \mapsto x^t\). Für \({\rm exp}(a,b) = a^b\) müssen
-          wir die Argumente umdrehen:
-          $$\begin{align*}
-          {\rm exp} = \comp({\rm expReverse}, \pi_1, \pi_0)
-          \end{align*}$$
-          Die Fakultätsfunktion \(t!\) ist konzeptuell ähnlich, allerdings etwas interessanter, weil
-          wir hier auf das Zwischenergebnis und die Laufvariable zugreifen müssen:
-<pre
-  class="container"
->
+              erinnern Sie sich daran: \(h\) muss immer eine Funktion in der
+              lokalen Variable temp, der Laufvariable \(i\) und \(\vec{x}\)
+              sein. Daher: $$\begin{align*} {\rm mult} = \primrec(\zero,
+              \comp({\rm add}, \pi_0, \pi_2)) \end{align*}$$ Genauso erhalten
+              wir \(x^t\), indem wir statt bei 0 bei 1 beginnen und statt \(x\)
+              draufzuzählen, es draufmultiplizieren: $$\begin{align*} {\rm
+              expReverse} = \primrec({\rm one}, \comp({\rm mult}, \pi_0, \pi_2))
+              \end{align*}$$ Allerdings gibt uns das \((t,x) \mapsto x^t\). Für
+              \({\rm exp}(a,b) = a^b\) müssen wir die Argumente umdrehen:
+              $$\begin{align*} {\rm exp} = \comp({\rm expReverse}, \pi_1, \pi_0)
+              \end{align*}$$ Die Fakultätsfunktion \(t!\) ist konzeptuell
+              ähnlich, allerdings etwas interessanter, weil wir hier auf das
+              Zwischenergebnis und die Laufvariable zugreifen müssen:
+              <pre class="container">
 def factorial(t):
 temp = 1 
 <span
@@ -127,18 +110,18 @@ temp = mult(temp,i+1)
   class="comment"
 >= Comp(mult, p<i>0, Comp(succ, p</i>1)) (temp,i)</span>return temp
 </pre>
-          Wir können nicht einfach \(i+1\) schreiben! Wir müssen dies via \(\comp(\succ,\pi_1)\) konstruieren.
-          Denn: die Funktion \(h\) bekommt \({\rm temp}, i, \vec{x}\) als Input; \(\pi_1\) gibt
-          uns davon das \(i\) zurück und \(\comp(\succ, \pi_1)\) gibt uns \(i+1\).
-          <p>Operationen wie \(\pred: t \mapsto t-1\) und \({\rm minus}\)
-            sind konzeptuell nur ein bisschen anders. Das liegt auch daran,
-            dass wir keine negativen Zahlen haben. Was ist
-            \(\pred(0)\)? Wir definieren das als 0. So können wir
-            pred implementieren:
-          </p>
-<pre
-  class="container"
->
+              Wir können nicht einfach \(i+1\) schreiben! Wir müssen dies via
+              \(\comp(\succ,\pi_1)\) konstruieren. Denn: die Funktion \(h\)
+              bekommt \({\rm temp}, i, \vec{x}\) als Input; \(\pi_1\) gibt uns
+              davon das \(i\) zurück und \(\comp(\succ, \pi_1)\) gibt uns
+              \(i+1\).
+              <p>
+                Operationen wie \(\pred: t \mapsto t-1\) und \({\rm minus}\)
+                sind konzeptuell nur ein bisschen anders. Das liegt auch daran,
+                dass wir keine negativen Zahlen haben. Was ist \(\pred(0)\)? Wir
+                definieren das als 0. So können wir pred implementieren:
+              </p>
+              <pre class="container">
 def pred(t):
 temp = 0 
 <span
@@ -149,39 +132,32 @@ temp = i
   class="comment"
 >= p1 (temp,i) </span>return temp
 </pre>
-          In Worten: wenn \(t=0\), dann geben wir einfach \(\zero()\)
-          zurück, also \(0\). Ansonsten durchlaufen wir die Schleife \(t\) mal;
-          der letzte Schleifenindex ist \(t-1\), und das ist dann auch der Wert
-          von temp, der zurückgegeben wird. Daher:
-          $$\begin{align*}
-          \pred = \primrec(\zero, \pi_1)
-          \end{align*}$$
-          <p>Für minus schreiben wir uns erst mal
-            \({\rm subtractFrom}: (t,x) \mapsto x-t\). Hierfür wenden wir einfach pred
-            \(t\) mal auf \(x\) an:
-            $$\begin{align*}
-            {\rm subtractFrom}&amp;= \primrec(\pi_0, \comp(\pred, \pi_0)) \\
-            {\rm minus}&amp;= \comp({\rm subtractFrom}, \pi_1, \pi_0)
-            \end{align*}$$
-          </p>
-          <h2>Boolesche Werte
-          </h2>
-          <p>Die primitive Rekursion stellt uns als "Datentyp" nur die natürlichen Zahlen zur
-            Verfügung. Alles andere müssen wir als natürliche Zahlen nach einem von uns
-            selbst gewählten Schema codieren. Für Boolesche Werte ist das recht naheliegend.
-            Wir codieren 
-            <code>True
-            </code>
-             als 1 und 
-            <code>False
-            </code>
-             als 0.
-            Unser erstes Prädikat, also Funktion mit Booleschem Ausgabewert, ist
-            `isPositive`:
-          </p>
-<pre
-  class="container"
->
+              In Worten: wenn \(t=0\), dann geben wir einfach \(\zero()\)
+              zurück, also \(0\). Ansonsten durchlaufen wir die Schleife \(t\)
+              mal; der letzte Schleifenindex ist \(t-1\), und das ist dann auch
+              der Wert von temp, der zurückgegeben wird. Daher: $$\begin{align*}
+              \pred = \primrec(\zero, \pi_1) \end{align*}$$
+              <p>
+                Für minus schreiben wir uns erst mal \({\rm subtractFrom}: (t,x)
+                \mapsto x-t\). Hierfür wenden wir einfach pred \(t\) mal auf
+                \(x\) an: $$\begin{align*} {\rm subtractFrom}&amp;=
+                \primrec(\pi_0, \comp(\pred, \pi_0)) \\ {\rm minus}&amp;=
+                \comp({\rm subtractFrom}, \pi_1, \pi_0) \end{align*}$$
+              </p>
+              <h2>Boolesche Werte</h2>
+              <p>
+                Die primitive Rekursion stellt uns als "Datentyp" nur die
+                natürlichen Zahlen zur Verfügung. Alles andere müssen wir als
+                natürliche Zahlen nach einem von uns selbst gewählten Schema
+                codieren. Für Boolesche Werte ist das recht naheliegend. Wir
+                codieren
+                <code>True </code>
+                als 1 und
+                <code>False </code>
+                als 0. Unser erstes Prädikat, also Funktion mit Booleschem
+                Ausgabewert, ist `isPositive`:
+              </p>
+              <pre class="container">
 def pred(t):
 temp = 0 
 <span
@@ -192,47 +168,38 @@ temp = 1
   class="comment"
 >= one </span>return temp
 </pre>
-          und somit
-          $$\begin{align*}
-          {\rm isPositive} = \primrec(\zero, {\rm one})
-          \end{align*}$$
-          <p>Auf ähnliche Weise können wir uns nun lessThan, lessEqual, and, or, not,
-            ifThenElse konstruieren.
-          </p>
-          <h2>Wurzel und Suchen im Allgemeinen
-          </h2>
-          Eine größere Herausforderung stellt die ganzzahlige Wurzel
-          \(x \mapsto \floor{\sqrt{x}}\) dar. Hierfür haben wir keine Formel
-          mit \(+, *, -\), auch keine schöne rekursive Formel zur Hand.
-          Es handelt sich um ein Suchproblem:
-          <div
-            style="text-align:center"
-          >
-            \(\floor{\sqrt{x}}\) ist die größte natürliche Zahl \(i\) mit
-            \(i^2 \leq x\).
-          </div>
-          <p>Wir können auch den Suchraum begrenzen: da \(\sqrt{x} \leq x\) für alle natürlichen Zahlen, so
-            gilt: 
-          </p>
-          <div
-            style="text-align:center"
-          >
-            \(\floor{\sqrt{x}}\) ist die größte natürliche Zahl \(i \in \{0,1,\dots,x\}\) mit
-            \(i^2 \leq x\).
-          </div>
-          <p>Das Prädikat
-            $$\begin{align*}
-            {\rm iSquareLessEqualX } (i,x)&amp;= [ i^2 \leq x ]
-            \end{align*}$$
-            ist primitiv rekursiv:
-            $$\begin{align*}
-            {\rm iSquareLessEqualX } = \comp({\rm lessEqual}, \comp({\rm mult}, \pi_0, \pi_0), \pi_1)
-            \end{align*}$$
-            und damit können wir die ganzzahlige Wurzel schreiben als
-          </p>
-<pre
-  class="container"
->
+              und somit $$\begin{align*} {\rm isPositive} = \primrec(\zero, {\rm
+              one}) \end{align*}$$
+              <p>
+                Auf ähnliche Weise können wir uns nun lessThan, lessEqual, and,
+                or, not, ifThenElse konstruieren.
+              </p>
+              <h2>Wurzel und Suchen im Allgemeinen</h2>
+              Eine größere Herausforderung stellt die ganzzahlige Wurzel \(x
+              \mapsto \floor{\sqrt{x}}\) dar. Hierfür haben wir keine Formel mit
+              \(+, *, -\), auch keine schöne rekursive Formel zur Hand. Es
+              handelt sich um ein Suchproblem:
+              <div style="text-align: center">
+                \(\floor{\sqrt{x}}\) ist die größte natürliche Zahl \(i\) mit
+                \(i^2 \leq x\).
+              </div>
+              <p>
+                Wir können auch den Suchraum begrenzen: da \(\sqrt{x} \leq x\)
+                für alle natürlichen Zahlen, so gilt:
+              </p>
+              <div style="text-align: center">
+                \(\floor{\sqrt{x}}\) ist die größte natürliche Zahl \(i \in
+                \{0,1,\dots,x\}\) mit \(i^2 \leq x\).
+              </div>
+              <p>
+                Das Prädikat $$\begin{align*} {\rm iSquareLessEqualX }
+                (i,x)&amp;= [ i^2 \leq x ] \end{align*}$$ ist primitiv rekursiv:
+                $$\begin{align*} {\rm iSquareLessEqualX } = \comp({\rm
+                lessEqual}, \comp({\rm mult}, \pi_0, \pi_0), \pi_1)
+                \end{align*}$$ und damit können wir die ganzzahlige Wurzel
+                schreiben als
+              </p>
+              <pre class="container">
 def largestIbelowTwithISquareLessEqualX(t,x):
 temp = 0 
 <span
@@ -243,28 +210,25 @@ temp = ifThenElse(iSquareLessEqualX(i,x), i, temp)
   class="comment"
 >= Comp(ifThenElse, Comp(iSquareLessEqual, p<i>1, p</i>2), p<i>1, p</i>0) (temp,i,x)</span>return temp
 </pre>
-          <p>Was geht hier vor? Wenn
-            \({\rm iSquareLessEqualX}(i,x))\) True ist, dann ersetzen wir temp durch \(i\).
-            Ansonsten belassen wir es beim alten Wert; der endgültige Wert von temp ist
-            also das letzte \(i\), für das das Prädikat True wahr.
-          </p>
-          $$\begin{align*}
-          {\rm largestIbelowTwithISquareLessEqualX = \primrec(zero,
-          \comp(ifThenElse, \comp(iSquareLessEqual, \pi_1, \pi_2), \pi_1, \pi_0))}
-          \end{align*}$$
-          Und schließlich ist
-          $$\begin{align*}
-          {\rm sqrt} = \comp({\rm largestIbelowTwithISquareLessEqualX}, \pi_0, \pi_0)
-          \end{align*}$$
-          da wir zum Suchen der Wurzel von \(t\) gleich \(t\) als Obergrenze des Suchraumes
-          angeben können. Ganz allgemein können wir für ein Prädikat
-          \({\rm predicate}(i,x)\) das größte \(i \in \{0,\dots,t\}\) finden, für das
-          \({\rm predicate}(i,x)\) True ergibt. Da wir wissen, wie wir das primitiv rekursiv
-          machen können, erlauben wir uns, einen neuen Kombinator zu definieren, anstatt
-          diese Konstruktion jedes Mal "von Hand" durchzuführen:
-<pre
-  class="container"
->
+              <p>
+                Was geht hier vor? Wenn \({\rm iSquareLessEqualX}(i,x))\) True
+                ist, dann ersetzen wir temp durch \(i\). Ansonsten belassen wir
+                es beim alten Wert; der endgültige Wert von temp ist also das
+                letzte \(i\), für das das Prädikat True wahr.
+              </p>
+              $$\begin{align*} {\rm largestIbelowTwithISquareLessEqualX =
+              \primrec(zero, \comp(ifThenElse, \comp(iSquareLessEqual, \pi_1,
+              \pi_2), \pi_1, \pi_0))} \end{align*}$$ Und schließlich ist
+              $$\begin{align*} {\rm sqrt} = \comp({\rm
+              largestIbelowTwithISquareLessEqualX}, \pi_0, \pi_0) \end{align*}$$
+              da wir zum Suchen der Wurzel von \(t\) gleich \(t\) als Obergrenze
+              des Suchraumes angeben können. Ganz allgemein können wir für ein
+              Prädikat \({\rm predicate}(i,x)\) das größte \(i \in
+              \{0,\dots,t\}\) finden, für das \({\rm predicate}(i,x)\) True
+              ergibt. Da wir wissen, wie wir das primitiv rekursiv machen
+              können, erlauben wir uns, einen neuen Kombinator zu definieren,
+              anstatt diese Konstruktion jedes Mal "von Hand" durchzuführen:
+              <pre class="container">
 def LargestLessThan(upperBound, predicate):
 def new
 <i>function(*x):
@@ -278,26 +242,18 @@ return temp
 return new
 </i>function
 </pre>
-          <p>und somit können wir sqrt schreiben als
-          </p>
-          $$\begin{align*}
-          {\rm sqrt} = {\rm LargestLessThan} (\pi_0, {\rm iSquareLessEqual})
-          \end{align*}$$
-          <h2>Paare und Listen
-          </h2>
-          Eine recht stark anmutende Beschränkung primitiv rekursiver Funktionen ist
-          die Tatsache, dass wir in der Schleife nur 
-          <i>eine</i>
-           lokale Variable
-          führen dürfen, hier meistens 
-          <code>temp
-          </code>
-           genannt.
-          Manche Funktionen scheinen inhärent mindestens zwei zu benötigen.
-          Betrachten wir den Fall der Fibonacci-Zahlen:
-<pre
-  class="container"
->
+              <p>und somit können wir sqrt schreiben als</p>
+              $$\begin{align*} {\rm sqrt} = {\rm LargestLessThan} (\pi_0, {\rm
+              iSquareLessEqual}) \end{align*}$$
+              <h2>Paare und Listen</h2>
+              Eine recht stark anmutende Beschränkung primitiv rekursiver
+              Funktionen ist die Tatsache, dass wir in der Schleife nur
+              <i>eine</i>
+              lokale Variable führen dürfen, hier meistens
+              <code>temp </code>
+              genannt. Manche Funktionen scheinen inhärent mindestens zwei zu
+              benötigen. Betrachten wir den Fall der Fibonacci-Zahlen:
+              <pre class="container">
 def fibIterative(t):
 a = 0
 b = 1
@@ -306,52 +262,44 @@ c = a+b
 a = b
 b = c
 return a
-</pre>
-          Wir führen hier zwei lokale Variable, \(a\) und \(b\). Das \(c\) könnten
-          wir mit diesem schönen Trick eliminieren:
-<pre
-  class="container"
->
+</pre
+              >
+              Wir führen hier zwei lokale Variable, \(a\) und \(b\). Das \(c\)
+              könnten wir mit diesem schönen Trick eliminieren:
+              <pre class="container">
 b = a+b
 a = b-a 
-</pre>
-          Doch selbst dann hätten wir immer noch zwei lokale Variable.
-          Die Fibonacci-Zahlen rekursiv per
-          
-          <code>return F(n-1)+F(n-2)
-          </code>
-           scheint noch weiter weg zu sein
-          vom Paradigma der primitiven Rekursion; primitive Rekursion verzweigt sich nie.
-          Dennoch ist es möglich, 
-          <code>fib
-          </code>
-           primitiv rekursiv zu implementieren.
-          Hauptzutat hierbei ist es, dass wir 
-          <i>Paare</i>
-           als neue Datenstruktur
-          verwenden.
-          <p>Erinnern Sie sich: die primitive Rekursion stellt uns als Datentyp von Haus aus
-            nur die natürlichen Zahlen zur Verfügung. Alles andere müssen wir nach einem
-            selbst gewählten Schema codieren. Bei Booleschen Werten war es einfach.
-            Wie steht es mit 
-            <i>Paaren</i>
-             von natürlichen Zahlen?
-            In 
-            <a
-              href="02-00-infinite-sets.html"
-            >Kapitel 2: Unendliche Mengen</a>
-             haben wir
-            die bijektive Funktion
-          </p>
-          $$\begin{align*}
-          \pair : \N^2&amp;\rightarrow \N \\
-          (x,y)&amp;\mapsto {x + y + 1 \choose 2} + x
-          \end{align*}$$
-          kennengelernt. Diese Funktion ist primitiv rekursiv: es gilt
-          \({n \choose 2} = 1 + 2 + \cdots + (n-1)\) und somit
-<pre
-  class="container"
->
+</pre
+              >
+              Doch selbst dann hätten wir immer noch zwei lokale Variable. Die
+              Fibonacci-Zahlen rekursiv per
+
+              <code>return F(n-1)+F(n-2) </code>
+              scheint noch weiter weg zu sein vom Paradigma der primitiven
+              Rekursion; primitive Rekursion verzweigt sich nie. Dennoch ist es
+              möglich,
+              <code>fib </code>
+              primitiv rekursiv zu implementieren. Hauptzutat hierbei ist es,
+              dass wir
+              <i>Paare</i>
+              als neue Datenstruktur verwenden.
+              <p>
+                Erinnern Sie sich: die primitive Rekursion stellt uns als
+                Datentyp von Haus aus nur die natürlichen Zahlen zur Verfügung.
+                Alles andere müssen wir nach einem selbst gewählten Schema
+                codieren. Bei Booleschen Werten war es einfach. Wie steht es mit
+                <i>Paaren</i>
+                von natürlichen Zahlen? In
+                <a href="02-00-infinite-sets.html"
+                  >Kapitel 2: Unendliche Mengen</a
+                >
+                haben wir die bijektive Funktion
+              </p>
+              $$\begin{align*} \pair : \N^2&amp;\rightarrow \N \\
+              (x,y)&amp;\mapsto {x + y + 1 \choose 2} + x \end{align*}$$
+              kennengelernt. Diese Funktion ist primitiv rekursiv: es gilt \({n
+              \choose 2} = 1 + 2 + \cdots + (n-1)\) und somit
+              <pre class="container">
 def choose2(t):
 temp = 0 
 <span
@@ -362,38 +310,33 @@ temp = add(temp,i)
   class="comment"
 >= Comp(add, p0, p1)</span>
 </pre>
-          und somit
-          $$\begin{align*}
-          {\rm choose2}&amp;= \primrec(\zero, \comp({\rm add},\pi_0,\pi_1)) \\
-          \pair&amp;= \comp({\rm add}, \comp({\rm choose2}, \comp({\rm add}, \pi_0, \comp(\succ, \pi_1)), \pi_0)
-          \end{align*}$$
-          <p>Um die Umkehrfunktionen \(\first, \second\) zu implementieren, die uns aus
-            \(\pair(x,y)\) wieder \(x\) und \(y\) berechnen, bestimmen wir erst
-            den Wert von \(x+y\). Wenn \(\pair(x,y) = n\) gilt und \(x+y=i)\) ist, dann ist
-            $$\begin{align*}
-            n = \pair(x,y) = {i + 1 \choose 2} + x \geq
-            {i+1 \choose 2} + 0 = \pair(0,i) \ ,
-            \end{align*}$$
-            und somit ist \(x+y\) der größte Wert von \(i\), so dass \(n \geq \pair(0,i)\) ist.
-            Aus \(x+y\) und \({x+y+1 \choose 2} + x\) können wir dann leicht \(x\) und \(y\) berechnen:
-          </p>
-          $$\begin{align*}
-          {\rm getXplusY}&amp;= {\rm LargestLessThan}(\pi_0, \comp({\rm greaterEqual}, \pi_1, \comp(\pair,
-          \zero, \pi_0)))\\
-          \first&amp;= \comp({\rm minus}, \pi_0, \comp(\pair, \zero, {\rm getXplusY}))\\
-          \second&amp;= \comp({\rm minus}, {\rm getXplusY}, \first)
-          \end{align*}$$
-          <p>Listen können wir implementieren, indem wir Paare verschachtelt zusammenhängen,
-            z.B. \([5,7,9]\) wird zu 
-            <span
-              style="color:red"
-            >\(\pair(5, \pair(7, 9))\)</span>. Das ist
-            natürlich
-            inkorrekt:
-          </p>
-<pre
-  class="container"
->
+              und somit $$\begin{align*} {\rm choose2}&amp;= \primrec(\zero,
+              \comp({\rm add},\pi_0,\pi_1)) \\ \pair&amp;= \comp({\rm add},
+              \comp({\rm choose2}, \comp({\rm add}, \pi_0, \comp(\succ, \pi_1)),
+              \pi_0) \end{align*}$$
+              <p>
+                Um die Umkehrfunktionen \(\first, \second\) zu implementieren,
+                die uns aus \(\pair(x,y)\) wieder \(x\) und \(y\) berechnen,
+                bestimmen wir erst den Wert von \(x+y\). Wenn \(\pair(x,y) = n\)
+                gilt und \(x+y=i)\) ist, dann ist $$\begin{align*} n =
+                \pair(x,y) = {i + 1 \choose 2} + x \geq {i+1 \choose 2} + 0 =
+                \pair(0,i) \ , \end{align*}$$ und somit ist \(x+y\) der größte
+                Wert von \(i\), so dass \(n \geq \pair(0,i)\) ist. Aus \(x+y\)
+                und \({x+y+1 \choose 2} + x\) können wir dann leicht \(x\) und
+                \(y\) berechnen:
+              </p>
+              $$\begin{align*} {\rm getXplusY}&amp;= {\rm
+              LargestLessThan}(\pi_0, \comp({\rm greaterEqual}, \pi_1,
+              \comp(\pair, \zero, \pi_0)))\\ \first&amp;= \comp({\rm minus},
+              \pi_0, \comp(\pair, \zero, {\rm getXplusY}))\\ \second&amp;=
+              \comp({\rm minus}, {\rm getXplusY}, \first) \end{align*}$$
+              <p>
+                Listen können wir implementieren, indem wir Paare verschachtelt
+                zusammenhängen, z.B. \([5,7,9]\) wird zu
+                <span style="color: red">\(\pair(5, \pair(7, 9))\)</span>. Das
+                ist natürlich inkorrekt:
+              </p>
+              <pre class="container">
 <code
   class="pythonPrompt"
 >
@@ -425,20 +368,18 @@ pair(5,143)
 11031
 </code>
 </pre>
-          <p>Das Problem ist, dass wir das Ende der Liste nicht kennen. Wir lösen das Problem, indem
-            wir die leere Liste mit \(0\) codieren und dann aber beim Davorhängen eines Elements
-            1 draufaddieren müssen, also
-          </p>
-          $$\begin{align*}
-          {\rm push} (x, {\rm restlist})&amp;= 1 + \pair(x, {\rm restlist}) \\
-          {\rm head} ({\rm list})&amp;= \first({\rm list} - 1)\\
-          {\rm second} ({\rm list})&amp;= \second({\rm list} - 1)
-          \end{align*}$$
-          <p>Jetzt klappt alles wunderbar:
-          </p>
-<pre
-  class="container"
->
+              <p>
+                Das Problem ist, dass wir das Ende der Liste nicht kennen. Wir
+                lösen das Problem, indem wir die leere Liste mit \(0\) codieren
+                und dann aber beim Davorhängen eines Elements 1 draufaddieren
+                müssen, also
+              </p>
+              $$\begin{align*} {\rm push} (x, {\rm restlist})&amp;= 1 + \pair(x,
+              {\rm restlist}) \\ {\rm head} ({\rm list})&amp;= \first({\rm list}
+              - 1)\\ {\rm second} ({\rm list})&amp;= \second({\rm list} - 1)
+              \end{align*}$$
+              <p>Jetzt klappt alles wunderbar:</p>
+              <pre class="container">
 <code
   class="pythonPrompt"
 >
@@ -480,25 +421,24 @@ head(tail(tail(90537)))
 5
 </code>
 </pre>
-          <p><b>Native Implementierung.</b>
-             Die primitive Rekursion ist
-            ein theoretischer Berechenbarkeitsbegriff für Funktionen
-            auf natürlichen Zahlen. Es ist definitiv keine ernstzunehmende Programmiersprache.
-            Ich finde allerdings, dass es hilfreich ist, sie als Programmiersprache zu begreifen
-            und zu verwenden, rein experimentell. Leider ist sie extrem ineffizient: selbst
-            Subtraktion hat quadratische Komplexität. Längere Listen wie die gerade werden Sie in
-            vertretbarer
-            Zeit nicht behandeln können. Bei meinen eigenen Experimenten mit meinem
-            Python-Framework bin ich daher dazu übergegangen, dass ich, sobald
-            ich gezeigt habe, dass eine Funktion \(f\) primitiv rekursiv ist,
-            sie 
-            <i>nativ</i>
-             in Python zu implementieren, also beispielsweise in meiner
-            Datei `stockpile.py`:
-          </p>
-<pre
-  class="listing"
->
+              <p>
+                <b>Native Implementierung.</b>
+                Die primitive Rekursion ist ein theoretischer
+                Berechenbarkeitsbegriff für Funktionen auf natürlichen Zahlen.
+                Es ist definitiv keine ernstzunehmende Programmiersprache. Ich
+                finde allerdings, dass es hilfreich ist, sie als
+                Programmiersprache zu begreifen und zu verwenden, rein
+                experimentell. Leider ist sie extrem ineffizient: selbst
+                Subtraktion hat quadratische Komplexität. Längere Listen wie die
+                gerade werden Sie in vertretbarer Zeit nicht behandeln können.
+                Bei meinen eigenen Experimenten mit meinem Python-Framework bin
+                ich daher dazu übergegangen, dass ich, sobald ich gezeigt habe,
+                dass eine Funktion \(f\) primitiv rekursiv ist, sie
+                <i>nativ</i>
+                in Python zu implementieren, also beispielsweise in meiner Datei
+                `stockpile.py`:
+              </p>
+              <pre class="listing">
 <code
   style="counter-set: listing 63;"
 >
@@ -509,9 +449,10 @@ def pair(x,y):
 </code>
 
 </pre>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-</body>
+    </section>
+  </body>
+</html>

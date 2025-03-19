@@ -1,11 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-      <link rel="icon" href="data:,">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <head>
+    <link rel="icon" href="data:," />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
     <link rel="stylesheet" type="text/css" href="../TI.css" />
     <link rel="stylesheet" type="text/css" href="../tooltip-3003.css" />
@@ -14,236 +17,212 @@
     <script type="text/javascript" src="../mathjax_setup.js"></script>
     <script type="text/javascript" src="../carousel.js"></script>
     <script type="text/javascript" src="../sendCmdTo3003.js"></script>
-    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-</head>
-<body>
-<section
-  count={31}
-  title_gr="Gute kontextfreie Grammatiken entwerfen"
-  title_en="exercise design grammars"
-  number={5.3}
-  counter="DefCtr"
-  counter="ExoCtr"
-  path="/lecture-notes31.tsx"
->
-  <div
-    id="link-to-toc"
-  >
-    <a
-      href="../vorlesungsskript.html"
-    >Inhaltsverzeichnis</a><a
-      href="05-02-cfg-to-pda.html"
-    >&lt;&lt; Kapitel 5.2</a>
-  </div>
-  <div
-    id="link-to-overview"
-    style="text-align: end"
-  >
-    <a
-      href="/"
-    >zur Kursübersicht</a><a
-      href="05-04-LL1-grammars.html"
-    >Kapitel 5.4 &gt;&gt;</a>
-  </div>
-  <div
-    id="rightSideWrapper"
-  >
-    <div
-      class="content"
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+  </head>
+  <body>
+    <section
+      count="{31}"
+      title_gr="Gute kontextfreie Grammatiken entwerfen"
+      title_en="exercise design grammars"
+      number="{5.3}"
+      counter="DefCtr"
+      counter="ExoCtr"
+      path="/lecture-notes31.tsx"
     >
-      <div
-        class="chapter"
-      >
-        <div
-          class="subChapter"
-        >
-          <h1
-            class="hidden-title"
-          >
-            <span
-              class="subChapterTitle"
-            >5.3
-              Rechnerübung: Gute kontextfreie Grammatiken entwerfen
-            </span>
-          </h1>
-          <p>Benutzen Sie die App <a
-              href="../../demos/drawManualGrammar.html"
-            >drawManualGrammar.html</a>,
-            um mit kontextfreien Grammatik zu experimentieren: 
-          </p>
-          <figure><a
-              href="../../demos/drawManualGrammar.html"
-            >
-              <img
-                style="height:20em"
-                src="../img/cfg-manual-screenshot-2.png"
-                loading="lazy"
-              >
-            </a>
-          </figure>
-          <p>Diese besteht aus folgenden Teilen:
-          </p>
-          <ol>
-            <li>Dem Eingabefenster für die Grammatik links oben. Hier können Sie Ihre eigene Grammatik
-              eingeben.
-            </li>
-            <li>Dem Eingabefenster für das Eingabewort.
-            </li>
-            <li>Der Backtrack-Baum. Jeder Pfad im Backtrack-Baum ist der Versuch, das Eingabewort aus den
-              Grammatikregeln per Linksableitung abzuleiten. Die Pfade, die in Sackgassen enden, sind rot
-              markiert.
-            </li>
-            <li>Der Ableitungsbaum. Für jeden Knoten \(w\) im Backtrack-Baum stellt der
-              Pfad von Wurzel nach \(w\) eine Linksableitung dar. Wenn Sie auf \(w\) klicken,
-              sehen Sie den entsprechenden Ableitungsbaum. Per Default wird die erste erfolgreiche
-              Linksableitung in einen Ableitungsbaum umgewandelt und angezeigt (wenn es denn überhaupt
-              eine
-              erfolgreiche Ableitung gibt).
-            </li>
-          </ol>
-          <div
-            class="well well-lg numbered-exercise container"
-          >
-            <span
-              class="numbered-title"
-            >Übungsaufgabe <NumberedTitle>5.3.1</NumberedTitle>
-               
-            </span>Geben Sie folgende Grammatik in die App ein:
-<pre>S -&gt; ;
+      <div id="link-to-toc">
+        <a href="../vorlesungsskript.html">Inhaltsverzeichnis</a
+        ><a href="05-02-cfg-to-pda.html">&lt;&lt; Kapitel 5.2</a>
+      </div>
+      <div id="link-to-overview" style="text-align: end">
+        <a href="/">zur Kursübersicht</a
+        ><a href="05-04-LL1-grammars.html">Kapitel 5.4 &gt;&gt;</a>
+      </div>
+      <div id="rightSideWrapper">
+        <div class="content">
+          <div class="chapter">
+            <div class="subChapter">
+              <h1 class="hidden-title">
+                <span class="subChapterTitle"
+                  >5.3 Rechnerübung: Gute kontextfreie Grammatiken entwerfen
+                </span>
+              </h1>
+              <p>
+                Benutzen Sie die App
+                <a href="../../demos/drawManualGrammar.html"
+                  >drawManualGrammar.html</a
+                >, um mit kontextfreien Grammatik zu experimentieren:
+              </p>
+              <figure>
+                <a href="../../demos/drawManualGrammar.html">
+                  <img
+                    style="height: 20em"
+                    src="../img/cfg-manual-screenshot-2.png"
+                    loading="lazy"
+                  />
+                </a>
+              </figure>
+              <p>Diese besteht aus folgenden Teilen:</p>
+              <ol>
+                <li>
+                  Dem Eingabefenster für die Grammatik links oben. Hier können
+                  Sie Ihre eigene Grammatik eingeben.
+                </li>
+                <li>Dem Eingabefenster für das Eingabewort.</li>
+                <li>
+                  Der Backtrack-Baum. Jeder Pfad im Backtrack-Baum ist der
+                  Versuch, das Eingabewort aus den Grammatikregeln per
+                  Linksableitung abzuleiten. Die Pfade, die in Sackgassen enden,
+                  sind rot markiert.
+                </li>
+                <li>
+                  Der Ableitungsbaum. Für jeden Knoten \(w\) im Backtrack-Baum
+                  stellt der Pfad von Wurzel nach \(w\) eine Linksableitung dar.
+                  Wenn Sie auf \(w\) klicken, sehen Sie den entsprechenden
+                  Ableitungsbaum. Per Default wird die erste erfolgreiche
+                  Linksableitung in einen Ableitungsbaum umgewandelt und
+                  angezeigt (wenn es denn überhaupt eine erfolgreiche Ableitung
+                  gibt).
+                </li>
+              </ol>
+              <div class="well well-lg numbered-exercise container">
+                <span class="numbered-title"
+                  >Übungsaufgabe <NumberedTitle>5.3.1</NumberedTitle> </span
+                >Geben Sie folgende Grammatik in die App ein:
+                <pre>
+S -&gt; ;
 S -&gt; "("S")"S ;
 S -&gt; "(" S "]" S;
-</pre>
-            <p>Was ist die erzeugte Sprache? Können Sie sie in Worten beschreiben?
-            </p>
-            <p>Erzeugen Sie Wörter in dieser Sprache, für die der Backtrack-Baum viele rote
-              Sackgassen enthält.
-            </p>
-            <p>Schreiben Sie eine äquivalente Grammatik (d.h., die die gleiche Sprache erzeugt),
-              für die es keine oder nur sehr kurze Sackgassen gibt.
-              Testen Sie die beiden Grammatiken mit "großen" Eingabewörtern
-              und schauen Sie, ob Sie Laufzeitunterschiede bemerken.
-              (Hier erweist sich mein ineffizienter Code als Vorteil: eine schlechte Grammatik
-              wird sofort bestraft).
-            </p>
-          </div>
-          <div
-            class="well well-lg numbered-exercise container"
-          >
-            <span
-              class="numbered-title"
-            >Übungsaufgabe <NumberedTitle>5.3.2</NumberedTitle>
-               
-            </span>Schreiben Sie eine kontextfreie Grammatik für die Sprache aller
-            "korrekten" URLs; also Folgen von mindestens zwei 
-            <i>Labels</i>, die
-            durch 
-            <code>.
-            </code>
-             separiert sind. Sie können den "Regelvorschlag"
-            ganz links unten in der App reinkopieren, um automatisch Regeln für alphanumerische
-            Zeichen zu bekommen (allerdings verschlechtert das die Laufzeit; ich habe erstmal
-            gar nicht auf Effizienz geachtet).
-            <p>Geben Sie das Eingabewort 
-              <code>a.aaaaa.aaaa.aaaa.aaaa.aaaa
-              </code>
-               ein. Wie
-              sieht Ihr Backtrack-Baum aus? Hat er viele Sackgassen? Können Sie Ihre Grammatik
-              so abändern, dass sie zwar noch die gleiche Sprache erzeugt, aber keine / nur wenige
-              Sackgassen hat?
-            </p>
-          </div>
-          <div
-            class="well well-lg numbered-exercise container"
-          >
-            <span
-              class="numbered-title"
-            >Übungsaufgabe <NumberedTitle>5.3.3</NumberedTitle>
-               
-            </span>Entwerfen Sie eine Grammatik für arithmetische Ausdrücke im Racket-Stil, also
-<pre>(* (+ 2 3) (- 4 (* 2 4) 5)
+</pre
+                >
+                <p>
+                  Was ist die erzeugte Sprache? Können Sie sie in Worten
+                  beschreiben?
+                </p>
+                <p>
+                  Erzeugen Sie Wörter in dieser Sprache, für die der
+                  Backtrack-Baum viele rote Sackgassen enthält.
+                </p>
+                <p>
+                  Schreiben Sie eine äquivalente Grammatik (d.h., die die
+                  gleiche Sprache erzeugt), für die es keine oder nur sehr kurze
+                  Sackgassen gibt. Testen Sie die beiden Grammatiken mit
+                  "großen" Eingabewörtern und schauen Sie, ob Sie
+                  Laufzeitunterschiede bemerken. (Hier erweist sich mein
+                  ineffizienter Code als Vorteil: eine schlechte Grammatik wird
+                  sofort bestraft).
+                </p>
+              </div>
+              <div class="well well-lg numbered-exercise container">
+                <span class="numbered-title"
+                  >Übungsaufgabe <NumberedTitle>5.3.2</NumberedTitle> </span
+                >Schreiben Sie eine kontextfreie Grammatik für die Sprache aller
+                "korrekten" URLs; also Folgen von mindestens zwei <i>Labels</i>,
+                die durch
+                <code>. </code>
+                separiert sind. Sie können den "Regelvorschlag" ganz links unten
+                in der App reinkopieren, um automatisch Regeln für
+                alphanumerische Zeichen zu bekommen (allerdings verschlechtert
+                das die Laufzeit; ich habe erstmal gar nicht auf Effizienz
+                geachtet).
+                <p>
+                  Geben Sie das Eingabewort
+                  <code>a.aaaaa.aaaa.aaaa.aaaa.aaaa </code>
+                  ein. Wie sieht Ihr Backtrack-Baum aus? Hat er viele
+                  Sackgassen? Können Sie Ihre Grammatik so abändern, dass sie
+                  zwar noch die gleiche Sprache erzeugt, aber keine / nur wenige
+                  Sackgassen hat?
+                </p>
+              </div>
+              <div class="well well-lg numbered-exercise container">
+                <span class="numbered-title"
+                  >Übungsaufgabe <NumberedTitle>5.3.3</NumberedTitle> </span
+                >Entwerfen Sie eine Grammatik für arithmetische Ausdrücke im
+                Racket-Stil, also
+                <pre>
+(* (+ 2 3) (- 4 (* 2 4) 5)
 (+ 1 2 (* 2))
-</pre>
-            <p>Leidet Ihre Grammatik an langen Sackgassen? Wenn ja, können Sie die Grammatik abändern?
-              Haben Sie mittlerweile ein Schema erkannt, welche Konstrukte lange Sackgassen
-              begünstigen?
-            </p>
-          </div>
-          <div
-            class="well well-lg numbered-exercise container"
-          >
-            <span
-              class="numbered-title"
-            >Übungsaufgabe <NumberedTitle>5.3.4</NumberedTitle>
-               
-            </span>Wiederholen Sie die vorherige Übung für arithmetische Ausdrücke in der uns
-            geläufigen Infix-Notation. Hierbei sollten die Konventionen Punkt-vor-Strich
-            beachtet werden. Im Ableitungsbaum von
-<pre>2+3*(5+4)
-</pre>
-            sollte sich das wiederspiegeln.
-          </div>
-          <div
-            class="well well-lg numbered-exercise container"
-          >
-            <span
-              class="numbered-title"
-            >Übungsaufgabe <NumberedTitle>5.3.5</NumberedTitle>
-               
-            </span><b>(Challenge)</b>
-            Geben Sie die Grammatik hier ein:
-<pre>S -&gt; "("S")"S;
+</pre
+                >
+                <p>
+                  Leidet Ihre Grammatik an langen Sackgassen? Wenn ja, können
+                  Sie die Grammatik abändern? Haben Sie mittlerweile ein Schema
+                  erkannt, welche Konstrukte lange Sackgassen begünstigen?
+                </p>
+              </div>
+              <div class="well well-lg numbered-exercise container">
+                <span class="numbered-title"
+                  >Übungsaufgabe <NumberedTitle>5.3.4</NumberedTitle> </span
+                >Wiederholen Sie die vorherige Übung für arithmetische Ausdrücke
+                in der uns geläufigen Infix-Notation. Hierbei sollten die
+                Konventionen Punkt-vor-Strich beachtet werden. Im Ableitungsbaum
+                von
+                <pre>
+2+3*(5+4)
+</pre
+                >
+                sollte sich das wiederspiegeln.
+              </div>
+              <div class="well well-lg numbered-exercise container">
+                <span class="numbered-title"
+                  >Übungsaufgabe <NumberedTitle>5.3.5</NumberedTitle> </span
+                ><b>(Challenge)</b>
+                Geben Sie die Grammatik hier ein:
+                <pre>
+S -&gt; "("S")"S;
 S -&gt; "["S"("S;
 S -&gt; ;
-</pre>
-            Überlegen Sie, was diese "bedeutet". Sie sehen, die Grammatik ist
-            nicht eindeutig. Das Wort `[([()(` hat zwei
-            verschiedene Ableitungsbäume. Können Sie eine äquivalente
-            
-            <i>eindeutige</i>
-             Grammatik schreiben?
-          </div>
-          <div
-            class="well well-lg numbered-exercise container"
-          >
-            <span
-              class="numbered-title"
-            >Übungsaufgabe <NumberedTitle>5.3.6</NumberedTitle>
-               
-            </span><b>(Challenge)</b>
-            Die folgende Grammatik hat User 
-            <i>babou</i>
-            auf 
-            <a
-              href="https://cstheory.stackexchange.com/questions/22520/example-of-context-free-grammar-that-triggers-exponential-behaviour-without-memo"
-            >StackExchange</a>vorgeschlagen als Beispiel für eine eindeutige Grammatik,
-            bei der Sie exponentiell große Backtrack-Bäume bekommen können:
-<pre>S -&gt;  "a" X "b" | "a" X "c";
+</pre
+                >
+                Überlegen Sie, was diese "bedeutet". Sie sehen, die Grammatik
+                ist nicht eindeutig. Das Wort `[([()(` hat zwei verschiedene
+                Ableitungsbäume. Können Sie eine äquivalente
+
+                <i>eindeutige</i>
+                Grammatik schreiben?
+              </div>
+              <div class="well well-lg numbered-exercise container">
+                <span class="numbered-title"
+                  >Übungsaufgabe <NumberedTitle>5.3.6</NumberedTitle> </span
+                ><b>(Challenge)</b>
+                Die folgende Grammatik hat User
+                <i>babou</i>
+                auf
+                <a
+                  href="https://cstheory.stackexchange.com/questions/22520/example-of-context-free-grammar-that-triggers-exponential-behaviour-without-memo"
+                  >StackExchange</a
+                >vorgeschlagen als Beispiel für eine eindeutige Grammatik, bei
+                der Sie exponentiell große Backtrack-Bäume bekommen können:
+                <pre>
+S -&gt;  "a" X "b" | "a" X "c";
 X -&gt; "a" | "a" X | "a" X X;
-</pre>
-            Das ist aber keine Kunst, da die Grammatik uneindeutig ist.
-            Können Sie eine 
-            <i>eindeutige</i>
-             Grammatik angebene, die ähnlich
-            exponentielles Verhalten zeigt? Exponentiell heißt: mit jedem
-            zusätlichen Zeichen des Eingabewortes kann die Größe des
-            Backtrack-Baumes um einen Faktor \(R \gt 1\) wachsen.
-          </div>
-          <div
-            class="well well-lg numbered-exercise container"
-          >
-            <span
-              class="numbered-title"
-            >Übungsaufgabe <NumberedTitle>5.3.7</NumberedTitle>
-               
-            </span><b>(Super-Challenge; ich hab selbst keine Lösung)</b>.
-            Finden Sie eine kontextfreie Sprache \(L\), für die 
-            <i>jede</i>
-             Grammatik,
-            die \(L\) erzeugt, unter exponentiell großen Backtrack-Bäumen leidet.
+</pre
+                >
+                Das ist aber keine Kunst, da die Grammatik uneindeutig ist.
+                Können Sie eine
+                <i>eindeutige</i>
+                Grammatik angebene, die ähnlich exponentielles Verhalten zeigt?
+                Exponentiell heißt: mit jedem zusätlichen Zeichen des
+                Eingabewortes kann die Größe des Backtrack-Baumes um einen
+                Faktor \(R \gt 1\) wachsen.
+              </div>
+              <div class="well well-lg numbered-exercise container">
+                <span class="numbered-title"
+                  >Übungsaufgabe <NumberedTitle>5.3.7</NumberedTitle> </span
+                ><b>(Super-Challenge; ich hab selbst keine Lösung)</b>. Finden
+                Sie eine kontextfreie Sprache \(L\), für die
+                <i>jede</i>
+                Grammatik, die \(L\) erzeugt, unter exponentiell großen
+                Backtrack-Bäumen leidet.
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-</body>
+    </section>
+  </body>
+</html>
