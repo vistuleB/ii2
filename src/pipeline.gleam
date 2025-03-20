@@ -73,7 +73,6 @@ pub fn our_pipeline() -> List(Pipe) {
   [
     find_replace.find_replace(#([#("&ensp;", " ")], [])),
     // 1
-    unwrap_tags(["WriterlyBlurb"]),
     // **************************
     // Wrap begin and end with $$
     // **************************
