@@ -222,7 +222,6 @@ pub fn our_pipeline() -> List(Pipe) {
     define_article_output_path.define_article_output_path(#(
       "section",
       "/lecture-notes",
-      "tsx",
       "path",
     )),
     // 24
