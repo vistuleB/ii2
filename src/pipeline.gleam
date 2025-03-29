@@ -13,61 +13,17 @@ import desugarers/generate_ti2_table_of_contents_html.{
 import desugarers/handles_generate_dictionary.{handles_generate_dictionary}
 import desugarers/handles_generate_ids.{handles_generate_ids}
 import desugarers/handles_substitute.{handles_substitute}
-import desugarers/pair_bookends.{pair_bookends}
-import desugarers/prepend_append_to_text_children_of.{prepend_append_to_text_children_of}
 import desugarers/remove_vertical_chunks_with_no_text_child.{
   remove_vertical_chunks_with_no_text_child,
 }
-import desugarers/split_by_indexed_regexes.{split_by_indexed_regexes}
 import desugarers/unwrap_tag_when_child_of_tags.{unwrap_tag_when_child_of_tags}
 import desugarers/unwrap_tags.{unwrap_tags}
 import gleam/list
 import infrastructure.{type Pipe}
-import indexed_regex_splitting as irs
 import prefabricated_pipelines as pp
 
 
 pub fn our_pipeline() -> List(Pipe) {
-  // let double_dollar_indexed_regex =
-  //   irs.unescaped_suffix_indexed_regex("\\$\\$")
-
-  // let single_dollar_indexed_regex = irs.unescaped_suffix_indexed_regex("\\$")
-
-  // let latex_opening_backslash_parenthesis_indexed_regex =
-  //   irs.unescaped_suffix_indexed_regex("\\\\\\(")
-  // let latex_closing_backslash_parenthesis_indexed_regex =
-  //   irs.unescaped_suffix_indexed_regex("\\\\\\)")
-
-  // _ _
-  let opening_single_underscore_indexed_regex =
-    irs.l_m_r_1_3_indexed_regex("[\\s({\\[]|^", "_", "[^\\s)}\\]_]|$")
-
-  let opening_or_closing_single_underscore_indexed_regex_without_asterisks =
-    irs.l_m_r_1_3_indexed_regex("[^\\s({\\[\\*_]|^", "_", "[^\\s)}\\]\\*_]|$")
-
-  let opening_or_closing_single_underscore_indexed_regex_with_asterisks =
-    irs.l_m_r_1_3_indexed_regex("[^\\s({\\[_]|^", "_", "[^\\s)}\\]_]|$")
-
-  let closing_single_underscore_indexed_regex =
-    irs.l_m_r_1_3_indexed_regex("[^\\s({\\[_]|^", "_", "[\\s)}\\]]|$")
-
-  // ` `
-  let opening_single_backtick_indexed_regex =
-    irs.l_m_r_1_3_indexed_regex("[\\s({\\[]|^", "`", "[^\\s)}\\]_]|$")
-
-  let closing_single_backtick_indexed_regex =
-    irs.l_m_r_1_3_indexed_regex("[^\\s({\\[_]|^", "`", "[\\s)}\\]]|$")
-
-  // * *
-  let opening_single_asterisk_indexed_regex =
-    irs.l_m_r_1_3_indexed_regex("[\\s({\\[]|^", "\\*", "[^\\s)}\\]\\*]|$")
-
-  let opening_or_closing_single_asterisk_indexed_regex =
-    irs.l_m_r_1_3_indexed_regex("[^\\s({\\[\\*]|^", "\\*", "[^\\s)}\\]\\*]|$")
-
-  let closing_single_asterisk_indexed_regex =
-    irs.l_m_r_1_3_indexed_regex("[^\\s({\\[\\*]|^", "\\*", "[\\s)}\\]]|$")
-
   [
     [
       find_replace.find_replace(#([#("&ensp;", " ")], []))
@@ -82,56 +38,14 @@ pub fn our_pipeline() -> List(Pipe) {
     [
       unwrap_tags(["WriterlyBlankLine"]),
       concatenate_text_nodes(),
-      // ************************
-      // _ & * & ` ******************
-      // ************************
-      // 14
-      split_by_indexed_regexes(
-        #(
-          [
-            #(
-              opening_or_closing_single_underscore_indexed_regex_without_asterisks,
-              "OpeningOrClosingUnderscore",
-            ),
-            #(opening_single_underscore_indexed_regex, "OpeningUnderscore"),
-            #(closing_single_underscore_indexed_regex, "ClosingUnderscore"),
-            #(
-              opening_or_closing_single_asterisk_indexed_regex,
-              "OpeningOrClosingAsterisk",
-            ),
-            #(opening_single_asterisk_indexed_regex, "OpeningAsterisk"),
-            #(closing_single_asterisk_indexed_regex, "ClosingAsterisk"),
-            #(
-              opening_or_closing_single_underscore_indexed_regex_with_asterisks,
-              "OpeningOrClosingUnderscore",
-            ),
-            #(opening_single_backtick_indexed_regex, "OpeningBackTick"),
-            #(closing_single_backtick_indexed_regex, "ClosingBackTick"),
-            #(opening_single_underscore_indexed_regex, "OpeningUnderscore"),
-            #(closing_single_underscore_indexed_regex, "ClosingUnderscore"),
-          ],
-          ["MathBlock", "Math", "MathDollar"],
-        ),
-      ),
-      // 15
-      pair_bookends(#(
-        ["OpeningUnderscore", "OpeningOrClosingUnderscore"],
-        ["ClosingUnderscore", "OpeningOrClosingUnderscore"],
-        "i",
-      )),
-      // 16
-      pair_bookends(#(
-        ["OpeningAsterisk", "OpeningOrClosingAsterisk"],
-        ["ClosingAsterisk", "OpeningOrClosingAsterisk"],
-        "b",
-      )),
-      // 17
-      pair_bookends(#(
-        ["OpeningBackTick", "OpeningOrClosingBackTick"],
-        ["ClosingBackTick", "OpeningOrClosingBackTick"],
-        "code",
-      )),
-      // 18
+    ],
+    // ************************
+    // _ & * & ` **************
+    // ************************
+    pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
+    pp.symmetric_delim_splitting("_", "_", "i", ["MathBlock", "Math", "code"]),
+    pp.symmetric_delim_splitting("\\*", "*", "b", ["MathBlock", "Math", "code"]),
+    [
       fold_tags_into_text([
         #("OpeningOrClosingUnderscore", "_"),
         #("OpeningUnderscore", "_"),

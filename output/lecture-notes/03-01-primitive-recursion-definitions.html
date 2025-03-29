@@ -167,7 +167,10 @@
             \(f := \primrec(g,h)\).
           </div>
           <p>Wenn Sie Rekursionshasser sind, dann können Sie sich es als Funktion mit einer
-            `for`-Schleife
+            
+            <code>for
+            </code>
+            -Schleife
             vorstellen, in der nur eine lokale Variable erlaubt ist:
           </p>
 <pre
@@ -228,13 +231,19 @@
             Kombinatoren, welche Ihnen nach den
             Regeln der primitiven Rekursion neue Funktionen erstellt:
             <ul>
-              <li>`Proj(k)`: erzeugt die Funktion
+              <li>
+                <code>Proj(k)
+                </code>
+                : erzeugt die Funktion
                 $$\begin{align*}
                 \pi_k : \N^*&amp;\rightarrow \N \\
                 \vec{x}&amp;\mapsto x_k \ .
                 \end{align*}$$
               </li>
-              <li>`Comp(f, g0, g1, ...)`: erzeugt die Funktion
+              <li>
+                <code>Comp(f, g0, g1, ...)
+                </code>
+                : erzeugt die Funktion
                 $$\begin{align*}
                 \vec{x} \mapsto f(g0(x), g1(x), ...)
                 \end{align*}$$
@@ -242,7 +251,10 @@
                 \(g_i\) übergebenen Funktionen
                 übereinstimmt.
               </li>
-              <li>`PrimRec(g,h)`: erzeugt die Funktion
+              <li>
+                <code>PrimRec(g,h)
+                </code>
+                : erzeugt die Funktion
                 $$\begin{align*}
                 (t, \vec{x}) \mapsto \begin{cases}
                 g(\vec{x})&amp;\textnormal{ if $t=0$,} \\
@@ -374,7 +386,10 @@
                 </code>
                 
               </li>
-              <li>`ifThenElse(x,y,z)`: dies soll \(z\) zurückliefern, falls
+              <li>
+                <code>ifThenElse(x,y,z)
+                </code>
+                : dies soll \(z\) zurückliefern, falls
                 \(x=0\) (also 
                 <code>false
                 </code>

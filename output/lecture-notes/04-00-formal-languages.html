@@ -802,8 +802,8 @@ thomas.schmitz@hszg.de
 <pre
   class="listing container"
 >
-`
-<span
+
+<code><span
   class="RawText"
 ></span><span
   class="LessThanBracket"
@@ -843,7 +843,10 @@ thomas.schmitz@hszg.de
   class="GreaterThanBracket"
 >&gt;</span><span
   class="LineBreak"
-></span>`<span
+></span>
+</code>
+
+<span
   class="LineBreak"
 ></span><span
   class="WaitingForAttribute"
@@ -867,8 +870,11 @@ thomas.schmitz@hszg.de
   class="StartTag"
 >svg</span><span
   class="LessThanBracket"
->&lt;</span>`
-`
+>&lt;</span>
+<code>
+
+</code>
+
 <span
   class="LineBreak"
 ></span><span
@@ -889,8 +895,11 @@ thomas.schmitz@hszg.de
   class="WaitingForAttribute"
 >
  
-</span>`
-`
+</span>
+<code>
+
+</code>
+
 <span
   class="LineBreak"
 ></span><span
@@ -925,8 +934,11 @@ thomas.schmitz@hszg.de
   class="WaitingForAttribute"
 >
  
-</span>`
-`
+</span>
+<code>
+
+</code>
+
 <span
   class="LineBreak"
 ></span><span
@@ -947,8 +959,11 @@ thomas.schmitz@hszg.de
   class="WaitingForAttribute"
 >
  
-</span>`
-`
+</span>
+<code>
+
+</code>
+
 <span
   class="LineBreak"
 ></span><span
@@ -967,8 +982,11 @@ thomas.schmitz@hszg.de
   class="WaitingForAttribute"
 >
  
-</span>`
-`
+</span>
+<code>
+
+</code>
+
 <span
   class="LineBreak"
 ></span><span
@@ -991,8 +1009,11 @@ thomas.schmitz@hszg.de
   class="StartTag"
 >g</span><span
   class="LessThanBracket"
->&lt;</span>`
-`
+>&lt;</span>
+<code>
+
+</code>
+
 <span
   class="LineBreak"
 ></span><span
@@ -1017,8 +1038,11 @@ thomas.schmitz@hszg.de
   class="StartTag"
 >circle</span><span
   class="LessThanBracket"
->&lt;</span>`
-`
+>&lt;</span>
+<code>
+
+</code>
+
 <span
   class="LineBreak"
 ></span><span
@@ -1067,8 +1091,11 @@ thomas.schmitz@hszg.de
   class="WaitingForAttribute"
 >
  
-</span>`
-`
+</span>
+<code>
+
+</code>
+
 <span
   class="LineBreak"
 ></span><span
@@ -1089,8 +1116,11 @@ thomas.schmitz@hszg.de
   class="StartTag"
 >path</span><span
   class="LessThanBracket"
->&lt;</span>`
-`
+>&lt;</span>
+<code>
+
+</code>
+
 <span
   class="LineBreak"
 ></span><span
@@ -1115,8 +1145,11 @@ thomas.schmitz@hszg.de
   class="WaitingForAttribute"
 >
  
-</span>`
-`
+</span>
+<code>
+
+</code>
+
 <span
   class="LineBreak"
 ></span><span
@@ -1125,8 +1158,11 @@ thomas.schmitz@hszg.de
   class="EndTag"
 >/g</span><span
   class="LessThanBracket"
->&lt;</span>`
-`
+>&lt;</span>
+<code>
+
+</code>
+
 <span
   class="LineBreak"
 ></span><span
@@ -1135,8 +1171,11 @@ thomas.schmitz@hszg.de
   class="EndTag"
 >/svg</span><span
   class="LessThanBracket"
->&lt;</span>`
-`
+>&lt;</span>
+<code>
+
+</code>
+
 </pre>
           <p>Was haben diese vier Beispiele gemeinsam? Es handelt sich in allen Fällen um <i>Daten</i>, die
             in
@@ -1174,22 +1213,15 @@ thomas.schmitz@hszg.de
              verbunden sind.
             Der Benutzername ist ein nichtleerer String bestehend aus Groß- und Kleinbuchstaben, Zahlen, und
             Punkten (
-            <code>.
+            <code>.`).
+              Erster und letzter Buchstaben dürfen keine Punkte sein, außerdem dürfen keine zwei Punkte
+              nebeneinander stehen.
+              Der Domainname ist eine Folge von mindestenes zwei _Labels_, die jeweils mit einem
+              
             </code>
-            ).
-            Erster und letzter Buchstaben dürfen keine Punkte sein, außerdem dürfen keine zwei Punkte
-            nebeneinander stehen.
-            Der Domainname ist eine Folge von mindestenes zwei 
-            <i>Labels</i>, die jeweils mit einem
-            
-            <code>.
-            </code>
-             separiert sind. Ein Label
+            .` separiert sind. Ein Label
             ist ein nichtleerer String aus Groß- und Kleinbuchstaben, Zahlen und dem Bindestrich
-            (
-            <code>-
-            </code>
-            ).
+            (`-`).
           </div>
           <p>Die genauen Regeln mögen von Anbieter zu Anbieter variieren; ich habe mich mal an das gehalten,
             was
@@ -1210,11 +1242,7 @@ thomas.schmitz@hszg.de
             Ich werde dies nun Schritt für Schritt entwickeln, erst informell anhand des
             Email-Adressen-Beispiels und dann, im nächsten Kapitel, formal und abstrakt.
           </p>
-          <p>Eine Emailadresse ist von der Form <i>Benutzername</i>
-            <code>@
-            </code>
-            
-            <i>Domainnname</i>. Dies
+          <p>Eine Emailadresse ist von der Form <i>Benutzername</i>`@`<i>Domainnname</i>. Dies
             können wir als 
             <i>Ableitungsregel</i>
              darstellen:
@@ -1267,7 +1295,10 @@ thomas.schmitz@hszg.de
             </code>
              zu
             verfahren ist.
-            Was ist nun `&lt;Label&gt;`? Dies ist eine nichtleere Folge von in Domainnamen
+            Was ist nun 
+            <code>&lt;Label&gt;
+            </code>
+            ? Dies ist eine nichtleere Folge von in Domainnamen
             erlaubten
             Zeichen.
             Diese sind alphanumerisch (Buchstaben und Zahlen) und der Strich 
@@ -1287,7 +1318,10 @@ thomas.schmitz@hszg.de
             </a>).
             Wie formulieren wir 
             <i>nichtleere Folge von ...</i>
-             mit unserer `--&gt;`-Notation?
+             mit unserer 
+            <code>--&gt;
+            </code>
+            -Notation?
             Wieder mit dem Rekursionstrick:
           </p>
 <pre
@@ -1444,12 +1478,7 @@ thomas.schmitz@hszg.de
 </pre>
           <p>Beachten Sie: ich habe hier absichtlich nicht
             
-            <code>&lt;AlphaNum&gt; <b>-&gt;</b>
-               a 
-              <b>|</b>
-               ... 
-              <b>|</b>
-               z
+            <code>&lt;AlphaNum&gt; *-&gt;* a *|* ... *|* z
             </code>
             
             geschrieben, weil ich in diesem Beispiel wirklich alles ausschreiben wollte und mit der
@@ -1457,8 +1486,14 @@ thomas.schmitz@hszg.de
             schon wieder etwas menschen- aber nicht maschinenlesbares
             eingeführt hätte.
           </p>
-          <p>Wir brauchen noch Regeln für `&lt;User&gt;`. Dies ist ein nichtleerer String aus
-            alphanumerischen Zeichen und dem Punkt `.`, wobei
+          <p>Wir brauchen noch Regeln für 
+            <code>&lt;User&gt;
+            </code>
+            . Dies ist ein nichtleerer String aus
+            alphanumerischen Zeichen und dem Punkt 
+            <code>.
+            </code>
+            , wobei
             der Punkt nicht am Anfang und nicht am Ende stehen darf. Also: eine nichtleere Folge von
             
             <i>Namensblöcken</i>, die jeweils durch 
@@ -1484,149 +1519,35 @@ thomas.schmitz@hszg.de
   class="container listing"
 >
 
-<code>&lt;EmailAddress&gt;    <b>-&gt;</b>
- &lt;User&gt; @&lt;Domain&gt;
+<code>&lt;EmailAddress&gt;    *-&gt;* &lt;User&gt; @&lt;Domain&gt;
 </code>
 
 
-<code>&lt;Domain&gt;          <b>-&gt;</b>
- &lt;Label&gt; .&lt;Label&gt; 
-<b>|</b>&lt;Label&gt; .&lt;Domain&gt;
+<code>&lt;Domain&gt;          *-&gt;* &lt;Label&gt; .&lt;Label&gt; *|*&lt;Label&gt; .&lt;Domain&gt;
 </code>
 
 
-<code>&lt;User&gt;            <b>-&gt;</b>
- &lt;NameBlock&gt; 
-<b>|</b>&lt;NameBlock&gt; .&lt;User&gt;
+<code>&lt;User&gt;            *-&gt;* &lt;NameBlock&gt; *|*&lt;NameBlock&gt; .&lt;User&gt;
 </code>
 
 
-<code>&lt;NameBlock&gt;       <b>-&gt;</b>
- &lt;AlphaNum&gt; 
-<b>|</b>&lt;AlphaNum&gt;&lt;NameBlock&gt;
+<code>&lt;NameBlock&gt;       *-&gt;* &lt;AlphaNum&gt; *|*&lt;AlphaNum&gt;&lt;NameBlock&gt;
 </code>
 
 
-<code>&lt;Label&gt;           <b>-&gt;</b>
- &lt;AlphaNumOrDash&gt; 
-<b>|</b>&lt;AlphaNumOrDash&gt;&lt;Label&gt;
+<code>&lt;Label&gt;           *-&gt;* &lt;AlphaNumOrDash&gt; *|*&lt;AlphaNumOrDash&gt;&lt;Label&gt;
 </code>
 
 
-<code>&lt;AlphaNumOrDash&gt;  <b>-&gt;</b>
- &lt;AlphaNum&gt; 
-<b>|</b>
- -
+<code>&lt;AlphaNumOrDash&gt;  *-&gt;* &lt;AlphaNum&gt; *|* -
 </code>
  
 
-<code>&lt;AlphaNum&gt;        <b>-&gt;</b>
- a 
-<b>|</b>
- b 
-<b>|</b>
- c 
-<b>|</b>
- d 
-<b>|</b>
- e 
-<b>|</b>
- f 
-<b>|</b>
- g 
-<b>|</b>
- h 
-<b>|</b>
- i 
-<b>|</b>
- j 
-<b>|</b>
- k 
-<b>|</b>
- l 
-<b>|</b>
- m 
-<b>|</b>
- n 
-<b>|</b>
- o 
-<b>|</b>
- p 
-<b>|</b>
- q 
-<b>|</b>
- r 
-<b>|</b>
- s 
-<b>|</b>
- t 
-<b>|</b>
- u 
-<b>|</b>
- v 
-<b>|</b>
- w 
-<b>|</b>
- x 
-<b>|</b>
- y 
-<b>|</b>
- z
+<code>&lt;AlphaNum&gt;        *-&gt;* a *|* b *|* c *|* d *|* e *|* f *|* g *|* h *|* i *|* j *|* k *|* l *|* m *|* n *|* o *|* p *|* q *|* r *|* s *|* t *|* u *|* v *|* w *|* x *|* y *|* z
 </code>
 
 
-<code>&lt;AlphaNum&gt;        <b>-&gt;</b>
- A 
-<b>|</b>
- B 
-<b>|</b>
- C 
-<b>|</b>
- D 
-<b>|</b>
- E 
-<b>|</b>
- F 
-<b>|</b>
- G 
-<b>|</b>
- H 
-<b>|</b>
- I 
-<b>|</b>
- J 
-<b>|</b>
- K 
-<b>|</b>
- L 
-<b>|</b>
- M 
-<b>|</b>
- N 
-<b>|</b>
- O 
-<b>|</b>
- P 
-<b>|</b>
- Q 
-<b>|</b>
- R 
-<b>|</b>
- S 
-<b>|</b>
- T 
-<b>|</b>
- U 
-<b>|</b>
- V 
-<b>|</b>
- W 
-<b>|</b>
- X 
-<b>|</b>
- Y 
-<b>|</b>
- Z
+<code>&lt;AlphaNum&gt;        *-&gt;* A *|* B *|* C *|* D *|* E *|* F *|* G *|* H *|* I *|* J *|* K *|* L *|* M *|* N *|* O *|* P *|* Q *|* R *|* S *|* T *|* U *|* V *|* W *|* X *|* Y *|* Z
 </code>
 
 </pre>
@@ -1681,77 +1602,71 @@ thomas.schmitz@hszg.de
   class="container"
 >
 
-<code>&lt;EmailAddress&gt;  <b>-&gt;</b>&lt;User&gt;@&lt;Domain&gt;
+<code>&lt;EmailAddress&gt;  *-&gt;*&lt;User&gt;@&lt;Domain&gt;
 </code>
 
  
-<code><b>-&gt;</b>&lt;NameBlock&gt;.&lt;User&gt;@&lt;Domain&gt;
+<code>*-&gt;*&lt;NameBlock&gt;.&lt;User&gt;@&lt;Domain&gt;
 </code>
  
  
-<code><b>-&gt;</b>&lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Domain&gt;
+<code>*-&gt;*&lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Domain&gt;
 </code>
  
  
-<code><b>-&gt;</b>&lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Domain&gt;
+<code>*-&gt;*&lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Domain&gt;
 </code>
  
  
-<code><b>-&gt;</b>&lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;
+<code>*-&gt;*&lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;
 </code>
  
  
-<code><b>-&gt;</b>&lt;AlphaNum&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;
+<code>*-&gt;*&lt;AlphaNum&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;
 </code>
  
  
-<code><b>-&gt;</b>&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;
+<code>*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;
 </code>
  
  
-<code><b>-&gt;</b>&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;Label&gt;.&lt;Label&gt;
+<code>*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;Label&gt;.&lt;Label&gt;
 </code>
  
  
-<code><b>-&gt;</b>&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;Label&gt;
+<code>*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;Label&gt;
 </code>
  
  
-<code><b>-&gt;</b>&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;Label&gt;
+<code>*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;Label&gt;
 </code>
  
  
-<code><b>-&gt;</b>&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt;
+<code>*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt;
 </code>
  
  
-<code><b>-&gt;</b>
- d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt;
+<code>*-&gt;* d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt;
 </code>
  
  
-<code><b>-&gt;</b>
- d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;e
+<code>*-&gt;* d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;e
 </code>
 
  
-<code><b>-&gt;</b>
- d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de
+<code>*-&gt;* d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de
 </code>
 
  
-<code><b>-&gt;</b>
- d.s@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de
+<code>*-&gt;* d.s@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de
 </code>
 
  
-<code><b>-&gt;</b>
- d.s@&lt;AlphaNumOrDash&gt;.b.de
+<code>*-&gt;* d.s@&lt;AlphaNumOrDash&gt;.b.de
 </code>
 
  
-<code><b>-&gt;</b>
- d.s@a.b.de
+<code>*-&gt;* d.s@a.b.de
 </code>
  
 </pre>
