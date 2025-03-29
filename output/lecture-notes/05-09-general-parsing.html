@@ -250,10 +250,11 @@
             für \(d = 1, \dots, n\), versucht also, alle Unterwörter der Länge \(d\) abzuleiten,
             beginnend mit \(d = 1\), also \(N_{i,i+1}\). Diese Mengen sind leicht
             zu bestimmen:
-            $$\begin{align*}
-            N_{i,i+1} := \{X \in N \ | \ X \step{} w_i \textnormal{ ist eine Produktion in $G$}\} \ .
+            \begin{align}
+            N
+            <i>{i,i+1} := \{X \in N \ | \ X \step{} w</i>i \textnormal{ ist eine Produktion in \(G\)}\} \ .
             \label{Nii}
-            \end{align*}$$
+            \end{align}
             Das gilt nur, weil \(G\) in Chomsky-Normalform vorliegt und somit Ableitungen mit mehr als einem
             Schritt
             notwendigerweise Wörter mit mehr als einem Zeichen produzieren würden.
@@ -268,11 +269,12 @@
             \end{align*}$$
             gilt. Das Problem ist, wie bereits oben skizziert, dass wir die "Grenze" \(j\) nicht kennen. Wir
             probieren also alle Grenzen aus, und somit
-            $$\begin{align*}
-            N_{i,k} = \bigcup_{j=i+1}^{k-1} \{X \in N \ | \ \textnormal{ es gibt $X \rightarrow YZ$ mit $Y
-            \in N_{i,j}$ und $Z \in N_{j,k}$}\} \ .
+            \begin{align}
+            N
+            <i>{i,k} = \bigcup</i>{j=i+1}^{k-1} \{X \in N \ | \ \textnormal{ es gibt \(X \rightarrow YZ\) mit \(Y
+            \in N_{i,j}\) und \(Z \in N_{j,k}\)}\} \ .
             \label{equation-Nij}
-            \end{align*}$$
+            \end{align}
             Dies können wir mit einer Schleife über \(j = i+1 \dots k-1\) und einer Schleife über alle
             Produktionen
             \(X \rightarrow YZ\) berechnen, da wir die Mengen \(N_{i,j}\) und \(N_{j-k}\) ja bereits kennen,

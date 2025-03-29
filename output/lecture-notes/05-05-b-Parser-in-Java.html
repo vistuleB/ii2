@@ -86,9 +86,9 @@
              zum Beispiel nicht erlaubt.
             Unsere Grammatik soll allgemeine Dezimalzahlen darstellen können.
             Das Alphabet ist somit
-            $\Sigma = \{\texttt{0},\texttt{1},\texttt{2},\texttt{3},\texttt{4},
+            \(\Sigma = \{\texttt{0},\texttt{1},\texttt{2},\texttt{3},\texttt{4},
             \texttt{5},\texttt{6},\texttt{7},\texttt{8},\texttt{9},
-            \texttt{+},\texttt{*},\texttt{(},\texttt{)}\}$.
+            \texttt{+},\texttt{*},\texttt{(},\texttt{)}\}\).
             Die Produktionsregeln sind:
           </p>
           $$\begin{align*}
@@ -100,9 +100,9 @@
           D&amp;\rightarrow \texttt{0}\ | \ \texttt{1}\ | \ \texttt{2}\ | \ \texttt{3}\ | \ \texttt{4}\ | \
           \texttt{5}\ | \ \texttt{6}\ | \ \texttt{7}\ | \ \texttt{8}\ | \ \texttt{9}
           \end{align*}$$
-          <p>Die Nichtterminale sind also $E$ (Expression), $N$ (Number) und $D$ (Digit). Wir haben auch
-            den einzelnen Produktionen Namen gegeben, bis auf die der Form $D \rightarrow i$.
-            Was soll nun unser Parser tun? Er soll, gegeben ein Eingabewort $w \in L$, den
+          <p>Die Nichtterminale sind also \(E\) (Expression), \(N\) (Number) und \(D\) (Digit). Wir haben auch
+            den einzelnen Produktionen Namen gegeben, bis auf die der Form \(D \rightarrow i\).
+            Was soll nun unser Parser tun? Er soll, gegeben ein Eingabewort \(w \in L\), den
             
             <i>Ableitungsbaum</i>
              konstruieren, für 
@@ -120,7 +120,7 @@
             Zuerst aber: wir wollen mit diesem Baum etwas Sinnvolles tun. Zum Beispiel
             
             <i>auswerten</i>, so dass am Ende eine Zahl rauskommt, im obigen Beispiel
-            also $(31 + 402) \cdot 83 = 35939$. Oder den Ausdruck umformen von
+            also \((31 + 402) \cdot 83 = 35939\). Oder den Ausdruck umformen von
             Infix-Notation zu Präfixnotation, also
             <tt>(* (+ 31 402) 83)
             </tt>
@@ -129,10 +129,10 @@
           </p>
           <h2>Eine Datenstruktur für Ableitungsbäume
           </h2>
-          <p>Für meine Implementierung in Java erschaffe ich für jedes Nichtterminal $X$
+          <p>Für meine Implementierung in Java erschaffe ich für jedes Nichtterminal \(X\)
             ein Interface
-            und für jede Produktionsregel $X \rightarrow \alpha$ eine Klasse,
-            die das Interface $X$ implementiert und $\alpha$ als Klassenvariable enthält.
+            und für jede Produktionsregel \(X \rightarrow \alpha\) eine Klasse,
+            die das Interface \(X\) implementiert und \(\alpha\) als Klassenvariable enthält.
           </p>
           <ul>
             <li>

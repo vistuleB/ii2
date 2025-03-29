@@ -567,11 +567,13 @@
             \end{align*}$$
             wobei jedes \(\sigma_i\) ein Terminalsymbol oder ein Nichtterminalsymbol ist,
             und berechnen dann \(\First_k(\alpha)\) wie folgt:
-            $$\begin{align*}
-            \First_k(\alpha) = \First_k(\sigma_1) \circ_k \First_k(\sigma_2) \circ_k \dots \circ_k \First_k
-            (\sigma_n) \ .
+            \begin{align}
+            \First
+            <i>k(\alpha) = \First</i>k(\sigma<i>1) \circ</i>k \First<i>k(\sigma</i>2) \circ<i>k \dots \circ</i>k \First<i>k
+              (\sigma
+            </i>n) \ .
             \label{first-k-wortform}
-            \end{align*}$$
+            \end{align}
             <p>Wir können dies schön der Reihe nach tun:
             </p>
             <ol
@@ -628,10 +630,11 @@
             X&amp;\rightarrow \alpha_k
             \end{align*}$$
             die Produktionen der Grammatik mit \(X\) auf der linken Seite. Dann gilt
-            $$\begin{align*}
-            \First_k(X) = \bigcup_{i=1}^k \First_k(\alpha_i)
+            \begin{align}
+            \First
+            <i>k(X) = \bigcup</i>{i=1}^k \First<i>k(\alpha</i>i)
             \label{first-k-nonterminal}
-            \end{align*}$$
+            \end{align}
             Was ja eigentlich offensichtlich ist: wenn sich ein Wort \(X \Step{}^* w\) aus \(X\) ableiten
             lässt, dann
             muss dies mittels einer der obigen Produktionen geschehen: \(X \Step{} \alpha_i \Step{}^* w\),

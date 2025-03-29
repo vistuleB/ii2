@@ -146,8 +146,8 @@
             eine Turingmaschine in einer spezifischen Codierung und ein Eingabewort einliest und dann diese
             simuliert.
           </p>
-          <p>In diesem Teilkapitel werden wir sehen, wie wir eine Turingmaschine $M$ über einem
-            fixen, nicht von $M$ abhängigen Alphabet codieren können.
+          <p>In diesem Teilkapitel werden wir sehen, wie wir eine Turingmaschine \(M\) über einem
+            fixen, nicht von \(M\) abhängigen Alphabet codieren können.
             Im nächsten Teilkapitel werden wir uns überlegen, wie man einen Turingmaschinen-Simulator selbst
             als
             Turingmaschine implementieren kann. Also eine Turingmaschine \(U\), die als Input Wörter der
@@ -252,7 +252,7 @@
             wo welches
             Zeichen beginnt und aufhört. Wir brauchen ein Separatorzeichen, beispielsweise ein Komma.
             Aus Gründen, die später klar werden werden, schließen wir die Codierung der Turingmaschine
-            mit einem $\texttt{;}$ ab.
+            mit einem \(\texttt{;}\) ab.
             Die Codierung der obigen Maschine ist dann also
           </p>
 <pre
@@ -262,7 +262,7 @@
 </pre>
           <p>In dieser Codierung behalten wir zwei Konventionen bei: wenn eine Regel
             "fehlt", also beispielsweise für \(\delta(10,a)\) die Zelle leer ist, dann
-            soll das in den Zustand $\qreject$ führen; wenn in der Zelle
+            soll das in den Zustand \(\qreject\) führen; wenn in der Zelle
             nur ein Richtungszeichen, also beispielsweise 
             <tt>01,1,R
             </tt>
@@ -292,13 +292,13 @@
                  /Beobachtung.
               </span>
                Zu einem Eingabealphabet
-              $\Sigma$ definieren wir das 
+              \(\Sigma\) definieren wir das 
               <i>Codierungsalphabet</i>
-              $\Lambda := \writelambda$,
-              wobei wir annehmen, dass $\texttt{#}, \texttt{,}, \texttt{L}, \texttt{S}, \texttt{R},
+              \(\Lambda := \writelambda\),
+              wobei wir annehmen, dass \(\texttt{#}, \texttt{,}, \texttt{L}, \texttt{S}, \texttt{R},
               \texttt{;}
-              \not \in \Sigma$. Wir können nun jede Turingmaschine $M$ mit Eingabealphabet
-              $\Sigma$ als String $\enc(M) \in \Lambda^*$ codieren.
+              \not \in \Sigma\). Wir können nun jede Turingmaschine \(M\) mit Eingabealphabet
+              \(\Sigma\) als String \(\enc(M) \in \Lambda^*\) codieren.
             </p>
           </div>
           <div
@@ -310,14 +310,14 @@
              das Wort 
             <i>Codierung</i>
              suggeriert, dass wir, gegeben
-            den String $c = \enc(M)$ die
-            ursprüngliche Turingmaschine $M$ rekonstruieren können. Das gilt natürlich nur
-            beschränkt: eventuell decodieren wir $c$ zu einer Maschine $M'$, die sich
-            von $M$ in denen Namen der Zustände und der Bandalphabetsymbole unterscheidet. Allerdings
+            den String \(c = \enc(M)\) die
+            ursprüngliche Turingmaschine \(M\) rekonstruieren können. Das gilt natürlich nur
+            beschränkt: eventuell decodieren wir \(c\) zu einer Maschine \(M'\), die sich
+            von \(M\) in denen Namen der Zustände und der Bandalphabetsymbole unterscheidet. Allerdings
             stimmen die Funktionen
-            $f_M: \Sigma^* \rightarrow \{\texttt{accept}, \texttt{reject}, \texttt{undefined}\}$
+            \(f_M: \Sigma^* \rightarrow \{\texttt{accept}, \texttt{reject}, \texttt{undefined}\}\)
             und
-            $f_{M'}: \Sigma^* \rightarrow \{\texttt{accept}, \texttt{reject}, \texttt{undefined}\}$
+            \(f_{M'}: \Sigma^* \rightarrow \{\texttt{accept}, \texttt{reject}, \texttt{undefined}\}\)
             überein.
           </div>
         </div>
