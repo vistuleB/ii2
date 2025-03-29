@@ -23,52 +23,53 @@ import desugarers/unwrap_tag_when_child_of_tags.{unwrap_tag_when_child_of_tags}
 import desugarers/unwrap_tags.{unwrap_tags}
 
 import infrastructure.{type Pipe} as infra
+import indexed_regex_splitting as irs
 
 pub fn our_pipeline() -> List(Pipe) {
   let double_dollar_indexed_regex =
-    infra.unescaped_suffix_indexed_regex("\\$\\$")
+    irs.unescaped_suffix_indexed_regex("\\$\\$")
 
-  let single_dollar_indexed_regex = infra.unescaped_suffix_indexed_regex("\\$")
+  let single_dollar_indexed_regex = irs.unescaped_suffix_indexed_regex("\\$")
 
   let latex_opening_math_block_indexed_regex =
-    infra.unescaped_suffix_indexed_regex("\\\\begin\\{align\\*?\\}")
+    irs.unescaped_suffix_indexed_regex("\\\\begin\\{align\\*?\\}")
   let latex_closing_math_block_indexed_regex =
-    infra.unescaped_suffix_indexed_regex("\\\\end\\{align\\*?\\}")
+    irs.unescaped_suffix_indexed_regex("\\\\end\\{align\\*?\\}")
 
   let latex_opening_backslash_parenthesis_indexed_regex =
-    infra.unescaped_suffix_indexed_regex("\\\\\\(")
+    irs.unescaped_suffix_indexed_regex("\\\\\\(")
   let latex_closing_backslash_parenthesis_indexed_regex =
-    infra.unescaped_suffix_indexed_regex("\\\\\\)")
+    irs.unescaped_suffix_indexed_regex("\\\\\\)")
 
   // _ _
   let opening_single_underscore_indexed_regex =
-    infra.l_m_r_1_3_indexed_regex("[\\s({\\[]|^", "_", "[^\\s)}\\]_]|$")
+    irs.l_m_r_1_3_indexed_regex("[\\s({\\[]|^", "_", "[^\\s)}\\]_]|$")
 
   let opening_or_closing_single_underscore_indexed_regex_without_asterisks =
-    infra.l_m_r_1_3_indexed_regex("[^\\s({\\[\\*_]|^", "_", "[^\\s)}\\]\\*_]|$")
+    irs.l_m_r_1_3_indexed_regex("[^\\s({\\[\\*_]|^", "_", "[^\\s)}\\]\\*_]|$")
 
   let opening_or_closing_single_underscore_indexed_regex_with_asterisks =
-    infra.l_m_r_1_3_indexed_regex("[^\\s({\\[_]|^", "_", "[^\\s)}\\]_]|$")
+    irs.l_m_r_1_3_indexed_regex("[^\\s({\\[_]|^", "_", "[^\\s)}\\]_]|$")
 
   let closing_single_underscore_indexed_regex =
-    infra.l_m_r_1_3_indexed_regex("[^\\s({\\[_]|^", "_", "[\\s)}\\]]|$")
+    irs.l_m_r_1_3_indexed_regex("[^\\s({\\[_]|^", "_", "[\\s)}\\]]|$")
 
   // ` `
   let opening_single_backtick_indexed_regex =
-    infra.l_m_r_1_3_indexed_regex("[\\s({\\[]|^", "`", "[^\\s)}\\]_]|$")
+    irs.l_m_r_1_3_indexed_regex("[\\s({\\[]|^", "`", "[^\\s)}\\]_]|$")
 
   let closing_single_backtick_indexed_regex =
-    infra.l_m_r_1_3_indexed_regex("[^\\s({\\[_]|^", "`", "[\\s)}\\]]|$")
+    irs.l_m_r_1_3_indexed_regex("[^\\s({\\[_]|^", "`", "[\\s)}\\]]|$")
 
   // * *
   let opening_single_asterisk_indexed_regex =
-    infra.l_m_r_1_3_indexed_regex("[\\s({\\[]|^", "\\*", "[^\\s)}\\]\\*]|$")
+    irs.l_m_r_1_3_indexed_regex("[\\s({\\[]|^", "\\*", "[^\\s)}\\]\\*]|$")
 
   let opening_or_closing_single_asterisk_indexed_regex =
-    infra.l_m_r_1_3_indexed_regex("[^\\s({\\[\\*]|^", "\\*", "[^\\s)}\\]\\*]|$")
+    irs.l_m_r_1_3_indexed_regex("[^\\s({\\[\\*]|^", "\\*", "[^\\s)}\\]\\*]|$")
 
   let closing_single_asterisk_indexed_regex =
-    infra.l_m_r_1_3_indexed_regex("[^\\s({\\[\\*]|^", "\\*", "[\\s)}\\]]|$")
+    irs.l_m_r_1_3_indexed_regex("[^\\s({\\[\\*]|^", "\\*", "[\\s)}\\]]|$")
 
   [
     find_replace.find_replace(#([#("&ensp;", " ")], [])),
@@ -229,7 +230,7 @@ pub fn our_pipeline() -> List(Pipe) {
       #("section", "path"),
     ]),
     // 25
-    handles_substitute.handles_substitute(),
+    handles_substitute.handles_substitute([]),
     // 26
     concatenate_text_nodes(),
     // 27
