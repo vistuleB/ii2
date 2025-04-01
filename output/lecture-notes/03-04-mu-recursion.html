@@ -18,10 +18,10 @@
 </head>
 <body>
 <section
-  count={19}
+  count="19"
   title_gr="Schritt weiter:  while-Schleifen und \(\mu\)-Rekursion"
   title_en="mu recursion"
-  number={3.4}
+  number="3.4"
   counter="DefCtr"
   counter="ExoCtr"
   path="/lecture-notes19"
@@ -31,9 +31,23 @@
   >
     <a
       href="../vorlesungsskript.html"
-    >Inhaltsverzeichnis</a><a
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >Inhaltsverzeichnis</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:12:50');"
+          >emu_content/03/03-04-mu-recursion.emu:12:50</span></span></span></a><a
       href="03-03-ackermann.html"
-    >&lt;&lt; Kapitel 3.3</a>
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >&lt;&lt; Kapitel 3.3</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:16:50');"
+          >emu_content/03/03-04-mu-recursion.emu:16:50</span></span></span></a>
   </div>
   <div
     id="link-to-overview"
@@ -41,9 +55,23 @@
   >
     <a
       href="/"
-    >zur Kursübersicht</a><a
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >zur Kursübersicht</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:23:50');"
+          >emu_content/03/03-04-mu-recursion.emu:23:50</span></span></span></a><a
       href="04-00-formal-languages.html"
-    >Kapitel 4.0 &gt;&gt;</a>
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >Kapitel 4.0 &gt;&gt;</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:27:50');"
+          >emu_content/03/03-04-mu-recursion.emu:27:50</span></span></span></a>
   </div>
   <div
     id="rightSideWrapper"
@@ -62,30 +90,181 @@
           >
             <span
               class="subChapterTitle"
-            >3.4
-              Ein Schritt weiter:  while-Schleifen und \(\mu\)-Rekursion
-            </span>
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >3.4</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:41:50');"
+                  >emu_content/03/03-04-mu-recursion.emu:41:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Ein Schritt weiter:  while-Schleifen und </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:42:50');"
+                  >emu_content/03/03-04-mu-recursion.emu:42:50</span></span></span>\(\mu\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >-Rekursion</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:42:50');"
+                  >emu_content/03/03-04-mu-recursion.emu:42:50</span></span></span></span>
           </h1>
-          Primitive Rekursion erlaubt uns Schleifen, allerdings nur in einer sehr restriktiven Form:
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Primitive Rekursion erlaubt uns Schleifen, allerdings nur in einer sehr restriktiven Form:</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:43:50');"
+              >emu_content/03/03-04-mu-recursion.emu:43:50</span></span></span>
           <ol>
-            <li>Wir müssen anfangs bereits angeben, wie oft wir die Schleife durchlaufen wollen;
+            <li><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Wir müssen anfangs bereits angeben, wie oft wir die Schleife durchlaufen wollen;</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:47:50');"
+                  >emu_content/03/03-04-mu-recursion.emu:47:50</span></span></span>
             </li>
-            <li>wir dürfen nur eine lokale Variable mitführen (und den Iterationsindex).
+            <li><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >wir dürfen nur eine lokale Variable mitführen (und den Iterationsindex).</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:50:50');"
+                  >emu_content/03/03-04-mu-recursion.emu:50:50</span></span></span>
             </li>
           </ol>
-          Der zweite Punkt ist keine echte Beschränkung, wie wir gesehen haben: wenn wir zwei lokale
-          Variablen \(a,b\) führen wollen, können wir die via der Bijektion
-          \({\rm pair} : \N^2 \rightarrow \N\) in 
-          <i>eine</i>
-           natürliche Zahl codieren.
-          Der erste Punkt allerdings scheint eine echte Beschränkung zu sein: wir wissen schließlich nicht
-          immer, wie oft wir eine Tätigkeit wiederholen müssen, bis wir fertig sind,
-          und ob wir überhaupt jemals fertig werden. Sie kennen vielleicht die Collatz-Vermutung.
-          <h2>Die Collatz-Vermutung
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Der zweite Punkt ist keine echte Beschränkung, wie wir gesehen haben: wenn wir zwei lokale</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:51:50');"
+              >emu_content/03/03-04-mu-recursion.emu:51:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Variablen </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:52:50');"
+              >emu_content/03/03-04-mu-recursion.emu:52:50</span></span></span>\(a,b\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 führen wollen, können wir die via der Bijektion
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:52:50');"
+              >emu_content/03/03-04-mu-recursion.emu:52:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:53:50');"
+              >emu_content/03/03-04-mu-recursion.emu:53:50</span></span></span>\({\rm pair} : \N^2 \rightarrow \N\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 in 
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:53:50');"
+              >emu_content/03/03-04-mu-recursion.emu:53:50</span></span></span><i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >eine</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:53:50');"
+                >emu_content/03/03-04-mu-recursion.emu:53:50</span></span></span></i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 natürliche Zahl codieren.
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:53:50');"
+              >emu_content/03/03-04-mu-recursion.emu:53:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Der erste Punkt allerdings scheint eine echte Beschränkung zu sein: wir wissen schließlich nicht</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:54:50');"
+              >emu_content/03/03-04-mu-recursion.emu:54:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >immer, wie oft wir eine Tätigkeit wiederholen müssen, bis wir fertig sind,</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:55:50');"
+              >emu_content/03/03-04-mu-recursion.emu:55:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >und ob wir überhaupt jemals fertig werden. Sie kennen vielleicht die Collatz-Vermutung.</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:56:50');"
+              >emu_content/03/03-04-mu-recursion.emu:56:50</span></span></span>
+          <h2><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Die Collatz-Vermutung</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:59:50');"
+                >emu_content/03/03-04-mu-recursion.emu:59:50</span></span></span>
           </h2>
-          <p>Wir definieren eine Funktion \(f: \N_+ \rightarrow \N_+\) wie folgt:
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Wir definieren eine Funktion </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:62:50');"
+                >emu_content/03/03-04-mu-recursion.emu:62:50</span></span></span>\(f: \N_+ \rightarrow \N_+\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   wie folgt:
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:62:50');"
+                >emu_content/03/03-04-mu-recursion.emu:62:50</span></span></span>
           </p>
-          $$\begin{align*}
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:63:50');"
+              >emu_content/03/03-04-mu-recursion.emu:63:50</span></span></span>$$\begin{align*}
           f : \N_+&amp;\rightarrow \N_+ \\
           n&amp;\mapsto
           \begin{cases}
@@ -93,115 +272,683 @@
           3n+1&amp;\textnormal{ if $n$ odd.}
           \end{cases}
           \end{align*}$$
-          <p>Für eine natürliche Zahl \(n\) können wir dann die Collatz-Folge definieren:
-            \(n, f(n), f(f(n)), ...\). Man sieht leicht, dass diese Folge in einer Schleife
-            landen kann:
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:70:50');"
+              >emu_content/03/03-04-mu-recursion.emu:70:50</span></span></span>
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Für eine natürliche Zahl </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:73:50');"
+                >emu_content/03/03-04-mu-recursion.emu:73:50</span></span></span>\(n\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   können wir dann die Collatz-Folge definieren:
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:73:50');"
+                >emu_content/03/03-04-mu-recursion.emu:73:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:74:50');"
+                >emu_content/03/03-04-mu-recursion.emu:74:50</span></span></span>\(n, f(n), f(f(n)), ...\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >. Man sieht leicht, dass diese Folge in einer Schleife</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:74:50');"
+                >emu_content/03/03-04-mu-recursion.emu:74:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >landen kann:</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:75:50');"
+                >emu_content/03/03-04-mu-recursion.emu:75:50</span></span></span>
           </p>
-          $$\begin{align*}
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:76:50');"
+              >emu_content/03/03-04-mu-recursion.emu:76:50</span></span></span>$$\begin{align*}
           13 \mapsto 40 \mapsto 20 \mapsto 10 \mapsto 5 \mapsto 16 \mapsto 8 \mapsto 4 \mapsto 2 \mapsto 1
           \mapsto 4 \mapsto 2 \mapsto 1 \dots
           \end{align*}$$
-          <p>Wir beenden die Sequenz daher üblicherweise, wenn wir bei 1 (und somit in dieser Dreierschleife)
-            gelandet sind.
-            Es kann allerdings etwas länger dauern: 
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:79:50');"
+              >emu_content/03/03-04-mu-recursion.emu:79:50</span></span></span>
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Wir beenden die Sequenz daher üblicherweise, wenn wir bei 1 (und somit in dieser Dreierschleife)</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:82:50');"
+                >emu_content/03/03-04-mu-recursion.emu:82:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >gelandet sind.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:83:50');"
+                >emu_content/03/03-04-mu-recursion.emu:83:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Es kann allerdings etwas länger dauern: </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:84:50');"
+                >emu_content/03/03-04-mu-recursion.emu:84:50</span></span></span>
           </p>
-          <figure>7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1.
+          <figure><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:87:50');"
+                >emu_content/03/03-04-mu-recursion.emu:87:50</span></span></span>
           </figure>
-          Oder noch länger. Wenn wir mit 27 beginnen, dann erhalten wir die Folge
-          <figure>27, 82, 41, 124, 62, 31, 94, 47, 142, 71, 214, 107, 322, 161, 484, 242, 121, 364, 182, 91, 274,
-            137, 412, 206, 103, 310, 155, 466, 233, 700, 350, 175, 526, 263, 790, 395, 1186, 593, 1780, 890,
-            445, 1336, 668, 334, 167, 502, 251, 754, 377, 1132, 566, 283, 850, 425, 1276, 638, 319, 958,
-            479, 1438, 719, 2158, 1079, 3238, 1619, 4858, 2429, 7288, 3644, 1822, 911, 2734, 1367, 4102,
-            2051, 6154, 3077, 9232, 4616, 2308, 1154, 577, 1732, 866, 433, 1300, 650, 325, 976, 488, 244,
-            122, 61, 184, 92, 46, 23, 70, 35, 106, 53, 160, 80, 40, 20, 10, 5, 16, 8, 4, 2, 1
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Oder noch länger. Wenn wir mit 27 beginnen, dann erhalten wir die Folge</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:88:50');"
+              >emu_content/03/03-04-mu-recursion.emu:88:50</span></span></span>
+          <figure><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >27, 82, 41, 124, 62, 31, 94, 47, 142, 71, 214, 107, 322, 161, 484, 242, 121, 364, 182, 91, 274,</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:91:50');"
+                >emu_content/03/03-04-mu-recursion.emu:91:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >137, 412, 206, 103, 310, 155, 466, 233, 700, 350, 175, 526, 263, 790, 395, 1186, 593, 1780, 890,</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:92:50');"
+                >emu_content/03/03-04-mu-recursion.emu:92:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >445, 1336, 668, 334, 167, 502, 251, 754, 377, 1132, 566, 283, 850, 425, 1276, 638, 319, 958,</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:93:50');"
+                >emu_content/03/03-04-mu-recursion.emu:93:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >479, 1438, 719, 2158, 1079, 3238, 1619, 4858, 2429, 7288, 3644, 1822, 911, 2734, 1367, 4102,</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:94:50');"
+                >emu_content/03/03-04-mu-recursion.emu:94:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >2051, 6154, 3077, 9232, 4616, 2308, 1154, 577, 1732, 866, 433, 1300, 650, 325, 976, 488, 244,</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:95:50');"
+                >emu_content/03/03-04-mu-recursion.emu:95:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >122, 61, 184, 92, 46, 23, 70, 35, 106, 53, 160, 80, 40, 20, 10, 5, 16, 8, 4, 2, 1</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:96:50');"
+                >emu_content/03/03-04-mu-recursion.emu:96:50</span></span></span>
           </figure>
-          <p>Experimentieren Sie! Ich habe dafür die Html-Seite <a
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Experimentieren Sie! Ich habe dafür die Html-Seite </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:99:50');"
+                >emu_content/03/03-04-mu-recursion.emu:99:50</span></span></span><a
               href="../code/primitive-recursion/collatz.html"
-            >collatz.html</a>
-             erstellt.
-            Es scheint: egal, wo Sie anfangen, Sie enden immer bei 1. Allerdings wissen wir nicht
-            im Voraus, 
-            <i>wie oft</i>
-             wir die Funktion \(f\) anwenden müssen. Und wir wissen nicht einmal,
-            ob man immer bei 1 ankommt, ob es andere Zyklen gibt oder ob es Startwerte gibt, für die die
-            Folge einfach nach Unendlich divergiert. Bis zum heutigen Tage (Stand 30. April 2024) hat sich
-            die Collatz-Vermutung zahlreichen Lösungsversuchung widersetzt und demonstriert eindrucksvoll,
-            dass auch mathematische Probleme mit sehr einfacher Formulierung extrem schwierig sein können.
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >collatz.html</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:103:50');"
+                  >emu_content/03/03-04-mu-recursion.emu:103:50</span></span></span></a><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   erstellt.
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:104:50');"
+                >emu_content/03/03-04-mu-recursion.emu:104:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Es scheint: egal, wo Sie anfangen, Sie enden immer bei 1. Allerdings wissen wir nicht</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:105:50');"
+                >emu_content/03/03-04-mu-recursion.emu:105:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >im Voraus, </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:106:50');"
+                >emu_content/03/03-04-mu-recursion.emu:106:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >wie oft</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:106:50');"
+                  >emu_content/03/03-04-mu-recursion.emu:106:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   wir die Funktion 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:106:50');"
+                >emu_content/03/03-04-mu-recursion.emu:106:50</span></span></span>\(f\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   anwenden müssen. Und wir wissen nicht einmal,
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:106:50');"
+                >emu_content/03/03-04-mu-recursion.emu:106:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >ob man immer bei 1 ankommt, ob es andere Zyklen gibt oder ob es Startwerte gibt, für die die</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:107:50');"
+                >emu_content/03/03-04-mu-recursion.emu:107:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Folge einfach nach Unendlich divergiert. Bis zum heutigen Tage (Stand 30. April 2024) hat sich</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:108:50');"
+                >emu_content/03/03-04-mu-recursion.emu:108:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >die Collatz-Vermutung zahlreichen Lösungsversuchung widersetzt und demonstriert eindrucksvoll,</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:109:50');"
+                >emu_content/03/03-04-mu-recursion.emu:109:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >dass auch mathematische Probleme mit sehr einfacher Formulierung extrem schwierig sein können.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:110:50');"
+                >emu_content/03/03-04-mu-recursion.emu:110:50</span></span></span>
           </p>
-          <h3>While-Schleifen
+          <h3><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >While-Schleifen</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:113:50');"
+                >emu_content/03/03-04-mu-recursion.emu:113:50</span></span></span>
           </h3>
-          <p>Eine Einschränkung primitiv-rekursiver Funktionen ist also, dass wir immer vor der Schleife
-            angeben müssen, wie oft diese durchlaufen werden soll. Es gibt also keine
-            
-            <code>while
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Eine Einschränkung primitiv-rekursiver Funktionen ist also, dass wir immer vor der Schleife</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:116:50');"
+                >emu_content/03/03-04-mu-recursion.emu:116:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >angeben müssen, wie oft diese durchlaufen werden soll. Es gibt also keine</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:117:50');"
+                >emu_content/03/03-04-mu-recursion.emu:117:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:118:50');"
+                >emu_content/03/03-04-mu-recursion.emu:118:50</span></span></span>
+            <code><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >while</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:118:50');"
+                  >emu_content/03/03-04-mu-recursion.emu:118:50</span></span></span>
             </code>
-            -Schleifen. Führen wir diese nun ein.
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >-Schleifen. Führen wir diese nun ein.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:118:50');"
+                >emu_content/03/03-04-mu-recursion.emu:118:50</span></span></span>
           </p>
 <pre
   class="listing"
 >
-
-<code>def While (condition, step):
+<span><span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+></span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:122:50');"
+>emu_content/03/03-04-mu-recursion.emu:122:50</span></span></span>
+<code><span><span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+>def While (condition, step):</span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:122:50');"
+>emu_content/03/03-04-mu-recursion.emu:122:50</span></span></span>
 </code>
+<span><span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+></span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:122:50');"
+>emu_content/03/03-04-mu-recursion.emu:122:50</span></span>
 
+<span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+>
  
-<code>def f(x):
+</span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:124:50');"
+>emu_content/03/03-04-mu-recursion.emu:124:50</span></span></span>
+<code><span><span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+>def f(x):</span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:124:50');"
+>emu_content/03/03-04-mu-recursion.emu:124:50</span></span></span>
 </code>
+<span><span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+></span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:124:50');"
+>emu_content/03/03-04-mu-recursion.emu:124:50</span></span>
 
+<span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+>
   
-<code>temp = x
+</span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:126:50');"
+>emu_content/03/03-04-mu-recursion.emu:126:50</span></span></span>
+<code><span><span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+>temp = x</span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:126:50');"
+>emu_content/03/03-04-mu-recursion.emu:126:50</span></span></span>
 </code>
+<span><span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+></span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:126:50');"
+>emu_content/03/03-04-mu-recursion.emu:126:50</span></span>
 
+<span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+>
   
-<code>while (condition(temp)):
+</span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:128:50');"
+>emu_content/03/03-04-mu-recursion.emu:128:50</span></span></span>
+<code><span><span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+>while (condition(temp)):</span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:128:50');"
+>emu_content/03/03-04-mu-recursion.emu:128:50</span></span></span>
 </code>
+<span><span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+></span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:128:50');"
+>emu_content/03/03-04-mu-recursion.emu:128:50</span></span>
 
+<span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+>
    
-<code>temp = step(temp)
+</span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:130:50');"
+>emu_content/03/03-04-mu-recursion.emu:130:50</span></span></span>
+<code><span><span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+>temp = step(temp)</span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:130:50');"
+>emu_content/03/03-04-mu-recursion.emu:130:50</span></span></span>
 </code>
+<span><span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+></span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:130:50');"
+>emu_content/03/03-04-mu-recursion.emu:130:50</span></span>
 
+<span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+>
   
-<code>return temp
+</span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:132:50');"
+>emu_content/03/03-04-mu-recursion.emu:132:50</span></span></span>
+<code><span><span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+>return temp</span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:132:50');"
+>emu_content/03/03-04-mu-recursion.emu:132:50</span></span></span>
 </code>
+<span><span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+>
  
+</span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:132:50');"
+>emu_content/03/03-04-mu-recursion.emu:132:50</span></span>
+
+<span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+>
  
-<code>return f
+</span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:134:50');"
+>emu_content/03/03-04-mu-recursion.emu:134:50</span></span></span>
+<code><span><span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+>return f</span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:134:50');"
+>emu_content/03/03-04-mu-recursion.emu:134:50</span></span></span>
 </code>
+<span><span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+>
  
+</span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:134:50');"
+>emu_content/03/03-04-mu-recursion.emu:134:50</span></span></span>
 </pre>
           <div
             class="well well-lg numbered-exercise container"
           >
             <p><span
                 class="numbered-title"
-              >Übungsaufgabe <NumberedTitle>3.4.1</NumberedTitle>
-                 
-              </span>Schreiben Sie mit Hilfe von 
-              <code>While
+              ><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Übungsaufgabe </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:141:50');"
+                    >emu_content/03/03-04-mu-recursion.emu:141:50</span></span></span><NumberedTitle><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >3.4.1</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:144:50');"
+                      >emu_content/03/03-04-mu-recursion.emu:144:50</span></span></span></NumberedTitle><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:145:50');"
+                    >emu_content/03/03-04-mu-recursion.emu:145:50</span></span></span></span><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Schreiben Sie mit Hilfe von </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:146:50');"
+                  >emu_content/03/03-04-mu-recursion.emu:146:50</span></span></span>
+              <code><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >While</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:146:50');"
+                    >emu_content/03/03-04-mu-recursion.emu:146:50</span></span></span>
               </code>
-              , 
-              <code>PrimRec
+              <span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >, </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:146:50');"
+                  >emu_content/03/03-04-mu-recursion.emu:146:50</span></span></span>
+              <code><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >PrimRec</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:146:50');"
+                    >emu_content/03/03-04-mu-recursion.emu:146:50</span></span></span>
               </code>
-               und 
-              <code>Comp
+              <span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     und 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:146:50');"
+                  >emu_content/03/03-04-mu-recursion.emu:146:50</span></span></span>
+              <code><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Comp</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:146:50');"
+                    >emu_content/03/03-04-mu-recursion.emu:146:50</span></span></span>
               </code>
-              
-              eine Funktion 
-              <code>collatzList
+              <span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:146:50');"
+                  >emu_content/03/03-04-mu-recursion.emu:146:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >eine Funktion </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:147:50');"
+                  >emu_content/03/03-04-mu-recursion.emu:147:50</span></span></span>
+              <code><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >collatzList</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:147:50');"
+                    >emu_content/03/03-04-mu-recursion.emu:147:50</span></span></span>
               </code>
-              , die aus einer Zahl
-              die Collatz-Folge baut, also
+              <span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >, die aus einer Zahl</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:147:50');"
+                  >emu_content/03/03-04-mu-recursion.emu:147:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >die Collatz-Folge baut, also</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:148:50');"
+                  >emu_content/03/03-04-mu-recursion.emu:148:50</span></span></span>
             </p>
 <pre>
 <code
   class="pythonPrompt"
 >
-collatzList(7)
+<span><span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+>collatzList(7)</span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:153:50');"
+>emu_content/03/03-04-mu-recursion.emu:153:50</span></span></span>
 </code>
 <code
   class="terminalOutput"
 >
-[]
+<span><span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+>[]</span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/03/03-04-mu-recursion.emu:157:50');"
+>emu_content/03/03-04-mu-recursion.emu:157:50</span></span></span>
 </code>
 </pre>
           </div>

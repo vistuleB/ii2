@@ -18,10 +18,10 @@
 </head>
 <body>
 <section
-  count={15}
+  count="15"
   title_gr="und natürliche Zahlen"
   title_en="Computability NaturalNumbers"
-  number={3.0}
+  number="3.0"
   counter="DefCtr"
   counter="ExoCtr"
   path="/lecture-notes15"
@@ -31,9 +31,23 @@
   >
     <a
       href="../vorlesungsskript.html"
-    >Inhaltsverzeichnis</a><a
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >Inhaltsverzeichnis</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:12:50');"
+          >emu_content/03/03-00-Computability-NaturalNumbers.emu:12:50</span></span></span></a><a
       href="02-06-Trichotomiesatz.html"
-    >&lt;&lt; Kapitel 2.6</a>
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >&lt;&lt; Kapitel 2.6</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:16:50');"
+          >emu_content/03/03-00-Computability-NaturalNumbers.emu:16:50</span></span></span></a>
   </div>
   <div
     id="link-to-overview"
@@ -41,9 +55,23 @@
   >
     <a
       href="/"
-    >zur Kursübersicht</a><a
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >zur Kursübersicht</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:23:50');"
+          >emu_content/03/03-00-Computability-NaturalNumbers.emu:23:50</span></span></span></a><a
       href="03-01-primitive-recursion-definitions.html"
-    >Kapitel 3.1 &gt;&gt;</a>
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >Kapitel 3.1 &gt;&gt;</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:27:50');"
+          >emu_content/03/03-00-Computability-NaturalNumbers.emu:27:50</span></span></span></a>
   </div>
   <div
     id="rightSideWrapper"
@@ -59,72 +87,621 @@
         >
           <span
             class="chapterTitle"
-          >3.
-            Berechenbarkeit und natürliche Zahlen
-          </span>
+          ><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >3.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:39:50');"
+                >emu_content/03/03-00-Computability-NaturalNumbers.emu:39:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Berechenbarkeit und natürliche Zahlen</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:40:50');"
+                >emu_content/03/03-00-Computability-NaturalNumbers.emu:40:50</span></span></span></span>
         </h1>
-        <p>Mit den Booleschen Schaltkreisen haben wir ein Modell kennengelernt, dass
-          die Berechnung von Booleschen Funkionen \(f: \{0,1\}^n \rightarrow \{0,1\}\) beschreibt.
-          Wir haben mehrere Beweisen gesehen, dass es für jede Boolesche Funktion einen
-          Schaltkreis gibt. Unsere Zielsetzung war durchweg 
-          <i>komplexitätstheoretisch</i>: wir
-          wollten möglichst kleine Schaltkreise von möglichst geringer Tiefe entwerfen.
-          Würden wir tiefer in die Schaltkreiskomplexität einsteigen, so würden wir uns fast
-          ausschließlich mit 
-          <i>negativen</i>
-           Zielen beschäftigen: zu zeigen, dass es zu bestimmten
-          Funktionen eben nicht Schaltkreise mit \(S\) Gates und in Tiefe \(d\) gibt; wir
-          würden uns zum Großteil mit 
-          <i>unteren Schranken</i>
-           beschäftigen.
+        <p><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Mit den Booleschen Schaltkreisen haben wir ein Modell kennengelernt, dass</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:43:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:43:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >die Berechnung von Booleschen Funkionen </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:44:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:44:50</span></span></span>\(f: \{0,1\}^n \rightarrow \{0,1\}\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 beschreibt.
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:44:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:44:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Wir haben mehrere Beweisen gesehen, dass es für jede Boolesche Funktion einen</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:45:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:45:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Schaltkreis gibt. Unsere Zielsetzung war durchweg </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:46:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:46:50</span></span></span><i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >komplexitätstheoretisch</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:46:50');"
+                >emu_content/03/03-00-Computability-NaturalNumbers.emu:46:50</span></span></span></i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >: wir</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:46:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:46:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >wollten möglichst kleine Schaltkreise von möglichst geringer Tiefe entwerfen.</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:47:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:47:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Würden wir tiefer in die Schaltkreiskomplexität einsteigen, so würden wir uns fast</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:48:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:48:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >ausschließlich mit </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:49:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:49:50</span></span></span><i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >negativen</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:49:50');"
+                >emu_content/03/03-00-Computability-NaturalNumbers.emu:49:50</span></span></span></i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 Zielen beschäftigen: zu zeigen, dass es zu bestimmten
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:49:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:49:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Funktionen eben nicht Schaltkreise mit </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:50:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:50:50</span></span></span>\(S\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 Gates und in Tiefe 
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:50:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:50:50</span></span></span>\(d\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 gibt; wir
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:50:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:50:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >würden uns zum Großteil mit </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:51:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:51:50</span></span></span><i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >unteren Schranken</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:51:50');"
+                >emu_content/03/03-00-Computability-NaturalNumbers.emu:51:50</span></span></span></i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 beschäftigen.
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:51:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:51:50</span></span></span>
         </p>
-        <p>Boolesche Funktionen sind immer <i>endliche</i>
-           Objekte. In der Berechenbarkeitstheorie
-          geht es im Grunde um die Frage: welche 
-          <i>unendlichen</i>
-           Funktionen können wir überhaupt
-          berechnen? Und was gilt denn überhaupt als zulässiges Modell für Berechenbarkeit?
+        <p><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Boolesche Funktionen sind immer </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:54:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:54:50</span></span></span><i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >endliche</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:54:50');"
+                >emu_content/03/03-00-Computability-NaturalNumbers.emu:54:50</span></span></span></i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 Objekte. In der Berechenbarkeitstheorie
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:54:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:54:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >geht es im Grunde um die Frage: welche </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:55:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:55:50</span></span></span><i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >unendlichen</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:55:50');"
+                >emu_content/03/03-00-Computability-NaturalNumbers.emu:55:50</span></span></span></i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 Funktionen können wir überhaupt
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:55:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:55:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >berechnen? Und was gilt denn überhaupt als zulässiges Modell für Berechenbarkeit?</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:56:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:56:50</span></span></span>
         </p>
-        <p>Wenn wir nun also über Funktionen \(f: X \rightarrow Y\) auf unendlichen Mengen sprechen und uns
-          fragen,
-          welche durch eine 
-          <i>endliche Rechenvorschrift</i>
-           beschrieben werden können, dann
-          müssen wir erst einmal entscheiden, mit welcher unendlichen Menge wir uns beschäftigen.
-          Eine Bedingung sollte zum Beispiel sein, dass wir Input und Output vollständig hinschreiben können.
-          (Denn wenn der Input bereits unendlich groß wäre, wie sollten wir überhaupt über Berechenbarkeit
-          sprechen?)
-          Für uns als Informatiker wäre doch folgende Menge am naheliegendsten:
-          $$\begin{align*}
+        <p><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Wenn wir nun also über Funktionen </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:59:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:59:50</span></span></span>\(f: X \rightarrow Y\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 auf unendlichen Mengen sprechen und uns
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:59:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:59:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >fragen,</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:60:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:60:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >welche durch eine </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:61:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:61:50</span></span></span><i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >endliche Rechenvorschrift</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:61:50');"
+                >emu_content/03/03-00-Computability-NaturalNumbers.emu:61:50</span></span></span></i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 beschrieben werden können, dann
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:61:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:61:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >müssen wir erst einmal entscheiden, mit welcher unendlichen Menge wir uns beschäftigen.</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:62:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:62:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Eine Bedingung sollte zum Beispiel sein, dass wir Input und Output vollständig hinschreiben können.</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:63:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:63:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >(Denn wenn der Input bereits unendlich groß wäre, wie sollten wir überhaupt über Berechenbarkeit</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:64:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:64:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >sprechen?)</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:65:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:65:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Für uns als Informatiker wäre doch folgende Menge am naheliegendsten:</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:66:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:66:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:67:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:67:50</span></span></span>$$\begin{align*}
           \{0,1\}^* \ ,
           \end{align*}$$
-          also die Menge aller beliebig langen aber endlichen Bit-Strings. Wir können alle möglichen Dinge
-          (Wörter, Programme, Dateien, natürliche Zahlen, rationale Zahlen) als solche Bit-Strings codieren.
-          Die ersten Wissenschaftler, die sich mit Berechenbarkeit beschäftigten, kamen allerdings
-          aus der Mathematik und Logik, und ganz allgemeinen entstand die Berechenbarkeitstheorie
-          
-          <i>bevor</i>
-          die ersten Rechner gebaut wurden. Daher beschäftigten sich die ersten Forscher auch mit einer
-          anderen, uns sehr vertrauten Menge:
-          $$\begin{align*}
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:69:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:69:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >also die Menge aller beliebig langen aber endlichen Bit-Strings. Wir können alle möglichen Dinge</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:70:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:70:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >(Wörter, Programme, Dateien, natürliche Zahlen, rationale Zahlen) als solche Bit-Strings codieren.</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:71:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:71:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Die ersten Wissenschaftler, die sich mit Berechenbarkeit beschäftigten, kamen allerdings</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:72:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:72:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >aus der Mathematik und Logik, und ganz allgemeinen entstand die Berechenbarkeitstheorie</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:73:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:73:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:74:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:74:50</span></span></span><i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >bevor</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:74:50');"
+                >emu_content/03/03-00-Computability-NaturalNumbers.emu:74:50</span></span></span></i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:74:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:74:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >die ersten Rechner gebaut wurden. Daher beschäftigten sich die ersten Forscher auch mit einer</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:75:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:75:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >anderen, uns sehr vertrauten Menge:</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:76:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:76:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:77:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:77:50</span></span></span>$$\begin{align*}
           \mathbb{N} \ ,
           \end{align*}$$
-          den natürlichen Zahlen. Im letzten Kapitel haben wir ja unter anderen bewiesen, dass diese
-          gleichmächtig sind:
-          \(\{0,1\}^* \cong \N\) und haben auch eine Bijektion kennengelernt, beispielsweise
-          $$\begin{align*}
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:79:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:79:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >den natürlichen Zahlen. Im letzten Kapitel haben wir ja unter anderen bewiesen, dass diese</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:80:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:80:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >gleichmächtig sind:</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:81:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:81:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:82:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:82:50</span></span></span>\(\{0,1\}^* \cong \N\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 und haben auch eine Bijektion kennengelernt, beispielsweise
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:82:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:82:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:83:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:83:50</span></span></span>$$\begin{align*}
           f : \{0,1\}^*&amp;\rightarrow \N \\
           (x_1, \dots, x_n)&amp;\mapsto (1 x_1\dots x_n)_2 - 1\ ,
           \end{align*}$$
-          wir stellen also dem Bitstring \(x_1,\dots,x_n\) eine 1 voran und interpretieren das Ergebnis als
-          natürliche Zahl;
-          dann ziehen wir 1 ab.
-          Es ist also für die Entwicklung eines Berechenbarkeitsbegriffs mehr oder weniger egal, ob wir mit
-          \(\N\) oder \(\{0,1\}^*\) arbeiten - sofern die obige Bijektion \(f\) selbst "berechenbar" ist.
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:86:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:86:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >wir stellen also dem Bitstring </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:87:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:87:50</span></span></span>\(x_1,\dots,x_n\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 eine 1 voran und interpretieren das Ergebnis als
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:87:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:87:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >natürliche Zahl;</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:88:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:88:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >dann ziehen wir 1 ab.</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:89:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:89:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Es ist also für die Entwicklung eines Berechenbarkeitsbegriffs mehr oder weniger egal, ob wir mit</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:90:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:90:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:91:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:91:50</span></span></span>\(\N\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 oder 
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:91:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:91:50</span></span></span>\(\{0,1\}^*\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 arbeiten - sofern die obige Bijektion 
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:91:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:91:50</span></span></span>\(f\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 selbst "berechenbar" ist.
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:91:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:91:50</span></span></span>
         </p>
-        <p>Wir werden in diesem Kapitel mehrere Berechenbarkeitsmodelle für Funktionen
-          \(f: \N \rightarrow \N\) kennenlernen. Die beste Einstellung Ihrerseits ist, diese Modelle
-          als primitive, sehr reduzierte Programmiersprachen zu betrachten.
+        <p><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Wir werden in diesem Kapitel mehrere Berechenbarkeitsmodelle für Funktionen</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:94:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:94:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:95:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:95:50</span></span></span>\(f: \N \rightarrow \N\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 kennenlernen. Die beste Einstellung Ihrerseits ist, diese Modelle
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:95:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:95:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >als primitive, sehr reduzierte Programmiersprachen zu betrachten.</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/03/03-00-Computability-NaturalNumbers.emu:96:50');"
+              >emu_content/03/03-00-Computability-NaturalNumbers.emu:96:50</span></span></span>
         </p>
       </div>
     </div>

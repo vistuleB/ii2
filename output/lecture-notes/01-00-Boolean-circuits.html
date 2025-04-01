@@ -18,10 +18,10 @@
 </head>
 <body>
 <section
-  count={1}
+  count="1"
   title_gr="Schaltkreise"
   title_en="Boolean circuits"
-  number={1.0}
+  number="1.0"
   counter="DefCtr"
   counter="ExoCtr"
   path="/lecture-notes1"
@@ -31,7 +31,14 @@
   >
     <a
       href="../vorlesungsskript.html"
-    >Inhaltsverzeichnis</a>
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >Inhaltsverzeichnis</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:12:50');"
+          >emu_content/01/01-00-Boolean-circuits.emu:12:50</span></span></span></a>
   </div>
   <div
     id="link-to-overview"
@@ -39,9 +46,23 @@
   >
     <a
       href="/"
-    >zur Kursübersicht</a><a
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >zur Kursübersicht</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:19:50');"
+          >emu_content/01/01-00-Boolean-circuits.emu:19:50</span></span></span></a><a
       href="01-01-Fanin-Size-Depth.html"
-    >Kapitel 1.1 &gt;&gt;</a>
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >Kapitel 1.1 &gt;&gt;</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:23:50');"
+          >emu_content/01/01-00-Boolean-circuits.emu:23:50</span></span></span></a>
   </div>
   <div
     id="rightSideWrapper"
@@ -57,21 +78,115 @@
         >
           <span
             class="chapterTitle"
-          >1.
-            Boolesche Schaltkreise
-          </span>
+          ><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >1.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:35:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:35:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Boolesche Schaltkreise</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:36:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:36:50</span></span></span></span>
         </h1>
-        Boolesche Schaltkreise sind ein idealisiertes Modell echter elektronischer Schaltkreise.
-        Als primitive Bausteine haben wir Boolesche Operatoren, auch 
-        <i>Gatter</i>
-         (englisch 
-        <i>gates</i>)
-        genannt, die mehrere (typischerweise ein oder zwei)
-        Signale zu einem Ausgabe-Signal kombinieren. Die Signale können nur zwei Werte annehmen:
-        wahr/falsch bzw. 1/0 bzw. 
-        <tt>true/false
+        <span><span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >Boolesche Schaltkreise sind ein idealisiertes Modell echter elektronischer Schaltkreise.</span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:37:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:37:50</span></span>
+          
+          <span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >Als primitive Bausteine haben wir Boolesche Operatoren, auch </span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:38:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:38:50</span></span></span><i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Gatter</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:38:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:38:50</span></span></span></i><span><span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >
+               (englisch 
+            </span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:38:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:38:50</span></span></span><i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >gates</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:38:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:38:50</span></span></span></i><span><span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >)</span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:38:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:38:50</span></span>
+          
+          <span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >genannt, die mehrere (typischerweise ein oder zwei)</span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:39:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:39:50</span></span>
+          
+          <span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >Signale zu einem Ausgabe-Signal kombinieren. Die Signale können nur zwei Werte annehmen:</span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:40:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:40:50</span></span>
+          
+          <span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >wahr/falsch bzw. 1/0 bzw. </span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:41:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:41:50</span></span></span>
+        <tt><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >true/false</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:44:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:44:50</span></span></span>
         </tt>
-        . Hier sehen Sie die drei üblichsten Gatter:
+        <span><span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >. Hier sehen Sie die drei üblichsten Gatter:</span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:45:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:45:50</span></span></span>
         <figure>
           <img
             style="height:10em"
@@ -79,27 +194,211 @@
             loading="lazy"
           >
         </figure>
-        Von links nach rechts sind dies: das Und-Gatter (
-        <i>and-gate</i>), Oder-Gatter (<i>or-gate</i>) und
-        das
-        Nicht-Gatter (
-        <i>not-gate</i>). In C, C++ und Java kennen Sie diese Booleschen Operatoren als
-        
-        <code>&&
+        <span><span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >Von links nach rechts sind dies: das Und-Gatter (</span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:51:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:51:50</span></span></span><i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >and-gate</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:51:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:51:50</span></span></span></i><span><span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >), Oder-Gatter (</span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:51:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:51:50</span></span></span><i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >or-gate</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:51:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:51:50</span></span></span></i><span><span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >) und</span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:51:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:51:50</span></span>
+          
+          <span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >das</span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:52:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:52:50</span></span>
+          
+          <span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >Nicht-Gatter (</span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:53:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:53:50</span></span></span><i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >not-gate</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:53:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:53:50</span></span></span></i><span><span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >). In C, C++ und Java kennen Sie diese Booleschen Operatoren als</span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:53:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:53:50</span></span>
+          
+          <span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            ></span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:54:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:54:50</span></span></span>
+        <code><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >&&</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:54:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:54:50</span></span></span>
         </code>
-        , 
-        <code>||
+        <span><span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >, </span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:54:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:54:50</span></span></span>
+        <code><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >||</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:54:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:54:50</span></span></span>
         </code>
-         und 
-        <code>!
+        <span><span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >
+               und 
+            </span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:54:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:54:50</span></span></span>
+        <code><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >!</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:54:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:54:50</span></span></span>
         </code>
-        . Was diese Operatoren
-        
-        <i>tun</i>, können wir als <i>Wahrheitstabelle</i>
-         darstellen.
-        Wir listen alle Kombinationen für \(x,y\) auf und schreiben in jede Zeile
-        auch den Wert, den der Operator ausgibt.
-        $$
+        <span><span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >. Was diese Operatoren</span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:54:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:54:50</span></span>
+          
+          <span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            ></span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:55:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:55:50</span></span></span><i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >tun</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:55:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:55:50</span></span></span></i><span><span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >, können wir als </span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:55:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:55:50</span></span></span><i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Wahrheitstabelle</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:55:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:55:50</span></span></span></i><span><span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >
+               darstellen.
+            </span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:55:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:55:50</span></span>
+          
+          <span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >Wir listen alle Kombinationen für </span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:56:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:56:50</span></span></span>\(x,y\)<span><span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >
+               auf und schreiben in jede Zeile
+            </span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:56:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:56:50</span></span>
+          
+          <span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >auch den Wert, den der Operator ausgibt.</span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:57:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:57:50</span></span>
+          
+          <span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            ></span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:58:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:58:50</span></span></span>$$
         \begin{array}{ll|l}
         x&amp;y&amp;x \wedge y \\ \hline
         0&amp;0&amp;0 \\
@@ -122,12 +421,110 @@
         1&amp;0 \\
         \end{array}
         $$
-        Die dritte Zeile der mittleren Tabelle sagt beispielsweise aus, dass
-        \(1 \vee 0 = 1\) gilt.
-        <p>Vielleicht wünschen Sie sich noch mehr Gates, zum Beispiel
-          ein if-then-else-Gate mit drei Inputs \(x,y,z\), welches
-          \(y\) ausgibt, wenn \(x\) wahr ist und ansonsten \(z\) ausgibt.
-          So ein Gate können Sie sich einfach aus And, Or, Not bauen:
+        <span><span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            ></span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:80:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:80:50</span></span>
+          
+          <span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >Die dritte Zeile der mittleren Tabelle sagt beispielsweise aus, dass</span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:81:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:81:50</span></span>
+          
+          <span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            ></span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:82:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:82:50</span></span></span>\(1 \vee 0 = 1\)<span><span
+            class="tooltip-3003-container"
+          ><span
+              class="tooltip-3003-text"
+            >
+               gilt.
+            </span><span
+              class="tooltip-3003"
+              onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:82:50');"
+            >emu_content/01/01-00-Boolean-circuits.emu:82:50</span></span></span>
+        <p><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Vielleicht wünschen Sie sich noch mehr Gates, zum Beispiel</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:85:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:85:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >ein if-then-else-Gate mit drei Inputs </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:86:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:86:50</span></span></span>\(x,y,z\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >, welches</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:86:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:86:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:87:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:87:50</span></span></span>\(y\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 ausgibt, wenn 
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:87:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:87:50</span></span></span>\(x\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 wahr ist und ansonsten 
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:87:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:87:50</span></span></span>\(z\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 ausgibt.
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:87:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:87:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >So ein Gate können Sie sich einfach aus And, Or, Not bauen:</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:88:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:88:50</span></span></span>
         </p>
         <figure>
           <img
@@ -135,23 +532,149 @@
             src="../img/circuits/if-then-else-gate.svg"
             loading="lazy"
           >
-          <figcaption>
-            <code>if
+          <figcaption><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:96:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:96:50</span></span></span>
+            <code><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >if</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:96:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:96:50</span></span></span>
             </code>
-             \(x\) 
-            <code>then
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:96:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:96:50</span></span></span>\(x\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:96:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:96:50</span></span></span>
+            <code><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >then</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:96:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:96:50</span></span></span>
             </code>
-             \(y\) 
-            <code>else
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:96:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:96:50</span></span></span>\(y\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:96:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:96:50</span></span></span>
+            <code><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >else</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:96:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:96:50</span></span></span>
             </code>
-             \(z\)
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:96:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:96:50</span></span></span>\(z\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:96:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:96:50</span></span></span>
           </figcaption>
         </figure>
-        <p>Jeder Schaltkreis <i>berechnet</i>
-           eine Funktion (formale Definition weiter unten).
-          Informell gesprochen, wenn wir Wahrheitswerte (0/1) in die Input-Gates reinstecken,
-          dann fließen diese durch den Schaltkreis und werden von den AND/OR/NOT-Gates entsprechend
-          ihrer Funktion kombiniert und werden schließlich an den Output-Gates ausgegeben:
+        <p><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Jeder Schaltkreis </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:99:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:99:50</span></span></span><i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >berechnet</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:99:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:99:50</span></span></span></i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 eine Funktion (formale Definition weiter unten).
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:99:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:99:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Informell gesprochen, wenn wir Wahrheitswerte (0/1) in die Input-Gates reinstecken,</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:100:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:100:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >dann fließen diese durch den Schaltkreis und werden von den AND/OR/NOT-Gates entsprechend</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:101:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:101:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >ihrer Funktion kombiniert und werden schließlich an den Output-Gates ausgegeben:</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:102:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:102:50</span></span></span>
         </p>
         <figure>
           <img
@@ -159,7 +682,14 @@
             src="../img/circuits/if-then-else-gate-with-values.svg"
             loading="lazy"
           >
-          <figcaption>Das if-then-else-Gate mit einer konkreten Belegung und einem Ausgabewert
+          <figcaption><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Das if-then-else-Gate mit einer konkreten Belegung und einem Ausgabewert</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:110:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:110:50</span></span></span>
           </figcaption>
         </figure>
         <div
@@ -167,45 +697,302 @@
         >
           <span
             class="numbered-title"
-          >Übungsaufgabe <NumberedTitle>1.0.1</NumberedTitle>
-             
-          </span>Bauen Sie folgende Gates aus And-, Or- und Not-Gates zusammen:
+          ><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Übungsaufgabe </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:116:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:116:50</span></span></span><NumberedTitle><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >1.0.1</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:119:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:119:50</span></span></span></NumberedTitle><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:120:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:120:50</span></span></span></span><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Bauen Sie folgende Gates aus And-, Or- und Not-Gates zusammen:</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:121:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:121:50</span></span></span>
           <ol>
-            <li>Ein XOR-Gate \(x \oplus y\). Es gibt 1 aus, wenn einer der beiden
-              Inputs 1 ist und der andere 0.
+            <li><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Ein XOR-Gate </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:125:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:125:50</span></span></span>\(x \oplus y\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >. Es gibt 1 aus, wenn einer der beiden</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:125:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:125:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Inputs 1 ist und der andere 0.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:126:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:126:50</span></span></span>
             </li>
-            <li>Ein Majority-Gate \({\rm Maj}(x,y,z)\). Es gibt 1 aus, wenn mindestens zwei seiner Inputs
-              1 ist.
+            <li><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Ein Majority-Gate </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:129:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:129:50</span></span></span>\({\rm Maj}(x,y,z)\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >. Es gibt 1 aus, wenn mindestens zwei seiner Inputs</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:129:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:129:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >1 ist.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:130:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:130:50</span></span></span>
             </li>
-            <li>Ein \(n\)-faches XOR-Gate
+            <li><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Ein </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:133:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:133:50</span></span></span>\(n\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >-faches XOR-Gate</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:133:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:133:50</span></span></span>
               <figure>
                 <img
                   style="height:5em"
                   src="../img/circuits/n-fold-xor.svg"
                   loading="lazy"
                 >
-                 ,
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       ,
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:139:50');"
+                    >emu_content/01/01-00-Boolean-circuits.emu:139:50</span></span></span>
               </figure>
-              welches 1 ausgibt, wenn eine 
-              <i>ungerade</i>
-               Anzahl seiner Inputs
-              auf 1 stehen.
+              <span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >welches 1 ausgibt, wenn eine </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:140:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:140:50</span></span></span><i><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >ungerade</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:140:50');"
+                    >emu_content/01/01-00-Boolean-circuits.emu:140:50</span></span></span></i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     Anzahl seiner Inputs
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:140:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:140:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >auf 1 stehen.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:141:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:141:50</span></span></span>
             </li>
-            <li>Ein \(n\)-faches Majority-Gate
-              \({\rm Maj} (x_1,\dots,x_n)\), welches 1 ausgibt, wenn mehr als
-              \(n/2\) der Inputs auf 1 stehen. Sie können annehmen, dass \(n\) ungerade
-              ist, wenn es Ihnen hilft.
-              <p>Können Sie vermeiden, dass Ihr Schaltkreis riesengroß wird?
-                Kriegen Sie beispielsweise für \(n = 99\) einen Schaltkreis hin,
-                den man realistischerweise herstellen kann?
+            <li><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Ein </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:144:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:144:50</span></span></span>\(n\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >-faches Majority-Gate</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:144:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:144:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:145:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:145:50</span></span></span>\({\rm Maj} (x_1,\dots,x_n)\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >, welches 1 ausgibt, wenn mehr als</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:145:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:145:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:146:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:146:50</span></span></span>\(n/2\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     der Inputs auf 1 stehen. Sie können annehmen, dass 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:146:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:146:50</span></span></span>\(n\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     ungerade
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:146:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:146:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >ist, wenn es Ihnen hilft.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:147:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:147:50</span></span></span>
+              <p><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Können Sie vermeiden, dass Ihr Schaltkreis riesengroß wird?</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:150:50');"
+                    >emu_content/01/01-00-Boolean-circuits.emu:150:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Kriegen Sie beispielsweise für </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:151:50');"
+                    >emu_content/01/01-00-Boolean-circuits.emu:151:50</span></span></span>\(n = 99\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       einen Schaltkreis hin,
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:151:50');"
+                    >emu_content/01/01-00-Boolean-circuits.emu:151:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >den man realistischerweise herstellen kann?</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:152:50');"
+                    >emu_content/01/01-00-Boolean-circuits.emu:152:50</span></span></span>
               </p>
             </li>
           </ol>
         </div>
-        <p>Je nach Kontext kann es hilfreich sein, Gatter mit beliebig vielen Inputs zuzulassen, beispielsweise
-          \(x_1 \wedge x_2 \wedge \dots \wedge x_n\) als 
-          <i>ein</i>
-           Gate darzustellen:
+        <p><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Je nach Kontext kann es hilfreich sein, Gatter mit beliebig vielen Inputs zuzulassen, beispielsweise</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:155:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:155:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:156:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:156:50</span></span></span>\(x_1 \wedge x_2 \wedge \dots \wedge x_n\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 als 
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:156:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:156:50</span></span></span><i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >ein</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:156:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:156:50</span></span></span></i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 Gate darzustellen:
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:156:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:156:50</span></span></span>
         </p>
         <figure>
           <img
@@ -214,12 +1001,87 @@
             loading="lazy"
           >
         </figure>
-        <p>Man bezeichnet dies als AND-Gate mit einem <i>Fan-in</i>
-           von \(n\). Das "normale" AND-Gate
-          hat einen Fan-in von 2.
-          Mit \(\vee\)- und \(\oplus\)-Gates geht das ganz analog. Für andere Gates (wie zum Beispiel
-          ein if-then-else-Gate) würde das keinen Sinn machen. Größerer Fan-in ist aber nicht wirklich etwas
-          neues unter der Sonne: Sie können jederzeit großen Fan-in durch kleinen simulieren:
+        <p><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Man bezeichnet dies als AND-Gate mit einem </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:162:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:162:50</span></span></span><i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Fan-in</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:162:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:162:50</span></span></span></i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 von 
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:162:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:162:50</span></span></span>\(n\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >. Das "normale" AND-Gate</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:162:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:162:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >hat einen Fan-in von 2.</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:163:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:163:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Mit </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:164:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:164:50</span></span></span>\(\vee\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >- und </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:164:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:164:50</span></span></span>\(\oplus\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >-Gates geht das ganz analog. Für andere Gates (wie zum Beispiel</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:164:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:164:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >ein if-then-else-Gate) würde das keinen Sinn machen. Größerer Fan-in ist aber nicht wirklich etwas</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:165:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:165:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >neues unter der Sonne: Sie können jederzeit großen Fan-in durch kleinen simulieren:</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:166:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:166:50</span></span></span>
         </p>
         <figure>
           <img
@@ -228,7 +1090,14 @@
             loading="lazy"
           >
         </figure>
-        <p>Also als geschachteltes AND, oder aber in Form eines Binärbaums:
+        <p><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Also als geschachteltes AND, oder aber in Form eines Binärbaums:</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:172:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:172:50</span></span></span>
         </p>
         <figure>
           <img
@@ -239,12 +1108,57 @@
         </figure>
         <p>
         </p>
-        <p>Schaltkreise, wie wir sie in diesem Kapitel betrachten, sind immer azyklisch. Das heißt
-          insbesondere,
-          das Dinge mit "Feedback-Schleifen" wie Flipflops eben 
-          <i>keine</i>
-           Schaltkreis in unserem Sinn
-          sind:
+        <p><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Schaltkreise, wie wir sie in diesem Kapitel betrachten, sind immer azyklisch. Das heißt</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:180:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:180:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >insbesondere,</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:181:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:181:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >das Dinge mit "Feedback-Schleifen" wie Flipflops eben </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:182:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:182:50</span></span></span><i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >keine</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:182:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:182:50</span></span></span></i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 Schaltkreis in unserem Sinn
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:182:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:182:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >sind:</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:183:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:183:50</span></span></span>
         </p>
         <figure>
           <img
@@ -253,96 +1167,821 @@
             loading="lazy"
           >
         </figure>
-        <p>Das Flipflop zeigt ein interessantes Verhalten: wenn \({\rm Reset} = 0, {\rm Set} = 1\) ist,
-          so ist der Ausgabe-Wert des unteren OR-Gates auf jeden Fall 1, und somit
-          ist \(\bar{Q} = 0\); somit sind wiederum beide Input-Werte des oberen OR-Gates 0 und
-          \(Q=1\). Wenn \({\rm Reset} = 1, {\rm Set} = 0\), dann ist
-          analog \(Q = 0, \bar{Q}=1\). Wenn \({\rm Reset} = {\rm Set} = 0\), dann
-          leiten beide OR-Gates einfach die Werte der anderen, von rechts kommenden
-          Kabel durch, und somit gilt \(Q = \neg \bar{Q}\) und \(\bar{Q} = \neg Q\);
-          das heißt, die Werte, die zuvor bestanden, bestehen weiter. Das Flipflop
-          implementiert somit einen 1-Bit-Speicher (die Kombination
-          \({\rm Set} = {\rm Reset} = 1\) würde \(Q = \bar{Q} = 0\) erzeugen und gilt als illegale
-          Eingabe). Ein Flipflop hat somit einen 
-          <i>inneren Zustand</i>. Die Schaltkreise
-          in diesem Kapitel haben 
-          <i>keinen</i>
-           inneren Zustand: die Werte der Ausgabe-Gates sind
-          vollständig durch die Werte der Input-Gates determiniert. Wir sind nun bereit
-          für eine formale Definition von Schaltkreisen.
+        <p><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Das Flipflop zeigt ein interessantes Verhalten: wenn </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:191:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:191:50</span></span></span>\({\rm Reset} = 0, {\rm Set} = 1\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 ist,
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:191:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:191:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >so ist der Ausgabe-Wert des unteren OR-Gates auf jeden Fall 1, und somit</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:192:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:192:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >ist </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:193:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:193:50</span></span></span>\(\bar{Q} = 0\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >; somit sind wiederum beide Input-Werte des oberen OR-Gates 0 und</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:193:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:193:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:194:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:194:50</span></span></span>\(Q=1\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >. Wenn </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:194:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:194:50</span></span></span>\({\rm Reset} = 1, {\rm Set} = 0\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >, dann ist</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:194:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:194:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >analog </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:195:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:195:50</span></span></span>\(Q = 0, \bar{Q}=1\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >. Wenn </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:195:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:195:50</span></span></span>\({\rm Reset} = {\rm Set} = 0\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >, dann</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:195:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:195:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >leiten beide OR-Gates einfach die Werte der anderen, von rechts kommenden</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:196:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:196:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Kabel durch, und somit gilt </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:197:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:197:50</span></span></span>\(Q = \neg \bar{Q}\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 und 
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:197:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:197:50</span></span></span>\(\bar{Q} = \neg Q\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >;</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:197:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:197:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >das heißt, die Werte, die zuvor bestanden, bestehen weiter. Das Flipflop</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:198:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:198:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >implementiert somit einen 1-Bit-Speicher (die Kombination</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:199:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:199:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:200:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:200:50</span></span></span>\({\rm Set} = {\rm Reset} = 1\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 würde 
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:200:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:200:50</span></span></span>\(Q = \bar{Q} = 0\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 erzeugen und gilt als illegale
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:200:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:200:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Eingabe). Ein Flipflop hat somit einen </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:201:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:201:50</span></span></span><i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >inneren Zustand</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:201:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:201:50</span></span></span></i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >. Die Schaltkreise</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:201:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:201:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >in diesem Kapitel haben </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:202:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:202:50</span></span></span><i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >keinen</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:202:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:202:50</span></span></span></i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 inneren Zustand: die Werte der Ausgabe-Gates sind
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:202:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:202:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >vollständig durch die Werte der Input-Gates determiniert. Wir sind nun bereit</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:203:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:203:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >für eine formale Definition von Schaltkreisen.</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:204:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:204:50</span></span></span>
         </p>
         <div
           class="well container theorem"
         >
           <span
             class="numbered-title"
-          >Definition <NumberedTitle>1.0.1</NumberedTitle>
-             
-          </span>
-           
-          <b>(Boolesche Schaltkreise)</b>
-          <p>Ein Boolescher Schaltkreis ist ein gerichteter, azyklischer Graph (englisch
-            
-            <i>directed acyclic graph</i>, kurz <i>DAG</i>), in welchem jeder
-            Knoten entweder
+          ><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Definition </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:210:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:210:50</span></span></span><NumberedTitle><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >1.0.1</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:213:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:213:50</span></span></span></NumberedTitle><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:214:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:214:50</span></span></span></span><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:215:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:215:50</span></span></span><b><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >(Boolesche Schaltkreise)</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:215:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:215:50</span></span></span></b><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:215:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:215:50</span></span></span>
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Ein Boolescher Schaltkreis ist ein gerichteter, azyklischer Graph (englisch</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:218:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:218:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:219:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:219:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >directed acyclic graph</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:219:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:219:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >, kurz </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:219:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:219:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >DAG</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:219:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:219:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >), in welchem jeder</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:219:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:219:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Knoten entweder</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:220:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:220:50</span></span></span>
           </p>
           <ul>
-            <li>ein Input-Gate ist und mit einer Input-Variable oder eine Booleschen Konstant (0 oder 1)
-              beschriftet ist und
-              keine eingehenden Kanten hat (in-degree 0), oder
+            <li><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >ein Input-Gate ist und mit einer Input-Variable oder eine Booleschen Konstant (0 oder 1)</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:224:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:224:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >beschriftet ist und</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:225:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:225:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >keine eingehenden Kanten hat (in-degree 0), oder</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:226:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:226:50</span></span></span>
             </li>
-            <li>mit AND-, OR- oder NOT beschriftet ist, 
+            <li><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >mit AND-, OR- oder NOT beschriftet ist, </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:229:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:229:50</span></span></span>
             </li>
           </ul>
-          <p>wobei die mit NOT beschrifteten Knoten genau eine eingehende Kante haben
-            und die mit AND oder OR beschrifteten Knoten mindestens zwei eingehende Kanten haben. Mindestens
-            ein Knoten ist als 
-            <i>Output-Gate</i>
-             gekennzeichnet. Die Output-Gates sind ihrerseits
-            mit Output-Variablen \(y_1,\dots,y_m\) beschriftet.
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >wobei die mit NOT beschrifteten Knoten genau eine eingehende Kante haben</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:230:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:230:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >und die mit AND oder OR beschrifteten Knoten mindestens zwei eingehende Kanten haben. Mindestens</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:231:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:231:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >ein Knoten ist als </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:232:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:232:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Output-Gate</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:232:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:232:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   gekennzeichnet. Die Output-Gates sind ihrerseits
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:232:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:232:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >mit Output-Variablen </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:233:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:233:50</span></span></span>\(y_1,\dots,y_m\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   beschriftet.
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:233:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:233:50</span></span></span>
           </p>
         </div>
-        <p>Oft haben wir es mit Schaltkreisen mit nur einem Output-Gate zu tun; in diesem
-          Falle lassen wir die Beschriftung auch gerne weg, weil sie keine zusätzliche Information
-          bringt.
-          Wenn wir allen Input-Variablen eines Schaltkreises \(C\) einen Wahrheitswert zugewiesen bekommen
-          haben,
-          dann können wir den Schaltkreis von "unten" (Input-Gates) nach "oben" (Output-Gates)
-          
-          <i>auswerten</i>,
-          indem eben jeder mit OR/AND/NOT beschriftete
-          Knoten den ihm zugeordnete Booleschen Operator auswertet. Es ist klar, dass
-          der Schaltkreis \(C\) eine 
-          <i>Funktion</i>
-           \(f_C : \{0,1\}^n \rightarrow \{0,1\}^m\) berechnet.
-          Oft schreiben wir einfach \(C : \{0,1\}^n \rightarrow \{0,1\}^m\).
+        <p><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Oft haben wir es mit Schaltkreisen mit nur einem Output-Gate zu tun; in diesem</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:236:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:236:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Falle lassen wir die Beschriftung auch gerne weg, weil sie keine zusätzliche Information</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:237:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:237:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >bringt.</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:238:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:238:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Wenn wir allen Input-Variablen eines Schaltkreises </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:239:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:239:50</span></span></span>\(C\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 einen Wahrheitswert zugewiesen bekommen
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:239:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:239:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >haben,</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:240:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:240:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >dann können wir den Schaltkreis von "unten" (Input-Gates) nach "oben" (Output-Gates)</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:241:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:241:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:242:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:242:50</span></span></span><i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >auswerten</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:242:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:242:50</span></span></span></i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >,</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:242:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:242:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >indem eben jeder mit OR/AND/NOT beschriftete</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:243:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:243:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Knoten den ihm zugeordnete Booleschen Operator auswertet. Es ist klar, dass</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:244:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:244:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >der Schaltkreis </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:245:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:245:50</span></span></span>\(C\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 eine 
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:245:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:245:50</span></span></span><i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Funktion</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:245:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:245:50</span></span></span></i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:245:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:245:50</span></span></span>\(f_C : \{0,1\}^n \rightarrow \{0,1\}^m\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 berechnet.
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:245:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:245:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Oft schreiben wir einfach </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:246:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:246:50</span></span></span>\(C : \{0,1\}^n \rightarrow \{0,1\}^m\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >.</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:246:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:246:50</span></span></span>
         </p>
         <div
           class="well container theorem"
         >
           <span
             class="numbered-title"
-          >Beobachtung <NumberedTitle>1.0.2</NumberedTitle>
-             
-          </span>Ein Schaltkreis \(C\) mit \(n\) Input-Gates und \(m\) Output-Gates berechnet
-          eine Funktion \(f_C : \{0,1\}^n \rightarrow \{0,1\}^m\).
+          ><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Beobachtung </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:252:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:252:50</span></span></span><NumberedTitle><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >1.0.2</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:255:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:255:50</span></span></span></NumberedTitle><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:256:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:256:50</span></span></span></span><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Ein Schaltkreis </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:257:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:257:50</span></span></span>\(C\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 mit 
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:257:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:257:50</span></span></span>\(n\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 Input-Gates und 
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:257:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:257:50</span></span></span>\(m\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 Output-Gates berechnet
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:257:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:257:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >eine Funktion </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:258:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:258:50</span></span></span>\(f_C : \{0,1\}^n \rightarrow \{0,1\}^m\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >.</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:258:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:258:50</span></span></span>
         </div>
-        <p>Es ist auch nicht weiter überraschend,
-          dass es Schaltkreise für die gleiche Funktion geben kann (sie haben für die Funktion
-          \(x_1 \wedge \dots \wedge x_n)\) auch bereits drei verschiedene Schaltkreise gesehen,
-          und im Rahmen der obigen Übungsaufgabe wohl auch mehrere Schaltkreise, die das gleiche tun,
-          entwickelt.
+        <p><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Es ist auch nicht weiter überraschend,</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:261:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:261:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >dass es Schaltkreise für die gleiche Funktion geben kann (sie haben für die Funktion</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:262:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:262:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:263:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:263:50</span></span></span>\(x_1 \wedge \dots \wedge x_n)\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 auch bereits drei verschiedene Schaltkreise gesehen,
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:263:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:263:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >und im Rahmen der obigen Übungsaufgabe wohl auch mehrere Schaltkreise, die das gleiche tun,</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:264:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:264:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >entwickelt.</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:265:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:265:50</span></span></span>
         </p>
         <div
           class="well container theorem"
         >
           <span
             class="numbered-title"
-          >Definition <NumberedTitle>1.0.3</NumberedTitle>
-             
-          </span>Zwei Boolesche Schaltkreise \(C, C'\) heißen äquivalent, wenn
-          \(f_C = f_{C'}\), wenn sie also die gleiche Funktion berechnen. Wir schreiben
-          \(C \equiv C'\).
+          ><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Definition </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:271:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:271:50</span></span></span><NumberedTitle><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >1.0.3</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:274:50');"
+                  >emu_content/01/01-00-Boolean-circuits.emu:274:50</span></span></span></NumberedTitle><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:275:50');"
+                >emu_content/01/01-00-Boolean-circuits.emu:275:50</span></span></span></span><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Zwei Boolesche Schaltkreise </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:276:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:276:50</span></span></span>\(C, C'\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 heißen äquivalent, wenn
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:276:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:276:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:277:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:277:50</span></span></span>\(f_C = f_{C'}\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >, wenn sie also die gleiche Funktion berechnen. Wir schreiben</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:277:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:277:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:278:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:278:50</span></span></span>\(C \equiv C'\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >.</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/01/01-00-Boolean-circuits.emu:278:50');"
+              >emu_content/01/01-00-Boolean-circuits.emu:278:50</span></span></span>
         </div>
       </div>
     </div>

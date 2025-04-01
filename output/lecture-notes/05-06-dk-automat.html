@@ -18,10 +18,10 @@
 </head>
 <body>
 <section
-  count={37}
+  count="37"
   title_gr="DK-Automat"
   title_en="dk automat"
-  number={5.6}
+  number="5.6"
   counter="DefCtr"
   counter="ExoCtr"
   path="/lecture-notes37"
@@ -31,9 +31,23 @@
   >
     <a
       href="../vorlesungsskript.html"
-    >Inhaltsverzeichnis</a><a
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >Inhaltsverzeichnis</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:12:50');"
+          >emu_content/05/05-06-dk-automat.emu:12:50</span></span></span></a><a
       href="05-05-d-linker-Rand-und-Bluete.html"
-    >&lt;&lt; Kapitel 5.5</a>
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >&lt;&lt; Kapitel 5.5</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:16:50');"
+          >emu_content/05/05-06-dk-automat.emu:16:50</span></span></span></a>
   </div>
   <div
     id="link-to-overview"
@@ -41,9 +55,23 @@
   >
     <a
       href="/"
-    >zur Kursübersicht</a><a
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >zur Kursübersicht</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:23:50');"
+          >emu_content/05/05-06-dk-automat.emu:23:50</span></span></span></a><a
       href="05-09-general-parsing.html"
-    >Kapitel 5.9 &gt;&gt;</a>
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >Kapitel 5.9 &gt;&gt;</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:27:50');"
+          >emu_content/05/05-06-dk-automat.emu:27:50</span></span></span></a>
   </div>
   <div
     id="rightSideWrapper"
@@ -62,40 +90,325 @@
           >
             <span
               class="subChapterTitle"
-            >5.9
-              Der DK-Automat
-            </span>
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >5.9</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:41:50');"
+                  >emu_content/05/05-06-dk-automat.emu:41:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Der DK-Automat</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:42:50');"
+                  >emu_content/05/05-06-dk-automat.emu:42:50</span></span></span></span>
           </h1>
-          <h2>Von der Grammatik \(\hat{G}\) zu einem nichtdeterministischen
-            endlichen Automaten
+          <h2><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Von der Grammatik </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:45:50');"
+                >emu_content/05/05-06-dk-automat.emu:45:50</span></span></span>\(\hat{G}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   zu einem nichtdeterministischen
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:45:50');"
+                >emu_content/05/05-06-dk-automat.emu:45:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >endlichen Automaten</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:46:50');"
+                >emu_content/05/05-06-dk-automat.emu:46:50</span></span></span>
           </h2>
-          <p>Um den \(LR(0)\)-Parser gemäß<a
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Um den </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:49:50');"
+                >emu_content/05/05-06-dk-automat.emu:49:50</span></span></span>\(LR(0)\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >-Parser gemäß</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:49:50');"
+                >emu_content/05/05-06-dk-automat.emu:49:50</span></span></span><a
               href="./05-05-d-linker-Rand-und-Bluete.html#algorithm-LR-parser"
-            >Algorithmus 5.8.7</a>zu implementieren, müssen wir den Test \(\gamma \stackrel{?}\in
-            \Front(G)\) durchführen und, falls die Antwort 
-            <i>ja</i>
-             ist, die
-            Blüte finden. Dies gelingt uns, indem wir die Grammatik \(\hat{G}\) in
-            einen endlichen Automaten umwandeln.
-            <a
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Algorithmus 5.8.7</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:53:50');"
+                  >emu_content/05/05-06-dk-automat.emu:53:50</span></span></span></a><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >zu implementieren, müssen wir den Test </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:54:50');"
+                >emu_content/05/05-06-dk-automat.emu:54:50</span></span></span>\(\gamma \stackrel{?}\in
+            \Front(G)\)
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   durchführen und, falls die Antwort 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:55:50');"
+                >emu_content/05/05-06-dk-automat.emu:55:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >ja</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:55:50');"
+                  >emu_content/05/05-06-dk-automat.emu:55:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   ist, die
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:55:50');"
+                >emu_content/05/05-06-dk-automat.emu:55:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Blüte finden. Dies gelingt uns, indem wir die Grammatik </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:56:50');"
+                >emu_content/05/05-06-dk-automat.emu:56:50</span></span></span>\(\hat{G}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   in
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:56:50');"
+                >emu_content/05/05-06-dk-automat.emu:56:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >einen endlichen Automaten umwandeln.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:57:50');"
+                >emu_content/05/05-06-dk-automat.emu:57:50</span></span></span><a
               href="./04-03-nfsm.html#regular-grammar-to-fsm"
-            >Theorem 4.3.8</a>und die ihm vorhergehende Konstruktion zeigen, wie man das macht.
-            Anstatt allerdings das Theorem als "black box" zu verwenden, gehen wir
-            die Konstruktion anhand zweier fiktiver Produktion \(X \rightarrow
-            aBcDe\) und \(X \rightarrow uVw\) Schritt für Schritt durch. Wir erkennen
-            die Terminale \(\Sigma = \{a,c,e,u,w\}\) und die Nichtterminale \(N =
-            \{X,B,D,V\}\). In \(\dk{G}\) sind \{a,c,e,u,w,A,B,D,V\} alles Terminale,
-            und die Nichtterminale sind \(\dk{N} = \{\dk{X}, \dk{B}, \dk{D},
-            \dk{V}\}.\) Die Produktionen von \(\hat{G}\) sind $$\begin{align*} \dk{X}&
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Theorem 4.3.8</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:61:50');"
+                  >emu_content/05/05-06-dk-automat.emu:61:50</span></span></span></a><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >und die ihm vorhergehende Konstruktion zeigen, wie man das macht.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:62:50');"
+                >emu_content/05/05-06-dk-automat.emu:62:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Anstatt allerdings das Theorem als "black box" zu verwenden, gehen wir</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:63:50');"
+                >emu_content/05/05-06-dk-automat.emu:63:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >die Konstruktion anhand zweier fiktiver Produktion </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:64:50');"
+                >emu_content/05/05-06-dk-automat.emu:64:50</span></span></span>\(X \rightarrow
+            aBcDe\)
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   und 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:65:50');"
+                >emu_content/05/05-06-dk-automat.emu:65:50</span></span></span>\(X \rightarrow uVw\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   Schritt für Schritt durch. Wir erkennen
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:65:50');"
+                >emu_content/05/05-06-dk-automat.emu:65:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >die Terminale </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:66:50');"
+                >emu_content/05/05-06-dk-automat.emu:66:50</span></span></span>\(\Sigma = \{a,c,e,u,w\}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   und die Nichtterminale 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:66:50');"
+                >emu_content/05/05-06-dk-automat.emu:66:50</span></span></span>\(N =
+            \{X,B,D,V\}\)
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >. In </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:67:50');"
+                >emu_content/05/05-06-dk-automat.emu:67:50</span></span></span>\(\dk{G}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   sind \{a,c,e,u,w,A,B,D,V\} alles Terminale,
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:67:50');"
+                >emu_content/05/05-06-dk-automat.emu:67:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >und die Nichtterminale sind </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:68:50');"
+                >emu_content/05/05-06-dk-automat.emu:68:50</span></span></span>\(\dk{N} = \{\dk{X}, \dk{B}, \dk{D},
+            \dk{V}\}.\)
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   Die Produktionen von 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:69:50');"
+                >emu_content/05/05-06-dk-automat.emu:69:50</span></span></span>\(\hat{G}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   sind 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:69:50');"
+                >emu_content/05/05-06-dk-automat.emu:69:50</span></span></span>$$\begin{align*} \dk{X}&
             \rightarrow a\dk{B} \\ \dk{X}&amp;\rightarrow a\dkt{B}c\dk{D} \\ \dk{X}
             &amp;\rightarrow a\dkt{B}c\dkt{D}e \\&amp;\\ \dk{X}&amp;\rightarrow u\dk{V}
             \\ \dk{X}&amp;\rightarrow u\dkt{V}w \end{align*}$$
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:72:50');"
+                >emu_content/05/05-06-dk-automat.emu:72:50</span></span></span>
           </p>
-          <p>Diese übersetzen wir in einen verallgemeinert nichtdeterministischen
-            Automaten, bei dem jede Kante mit einem Wort \(\beta \in (\Sigma \cup
-            N)^*\), also aus 
-            <i>Terminalen</i>
-            der Grammatik \(\dk{G}\) beschriftet ist:
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Diese übersetzen wir in einen verallgemeinert nichtdeterministischen</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:75:50');"
+                >emu_content/05/05-06-dk-automat.emu:75:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Automaten, bei dem jede Kante mit einem Wort </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:76:50');"
+                >emu_content/05/05-06-dk-automat.emu:76:50</span></span></span>\(\beta \in (\Sigma \cup
+            N)^*\)
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >, also aus </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:77:50');"
+                >emu_content/05/05-06-dk-automat.emu:77:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Terminalen</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:77:50');"
+                  >emu_content/05/05-06-dk-automat.emu:77:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:77:50');"
+                >emu_content/05/05-06-dk-automat.emu:77:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >der Grammatik </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:78:50');"
+                >emu_content/05/05-06-dk-automat.emu:78:50</span></span></span>\(\dk{G}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   beschriftet ist:
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:78:50');"
+                >emu_content/05/05-06-dk-automat.emu:78:50</span></span></span>
           </p>
           <figure>
             <img
@@ -103,8 +416,23 @@
               src="../img/context-free/LR/hat-G-to-generalized-automaton.svg"
             >
           </figure>
-          <p>Wir brechen die Kanten in Stücke, so dass jede mit genau einem Zeichen
-            beschriftet ist:
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Wir brechen die Kanten in Stücke, so dass jede mit genau einem Zeichen</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:85:50');"
+                >emu_content/05/05-06-dk-automat.emu:85:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >beschriftet ist:</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:86:50');"
+                >emu_content/05/05-06-dk-automat.emu:86:50</span></span></span>
           </p>
           <figure>
             <img
@@ -112,14 +440,105 @@
               src="../img/context-free/LR/hat-G-to-generalized-automaton-break-edges.svg"
             >
           </figure>
-          <p>Nochmal: jede Kante ist mit einem <i>Terminalsymbol</i>
-             beschriftet.
-            Die Symbole \(B, D, V\) sind 
-            <i>Terminale</i>
-             in der Grammatik
-            \(\dk{G}\). Wenn wir \(\epsilon\)-Übergänge zulassen, können wir den
-            Automaten übersichtlicher gestalten und mehrere Zustände
-            zusammenfassen:
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Nochmal: jede Kante ist mit einem </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:93:50');"
+                >emu_content/05/05-06-dk-automat.emu:93:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Terminalsymbol</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:93:50');"
+                  >emu_content/05/05-06-dk-automat.emu:93:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   beschriftet.
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:93:50');"
+                >emu_content/05/05-06-dk-automat.emu:93:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Die Symbole </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:94:50');"
+                >emu_content/05/05-06-dk-automat.emu:94:50</span></span></span>\(B, D, V\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   sind 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:94:50');"
+                >emu_content/05/05-06-dk-automat.emu:94:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Terminale</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:94:50');"
+                  >emu_content/05/05-06-dk-automat.emu:94:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   in der Grammatik
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:94:50');"
+                >emu_content/05/05-06-dk-automat.emu:94:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:95:50');"
+                >emu_content/05/05-06-dk-automat.emu:95:50</span></span></span>\(\dk{G}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >. Wenn wir </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:95:50');"
+                >emu_content/05/05-06-dk-automat.emu:95:50</span></span></span>\(\epsilon\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >-Übergänge zulassen, können wir den</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:95:50');"
+                >emu_content/05/05-06-dk-automat.emu:95:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Automaten übersichtlicher gestalten und mehrere Zustände</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:96:50');"
+                >emu_content/05/05-06-dk-automat.emu:96:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >zusammenfassen:</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:97:50');"
+                >emu_content/05/05-06-dk-automat.emu:97:50</span></span></span>
           </p>
           <figure>
             <img
@@ -127,25 +546,321 @@
               src="../img/context-free/LR/hat-G-to-generalized-automaton-numbered-names.svg"
             >
           </figure>
-          <p>Wir werden uns noch bessere Namen für die Zwischenzustände ausdenken.
-            Wenn wir uns an die Rechtsableitungsbäume mit Stamm, linkem Rand,
-            Blüte und rechtem Rest erinnern, dann haben die Zwischenzustände eine
-            klare Bedeutung: der Zustand \(4\) oben zum Beispiel bedeutet, dass der
-            Knoten \(X\) im Stamm mit \(a, B, c, D, e\) beschriftete Kinder hat und
-            wir uns bereits entschieden haben, dass \(a\), \(B\) und \(c\)
-            
-            <i>Blätter</i>
-             sein sollen, also zum linken Rand gehören. Der
-            Übergang \(\boxed{4} \step{D} \boxed{5}\) entspricht dann der
-            Entscheidung, auch \(D\) zu einem Blatt zu machen, während \(\boxed{4}
-            \step{\epsilon} \dk{D}\) der Entscheidung entspricht, \(D\) zu einem
-            Knoten im Stamm zu machen und eine \(D\)-Produktion anzuwenden. Die
-            beiden \(\epsilon\)-Übergänge von \(\dk{X}\) nach \(\boxed{1}\) bzw.
-            \(\boxed{7}\) stellen einfach sicher, dass wir uns erst entscheiden, mit
-            welcher Produktion wir den Stammknoten \(X\) expandieren, bevor wir
-            weitermachen. Daher nennen wir Zustand \(\boxed{4}\) um in \(\boxed{X
-            \rightarrow aBc.De}\), wobei der Punkt \(.\) markiert, welchen Teil der
-            rechten Seite wir bereits gelesen haben. Wir erhalten folgendes Bild:
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Wir werden uns noch bessere Namen für die Zwischenzustände ausdenken.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:104:50');"
+                >emu_content/05/05-06-dk-automat.emu:104:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Wenn wir uns an die Rechtsableitungsbäume mit Stamm, linkem Rand,</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:105:50');"
+                >emu_content/05/05-06-dk-automat.emu:105:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Blüte und rechtem Rest erinnern, dann haben die Zwischenzustände eine</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:106:50');"
+                >emu_content/05/05-06-dk-automat.emu:106:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >klare Bedeutung: der Zustand </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:107:50');"
+                >emu_content/05/05-06-dk-automat.emu:107:50</span></span></span>\(4\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   oben zum Beispiel bedeutet, dass der
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:107:50');"
+                >emu_content/05/05-06-dk-automat.emu:107:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Knoten </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:108:50');"
+                >emu_content/05/05-06-dk-automat.emu:108:50</span></span></span>\(X\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   im Stamm mit 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:108:50');"
+                >emu_content/05/05-06-dk-automat.emu:108:50</span></span></span>\(a, B, c, D, e\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   beschriftete Kinder hat und
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:108:50');"
+                >emu_content/05/05-06-dk-automat.emu:108:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >wir uns bereits entschieden haben, dass </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:109:50');"
+                >emu_content/05/05-06-dk-automat.emu:109:50</span></span></span>\(a\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >, </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:109:50');"
+                >emu_content/05/05-06-dk-automat.emu:109:50</span></span></span>\(B\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   und 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:109:50');"
+                >emu_content/05/05-06-dk-automat.emu:109:50</span></span></span>\(c\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:109:50');"
+                >emu_content/05/05-06-dk-automat.emu:109:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:110:50');"
+                >emu_content/05/05-06-dk-automat.emu:110:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Blätter</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:110:50');"
+                  >emu_content/05/05-06-dk-automat.emu:110:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   sein sollen, also zum linken Rand gehören. Der
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:110:50');"
+                >emu_content/05/05-06-dk-automat.emu:110:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Übergang </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:111:50');"
+                >emu_content/05/05-06-dk-automat.emu:111:50</span></span></span>\(\boxed{4} \step{D} \boxed{5}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   entspricht dann der
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:111:50');"
+                >emu_content/05/05-06-dk-automat.emu:111:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Entscheidung, auch </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:112:50');"
+                >emu_content/05/05-06-dk-automat.emu:112:50</span></span></span>\(D\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   zu einem Blatt zu machen, während 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:112:50');"
+                >emu_content/05/05-06-dk-automat.emu:112:50</span></span></span>\(\boxed{4}
+            \step{\epsilon} \dk{D}\)
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   der Entscheidung entspricht, 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:113:50');"
+                >emu_content/05/05-06-dk-automat.emu:113:50</span></span></span>\(D\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   zu einem
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:113:50');"
+                >emu_content/05/05-06-dk-automat.emu:113:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Knoten im Stamm zu machen und eine </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:114:50');"
+                >emu_content/05/05-06-dk-automat.emu:114:50</span></span></span>\(D\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >-Produktion anzuwenden. Die</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:114:50');"
+                >emu_content/05/05-06-dk-automat.emu:114:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >beiden </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:115:50');"
+                >emu_content/05/05-06-dk-automat.emu:115:50</span></span></span>\(\epsilon\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >-Übergänge von </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:115:50');"
+                >emu_content/05/05-06-dk-automat.emu:115:50</span></span></span>\(\dk{X}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   nach 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:115:50');"
+                >emu_content/05/05-06-dk-automat.emu:115:50</span></span></span>\(\boxed{1}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   bzw.
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:115:50');"
+                >emu_content/05/05-06-dk-automat.emu:115:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:116:50');"
+                >emu_content/05/05-06-dk-automat.emu:116:50</span></span></span>\(\boxed{7}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   stellen einfach sicher, dass wir uns erst entscheiden, mit
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:116:50');"
+                >emu_content/05/05-06-dk-automat.emu:116:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >welcher Produktion wir den Stammknoten </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:117:50');"
+                >emu_content/05/05-06-dk-automat.emu:117:50</span></span></span>\(X\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   expandieren, bevor wir
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:117:50');"
+                >emu_content/05/05-06-dk-automat.emu:117:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >weitermachen. Daher nennen wir Zustand </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:118:50');"
+                >emu_content/05/05-06-dk-automat.emu:118:50</span></span></span>\(\boxed{4}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   um in 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:118:50');"
+                >emu_content/05/05-06-dk-automat.emu:118:50</span></span></span>\(\boxed{X
+            \rightarrow aBc.De}\)
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >, wobei der Punkt </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:119:50');"
+                >emu_content/05/05-06-dk-automat.emu:119:50</span></span></span>\(.\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   markiert, welchen Teil der
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:119:50');"
+                >emu_content/05/05-06-dk-automat.emu:119:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >rechten Seite wir bereits gelesen haben. Wir erhalten folgendes Bild:</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:120:50');"
+                >emu_content/05/05-06-dk-automat.emu:120:50</span></span></span>
           </p>
           <figure>
             <img
@@ -153,22 +868,130 @@
               src="../img/context-free/LR/hat-G-to-DK.svg"
             >
           </figure>
-          <h2>Die \(a^{m+k}b^m\)-Grammatik
+          <h2><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Die </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:127:50');"
+                >emu_content/05/05-06-dk-automat.emu:127:50</span></span></span>\(a^{m+k}b^m\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >-Grammatik</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:127:50');"
+                >emu_content/05/05-06-dk-automat.emu:127:50</span></span></span>
           </h2>
-          <p>Wir illustrieren obige Vorgehensweise nun anhand der Grammatik
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Wir illustrieren obige Vorgehensweise nun anhand der Grammatik</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:130:50');"
+                >emu_content/05/05-06-dk-automat.emu:130:50</span></span></span>
           </p>
           <p
             id="the-grammar"
           >
-            $$\begin{align*} G&amp;: \\ S&amp;\rightarrow aS \\ S&amp;\rightarrow B \\ B&
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:134:50');"
+                >emu_content/05/05-06-dk-automat.emu:134:50</span></span></span>$$\begin{align*} G&amp;: \\ S&amp;\rightarrow aS \\ S&amp;\rightarrow B \\ B&
             \rightarrow aBb \\ B&amp;\rightarrow ab \end{align*}$$
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:135:50');"
+                >emu_content/05/05-06-dk-automat.emu:135:50</span></span></span>
           </p>
-          <p>Laut Gebrauchsanweisung aus dem letzten Teilkapitel hat die Grammatik
-            \(\dk{G}\) die Terminalsymbole \(\Sigma \cup N = \{a, b, S, B\}\) und die
-            Nichtterminale \(\dk{N} = \{\dk{S}, \dk{B}\}\). Die Produktionen von
-            \(\dk{G}\) ergeben sich wie folgt:
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Laut Gebrauchsanweisung aus dem letzten Teilkapitel hat die Grammatik</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:138:50');"
+                >emu_content/05/05-06-dk-automat.emu:138:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:139:50');"
+                >emu_content/05/05-06-dk-automat.emu:139:50</span></span></span>\(\dk{G}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   die Terminalsymbole 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:139:50');"
+                >emu_content/05/05-06-dk-automat.emu:139:50</span></span></span>\(\Sigma \cup N = \{a, b, S, B\}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   und die
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:139:50');"
+                >emu_content/05/05-06-dk-automat.emu:139:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Nichtterminale </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:140:50');"
+                >emu_content/05/05-06-dk-automat.emu:140:50</span></span></span>\(\dk{N} = \{\dk{S}, \dk{B}\}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >. Die Produktionen von</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:140:50');"
+                >emu_content/05/05-06-dk-automat.emu:140:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:141:50');"
+                >emu_content/05/05-06-dk-automat.emu:141:50</span></span></span>\(\dk{G}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   ergeben sich wie folgt:
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:141:50');"
+                >emu_content/05/05-06-dk-automat.emu:141:50</span></span></span>
           </p>
-          $$\begin{align*} \begin{array}{l|l} \textnormal{Produktion in $G$}&
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:142:50');"
+              >emu_content/05/05-06-dk-automat.emu:142:50</span></span></span>$$\begin{align*} \begin{array}{l|l} \textnormal{Produktion in $G$}&
           \textnormal{Produktion in $\hat{G}$} \\ \hline % % S \rightarrow aS&
           {\dk{S}} \rightarrow \dkt{a} \dk{S}\\&amp;{\dk{S}} \rightarrow \dkt{a}
           \dkt{S}\\ \hline % S \rightarrow B&amp;{\dk{S}} \rightarrow \dk{B}\\&
@@ -176,17 +999,115 @@
           \rightarrow \dkt{a}\dk{B}\\&{\dk{B}} \rightarrow
           \dkt{a}\dkt{B}\dkt{b}\\ \hline % B \rightarrow ab&amp;{\dk{B}} \rightarrow
           \dkt{ab} \end{array} \end{align*}$$
-          <p>In dieser Grammatik betrachten wir die Rechtsableitung
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:149:50');"
+              >emu_content/05/05-06-dk-automat.emu:149:50</span></span></span>
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >In dieser Grammatik betrachten wir die Rechtsableitung</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:152:50');"
+                >emu_content/05/05-06-dk-automat.emu:152:50</span></span></span>
           </p>
-          $$\begin{align*} S \Step{} aS \Step{} aaS \Step{} aaB \Step{} aaaBb
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:153:50');"
+              >emu_content/05/05-06-dk-automat.emu:153:50</span></span></span>$$\begin{align*} S \Step{} aS \Step{} aaS \Step{} aaB \Step{} aaaBb
           \Step{} aaaaBbb \Step{} aaaaaBbbb \end{align*}$$
-          <p>Es gilt \(\front(aaaaaBbbb) = aaaaaBb\). In \(\hat{G}\) entspricht die
-            obige Rechtsableitung der Ableitung
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:154:50');"
+              >emu_content/05/05-06-dk-automat.emu:154:50</span></span></span>
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Es gilt </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:157:50');"
+                >emu_content/05/05-06-dk-automat.emu:157:50</span></span></span>\(\front(aaaaaBbbb) = aaaaaBb\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >. In </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:157:50');"
+                >emu_content/05/05-06-dk-automat.emu:157:50</span></span></span>\(\hat{G}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   entspricht die
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:157:50');"
+                >emu_content/05/05-06-dk-automat.emu:157:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >obige Rechtsableitung der Ableitung</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:158:50');"
+                >emu_content/05/05-06-dk-automat.emu:158:50</span></span></span>
           </p>
-          $$\begin{align*} \hat{S} \Step{} a\hat{S} \Step{} aa\hat{S} \Step{}
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:159:50');"
+              >emu_content/05/05-06-dk-automat.emu:159:50</span></span></span>$$\begin{align*} \hat{S} \Step{} a\hat{S} \Step{} aa\hat{S} \Step{}
           aa\hat{B} \Step{} aaa\hat{B} \Step{} aaaaBb \end{align*}$$
-          <p>Den nichtdeterministischen DK-Automaten (mit \(\epsilon\)-Übergängen)
-            können wir nun Schritt für Schritt zeichnen:
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:160:50');"
+              >emu_content/05/05-06-dk-automat.emu:160:50</span></span></span>
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Den nichtdeterministischen DK-Automaten (mit </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:163:50');"
+                >emu_content/05/05-06-dk-automat.emu:163:50</span></span></span>\(\epsilon\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >-Übergängen)</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:163:50');"
+                >emu_content/05/05-06-dk-automat.emu:163:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >können wir nun Schritt für Schritt zeichnen:</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:164:50');"
+                >emu_content/05/05-06-dk-automat.emu:164:50</span></span></span>
           </p>
           <figure
             class="centered-figure well container"
@@ -218,7 +1139,7 @@
             </a>
             <div
               style="display: inline-block"
-              data-interval={false}
+              data-interval="false"
               class="carousel"
               id="aaabb-dk-nea"
             >
@@ -227,57 +1148,57 @@
               >
                 <li
                   class="active"
-                  data-slide-to={1}
+                  data-slide-to="1"
                   data-target="#aaabb-dk-nea"
                 >
                 </li>
                 <li
-                  data-slide-to={2}
+                  data-slide-to="2"
                   data-target="#aaabb-dk-nea"
                 >
                 </li>
                 <li
-                  data-slide-to={3}
+                  data-slide-to="3"
                   data-target="#aaabb-dk-nea"
                 >
                 </li>
                 <li
-                  data-slide-to={4}
+                  data-slide-to="4"
                   data-target="#aaabb-dk-nea"
                 >
                 </li>
                 <li
-                  data-slide-to={5}
+                  data-slide-to="5"
                   data-target="#aaabb-dk-nea"
                 >
                 </li>
                 <li
-                  data-slide-to={6}
+                  data-slide-to="6"
                   data-target="#aaabb-dk-nea"
                 >
                 </li>
                 <li
-                  data-slide-to={7}
+                  data-slide-to="7"
                   data-target="#aaabb-dk-nea"
                 >
                 </li>
                 <li
-                  data-slide-to={8}
+                  data-slide-to="8"
                   data-target="#aaabb-dk-nea"
                 >
                 </li>
                 <li
-                  data-slide-to={9}
+                  data-slide-to="9"
                   data-target="#aaabb-dk-nea"
                 >
                 </li>
                 <li
-                  data-slide-to={10}
+                  data-slide-to="10"
                   data-target="#aaabb-dk-nea"
                 >
                 </li>
                 <li
-                  data-slide-to={11}
+                  data-slide-to="11"
                   data-target="#aaabb-dk-nea"
                 >
                 </li>
@@ -377,70 +1298,611 @@
               </div>
             </div>
           </figure>
-          <h2>Der nichtdeterministische DK-Automat
+          <h2><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Der nichtdeterministische DK-Automat</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:284:50');"
+                >emu_content/05/05-06-dk-automat.emu:284:50</span></span></span>
           </h2>
           <div
             class="well container theorem"
           >
             <p><span
                 class="numbered-title"
-              >Definition <NumberedTitle>5.9.1</NumberedTitle>
-                 
-              </span>
-               Für eine kontextfreie
-              Grammatik ist der nichtdeterministische DK-Automat (NDK-Automat) ein
-              nichtdeterministischer endlicher Automat mit \(\epsilon\)-Übergängen,
-              den wir wie folgt konstruieren:
+              ><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Definition </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:291:50');"
+                    >emu_content/05/05-06-dk-automat.emu:291:50</span></span></span><NumberedTitle><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >5.9.1</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:294:50');"
+                      >emu_content/05/05-06-dk-automat.emu:294:50</span></span></span></NumberedTitle><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:295:50');"
+                    >emu_content/05/05-06-dk-automat.emu:295:50</span></span></span></span><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     Für eine kontextfreie
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:296:50');"
+                  >emu_content/05/05-06-dk-automat.emu:296:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Grammatik ist der nichtdeterministische DK-Automat (NDK-Automat) ein</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:297:50');"
+                  >emu_content/05/05-06-dk-automat.emu:297:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >nichtdeterministischer endlicher Automat mit </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:298:50');"
+                  >emu_content/05/05-06-dk-automat.emu:298:50</span></span></span>\(\epsilon\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >-Übergängen,</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:298:50');"
+                  >emu_content/05/05-06-dk-automat.emu:298:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >den wir wie folgt konstruieren:</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:299:50');"
+                  >emu_content/05/05-06-dk-automat.emu:299:50</span></span></span>
             </p>
             <ol>
-              <li>Für jede Produktion \(X \rightarrow \beta\) gibt es einen
-                Zustandsübergang \(\boxed{X} \step{\epsilon} \boxed{X \step{} .
+              <li><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Für jede Produktion </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:303:50');"
+                    >emu_content/05/05-06-dk-automat.emu:303:50</span></span></span>\(X \rightarrow \beta\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       gibt es einen
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:303:50');"
+                    >emu_content/05/05-06-dk-automat.emu:303:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Zustandsübergang </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:304:50');"
+                    >emu_content/05/05-06-dk-automat.emu:304:50</span></span></span>\(\boxed{X} \step{\epsilon} \boxed{X \step{} .
                 \beta}\)
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:305:50');"
+                    >emu_content/05/05-06-dk-automat.emu:305:50</span></span></span>
               </li>
-              <li>Für jede Zerlegung \(\beta = \beta_1 \sigma \beta_2\) gibt es den
-                Zustandsübergang \(\boxed{X \step{} \beta_1 . \sigma \beta_2}
+              <li><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Für jede Zerlegung </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:308:50');"
+                    >emu_content/05/05-06-dk-automat.emu:308:50</span></span></span>\(\beta = \beta_1 \sigma \beta_2\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       gibt es den
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:308:50');"
+                    >emu_content/05/05-06-dk-automat.emu:308:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Zustandsübergang </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:309:50');"
+                    >emu_content/05/05-06-dk-automat.emu:309:50</span></span></span>\(\boxed{X \step{} \beta_1 . \sigma \beta_2}
                 \step{\sigma} \boxed{X \step{} \beta_1 \sigma . \beta_2}\)
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:310:50');"
+                    >emu_content/05/05-06-dk-automat.emu:310:50</span></span></span>
               </li>
-              <li>Falls \(\sigma\) ein Nichtterminal \(Y\) ist, also \(\beta = \beta_1 Y
-                \beta_2\), gibt es zusätzlich noch den Übergang \(\boxed{X \step{}
+              <li><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Falls </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:313:50');"
+                    >emu_content/05/05-06-dk-automat.emu:313:50</span></span></span>\(\sigma\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       ein Nichtterminal 
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:313:50');"
+                    >emu_content/05/05-06-dk-automat.emu:313:50</span></span></span>\(Y\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       ist, also 
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:313:50');"
+                    >emu_content/05/05-06-dk-automat.emu:313:50</span></span></span>\(\beta = \beta_1 Y
+                \beta_2\)
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >, gibt es zusätzlich noch den Übergang </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:314:50');"
+                    >emu_content/05/05-06-dk-automat.emu:314:50</span></span></span>\(\boxed{X \step{}
                 \beta_1 . Y \beta_2} \step{\epsilon} \boxed{Y}\)
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:315:50');"
+                    >emu_content/05/05-06-dk-automat.emu:315:50</span></span></span>
               </li>
             </ol>
-            <p>Die Interpretation dieser Übergänge in
-              Rechtsableitungsbaum-Begriffen ist: (1) heißt, dass \(\boxed{X}\) ein
-              Stammknoten ist und wir ihn anhand der Regel \(X \rightarrow \beta\)
-              expandieren; wir erschaffen also Kinder, die mit den Symbolen von
-              \(\beta\) beschriftet sind. (2) heißt, dass wir uns bereits
-              entschieden haben, die Kinder \(\beta_1\) von \(\boxed{X}\) nicht zu
-              expandieren, sie also zum linken Rand werden zu lassen, und diese
-              Entscheidung nun auch für das Symbol \(\sigma\) treffen; (3) bedeutet,
-              dass wir uns entschließen \(\sigma\) (das hier ein Nichtterminal \(Y\)
-              ist) weiter zu expandieren, es also nicht dem linken Rand zuordnen,
-              sondern zu einem Stammknoten werden lassen, uns aber noch nicht
-              entschlossen haben, welche Produktion \(Y \rightarrow ?\) wir anwenden
-              wollen.
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Die Interpretation dieser Übergänge in</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:318:50');"
+                  >emu_content/05/05-06-dk-automat.emu:318:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Rechtsableitungsbaum-Begriffen ist: (1) heißt, dass </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:319:50');"
+                  >emu_content/05/05-06-dk-automat.emu:319:50</span></span></span>\(\boxed{X}\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     ein
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:319:50');"
+                  >emu_content/05/05-06-dk-automat.emu:319:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Stammknoten ist und wir ihn anhand der Regel </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:320:50');"
+                  >emu_content/05/05-06-dk-automat.emu:320:50</span></span></span>\(X \rightarrow \beta\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:320:50');"
+                  >emu_content/05/05-06-dk-automat.emu:320:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >expandieren; wir erschaffen also Kinder, die mit den Symbolen von</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:321:50');"
+                  >emu_content/05/05-06-dk-automat.emu:321:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:322:50');"
+                  >emu_content/05/05-06-dk-automat.emu:322:50</span></span></span>\(\beta\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     beschriftet sind. (2) heißt, dass wir uns bereits
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:322:50');"
+                  >emu_content/05/05-06-dk-automat.emu:322:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >entschieden haben, die Kinder </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:323:50');"
+                  >emu_content/05/05-06-dk-automat.emu:323:50</span></span></span>\(\beta_1\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     von 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:323:50');"
+                  >emu_content/05/05-06-dk-automat.emu:323:50</span></span></span>\(\boxed{X}\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     nicht zu
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:323:50');"
+                  >emu_content/05/05-06-dk-automat.emu:323:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >expandieren, sie also zum linken Rand werden zu lassen, und diese</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:324:50');"
+                  >emu_content/05/05-06-dk-automat.emu:324:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Entscheidung nun auch für das Symbol </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:325:50');"
+                  >emu_content/05/05-06-dk-automat.emu:325:50</span></span></span>\(\sigma\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     treffen; (3) bedeutet,
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:325:50');"
+                  >emu_content/05/05-06-dk-automat.emu:325:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >dass wir uns entschließen </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:326:50');"
+                  >emu_content/05/05-06-dk-automat.emu:326:50</span></span></span>\(\sigma\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     (das hier ein Nichtterminal 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:326:50');"
+                  >emu_content/05/05-06-dk-automat.emu:326:50</span></span></span>\(Y\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:326:50');"
+                  >emu_content/05/05-06-dk-automat.emu:326:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >ist) weiter zu expandieren, es also nicht dem linken Rand zuordnen,</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:327:50');"
+                  >emu_content/05/05-06-dk-automat.emu:327:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >sondern zu einem Stammknoten werden lassen, uns aber noch nicht</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:328:50');"
+                  >emu_content/05/05-06-dk-automat.emu:328:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >entschlossen haben, welche Produktion </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:329:50');"
+                  >emu_content/05/05-06-dk-automat.emu:329:50</span></span></span>\(Y \rightarrow ?\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     wir anwenden
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:329:50');"
+                  >emu_content/05/05-06-dk-automat.emu:329:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >wollen.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:330:50');"
+                  >emu_content/05/05-06-dk-automat.emu:330:50</span></span></span>
             </p>
-            <p>Der Startzustand ist \(\boxed{S}\). Jeder Zustand der Form \(\boxed{X
-              \step{} \beta .}\) ist ein akzeptierender Zustand.
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Der Startzustand ist </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:333:50');"
+                  >emu_content/05/05-06-dk-automat.emu:333:50</span></span></span>\(\boxed{S}\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >. Jeder Zustand der Form </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:333:50');"
+                  >emu_content/05/05-06-dk-automat.emu:333:50</span></span></span>\(\boxed{X
+              \step{} \beta .}\)
+              <span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     ist ein akzeptierender Zustand.
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:334:50');"
+                  >emu_content/05/05-06-dk-automat.emu:334:50</span></span></span>
             </p>
           </div>
-          <h2>Den NDK-Automaten deterministisch machen
+          <h2><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Den NDK-Automaten deterministisch machen</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:337:50');"
+                >emu_content/05/05-06-dk-automat.emu:337:50</span></span></span>
           </h2>
-          <p>Wir wissen ja bereits, wie man einen nichtdeterministischen Automaten
-            deterministisch macht: die
-            <a
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Wir wissen ja bereits, wie man einen nichtdeterministischen Automaten</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:340:50');"
+                >emu_content/05/05-06-dk-automat.emu:340:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >deterministisch macht: die</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:341:50');"
+                >emu_content/05/05-06-dk-automat.emu:341:50</span></span></span><a
               href="./04-03-nfsm.html#nfsm-to-fsm"
-            >Potenzmengenkonstruktion aus Kapitel 4.3</a>. Hier können wir diese leider nicht direkt anwenden, da der obige
-            Automat \(\epsilon\)-Übergänge hat. Wie geht das also nun? Im
-            deterministischen Automaten ist wie bei der Potenzmengenkonstruktion
-            jeder Zustand eine 
-            <i>Menge</i>
-             \(R\) von Zuständen des
-            nichtdeterministischen Automaten. Wenn wir nun in eine solche Menge
-            \(R\) einen Zustand \(q\) einfügen, dann fügen wir auch alle Zustände
-            \(q'\) hinzu, zu denen es einen \(\epsilon\)-Übergang \(q
-            \step{\epsilon} q'\) gibt. Für den obigen nichtdeterministischen
-            Automaten sieht das dann so aus:
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Potenzmengenkonstruktion aus Kapitel 4.3</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:345:50');"
+                  >emu_content/05/05-06-dk-automat.emu:345:50</span></span></span></a><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >. Hier können wir diese leider nicht direkt anwenden, da der obige</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:346:50');"
+                >emu_content/05/05-06-dk-automat.emu:346:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Automat </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:347:50');"
+                >emu_content/05/05-06-dk-automat.emu:347:50</span></span></span>\(\epsilon\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >-Übergänge hat. Wie geht das also nun? Im</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:347:50');"
+                >emu_content/05/05-06-dk-automat.emu:347:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >deterministischen Automaten ist wie bei der Potenzmengenkonstruktion</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:348:50');"
+                >emu_content/05/05-06-dk-automat.emu:348:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >jeder Zustand eine </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:349:50');"
+                >emu_content/05/05-06-dk-automat.emu:349:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Menge</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:349:50');"
+                  >emu_content/05/05-06-dk-automat.emu:349:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:349:50');"
+                >emu_content/05/05-06-dk-automat.emu:349:50</span></span></span>\(R\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   von Zuständen des
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:349:50');"
+                >emu_content/05/05-06-dk-automat.emu:349:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >nichtdeterministischen Automaten. Wenn wir nun in eine solche Menge</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:350:50');"
+                >emu_content/05/05-06-dk-automat.emu:350:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:351:50');"
+                >emu_content/05/05-06-dk-automat.emu:351:50</span></span></span>\(R\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   einen Zustand 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:351:50');"
+                >emu_content/05/05-06-dk-automat.emu:351:50</span></span></span>\(q\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   einfügen, dann fügen wir auch alle Zustände
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:351:50');"
+                >emu_content/05/05-06-dk-automat.emu:351:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:352:50');"
+                >emu_content/05/05-06-dk-automat.emu:352:50</span></span></span>\(q'\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   hinzu, zu denen es einen 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:352:50');"
+                >emu_content/05/05-06-dk-automat.emu:352:50</span></span></span>\(\epsilon\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >-Übergang </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:352:50');"
+                >emu_content/05/05-06-dk-automat.emu:352:50</span></span></span>\(q
+            \step{\epsilon} q'\)
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   gibt. Für den obigen nichtdeterministischen
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:353:50');"
+                >emu_content/05/05-06-dk-automat.emu:353:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Automaten sieht das dann so aus:</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:354:50');"
+                >emu_content/05/05-06-dk-automat.emu:354:50</span></span></span>
           </p>
           <figure
             class="centered-figure well container"
@@ -472,7 +1934,7 @@
             </a>
             <div
               style="display: inline-block"
-              data-interval={false}
+              data-interval="false"
               class="carousel"
               id="aaabb-dk-dea"
             >
@@ -481,147 +1943,401 @@
               >
                 <li
                   class="active"
-                  data-slide-to={1}
+                  data-slide-to="1"
                   data-target="#aaabb-dk-dea"
                 >
                 </li>
                 <li
-                  data-slide-to={2}
+                  data-slide-to="2"
                   data-target="#aaabb-dk-dea"
                 >
                 </li>
                 <li
-                  data-slide-to={3}
+                  data-slide-to="3"
                   data-target="#aaabb-dk-dea"
                 >
                 </li>
                 <li
-                  data-slide-to={4}
+                  data-slide-to="4"
                   data-target="#aaabb-dk-dea"
                 >
                 </li>
                 <li
-                  data-slide-to={5}
+                  data-slide-to="5"
                   data-target="#aaabb-dk-dea"
                 >
                 </li>
                 <li
-                  data-slide-to={6}
+                  data-slide-to="6"
                   data-target="#aaabb-dk-dea"
                 >
                 </li>
                 <li
-                  data-slide-to={7}
+                  data-slide-to="7"
                   data-target="#aaabb-dk-dea"
                 >
                 </li>
                 <li
-                  data-slide-to={8}
+                  data-slide-to="8"
                   data-target="#aaabb-dk-dea"
                 >
                 </li>
                 <li
-                  data-slide-to={9}
+                  data-slide-to="9"
                   data-target="#aaabb-dk-dea"
                 >
                 </li>
                 <li
-                  data-slide-to={10}
+                  data-slide-to="10"
                   data-target="#aaabb-dk-dea"
                 >
                 </li>
                 <li
-                  data-slide-to={11}
+                  data-slide-to="11"
                   data-target="#aaabb-dk-dea"
                 >
                 </li>
                 <li
-                  data-slide-to={12}
+                  data-slide-to="12"
                   data-target="#aaabb-dk-dea"
                 >
                 </li>
                 <li
-                  data-slide-to={13}
+                  data-slide-to="13"
                   data-target="#aaabb-dk-dea"
                 >
                 </li>
                 <li
-                  data-slide-to={14}
+                  data-slide-to="14"
                   data-target="#aaabb-dk-dea"
                 >
                 </li>
                 <li
-                  data-slide-to={15}
+                  data-slide-to="15"
                   data-target="#aaabb-dk-dea"
                 >
                 </li>
                 <li
-                  data-slide-to={16}
+                  data-slide-to="16"
                   data-target="#aaabb-dk-dea"
                 >
                 </li>
                 <li
-                  data-slide-to={17}
+                  data-slide-to="17"
                   data-target="#aaabb-dk-dea"
                 >
                 </li>
                 <li
-                  data-slide-to={18}
+                  data-slide-to="18"
                   data-target="#aaabb-dk-dea"
                 >
                 </li>
                 <li
-                  data-slide-to={19}
+                  data-slide-to="19"
                   data-target="#aaabb-dk-dea"
                 >
                 </li>
                 <li
-                  data-slide-to={20}
+                  data-slide-to="20"
                   data-target="#aaabb-dk-dea"
                 >
                 </li>
                 <li
-                  data-slide-to={21}
+                  data-slide-to="21"
                   data-target="#aaabb-dk-dea"
                 >
                 </li>
               </ol>
             </div>
           </figure>
-          <h2>Den DK-Automaten verwenden
+          <h2><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Den DK-Automaten verwenden</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:446:50');"
+                >emu_content/05/05-06-dk-automat.emu:446:50</span></span></span>
           </h2>
           <div
             class="well container theorem"
           >
             <p><span
                 class="numbered-title"
-              >Theroem</span><b>(DK-Test).</b>
-               Sei \(G\) eine kontextfreie Grammatik ohne
-              nutzlose Nichtterminale und ei \(M\) der DK-Automat für die Grammatik
-              \(G\). Die Grammatik \(G\) ist LR(0) genau dann, wenn folgende zwei
-              Bedingungen gelten:
+              ><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Theroem</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:453:50');"
+                    >emu_content/05/05-06-dk-automat.emu:453:50</span></span></span></span><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:454:50');"
+                  >emu_content/05/05-06-dk-automat.emu:454:50</span></span></span><b><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >(DK-Test).</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:454:50');"
+                    >emu_content/05/05-06-dk-automat.emu:454:50</span></span></span></b><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     Sei 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:454:50');"
+                  >emu_content/05/05-06-dk-automat.emu:454:50</span></span></span>\(G\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     eine kontextfreie Grammatik ohne
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:454:50');"
+                  >emu_content/05/05-06-dk-automat.emu:454:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >nutzlose Nichtterminale und ei </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:455:50');"
+                  >emu_content/05/05-06-dk-automat.emu:455:50</span></span></span>\(M\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     der DK-Automat für die Grammatik
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:455:50');"
+                  >emu_content/05/05-06-dk-automat.emu:455:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:456:50');"
+                  >emu_content/05/05-06-dk-automat.emu:456:50</span></span></span>\(G\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >. Die Grammatik </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:456:50');"
+                  >emu_content/05/05-06-dk-automat.emu:456:50</span></span></span>\(G\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     ist LR(0) genau dann, wenn folgende zwei
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:456:50');"
+                  >emu_content/05/05-06-dk-automat.emu:456:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Bedingungen gelten:</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:457:50');"
+                  >emu_content/05/05-06-dk-automat.emu:457:50</span></span></span>
             </p>
             <ul>
-              <li>(DK.1) Ein akzeptierender Zustand von \(M\) (der ja eine Menge von
-                Zuständen des NDK-Automaten ist) enthält genau einen
-                akzeptierenden NDK-Zustand, also genau ein \(\boxed{X \rightarrow
+              <li><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >(DK.1) Ein akzeptierender Zustand von </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:461:50');"
+                    >emu_content/05/05-06-dk-automat.emu:461:50</span></span></span>\(M\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       (der ja eine Menge von
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:461:50');"
+                    >emu_content/05/05-06-dk-automat.emu:461:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Zuständen des NDK-Automaten ist) enthält genau einen</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:462:50');"
+                    >emu_content/05/05-06-dk-automat.emu:462:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >akzeptierenden NDK-Zustand, also genau ein </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:463:50');"
+                    >emu_content/05/05-06-dk-automat.emu:463:50</span></span></span>\(\boxed{X \rightarrow
                 \beta .}\)
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:464:50');"
+                    >emu_content/05/05-06-dk-automat.emu:464:50</span></span></span>
               </li>
-              <li>(DK.2) Wenn \(q\) ein akzeptierender Zustand von \(M\) ist und \(q
-                \step{\sigma} q'\), dann ist \(\sigma\) ein Nichtterminal.
+              <li><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >(DK.2) Wenn </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:467:50');"
+                    >emu_content/05/05-06-dk-automat.emu:467:50</span></span></span>\(q\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       ein akzeptierender Zustand von 
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:467:50');"
+                    >emu_content/05/05-06-dk-automat.emu:467:50</span></span></span>\(M\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       ist und 
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:467:50');"
+                    >emu_content/05/05-06-dk-automat.emu:467:50</span></span></span>\(q
+                \step{\sigma} q'\)
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >, dann ist </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:468:50');"
+                    >emu_content/05/05-06-dk-automat.emu:468:50</span></span></span>\(\sigma\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       ein Nichtterminal.
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:468:50');"
+                    >emu_content/05/05-06-dk-automat.emu:468:50</span></span></span>
               </li>
             </ul>
-            <p>Wenn diese beiden Bedingungen gelten, sagen wir, dass \(G\) den
-              DK-Test bestanden hat. Das Theorem sagt also: \(G\) ist LR(0) genau
-              dann, wenn es den DK-Test besteht.
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Wenn diese beiden Bedingungen gelten, sagen wir, dass </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:471:50');"
+                  >emu_content/05/05-06-dk-automat.emu:471:50</span></span></span>\(G\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     den
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:471:50');"
+                  >emu_content/05/05-06-dk-automat.emu:471:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >DK-Test bestanden hat. Das Theorem sagt also: </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:472:50');"
+                  >emu_content/05/05-06-dk-automat.emu:472:50</span></span></span>\(G\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     ist LR(0) genau
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:472:50');"
+                  >emu_content/05/05-06-dk-automat.emu:472:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >dann, wenn es den DK-Test besteht.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:473:50');"
+                  >emu_content/05/05-06-dk-automat.emu:473:50</span></span></span>
             </p>
           </div>
           <div
             class="well container"
           >
-            <p><b>Beweisskizze.</b>
-              Wir erinnern den Leser noch einmal an die alternative
-              Charakterisierung von LR(0)-Sprachen, nämlich :
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:478:50');"
+                  >emu_content/05/05-06-dk-automat.emu:478:50</span></span></span><b><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Beweisskizze.</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:478:50');"
+                    >emu_content/05/05-06-dk-automat.emu:478:50</span></span></span></b><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:478:50');"
+                  >emu_content/05/05-06-dk-automat.emu:478:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Wir erinnern den Leser noch einmal an die alternative</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:479:50');"
+                  >emu_content/05/05-06-dk-automat.emu:479:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Charakterisierung von LR(0)-Sprachen, nämlich :</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:480:50');"
+                  >emu_content/05/05-06-dk-automat.emu:480:50</span></span></span>
             </p>
             <div
               id="lemma-characterization-LR0"
@@ -629,76 +2345,766 @@
             >
               <p><a
                   href="./05-05-c-LR-grammars.html#lemma-characterization-LR0"
-                >Lemma 5.7.5, noch einmal</a><b>
+                ><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >Lemma 5.7.5, noch einmal</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:488:50');"
+                      >emu_content/05/05-06-dk-automat.emu:488:50</span></span></span></a><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:489:50');"
+                    >emu_content/05/05-06-dk-automat.emu:489:50</span></span></span><b><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      ></span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:489:50');"
+                      >emu_content/05/05-06-dk-automat.emu:489:50</span></span>
+                    
+                    <span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      ></span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:491:50');"
+                      >emu_content/05/05-06-dk-automat.emu:491:50</span></span></span></b><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:491:50');"
+                    >emu_content/05/05-06-dk-automat.emu:491:50</span></span>
                   
-                </b>
-                
-                <b>(LR(0), äquivalente Formulierung).</b>
-                Eine Grammatik \(G\) ist LR(0) genau dann, wenn für alle korrekten
-                Linksreduktionsschritte \(\alpha \beta w \rstep{} \alpha Xw\) und
-                \(\alpha' \beta' w' \rstep{} \alpha' X'w'\) gilt:
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:492:50');"
+                    >emu_content/05/05-06-dk-automat.emu:492:50</span></span></span><b><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >(LR(0), äquivalente Formulierung).</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:492:50');"
+                      >emu_content/05/05-06-dk-automat.emu:492:50</span></span></span></b><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:492:50');"
+                    >emu_content/05/05-06-dk-automat.emu:492:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Eine Grammatik </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:493:50');"
+                    >emu_content/05/05-06-dk-automat.emu:493:50</span></span></span>\(G\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       ist LR(0) genau dann, wenn für alle korrekten
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:493:50');"
+                    >emu_content/05/05-06-dk-automat.emu:493:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Linksreduktionsschritte </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:494:50');"
+                    >emu_content/05/05-06-dk-automat.emu:494:50</span></span></span>\(\alpha \beta w \rstep{} \alpha Xw\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       und
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:494:50');"
+                    >emu_content/05/05-06-dk-automat.emu:494:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:495:50');"
+                    >emu_content/05/05-06-dk-automat.emu:495:50</span></span></span>\(\alpha' \beta' w' \rstep{} \alpha' X'w'\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       gilt:
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:495:50');"
+                    >emu_content/05/05-06-dk-automat.emu:495:50</span></span></span>
               </p>
               <ol>
-                <li>Falls \(\alpha \beta = \alpha' \beta'\) dann auch \(\beta = \beta'\)
-                  und \(X= X'\); in Worten: wenn die Fronten identisch sind, dann
-                  auch die Reduktionsschritte.
+                <li><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >Falls </span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:499:50');"
+                      >emu_content/05/05-06-dk-automat.emu:499:50</span></span></span>\(\alpha \beta = \alpha' \beta'\)<span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >
+                         dann auch 
+                      </span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:499:50');"
+                      >emu_content/05/05-06-dk-automat.emu:499:50</span></span></span>\(\beta = \beta'\)<span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      ></span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:499:50');"
+                      >emu_content/05/05-06-dk-automat.emu:499:50</span></span>
+                    
+                    <span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >und </span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:500:50');"
+                      >emu_content/05/05-06-dk-automat.emu:500:50</span></span></span>\(X= X'\)<span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >; in Worten: wenn die Fronten identisch sind, dann</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:500:50');"
+                      >emu_content/05/05-06-dk-automat.emu:500:50</span></span>
+                    
+                    <span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >auch die Reduktionsschritte.</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:501:50');"
+                      >emu_content/05/05-06-dk-automat.emu:501:50</span></span></span>
                 </li>
-                <li>Wenn \(\alpha' \beta' = \alpha \beta \varphi\) und \(|\varphi| \geq
-                  1\), dann \(\varphi \not \in \Sigma^*\); in Worten: wenn
-                  \(\front(\gamma)\) ein echter Präfix von \(\front(\gamma')\) ist,
-                  dann muss in dem überstehenden Teil von \(\front(\gamma)\)
-                  mindestens ein Nichtterminal vorkommen.
+                <li><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >Wenn </span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:504:50');"
+                      >emu_content/05/05-06-dk-automat.emu:504:50</span></span></span>\(\alpha' \beta' = \alpha \beta \varphi\)<span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >
+                         und 
+                      </span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:504:50');"
+                      >emu_content/05/05-06-dk-automat.emu:504:50</span></span></span>\(|\varphi| \geq
+                  1\)
+                  <span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >, dann </span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:505:50');"
+                      >emu_content/05/05-06-dk-automat.emu:505:50</span></span></span>\(\varphi \not \in \Sigma^*\)<span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >; in Worten: wenn</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:505:50');"
+                      >emu_content/05/05-06-dk-automat.emu:505:50</span></span>
+                    
+                    <span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      ></span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:506:50');"
+                      >emu_content/05/05-06-dk-automat.emu:506:50</span></span></span>\(\front(\gamma)\)<span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >
+                         ein echter Präfix von 
+                      </span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:506:50');"
+                      >emu_content/05/05-06-dk-automat.emu:506:50</span></span></span>\(\front(\gamma')\)<span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >
+                         ist,
+                      </span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:506:50');"
+                      >emu_content/05/05-06-dk-automat.emu:506:50</span></span>
+                    
+                    <span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >dann muss in dem überstehenden Teil von </span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:507:50');"
+                      >emu_content/05/05-06-dk-automat.emu:507:50</span></span></span>\(\front(\gamma)\)<span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      ></span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:507:50');"
+                      >emu_content/05/05-06-dk-automat.emu:507:50</span></span>
+                    
+                    <span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >mindestens ein Nichtterminal vorkommen.</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:508:50');"
+                      >emu_content/05/05-06-dk-automat.emu:508:50</span></span></span>
                 </li>
               </ol>
             </div>
-            <p>Es ist nicht schwer zu sehen, dass (DK.1) äquivalent zu Punkt 1 des
-              Lemmas ist. Wenden wir uns (DK.2) und Punkt 2 zu. Wenn Punkt 2
-              
-              <i>nicht</i>
-               gilt, dann gibt es korrekte Reduktionsschritte
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Es ist nicht schwer zu sehen, dass (DK.1) äquivalent zu Punkt 1 des</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:511:50');"
+                  >emu_content/05/05-06-dk-automat.emu:511:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Lemmas ist. Wenden wir uns (DK.2) und Punkt 2 zu. Wenn Punkt 2</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:512:50');"
+                  >emu_content/05/05-06-dk-automat.emu:512:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:513:50');"
+                  >emu_content/05/05-06-dk-automat.emu:513:50</span></span></span><i><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >nicht</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:513:50');"
+                    >emu_content/05/05-06-dk-automat.emu:513:50</span></span></span></i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     gilt, dann gibt es korrekte Reduktionsschritte
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:513:50');"
+                  >emu_content/05/05-06-dk-automat.emu:513:50</span></span></span>
             </p>
-            $$\begin{align*} \alpha \beta w \rstep{} \alpha X w \\ \alpha \beta
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:514:50');"
+                >emu_content/05/05-06-dk-automat.emu:514:50</span></span></span>$$\begin{align*} \alpha \beta w \rstep{} \alpha X w \\ \alpha \beta
             \sigma w' = \alpha' \beta' w' \rstep{} \alpha' X' w' \end{align*}$$
-            <p>Wenn wir dem Automaten den Präfix \(\alpha \beta\) füttern, bringt er
-              uns in einen Zustand, der die \(\boxed{X \rightarrow \beta.}\)
-              enthält, da \(\alpha \beta\) ja eine Front ist. Dieser Zustand muss
-              allerdings einen Übergang haben, der mit \(\sigma\) gelabelt ist, dem
-              ersten Zeichen von \(\varphi\), da ja \(\alpha \beta \sigma\) ein Präfix
-              der Front \(\alpha' \beta'\) ist. Somit gilt (DK.2) nicht.
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:515:50');"
+                >emu_content/05/05-06-dk-automat.emu:515:50</span></span></span>
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Wenn wir dem Automaten den Präfix </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:518:50');"
+                  >emu_content/05/05-06-dk-automat.emu:518:50</span></span></span>\(\alpha \beta\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     füttern, bringt er
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:518:50');"
+                  >emu_content/05/05-06-dk-automat.emu:518:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >uns in einen Zustand, der die </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:519:50');"
+                  >emu_content/05/05-06-dk-automat.emu:519:50</span></span></span>\(\boxed{X \rightarrow \beta.}\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:519:50');"
+                  >emu_content/05/05-06-dk-automat.emu:519:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >enthält, da </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:520:50');"
+                  >emu_content/05/05-06-dk-automat.emu:520:50</span></span></span>\(\alpha \beta\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     ja eine Front ist. Dieser Zustand muss
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:520:50');"
+                  >emu_content/05/05-06-dk-automat.emu:520:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >allerdings einen Übergang haben, der mit </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:521:50');"
+                  >emu_content/05/05-06-dk-automat.emu:521:50</span></span></span>\(\sigma\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     gelabelt ist, dem
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:521:50');"
+                  >emu_content/05/05-06-dk-automat.emu:521:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >ersten Zeichen von </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:522:50');"
+                  >emu_content/05/05-06-dk-automat.emu:522:50</span></span></span>\(\varphi\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >, da ja </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:522:50');"
+                  >emu_content/05/05-06-dk-automat.emu:522:50</span></span></span>\(\alpha \beta \sigma\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     ein Präfix
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:522:50');"
+                  >emu_content/05/05-06-dk-automat.emu:522:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >der Front </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:523:50');"
+                  >emu_content/05/05-06-dk-automat.emu:523:50</span></span></span>\(\alpha' \beta'\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     ist. Somit gilt (DK.2) nicht.
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:523:50');"
+                  >emu_content/05/05-06-dk-automat.emu:523:50</span></span></span>
             </p>
-            <p>Wenn umgekehrt (DK.2) nicht gilt, dann gibt es einen akzeptierenden
-              Zustand \(q\) (der also \(\boxed{X\rightarrow \beta.}\) enthält) und
-              eine ausgehende Kante \(q \step{\sigma} q'\) mit einem Terminal
-              \(\sigma\).
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Wenn umgekehrt (DK.2) nicht gilt, dann gibt es einen akzeptierenden</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:526:50');"
+                  >emu_content/05/05-06-dk-automat.emu:526:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Zustand </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:527:50');"
+                  >emu_content/05/05-06-dk-automat.emu:527:50</span></span></span>\(q\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     (der also 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:527:50');"
+                  >emu_content/05/05-06-dk-automat.emu:527:50</span></span></span>\(\boxed{X\rightarrow \beta.}\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     enthält) und
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:527:50');"
+                  >emu_content/05/05-06-dk-automat.emu:527:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >eine ausgehende Kante </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:528:50');"
+                  >emu_content/05/05-06-dk-automat.emu:528:50</span></span></span>\(q \step{\sigma} q'\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     mit einem Terminal
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:528:50');"
+                  >emu_content/05/05-06-dk-automat.emu:528:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:529:50');"
+                  >emu_content/05/05-06-dk-automat.emu:529:50</span></span></span>\(\sigma\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:529:50');"
+                  >emu_content/05/05-06-dk-automat.emu:529:50</span></span></span>
             </p>
             <div
               class="well well-lg numbered-exercise container-fluid"
             >
               <p><span
                   class="numbered-title"
-                >Übungsaufgabe <NumberedTitle>5.9.1</NumberedTitle>
-                   
-                </span>Zeigen Sie: wenn \(G\) keine nutzlosen Nichtterminale hat, dann gibt
-                es im NDK-Automaten für jeden Zustand \(q\) eine Übergangsfolge \(q
-                \steps{v} q'\) zu einem akzeptierenden Zustand \(q'\), wobei \(v\)
-                ausschließlich aus \(G\)-Terminalen besteht, also \(v \in \Sigma^*\).
+                ><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >Übungsaufgabe </span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:536:50');"
+                      >emu_content/05/05-06-dk-automat.emu:536:50</span></span></span><NumberedTitle><span><span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >5.9.1</span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:539:50');"
+                        >emu_content/05/05-06-dk-automat.emu:539:50</span></span></span></NumberedTitle><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >
+                         
+                      </span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:540:50');"
+                      >emu_content/05/05-06-dk-automat.emu:540:50</span></span></span></span><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Zeigen Sie: wenn </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:541:50');"
+                    >emu_content/05/05-06-dk-automat.emu:541:50</span></span></span>\(G\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       keine nutzlosen Nichtterminale hat, dann gibt
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:541:50');"
+                    >emu_content/05/05-06-dk-automat.emu:541:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >es im NDK-Automaten für jeden Zustand </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:542:50');"
+                    >emu_content/05/05-06-dk-automat.emu:542:50</span></span></span>\(q\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       eine Übergangsfolge 
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:542:50');"
+                    >emu_content/05/05-06-dk-automat.emu:542:50</span></span></span>\(q
+                \steps{v} q'\)
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       zu einem akzeptierenden Zustand 
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:543:50');"
+                    >emu_content/05/05-06-dk-automat.emu:543:50</span></span></span>\(q'\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >, wobei </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:543:50');"
+                    >emu_content/05/05-06-dk-automat.emu:543:50</span></span></span>\(v\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:543:50');"
+                    >emu_content/05/05-06-dk-automat.emu:543:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >ausschließlich aus </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:544:50');"
+                    >emu_content/05/05-06-dk-automat.emu:544:50</span></span></span>\(G\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >-Terminalen besteht, also </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:544:50');"
+                    >emu_content/05/05-06-dk-automat.emu:544:50</span></span></span>\(v \in \Sigma^*\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >.</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:544:50');"
+                    >emu_content/05/05-06-dk-automat.emu:544:50</span></span></span>
               </p>
-              <p>Zeigen Sie das selbe für den DK-Automaten.
+              <p><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Zeigen Sie das selbe für den DK-Automaten.</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:547:50');"
+                    >emu_content/05/05-06-dk-automat.emu:547:50</span></span></span>
               </p>
             </div>
-            <p>Es gibt also einen Weg \(q \step{\sigma} q' \steps{v} q''\) für \(v \in
-              \Sigma^*\) und einen akzeptierenden Zustand \(q''\). Es sind also
-              sowohl \(\alpha \beta\) als auch \(\alpha \beta \sigma v\) Fronten von
-              \(G\), und \(\sigma v\) besteht nur aus Terminalen. Das heißt, dass
-              Punkt 2 der Schlussfolgerung nicht gilt.
-              <span
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Es gibt also einen Weg </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:550:50');"
+                  >emu_content/05/05-06-dk-automat.emu:550:50</span></span></span>\(q \step{\sigma} q' \steps{v} q''\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     für 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:550:50');"
+                  >emu_content/05/05-06-dk-automat.emu:550:50</span></span></span>\(v \in
+              \Sigma^*\)
+              <span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     und einen akzeptierenden Zustand 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:551:50');"
+                  >emu_content/05/05-06-dk-automat.emu:551:50</span></span></span>\(q''\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >. Es sind also</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:551:50');"
+                  >emu_content/05/05-06-dk-automat.emu:551:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >sowohl </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:552:50');"
+                  >emu_content/05/05-06-dk-automat.emu:552:50</span></span></span>\(\alpha \beta\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     als auch 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:552:50');"
+                  >emu_content/05/05-06-dk-automat.emu:552:50</span></span></span>\(\alpha \beta \sigma v\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     Fronten von
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:552:50');"
+                  >emu_content/05/05-06-dk-automat.emu:552:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:553:50');"
+                  >emu_content/05/05-06-dk-automat.emu:553:50</span></span></span>\(G\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >, und </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:553:50');"
+                  >emu_content/05/05-06-dk-automat.emu:553:50</span></span></span>\(\sigma v\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     besteht nur aus Terminalen. Das heißt, dass
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:553:50');"
+                  >emu_content/05/05-06-dk-automat.emu:553:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Punkt 2 der Schlussfolgerung nicht gilt.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:554:50');"
+                  >emu_content/05/05-06-dk-automat.emu:554:50</span></span></span><span
                 class="qed"
-              >\(\square\)</span>
+              ><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:558:50');"
+                    >emu_content/05/05-06-dk-automat.emu:558:50</span></span></span>\(\square\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:558:50');"
+                    >emu_content/05/05-06-dk-automat.emu:558:50</span></span></span></span>
             </p>
           </div>
-          <h3>LR(1)-Grammatiken
+          <h3><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >LR(1)-Grammatiken</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:561:50');"
+                >emu_content/05/05-06-dk-automat.emu:561:50</span></span></span>
           </h3>
-          Hier ist der nichtdeterministische Automat für \(G\) mit Lookahead 1.
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Hier ist der nichtdeterministische Automat für </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:562:50');"
+              >emu_content/05/05-06-dk-automat.emu:562:50</span></span></span>\(G\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 mit Lookahead 1.
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:562:50');"
+              >emu_content/05/05-06-dk-automat.emu:562:50</span></span></span>
           <figure>
             <img
               style="height: 30em"
@@ -706,7 +3112,14 @@
               loading="lazy"
             >
           </figure>
-          Jetzt machen wir den Automaten deterministisch:
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Jetzt machen wir den Automaten deterministisch:</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/05/05-06-dk-automat.emu:568:50');"
+              >emu_content/05/05-06-dk-automat.emu:568:50</span></span></span>
         </div>
       </div>
     </div>

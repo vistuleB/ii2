@@ -18,10 +18,10 @@
 </head>
 <body>
 <section
-  count={2}
+  count="2"
   title_gr="Tiefe, Fan-In"
   title_en="Fanin Size Depth"
-  number={1.1}
+  number="1.1"
   counter="DefCtr"
   counter="ExoCtr"
   path="/lecture-notes2"
@@ -31,9 +31,23 @@
   >
     <a
       href="../vorlesungsskript.html"
-    >Inhaltsverzeichnis</a><a
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >Inhaltsverzeichnis</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:12:50');"
+          >emu_content/01/01-01-Fanin-Size-Depth.emu:12:50</span></span></span></a><a
       href="01-00-Boolean-circuits.html"
-    >&lt;&lt; Kapitel 1.0</a>
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >&lt;&lt; Kapitel 1.0</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:16:50');"
+          >emu_content/01/01-01-Fanin-Size-Depth.emu:16:50</span></span></span></a>
   </div>
   <div
     id="link-to-overview"
@@ -41,9 +55,23 @@
   >
     <a
       href="/"
-    >zur Kursübersicht</a><a
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >zur Kursübersicht</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:23:50');"
+          >emu_content/01/01-01-Fanin-Size-Depth.emu:23:50</span></span></span></a><a
       href="01-02-truth-tables-cnf-dnf.html"
-    >Kapitel 1.2 &gt;&gt;</a>
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >Kapitel 1.2 &gt;&gt;</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:27:50');"
+          >emu_content/01/01-01-Fanin-Size-Depth.emu:27:50</span></span></span></a>
   </div>
   <div
     id="rightSideWrapper"
@@ -62,50 +90,289 @@
           >
             <span
               class="subChapterTitle"
-            >1.1
-              Größe, Tiefe, Fan-In
-            </span>
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >1.1</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:41:50');"
+                  >emu_content/01/01-01-Fanin-Size-Depth.emu:41:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Größe, Tiefe, Fan-In</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:42:50');"
+                  >emu_content/01/01-01-Fanin-Size-Depth.emu:42:50</span></span></span></span>
           </h1>
-          <p>Für Boolesche Schaltkreise gibt es drei Komplexitätsparameter, die uns
-            interessieren.
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Für Boolesche Schaltkreise gibt es drei Komplexitätsparameter, die uns</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:45:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:45:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >interessieren.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:46:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:46:50</span></span></span>
           </p>
           <div
             class="well container theorem"
           >
             <span
               class="numbered-title"
-            >Definition <NumberedTitle>1.1.1</NumberedTitle>
-               
-            </span>Die <i>Größe</i>
-             eines Schaltkreises ist die Anzahl seiner Gates, also die Anzahl
-            der Knoten im zugrundeliegenden DAG.
-            Die 
-            <i>Teife</i>
-             ist die Länge des längsten gerichteten Pfades von einem Input- zu einem
-            Output-Gate.
-            Der 
-            <i>Maximum-Fan-in</i>
-             ist der maximale Rein-Grad aller Knoten, also
-            der maximale Fan-in aller Gates.
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Definition </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:52:50');"
+                  >emu_content/01/01-01-Fanin-Size-Depth.emu:52:50</span></span></span><NumberedTitle><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >1.1.1</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:55:50');"
+                    >emu_content/01/01-01-Fanin-Size-Depth.emu:55:50</span></span></span></NumberedTitle><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:56:50');"
+                  >emu_content/01/01-01-Fanin-Size-Depth.emu:56:50</span></span></span></span><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Die </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:57:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:57:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Größe</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:57:50');"
+                  >emu_content/01/01-01-Fanin-Size-Depth.emu:57:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   eines Schaltkreises ist die Anzahl seiner Gates, also die Anzahl
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:57:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:57:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >der Knoten im zugrundeliegenden DAG.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:58:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:58:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Die </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:59:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:59:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Teife</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:59:50');"
+                  >emu_content/01/01-01-Fanin-Size-Depth.emu:59:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   ist die Länge des längsten gerichteten Pfades von einem Input- zu einem
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:59:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:59:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Output-Gate.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:60:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:60:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Der </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:61:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:61:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Maximum-Fan-in</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:61:50');"
+                  >emu_content/01/01-01-Fanin-Size-Depth.emu:61:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   ist der maximale Rein-Grad aller Knoten, also
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:61:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:61:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >der maximale Fan-in aller Gates.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:62:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:62:50</span></span></span>
           </div>
           <div
             class="alter-warning"
           >
-            
-            <b>Vorsicht.</b>
-             Manchmal werden zur Bestimmung der Tiefe die NOT-Gates
-            nicht mitgezählt. Entlang eines Pfades wird also gelegentlich nur die Anzahl
-            der AND- und OR-Gates bestimmt.
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:66:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:66:50</span></span></span><b><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Vorsicht.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:66:50');"
+                  >emu_content/01/01-01-Fanin-Size-Depth.emu:66:50</span></span></span></b><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   Manchmal werden zur Bestimmung der Tiefe die NOT-Gates
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:66:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:66:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >nicht mitgezählt. Entlang eines Pfades wird also gelegentlich nur die Anzahl</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:67:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:67:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >der AND- und OR-Gates bestimmt.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:68:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:68:50</span></span></span>
           </div>
-          <p>Für alle Parameter Größe, Tiefe, Maximum-Fan-in gilt: klein ist gut. Dies ist klar,
-            wenn Sie sich vorstellen, dass Schaltkreis industriell zum Einsatz kommt. Die Größe bestimmt
-            die Anzahl der Transistoren, die Sie brauchen; die Tiefe bestimmt die Dauer, die das Signal
-            braucht, um durch den ganzen Schaltkreis zu laufen und bestimmt somit die Geschwindigkeit, mit
-            der Ihr Schaltkreis seinen Job erledigt.
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Für alle Parameter Größe, Tiefe, Maximum-Fan-in gilt: klein ist gut. Dies ist klar,</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:71:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:71:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >wenn Sie sich vorstellen, dass Schaltkreis industriell zum Einsatz kommt. Die Größe bestimmt</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:72:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:72:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >die Anzahl der Transistoren, die Sie brauchen; die Tiefe bestimmt die Dauer, die das Signal</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:73:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:73:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >braucht, um durch den ganzen Schaltkreis zu laufen und bestimmt somit die Geschwindigkeit, mit</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:74:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:74:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >der Ihr Schaltkreis seinen Job erledigt.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:75:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:75:50</span></span></span>
           </p>
-          <p>Der Fan-in ist eher von theoretischem Interesse.
-            Wie bereits oben gesehen, können wir immer einen Fan-in von 2 garantieren, indem
-            wir AND- und OR-Gates mit mehr als zwei Inputs als verschachteltes AND oder OR darstellen:
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Der Fan-in ist eher von theoretischem Interesse.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:78:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:78:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Wie bereits oben gesehen, können wir immer einen Fan-in von 2 garantieren, indem</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:79:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:79:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >wir AND- und OR-Gates mit mehr als zwei Inputs als verschachteltes AND oder OR darstellen:</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:80:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:80:50</span></span></span>
           </p>
           <figure>
             <img
@@ -113,29 +380,222 @@
               src="../img/circuits/and-n-fold-linear-depth.svg"
               loading="lazy"
             >
-            oder alternativ:
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >oder alternativ:</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:86:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:86:50</span></span></span>
             <img
               style="height:10em"
               src="../img/circuits/and-n-fold-log-depth.svg"
               loading="lazy"
             >
           </figure>
-          <p>In beiden Fällen ersetzen wir ein AND-Gate von Fan-in \(n\) durch
-            \(n-1\) AND-Gates von je Fan-in 2. Wenn wir allerdings die 
-            <i>Tiefe</i>
-            betrachten, so sehen wir, dass der linke Schaltkreis Tiefe \(n-1\) hat,
-            der rechte jedoch nur \(\ceil{\log_2(n)}\). Ganz allgemein stellen wir fest:
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >In beiden Fällen ersetzen wir ein AND-Gate von Fan-in </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:93:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:93:50</span></span></span>\(n\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   durch
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:93:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:93:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:94:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:94:50</span></span></span>\(n-1\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   AND-Gates von je Fan-in 2. Wenn wir allerdings die 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:94:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:94:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Tiefe</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:94:50');"
+                  >emu_content/01/01-01-Fanin-Size-Depth.emu:94:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:94:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:94:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >betrachten, so sehen wir, dass der linke Schaltkreis Tiefe </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:95:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:95:50</span></span></span>\(n-1\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   hat,
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:95:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:95:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >der rechte jedoch nur </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:96:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:96:50</span></span></span>\(\ceil{\log_2(n)}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >. Ganz allgemein stellen wir fest:</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:96:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:96:50</span></span></span>
           </p>
           <div
             class="well container theorem"
           >
             <span
               class="numbered-title"
-            >Theorem <NumberedTitle>1.1.2</NumberedTitle>
-               
-            </span>Sei \(C\) ein Schaltkreis Maximum-Fan-in \(k\), Größe \(s\) und Tiefe \(d\).
-            Dann gibt es einen äquivalenten Schaltkreis \(C'\) mit Maximum-Fan-in \(2\),
-            Größe höchstens \(s (k-1)\) und Tiefe höchstens \(d \ceil {\log_2 k}\).
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Theorem </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:102:50');"
+                  >emu_content/01/01-01-Fanin-Size-Depth.emu:102:50</span></span></span><NumberedTitle><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >1.1.2</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:105:50');"
+                    >emu_content/01/01-01-Fanin-Size-Depth.emu:105:50</span></span></span></NumberedTitle><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:106:50');"
+                  >emu_content/01/01-01-Fanin-Size-Depth.emu:106:50</span></span></span></span><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Sei </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:107:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:107:50</span></span></span>\(C\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   ein Schaltkreis Maximum-Fan-in 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:107:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:107:50</span></span></span>\(k\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >, Größe </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:107:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:107:50</span></span></span>\(s\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   und Tiefe 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:107:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:107:50</span></span></span>\(d\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:107:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:107:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Dann gibt es einen äquivalenten Schaltkreis </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:108:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:108:50</span></span></span>\(C'\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   mit Maximum-Fan-in 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:108:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:108:50</span></span></span>\(2\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >,</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:108:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:108:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Größe höchstens </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:109:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:109:50</span></span></span>\(s (k-1)\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   und Tiefe höchstens 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:109:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:109:50</span></span></span>\(d \ceil {\log_2 k}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/01/01-01-Fanin-Size-Depth.emu:109:50');"
+                >emu_content/01/01-01-Fanin-Size-Depth.emu:109:50</span></span></span>
           </div>
         </div>
       </div>

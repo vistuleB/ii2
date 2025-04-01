@@ -18,10 +18,10 @@
 </head>
 <body>
 <section
-  count={8}
+  count="8"
   title_gr="Mengen"
   title_en="infinite sets"
-  number={2.0}
+  number="2.0"
   counter="DefCtr"
   counter="ExoCtr"
   path="/lecture-notes8"
@@ -31,9 +31,23 @@
   >
     <a
       href="../vorlesungsskript.html"
-    >Inhaltsverzeichnis</a><a
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >Inhaltsverzeichnis</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:12:50');"
+          >emu_content/02/02-00-infinite-sets.emu:12:50</span></span></span></a><a
       href="01-06-lower-and-upper-bounds.html"
-    >&lt;&lt; Kapitel 1.6</a>
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >&lt;&lt; Kapitel 1.6</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:16:50');"
+          >emu_content/02/02-00-infinite-sets.emu:16:50</span></span></span></a>
   </div>
   <div
     id="link-to-overview"
@@ -41,9 +55,23 @@
   >
     <a
       href="/"
-    >zur Kursübersicht</a><a
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >zur Kursübersicht</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:23:50');"
+          >emu_content/02/02-00-infinite-sets.emu:23:50</span></span></span></a><a
       href="02-01-comparing-sizes.html"
-    >Kapitel 2.1 &gt;&gt;</a>
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >Kapitel 2.1 &gt;&gt;</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:27:50');"
+          >emu_content/02/02-00-infinite-sets.emu:27:50</span></span></span></a>
   </div>
   <div
     id="rightSideWrapper"
@@ -59,39 +87,270 @@
         >
           <span
             class="chapterTitle"
-          >2.
-            Unendliche Mengen
-          </span>
+          ><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >2.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:39:50');"
+                >emu_content/02/02-00-infinite-sets.emu:39:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Unendliche Mengen</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:40:50');"
+                >emu_content/02/02-00-infinite-sets.emu:40:50</span></span></span></span>
         </h1>
-        <p>Mit den Boolesche Schaltkreise haben wir bereits ein Modell für Berechnung kennengelernt.
-          Es ist abstrakt genug, um mathematisch rigorose Aussagen darüber zu treffen und über obere und
-          untere Schranken zu sprechen.
-          Gleichzeitig ist es sehr konkret und nah an seiner physikalischen Realisierung.
-          Ein entscheidender Nachteil Boolescher Schaltkreise jedoch: Sie müssen von Anfang an wissen, wie
-          groß
-          Ihr Input ist; also wie vielen Input-Variablen \(x_1, \dots, x_n\) Sie begegnen werden.
-          Für ein allgemeines Modell der Berechnung ist dies ungeeignet. Wir wollen ja 
-          <i>ein</i>
-          Computerprogramm, das beliebig große Eingaben verkraften kann. Ein Computerprogramm
-          soll also 
-          <i>endlich</i>
-           sein, aber für eine 
-          <i>unendliche</i>
-           Menge potentieller Eingaben
-          funktionieren.
-          In diesem Kapitel werden wir daher unendliche Mengen besser kennenlernen.
+        <p><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Mit den Boolesche Schaltkreise haben wir bereits ein Modell für Berechnung kennengelernt.</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:43:50');"
+              >emu_content/02/02-00-infinite-sets.emu:43:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Es ist abstrakt genug, um mathematisch rigorose Aussagen darüber zu treffen und über obere und</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:44:50');"
+              >emu_content/02/02-00-infinite-sets.emu:44:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >untere Schranken zu sprechen.</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:45:50');"
+              >emu_content/02/02-00-infinite-sets.emu:45:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Gleichzeitig ist es sehr konkret und nah an seiner physikalischen Realisierung.</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:46:50');"
+              >emu_content/02/02-00-infinite-sets.emu:46:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Ein entscheidender Nachteil Boolescher Schaltkreise jedoch: Sie müssen von Anfang an wissen, wie</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:47:50');"
+              >emu_content/02/02-00-infinite-sets.emu:47:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >groß</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:48:50');"
+              >emu_content/02/02-00-infinite-sets.emu:48:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Ihr Input ist; also wie vielen Input-Variablen </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:49:50');"
+              >emu_content/02/02-00-infinite-sets.emu:49:50</span></span></span>\(x_1, \dots, x_n\)<span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 Sie begegnen werden.
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:49:50');"
+              >emu_content/02/02-00-infinite-sets.emu:49:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Für ein allgemeines Modell der Berechnung ist dies ungeeignet. Wir wollen ja </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:50:50');"
+              >emu_content/02/02-00-infinite-sets.emu:50:50</span></span></span><i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >ein</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:50:50');"
+                >emu_content/02/02-00-infinite-sets.emu:50:50</span></span></span></i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:50:50');"
+              >emu_content/02/02-00-infinite-sets.emu:50:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >Computerprogramm, das beliebig große Eingaben verkraften kann. Ein Computerprogramm</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:51:50');"
+              >emu_content/02/02-00-infinite-sets.emu:51:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >soll also </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:52:50');"
+              >emu_content/02/02-00-infinite-sets.emu:52:50</span></span></span><i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >endlich</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:52:50');"
+                >emu_content/02/02-00-infinite-sets.emu:52:50</span></span></span></i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 sein, aber für eine 
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:52:50');"
+              >emu_content/02/02-00-infinite-sets.emu:52:50</span></span></span><i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >unendliche</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:52:50');"
+                >emu_content/02/02-00-infinite-sets.emu:52:50</span></span></span></i><span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >
+                 Menge potentieller Eingaben
+              </span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:52:50');"
+              >emu_content/02/02-00-infinite-sets.emu:52:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >funktionieren.</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:53:50');"
+              >emu_content/02/02-00-infinite-sets.emu:53:50</span></span>
+            
+            <span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              >In diesem Kapitel werden wir daher unendliche Mengen besser kennenlernen.</span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:54:50');"
+              >emu_content/02/02-00-infinite-sets.emu:54:50</span></span></span>
         </p>
         <div
           class="well container theorem"
         >
           <p><span
               class="numbered-title"
-            >Beispiel <NumberedTitle>2.0.1</NumberedTitle>
-               
-            </span>
-             Die Mengen \(\N, \Z, \Q, \R\) sind unendlich. Die
-            Mengen
-            \(\{a,e,i,o,u\}\) und \(\{0,1,2,3,4,5,6,7,8,9\}\) sind endlich.
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Beispiel </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:61:50');"
+                  >emu_content/02/02-00-infinite-sets.emu:61:50</span></span></span><NumberedTitle><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >2.0.1</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:64:50');"
+                    >emu_content/02/02-00-infinite-sets.emu:64:50</span></span></span></NumberedTitle><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:65:50');"
+                  >emu_content/02/02-00-infinite-sets.emu:65:50</span></span></span></span><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   Die Mengen 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:66:50');"
+                >emu_content/02/02-00-infinite-sets.emu:66:50</span></span></span>\(\N, \Z, \Q, \R\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   sind unendlich. Die
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:66:50');"
+                >emu_content/02/02-00-infinite-sets.emu:66:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Mengen</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:67:50');"
+                >emu_content/02/02-00-infinite-sets.emu:67:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:68:50');"
+                >emu_content/02/02-00-infinite-sets.emu:68:50</span></span></span>\(\{a,e,i,o,u\}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   und 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:68:50');"
+                >emu_content/02/02-00-infinite-sets.emu:68:50</span></span></span>\(\{0,1,2,3,4,5,6,7,8,9\}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   sind endlich.
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:68:50');"
+                >emu_content/02/02-00-infinite-sets.emu:68:50</span></span></span>
           </p>
         </div>
         <div
@@ -99,17 +358,112 @@
         >
           <p><span
               class="numbered-title"
-            ></span>Die Menge
-            $$\begin{align*}
+            ></span><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Die Menge</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:74:50');"
+                >emu_content/02/02-00-infinite-sets.emu:74:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:75:50');"
+                >emu_content/02/02-00-infinite-sets.emu:75:50</span></span></span>$$\begin{align*}
             \{0,1\}^* := \{\epsilon\} \cup \{0,1\} \cup \{00, 01, 10, 11\} \cup \dots \cup \{0,1\}^n
             \cup
             \dots \ ,
             \end{align*}$$
-            also die Menge aller endlichen Bit-Strings ist unendlich. Mit \(\epsilon\) bezeichnen wir hier den
-            leeren String.
-            Ganz generell: wenn \(\Sigma\) eine
-            nichtleere
-            Menge ist, dann ist \(\Sigma^*\), die Menge aller endlichen Strings über \(\Sigma\), unendlich.
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:79:50');"
+                >emu_content/02/02-00-infinite-sets.emu:79:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >also die Menge aller endlichen Bit-Strings ist unendlich. Mit </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:80:50');"
+                >emu_content/02/02-00-infinite-sets.emu:80:50</span></span></span>\(\epsilon\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   bezeichnen wir hier den
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:80:50');"
+                >emu_content/02/02-00-infinite-sets.emu:80:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >leeren String.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:81:50');"
+                >emu_content/02/02-00-infinite-sets.emu:81:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Ganz generell: wenn </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:82:50');"
+                >emu_content/02/02-00-infinite-sets.emu:82:50</span></span></span>\(\Sigma\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   eine
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:82:50');"
+                >emu_content/02/02-00-infinite-sets.emu:82:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >nichtleere</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:83:50');"
+                >emu_content/02/02-00-infinite-sets.emu:83:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Menge ist, dann ist </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:84:50');"
+                >emu_content/02/02-00-infinite-sets.emu:84:50</span></span></span>\(\Sigma^*\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >, die Menge aller endlichen Strings über </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:84:50');"
+                >emu_content/02/02-00-infinite-sets.emu:84:50</span></span></span>\(\Sigma\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >, unendlich.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/02/02-00-infinite-sets.emu:84:50');"
+                >emu_content/02/02-00-infinite-sets.emu:84:50</span></span></span>
           </p>
         </div>
       </div>

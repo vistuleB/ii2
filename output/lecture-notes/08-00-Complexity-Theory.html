@@ -18,10 +18,10 @@
 </head>
 <body>
 <section
-  count={50}
+  count="50"
   title_gr=""
   title_en="Complexity Theory"
-  number={8.0}
+  number="8.0"
   counter="DefCtr"
   counter="ExoCtr"
   path="/lecture-notes50"
@@ -31,9 +31,23 @@
   >
     <a
       href="../vorlesungsskript.html"
-    >Inhaltsverzeichnis</a><a
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >Inhaltsverzeichnis</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:12:50');"
+          >emu_content/08/08-00-Complexity-Theory.emu:12:50</span></span></span></a><a
       href="07-08-PCP-applications.html"
-    >&lt;&lt; Kapitel 7.8</a>
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >&lt;&lt; Kapitel 7.8</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:16:50');"
+          >emu_content/08/08-00-Complexity-Theory.emu:16:50</span></span></span></a>
   </div>
   <div
     id="link-to-overview"
@@ -41,9 +55,23 @@
   >
     <a
       href="/"
-    >zur Kursübersicht</a><a
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >zur Kursübersicht</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:23:50');"
+          >emu_content/08/08-00-Complexity-Theory.emu:23:50</span></span></span></a><a
       href="08-01-Time-hierarchy-theorem.html"
-    >Kapitel 8.1 &gt;&gt;</a>
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >Kapitel 8.1 &gt;&gt;</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:27:50');"
+          >emu_content/08/08-00-Complexity-Theory.emu:27:50</span></span></span></a>
   </div>
   <div
     id="rightSideWrapper"
@@ -62,120 +90,1010 @@
           >
             <span
               class="chapterTitle"
-            >8.
-              Komplexitätstheorie
-            </span>
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >8.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:41:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:41:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Komplexitätstheorie</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:42:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:42:50</span></span></span></span>
           </h1>
-          <p>Turingmaschinen erlauben uns, den Resourcenverbrauch einer Berechnung zu quantifizieren:
-            zum einen die 
-            <i>Zeit</i>, also die Anzahl der Schritte, die die Turingmaschine
-            durchführt, bis sie anhält; zum anderen der 
-            <i>Speicherplatz</i>, also die Anzahl
-            der Zellen auf dem Band (oder den Bändern), die im Verlauf der Berechnung beschrieben werden.
-            Beides sind Maße, die tatsächlich im echten Leben relevant sind. Turingmaschinen erlauben uns,
-            diese genau zu quantifizieren und die Zeitkomplexität und Speicherkomplexität eines Problems
-            zu untersuchen. In diesem Kapitel werden wir uns zum Großteil auf Zeitkomplexität beschränken.
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Turingmaschinen erlauben uns, den Resourcenverbrauch einer Berechnung zu quantifizieren:</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:45:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:45:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >zum einen die </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:46:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:46:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Zeit</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:46:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:46:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >, also die Anzahl der Schritte, die die Turingmaschine</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:46:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:46:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >durchführt, bis sie anhält; zum anderen der </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:47:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:47:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Speicherplatz</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:47:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:47:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >, also die Anzahl</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:47:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:47:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >der Zellen auf dem Band (oder den Bändern), die im Verlauf der Berechnung beschrieben werden.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:48:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:48:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Beides sind Maße, die tatsächlich im echten Leben relevant sind. Turingmaschinen erlauben uns,</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:49:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:49:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >diese genau zu quantifizieren und die Zeitkomplexität und Speicherkomplexität eines Problems</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:50:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:50:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >zu untersuchen. In diesem Kapitel werden wir uns zum Großteil auf Zeitkomplexität beschränken.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:51:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:51:50</span></span></span>
           </p>
-          <p>Es gibt weitere Resourcen, die man mit Turingmaschinen nicht wirklich quantifizieren kann:
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Es gibt weitere Resourcen, die man mit Turingmaschinen nicht wirklich quantifizieren kann:</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:54:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:54:50</span></span></span>
           </p>
           <ul>
-            <li><b>I/O-Komplexität.</b>
-               In echten Rechnern haben wir eine Hierarchie von
-              Speichermedien. Den extrem schnellen Prozessorcache; schnellen Cache; den vergleichsweise
-              langsamen
-              Hauptstpeicher (RAM); eventuell sogar einen externen Festplattenspeichern, der um
-              Größenordnungen langsamer ist.
+            <li><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:58:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:58:50</span></span></span><b><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >I/O-Komplexität.</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:58:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:58:50</span></span></span></b><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     In echten Rechnern haben wir eine Hierarchie von
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:58:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:58:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Speichermedien. Den extrem schnellen Prozessorcache; schnellen Cache; den vergleichsweise</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:59:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:59:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >langsamen</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:60:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:60:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Hauptstpeicher (RAM); eventuell sogar einen externen Festplattenspeichern, der um</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:61:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:61:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Größenordnungen langsamer ist.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:62:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:62:50</span></span></span>
             </li>
-            <li><b>Kommunikationskomplexität.</b>
-               Bei verteilten Anwendungen (Cloud Computing) ist
-              die limitierende Resource eventuell gar nicht die Rechenkapazität sondern das
-              
-              <i>Netzwerk</i>, über
-              das die Daten ausgetauscht werden.
+            <li><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:65:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:65:50</span></span></span><b><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Kommunikationskomplexität.</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:65:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:65:50</span></span></span></b><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     Bei verteilten Anwendungen (Cloud Computing) ist
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:65:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:65:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >die limitierende Resource eventuell gar nicht die Rechenkapazität sondern das</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:66:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:66:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:67:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:67:50</span></span></span><i><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Netzwerk</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:67:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:67:50</span></span></span></i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >, über</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:67:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:67:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >das die Daten ausgetauscht werden.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:68:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:68:50</span></span></span>
             </li>
           </ul>
-          <p>Also: Turingmaschinen sind zwar universell in dem Sinne, dass sie wohl alle physikalisch
-            realisierbaren
-            Rechnermodelle simulieren können (ich sage 
-            <i>wohl</i>, weil wir nicht wissen, was alles
-            physikalisch realisierbar ist). Allerdings ist es möglich, dass Sie, abhängig von Ihrem
-            Anwendungsfeld, ein abgewandeltes oder völlig anderes Modell benötigen, um den
-            Resourcenverbrauch modellieren zu können.
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Also: Turingmaschinen sind zwar universell in dem Sinne, dass sie wohl alle physikalisch</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:71:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:71:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >realisierbaren</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:72:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:72:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Rechnermodelle simulieren können (ich sage </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:73:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:73:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >wohl</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:73:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:73:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >, weil wir nicht wissen, was alles</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:73:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:73:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >physikalisch realisierbar ist). Allerdings ist es möglich, dass Sie, abhängig von Ihrem</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:74:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:74:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Anwendungsfeld, ein abgewandeltes oder völlig anderes Modell benötigen, um den</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:75:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:75:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Resourcenverbrauch modellieren zu können.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:76:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:76:50</span></span></span>
           </p>
-          <p>Dennoch: in diesem Kapitel beschränken wir uns auf die Resource <i>Zeit</i>, und daher
-            sind Turingmaschinen das Modell der Wahl.
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Dennoch: in diesem Kapitel beschränken wir uns auf die Resource </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:79:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:79:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Zeit</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:79:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:79:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >, und daher</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:79:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:79:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >sind Turingmaschinen das Modell der Wahl.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:80:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:80:50</span></span></span>
           </p>
-          <h2>Zeitkomplexitätsklassen
+          <h2><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Zeitkomplexitätsklassen</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:83:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:83:50</span></span></span>
           </h2>
-          <p>Wir beschränken uns der Einfachheit halber auf das Eingabealphabet \(\Sigma = \{0,1\}\) und
-            auf Entscheidungsprobleme, wo uns also nur eine Ja/Nein-Antwort interessiert.
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Wir beschränken uns der Einfachheit halber auf das Eingabealphabet </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:86:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:86:50</span></span></span>\(\Sigma = \{0,1\}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   und
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:86:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:86:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >auf Entscheidungsprobleme, wo uns also nur eine Ja/Nein-Antwort interessiert.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:87:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:87:50</span></span></span>
           </p>
           <div
             class="well container theorem"
           >
             <p><span
                 class="numbered-title"
-              >Definition <NumberedTitle>8.0.1</NumberedTitle>
-                 
-              </span>
-               Sei \(t: \N \rightarrow \N\). Eine
-              Turingmaschinen \(M\)
-              
-              <i>entscheidet</i>
-               eine Sprache \(L \subseteq \Sigma^*\) in Zeit \(t\) wenn
+              ><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Definition </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:94:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:94:50</span></span></span><NumberedTitle><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >8.0.1</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:97:50');"
+                      >emu_content/08/08-00-Complexity-Theory.emu:97:50</span></span></span></NumberedTitle><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:98:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:98:50</span></span></span></span><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     Sei 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:99:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:99:50</span></span></span>\(t: \N \rightarrow \N\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >. Eine</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:99:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:99:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Turingmaschinen </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:100:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:100:50</span></span></span>\(M\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:100:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:100:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:101:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:101:50</span></span></span><i><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >entscheidet</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:101:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:101:50</span></span></span></i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     eine Sprache 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:101:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:101:50</span></span></span>\(L \subseteq \Sigma^*\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     in Zeit 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:101:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:101:50</span></span></span>\(t\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     wenn
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:101:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:101:50</span></span></span>
             </p>
             <ul>
-              <li>sie die Sprache entscheidet, also \(x \in L \Longleftrightarrow f_M(x) = \texttt{accept}\)
-                und
+              <li><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >sie die Sprache entscheidet, also </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:105:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:105:50</span></span></span>\(x \in L \Longleftrightarrow f_M(x) = \texttt{accept}\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:105:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:105:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >und</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:106:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:106:50</span></span></span>
               </li>
-              <li>für jede Eingabe \(x\) in maximal \(O(t(|x|))\) Schritten terminiert.
+              <li><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >für jede Eingabe </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:109:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:109:50</span></span></span>\(x\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       in maximal 
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:109:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:109:50</span></span></span>\(O(t(|x|))\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       Schritten terminiert.
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:109:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:109:50</span></span></span>
               </li>
             </ul>
-            <p>Wir definieren nun
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Wir definieren nun</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:112:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:112:50</span></span></span>
             </p>
-            $$\begin{align*}
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:113:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:113:50</span></span></span>$$\begin{align*}
             \TIME_k(t) := \{L \subseteq \Sigma^* \ | \
             \textnormal{es gibt eine $k$-Band-TM $M$, die $L$ in Zeit $t$ entscheidet}\}
             \end{align*}$$
-            <p>und schließlich
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:116:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:116:50</span></span></span>
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >und schließlich</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:119:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:119:50</span></span></span>
             </p>
-            $$\begin{align*}
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:120:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:120:50</span></span></span>$$\begin{align*}
             \TIME(t) := \bigcup_{k \geq 1} \TIME_k(t) \ .
             \end{align*}$$
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:122:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:122:50</span></span></span>
           </div>
-          <p>Falls Sie sich nicht mehr genau an die \(O\)-Notation erinnern können: in diesem Zusammenhang
-            heißt das, dass es Konstanten \(c\) und \(d\) gibt, so dass \(M\) in maximal
-            \(c t(|x|) + d\) Schritten terminiert. Die Konstanten \(c\) und \(d\) dürfen von \(M\) abhängen, aber
-            nicht von der Eingabe \(x\) oder der Länge \(|x|\).
-            Wir haben in 
-            <a
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Falls Sie sich nicht mehr genau an die </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:125:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:125:50</span></span></span>\(O\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >-Notation erinnern können: in diesem Zusammenhang</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:125:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:125:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >heißt das, dass es Konstanten </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:126:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:126:50</span></span></span>\(c\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   und 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:126:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:126:50</span></span></span>\(d\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   gibt, so dass 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:126:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:126:50</span></span></span>\(M\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   in maximal
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:126:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:126:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:127:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:127:50</span></span></span>\(c t(|x|) + d\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   Schritten terminiert. Die Konstanten 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:127:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:127:50</span></span></span>\(c\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   und 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:127:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:127:50</span></span></span>\(d\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   dürfen von 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:127:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:127:50</span></span></span>\(M\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   abhängen, aber
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:127:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:127:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >nicht von der Eingabe </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:128:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:128:50</span></span></span>\(x\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   oder der Länge 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:128:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:128:50</span></span></span>\(|x|\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:128:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:128:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Wir haben in </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:129:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:129:50</span></span></span><a
               href="07-02-Turing-variants.html"
-            >Kapitel 7.3</a>
-             gezeigt, wie man eine
-            \(k\)-Band-Turingmaschine \(M\) durch eine
-            Ein-Band-Turingmaschine \(M'\). Der Aufwand war quadratisch: wenn \(M\) innerhalb von \(t\) Schritten
-            terminiert, so terminiert \(M'\) innerhalb von \(c t^2\) Schritten, wobei \(c\) eine Konstante ist,
-            die
-            von \(M\) abhängt. Mit unser neuen Notation können wir das sehr konzis schreiben:
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Kapitel 7.3</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:133:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:133:50</span></span></span></a><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   gezeigt, wie man eine
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:134:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:134:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:135:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:135:50</span></span></span>\(k\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >-Band-Turingmaschine </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:135:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:135:50</span></span></span>\(M\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   durch eine
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:135:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:135:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Ein-Band-Turingmaschine </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:136:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:136:50</span></span></span>\(M'\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >. Der Aufwand war quadratisch: wenn </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:136:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:136:50</span></span></span>\(M\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   innerhalb von 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:136:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:136:50</span></span></span>\(t\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   Schritten
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:136:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:136:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >terminiert, so terminiert </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:137:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:137:50</span></span></span>\(M'\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   innerhalb von 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:137:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:137:50</span></span></span>\(c t^2\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   Schritten, wobei 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:137:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:137:50</span></span></span>\(c\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   eine Konstante ist,
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:137:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:137:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >die</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:138:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:138:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >von </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:139:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:139:50</span></span></span>\(M\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   abhängt. Mit unser neuen Notation können wir das sehr konzis schreiben:
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:139:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:139:50</span></span></span>
           </p>
           <div
             class="well container theorem"
           >
             <p><span
                 class="numbered-title"
-              >Theorem <NumberedTitle>8.0.2</NumberedTitle>
-                 
-              </span>
-               
-              <b>(\(k\)-Band zu \(1\)-Band).</b>
-              Sei \(t: \N \rightarrow \N\). Dann gilt
-              \(\TIME_k(t) \subseteq \TIME_1(t^2)\).
+              ><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Theorem </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:146:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:146:50</span></span></span><NumberedTitle><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >8.0.2</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:149:50');"
+                      >emu_content/08/08-00-Complexity-Theory.emu:149:50</span></span></span></NumberedTitle><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:150:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:150:50</span></span></span></span><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:151:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:151:50</span></span></span><b><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >(</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:151:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:151:50</span></span></span>\(k\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >-Band zu </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:151:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:151:50</span></span></span>\(1\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >-Band).</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:151:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:151:50</span></span></span></b><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:151:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:151:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Sei </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:152:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:152:50</span></span></span>\(t: \N \rightarrow \N\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >. Dann gilt</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:152:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:152:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:153:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:153:50</span></span></span>\(\TIME_k(t) \subseteq \TIME_1(t^2)\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:153:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:153:50</span></span></span>
             </p>
           </div>
-          <p>Der quadratische Overhead wird tatsächlich störend, wenn man Zeit als Resource untersucht.
-            Daher gibt es eine bessere Simulation; die benötigt allerdings zwei Bänder (Oder drei? Weiß ich
-            gerade nicht
-            exakt) und die Konstruktion ist deutlich komplizierter. Daher vorerst ohne Beweis:
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Der quadratische Overhead wird tatsächlich störend, wenn man Zeit als Resource untersucht.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:156:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:156:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Daher gibt es eine bessere Simulation; die benötigt allerdings zwei Bänder (Oder drei? Weiß ich</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:157:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:157:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >gerade nicht</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:158:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:158:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >exakt) und die Konstruktion ist deutlich komplizierter. Daher vorerst ohne Beweis:</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:159:50');"
+                >emu_content/08/08-00-Complexity-Theory.emu:159:50</span></span></span>
           </p>
           <div
             id="k-tape-to-2-tape"
@@ -183,15 +1101,101 @@
           >
             <p><span
                 class="numbered-title"
-              >Theorem <NumberedTitle>8.0.3</NumberedTitle>
-                 
-              </span>
-               
-              <b>(\(k\)-Band zu \(2\)-Band; ohne
-                Beweis).
-              </b>
-               Sei
-              \(t: \N \rightarrow \N\). Dann gilt \(\TIME_k(t) \subseteq \TIME_2(t \log t)\).
+              ><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Theorem </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:167:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:167:50</span></span></span><NumberedTitle><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >8.0.3</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:170:50');"
+                      >emu_content/08/08-00-Complexity-Theory.emu:170:50</span></span></span></NumberedTitle><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:171:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:171:50</span></span></span></span><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:172:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:172:50</span></span></span><b><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >(</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:172:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:172:50</span></span></span>\(k\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >-Band zu </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:172:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:172:50</span></span></span>\(2\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >-Band; ohne</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:172:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:172:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Beweis).</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:173:50');"
+                    >emu_content/08/08-00-Complexity-Theory.emu:173:50</span></span></span></b><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     Sei
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:173:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:173:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:174:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:174:50</span></span></span>\(t: \N \rightarrow \N\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >. Dann gilt </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:174:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:174:50</span></span></span>\(\TIME_k(t) \subseteq \TIME_2(t \log t)\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/08/08-00-Complexity-Theory.emu:174:50');"
+                  >emu_content/08/08-00-Complexity-Theory.emu:174:50</span></span></span>
             </p>
           </div>
         </div>

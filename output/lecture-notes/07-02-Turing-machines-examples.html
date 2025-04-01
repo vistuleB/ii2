@@ -18,10 +18,10 @@
 </head>
 <body>
 <section
-  count={43}
+  count="43"
   title_gr="von Turingmaschinen"
   title_en="Turing machines examples"
-  number={7.2}
+  number="7.2"
   counter="DefCtr"
   counter="ExoCtr"
   path="/lecture-notes43"
@@ -31,9 +31,23 @@
   >
     <a
       href="../vorlesungsskript.html"
-    >Inhaltsverzeichnis</a><a
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >Inhaltsverzeichnis</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:12:50');"
+          >emu_content/07/07-02-Turing-machines-examples.emu:12:50</span></span></span></a><a
       href="07-01-Turing-machines-definition.html"
-    >&lt;&lt; Kapitel 7.1</a>
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >&lt;&lt; Kapitel 7.1</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:16:50');"
+          >emu_content/07/07-02-Turing-machines-examples.emu:16:50</span></span></span></a>
   </div>
   <div
     id="link-to-overview"
@@ -41,9 +55,23 @@
   >
     <a
       href="/"
-    >zur Kursübersicht</a><a
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >zur Kursübersicht</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:23:50');"
+          >emu_content/07/07-02-Turing-machines-examples.emu:23:50</span></span></span></a><a
       href="07-03-Turing-encoding.html"
-    >Kapitel 7.3 &gt;&gt;</a>
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >Kapitel 7.3 &gt;&gt;</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:27:50');"
+          >emu_content/07/07-02-Turing-machines-examples.emu:27:50</span></span></span></a>
   </div>
   <div
     id="rightSideWrapper"
@@ -62,103 +90,902 @@
           >
             <span
               class="subChapterTitle"
-            >7.2
-              Beispiele von Turingmaschinen
-            </span>
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >7.2</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:41:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:41:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Beispiele von Turingmaschinen</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:42:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:42:50</span></span></span></span>
           </h1>
           <div
             class="well container theorem"
           >
             <span
               class="numbered-title"
-            >Beispiel <NumberedTitle>7.2.1</NumberedTitle>
-               
-            </span>Betrachten wir die Sprache
-            $$\begin{align*}
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Beispiel </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:48:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:48:50</span></span></span><NumberedTitle><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >7.2.1</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:51:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:51:50</span></span></span></NumberedTitle><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:52:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:52:50</span></span></span></span><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Betrachten wir die Sprache</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:53:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:53:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:54:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:54:50</span></span></span>$$\begin{align*}
             \{a^n b^n c^n \ | \ n \geq 0 \}
             \end{align*}$$
-            über dem Alphabet \(\{a,b,c\}\). Wir wollen eine Turingmaschine
-            entwerfen, die diese Sprache entscheidet.
-            <p><b>Informelle Beschreibung.</b>
-               Unsere Turingmaschine arbeitet
-              in Phasen. In jeder Phase sucht die Maschine ein \(a\) und löscht es
-              (ersetzt es durch ein \(X\)). Dann geht sie nach rechts und
-              sucht und markiert ein \(b\); dann ein \(c\). Sobald sie das \(c\) markiert hat,
-              geht sie wieder nach links. Dies beendet die Phase.
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:56:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:56:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >über dem Alphabet </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:57:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:57:50</span></span></span>\(\{a,b,c\}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >. Wir wollen eine Turingmaschine</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:57:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:57:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >entwerfen, die diese Sprache entscheidet.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:58:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:58:50</span></span></span>
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:61:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:61:50</span></span></span><b><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Informelle Beschreibung.</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:61:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:61:50</span></span></span></b><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     Unsere Turingmaschine arbeitet
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:61:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:61:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >in Phasen. In jeder Phase sucht die Maschine ein </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:62:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:62:50</span></span></span>\(a\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     und löscht es
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:62:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:62:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >(ersetzt es durch ein </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:63:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:63:50</span></span></span>\(X\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >). Dann geht sie nach rechts und</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:63:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:63:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >sucht und markiert ein </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:64:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:64:50</span></span></span>\(b\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >; dann ein </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:64:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:64:50</span></span></span>\(c\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >. Sobald sie das </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:64:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:64:50</span></span></span>\(c\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     markiert hat,
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:64:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:64:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >geht sie wieder nach links. Dies beendet die Phase.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:65:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:65:50</span></span></span>
             </p>
-            Wenn die Maschine kein \(a\) mehr findet und auch kein \(b\) oder \(c\) mehr da ist,
-            akzeptiert die Maschine.
-            Wenn unterwegs ein "Fehler" geschieht, beispielsweise die Maschine ein \(b\) sucht
-            aber keines findet, wechselt sie in den 
-            <tt>reject
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Wenn die Maschine kein </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:66:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:66:50</span></span></span>\(a\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   mehr findet und auch kein 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:66:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:66:50</span></span></span>\(b\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   oder 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:66:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:66:50</span></span></span>\(c\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   mehr da ist,
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:66:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:66:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >akzeptiert die Maschine.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:67:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:67:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Wenn unterwegs ein "Fehler" geschieht, beispielsweise die Maschine ein </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:68:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:68:50</span></span></span>\(b\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   sucht
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:68:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:68:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >aber keines findet, wechselt sie in den </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:69:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:69:50</span></span></span>
+            <tt><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >reject</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:72:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:72:50</span></span></span>
             </tt>
-            -Zustand.
-            <p><b>Formellere Beschreibung.</b>
-               Als Bandalphabet verwenden wir
-              $$\begin{align*}
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >-Zustand.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:73:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:73:50</span></span></span>
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:76:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:76:50</span></span></span><b><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Formellere Beschreibung.</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:76:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:76:50</span></span></span></b><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     Als Bandalphabet verwenden wir
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:76:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:76:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:77:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:77:50</span></span></span>$$\begin{align*}
               \Gamma := \{a,b,c, X, \square\} \ .
               \end{align*}$$
+              <span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:79:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:79:50</span></span></span>
             </p>
-            Das Symbol \(X\) heißt dann "hier stand mal \(a\), \(b\) oder \(c\), wir haben es aber bereits
-            gelesen". Als Zustandsmenge verwenden wir
-            $$\begin{align*}
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Das Symbol </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:80:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:80:50</span></span></span>\(X\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   heißt dann "hier stand mal 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:80:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:80:50</span></span></span>\(a\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >, </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:80:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:80:50</span></span></span>\(b\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   oder 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:80:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:80:50</span></span></span>\(c\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >, wir haben es aber bereits</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:80:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:80:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >gelesen". Als Zustandsmenge verwenden wir</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:81:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:81:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:82:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:82:50</span></span></span>$$\begin{align*}
             Q := \{\texttt{findA},\texttt{findB},\texttt{findC},\texttt{noA},
             \texttt{accept},\texttt{reject}\} \ .
             \end{align*}$$
-            Die "Bedeutung" dieser Zustände ist:
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:85:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:85:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Die "Bedeutung" dieser Zustände ist:</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:86:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:86:50</span></span></span>
             <ul>
               <li>
-                <tt>findA
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >findA</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:91:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:91:50</span></span></span>
                 </tt>
-                : gehe nach links, bis Du ein \(a\) findest, ersetze es durch \(X\) und
-                wechsle dann
-                in 
-                <tt>findB
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >: gehe nach links, bis Du ein </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:92:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:92:50</span></span></span>\(a\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       findest, ersetze es durch 
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:92:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:92:50</span></span></span>\(X\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       und
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:92:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:92:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >wechsle dann</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:93:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:93:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >in </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:94:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:94:50</span></span></span>
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >findB</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:97:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:97:50</span></span></span>
                 </tt>
-                . Wenn Du allerdings in ein
-                \(\square\) läufst, bist Du am linken Rand und es gibt keine \(a\) mehr; wechsle nach
-                <tt>noA
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >. Wenn Du allerdings in ein</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:98:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:98:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:99:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:99:50</span></span></span>\(\square\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       läufst, bist Du am linken Rand und es gibt keine 
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:99:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:99:50</span></span></span>\(a\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       mehr; wechsle nach
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:99:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:99:50</span></span></span>
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >noA</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:102:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:102:50</span></span></span>
                 </tt>
-                 und gehe ein Feld nach rechts.
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       und gehe ein Feld nach rechts.
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:103:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:103:50</span></span></span>
               </li>
               <li>
-                <tt>findB
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >findB</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:107:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:107:50</span></span></span>
                 </tt>
-                : gehe nach rechts, bis Du ein \(b\) gefunden hast; ignoriere
-                auf dem Weg alle \(a\) und alle \(X\); wenn Du \(b\) liest, ersetze es durch \(X\) und
-                gehe nach
-                <tt>findC
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >: gehe nach rechts, bis Du ein </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:108:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:108:50</span></span></span>\(b\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       gefunden hast; ignoriere
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:108:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:108:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >auf dem Weg alle </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:109:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:109:50</span></span></span>\(a\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       und alle 
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:109:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:109:50</span></span></span>\(X\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >; wenn Du </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:109:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:109:50</span></span></span>\(b\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       liest, ersetze es durch 
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:109:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:109:50</span></span></span>\(X\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       und
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:109:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:109:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >gehe nach</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:110:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:110:50</span></span></span>
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >findC</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:113:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:113:50</span></span></span>
                 </tt>
-                ;jedes andere Zeichen erzeugt einen Fehler.
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >;jedes andere Zeichen erzeugt einen Fehler.</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:114:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:114:50</span></span></span>
               </li>
               <li>
-                <tt>findC
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >findC</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:118:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:118:50</span></span></span>
                 </tt>
-                : gehe nach rechts, bis Du ein \(c\) gefunden hast;
-                ignoriere derweil alle \(b\) und \(X\); wenn Du ein \(c\) liest,
-                ersetze es durch \(X\) und gehe in Zustand 
-                <tt>findA
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >: gehe nach rechts, bis Du ein </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:119:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:119:50</span></span></span>\(c\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       gefunden hast;
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:119:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:119:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >ignoriere derweil alle </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:120:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:120:50</span></span></span>\(b\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       und 
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:120:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:120:50</span></span></span>\(X\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >; wenn Du ein </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:120:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:120:50</span></span></span>\(c\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       liest,
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:120:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:120:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >ersetze es durch </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:121:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:121:50</span></span></span>\(X\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       und gehe in Zustand 
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:121:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:121:50</span></span></span>
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >findA</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:124:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:124:50</span></span></span>
                 </tt>
-                .
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >.</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:125:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:125:50</span></span></span>
               </li>
               <li>
-                <tt>noA
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >noA</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:129:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:129:50</span></span></span>
                 </tt>
-                : wir stehen nun am Anfang des Bandinhalts und wissen,
-                dass es kein \(a\) mehr gibt. Wir müssen jetzt überprüfen, dass es auch keine
-                \(b,c\) mehr gibt. Also: gehe nach rechts, ignoriere alle \(X\). Wenn Du ein
-                \(b\) oder \(c\) triffst, gehe nach 
-                <tt>reject
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >: wir stehen nun am Anfang des Bandinhalts und wissen,</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:130:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:130:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >dass es kein </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:131:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:131:50</span></span></span>\(a\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       mehr gibt. Wir müssen jetzt überprüfen, dass es auch keine
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:131:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:131:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:132:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:132:50</span></span></span>\(b,c\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       mehr gibt. Also: gehe nach rechts, ignoriere alle 
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:132:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:132:50</span></span></span>\(X\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >. Wenn Du ein</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:132:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:132:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:133:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:133:50</span></span></span>\(b\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       oder 
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:133:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:133:50</span></span></span>\(c\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       triffst, gehe nach 
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:133:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:133:50</span></span></span>
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >reject</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:136:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:136:50</span></span></span>
                 </tt>
-                . Wenn Du ein
-                \(\square\) triffst, dann besteht das Wort nur noch aus \(X\). Wechsel nach
-                <tt>accept
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >. Wenn Du ein</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:137:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:137:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:138:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:138:50</span></span></span>\(\square\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       triffst, dann besteht das Wort nur noch aus 
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:138:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:138:50</span></span></span>\(X\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >. Wechsel nach</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:138:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:138:50</span></span></span>
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >accept</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:141:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:141:50</span></span></span>
                 </tt>
-                .
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >.</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:142:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:142:50</span></span></span>
               </li>
             </ul>
-            <p>Wir können die Beschreibung jetzt formal als Funktion
-              \(\delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \rls\) niederschreiben.
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Wir können die Beschreibung jetzt formal als Funktion</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:145:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:145:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:146:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:146:50</span></span></span>\(\delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \rls\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     niederschreiben.
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:146:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:146:50</span></span></span>
             </p>
             <figure>
               <img
@@ -167,36 +994,236 @@
                 loading="lazy"
               >
             </figure>
-            <p>Beachten Sie: manche Zellen sind leer. Damit meine ich, dass die Turingmaschine dort
-              in den Zustand 
-              <tt>reject
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Beachten Sie: manche Zellen sind leer. Damit meine ich, dass die Turingmaschine dort</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:154:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:154:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >in den Zustand </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:155:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:155:50</span></span></span>
+              <tt><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >reject</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:158:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:158:50</span></span></span>
               </tt>
-               wechselt. Andere Zellen bestehen nur aus einem
-              Buchstaben; so steht in der Zelle von \(\delta(\texttt{findA}, b)\) nur
-              ein \(\texttt{R}\). Dies bedeutet, dass die Turingmaschine ihren Zustand nicht
-              wechselt und einfach das gelesene Zeichen in die Zelle wieder reinschreibt. Dies
-              ist reiner Syntaxzucker.
+              <span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     wechselt. Andere Zellen bestehen nur aus einem
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:159:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:159:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Buchstaben; so steht in der Zelle von </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:160:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:160:50</span></span></span>\(\delta(\texttt{findA}, b)\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     nur
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:160:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:160:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >ein </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:161:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:161:50</span></span></span>\(\texttt{R}\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >. Dies bedeutet, dass die Turingmaschine ihren Zustand nicht</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:161:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:161:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >wechselt und einfach das gelesene Zeichen in die Zelle wieder reinschreibt. Dies</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:162:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:162:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >ist reiner Syntaxzucker.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:163:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:163:50</span></span></span>
             </p>
-            <p>Auf der Webseite<a
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Auf der Webseite</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:166:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:166:50</span></span></span><a
                 href="https://turingmachinesimulator.com"
-              >turingmachinesimulator.com</a>können Sie Ihre Turingmaschine eingeben und simulieren. Den Text für
-              die gerade beschriebene finden in 
-              <a
+              ><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >turingmachinesimulator.com</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:170:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:170:50</span></span></span></a><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >können Sie Ihre Turingmaschine eingeben und simulieren. Den Text für</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:171:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:171:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >die gerade beschriebene finden in </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:172:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:172:50</span></span></span><a
                 href="../code/turing machines/aabbcc.txt"
-              >aabbcc.txt</a>.
-              Generell können Sie Regeln der Form
-              $$\begin{align*}
+              ><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >aabbcc.txt</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:176:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:176:50</span></span></span></a><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:177:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:177:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Generell können Sie Regeln der Form</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:178:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:178:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:179:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:179:50</span></span></span>$$\begin{align*}
               \delta(q,a) = (r, b, D)
               \end{align*}$$
-              auf turingmachinesimulator.com als
+              <span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:181:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:181:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >auf turingmachinesimulator.com als</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:182:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:182:50</span></span></span>
             </p>
-<pre>q, a
-r, b, D 
+<pre><span><span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+>q, a</span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:185:50');"
+>emu_content/07/07-02-Turing-machines-examples.emu:185:50</span></span>
+
+<span
+  class="tooltip-3003-container"
+><span
+  class="tooltip-3003-text"
+>r, b, D </span><span
+  class="tooltip-3003"
+  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:186:50');"
+>emu_content/07/07-02-Turing-machines-examples.emu:186:50</span></span></span>
 </pre>
-            <p>angeben, wobei die Richtung \(D\) mit den Symbolen 
-              <tt>&lt;, -,&gt;
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >angeben, wobei die Richtung </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:187:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:187:50</span></span></span>\(D\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     mit den Symbolen 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:187:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:187:50</span></span></span>
+              <tt><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >&lt;, -,&gt;</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:190:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:190:50</span></span></span>
               </tt>
-               codiert wird.
+              <span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     codiert wird.
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:191:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:191:50</span></span></span>
             </p>
           </div>
           <div
@@ -205,92 +1232,624 @@ r, b, D
           >
             <span
               class="numbered-title"
-            >Beispiel <NumberedTitle>7.2.2</NumberedTitle>
-               
-            </span>Als zweites Beispiel nehmen wir die Palindromsprache
-            $$\begin{align*}
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Beispiel </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:198:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:198:50</span></span></span><NumberedTitle><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >7.2.2</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:201:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:201:50</span></span></span></NumberedTitle><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:202:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:202:50</span></span></span></span><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Als zweites Beispiel nehmen wir die Palindromsprache</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:203:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:203:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:204:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:204:50</span></span></span>$$\begin{align*}
             L := \{ w \in \{a,b\}^* \ | \ w = w^R \} \ ,
             \end{align*}$$
-            wobei \(w^R\) das Kehrwort bedeutet, also \(aabba^R = abbaa\).
-            <p>Unsere Maschine sucht das erste Zeichen, löscht es (ersetzt es durch \(\square\)
-              und "merkt" es sich in ihrem Zustand.
-              Dann geht sie zum rechten Rand und vergleicht es mit dem dortigen.
-              Falls es passt, löscht sie es und geht wieder nach links zurück. Falls es nicht
-              passt, wechselt sie in 
-              <tt>reject
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:206:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:206:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >wobei </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:207:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:207:50</span></span></span>\(w^R\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   das Kehrwort bedeutet, also 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:207:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:207:50</span></span></span>\(aabba^R = abbaa\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:207:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:207:50</span></span></span>
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Unsere Maschine sucht das erste Zeichen, löscht es (ersetzt es durch </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:210:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:210:50</span></span></span>\(\square\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:210:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:210:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >und "merkt" es sich in ihrem Zustand.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:211:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:211:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Dann geht sie zum rechten Rand und vergleicht es mit dem dortigen.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:212:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:212:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Falls es passt, löscht sie es und geht wieder nach links zurück. Falls es nicht</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:213:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:213:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >passt, wechselt sie in </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:214:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:214:50</span></span></span>
+              <tt><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >reject</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:217:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:217:50</span></span></span>
               </tt>
-              .
-              Wenn unsere Maschine das erste Zeichen sucht aber keines findet, dann hat
-              sie alle Zeichen erfolgreich gelöscht und es hat sich also um ein
-              Palindrom von gerader Länge gehandelt. Wenn die Maschine allerdings
-              nach dem Löschen des linkesten Zeichens sofort am rechten Rand steht, dann
-              stand dort nur noch ein einziges Zeichen und es hat sich um ein Palindrom ungerader
-              Länge gehandelt.
+              <span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:218:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:218:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Wenn unsere Maschine das erste Zeichen sucht aber keines findet, dann hat</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:219:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:219:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >sie alle Zeichen erfolgreich gelöscht und es hat sich also um ein</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:220:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:220:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Palindrom von gerader Länge gehandelt. Wenn die Maschine allerdings</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:221:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:221:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >nach dem Löschen des linkesten Zeichens sofort am rechten Rand steht, dann</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:222:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:222:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >stand dort nur noch ein einziges Zeichen und es hat sich um ein Palindrom ungerader</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:223:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:223:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Länge gehandelt.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:224:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:224:50</span></span></span>
             </p>
-            <p>Als Bandalphabet brauchen wir hier nur \(\Gamma = \{a,b,\square\}\). Als
-              Zustandsmenge nehmen wir
-              $$\begin{align*}
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Als Bandalphabet brauchen wir hier nur </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:227:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:227:50</span></span></span>\(\Gamma = \{a,b,\square\}\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >. Als</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:227:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:227:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Zustandsmenge nehmen wir</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:228:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:228:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:229:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:229:50</span></span></span>$$\begin{align*}
               Q = \{\texttt{next}, \texttt{readA}, \texttt{readB}, \texttt{killA}, \texttt{killB},
               \texttt{return}, \texttt{reject}, \texttt{accept}\}.
               \end{align*}$$
+              <span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:232:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:232:50</span></span></span>
             </p>
             <ul>
               <li>
-                <tt>next
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >next</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:237:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:237:50</span></span></span>
                 </tt>
-                : ist der Anfangszustand. Die Maschine steht am linkesten Zeichen.
-                Ist dieses \(\square\), so haben wir das "leere" Palindrom und wir wechseln
-                nach 
-                <tt>accept
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >: ist der Anfangszustand. Die Maschine steht am linkesten Zeichen.</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:238:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:238:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Ist dieses </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:239:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:239:50</span></span></span>\(\square\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >, so haben wir das "leere" Palindrom und wir wechseln</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:239:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:239:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >nach </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:240:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:240:50</span></span></span>
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >accept</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:243:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:243:50</span></span></span>
                 </tt>
-                . Ist es \(a\), wechseln wir nach 
-                <tt>readA
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >. Ist es </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:244:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:244:50</span></span></span>\(a\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >, wechseln wir nach </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:244:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:244:50</span></span></span>
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >readA</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:247:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:247:50</span></span></span>
                 </tt>
-                 und gehen
-                einen Schritt nach rechts; ist es
-                \(b\), wechseln wir nach 
-                <tt>readB
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       und gehen
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:248:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:248:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >einen Schritt nach rechts; ist es</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:249:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:249:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:250:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:250:50</span></span></span>\(b\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >, wechseln wir nach </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:250:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:250:50</span></span></span>
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >readB</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:253:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:253:50</span></span></span>
                 </tt>
-                 und gehen nach rechts.
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       und gehen nach rechts.
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:254:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:254:50</span></span></span>
               </li>
               <li>
-                <tt>readA, readB
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >readA, readB</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:258:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:258:50</span></span></span>
                 </tt>
-                : wir gehen nach rechts, bis wir ein \(\square\) lesen,
-                also den rechten Rand erreicht haben, und wechseln dann nach 
-                <tt>killA
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >: wir gehen nach rechts, bis wir ein </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:259:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:259:50</span></span></span>\(\square\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       lesen,
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:259:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:259:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >also den rechten Rand erreicht haben, und wechseln dann nach </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:260:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:260:50</span></span></span>
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >killA</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:263:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:263:50</span></span></span>
                 </tt>
-                 bzw.
-                <tt>killB
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       bzw.
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:264:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:264:50</span></span></span>
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >killB</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:267:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:267:50</span></span></span>
                 </tt>
-                 und gehen einen Schritt nach links.
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       und gehen einen Schritt nach links.
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:268:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:268:50</span></span></span>
               </li>
               <li>
-                <tt>killA, killB
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >killA, killB</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:272:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:272:50</span></span></span>
                 </tt>
-                : hier weiß die Turingmaschine, was das linkeste Zeichen war,
-                und dass dieses bereits gelöscht worden ist. Sie muss nun überprüfen, was
-                das rechteste Zeichen ist. Wenn es "passt", löschen wir es und wechseln
-                nach 
-                <tt>return
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >: hier weiß die Turingmaschine, was das linkeste Zeichen war,</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:273:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:273:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >und dass dieses bereits gelöscht worden ist. Sie muss nun überprüfen, was</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:274:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:274:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >das rechteste Zeichen ist. Wenn es "passt", löschen wir es und wechseln</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:275:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:275:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >nach </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:276:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:276:50</span></span></span>
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >return</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:279:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:279:50</span></span></span>
                 </tt>
-                ; wenn es "nicht passt", nach 
-                <tt>reject
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >; wenn es "nicht passt", nach </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:280:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:280:50</span></span></span>
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >reject</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:283:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:283:50</span></span></span>
                 </tt>
-                ; wenn es
-                \(\square\) ist, dann haben wir das ganze Wort abgearbeitet und gehen nach
-                <tt>accept
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >; wenn es</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:284:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:284:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:285:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:285:50</span></span></span>\(\square\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       ist, dann haben wir das ganze Wort abgearbeitet und gehen nach
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:285:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:285:50</span></span></span>
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >accept</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:288:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:288:50</span></span></span>
                 </tt>
-                .
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >.</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:289:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:289:50</span></span></span>
               </li>
               <li>
-                <tt>return
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >return</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:293:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:293:50</span></span></span>
                 </tt>
-                : gehe nach links, bis Du ein \(\square\) findest. Wechsle
-                dann nach 
-                <tt>next
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >: gehe nach links, bis Du ein </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:294:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:294:50</span></span></span>\(\square\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       findest. Wechsle
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:294:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:294:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >dann nach </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:295:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:295:50</span></span></span>
+                <tt><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >next</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:298:50');"
+                      >emu_content/07/07-02-Turing-machines-examples.emu:298:50</span></span></span>
                 </tt>
-                .
+                <span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >.</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:299:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:299:50</span></span></span>
               </li>
             </ul>
             <figure>
@@ -306,13 +1865,62 @@ r, b, D
           >
             <span
               class="numbered-title"
-            >Übungsaufgabe <NumberedTitle>7.2.1</NumberedTitle>
-               
-            </span>Implementieren Sie die Turingmaschine für die Palindromsprache auf<a
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Übungsaufgabe </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:310:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:310:50</span></span></span><NumberedTitle><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >7.2.1</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:313:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:313:50</span></span></span></NumberedTitle><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:314:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:314:50</span></span></span></span><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Implementieren Sie die Turingmaschine für die Palindromsprache auf</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:315:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:315:50</span></span></span><a
               href="https://turingmachinesimulator.com"
-            >turingmachinesimulator.com</a>.
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >turingmachinesimulator.com</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:319:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:319:50</span></span></span></a><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:320:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:320:50</span></span></span>
           </div>
-          <p>Jetzt sind Sie dran.
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Jetzt sind Sie dran.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:323:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:323:50</span></span></span>
           </p>
           <div
             id="exercise-wcw"
@@ -320,37 +1928,246 @@ r, b, D
           >
             <span
               class="numbered-title"
-            >Übungsaufgabe <NumberedTitle>7.2.2</NumberedTitle>
-               
-            </span>Schreiben Sie eine Turingmaschine (auf <a
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Übungsaufgabe </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:330:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:330:50</span></span></span><NumberedTitle><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >7.2.2</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:333:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:333:50</span></span></span></NumberedTitle><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:334:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:334:50</span></span></span></span><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Schreiben Sie eine Turingmaschine (auf </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:335:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:335:50</span></span></span><a
               href="https://turingmachinesimulator.com"
-            >turingmachinesimulator.com</a>),
-            die die folgende Sprache \(L \subseteq \{a,b,c\}\) entscheidet:
-            $$\begin{align*}
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >turingmachinesimulator.com</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:339:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:339:50</span></span></span></a><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >),</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:340:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:340:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >die die folgende Sprache </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:341:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:341:50</span></span></span>\(L \subseteq \{a,b,c\}\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   entscheidet:
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:341:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:341:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:342:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:342:50</span></span></span>$$\begin{align*}
             L := \{ w c w \ | \ w \in \{a,b\}^* \}
             \end{align*}$$
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:344:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:344:50</span></span></span>
           </div>
           <div
             class="well well-lg numbered-exercise container"
           >
             <span
               class="numbered-title"
-            >Übungsaufgabe <NumberedTitle>7.2.3</NumberedTitle>
-               
-            </span>Schreiben Sie auf <a
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Übungsaufgabe </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:350:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:350:50</span></span></span><NumberedTitle><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >7.2.3</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:353:50');"
+                    >emu_content/07/07-02-Turing-machines-examples.emu:353:50</span></span></span></NumberedTitle><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:354:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:354:50</span></span></span></span><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Schreiben Sie auf </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:355:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:355:50</span></span></span><a
               href="https://turingmachinesimulator.com"
-            >turingmachinesimulator.com</a>eine Turingmaschine für die Sprache
-            $$\begin{align*}
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >turingmachinesimulator.com</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:359:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:359:50</span></span></span></a><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >eine Turingmaschine für die Sprache</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:360:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:360:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:361:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:361:50</span></span></span>$$\begin{align*}
             L := \{1^n \ | \ n = 2^d, d \geq 0\} \ .
             \end{align*}$$
-            
-            <b>Tip:</b>
-             gehen Sie durch das Band und ersetzen jede zweite
-            \(1\), die Sie sehen, durch ein \(X\). Wenn Sie rechts ankommen und eine
-            ungerade Anzahl von Einsen gelesen haben, lehnen Sie ab. Wenn
-            die Anzahl gerade ist, gehen Sie wieder nach ganz links; sie haben nun
-            die Anzahl der Einsen halbiert. Sie akzeptieren, wenn
-            Sie von links nach rechts durchgehend genau eine 1 gelesen haben.
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:363:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:363:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:364:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:364:50</span></span></span><b><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Tip:</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:364:50');"
+                  >emu_content/07/07-02-Turing-machines-examples.emu:364:50</span></span></span></b><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   gehen Sie durch das Band und ersetzen jede zweite
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:364:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:364:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:365:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:365:50</span></span></span>\(1\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >, die Sie sehen, durch ein </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:365:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:365:50</span></span></span>\(X\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >. Wenn Sie rechts ankommen und eine</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:365:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:365:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >ungerade Anzahl von Einsen gelesen haben, lehnen Sie ab. Wenn</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:366:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:366:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >die Anzahl gerade ist, gehen Sie wieder nach ganz links; sie haben nun</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:367:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:367:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >die Anzahl der Einsen halbiert. Sie akzeptieren, wenn</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:368:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:368:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Sie von links nach rechts durchgehend genau eine 1 gelesen haben.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-02-Turing-machines-examples.emu:369:50');"
+                >emu_content/07/07-02-Turing-machines-examples.emu:369:50</span></span></span>
           </div>
         </div>
       </div>

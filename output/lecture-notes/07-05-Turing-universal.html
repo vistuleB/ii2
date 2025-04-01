@@ -18,10 +18,10 @@
 </head>
 <body>
 <section
-  count={46}
+  count="46"
   title_gr="simulieren Turing-Maschinen: die universelle Turing-Maschine"
   title_en="Turing universal"
-  number={7.5}
+  number="7.5"
   counter="DefCtr"
   counter="ExoCtr"
   path="/lecture-notes46"
@@ -31,9 +31,23 @@
   >
     <a
       href="../vorlesungsskript.html"
-    >Inhaltsverzeichnis</a><a
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >Inhaltsverzeichnis</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:12:50');"
+          >emu_content/07/07-05-Turing-universal.emu:12:50</span></span></span></a><a
       href="07-03-Turing-variants.html"
-    >&lt;&lt; Kapitel 7.3</a>
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >&lt;&lt; Kapitel 7.3</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:16:50');"
+          >emu_content/07/07-05-Turing-universal.emu:16:50</span></span></span></a>
   </div>
   <div
     id="link-to-overview"
@@ -41,9 +55,23 @@
   >
     <a
       href="/"
-    >zur Kursübersicht</a><a
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >zur Kursübersicht</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:23:50');"
+          >emu_content/07/07-05-Turing-universal.emu:23:50</span></span></span></a><a
       href="07-06-undecidability.html"
-    >Kapitel 7.6 &gt;&gt;</a>
+    ><span><span
+          class="tooltip-3003-container"
+        ><span
+            class="tooltip-3003-text"
+          >Kapitel 7.6 &gt;&gt;</span><span
+            class="tooltip-3003"
+            onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:27:50');"
+          >emu_content/07/07-05-Turing-universal.emu:27:50</span></span></span></a>
   </div>
   <div
     id="rightSideWrapper"
@@ -62,172 +90,1800 @@
           >
             <span
               class="subChapterTitle"
-            >7.5
-              Turing-Maschinen simulieren Turing-Maschinen: die universelle Turing-Maschine
-            </span>
+            ><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >7.5</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:41:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:41:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Turing-Maschinen simulieren Turing-Maschinen: die universelle Turing-Maschine</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:42:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:42:50</span></span></span></span>
           </h1>
-          <p>Im letzten Teilkapitel haben wir gesehen, wie wir jede Turingmaschine \(M
-            \)mit
-            Eingabealphabet \(\Sigma\) codieren können als
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Im letzten Teilkapitel haben wir gesehen, wie wir jede Turingmaschine </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:45:50');"
+                >emu_content/07/07-05-Turing-universal.emu:45:50</span></span></span>\(M
+            \)
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >mit</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:46:50');"
+                >emu_content/07/07-05-Turing-universal.emu:46:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Eingabealphabet </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:47:50');"
+                >emu_content/07/07-05-Turing-universal.emu:47:50</span></span></span>\(\Sigma\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   codieren können als
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:47:50');"
+                >emu_content/07/07-05-Turing-universal.emu:47:50</span></span></span>
           </p>
-          $$\begin{align*}
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:48:50');"
+              >emu_content/07/07-05-Turing-universal.emu:48:50</span></span></span>$$\begin{align*}
           \enc(M) \in \Lambda^* \ ,
           \end{align*}$$
-          <p>also als String über dem Codierungsalphabet
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:50:50');"
+              >emu_content/07/07-05-Turing-universal.emu:50:50</span></span></span>
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >also als String über dem Codierungsalphabet</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:53:50');"
+                >emu_content/07/07-05-Turing-universal.emu:53:50</span></span></span>
           </p>
-          $$\begin{align*}
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:54:50');"
+              >emu_content/07/07-05-Turing-universal.emu:54:50</span></span></span>$$\begin{align*}
           \Lambda := \writelambda
           \end{align*}$$
-          <p>Diese Codierungsschema enthält implizit Codierungsfunktionen
-            \(\enc_Q : Q \rightarrow \{0,1\}^+\) und \(\enc_\Gamma: \Gamma \rightarrow
-            \Sigma \cup \{0,1\}^+\),
-            die wir verwenden, um die Zustände und Arbeitszeichen von \(M\) in
-            \(\Lambda\)-Zeichen zu
-            übersetzen.
-            Für eine Konfiguration
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:56:50');"
+              >emu_content/07/07-05-Turing-universal.emu:56:50</span></span></span>
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Diese Codierungsschema enthält implizit Codierungsfunktionen</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:59:50');"
+                >emu_content/07/07-05-Turing-universal.emu:59:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:60:50');"
+                >emu_content/07/07-05-Turing-universal.emu:60:50</span></span></span>\(\enc_Q : Q \rightarrow \{0,1\}^+\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   und 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:60:50');"
+                >emu_content/07/07-05-Turing-universal.emu:60:50</span></span></span>\(\enc_\Gamma: \Gamma \rightarrow
+            \Sigma \cup \{0,1\}^+\)
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >,</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:61:50');"
+                >emu_content/07/07-05-Turing-universal.emu:61:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >die wir verwenden, um die Zustände und Arbeitszeichen von </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:62:50');"
+                >emu_content/07/07-05-Turing-universal.emu:62:50</span></span></span>\(M\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   in
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:62:50');"
+                >emu_content/07/07-05-Turing-universal.emu:62:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:63:50');"
+                >emu_content/07/07-05-Turing-universal.emu:63:50</span></span></span>\(\Lambda\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >-Zeichen zu</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:63:50');"
+                >emu_content/07/07-05-Turing-universal.emu:63:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >übersetzen.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:64:50');"
+                >emu_content/07/07-05-Turing-universal.emu:64:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Für eine Konfiguration</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:65:50');"
+                >emu_content/07/07-05-Turing-universal.emu:65:50</span></span></span>
           </p>
-          $$\begin{align*}
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:66:50');"
+              >emu_content/07/07-05-Turing-universal.emu:66:50</span></span></span>$$\begin{align*}
           C = u_1 \dots u_m q v_1 \dots v_n
           \end{align*}$$
-          <p>der Maschine \(M\) definieren wir die Codierung von \(C\) als
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:68:50');"
+              >emu_content/07/07-05-Turing-universal.emu:68:50</span></span></span>
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >der Maschine </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:71:50');"
+                >emu_content/07/07-05-Turing-universal.emu:71:50</span></span></span>\(M\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   definieren wir die Codierung von 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:71:50');"
+                >emu_content/07/07-05-Turing-universal.emu:71:50</span></span></span>\(C\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   als
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:71:50');"
+                >emu_content/07/07-05-Turing-universal.emu:71:50</span></span></span>
           </p>
-          $$\begin{align*}
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:72:50');"
+              >emu_content/07/07-05-Turing-universal.emu:72:50</span></span></span>$$\begin{align*}
           \enc(C) := \enc_\Gamma(u_1) \texttt{#} \enc_\Gamma(u_2) \dots \texttt{#}
           \enc_\Gamma(u_m)\texttt{#}
           \enc_Q(q) \texttt{#} \enc_\Gamma(v_1)\texttt{#} \dots \texttt{#}
           \enc_\Gamma(v_n) \in \Lambda^* \ .
           \end{align*}$$
-          <p>Das ist alles nicht besonders tiefgründig und dient allein dazu,
-            sicherzustellen, dass wir
-            die Konfigurationen von \(M\) darstellen können in dem Alphabet \(\Lambda\),
-            das
-            
-            <i>unabhängig</i>
-             von \(M\) ist. Dass wir also 
-            <i>jede</i>
-            Turingmaschine
-            \(M\) mit Eingabealphabet \(\Sigma\) und 
-            <i>jede</i>
-             ihrer Konfigurationen
-            als Strings über 
-            <i>einem</i>
-             festen Alphabet \(\Lambda\) darstellen
-            können.
+          <span><span
+              class="tooltip-3003-container"
+            ><span
+                class="tooltip-3003-text"
+              ></span><span
+                class="tooltip-3003"
+                onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:77:50');"
+              >emu_content/07/07-05-Turing-universal.emu:77:50</span></span></span>
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Das ist alles nicht besonders tiefgründig und dient allein dazu,</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:80:50');"
+                >emu_content/07/07-05-Turing-universal.emu:80:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >sicherzustellen, dass wir</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:81:50');"
+                >emu_content/07/07-05-Turing-universal.emu:81:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >die Konfigurationen von </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:82:50');"
+                >emu_content/07/07-05-Turing-universal.emu:82:50</span></span></span>\(M\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   darstellen können in dem Alphabet 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:82:50');"
+                >emu_content/07/07-05-Turing-universal.emu:82:50</span></span></span>\(\Lambda\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >,</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:82:50');"
+                >emu_content/07/07-05-Turing-universal.emu:82:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >das</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:83:50');"
+                >emu_content/07/07-05-Turing-universal.emu:83:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:84:50');"
+                >emu_content/07/07-05-Turing-universal.emu:84:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >unabhängig</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:84:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:84:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   von 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:84:50');"
+                >emu_content/07/07-05-Turing-universal.emu:84:50</span></span></span>\(M\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   ist. Dass wir also 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:84:50');"
+                >emu_content/07/07-05-Turing-universal.emu:84:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >jede</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:84:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:84:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:84:50');"
+                >emu_content/07/07-05-Turing-universal.emu:84:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Turingmaschine</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:85:50');"
+                >emu_content/07/07-05-Turing-universal.emu:85:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:86:50');"
+                >emu_content/07/07-05-Turing-universal.emu:86:50</span></span></span>\(M\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   mit Eingabealphabet 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:86:50');"
+                >emu_content/07/07-05-Turing-universal.emu:86:50</span></span></span>\(\Sigma\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   und 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:86:50');"
+                >emu_content/07/07-05-Turing-universal.emu:86:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >jede</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:86:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:86:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   ihrer Konfigurationen
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:86:50');"
+                >emu_content/07/07-05-Turing-universal.emu:86:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >als Strings über </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:87:50');"
+                >emu_content/07/07-05-Turing-universal.emu:87:50</span></span></span><i><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >einem</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:87:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:87:50</span></span></span></i><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   festen Alphabet 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:87:50');"
+                >emu_content/07/07-05-Turing-universal.emu:87:50</span></span></span>\(\Lambda\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   darstellen
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:87:50');"
+                >emu_content/07/07-05-Turing-universal.emu:87:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >können.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:88:50');"
+                >emu_content/07/07-05-Turing-universal.emu:88:50</span></span></span>
           </p>
-          <p>Eine Turingmaschine simulieren heißt nun, einen String
-            \(\enc(M)\texttt{;}w\) mit \(w \in \Sigma^*\) zu lesen und
-            daraus den String \(\enc(\hat{\delta}^*_M (w))\) zu berechnen, also
-            das Ergebnis \(\hat{\delta}^*_M(w)\), passend codiert über dem Alphabet
-            \(\Lambda\).
-            Das zentrale Ergebnis dieses Teilkapitels ist, dass wir diese Simulation
-            selbst mit einer Turingmaschine implementieren können.
+          <p><span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Eine Turingmaschine simulieren heißt nun, einen String</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:91:50');"
+                >emu_content/07/07-05-Turing-universal.emu:91:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:92:50');"
+                >emu_content/07/07-05-Turing-universal.emu:92:50</span></span></span>\(\enc(M)\texttt{;}w\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   mit 
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:92:50');"
+                >emu_content/07/07-05-Turing-universal.emu:92:50</span></span></span>\(w \in \Sigma^*\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   zu lesen und
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:92:50');"
+                >emu_content/07/07-05-Turing-universal.emu:92:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >daraus den String </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:93:50');"
+                >emu_content/07/07-05-Turing-universal.emu:93:50</span></span></span>\(\enc(\hat{\delta}^*_M (w))\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >
+                   zu berechnen, also
+                </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:93:50');"
+                >emu_content/07/07-05-Turing-universal.emu:93:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >das Ergebnis </span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:94:50');"
+                >emu_content/07/07-05-Turing-universal.emu:94:50</span></span></span>\(\hat{\delta}^*_M(w)\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >, passend codiert über dem Alphabet</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:94:50');"
+                >emu_content/07/07-05-Turing-universal.emu:94:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:95:50');"
+                >emu_content/07/07-05-Turing-universal.emu:95:50</span></span></span>\(\Lambda\)<span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:95:50');"
+                >emu_content/07/07-05-Turing-universal.emu:95:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >Das zentrale Ergebnis dieses Teilkapitels ist, dass wir diese Simulation</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:96:50');"
+                >emu_content/07/07-05-Turing-universal.emu:96:50</span></span>
+              
+              <span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                >selbst mit einer Turingmaschine implementieren können.</span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:97:50');"
+                >emu_content/07/07-05-Turing-universal.emu:97:50</span></span></span>
           </p>
           <div
             class="well container theorem"
           >
             <p><span
                 class="numbered-title"
-              >Theorem <NumberedTitle>7.5.1</NumberedTitle>
-                 
-              </span>
-               
-              <b>(Universelle
-                Turingmaschine).
-              </b>
-               Zu
-              jedem
-              endlichen Eingabealphabet \(\Sigma\) sei
-              \(\Lambda := \writelambda\) das Codierungsalphabet. Es gibt es
-              eine
-              Turingmaschine \(U = U_{\Sigma}\) mit Eingabealphabet
-              \(\Lambda\),
-              so dass für alle \(c \in \Lambda^*\) und \(w \in \Sigma^*\)
-              die Turingmaschine \(U\) mit Eingabewort \(x \in \Lambda^*\)
-              folgendes tut:
+              ><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Theorem </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:104:50');"
+                    >emu_content/07/07-05-Turing-universal.emu:104:50</span></span></span><NumberedTitle><span><span
+                      class="tooltip-3003-container"
+                    ><span
+                        class="tooltip-3003-text"
+                      >7.5.1</span><span
+                        class="tooltip-3003"
+                        onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:107:50');"
+                      >emu_content/07/07-05-Turing-universal.emu:107:50</span></span></span></NumberedTitle><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:108:50');"
+                    >emu_content/07/07-05-Turing-universal.emu:108:50</span></span></span></span><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:109:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:109:50</span></span></span><b><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >(Universelle</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:109:50');"
+                    >emu_content/07/07-05-Turing-universal.emu:109:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Turingmaschine).</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:110:50');"
+                    >emu_content/07/07-05-Turing-universal.emu:110:50</span></span></span></b><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     Zu
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:110:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:110:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >jedem</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:111:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:111:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >endlichen Eingabealphabet </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:112:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:112:50</span></span></span>\(\Sigma\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     sei
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:112:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:112:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:113:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:113:50</span></span></span>\(\Lambda := \writelambda\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     das Codierungsalphabet. Es gibt es
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:113:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:113:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >eine</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:114:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:114:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Turingmaschine </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:115:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:115:50</span></span></span>\(U = U_{\Sigma}\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     mit Eingabealphabet
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:115:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:115:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:116:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:116:50</span></span></span>\(\Lambda\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >,</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:116:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:116:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >so dass für alle </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:117:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:117:50</span></span></span>\(c \in \Lambda^*\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     und 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:117:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:117:50</span></span></span>\(w \in \Sigma^*\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:117:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:117:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >die Turingmaschine </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:118:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:118:50</span></span></span>\(U\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     mit Eingabewort 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:118:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:118:50</span></span></span>\(x \in \Lambda^*\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:118:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:118:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >folgendes tut:</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:119:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:119:50</span></span></span>
             </p>
             <ul>
-              <li>Falls \(x\) nicht die Form
-                \(\enc(M) \texttt{;} w\) mit \(w \in \Sigma^*\) hat,
-                lehnt sie ab;
+              <li><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Falls </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:123:50');"
+                    >emu_content/07/07-05-Turing-universal.emu:123:50</span></span></span>\(x\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       nicht die Form
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:123:50');"
+                    >emu_content/07/07-05-Turing-universal.emu:123:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:124:50');"
+                    >emu_content/07/07-05-Turing-universal.emu:124:50</span></span></span>\(\enc(M) \texttt{;} w\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       mit 
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:124:50');"
+                    >emu_content/07/07-05-Turing-universal.emu:124:50</span></span></span>\(w \in \Sigma^*\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       hat,
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:124:50');"
+                    >emu_content/07/07-05-Turing-universal.emu:124:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >lehnt sie ab;</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:125:50');"
+                    >emu_content/07/07-05-Turing-universal.emu:125:50</span></span></span>
               </li>
-              <li>Ansonsten, falls also \(c = \enc(M)\) für eine Turingmaschine
-                \(M\) ist:
+              <li><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Ansonsten, falls also </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:128:50');"
+                    >emu_content/07/07-05-Turing-universal.emu:128:50</span></span></span>\(c = \enc(M)\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       für eine Turingmaschine
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:128:50');"
+                    >emu_content/07/07-05-Turing-universal.emu:128:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:129:50');"
+                    >emu_content/07/07-05-Turing-universal.emu:129:50</span></span></span>\(M\)<span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >
+                       ist:
+                    </span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:129:50');"
+                    >emu_content/07/07-05-Turing-universal.emu:129:50</span></span></span>
                 <ul>
-                  <li>Falls \(M\) mit Eingabewort \(w\) nicht
-                    terminiert, dann terminiert \(U\) mit
-                    Eingabewort \(c \texttt{;} w\) auch nicht.
+                  <li><span><span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >Falls </span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:133:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:133:50</span></span></span>\(M\)<span><span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >
+                           mit Eingabewort 
+                        </span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:133:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:133:50</span></span></span>\(w\)<span><span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >
+                           nicht
+                        </span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:133:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:133:50</span></span>
+                      
+                      <span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >terminiert, dann terminiert </span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:134:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:134:50</span></span></span>\(U\)<span><span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >
+                           mit
+                        </span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:134:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:134:50</span></span>
+                      
+                      <span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >Eingabewort </span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:135:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:135:50</span></span></span>\(c \texttt{;} w\)<span><span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >
+                           auch nicht.
+                        </span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:135:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:135:50</span></span></span>
                   </li>
-                  <li>Falls \(M\) mit Eingabewort \(w\) eine
-                    Endkonfiguration \(C = uqv\) erreicht,
-                    dann
-                    erreicht \(U\) mit
-                    Eingabewort \(c \texttt{;} w\) die
-                    Endkonfiguration
-                    \(q\ \enc(C)\). Das heißt insbesondere,
-                    dass \(U\) genau dann akzeptiert, wenn \(M\)
-                    akzeptiert, und genau dann ablehnt, wenn
-                    \(M\) ablehnt.
+                  <li><span><span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >Falls </span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:138:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:138:50</span></span></span>\(M\)<span><span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >
+                           mit Eingabewort 
+                        </span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:138:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:138:50</span></span></span>\(w\)<span><span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >
+                           eine
+                        </span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:138:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:138:50</span></span>
+                      
+                      <span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >Endkonfiguration </span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:139:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:139:50</span></span></span>\(C = uqv\)<span><span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >
+                           erreicht,
+                        </span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:139:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:139:50</span></span>
+                      
+                      <span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >dann</span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:140:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:140:50</span></span>
+                      
+                      <span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >erreicht </span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:141:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:141:50</span></span></span>\(U\)<span><span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >
+                           mit
+                        </span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:141:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:141:50</span></span>
+                      
+                      <span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >Eingabewort </span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:142:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:142:50</span></span></span>\(c \texttt{;} w\)<span><span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >
+                           die
+                        </span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:142:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:142:50</span></span>
+                      
+                      <span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >Endkonfiguration</span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:143:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:143:50</span></span>
+                      
+                      <span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        ></span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:144:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:144:50</span></span></span>\(q\ \enc(C)\)<span><span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >. Das heißt insbesondere,</span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:144:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:144:50</span></span>
+                      
+                      <span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >dass </span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:145:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:145:50</span></span></span>\(U\)<span><span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >
+                           genau dann akzeptiert, wenn 
+                        </span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:145:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:145:50</span></span></span>\(M\)<span><span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        ></span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:145:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:145:50</span></span>
+                      
+                      <span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >akzeptiert, und genau dann ablehnt, wenn</span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:146:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:146:50</span></span>
+                      
+                      <span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        ></span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:147:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:147:50</span></span></span>\(M\)<span><span
+                        class="tooltip-3003-container"
+                      ><span
+                          class="tooltip-3003-text"
+                        >
+                           ablehnt.
+                        </span><span
+                          class="tooltip-3003"
+                          onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:147:50');"
+                        >emu_content/07/07-05-Turing-universal.emu:147:50</span></span></span>
                   </li>
                 </ul>
               </li>
             </ul>
-            <p>\(U\) akzeptiert also die Sprache
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:150:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:150:50</span></span></span>\(U\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     akzeptiert also die Sprache
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:150:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:150:50</span></span></span>
             </p>
-            $$\begin{align*}
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:151:50');"
+                >emu_content/07/07-05-Turing-universal.emu:151:50</span></span></span>$$\begin{align*}
             \{ c w \ | \ w \in \Sigma^* \textnormal{ und } c = \enc(M) \textnormal{
             und $M$ akzeptiert $w$} \} \ .
             \end{align*}$$
+            <span><span
+                class="tooltip-3003-container"
+              ><span
+                  class="tooltip-3003-text"
+                ></span><span
+                  class="tooltip-3003"
+                  onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:154:50');"
+                >emu_content/07/07-05-Turing-universal.emu:154:50</span></span></span>
           </div>
           <div
             style="margin-bottom:1em"
             class="alert-info container"
           >
-            <p><b>Ein technischer aber letztendlich irrelevanter Punkt:
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:160:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:160:50</span></span></span><b><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Ein technischer aber letztendlich irrelevanter Punkt:</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:160:50');"
+                    >emu_content/07/07-05-Turing-universal.emu:160:50</span></span>
+                  
+                  <span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    ></span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:161:50');"
+                    >emu_content/07/07-05-Turing-universal.emu:161:50</span></span></span></b><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     die Mengen
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:161:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:161:50</span></span>
                 
-              </b>
-               die Mengen
-              \(Q\) und \(\Gamma\) der Turingmaschine \(M\) können ja beliebige
-              (endliche) Mengen sein,
-              und weder \(\Lambda\) noch die Turingmaschine \(U\) haben "Kenntnis"
-              von ihnen.
-              Wir nehmen aber aus Gründen der Einfachheit an, dass \(Q\) immer
-              die Zustände
-              \(\qaccept\) und \(\qreject\) enthält und auch \(U\) diese Zustände
-              verwendet.
-              Daraus ergibt sich, dass für eine Endkonfiguration \(uqv\) von \(M\)
-              zwar \(q \in \{\qaccept, \qreject\}\) gilt, allerdings \(\enc(q)
-              \in \{0,1\}^+\),
-              da wir diese \(M\)-Zustände binär codieren. Somit ist
-              \(q\ \enc(uqv) \in \{\qaccept, \qreject\} \times \Lambda^*\) eine
-              Endkonfiguration von \(U\).
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:162:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:162:50</span></span></span>\(Q\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     und 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:162:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:162:50</span></span></span>\(\Gamma\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     der Turingmaschine 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:162:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:162:50</span></span></span>\(M\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     können ja beliebige
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:162:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:162:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >(endliche) Mengen sein,</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:163:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:163:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >und weder </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:164:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:164:50</span></span></span>\(\Lambda\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     noch die Turingmaschine 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:164:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:164:50</span></span></span>\(U\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     haben "Kenntnis"
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:164:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:164:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >von ihnen.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:165:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:165:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Wir nehmen aber aus Gründen der Einfachheit an, dass </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:166:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:166:50</span></span></span>\(Q\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     immer
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:166:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:166:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >die Zustände</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:167:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:167:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:168:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:168:50</span></span></span>\(\qaccept\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     und 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:168:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:168:50</span></span></span>\(\qreject\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     enthält und auch 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:168:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:168:50</span></span></span>\(U\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     diese Zustände
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:168:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:168:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >verwendet.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:169:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:169:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Daraus ergibt sich, dass für eine Endkonfiguration </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:170:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:170:50</span></span></span>\(uqv\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     von 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:170:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:170:50</span></span></span>\(M\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:170:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:170:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >zwar </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:171:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:171:50</span></span></span>\(q \in \{\qaccept, \qreject\}\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     gilt, allerdings 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:171:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:171:50</span></span></span>\(\enc(q)
+              \in \{0,1\}^+\)
+              <span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >,</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:172:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:172:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >da wir diese </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:173:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:173:50</span></span></span>\(M\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >-Zustände binär codieren. Somit ist</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:173:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:173:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:174:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:174:50</span></span></span>\(q\ \enc(uqv) \in \{\qaccept, \qreject\} \times \Lambda^*\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     eine
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:174:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:174:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Endkonfiguration von </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:175:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:175:50</span></span></span>\(U\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:175:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:175:50</span></span></span>
             </p>
-            <p>Des weiteren gehen wir davon aus, dass das Blank-Symbol \(\Box\)
-              für alle
-              Turingmaschinen \(M\) mit Eingabealphabet \(\Sigma\) das gleiche
-              ist. Auch
-              \(U\) verwendet es. Wenn wir allerdings \(M\) codieren, so wird auch
-              \(\Box\) als \(\enc(\Box) \in \{0,1\}^+\) codiert, wie jedes
-              Arbeitssymbol \(z \in \Gamma
-              \setminus \Sigma\) von \(M\)
-              binär codiert wird. Das heißt insbesondere, dass
-              für eine \(M\)-Konfiguration \(C\) die Codierung \(\enc(C)\) kein
-              \(\Box\) enthält (selbst
-              wenn \(C\) als Konfiguration von \(M\) dies tut), und in der Tat ist
-              ja
-              \(\enc(C) \in \Lambda^*\), und \(\Lambda\) ist das Eingabealphabet
-              von \(U\) mit
-              \(\Box \not \in \Lambda\).
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Des weiteren gehen wir davon aus, dass das Blank-Symbol </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:178:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:178:50</span></span></span>\(\Box\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:178:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:178:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >für alle</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:179:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:179:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Turingmaschinen </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:180:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:180:50</span></span></span>\(M\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     mit Eingabealphabet 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:180:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:180:50</span></span></span>\(\Sigma\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     das gleiche
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:180:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:180:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >ist. Auch</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:181:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:181:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:182:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:182:50</span></span></span>\(U\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     verwendet es. Wenn wir allerdings 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:182:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:182:50</span></span></span>\(M\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     codieren, so wird auch
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:182:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:182:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:183:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:183:50</span></span></span>\(\Box\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     als 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:183:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:183:50</span></span></span>\(\enc(\Box) \in \{0,1\}^+\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     codiert, wie jedes
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:183:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:183:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Arbeitssymbol </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:184:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:184:50</span></span></span>\(z \in \Gamma
+              \setminus \Sigma\)
+              <span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     von 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:185:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:185:50</span></span></span>\(M\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:185:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:185:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >binär codiert wird. Das heißt insbesondere, dass</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:186:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:186:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >für eine </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:187:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:187:50</span></span></span>\(M\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >-Konfiguration </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:187:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:187:50</span></span></span>\(C\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     die Codierung 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:187:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:187:50</span></span></span>\(\enc(C)\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     kein
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:187:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:187:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:188:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:188:50</span></span></span>\(\Box\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     enthält (selbst
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:188:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:188:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >wenn </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:189:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:189:50</span></span></span>\(C\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     als Konfiguration von 
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:189:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:189:50</span></span></span>\(M\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     dies tut), und in der Tat ist
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:189:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:189:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >ja</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:190:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:190:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:191:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:191:50</span></span></span>\(\enc(C) \in \Lambda^*\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >, und </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:191:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:191:50</span></span></span>\(\Lambda\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     ist das Eingabealphabet
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:191:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:191:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >von </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:192:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:192:50</span></span></span>\(U\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >
+                     mit
+                  </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:192:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:192:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:193:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:193:50</span></span></span>\(\Box \not \in \Lambda\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:193:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:193:50</span></span></span>
             </p>
           </div>
           <div
             class="well container"
           >
-            <p><b>Beweis.</b>
-              Den Beweis in allen Details zu führen hieße, die Maschine \(U\)
-              konkret als Turingmaschine
-              zu implementieren. Wir tun dies nicht. Wir beschränken uns auf
-              eine High-Level-Beschreibung
-              ihrer Arbeitsweise.
+            <p><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:198:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:198:50</span></span></span><b><span><span
+                    class="tooltip-3003-container"
+                  ><span
+                      class="tooltip-3003-text"
+                    >Beweis.</span><span
+                      class="tooltip-3003"
+                      onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:198:50');"
+                    >emu_content/07/07-05-Turing-universal.emu:198:50</span></span></span></b><span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:198:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:198:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >Den Beweis in allen Details zu führen hieße, die Maschine </span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:199:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:199:50</span></span></span>\(U\)<span><span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  ></span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:199:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:199:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >konkret als Turingmaschine</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:200:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:200:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >zu implementieren. Wir tun dies nicht. Wir beschränken uns auf</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:201:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:201:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >eine High-Level-Beschreibung</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:202:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:202:50</span></span>
+                
+                <span
+                  class="tooltip-3003-container"
+                ><span
+                    class="tooltip-3003-text"
+                  >ihrer Arbeitsweise.</span><span
+                    class="tooltip-3003"
+                    onClick="sendCmdTo3003('code --goto emu_content/07/07-05-Turing-universal.emu:203:50');"
+                  >emu_content/07/07-05-Turing-universal.emu:203:50</span></span></span>
             </p>
           </div>
           <figure
@@ -260,7 +1916,7 @@
             </a>
             <div
               style="display:inline-block"
-              data-interval={false}
+              data-interval="false"
               class="carousel"
               id="universal-TM"
             >
@@ -269,297 +1925,297 @@
               >
                 <li
                   class="active"
-                  data-slide-to={1}
+                  data-slide-to="1"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={2}
+                  data-slide-to="2"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={3}
+                  data-slide-to="3"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={4}
+                  data-slide-to="4"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={5}
+                  data-slide-to="5"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={6}
+                  data-slide-to="6"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={7}
+                  data-slide-to="7"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={8}
+                  data-slide-to="8"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={9}
+                  data-slide-to="9"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={10}
+                  data-slide-to="10"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={11}
+                  data-slide-to="11"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={12}
+                  data-slide-to="12"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={13}
+                  data-slide-to="13"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={14}
+                  data-slide-to="14"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={15}
+                  data-slide-to="15"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={16}
+                  data-slide-to="16"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={17}
+                  data-slide-to="17"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={18}
+                  data-slide-to="18"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={19}
+                  data-slide-to="19"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={20}
+                  data-slide-to="20"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={21}
+                  data-slide-to="21"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={22}
+                  data-slide-to="22"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={23}
+                  data-slide-to="23"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={24}
+                  data-slide-to="24"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={25}
+                  data-slide-to="25"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={26}
+                  data-slide-to="26"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={27}
+                  data-slide-to="27"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={28}
+                  data-slide-to="28"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={29}
+                  data-slide-to="29"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={30}
+                  data-slide-to="30"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={31}
+                  data-slide-to="31"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={32}
+                  data-slide-to="32"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={33}
+                  data-slide-to="33"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={34}
+                  data-slide-to="34"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={35}
+                  data-slide-to="35"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={36}
+                  data-slide-to="36"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={37}
+                  data-slide-to="37"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={38}
+                  data-slide-to="38"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={39}
+                  data-slide-to="39"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={40}
+                  data-slide-to="40"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={41}
+                  data-slide-to="41"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={42}
+                  data-slide-to="42"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={43}
+                  data-slide-to="43"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={44}
+                  data-slide-to="44"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={45}
+                  data-slide-to="45"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={46}
+                  data-slide-to="46"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={47}
+                  data-slide-to="47"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={48}
+                  data-slide-to="48"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={49}
+                  data-slide-to="49"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={50}
+                  data-slide-to="50"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={51}
+                  data-slide-to="51"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={52}
+                  data-slide-to="52"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={53}
+                  data-slide-to="53"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={54}
+                  data-slide-to="54"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={55}
+                  data-slide-to="55"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={56}
+                  data-slide-to="56"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={57}
+                  data-slide-to="57"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={58}
+                  data-slide-to="58"
                   data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to={59}
+                  data-slide-to="59"
                   data-target="#universal-TM"
                 >
                 </li>
