@@ -31,23 +31,9 @@
   >
     <a
       href="../vorlesungsskript.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >Inhaltsverzeichnis</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:12:50');"
-          >emu_content/05/05-09-general-parsing.emu:12:50</span></span></span></a><a
+    >Inhaltsverzeichnis</a><a
       href="05-06-dk-automat.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >&lt;&lt; Kapitel 5.6</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:16:50');"
-          >emu_content/05/05-09-general-parsing.emu:16:50</span></span></span></a>
+    >&lt;&lt; Kapitel 5.6</a>
   </div>
   <div
     id="link-to-overview"
@@ -55,23 +41,9 @@
   >
     <a
       href="/"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >zur Kursübersicht</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:23:50');"
-          >emu_content/05/05-09-general-parsing.emu:23:50</span></span></span></a><a
+    >zur Kursübersicht</a><a
       href="05-10-not-context-free.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >Kapitel 5.10 &gt;&gt;</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:27:50');"
-          >emu_content/05/05-09-general-parsing.emu:27:50</span></span></span></a>
+    >Kapitel 5.10 &gt;&gt;</a>
   </div>
   <div
     id="rightSideWrapper"
@@ -90,2927 +62,404 @@
           >
             <span
               class="subChapterTitle"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >5.10</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:41:50');"
-                  >emu_content/05/05-09-general-parsing.emu:41:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Allgemeine kontextfreie Sprachen parsen</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:42:50');"
-                  >emu_content/05/05-09-general-parsing.emu:42:50</span></span></span></span>
+            >5.10
+              Allgemeine kontextfreie Sprachen parsen</span>
           </h1>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wir haben drei Methoden kennengelernt, kontextfreie Sprachen zu parsen:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:45:50');"
-                >emu_content/05/05-09-general-parsing.emu:45:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >rekursiver Abstieg (mit Demoseite </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:46:50');"
-                >emu_content/05/05-09-general-parsing.emu:46:50</span></span></span><a
+          <p>
+            Wir haben drei Methoden kennengelernt, kontextfreie Sprachen zu parsen:
+            rekursiver Abstieg (mit Demoseite 
+            <a
               href="../../demos/drawManualGrammar.html"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >drawManualGrammar.html</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:50:50');"
-                  >emu_content/05/05-09-general-parsing.emu:50:50</span></span></span></a><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >),</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:51:50');"
-                >emu_content/05/05-09-general-parsing.emu:51:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >die LL-Parser (die die Mengen </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:52:50');"
-                >emu_content/05/05-09-general-parsing.emu:52:50</span></span></span>\(\First_k(X)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   berechnen, wie
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:52:50');"
-                >emu_content/05/05-09-general-parsing.emu:52:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >auf </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:53:50');"
-                >emu_content/05/05-09-general-parsing.emu:53:50</span></span></span><a
+            >drawManualGrammar.html</a>),
+            die LL-Parser (die die Mengen \(\First_k(X)\) berechnen, wie
+            auf 
+            <a
               href="../../demos/drawFirstComputation.html"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >drawFirstComputation.html</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:57:50');"
-                  >emu_content/05/05-09-general-parsing.emu:57:50</span></span></span></a><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   demonstriert),
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:58:50');"
-                >emu_content/05/05-09-general-parsing.emu:58:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >und die LR-Parser (die die Teilbäume auf den Stack legen und nach Blüten suchen,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:59:50');"
-                >emu_content/05/05-09-general-parsing.emu:59:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >hier die Demoseite </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:60:50');"
-                >emu_content/05/05-09-general-parsing.emu:60:50</span></span></span><a
+            >drawFirstComputation.html</a>
+             demonstriert),
+            und die LR-Parser (die die Teilbäume auf den Stack legen und nach Blüten suchen,
+            hier die Demoseite 
+            <a
               href="../../demos/drawLR0ParserPrefixArithmetic.html"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >drawLR0ParserPrefixArithmetic</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:64:50');"
-                  >emu_content/05/05-09-general-parsing.emu:64:50</span></span></span></a><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >für arithmetische Ausdrücke).</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:65:50');"
-                >emu_content/05/05-09-general-parsing.emu:65:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Rekursiver Abstieg kann, wenn man nicht vorsichtig ist, in Endlosschleifen landen und</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:66:50');"
-                >emu_content/05/05-09-general-parsing.emu:66:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >kann im Allgemeinen selbst bei einfachen Grammatiken exponentielle Laufzeit aufweisen.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:67:50');"
-                >emu_content/05/05-09-general-parsing.emu:67:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >LL-Parser und LR-Parser funktionieren schlicht nicht für allgemeine kontextfreie Grammatiken.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:68:50');"
-                >emu_content/05/05-09-general-parsing.emu:68:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Standardbeispiel ist die Palindromsprache ohne Kennzeichnung der Mitte:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:69:50');"
-                >emu_content/05/05-09-general-parsing.emu:69:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:70:50');"
-                >emu_content/05/05-09-general-parsing.emu:70:50</span></span></span>$$\begin{align*}
+            >drawLR0ParserPrefixArithmetic</a>für arithmetische Ausdrücke).
+            Rekursiver Abstieg kann, wenn man nicht vorsichtig ist, in Endlosschleifen landen und
+            kann im Allgemeinen selbst bei einfachen Grammatiken exponentielle Laufzeit aufweisen.
+            LL-Parser und LR-Parser funktionieren schlicht nicht für allgemeine kontextfreie Grammatiken.
+            Standardbeispiel ist die Palindromsprache ohne Kennzeichnung der Mitte:
+            $$\begin{align*}
             S&amp;\rightarrow aSa \\
             S&amp;\rightarrow bSb \\
             S&amp;\rightarrow a \ | \ b \ | \ \epsilon
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:74:50');"
-                >emu_content/05/05-09-general-parsing.emu:74:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Weder LL-Parser noch LR-Parser können bei langen Wörtern wie</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:75:50');"
-                >emu_content/05/05-09-general-parsing.emu:75:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:76:50');"
-                >emu_content/05/05-09-general-parsing.emu:76:50</span></span></span>\(aaaaaaaaaaaaaabbaaaaaaaaaaaaaa\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   erkennen, wo die Mitte ist. Das muss man aber wissen,
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:76:50');"
-                >emu_content/05/05-09-general-parsing.emu:76:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >denn sonst landet man in einer Sackgasse. Es gilt sogar: jeder Kellerautomat für</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:77:50');"
-                >emu_content/05/05-09-general-parsing.emu:77:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >diese Sprache muss nichtdeterministisch sein (was wir an dieser Stelle weder formal definieren</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:78:50');"
-                >emu_content/05/05-09-general-parsing.emu:78:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >noch beweisen).</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:79:50');"
-                >emu_content/05/05-09-general-parsing.emu:79:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Noch schlimmer steht es mit Grammatiken wie</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:80:50');"
-                >emu_content/05/05-09-general-parsing.emu:80:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:81:50');"
-                >emu_content/05/05-09-general-parsing.emu:81:50</span></span></span>$$\begin{align*}
+            Weder LL-Parser noch LR-Parser können bei langen Wörtern wie
+            \(aaaaaaaaaaaaaabbaaaaaaaaaaaaaa\) erkennen, wo die Mitte ist. Das muss man aber wissen,
+            denn sonst landet man in einer Sackgasse. Es gilt sogar: jeder Kellerautomat für
+            diese Sprache muss nichtdeterministisch sein (was wir an dieser Stelle weder formal definieren
+            noch beweisen).
+            Noch schlimmer steht es mit Grammatiken wie
+            $$\begin{align*}
             S&amp;\rightarrow AY \ \ | XC \\
             A&amp;\rightarrow aA \ | \ \epsilon \\
             C&amp;\rightarrow cC \ | \ \epsilon \\
             X&amp;\rightarrow aXb \ | \epsilon \\
             Y&amp;\rightarrow bYc \ | \epsilon
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:87:50');"
-                >emu_content/05/05-09-general-parsing.emu:87:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Diese erzeugt die Sprache</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:88:50');"
-                >emu_content/05/05-09-general-parsing.emu:88:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:89:50');"
-                >emu_content/05/05-09-general-parsing.emu:89:50</span></span></span>$$\begin{align*}
+            Diese erzeugt die Sprache
+            $$\begin{align*}
             L = \{ a^i b^j c^k \ | \ i = j \textnormal{ oder } j = k \}
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:91:50');"
-                >emu_content/05/05-09-general-parsing.emu:91:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Die Grammatik ist </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:92:50');"
-                >emu_content/05/05-09-general-parsing.emu:92:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >mehrdeutig</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:92:50');"
-                  >emu_content/05/05-09-general-parsing.emu:92:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, insbesondere kann jedes Wort der</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:92:50');"
-                >emu_content/05/05-09-general-parsing.emu:92:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Form </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:93:50');"
-                >emu_content/05/05-09-general-parsing.emu:93:50</span></span></span>\(a^i b^i c^i\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   auf zwei Weisen abgeleitet werden: via 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:93:50');"
-                >emu_content/05/05-09-general-parsing.emu:93:50</span></span></span>\(AY\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und via 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:93:50');"
-                >emu_content/05/05-09-general-parsing.emu:93:50</span></span></span>\(XC\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:93:50');"
-                >emu_content/05/05-09-general-parsing.emu:93:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Man kann sogar zeigen, dass </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:94:50');"
-                >emu_content/05/05-09-general-parsing.emu:94:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >jede</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:94:50');"
-                  >emu_content/05/05-09-general-parsing.emu:94:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   äquivalente Grammatik 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:94:50');"
-                >emu_content/05/05-09-general-parsing.emu:94:50</span></span></span>\(G'\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, die also</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:94:50');"
-                >emu_content/05/05-09-general-parsing.emu:94:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >die gleiche Sprache </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:95:50');"
-                >emu_content/05/05-09-general-parsing.emu:95:50</span></span></span>\(L\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   erzeugt, mehrdeutig sein muss; man sagt, die Sprache
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:95:50');"
-                >emu_content/05/05-09-general-parsing.emu:95:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:96:50');"
-                >emu_content/05/05-09-general-parsing.emu:96:50</span></span></span>\(L\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ist 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:96:50');"
-                >emu_content/05/05-09-general-parsing.emu:96:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >inhärent mehrdeutig</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:96:50');"
-                  >emu_content/05/05-09-general-parsing.emu:96:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:96:50');"
-                >emu_content/05/05-09-general-parsing.emu:96:50</span></span></span>
+            Die Grammatik ist 
+            <i>mehrdeutig</i>, insbesondere kann jedes Wort der
+            Form \(a^i b^i c^i\) auf zwei Weisen abgeleitet werden: via \(AY\) und via \(XC\).
+            Man kann sogar zeigen, dass 
+            <i>jede</i>
+             äquivalente Grammatik \(G'\), die also
+            die gleiche Sprache \(L\) erzeugt, mehrdeutig sein muss; man sagt, die Sprache
+            \(L\) ist 
+            <i>inhärent mehrdeutig</i>.
           </p>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Für nichtdeterministische oder gar mehrdeutige Grammatiken / Sprachen sind LL- und LR-Parser</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:99:50');"
-                >emu_content/05/05-09-general-parsing.emu:99:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >unbrauchbar. Gibt es eine allgemeine Methode, die für alle Grammatiken funktioniert?</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:100:50');"
-                >emu_content/05/05-09-general-parsing.emu:100:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Ja, den sogenannten CYK-Algorithmus. Nur leider ist die nicht besonders schnell. Sie hat</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:101:50');"
-                >emu_content/05/05-09-general-parsing.emu:101:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >kubische Laufzeit </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:102:50');"
-                >emu_content/05/05-09-general-parsing.emu:102:50</span></span></span>\(O(n^3)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, was zwar</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:102:50');"
-                >emu_content/05/05-09-general-parsing.emu:102:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >in der theoretischen Informatik als </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:103:50');"
-                >emu_content/05/05-09-general-parsing.emu:103:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >effizient</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:103:50');"
-                  >emu_content/05/05-09-general-parsing.emu:103:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   durchgeht, in der Praxis leider
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:103:50');"
-                >emu_content/05/05-09-general-parsing.emu:103:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >meist unbrauchbar ist.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:104:50');"
-                >emu_content/05/05-09-general-parsing.emu:104:50</span></span></span>
+          <p>
+            Für nichtdeterministische oder gar mehrdeutige Grammatiken / Sprachen sind LL- und LR-Parser
+            unbrauchbar. Gibt es eine allgemeine Methode, die für alle Grammatiken funktioniert?
+            Ja, den sogenannten CYK-Algorithmus. Nur leider ist die nicht besonders schnell. Sie hat
+            kubische Laufzeit \(O(n^3)\), was zwar
+            in der theoretischen Informatik als 
+            <i>effizient</i>
+             durchgeht, in der Praxis leider
+            meist unbrauchbar ist.
           </p>
-          <h3><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Chomsky-Normalform</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:107:50');"
-                >emu_content/05/05-09-general-parsing.emu:107:50</span></span></span>
+          <h3>
+            Chomsky-Normalform
           </h3>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >Eine kontextfreie Grammatik ist in </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:108:50');"
-              >emu_content/05/05-09-general-parsing.emu:108:50</span></span></span><i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Chomsky-Normalform</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:108:50');"
-                >emu_content/05/05-09-general-parsing.emu:108:50</span></span></span></i><span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >, wenn jede Produktion eine</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:108:50');"
-              >emu_content/05/05-09-general-parsing.emu:108:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >der folgenden Formen hat:</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:109:50');"
-              >emu_content/05/05-09-general-parsing.emu:109:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:110:50');"
-              >emu_content/05/05-09-general-parsing.emu:110:50</span></span></span>$$\begin{align*}
+          Eine kontextfreie Grammatik ist in 
+          <i>Chomsky-Normalform</i>, wenn jede Produktion eine
+          der folgenden Formen hat:
+          $$\begin{align*}
           X&amp;\rightarrow YZ \\
           X&amp;\rightarrow a
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:113:50');"
-              >emu_content/05/05-09-general-parsing.emu:113:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >Eine solche Sprache kann offensichtlich nicht das Wort </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:114:50');"
-              >emu_content/05/05-09-general-parsing.emu:114:50</span></span></span>\(\epsilon\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >
-                 ableiten. Daher lassen wir
-              </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:114:50');"
-              >emu_content/05/05-09-general-parsing.emu:114:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >als Sonderregel die Produktion</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:115:50');"
-              >emu_content/05/05-09-general-parsing.emu:115:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:116:50');"
-              >emu_content/05/05-09-general-parsing.emu:116:50</span></span></span>$$\begin{align*}
+          Eine solche Sprache kann offensichtlich nicht das Wort \(\epsilon\) ableiten. Daher lassen wir
+          als Sonderregel die Produktion
+          $$\begin{align*}
           S&amp;\rightarrow \epsilon
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:118:50');"
-              >emu_content/05/05-09-general-parsing.emu:118:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >zu, verbieten dann aber, dass das Startsymbol </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:119:50');"
-              >emu_content/05/05-09-general-parsing.emu:119:50</span></span></span>\(S\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >
-                 auf der rechten Seite einer Produktion vorkommen
-              </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:119:50');"
-              >emu_content/05/05-09-general-parsing.emu:119:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >kann.</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:120:50');"
-              >emu_content/05/05-09-general-parsing.emu:120:50</span></span></span>
+          zu, verbieten dann aber, dass das Startsymbol \(S\) auf der rechten Seite einer Produktion vorkommen
+          kann.
           <div
             class="well container theorem"
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Theorem </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:126:50');"
-                  >emu_content/05/05-09-general-parsing.emu:126:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >5.10.1</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:129:50');"
-                    >emu_content/05/05-09-general-parsing.emu:129:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:130:50');"
-                  >emu_content/05/05-09-general-parsing.emu:130:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Zu jeder kontextfreien Grammatik gibt es eine äquivalente Grammatik in</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:131:50');"
-                >emu_content/05/05-09-general-parsing.emu:131:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Chomsky-Normalform.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:132:50');"
-                >emu_content/05/05-09-general-parsing.emu:132:50</span></span></span>
+            >Theorem 
+              <NumberedTitle>5.10.1</NumberedTitle>
+               
+            </span>Zu jeder kontextfreien Grammatik gibt es eine äquivalente Grammatik in
+            Chomsky-Normalform.
           </div>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Anstatt hier einen formalen Beweis anzugeben (den Sie sich, wenn Sie wollen, im Lehrbuch oder auf</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:135:50');"
-                >emu_content/05/05-09-general-parsing.emu:135:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wikipedia anschauen können),</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:136:50');"
-                >emu_content/05/05-09-general-parsing.emu:136:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >lasse ich Sie lieber anhand einer Übungsaufgabe die Konstruktion von selbst verstehen:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:137:50');"
-                >emu_content/05/05-09-general-parsing.emu:137:50</span></span></span>
+          <p>
+            Anstatt hier einen formalen Beweis anzugeben (den Sie sich, wenn Sie wollen, im Lehrbuch oder auf
+            Wikipedia anschauen können),
+            lasse ich Sie lieber anhand einer Übungsaufgabe die Konstruktion von selbst verstehen:
           </p>
           <div
             class="well well-lg numbered-exercise container"
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Übungsaufgabe </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:143:50');"
-                  >emu_content/05/05-09-general-parsing.emu:143:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >5.10.1</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:146:50');"
-                    >emu_content/05/05-09-general-parsing.emu:146:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:147:50');"
-                  >emu_content/05/05-09-general-parsing.emu:147:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Finden Sie zu der folgenden kontextfreien Grammatik</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:148:50');"
-                >emu_content/05/05-09-general-parsing.emu:148:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:149:50');"
-                >emu_content/05/05-09-general-parsing.emu:149:50</span></span></span>$$\begin{align*}
+            >Übungsaufgabe 
+              <NumberedTitle>5.10.1</NumberedTitle>
+               
+            </span>Finden Sie zu der folgenden kontextfreien Grammatik
+            $$\begin{align*}
             S&amp;\rightarrow A \ | \ Bb \ | \ C \\
             A&amp;\rightarrow xyB \ | \ B \ | \ BC \\
             B&amp;\rightarrow yzC \ | \ AC \\
             C&amp;\rightarrow xzA \ | \ AB \ | \ \epsilon
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:154:50');"
-                >emu_content/05/05-09-general-parsing.emu:154:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >eine äquivalente in Chomsky-Normalform.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:155:50');"
-                >emu_content/05/05-09-general-parsing.emu:155:50</span></span></span>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Fragen, die Sie sich dabei stellen sollten:</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:158:50');"
-                  >emu_content/05/05-09-general-parsing.emu:158:50</span></span></span>
+            eine äquivalente in Chomsky-Normalform.
+            <p>
+              Fragen, die Sie sich dabei stellen sollten:
             </p>
             <ol>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Für welche Nichtterminale gibt es </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:162:50');"
-                    >emu_content/05/05-09-general-parsing.emu:162:50</span></span></span>\(U \Step{}^* V\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >? Zeichnen Sie ein Bildchen mit all</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:162:50');"
-                    >emu_content/05/05-09-general-parsing.emu:162:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >diesen </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:163:50');"
-                    >emu_content/05/05-09-general-parsing.emu:163:50</span></span></span>\(\Step{}^*\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >-Pfeilen.</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:163:50');"
-                    >emu_content/05/05-09-general-parsing.emu:163:50</span></span></span>
+              <li>
+                Für welche Nichtterminale gibt es \(U \Step{}^* V\)? Zeichnen Sie ein Bildchen mit all
+                diesen \(\Step{}^*\)-Pfeilen.
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Von welchen Nichtterminalen können Sie überhaupt Wörter ableiten, also </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:166:50');"
-                    >emu_content/05/05-09-general-parsing.emu:166:50</span></span></span>\(U \Step{}^* w
-                \in \Sigma^*\)
-                <span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >? Wie</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:167:50');"
-                    >emu_content/05/05-09-general-parsing.emu:167:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >finden Sie das im Allgemeinen heraus?</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:168:50');"
-                    >emu_content/05/05-09-general-parsing.emu:168:50</span></span></span>
+              <li>
+                Von welchen Nichtterminalen können Sie überhaupt Wörter ableiten, also \(U \Step{}^* w
+                \in \Sigma^*\)? Wie
+                finden Sie das im Allgemeinen heraus?
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Welche Nichtterminale können </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:171:50');"
-                    >emu_content/05/05-09-general-parsing.emu:171:50</span></span></span>\(\epsilon\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       ableiten, also 
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:171:50');"
-                    >emu_content/05/05-09-general-parsing.emu:171:50</span></span></span>\(U \Step{}^* \epsilon\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >? Wie</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:171:50');"
-                    >emu_content/05/05-09-general-parsing.emu:171:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >finden Sie das im Allgemeinen heraus?</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:172:50');"
-                    >emu_content/05/05-09-general-parsing.emu:172:50</span></span></span>
+              <li>
+                Welche Nichtterminale können \(\epsilon\) ableiten, also \(U \Step{}^* \epsilon\)? Wie
+                finden Sie das im Allgemeinen heraus?
               </li>
             </ol>
           </div>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wenn nun </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:175:50');"
-                >emu_content/05/05-09-general-parsing.emu:175:50</span></span></span>\(G\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   in Chomsky-Normalform vorliegt und wir für ein gegebenes Eingabewort 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:175:50');"
-                >emu_content/05/05-09-general-parsing.emu:175:50</span></span></span>\(w\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:175:50');"
-                >emu_content/05/05-09-general-parsing.emu:175:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >eine Ableitung </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:176:50');"
-                >emu_content/05/05-09-general-parsing.emu:176:50</span></span></span>\(G: S \Step{}^* w\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   finden wollen (oder feststellen, dass es keine gibt),
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:176:50');"
-                >emu_content/05/05-09-general-parsing.emu:176:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >so ist die erste Beobachtung, dass eine Linksableitung die Form</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:177:50');"
-                >emu_content/05/05-09-general-parsing.emu:177:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:178:50');"
-                >emu_content/05/05-09-general-parsing.emu:178:50</span></span></span>$$\begin{align*}
+          <p>
+            Wenn nun \(G\) in Chomsky-Normalform vorliegt und wir für ein gegebenes Eingabewort \(w\)
+            eine Ableitung \(G: S \Step{}^* w\) finden wollen (oder feststellen, dass es keine gibt),
+            so ist die erste Beobachtung, dass eine Linksableitung die Form
+            $$\begin{align*}
             S&amp;\Step{}^* AB \Step{}^* uB \Step{}^* uv
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:180:50');"
-                >emu_content/05/05-09-general-parsing.emu:180:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >haben muss, für </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:181:50');"
-                >emu_content/05/05-09-general-parsing.emu:181:50</span></span></span>\(w = uv\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Wenn wir die</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:181:50');"
-                >emu_content/05/05-09-general-parsing.emu:181:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Unterteilung von </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:182:50');"
-                >emu_content/05/05-09-general-parsing.emu:182:50</span></span></span>\(w\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   in 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:182:50');"
-                >emu_content/05/05-09-general-parsing.emu:182:50</span></span></span>\(u\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:182:50');"
-                >emu_content/05/05-09-general-parsing.emu:182:50</span></span></span>\(v\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   kennen würden, so könnten wir rekursiv
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:182:50');"
-                >emu_content/05/05-09-general-parsing.emu:182:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >fragen, wie man denn </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:183:50');"
-                >emu_content/05/05-09-general-parsing.emu:183:50</span></span></span>\(A \Step{}^* u\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:183:50');"
-                >emu_content/05/05-09-general-parsing.emu:183:50</span></span></span>\(B \Step{}^* v\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ableitet. Da wir sie
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:183:50');"
-                >emu_content/05/05-09-general-parsing.emu:183:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >aber </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:184:50');"
-                >emu_content/05/05-09-general-parsing.emu:184:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >nicht</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:184:50');"
-                  >emu_content/05/05-09-general-parsing.emu:184:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   kennen, also konkret nicht wissen, wie lange 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:184:50');"
-                >emu_content/05/05-09-general-parsing.emu:184:50</span></span></span>\(u\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:184:50');"
-                >emu_content/05/05-09-general-parsing.emu:184:50</span></span></span>\(v\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   sind,
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:184:50');"
-                >emu_content/05/05-09-general-parsing.emu:184:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >können wir alle Möglichkeiten durchprobieren. Da </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:185:50');"
-                >emu_content/05/05-09-general-parsing.emu:185:50</span></span></span>\(G\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   in Chomsky-Normalform vorliegt, wissen
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:185:50');"
-                >emu_content/05/05-09-general-parsing.emu:185:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wir, dass </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:186:50');"
-                >emu_content/05/05-09-general-parsing.emu:186:50</span></span></span>\(|u| \geq 1\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:186:50');"
-                >emu_content/05/05-09-general-parsing.emu:186:50</span></span></span>\(|v| \geq 1\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, also </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:186:50');"
-                >emu_content/05/05-09-general-parsing.emu:186:50</span></span></span>\(1 \leq |u| \leq |w|-1\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Wir probieren also</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:186:50');"
-                >emu_content/05/05-09-general-parsing.emu:186:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >alle </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:187:50');"
-                >emu_content/05/05-09-general-parsing.emu:187:50</span></span></span>\(n-1\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   möglichen Zerlegungen von 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:187:50');"
-                >emu_content/05/05-09-general-parsing.emu:187:50</span></span></span>\(w\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   durch. Wenn wir das rekursiv täten, dann würden
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:187:50');"
-                >emu_content/05/05-09-general-parsing.emu:187:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >das eine enorme Laufzeit verursachen. Der Trick besteht darin, Zwischenergebnisse systematisch</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:188:50');"
-                >emu_content/05/05-09-general-parsing.emu:188:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >zu berechnen, um somit Laufzeit zu sparen.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:189:50');"
-                >emu_content/05/05-09-general-parsing.emu:189:50</span></span></span>
+            haben muss, für \(w = uv\). Wenn wir die
+            Unterteilung von \(w\) in \(u\) und \(v\) kennen würden, so könnten wir rekursiv
+            fragen, wie man denn \(A \Step{}^* u\) und \(B \Step{}^* v\) ableitet. Da wir sie
+            aber 
+            <i>nicht</i>
+             kennen, also konkret nicht wissen, wie lange \(u\) und \(v\) sind,
+            können wir alle Möglichkeiten durchprobieren. Da \(G\) in Chomsky-Normalform vorliegt, wissen
+            wir, dass \(|u| \geq 1\) und \(|v| \geq 1\), also \(1 \leq |u| \leq |w|-1\). Wir probieren also
+            alle \(n-1\) möglichen Zerlegungen von \(w\) durch. Wenn wir das rekursiv täten, dann würden
+            das eine enorme Laufzeit verursachen. Der Trick besteht darin, Zwischenergebnisse systematisch
+            zu berechnen, um somit Laufzeit zu sparen.
           </p>
-          <h3><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Der CYK-Algorithmus</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:192:50');"
-                >emu_content/05/05-09-general-parsing.emu:192:50</span></span></span>
+          <h3>
+            Der CYK-Algorithmus
           </h3>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Die oben skizzierte Idee ist im CYK-Algorithmus konkretisiert (benannt nach John Cocke, Daniel</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:195:50');"
-                >emu_content/05/05-09-general-parsing.emu:195:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Younger und Tadao Kasami).</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:196:50');"
-                >emu_content/05/05-09-general-parsing.emu:196:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Für die praktische Anwendung ist dieser weniger relevant. Dafür ist er ein wunderbares Beispiel</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:197:50');"
-                >emu_content/05/05-09-general-parsing.emu:197:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >für einen</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:198:50');"
-                >emu_content/05/05-09-general-parsing.emu:198:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Algorithmus, der auf dem Prinzip des </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:199:50');"
-                >emu_content/05/05-09-general-parsing.emu:199:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Dynamic Programing</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:199:50');"
-                  >emu_content/05/05-09-general-parsing.emu:199:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   fußt, welches Sie in der
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:199:50');"
-                >emu_content/05/05-09-general-parsing.emu:199:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Vorlesung </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:200:50');"
-                >emu_content/05/05-09-general-parsing.emu:200:50</span></span></span><a
+          <p>
+            Die oben skizzierte Idee ist im CYK-Algorithmus konkretisiert (benannt nach John Cocke, Daniel
+            Younger und Tadao Kasami).
+            Für die praktische Anwendung ist dieser weniger relevant. Dafür ist er ein wunderbares Beispiel
+            für einen
+            Algorithmus, der auf dem Prinzip des 
+            <i>Dynamic Programing</i>
+             fußt, welches Sie in der
+            Vorlesung 
+            <a
               href="../../AuK/index.html"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Algorithmen und Komplexität</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:204:50');"
-                  >emu_content/05/05-09-general-parsing.emu:204:50</span></span></span></a><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   im dritten Semester
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:205:50');"
-                >emu_content/05/05-09-general-parsing.emu:205:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >ausführlicher kennenlernen wollen. Wir beschränken uns bei dem folgenden Algorithmus</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:206:50');"
-                >emu_content/05/05-09-general-parsing.emu:206:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >zunächst darauf, die Frage zu beantworten, ob den überhaupt </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:207:50');"
-                >emu_content/05/05-09-general-parsing.emu:207:50</span></span></span>\(S \Step{}^* w\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   gilt,
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:207:50');"
-                >emu_content/05/05-09-general-parsing.emu:207:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >und interessieren uns erst einmal nicht dafür eine solche Ableitung auch zu finden (in der</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:208:50');"
-                >emu_content/05/05-09-general-parsing.emu:208:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Algorithmik versteht man das als </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:209:50');"
-                >emu_content/05/05-09-general-parsing.emu:209:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Entscheidungsproblem</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:209:50');"
-                  >emu_content/05/05-09-general-parsing.emu:209:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, im Gegensatz zu dem</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:209:50');"
-                >emu_content/05/05-09-general-parsing.emu:209:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >allgemeinerin</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:210:50');"
-                >emu_content/05/05-09-general-parsing.emu:210:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:211:50');"
-                >emu_content/05/05-09-general-parsing.emu:211:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Suchproblem</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:211:50');"
-                  >emu_content/05/05-09-general-parsing.emu:211:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >).</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:211:50');"
-                >emu_content/05/05-09-general-parsing.emu:211:50</span></span></span>
+            >Algorithmen und Komplexität</a>
+             im dritten Semester
+            ausführlicher kennenlernen wollen. Wir beschränken uns bei dem folgenden Algorithmus
+            zunächst darauf, die Frage zu beantworten, ob den überhaupt \(S \Step{}^* w\) gilt,
+            und interessieren uns erst einmal nicht dafür eine solche Ableitung auch zu finden (in der
+            Algorithmik versteht man das als 
+            <i>Entscheidungsproblem</i>, im Gegensatz zu dem
+            allgemeinerin
+            <i>Suchproblem</i>).
           </p>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Der Entwurf eines Dynamic-Programming-Algorithmus beginnt oft mit der folgenden Frage:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:214:50');"
-                >emu_content/05/05-09-general-parsing.emu:214:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:215:50');"
-                >emu_content/05/05-09-general-parsing.emu:215:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Was sind sinnvolle Zwischenergebnisse?</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:215:50');"
-                  >emu_content/05/05-09-general-parsing.emu:215:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   In unserem Falle sind Ableitungen der Form
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:215:50');"
-                >emu_content/05/05-09-general-parsing.emu:215:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:216:50');"
-                >emu_content/05/05-09-general-parsing.emu:216:50</span></span></span>$$\begin{align*}
+          <p>
+            Der Entwurf eines Dynamic-Programming-Algorithmus beginnt oft mit der folgenden Frage:
+            <i>Was sind sinnvolle Zwischenergebnisse?</i>
+             In unserem Falle sind Ableitungen der Form
+            $$\begin{align*}
             X&amp;\Step{}^* u
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:218:50');"
-                >emu_content/05/05-09-general-parsing.emu:218:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >sinnvolle Zwischenergebnisse, wenn </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:219:50');"
-                >emu_content/05/05-09-general-parsing.emu:219:50</span></span></span>\(u\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ein Teilwort von 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:219:50');"
-                >emu_content/05/05-09-general-parsing.emu:219:50</span></span></span>\(w\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ist, also
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:219:50');"
-                >emu_content/05/05-09-general-parsing.emu:219:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:220:50');"
-                >emu_content/05/05-09-general-parsing.emu:220:50</span></span></span>\(w = v_1 u v_2\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Konkret schreiben wir </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:220:50');"
-                >emu_content/05/05-09-general-parsing.emu:220:50</span></span></span>\(w = w_0 w_1 \dots w_{n-1}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und definieren
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:220:50');"
-                >emu_content/05/05-09-general-parsing.emu:220:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:221:50');"
-                >emu_content/05/05-09-general-parsing.emu:221:50</span></span></span>$$\begin{align*}
+            sinnvolle Zwischenergebnisse, wenn \(u\) ein Teilwort von \(w\) ist, also
+            \(w = v_1 u v_2\). Konkret schreiben wir \(w = w_0 w_1 \dots w_{n-1}\) und definieren
+            $$\begin{align*}
             w[i:j] := w_i w_{i+1} \dots w_{j-1}
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:223:50');"
-                >emu_content/05/05-09-general-parsing.emu:223:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >und</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:224:50');"
-                >emu_content/05/05-09-general-parsing.emu:224:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:225:50');"
-                >emu_content/05/05-09-general-parsing.emu:225:50</span></span></span>$$\begin{align*}
+            und
+            $$\begin{align*}
             N_{i,j} := \{X \in N \ | \ X \Step{}^* w[i:j]\} \ .
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:227:50');"
-                >emu_content/05/05-09-general-parsing.emu:227:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Das ist also die Menge der Nichtterminale, die das Teilwort </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:228:50');"
-                >emu_content/05/05-09-general-parsing.emu:228:50</span></span></span>\(w[i:j]\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ableiten können.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:228:50');"
-                >emu_content/05/05-09-general-parsing.emu:228:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Die "Hauptfrage" ist dann: enthält </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:229:50');"
-                >emu_content/05/05-09-general-parsing.emu:229:50</span></span></span>\(N_{0,|w|}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   das Startsymbol 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:229:50');"
-                >emu_content/05/05-09-general-parsing.emu:229:50</span></span></span>\(S\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >?</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:229:50');"
-                >emu_content/05/05-09-general-parsing.emu:229:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Der CYK-Algorithmus berechnet nun die Mengen </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:230:50');"
-                >emu_content/05/05-09-general-parsing.emu:230:50</span></span></span>\(N_{i, i+d}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   systematisch
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:230:50');"
-                >emu_content/05/05-09-general-parsing.emu:230:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >für </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:231:50');"
-                >emu_content/05/05-09-general-parsing.emu:231:50</span></span></span>\(d = 1, \dots, n\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, versucht also, alle Unterwörter der Länge </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:231:50');"
-                >emu_content/05/05-09-general-parsing.emu:231:50</span></span></span>\(d\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   abzuleiten,
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:231:50');"
-                >emu_content/05/05-09-general-parsing.emu:231:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >beginnend mit </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:232:50');"
-                >emu_content/05/05-09-general-parsing.emu:232:50</span></span></span>\(d = 1\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, also </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:232:50');"
-                >emu_content/05/05-09-general-parsing.emu:232:50</span></span></span>\(N_{i,i+1}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Diese Mengen sind leicht</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:232:50');"
-                >emu_content/05/05-09-general-parsing.emu:232:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >zu bestimmen:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:233:50');"
-                >emu_content/05/05-09-general-parsing.emu:233:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >\begin{align}</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:234:50');"
-                >emu_content/05/05-09-general-parsing.emu:234:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >N</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:235:50');"
-                >emu_content/05/05-09-general-parsing.emu:235:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >{i,i+1} := \{X \in N \ | \ X \step{} w</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:235:50');"
-                  >emu_content/05/05-09-general-parsing.emu:235:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >i \textnormal{ ist eine Produktion in </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:235:50');"
-                >emu_content/05/05-09-general-parsing.emu:235:50</span></span></span>\(G\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >}\} \ .</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:235:50');"
-                >emu_content/05/05-09-general-parsing.emu:235:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >\label{Nii}</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:236:50');"
-                >emu_content/05/05-09-general-parsing.emu:236:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >\end{align}</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:237:50');"
-                >emu_content/05/05-09-general-parsing.emu:237:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Das gilt nur, weil </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:238:50');"
-                >emu_content/05/05-09-general-parsing.emu:238:50</span></span></span>\(G\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   in Chomsky-Normalform vorliegt und somit Ableitungen mit mehr als einem
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:238:50');"
-                >emu_content/05/05-09-general-parsing.emu:238:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Schritt</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:239:50');"
-                >emu_content/05/05-09-general-parsing.emu:239:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >notwendigerweise Wörter mit mehr als einem Zeichen produzieren würden.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:240:50');"
-                >emu_content/05/05-09-general-parsing.emu:240:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Nun müssen wir uns Gedanken machen, wie wir </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:241:50');"
-                >emu_content/05/05-09-general-parsing.emu:241:50</span></span></span>\(N_{i,k}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   berechnen, also
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:241:50');"
-                >emu_content/05/05-09-general-parsing.emu:241:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >das Unterwort </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:242:50');"
-                >emu_content/05/05-09-general-parsing.emu:242:50</span></span></span>\(w[i:k]\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, das Länge </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:242:50');"
-                >emu_content/05/05-09-general-parsing.emu:242:50</span></span></span>\(k-i\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   hat, ableiten, wenn wir bereits wissen,
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:242:50');"
-                >emu_content/05/05-09-general-parsing.emu:242:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wie wir kürzere Unterwörter herleiten. Die Kernbeobachtung ist:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:243:50');"
-                >emu_content/05/05-09-general-parsing.emu:243:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:244:50');"
-                >emu_content/05/05-09-general-parsing.emu:244:50</span></span></span>\(X \in N_{i,k}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, also </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:244:50');"
-                >emu_content/05/05-09-general-parsing.emu:244:50</span></span></span>\(X \Step{}^* w[i:k]\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   gilt genau dann,
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:244:50');"
-                >emu_content/05/05-09-general-parsing.emu:244:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wenn es eine Produktion </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:245:50');"
-                >emu_content/05/05-09-general-parsing.emu:245:50</span></span></span>\(X \rightarrow YZ\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   gibt, so dass dann
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:245:50');"
-                >emu_content/05/05-09-general-parsing.emu:245:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:246:50');"
-                >emu_content/05/05-09-general-parsing.emu:246:50</span></span></span>$$\begin{align*}
+            Das ist also die Menge der Nichtterminale, die das Teilwort \(w[i:j]\) ableiten können.
+            Die "Hauptfrage" ist dann: enthält \(N_{0,|w|}\) das Startsymbol \(S\)?
+            Der CYK-Algorithmus berechnet nun die Mengen \(N_{i, i+d}\) systematisch
+            für \(d = 1, \dots, n\), versucht also, alle Unterwörter der Länge \(d\) abzuleiten,
+            beginnend mit \(d = 1\), also \(N_{i,i+1}\). Diese Mengen sind leicht
+            zu bestimmen:
+            $$\begin{align}
+            N_{i,i+1} := \{X \in N \ | \ X \step{} w_i \textnormal{ ist eine Produktion in $G$}\} \ .
+            \label{Nii}
+            \end{align}$$
+            Das gilt nur, weil \(G\) in Chomsky-Normalform vorliegt und somit Ableitungen mit mehr als einem
+            Schritt
+            notwendigerweise Wörter mit mehr als einem Zeichen produzieren würden.
+            Nun müssen wir uns Gedanken machen, wie wir \(N_{i,k}\) berechnen, also
+            das Unterwort \(w[i:k]\), das Länge \(k-i\) hat, ableiten, wenn wir bereits wissen,
+            wie wir kürzere Unterwörter herleiten. Die Kernbeobachtung ist:
+            \(X \in N_{i,k}\), also \(X \Step{}^* w[i:k]\) gilt genau dann,
+            wenn es eine Produktion \(X \rightarrow YZ\) gibt, so dass dann
+            $$\begin{align*}
             Y&amp;\Step{}^* w[i:j] \\
             Z&amp;\Step{}^* w[j:k]
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:249:50');"
-                >emu_content/05/05-09-general-parsing.emu:249:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >gilt. Das Problem ist, wie bereits oben skizziert, dass wir die "Grenze" </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:250:50');"
-                >emu_content/05/05-09-general-parsing.emu:250:50</span></span></span>\(j\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   nicht kennen. Wir
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:250:50');"
-                >emu_content/05/05-09-general-parsing.emu:250:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >probieren also alle Grenzen aus, und somit</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:251:50');"
-                >emu_content/05/05-09-general-parsing.emu:251:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >\begin{align}</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:252:50');"
-                >emu_content/05/05-09-general-parsing.emu:252:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >N</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:253:50');"
-                >emu_content/05/05-09-general-parsing.emu:253:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >{i,k} = \bigcup</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:253:50');"
-                  >emu_content/05/05-09-general-parsing.emu:253:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >{j=i+1}^{k-1} \{X \in N \ | \ \textnormal{ es gibt </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:253:50');"
-                >emu_content/05/05-09-general-parsing.emu:253:50</span></span></span>\(X \rightarrow YZ\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   mit 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:253:50');"
-                >emu_content/05/05-09-general-parsing.emu:253:50</span></span></span>\(Y
-            \in N_{i,j}\)
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:254:50');"
-                >emu_content/05/05-09-general-parsing.emu:254:50</span></span></span>\(Z \in N_{j,k}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >}\} \ .</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:254:50');"
-                >emu_content/05/05-09-general-parsing.emu:254:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >\label{equation-Nij}</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:255:50');"
-                >emu_content/05/05-09-general-parsing.emu:255:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >\end{align}</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:256:50');"
-                >emu_content/05/05-09-general-parsing.emu:256:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Dies können wir mit einer Schleife über </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:257:50');"
-                >emu_content/05/05-09-general-parsing.emu:257:50</span></span></span>\(j = i+1 \dots k-1\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und einer Schleife über alle
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:257:50');"
-                >emu_content/05/05-09-general-parsing.emu:257:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Produktionen</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:258:50');"
-                >emu_content/05/05-09-general-parsing.emu:258:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:259:50');"
-                >emu_content/05/05-09-general-parsing.emu:259:50</span></span></span>\(X \rightarrow YZ\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   berechnen, da wir die Mengen 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:259:50');"
-                >emu_content/05/05-09-general-parsing.emu:259:50</span></span></span>\(N_{i,j}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:259:50');"
-                >emu_content/05/05-09-general-parsing.emu:259:50</span></span></span>\(N_{j-k}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ja bereits kennen,
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:259:50');"
-                >emu_content/05/05-09-general-parsing.emu:259:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >da </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:260:50');"
-                >emu_content/05/05-09-general-parsing.emu:260:50</span></span></span>\(k-j, j-i \lt k-i\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, diese Bereiche also kleinere Unterwörter darstellen.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:260:50');"
-                >emu_content/05/05-09-general-parsing.emu:260:50</span></span></span>
+            gilt. Das Problem ist, wie bereits oben skizziert, dass wir die "Grenze" \(j\) nicht kennen. Wir
+            probieren also alle Grenzen aus, und somit
+            $$\begin{align}
+            N_{i,k} = \bigcup_{j=i+1}^{k-1} \{X \in N \ | \ \textnormal{ es gibt $X \rightarrow YZ$ mit $Y
+            \in N_{i,j}$ und $Z \in N_{j,k}$}\} \ .
+            \label{equation-Nij}
+            \end{align}$$
+            Dies können wir mit einer Schleife über \(j = i+1 \dots k-1\) und einer Schleife über alle
+            Produktionen
+            \(X \rightarrow YZ\) berechnen, da wir die Mengen \(N_{i,j}\) und \(N_{j-k}\) ja bereits kennen,
+            da \(k-j, j-i \lt k-i\), diese Bereiche also kleinere Unterwörter darstellen.
           </p>
           <ul
             class="nested"
           >
-            <li><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Initialisiere für alle </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:265:50');"
-                  >emu_content/05/05-09-general-parsing.emu:265:50</span></span></span>\(0 \leq i \lt n\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     die Mengen 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:265:50');"
-                  >emu_content/05/05-09-general-parsing.emu:265:50</span></span></span>\(N_{i,i+1} := \{X \in N \ | \ X
+            <li>
+              Initialisiere für alle \(0 \leq i \lt n\) die Mengen \(N_{i,i+1} := \{X \in N \ | \ X
               \step{} w_i \textnormal{ ist eine Produktion in $G$}\}\)
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:266:50');"
-                  >emu_content/05/05-09-general-parsing.emu:266:50</span></span></span>
             </li>
-            <li><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:269:50');"
-                  >emu_content/05/05-09-general-parsing.emu:269:50</span></span></span>
-              <code><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >for l = 2 .. n</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:269:50');"
-                    >emu_content/05/05-09-general-parsing.emu:269:50</span></span></span>
+            <li>
+              
+              <code>
+                for l = 2 .. n
               </code>
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:269:50');"
-                  >emu_content/05/05-09-general-parsing.emu:269:50</span></span></span>
+              
               <ol
                 type="I"
                 class=""
               >
-                <li><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >
-                         
-                      </span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:275:50');"
-                      >emu_content/05/05-09-general-parsing.emu:275:50</span></span></span>
-                  <code><span><span
-                        class="tooltip-3003-container"
-                      ><span
-                          class="tooltip-3003-text"
-                        >for i = 0 .. n-l</span><span
-                          class="tooltip-3003"
-                          onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:275:50');"
-                        >emu_content/05/05-09-general-parsing.emu:275:50</span></span></span>
+                <li>
+                   
+                  <code>
+                    for i = 0 .. n-l
                   </code>
-                  <span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      ></span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:275:50');"
-                      >emu_content/05/05-09-general-parsing.emu:275:50</span></span></span>
+                  
                   <ol
                     type="i"
                     class=""
                   >
-                    <li><span><span
-                          class="tooltip-3003-container"
-                        ><span
-                            class="tooltip-3003-text"
-                          ></span><span
-                            class="tooltip-3003"
-                            onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:281:50');"
-                          >emu_content/05/05-09-general-parsing.emu:281:50</span></span></span>
-                      <code><span><span
-                            class="tooltip-3003-container"
-                          ><span
-                              class="tooltip-3003-text"
-                            >k := i+l</span><span
-                              class="tooltip-3003"
-                              onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:281:50');"
-                            >emu_content/05/05-09-general-parsing.emu:281:50</span></span></span>
+                    <li>
+                      
+                      <code>
+                        k := i+l
                       </code>
-                      <span><span
-                          class="tooltip-3003-container"
-                        ><span
-                            class="tooltip-3003-text"
-                          >
-                             
-                          </span><span
-                            class="tooltip-3003"
-                            onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:281:50');"
-                          >emu_content/05/05-09-general-parsing.emu:281:50</span></span></span><span
+                       
+                      <span
                         class="comment"
-                      ><span><span
-                            class="tooltip-3003-container"
-                          ><span
-                              class="tooltip-3003-text"
-                            ># wir betrachten das Interval</span><span
-                              class="tooltip-3003"
-                              onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:285:50');"
-                            >emu_content/05/05-09-general-parsing.emu:285:50</span></span>
-                          
-                          <span
-                            class="tooltip-3003-container"
-                          ><span
-                              class="tooltip-3003-text"
-                            >w[i:k] der Länge l</span><span
-                              class="tooltip-3003"
-                              onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:286:50');"
-                            >emu_content/05/05-09-general-parsing.emu:286:50</span></span></span></span>
+                      ># wir betrachten das Interval
+                        w[i:k] der Länge l</span>
                     </li>
-                    <li><span><span
-                          class="tooltip-3003-container"
-                        ><span
-                            class="tooltip-3003-text"
-                          >Berechne </span><span
-                            class="tooltip-3003"
-                            onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:289:50');"
-                          >emu_content/05/05-09-general-parsing.emu:289:50</span></span></span>\(N_{i,k}\)<span><span
-                          class="tooltip-3003-container"
-                        ><span
-                            class="tooltip-3003-text"
-                          >
-                             wie in 
-                          </span><span
-                            class="tooltip-3003"
-                            onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:289:50');"
-                          >emu_content/05/05-09-general-parsing.emu:289:50</span></span></span>\((\ref{equation-Nij})\)<span><span
-                          class="tooltip-3003-container"
-                        ><span
-                            class="tooltip-3003-text"
-                          >. Konkret heißt das:</span><span
-                            class="tooltip-3003"
-                            onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:289:50');"
-                          >emu_content/05/05-09-general-parsing.emu:289:50</span></span></span>
+                    <li>
+                      Berechne \(N_{i,k}\) wie in \((\ref{equation-Nij})\). Konkret heißt das:
                     </li>
-                    <li><span><span
-                          class="tooltip-3003-container"
-                        ><span
-                            class="tooltip-3003-text"
-                          >Initialisiere </span><span
-                            class="tooltip-3003"
-                            onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:292:50');"
-                          >emu_content/05/05-09-general-parsing.emu:292:50</span></span></span>\(N_{i,k} := \emptyset\)<span><span
-                          class="tooltip-3003-container"
-                        ><span
-                            class="tooltip-3003-text"
-                          ></span><span
-                            class="tooltip-3003"
-                            onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:292:50');"
-                          >emu_content/05/05-09-general-parsing.emu:292:50</span></span></span>
+                    <li>
+                      Initialisiere \(N_{i,k} := \emptyset\)
                     </li>
-                    <li><span><span
-                          class="tooltip-3003-container"
-                        ><span
-                            class="tooltip-3003-text"
-                          ></span><span
-                            class="tooltip-3003"
-                            onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:295:50');"
-                          >emu_content/05/05-09-general-parsing.emu:295:50</span></span></span>
-                      <code><span><span
-                            class="tooltip-3003-container"
-                          ><span
-                              class="tooltip-3003-text"
-                            >for j = i+1 .. k-1:</span><span
-                              class="tooltip-3003"
-                              onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:295:50');"
-                            >emu_content/05/05-09-general-parsing.emu:295:50</span></span></span>
+                    <li>
+                      
+                      <code>
+                        for j = i+1 .. k-1:
                       </code>
-                      <span><span
-                          class="tooltip-3003-container"
-                        ><span
-                            class="tooltip-3003-text"
-                          ></span><span
-                            class="tooltip-3003"
-                            onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:295:50');"
-                          >emu_content/05/05-09-general-parsing.emu:295:50</span></span></span>
+                      
                       <ol
                         type="1"
                         class=""
                       >
-                        <li><span><span
-                              class="tooltip-3003-container"
-                            ><span
-                                class="tooltip-3003-text"
-                              ></span><span
-                                class="tooltip-3003"
-                                onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:301:50');"
-                              >emu_content/05/05-09-general-parsing.emu:301:50</span></span></span>
-                          <code><span><span
-                                class="tooltip-3003-container"
-                              ><span
-                                  class="tooltip-3003-text"
-                                >for all productions</span><span
-                                  class="tooltip-3003"
-                                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:301:50');"
-                                >emu_content/05/05-09-general-parsing.emu:301:50</span></span></span>
+                        <li>
+                          
+                          <code>
+                            for all productions
                           </code>
-                          <span><span
-                              class="tooltip-3003-container"
-                            ><span
-                                class="tooltip-3003-text"
-                              >
-                                 
-                              </span><span
-                                class="tooltip-3003"
-                                onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:301:50');"
-                              >emu_content/05/05-09-general-parsing.emu:301:50</span></span></span>\(X \rightarrow YZ\)<span><span
-                              class="tooltip-3003-container"
-                            ><span
-                                class="tooltip-3003-text"
-                              >:</span><span
-                                class="tooltip-3003"
-                                onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:301:50');"
-                              >emu_content/05/05-09-general-parsing.emu:301:50</span></span></span>
+                           \(X \rightarrow YZ\):
                           <ol
                             type="a"
                           >
-                            <li><span><span
-                                  class="tooltip-3003-container"
-                                ><span
-                                    class="tooltip-3003-text"
-                                  >füge </span><span
-                                    class="tooltip-3003"
-                                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:306:50');"
-                                  >emu_content/05/05-09-general-parsing.emu:306:50</span></span></span>\(X\)<span><span
-                                  class="tooltip-3003-container"
-                                ><span
-                                    class="tooltip-3003-text"
-                                  >
-                                     zu 
-                                  </span><span
-                                    class="tooltip-3003"
-                                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:306:50');"
-                                  >emu_content/05/05-09-general-parsing.emu:306:50</span></span></span>\(N_{i,k}\)<span><span
-                                  class="tooltip-3003-container"
-                                ><span
-                                    class="tooltip-3003-text"
-                                  >
-                                     hinzu, falls 
-                                  </span><span
-                                    class="tooltip-3003"
-                                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:306:50');"
-                                  >emu_content/05/05-09-general-parsing.emu:306:50</span></span></span>\(Y \in N_{i,j}\)<span><span
-                                  class="tooltip-3003-container"
-                                ><span
-                                    class="tooltip-3003-text"
-                                  >
-                                     und
-                                  </span><span
-                                    class="tooltip-3003"
-                                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:306:50');"
-                                  >emu_content/05/05-09-general-parsing.emu:306:50</span></span>
-                                
-                                <span
-                                  class="tooltip-3003-container"
-                                ><span
-                                    class="tooltip-3003-text"
-                                  ></span><span
-                                    class="tooltip-3003"
-                                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:307:50');"
-                                  >emu_content/05/05-09-general-parsing.emu:307:50</span></span></span>\(Z
-                              \in N_{j,k}\)
-                              <span><span
-                                  class="tooltip-3003-container"
-                                ><span
-                                    class="tooltip-3003-text"
-                                  >
-                                     gilt. 
-                                  </span><span
-                                    class="tooltip-3003"
-                                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:308:50');"
-                                  >emu_content/05/05-09-general-parsing.emu:308:50</span></span></span>
+                            <li>
+                              füge \(X\) zu \(N_{i,k}\) hinzu, falls \(Y \in N_{i,j}\) und
+                              \(Z
+                              \in N_{j,k}\) gilt. 
                             </li>
                           </ol>
                         </li>
-                        <li><span><span
-                              class="tooltip-3003-container"
-                            ><span
-                                class="tooltip-3003-text"
-                              ></span><span
-                                class="tooltip-3003"
-                                onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:311:50');"
-                              >emu_content/05/05-09-general-parsing.emu:311:50</span></span></span>
-                          <code><span><span
-                                class="tooltip-3003-container"
-                              ><span
-                                  class="tooltip-3003-text"
-                                >end for all productions</span><span
-                                  class="tooltip-3003"
-                                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:311:50');"
-                                >emu_content/05/05-09-general-parsing.emu:311:50</span></span></span>
+                        <li>
+                          
+                          <code>
+                            end for all productions
                           </code>
-                          <span><span
-                              class="tooltip-3003-container"
-                            ><span
-                                class="tooltip-3003-text"
-                              ></span><span
-                                class="tooltip-3003"
-                                onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:311:50');"
-                              >emu_content/05/05-09-general-parsing.emu:311:50</span></span></span>
+                          
                         </li>
                       </ol>
                     </li>
-                    <li><span><span
-                          class="tooltip-3003-container"
-                        ><span
-                            class="tooltip-3003-text"
-                          ></span><span
-                            class="tooltip-3003"
-                            onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:314:50');"
-                          >emu_content/05/05-09-general-parsing.emu:314:50</span></span></span>
-                      <code><span><span
-                            class="tooltip-3003-container"
-                          ><span
-                              class="tooltip-3003-text"
-                            >end for j</span><span
-                              class="tooltip-3003"
-                              onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:314:50');"
-                            >emu_content/05/05-09-general-parsing.emu:314:50</span></span></span>
+                    <li>
+                      
+                      <code>
+                        end for j
                       </code>
-                      <span><span
-                          class="tooltip-3003-container"
-                        ><span
-                            class="tooltip-3003-text"
-                          ></span><span
-                            class="tooltip-3003"
-                            onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:314:50');"
-                          >emu_content/05/05-09-general-parsing.emu:314:50</span></span></span>
+                      
                     </li>
                   </ol>
                 </li>
-                <li><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      ></span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:317:50');"
-                      >emu_content/05/05-09-general-parsing.emu:317:50</span></span></span>
-                  <code><span><span
-                        class="tooltip-3003-container"
-                      ><span
-                          class="tooltip-3003-text"
-                        >end for k</span><span
-                          class="tooltip-3003"
-                          onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:317:50');"
-                        >emu_content/05/05-09-general-parsing.emu:317:50</span></span></span>
+                <li>
+                  
+                  <code>
+                    end for k
                   </code>
-                  <span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >
-                         
-                      </span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:317:50');"
-                      >emu_content/05/05-09-general-parsing.emu:317:50</span></span></span>
+                   
                 </li>
               </ol>
             </li>
-            <li><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:320:50');"
-                  >emu_content/05/05-09-general-parsing.emu:320:50</span></span></span>
-              <code><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >end for i</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:320:50');"
-                    >emu_content/05/05-09-general-parsing.emu:320:50</span></span></span>
+            <li>
+              
+              <code>
+                end for i
               </code>
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:320:50');"
-                  >emu_content/05/05-09-general-parsing.emu:320:50</span></span></span>
+               
             </li>
-            <li><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:323:50');"
-                  >emu_content/05/05-09-general-parsing.emu:323:50</span></span></span>
-              <code><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >return True if</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:323:50');"
-                    >emu_content/05/05-09-general-parsing.emu:323:50</span></span></span>
+            <li>
+              
+              <code>
+                return True if
               </code>
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:323:50');"
-                  >emu_content/05/05-09-general-parsing.emu:323:50</span></span></span>\(S \in N_{0,n}\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:323:50');"
-                  >emu_content/05/05-09-general-parsing.emu:323:50</span></span></span>
-              <code><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >else return False</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:323:50');"
-                    >emu_content/05/05-09-general-parsing.emu:323:50</span></span></span>
+               \(S \in N_{0,n}\) 
+              <code>
+                else return False
               </code>
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:323:50');"
-                  >emu_content/05/05-09-general-parsing.emu:323:50</span></span></span>
+              
             </li>
           </ul>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Was ist die Laufzeit des Algorithmus? Sei </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:326:50');"
-                >emu_content/05/05-09-general-parsing.emu:326:50</span></span></span>\(g\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   die Anzahl der Produktionen in 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:326:50');"
-                >emu_content/05/05-09-general-parsing.emu:326:50</span></span></span>\(G\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   der
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:326:50');"
-                >emu_content/05/05-09-general-parsing.emu:326:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Form </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:327:50');"
-                >emu_content/05/05-09-general-parsing.emu:327:50</span></span></span>\(X \rightarrow YZ\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Die innerste Schleife, also Punkt a, wird jedes Mal </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:327:50');"
-                >emu_content/05/05-09-general-parsing.emu:327:50</span></span></span>\(g\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   mal
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:327:50');"
-                >emu_content/05/05-09-general-parsing.emu:327:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >durchlaufen, und somit</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:328:50');"
-                >emu_content/05/05-09-general-parsing.emu:328:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wird Zeile a insgesamt</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:329:50');"
-                >emu_content/05/05-09-general-parsing.emu:329:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:330:50');"
-                >emu_content/05/05-09-general-parsing.emu:330:50</span></span></span>$$\begin{align*}
+          <p>
+            Was ist die Laufzeit des Algorithmus? Sei \(g\) die Anzahl der Produktionen in \(G\) der
+            Form \(X \rightarrow YZ\). Die innerste Schleife, also Punkt a, wird jedes Mal \(g\) mal
+            durchlaufen, und somit
+            wird Zeile a insgesamt
+            $$\begin{align*}
             \sum_{i=0}^{n-1}\sum_{k=i+2}^{n-1} \sum_{j = i+1}^{k-1} g
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:332:50');"
-                >emu_content/05/05-09-general-parsing.emu:332:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >ausgeführt. Können Sie eine geschlossene Form für die drei Summen angeben? Leichter geht es,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:333:50');"
-                >emu_content/05/05-09-general-parsing.emu:333:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wenn wir erkennen, dass für alle </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:334:50');"
-                >emu_content/05/05-09-general-parsing.emu:334:50</span></span></span>\(i,j,k\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   die Ungleichung 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:334:50');"
-                >emu_content/05/05-09-general-parsing.emu:334:50</span></span></span>\(0 \leq i \lt j \lt k \leq n-1\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:334:50');"
-                >emu_content/05/05-09-general-parsing.emu:334:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >gilt,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:335:50');"
-                >emu_content/05/05-09-general-parsing.emu:335:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >und jedes solche Tripel auch drankommt. Wie viele solche Tripel gibt es? Genau</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:336:50');"
-                >emu_content/05/05-09-general-parsing.emu:336:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:337:50');"
-                >emu_content/05/05-09-general-parsing.emu:337:50</span></span></span>\({n \choose 3}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   viele. Also: die Zeile a wird
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:337:50');"
-                >emu_content/05/05-09-general-parsing.emu:337:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:338:50');"
-                >emu_content/05/05-09-general-parsing.emu:338:50</span></span></span>$$\begin{align*}
+            ausgeführt. Können Sie eine geschlossene Form für die drei Summen angeben? Leichter geht es,
+            wenn wir erkennen, dass für alle \(i,j,k\) die Ungleichung \(0 \leq i \lt j \lt k \leq n-1\)
+            gilt,
+            und jedes solche Tripel auch drankommt. Wie viele solche Tripel gibt es? Genau
+            \({n \choose 3}\) viele. Also: die Zeile a wird
+            $$\begin{align*}
             g \cdot {n \choose 3} = g \cdot \frac{n (n-1) (n-2)}{6}
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:340:50');"
-                >emu_content/05/05-09-general-parsing.emu:340:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >mal durchlaufen. Also "ungefähr" </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:341:50');"
-                >emu_content/05/05-09-general-parsing.emu:341:50</span></span></span>\(g n^3 / 6\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und "noch ungefährer" 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:341:50');"
-                >emu_content/05/05-09-general-parsing.emu:341:50</span></span></span>\(g n^3\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Also:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:341:50');"
-                >emu_content/05/05-09-general-parsing.emu:341:50</span></span></span>
+            mal durchlaufen. Also "ungefähr" \(g n^3 / 6\) und "noch ungefährer" \(g n^3\). Also:
           </p>
           <div
             class="well container theorem"
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Beobachtung </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:347:50');"
-                  >emu_content/05/05-09-general-parsing.emu:347:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >5.10.2</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:350:50');"
-                    >emu_content/05/05-09-general-parsing.emu:350:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:351:50');"
-                  >emu_content/05/05-09-general-parsing.emu:351:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Sei </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:352:50');"
-                >emu_content/05/05-09-general-parsing.emu:352:50</span></span></span>\(n = |w|\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   die Länge des Eingabewortes und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:352:50');"
-                >emu_content/05/05-09-general-parsing.emu:352:50</span></span></span>\(g\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   die Anzahl der Produktionen der Form
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:352:50');"
-                >emu_content/05/05-09-general-parsing.emu:352:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:353:50');"
-                >emu_content/05/05-09-general-parsing.emu:353:50</span></span></span>\(X \rightarrow YZ\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Dann ist die Laufzeit des CYK-Algorithmus proportional zu</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:353:50');"
-                >emu_content/05/05-09-general-parsing.emu:353:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:354:50');"
-                >emu_content/05/05-09-general-parsing.emu:354:50</span></span></span>\(g \cdot n^3\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:354:50');"
-                >emu_content/05/05-09-general-parsing.emu:354:50</span></span></span>
+            >Beobachtung 
+              <NumberedTitle>5.10.2</NumberedTitle>
+               
+            </span>Sei \(n = |w|\) die Länge des Eingabewortes und \(g\) die Anzahl der Produktionen der Form
+            \(X \rightarrow YZ\). Dann ist die Laufzeit des CYK-Algorithmus proportional zu
+            \(g \cdot n^3\).
           </div>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:357:50');"
-                >emu_content/05/05-09-general-parsing.emu:357:50</span></span></span><b><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Achtung:</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:357:50');"
-                  >emu_content/05/05-09-general-parsing.emu:357:50</span></span></span></b><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   wir haben die Kosten für die allererste Zeile vernachlässigt.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:357:50');"
-                >emu_content/05/05-09-general-parsing.emu:357:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Überlegen</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:358:50');"
-                >emu_content/05/05-09-general-parsing.emu:358:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Sie sich, wie viel Laufzeit diese verursachen kann und überzeugen Sie sich, dass dies in den</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:359:50');"
-                >emu_content/05/05-09-general-parsing.emu:359:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >meisten</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:360:50');"
-                >emu_content/05/05-09-general-parsing.emu:360:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Fällen gegenüber dem Term </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:361:50');"
-                >emu_content/05/05-09-general-parsing.emu:361:50</span></span></span>\(g \cdot n^3\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   wohl nicht ins Gewicht fallen wird.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:361:50');"
-                >emu_content/05/05-09-general-parsing.emu:361:50</span></span></span>
+          <p>
+            <b>Achtung:</b>
+             wir haben die Kosten für die allererste Zeile vernachlässigt.
+            Überlegen
+            Sie sich, wie viel Laufzeit diese verursachen kann und überzeugen Sie sich, dass dies in den
+            meisten
+            Fällen gegenüber dem Term \(g \cdot n^3\) wohl nicht ins Gewicht fallen wird.
           </p>
           <div
             class="well container theorem subtheorem"
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Demo</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:367:50');"
-                  >emu_content/05/05-09-general-parsing.emu:367:50</span></span></span></span>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Betrachten wir die Grammatik</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:370:50');"
-                  >emu_content/05/05-09-general-parsing.emu:370:50</span></span></span>
+            >Demo</span>
+            <p>
+              Betrachten wir die Grammatik
             </p>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:371:50');"
-                >emu_content/05/05-09-general-parsing.emu:371:50</span></span></span>$$\begin{align*}
+            $$\begin{align*}
             S&amp;\rightarrow AB \ | \ BC \ | \ AC \\
             A&amp;\rightarrow AC \ | \ x \ | \ z \\
             B&amp;\rightarrow AB \ | \ y \\
             C&amp;\rightarrow BC \ | \ AS \ | \ z
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:376:50');"
-                >emu_content/05/05-09-general-parsing.emu:376:50</span></span></span>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >und das Eingabewort </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:379:50');"
-                  >emu_content/05/05-09-general-parsing.emu:379:50</span></span></span>\(xyxxz\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:379:50');"
-                  >emu_content/05/05-09-general-parsing.emu:379:50</span></span></span>
+            <p>
+              und das Eingabewort \(xyxxz\).
             </p>
             <figure
               class="centered-figure well container-fluid"
@@ -3381,77 +830,11 @@
                 </div>
               </div>
             </figure>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Wenn wir uns zusätzlich zu jedem </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:614:50');"
-                  >emu_content/05/05-09-general-parsing.emu:614:50</span></span></span>\(X \in N_{i,k}\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     noch merken, durch
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:614:50');"
-                  >emu_content/05/05-09-general-parsing.emu:614:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >welche Regeln </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:615:50');"
-                  >emu_content/05/05-09-general-parsing.emu:615:50</span></span></span>\(X \rightarrow YZ\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     es aufgenommen wurde und
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:615:50');"
-                  >emu_content/05/05-09-general-parsing.emu:615:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >für welches </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:616:50');"
-                  >emu_content/05/05-09-general-parsing.emu:616:50</span></span></span>\(j\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     man 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:616:50');"
-                  >emu_content/05/05-09-general-parsing.emu:616:50</span></span></span>\(Y \in N_{i,j}, Z \in N_{j,k}\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     hat, dann können wir
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:616:50');"
-                  >emu_content/05/05-09-general-parsing.emu:616:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >den Ableitungsbaum leicht rekonstruieren.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-09-general-parsing.emu:617:50');"
-                  >emu_content/05/05-09-general-parsing.emu:617:50</span></span></span>
+            <p>
+              Wenn wir uns zusätzlich zu jedem \(X \in N_{i,k}\) noch merken, durch
+              welche Regeln \(X \rightarrow YZ\) es aufgenommen wurde und
+              für welches \(j\) man \(Y \in N_{i,j}, Z \in N_{j,k}\) hat, dann können wir
+              den Ableitungsbaum leicht rekonstruieren.
             </p>
           </div>
         </div>

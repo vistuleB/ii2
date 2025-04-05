@@ -9,9 +9,9 @@ import gleam/string
 import html_pipeline.{html_pipeline}
 import infrastructure as infra
 import simplifile
-import vxml_parser.{type VXML} as vp
+import vxml.{type VXML} as vp
 import vxml_renderer as vr
-import writerly_parser as wp
+import writerly as wp
 
 const ins = string.inspect
 

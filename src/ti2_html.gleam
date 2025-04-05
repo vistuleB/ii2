@@ -7,9 +7,9 @@ import gleam/string
 import html_to_writerly
 import infrastructure as infra
 import pipeline
-import vxml_parser.{type VXML, BlamedAttribute}
+import vxml.{type VXML, BlamedAttribute}
 import vxml_renderer as vr
-import writerly_parser as wp
+import writerly as wp
 
 const ins = string.inspect
 
@@ -121,7 +121,7 @@ fn ti2_section_emitter(
         ),
         BlamedLine(blame_us("ti2_fragment_emitter"), 0, "</head>\n<body>"),
       ],
-      vxml_parser.vxml_to_html_blamed_lines(fragment, 0, 2),
+      vxml.vxml_to_html_blamed_lines(fragment, 0, 2),
       [
         BlamedLine(blame_us("ti2_fragment_emitter"), 0, "</body>"),
         BlamedLine(blame_us("ti2_fragment_emitter"), 0, ""),
@@ -254,7 +254,7 @@ fn toc_emitter(
       fragment
         |> infra.get_children
         |> list.map(fn(vxml) {
-          vxml_parser.vxml_to_html_blamed_lines(vxml, 8, 2)
+          vxml.vxml_to_html_blamed_lines(vxml, 8, 2)
         })
         |> list.flatten,
       [

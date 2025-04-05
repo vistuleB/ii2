@@ -31,23 +31,9 @@
   >
     <a
       href="../vorlesungsskript.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >Inhaltsverzeichnis</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:12:50');"
-          >emu_content/07/07-06-undecidability.emu:12:50</span></span></span></a><a
+    >Inhaltsverzeichnis</a><a
       href="07-05-Turing-universal.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >&lt;&lt; Kapitel 7.5</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:16:50');"
-          >emu_content/07/07-06-undecidability.emu:16:50</span></span></span></a>
+    >&lt;&lt; Kapitel 7.5</a>
   </div>
   <div
     id="link-to-overview"
@@ -55,23 +41,9 @@
   >
     <a
       href="/"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >zur Kursübersicht</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:23:50');"
-          >emu_content/07/07-06-undecidability.emu:23:50</span></span></span></a><a
+    >zur Kursübersicht</a><a
       href="07-07-Post-correspondence-problem.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >Kapitel 7.7 &gt;&gt;</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:27:50');"
-          >emu_content/07/07-06-undecidability.emu:27:50</span></span></span></a>
+    >Kapitel 7.7 &gt;&gt;</a>
   </div>
   <div
     id="rightSideWrapper"
@@ -90,2748 +62,293 @@
           >
             <span
               class="subChapterTitle"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >7.6</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:41:50');"
-                  >emu_content/07/07-06-undecidability.emu:41:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Turingmaschinen, Haltproblem und Unentscheidbarkeit</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:42:50');"
-                  >emu_content/07/07-06-undecidability.emu:42:50</span></span></span></span>
+            >7.6
+              Turingmaschinen, Haltproblem und Unentscheidbarkeit</span>
           </h1>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Im vorherigen Teilkapitel haben wir die </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:45:50');"
-                >emu_content/07/07-06-undecidability.emu:45:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >universelle Turingmaschine</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:45:50');"
-                  >emu_content/07/07-06-undecidability.emu:45:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:45:50');"
-                >emu_content/07/07-06-undecidability.emu:45:50</span></span></span>\(U\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   konstruiert, die
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:45:50');"
-                >emu_content/07/07-06-undecidability.emu:45:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >eine andere Turingmaschine, deren Codierung und Inputwort sie als Input gegeben hat, simulieren</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:46:50');"
-                >emu_content/07/07-06-undecidability.emu:46:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >kann.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:47:50');"
-                >emu_content/07/07-06-undecidability.emu:47:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Technisch gesprochen: </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:48:50');"
-                >emu_content/07/07-06-undecidability.emu:48:50</span></span></span>\(U\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   akzeptiert die Sprache
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:48:50');"
-                >emu_content/07/07-06-undecidability.emu:48:50</span></span></span>
+          <p>
+            Im vorherigen Teilkapitel haben wir die 
+            <i>universelle Turingmaschine</i>
+             \(U\) konstruiert, die
+            eine andere Turingmaschine, deren Codierung und Inputwort sie als Input gegeben hat, simulieren
+            kann.
+            Technisch gesprochen: \(U\) akzeptiert die Sprache
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >\begin{align}</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:49:50');"
-              >emu_content/07/07-06-undecidability.emu:49:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >\{ c w \ | \ c = \enc(M) \textnormal{ und </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:50:50');"
-              >emu_content/07/07-06-undecidability.emu:50:50</span></span></span>\(M\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >
-                 akzeptiert 
-              </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:50:50');"
-              >emu_content/07/07-06-undecidability.emu:50:50</span></span></span>\(w\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >} \} \ .</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:50:50');"
-              >emu_content/07/07-06-undecidability.emu:50:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >\label{halting-language-old-encoding}</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:51:50');"
-              >emu_content/07/07-06-undecidability.emu:51:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >\end{align}</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:52:50');"
-              >emu_content/07/07-06-undecidability.emu:52:50</span></span></span>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Allerdings: wenn </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:55:50');"
-                >emu_content/07/07-06-undecidability.emu:55:50</span></span></span>\(M\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   auf 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:55:50');"
-                >emu_content/07/07-06-undecidability.emu:55:50</span></span></span>\(x\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   nicht terminiert, dann terminiert 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:55:50');"
-                >emu_content/07/07-06-undecidability.emu:55:50</span></span></span>\(U\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   auf 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:55:50');"
-                >emu_content/07/07-06-undecidability.emu:55:50</span></span></span>\(\enc(M)x\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   auch
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:55:50');"
-                >emu_content/07/07-06-undecidability.emu:55:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >nicht. </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:56:50');"
-                >emu_content/07/07-06-undecidability.emu:56:50</span></span></span>\(U\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:56:50');"
-                >emu_content/07/07-06-undecidability.emu:56:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >akzeptiert</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:56:50');"
-                  >emu_content/07/07-06-undecidability.emu:56:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   die Sprache also, 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:56:50');"
-                >emu_content/07/07-06-undecidability.emu:56:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >entscheidet</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:56:50');"
-                  >emu_content/07/07-06-undecidability.emu:56:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   sie aber nicht. Wäre es
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:56:50');"
-                >emu_content/07/07-06-undecidability.emu:56:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >nicht schön, eine Turingmaschine zu haben, die diese Sprache entscheidet? Dann könnten wir jede</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:57:50');"
-                >emu_content/07/07-06-undecidability.emu:57:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Turingmaschine simulieren und gleichzeitig Endlosschleifen und eventuell ganz allgemein</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:58:50');"
-                >emu_content/07/07-06-undecidability.emu:58:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >"Programmierfehler" vorhersagen und abfangen. Wir werden zeigen, dass dies leider </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:59:50');"
-                >emu_content/07/07-06-undecidability.emu:59:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >nicht</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:59:50');"
-                  >emu_content/07/07-06-undecidability.emu:59:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:59:50');"
-                >emu_content/07/07-06-undecidability.emu:59:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >möglich ist. In der Literatur ist dies als die </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:60:50');"
-                >emu_content/07/07-06-undecidability.emu:60:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Unentscheidbarkeit des Halteproblems</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:60:50');"
-                  >emu_content/07/07-06-undecidability.emu:60:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:60:50');"
-                >emu_content/07/07-06-undecidability.emu:60:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >(englisch </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:61:50');"
-                >emu_content/07/07-06-undecidability.emu:61:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >undecidability of the Halting problem</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:61:50');"
-                  >emu_content/07/07-06-undecidability.emu:61:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   bekannt).
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:61:50');"
-                >emu_content/07/07-06-undecidability.emu:61:50</span></span></span>
+          $$\begin{align}
+          \{ c w \ | \ c = \enc(M) \textnormal{ und $M$ akzeptiert $w$} \} \ .
+          \label{halting-language-old-encoding}
+          \end{align}$$
+          <p>
+            Allerdings: wenn \(M\) auf \(x\) nicht terminiert, dann terminiert \(U\) auf \(\enc(M)x\) auch
+            nicht. \(U\) 
+            <i>akzeptiert</i>
+             die Sprache also, 
+            <i>entscheidet</i>
+             sie aber nicht. Wäre es
+            nicht schön, eine Turingmaschine zu haben, die diese Sprache entscheidet? Dann könnten wir jede
+            Turingmaschine simulieren und gleichzeitig Endlosschleifen und eventuell ganz allgemein
+            "Programmierfehler" vorhersagen und abfangen. Wir werden zeigen, dass dies leider 
+            <i>nicht</i>
+            möglich ist. In der Literatur ist dies als die 
+            <i>Unentscheidbarkeit des Halteproblems</i>
+            (englisch 
+            <i>undecidability of the Halting problem</i>
+             bekannt).
           </p>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Als vorbereitenden Schritt schauen wir uns kurz die Codierungsfunktion nochmal genauer an. Wir</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:64:50');"
-                >emu_content/07/07-06-undecidability.emu:64:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >bezeichnen</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:65:50');"
-                >emu_content/07/07-06-undecidability.emu:65:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >mit </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:66:50');"
-                >emu_content/07/07-06-undecidability.emu:66:50</span></span></span>\(\tm_{\Sigma}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   die Menge aller Turingmaschinen mit Inputalphabet 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:66:50');"
-                >emu_content/07/07-06-undecidability.emu:66:50</span></span></span>\(\Sigma\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Wir hatten</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:66:50');"
-                >emu_content/07/07-06-undecidability.emu:66:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >die Codierungsfunktion </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:67:50');"
-                >emu_content/07/07-06-undecidability.emu:67:50</span></span></span>\(\enc: \tm_{\Sigma} \rightarrow \Lambda^*\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   definiert, für das
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:67:50');"
-                >emu_content/07/07-06-undecidability.emu:67:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Codierungsalphabet </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:68:50');"
-                >emu_content/07/07-06-undecidability.emu:68:50</span></span></span>\(\Lambda := \writelambda\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. In diesem Teilkapitel wird es nötig sein, die</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:68:50');"
-                >emu_content/07/07-06-undecidability.emu:68:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Turingmaschine</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:69:50');"
-                >emu_content/07/07-06-undecidability.emu:69:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >über dem Alphabet </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:70:50');"
-                >emu_content/07/07-06-undecidability.emu:70:50</span></span></span>\(\Sigma\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   selbst zu codieren. Dies ist nicht besonders schwierig, solange
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:70:50');"
-                >emu_content/07/07-06-undecidability.emu:70:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:71:50');"
-                >emu_content/07/07-06-undecidability.emu:71:50</span></span></span>\(\Sigma\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   mindestens zwei Zeichen hat. Wenn z.B. 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:71:50');"
-                >emu_content/07/07-06-undecidability.emu:71:50</span></span></span>\(\Sigma\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   die Zeichen 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:71:50');"
-                >emu_content/07/07-06-undecidability.emu:71:50</span></span></span>\(0\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:71:50');"
-                >emu_content/07/07-06-undecidability.emu:71:50</span></span></span>\(1\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   enthält,
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:71:50');"
-                >emu_content/07/07-06-undecidability.emu:71:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >dann können wir alle Zeichen in</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:72:50');"
-                >emu_content/07/07-06-undecidability.emu:72:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:73:50');"
-                >emu_content/07/07-06-undecidability.emu:73:50</span></span></span>\(\Lambda\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   wiederum als Strings in 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:73:50');"
-                >emu_content/07/07-06-undecidability.emu:73:50</span></span></span>\(\Sigma^*\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   codieren. Wir müssen hier
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:73:50');"
-                >emu_content/07/07-06-undecidability.emu:73:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >nur vorsichtig sein, dass der Code </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:74:50');"
-                >emu_content/07/07-06-undecidability.emu:74:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >präfixfrei</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:74:50');"
-                  >emu_content/07/07-06-undecidability.emu:74:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ist. Wenn wir zum Beispiel naiv
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:74:50');"
-                >emu_content/07/07-06-undecidability.emu:74:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:75:50');"
-                >emu_content/07/07-06-undecidability.emu:75:50</span></span></span>\(1\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   als 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:75:50');"
-                >emu_content/07/07-06-undecidability.emu:75:50</span></span></span>\(1\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:75:50');"
-                >emu_content/07/07-06-undecidability.emu:75:50</span></span></span>\(0\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   als 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:75:50');"
-                >emu_content/07/07-06-undecidability.emu:75:50</span></span></span>\(0\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:75:50');"
-                >emu_content/07/07-06-undecidability.emu:75:50</span></span></span>\(\texttt{#}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   als 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:75:50');"
-                >emu_content/07/07-06-undecidability.emu:75:50</span></span></span>\(01\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   codieren, dann wissen wir nicht mehr, was
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:75:50');"
-                >emu_content/07/07-06-undecidability.emu:75:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >mit dem Codewort </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:76:50');"
-                >emu_content/07/07-06-undecidability.emu:76:50</span></span></span>\(01\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   gemeint ist. Am einfachsten geht das mit einem 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:76:50');"
-                >emu_content/07/07-06-undecidability.emu:76:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Blockcode</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:76:50');"
-                  >emu_content/07/07-06-undecidability.emu:76:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, in dem</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:76:50');"
-                >emu_content/07/07-06-undecidability.emu:76:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >alle Codewörter die gleiche Länge </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:77:50');"
-                >emu_content/07/07-06-undecidability.emu:77:50</span></span></span>\(k\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   haben, also
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:77:50');"
-                >emu_content/07/07-06-undecidability.emu:77:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:78:50');"
-                >emu_content/07/07-06-undecidability.emu:78:50</span></span></span>\(\Lambda \rightarrow \{0,1\}^k\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Mit</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:78:50');"
-                >emu_content/07/07-06-undecidability.emu:78:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:79:50');"
-                >emu_content/07/07-06-undecidability.emu:79:50</span></span></span>\(k = \ceil{\log_2 |\Lambda|}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ist das kein Problem. Unsere "neue" Codierungsfunktion
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:79:50');"
-                >emu_content/07/07-06-undecidability.emu:79:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:80:50');"
-                >emu_content/07/07-06-undecidability.emu:80:50</span></span></span>\(\enc\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ist nun also 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:80:50');"
-                >emu_content/07/07-06-undecidability.emu:80:50</span></span></span>\(\enc: \tm_{\Sigma} \rightarrow \Sigma^*\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Wir definieren nun</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:80:50');"
-                >emu_content/07/07-06-undecidability.emu:80:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >die Haltesprache </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:81:50');"
-                >emu_content/07/07-06-undecidability.emu:81:50</span></span></span>\(\halt \in \Sigma^*\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:81:50');"
-                >emu_content/07/07-06-undecidability.emu:81:50</span></span></span>
+          <p>
+            Als vorbereitenden Schritt schauen wir uns kurz die Codierungsfunktion nochmal genauer an. Wir
+            bezeichnen
+            mit \(\tm_{\Sigma}\) die Menge aller Turingmaschinen mit Inputalphabet \(\Sigma\). Wir hatten
+            die Codierungsfunktion \(\enc: \tm_{\Sigma} \rightarrow \Lambda^*\) definiert, für das
+            Codierungsalphabet \(\Lambda := \writelambda\). In diesem Teilkapitel wird es nötig sein, die
+            Turingmaschine
+            über dem Alphabet \(\Sigma\) selbst zu codieren. Dies ist nicht besonders schwierig, solange
+            \(\Sigma\) mindestens zwei Zeichen hat. Wenn z.B. \(\Sigma\) die Zeichen \(0\) und \(1\) enthält,
+            dann können wir alle Zeichen in
+            \(\Lambda\) wiederum als Strings in \(\Sigma^*\) codieren. Wir müssen hier
+            nur vorsichtig sein, dass der Code 
+            <i>präfixfrei</i>
+             ist. Wenn wir zum Beispiel naiv
+            \(1\) als \(1\) und \(0\) als \(0\) und \(\texttt{#}\) als \(01\) codieren, dann wissen wir nicht mehr, was
+            mit dem Codewort \(01\) gemeint ist. Am einfachsten geht das mit einem 
+            <i>Blockcode</i>, in dem
+            alle Codewörter die gleiche Länge \(k\) haben, also
+            \(\Lambda \rightarrow \{0,1\}^k\). Mit
+            \(k = \ceil{\log_2 |\Lambda|}\) ist das kein Problem. Unsere "neue" Codierungsfunktion
+            \(\enc\) ist nun also \(\enc: \tm_{\Sigma} \rightarrow \Sigma^*\). Wir definieren nun
+            die Haltesprache \(\halt \in \Sigma^*\):
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:82:50');"
-              >emu_content/07/07-06-undecidability.emu:82:50</span></span></span>$$\begin{align*}
+          $$\begin{align*}
           \halt := \{ \enc(M) w \ | \ M \textnormal{ akzeptiert } w\} \ .
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:84:50');"
-              >emu_content/07/07-06-undecidability.emu:84:50</span></span></span>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wir können die universelle Turingmaschine </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:87:50');"
-                >emu_content/07/07-06-undecidability.emu:87:50</span></span></span>\(U\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   leicht abwandeln, dass sie 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:87:50');"
-                >emu_content/07/07-06-undecidability.emu:87:50</span></span></span>\(\halt\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   akzeptiert;
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:87:50');"
-                >emu_content/07/07-06-undecidability.emu:87:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wir müssen nur einen Decodierungsschritt vorausschicken, der die neue Codierung </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:88:50');"
-                >emu_content/07/07-06-undecidability.emu:88:50</span></span></span>\(\enc(M) \in
+          <p>
+            Wir können die universelle Turingmaschine \(U\) leicht abwandeln, dass sie \(\halt\) akzeptiert;
+            wir müssen nur einen Decodierungsschritt vorausschicken, der die neue Codierung \(\enc(M) \in
             \Sigma^*\)
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:89:50');"
-                >emu_content/07/07-06-undecidability.emu:89:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >in unsere "alte" in </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:90:50');"
-                >emu_content/07/07-06-undecidability.emu:90:50</span></span></span>\(\Lambda^*\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   übersetzt. Beachten Sie, dass das Zeichen 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:90:50');"
-                >emu_content/07/07-06-undecidability.emu:90:50</span></span></span>\(\texttt{;}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, das wir</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:90:50');"
-                >emu_content/07/07-06-undecidability.emu:90:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >auch blockcodiert haben, uns hilft, die Grenze zwischen </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:91:50');"
-                >emu_content/07/07-06-undecidability.emu:91:50</span></span></span>\(\enc(M)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:91:50');"
-                >emu_content/07/07-06-undecidability.emu:91:50</span></span></span>\(w\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   zu erkennen.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:91:50');"
-                >emu_content/07/07-06-undecidability.emu:91:50</span></span></span>
+            in unsere "alte" in \(\Lambda^*\) übersetzt. Beachten Sie, dass das Zeichen \(\texttt{;}\), das wir
+            auch blockcodiert haben, uns hilft, die Grenze zwischen \(\enc(M)\) und \(w\) zu erkennen.
           </p>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wir zeigen nun, dass </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:94:50');"
-                >emu_content/07/07-06-undecidability.emu:94:50</span></span></span>\(\halt\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   unentscheidbar ist, dass es also keine Möglichkeit gibt,
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:94:50');"
-                >emu_content/07/07-06-undecidability.emu:94:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >das Nichtterminieren einer Maschine </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:95:50');"
-                >emu_content/07/07-06-undecidability.emu:95:50</span></span></span>\(M\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   auf Eingabe 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:95:50');"
-                >emu_content/07/07-06-undecidability.emu:95:50</span></span></span>\(x\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   vorauszusehen und abzufangen.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:95:50');"
-                >emu_content/07/07-06-undecidability.emu:95:50</span></span></span>
+          <p>
+            Wir zeigen nun, dass \(\halt\) unentscheidbar ist, dass es also keine Möglichkeit gibt,
+            das Nichtterminieren einer Maschine \(M\) auf Eingabe \(x\) vorauszusehen und abzufangen.
           </p>
           <div
             class="well container theorem"
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Theorem </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:101:50');"
-                  >emu_content/07/07-06-undecidability.emu:101:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >7.6.1</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:104:50');"
-                    >emu_content/07/07-06-undecidability.emu:104:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:105:50');"
-                  >emu_content/07/07-06-undecidability.emu:105:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:106:50');"
-                >emu_content/07/07-06-undecidability.emu:106:50</span></span></span><b><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >(Unentscheidbarkeit des Halteproblems).</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:106:50');"
-                  >emu_content/07/07-06-undecidability.emu:106:50</span></span></span></b><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:106:50');"
-                >emu_content/07/07-06-undecidability.emu:106:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Die Sprache </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:107:50');"
-                >emu_content/07/07-06-undecidability.emu:107:50</span></span></span>\(\halt\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ist unentscheidbar.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:107:50');"
-                >emu_content/07/07-06-undecidability.emu:107:50</span></span></span>
+            >Theorem 
+              <NumberedTitle>7.6.1</NumberedTitle>
+               
+            </span><b>(Unentscheidbarkeit des Halteproblems).</b>
+            Die Sprache \(\halt\) ist unentscheidbar.
           </div>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Ich gebe erst einmal einen kurzen und knappen Widerspruchsbeweis. Falls das ihnen zu schnell</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:110:50');"
-                >emu_content/07/07-06-undecidability.emu:110:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >ging,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:111:50');"
-                >emu_content/07/07-06-undecidability.emu:111:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >lesen Sie den zweiten Beweis, in dem ich mir mehr Zeit nehme.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:112:50');"
-                >emu_content/07/07-06-undecidability.emu:112:50</span></span></span>
+          <p>
+            Ich gebe erst einmal einen kurzen und knappen Widerspruchsbeweis. Falls das ihnen zu schnell
+            ging,
+            lesen Sie den zweiten Beweis, in dem ich mir mehr Zeit nehme.
           </p>
           <div
             class="well container"
           >
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:117:50');"
-                  >emu_content/07/07-06-undecidability.emu:117:50</span></span></span><b><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Kurzer Beweis per Wiederspruch.</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:117:50');"
-                    >emu_content/07/07-06-undecidability.emu:117:50</span></span></span></b><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     Nehmen wir an, es gäbe eine Maschine 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:117:50');"
-                  >emu_content/07/07-06-undecidability.emu:117:50</span></span></span>\(H\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >,</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:117:50');"
-                  >emu_content/07/07-06-undecidability.emu:117:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >die </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:118:50');"
-                  >emu_content/07/07-06-undecidability.emu:118:50</span></span></span>\(\halt\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     entscheidet. Dann wäre auch die Sprache
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:118:50');"
-                  >emu_content/07/07-06-undecidability.emu:118:50</span></span></span>
+            <p>
+              <b>Kurzer Beweis per Wiederspruch.</b>
+               Nehmen wir an, es gäbe eine Maschine \(H\),
+              die \(\halt\) entscheidet. Dann wäre auch die Sprache
             </p>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:119:50');"
-                >emu_content/07/07-06-undecidability.emu:119:50</span></span></span>$$\begin{align*}
+            $$\begin{align*}
             \diag := \{\enc(M) \ | \ \textnormal{$M$ akzeptiert $\enc(M)$} \}
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:121:50');"
-                >emu_content/07/07-06-undecidability.emu:121:50</span></span></span>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >entscheidbar. Warum? Wir können einfach schauen, ob das Eingabewort </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:124:50');"
-                  >emu_content/07/07-06-undecidability.emu:124:50</span></span></span>\(c\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     die Form 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:124:50');"
-                  >emu_content/07/07-06-undecidability.emu:124:50</span></span></span>\(\enc(M)\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:124:50');"
-                  >emu_content/07/07-06-undecidability.emu:124:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >hat</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:125:50');"
-                  >emu_content/07/07-06-undecidability.emu:125:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >und in diesem Fall das Wort </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:126:50');"
-                  >emu_content/07/07-06-undecidability.emu:126:50</span></span></span>\(\enc(M) \enc(M)\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     der Maschine 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:126:50');"
-                  >emu_content/07/07-06-undecidability.emu:126:50</span></span></span>\(H\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     übergeben.
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:126:50');"
-                  >emu_content/07/07-06-undecidability.emu:126:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Die Sprache </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:127:50');"
-                  >emu_content/07/07-06-undecidability.emu:127:50</span></span></span>\(\diag\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     ist, salopp ausgedrückt, die Menge aller Turingmaschinen, die ihre
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:127:50');"
-                  >emu_content/07/07-06-undecidability.emu:127:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >eigene</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:128:50');"
-                  >emu_content/07/07-06-undecidability.emu:128:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Codierung als Inputwort akzeptieren. Ebenso wäre auch</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:129:50');"
-                  >emu_content/07/07-06-undecidability.emu:129:50</span></span></span>
+            <p>
+              entscheidbar. Warum? Wir können einfach schauen, ob das Eingabewort \(c\) die Form \(\enc(M)\)
+              hat
+              und in diesem Fall das Wort \(\enc(M) \enc(M)\) der Maschine \(H\) übergeben.
+              Die Sprache \(\diag\) ist, salopp ausgedrückt, die Menge aller Turingmaschinen, die ihre
+              eigene
+              Codierung als Inputwort akzeptieren. Ebenso wäre auch
             </p>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:130:50');"
-                >emu_content/07/07-06-undecidability.emu:130:50</span></span></span>$$\begin{align*}
+            $$\begin{align*}
             \negdiag := \{\enc(M) \ | \ \textnormal{$M$ akzeptiert $\enc(M)$ nicht}\}
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:132:50');"
-                >emu_content/07/07-06-undecidability.emu:132:50</span></span></span>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >entscheidbar; wir müssen ja nur </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:135:50');"
-                  >emu_content/07/07-06-undecidability.emu:135:50</span></span></span>\(\diag\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     entscheiden und dann das Ergebnis negieren.
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:135:50');"
-                  >emu_content/07/07-06-undecidability.emu:135:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:136:50');"
-                  >emu_content/07/07-06-undecidability.emu:136:50</span></span></span>\(\negdiag\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:136:50');"
-                  >emu_content/07/07-06-undecidability.emu:136:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >ist sozusagen die Menge aller Turingmaschinen, die </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:137:50');"
-                  >emu_content/07/07-06-undecidability.emu:137:50</span></span></span><i><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >nicht</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:137:50');"
-                    >emu_content/07/07-06-undecidability.emu:137:50</span></span></span></i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     ihre eigene Codierung als
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:137:50');"
-                  >emu_content/07/07-06-undecidability.emu:137:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Inputwort akzeptieren. Da </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:138:50');"
-                  >emu_content/07/07-06-undecidability.emu:138:50</span></span></span>\(\negdiag\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     nach Annahme entscheidbar ist, gibt es eine Maschine
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:138:50');"
-                  >emu_content/07/07-06-undecidability.emu:138:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:139:50');"
-                  >emu_content/07/07-06-undecidability.emu:139:50</span></span></span>\(D\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >, die </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:139:50');"
-                  >emu_content/07/07-06-undecidability.emu:139:50</span></span></span>\(\negdiag\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     entscheidet.
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:139:50');"
-                  >emu_content/07/07-06-undecidability.emu:139:50</span></span></span>
+            <p>
+              entscheidbar; wir müssen ja nur \(\diag\) entscheiden und dann das Ergebnis negieren.
+              \(\negdiag\)
+              ist sozusagen die Menge aller Turingmaschinen, die 
+              <i>nicht</i>
+               ihre eigene Codierung als
+              Inputwort akzeptieren. Da \(\negdiag\) nach Annahme entscheidbar ist, gibt es eine Maschine
+              \(D\), die \(\negdiag\) entscheidet.
             </p>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Wir fragen uns jetzt: gehört </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:142:50');"
-                  >emu_content/07/07-06-undecidability.emu:142:50</span></span></span>\(\enc(D)\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     selbst zu 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:142:50');"
-                  >emu_content/07/07-06-undecidability.emu:142:50</span></span></span>\(\negdiag\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >?</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:142:50');"
-                  >emu_content/07/07-06-undecidability.emu:142:50</span></span></span>
+            <p>
+              Wir fragen uns jetzt: gehört \(\enc(D)\) selbst zu \(\negdiag\)?
             </p>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:143:50');"
-                >emu_content/07/07-06-undecidability.emu:143:50</span></span></span>$$\begin{align*}
+            $$\begin{align*}
             \enc(D) \in \negdiag&amp;\Longleftrightarrow \textnormal{$D$ akzeptiert $\enc(D)$ nicht}
             \tag{nach Definition von $\negdiag$} \\
             &amp;\Longleftrightarrow \textnormal{$\enc(D) \not \in L(D)$} \tag{Bedeutung der Notation $L(D)$}
             \\
             &amp;\Longleftrightarrow \enc(D) \not \in \negdiag \tag{nach Annahme $L(D) = \negdiag$}
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:149:50');"
-                >emu_content/07/07-06-undecidability.emu:149:50</span></span></span>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Also </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:152:50');"
-                  >emu_content/07/07-06-undecidability.emu:152:50</span></span></span>\(\enc(D) \in \negdiag \Longleftrightarrow \enc(M) \not \in \negdiag\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >, ein Widerspruch.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:152:50');"
-                  >emu_content/07/07-06-undecidability.emu:152:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Unsere</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:153:50');"
-                  >emu_content/07/07-06-undecidability.emu:153:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Annahme, dass </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:154:50');"
-                  >emu_content/07/07-06-undecidability.emu:154:50</span></span></span>\(\halt\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     entscheidbar sei, ist also falsch.
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:154:50');"
-                  >emu_content/07/07-06-undecidability.emu:154:50</span></span></span><span
+            <p>
+              Also \(\enc(D) \in \negdiag \Longleftrightarrow \enc(M) \not \in \negdiag\), ein Widerspruch.
+              Unsere
+              Annahme, dass \(\halt\) entscheidbar sei, ist also falsch.<span
                 class="qed"
-              ><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:158:50');"
-                    >emu_content/07/07-06-undecidability.emu:158:50</span></span></span>\(\square\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:158:50');"
-                    >emu_content/07/07-06-undecidability.emu:158:50</span></span></span></span>
+              >\(\square\)</span>
             </p>
           </div>
           <div
             class="well container"
           >
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:162:50');"
-                >emu_content/07/07-06-undecidability.emu:162:50</span></span></span><b><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Ausführlicher Beweis.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:162:50');"
-                  >emu_content/07/07-06-undecidability.emu:162:50</span></span></span></b><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   Ich finde Beweise durch Widerspruch immer
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:162:50');"
-                >emu_content/07/07-06-undecidability.emu:162:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >etwas unintuitiv, weil man die ganze Zeit im Konjunktiv argumentieren muss.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:163:50');"
-                >emu_content/07/07-06-undecidability.emu:163:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Daher hier ein Beweis ohne Widerspruch. Wir zeigen, dass </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:164:50');"
-                >emu_content/07/07-06-undecidability.emu:164:50</span></span></span>\(\halt\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   unentscheidbar ist,
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:164:50');"
-                >emu_content/07/07-06-undecidability.emu:164:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >indem wir für eine beliebige Turingmaschine </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:165:50');"
-                >emu_content/07/07-06-undecidability.emu:165:50</span></span></span>\(M\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   zeigen, dass sie 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:165:50');"
-                >emu_content/07/07-06-undecidability.emu:165:50</span></span></span>\(\halt\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   nicht entscheidet,
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:165:50');"
-                >emu_content/07/07-06-undecidability.emu:165:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >indem wir nämlich ein Eingabewort </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:166:50');"
-                >emu_content/07/07-06-undecidability.emu:166:50</span></span></span>\(z \in \Sigma^*\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   konstruieren, auf dem 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:166:50');"
-                >emu_content/07/07-06-undecidability.emu:166:50</span></span></span>\(M\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   scheitert, also
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:166:50');"
-                >emu_content/07/07-06-undecidability.emu:166:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >entweder</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:167:50');"
-                >emu_content/07/07-06-undecidability.emu:167:50</span></span></span>
+            <b>Ausführlicher Beweis.</b>
+             Ich finde Beweise durch Widerspruch immer
+            etwas unintuitiv, weil man die ganze Zeit im Konjunktiv argumentieren muss.
+            Daher hier ein Beweis ohne Widerspruch. Wir zeigen, dass \(\halt\) unentscheidbar ist,
+            indem wir für eine beliebige Turingmaschine \(M\) zeigen, dass sie \(\halt\) nicht entscheidet,
+            indem wir nämlich ein Eingabewort \(z \in \Sigma^*\) konstruieren, auf dem \(M\) scheitert, also
+            entweder
             <ol>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:171:50');"
-                    >emu_content/07/07-06-undecidability.emu:171:50</span></span></span>\(f_H(z) = \texttt{accept}\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       aber 
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:171:50');"
-                    >emu_content/07/07-06-undecidability.emu:171:50</span></span></span>\(z \not \in \halt\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >, oder </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:171:50');"
-                    >emu_content/07/07-06-undecidability.emu:171:50</span></span></span>
+              <li>
+                \(f_H(z) = \texttt{accept}\) aber \(z \not \in \halt\), oder 
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:174:50');"
-                    >emu_content/07/07-06-undecidability.emu:174:50</span></span></span>\(f_H(z) = \texttt{reject}\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       aber 
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:174:50');"
-                    >emu_content/07/07-06-undecidability.emu:174:50</span></span></span>\(z \in \halt\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       , oder 
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:174:50');"
-                    >emu_content/07/07-06-undecidability.emu:174:50</span></span></span>
+              <li>
+                \(f_H(z) = \texttt{reject}\) aber \(z \in \halt\) , oder 
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:177:50');"
-                    >emu_content/07/07-06-undecidability.emu:177:50</span></span></span>\(f_H(z) = \texttt{undefined}\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >, d.h. </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:177:50');"
-                    >emu_content/07/07-06-undecidability.emu:177:50</span></span></span>\(H\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       terminiert auf Eingabewort 
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:177:50');"
-                    >emu_content/07/07-06-undecidability.emu:177:50</span></span></span>\(z\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       nicht.
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:177:50');"
-                    >emu_content/07/07-06-undecidability.emu:177:50</span></span></span>
+              <li>
+                \(f_H(z) = \texttt{undefined}\), d.h. \(H\) terminiert auf Eingabewort \(z\) nicht.
               </li>
             </ol>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wir setzen nun </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:178:50');"
-                >emu_content/07/07-06-undecidability.emu:178:50</span></span></span>\(y := \enc(D)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:178:50');"
-                >emu_content/07/07-06-undecidability.emu:178:50</span></span></span>\(z := yy\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, wobei </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:178:50');"
-                >emu_content/07/07-06-undecidability.emu:178:50</span></span></span>\(D\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   eine neue
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:178:50');"
-                >emu_content/07/07-06-undecidability.emu:178:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Turingmaschine ist, die wir auf Basis von </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:179:50');"
-                >emu_content/07/07-06-undecidability.emu:179:50</span></span></span>\(H\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:179:50');"
-                >emu_content/07/07-06-undecidability.emu:179:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >konstruieren werden.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:180:50');"
-                >emu_content/07/07-06-undecidability.emu:180:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Also noch einmal. Für eine beliebige, uns gegebene</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:181:50');"
-                >emu_content/07/07-06-undecidability.emu:181:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Turingmaschine </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:182:50');"
-                >emu_content/07/07-06-undecidability.emu:182:50</span></span></span>\(H\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, werden wir eine neue Turingmaschine</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:182:50');"
-                >emu_content/07/07-06-undecidability.emu:182:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:183:50');"
-                >emu_content/07/07-06-undecidability.emu:183:50</span></span></span>\(D\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   bauen und sie codieren als 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:183:50');"
-                >emu_content/07/07-06-undecidability.emu:183:50</span></span></span>\(y := \enc(D)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, so dass</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:183:50');"
-                >emu_content/07/07-06-undecidability.emu:183:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >entweder</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:184:50');"
-                >emu_content/07/07-06-undecidability.emu:184:50</span></span></span>
+            Wir setzen nun \(y := \enc(D)\) und \(z := yy\), wobei \(D\) eine neue
+            Turingmaschine ist, die wir auf Basis von \(H\)
+            konstruieren werden.
+            Also noch einmal. Für eine beliebige, uns gegebene
+            Turingmaschine \(H\), werden wir eine neue Turingmaschine
+            \(D\) bauen und sie codieren als \(y := \enc(D)\), so dass
+            entweder
             <ol>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:188:50');"
-                    >emu_content/07/07-06-undecidability.emu:188:50</span></span></span>\(f_H(yy) = \texttt{accept}\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       aber 
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:188:50');"
-                    >emu_content/07/07-06-undecidability.emu:188:50</span></span></span>\(yy \not \in \halt\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >, oder</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:188:50');"
-                    >emu_content/07/07-06-undecidability.emu:188:50</span></span></span>
+              <li>
+                \(f_H(yy) = \texttt{accept}\) aber \(yy \not \in \halt\), oder
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:191:50');"
-                    >emu_content/07/07-06-undecidability.emu:191:50</span></span></span>\(f_H(yy) = \texttt{reject}\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       aber 
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:191:50');"
-                    >emu_content/07/07-06-undecidability.emu:191:50</span></span></span>\(yy \in \halt\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >, oder </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:191:50');"
-                    >emu_content/07/07-06-undecidability.emu:191:50</span></span></span>
+              <li>
+                \(f_H(yy) = \texttt{reject}\) aber \(yy \in \halt\), oder 
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:194:50');"
-                    >emu_content/07/07-06-undecidability.emu:194:50</span></span></span>\(f_H(yy) = \texttt{undefined}\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >.</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:194:50');"
-                    >emu_content/07/07-06-undecidability.emu:194:50</span></span></span>
+              <li>
+                \(f_H(yy) = \texttt{undefined}\).
               </li>
             </ol>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wenn uns dies gelingt, so haben wir gezeigt, dass </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:195:50');"
-                >emu_content/07/07-06-undecidability.emu:195:50</span></span></span>\(H\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   nicht
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:195:50');"
-                >emu_content/07/07-06-undecidability.emu:195:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >die Sprache </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:196:50');"
-                >emu_content/07/07-06-undecidability.emu:196:50</span></span></span>\(\halt\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   entscheidet: im Fall 3 terminiert
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:196:50');"
-                >emu_content/07/07-06-undecidability.emu:196:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:197:50');"
-                >emu_content/07/07-06-undecidability.emu:197:50</span></span></span>\(H\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ja nicht einmal; in Fall 1 und 2 liefert 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:197:50');"
-                >emu_content/07/07-06-undecidability.emu:197:50</span></span></span>\(H\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   zwar
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:197:50');"
-                >emu_content/07/07-06-undecidability.emu:197:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >eine Antwort, aber die falsche.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:198:50');"
-                >emu_content/07/07-06-undecidability.emu:198:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Der Code für </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:199:50');"
-                >emu_content/07/07-06-undecidability.emu:199:50</span></span></span>\(D\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ist sehr einfach:
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:199:50');"
-                >emu_content/07/07-06-undecidability.emu:199:50</span></span></span>
+            Wenn uns dies gelingt, so haben wir gezeigt, dass \(H\) nicht
+            die Sprache \(\halt\) entscheidet: im Fall 3 terminiert
+            \(H\) ja nicht einmal; in Fall 1 und 2 liefert \(H\) zwar
+            eine Antwort, aber die falsche.
+            Der Code für \(D\) ist sehr einfach:
 <pre
   class="listing"
 >
-<span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
-></span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:203:50');"
->emu_content/07/07-06-undecidability.emu:203:50</span></span></span>
-<code><span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->def D(x):</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:203:50');"
->emu_content/07/07-06-undecidability.emu:203:50</span></span></span>
-</code>
-<span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
-></span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:203:50');"
->emu_content/07/07-06-undecidability.emu:203:50</span></span>
 
-<span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->
- 
-</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:205:50');"
->emu_content/07/07-06-undecidability.emu:205:50</span></span></span>
-<code><span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->if H(xx) == accept then</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:205:50');"
->emu_content/07/07-06-undecidability.emu:205:50</span></span></span>
+<code>
+def D(x):
 </code>
-<span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->
- 
-</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:205:50');"
->emu_content/07/07-06-undecidability.emu:205:50</span></span>
 
-<span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->
  
-</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:207:50');"
->emu_content/07/07-06-undecidability.emu:207:50</span></span></span>
-<code><span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->reject</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:207:50');"
->emu_content/07/07-06-undecidability.emu:207:50</span></span></span>
+<code>
+if H(xx) == accept then
 </code>
-<span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->
  
-</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:207:50');"
->emu_content/07/07-06-undecidability.emu:207:50</span></span>
+ 
+<code>
+reject
+</code>
+ 
+ 
+<code>
+else
+</code>
+ 
+ 
+<code>
+accept
+</code>
 
-<span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->
- 
-</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:209:50');"
->emu_content/07/07-06-undecidability.emu:209:50</span></span></span>
-<code><span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->else</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:209:50');"
->emu_content/07/07-06-undecidability.emu:209:50</span></span></span>
-</code>
-<span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->
- 
-</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:209:50');"
->emu_content/07/07-06-undecidability.emu:209:50</span></span>
-
-<span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->
- 
-</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:211:50');"
->emu_content/07/07-06-undecidability.emu:211:50</span></span></span>
-<code><span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->accept</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:211:50');"
->emu_content/07/07-06-undecidability.emu:211:50</span></span></span>
-</code>
-<span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
-></span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:211:50');"
->emu_content/07/07-06-undecidability.emu:211:50</span></span></span>
 </pre>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     Zur Erinnerung: 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:214:50');"
-                  >emu_content/07/07-06-undecidability.emu:214:50</span></span></span>\(y := \enc(D)\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >. Wir unterscheiden drei Fälle.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:214:50');"
-                  >emu_content/07/07-06-undecidability.emu:214:50</span></span></span>
+            <p>
+               Zur Erinnerung: \(y := \enc(D)\). Wir unterscheiden drei Fälle.
             </p>
             <ul>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:218:50');"
-                    >emu_content/07/07-06-undecidability.emu:218:50</span></span></span>\(H(yy) = \texttt{reject}\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >. Dann geht der Aufruf von</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:218:50');"
-                    >emu_content/07/07-06-undecidability.emu:218:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:219:50');"
-                    >emu_content/07/07-06-undecidability.emu:219:50</span></span></span>\(D(y)\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       also in den 
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:219:50');"
-                    >emu_content/07/07-06-undecidability.emu:219:50</span></span></span>
-                <tt><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >else</span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:222:50');"
-                      >emu_content/07/07-06-undecidability.emu:222:50</span></span></span>
+              <li>
+                \(H(yy) = \texttt{reject}\). Dann geht der Aufruf von
+                \(D(y)\) also in den 
+                <tt>
+                  else
                 </tt>
-                <span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >-Teil</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:223:50');"
-                    >emu_content/07/07-06-undecidability.emu:223:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >in den Zeilen 4-5 und</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:224:50');"
-                    >emu_content/07/07-06-undecidability.emu:224:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:225:50');"
-                    >emu_content/07/07-06-undecidability.emu:225:50</span></span></span>\(D(y) = \texttt{accept}\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >, somit</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:225:50');"
-                    >emu_content/07/07-06-undecidability.emu:225:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:226:50');"
-                    >emu_content/07/07-06-undecidability.emu:226:50</span></span></span>\(yy = \enc(D)y \in \halt\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       Wir befinden uns
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:226:50');"
-                    >emu_content/07/07-06-undecidability.emu:226:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >in Fall 1: </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:227:50');"
-                    >emu_content/07/07-06-undecidability.emu:227:50</span></span></span>\(y y \in \halt\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       aber 
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:227:50');"
-                    >emu_content/07/07-06-undecidability.emu:227:50</span></span></span>\(H(yy)= \texttt{reject}\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >.</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:227:50');"
-                    >emu_content/07/07-06-undecidability.emu:227:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Die Maschine </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:228:50');"
-                    >emu_content/07/07-06-undecidability.emu:228:50</span></span></span>\(H\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       hat eine falsche Antwort
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:228:50');"
-                    >emu_content/07/07-06-undecidability.emu:228:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >für </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:229:50');"
-                    >emu_content/07/07-06-undecidability.emu:229:50</span></span></span>\(\halt\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       geliefert.
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:229:50');"
-                    >emu_content/07/07-06-undecidability.emu:229:50</span></span></span>
+                -Teil
+                in den Zeilen 4-5 und
+                \(D(y) = \texttt{accept}\), somit
+                \(yy = \enc(D)y \in \halt\) Wir befinden uns
+                in Fall 1: \(y y \in \halt\) aber \(H(yy)= \texttt{reject}\).
+                Die Maschine \(H\) hat eine falsche Antwort
+                für \(\halt\) geliefert.
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:232:50');"
-                    >emu_content/07/07-06-undecidability.emu:232:50</span></span></span>\(H(yy) = \texttt{accept}\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >. Dann geht</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:232:50');"
-                    >emu_content/07/07-06-undecidability.emu:232:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >der Aufruf von </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:233:50');"
-                    >emu_content/07/07-06-undecidability.emu:233:50</span></span></span>\(D(y)\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       in Zeile 3,
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:233:50');"
-                    >emu_content/07/07-06-undecidability.emu:233:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >und </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:234:50');"
-                    >emu_content/07/07-06-undecidability.emu:234:50</span></span></span>\(D(y) = \texttt{reject}\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >, somit </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:234:50');"
-                    >emu_content/07/07-06-undecidability.emu:234:50</span></span></span>\(yy = \enc(D) y \not \in \halt\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >.</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:234:50');"
-                    >emu_content/07/07-06-undecidability.emu:234:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Wir befinden uns in Fall 2: </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:235:50');"
-                    >emu_content/07/07-06-undecidability.emu:235:50</span></span></span>\(yy \not \in \halt\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:235:50');"
-                    >emu_content/07/07-06-undecidability.emu:235:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >und </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:236:50');"
-                    >emu_content/07/07-06-undecidability.emu:236:50</span></span></span>\(H(yy) = \texttt{accept}\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >. Die Maschine</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:236:50');"
-                    >emu_content/07/07-06-undecidability.emu:236:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:237:50');"
-                    >emu_content/07/07-06-undecidability.emu:237:50</span></span></span>\(H\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       hat abermals eine falsche Antwort geliefert.
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:237:50');"
-                    >emu_content/07/07-06-undecidability.emu:237:50</span></span></span>
+              <li>
+                \(H(yy) = \texttt{accept}\). Dann geht
+                der Aufruf von \(D(y)\) in Zeile 3,
+                und \(D(y) = \texttt{reject}\), somit \(yy = \enc(D) y \not \in \halt\).
+                Wir befinden uns in Fall 2: \(yy \not \in \halt\)
+                und \(H(yy) = \texttt{accept}\). Die Maschine
+                \(H\) hat abermals eine falsche Antwort geliefert.
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:240:50');"
-                    >emu_content/07/07-06-undecidability.emu:240:50</span></span></span>\(H(yy)\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       terminiert nicht. Dann befinden
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:240:50');"
-                    >emu_content/07/07-06-undecidability.emu:240:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >wir uns in Fall 3: </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:241:50');"
-                    >emu_content/07/07-06-undecidability.emu:241:50</span></span></span>\(H\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       kann
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:241:50');"
-                    >emu_content/07/07-06-undecidability.emu:241:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:242:50');"
-                    >emu_content/07/07-06-undecidability.emu:242:50</span></span></span>\(\halt\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       nicht entscheiden,
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:242:50');"
-                    >emu_content/07/07-06-undecidability.emu:242:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >denn Mindestbedingung hierfür wäre ja,</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:243:50');"
-                    >emu_content/07/07-06-undecidability.emu:243:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >auf jedem Eingabewort zu terminieren.</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:244:50');"
-                    >emu_content/07/07-06-undecidability.emu:244:50</span></span></span>
+              <li>
+                \(H(yy)\) terminiert nicht. Dann befinden
+                wir uns in Fall 3: \(H\) kann
+                \(\halt\) nicht entscheiden,
+                denn Mindestbedingung hierfür wäre ja,
+                auf jedem Eingabewort zu terminieren.
               </li>
             </ul>
             <p>
             </p>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >In jedem Fall sehen wir, dass </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:245:50');"
-                >emu_content/07/07-06-undecidability.emu:245:50</span></span></span>\(H\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   auf dem Eingabewort
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:245:50');"
-                >emu_content/07/07-06-undecidability.emu:245:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:246:50');"
-                >emu_content/07/07-06-undecidability.emu:246:50</span></span></span>\(yy\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   einen Fehler macht und somit 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:246:50');"
-                >emu_content/07/07-06-undecidability.emu:246:50</span></span></span>\(\halt\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   nicht
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:246:50');"
-                >emu_content/07/07-06-undecidability.emu:246:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >entscheidet. Da das für </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:247:50');"
-                >emu_content/07/07-06-undecidability.emu:247:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >jede</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:247:50');"
-                  >emu_content/07/07-06-undecidability.emu:247:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   Turingmaschine
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:247:50');"
-                >emu_content/07/07-06-undecidability.emu:247:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >geht, schließen wir: keine Turingmaschine kann</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:248:50');"
-                >emu_content/07/07-06-undecidability.emu:248:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >die Sprache </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:249:50');"
-                >emu_content/07/07-06-undecidability.emu:249:50</span></span></span>\(\halt\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   entscheiden; sie ist unentscheidbar.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:249:50');"
-                >emu_content/07/07-06-undecidability.emu:249:50</span></span></span><span
+            In jedem Fall sehen wir, dass \(H\) auf dem Eingabewort
+            \(yy\) einen Fehler macht und somit \(\halt\) nicht
+            entscheidet. Da das für 
+            <i>jede</i>
+             Turingmaschine
+            geht, schließen wir: keine Turingmaschine kann
+            die Sprache \(\halt\) entscheiden; sie ist unentscheidbar.<span
               class="qed"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:253:50');"
-                  >emu_content/07/07-06-undecidability.emu:253:50</span></span></span>\(\square\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:253:50');"
-                  >emu_content/07/07-06-undecidability.emu:253:50</span></span></span></span>
+            >\(\square\)</span>
           </div>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Ein Student hat am 26. Juni 2024 angemerkt, dass die Sprache</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:256:50');"
-                >emu_content/07/07-06-undecidability.emu:256:50</span></span></span>
+          <p>
+            Ein Student hat am 26. Juni 2024 angemerkt, dass die Sprache
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:257:50');"
-              >emu_content/07/07-06-undecidability.emu:257:50</span></span></span>$$\begin{align*}
+          $$\begin{align*}
           \negdiag = \{\enc(M) \ | \ \textnormal{$M$ akzeptiert $\enc(M)$ nicht}\}
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:259:50');"
-              >emu_content/07/07-06-undecidability.emu:259:50</span></span></span>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >ja eine extrem konstruierte, nicht wirklich relevante Sprache sei (da hatte er Recht). Insofern</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:262:50');"
-                >emu_content/07/07-06-undecidability.emu:262:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >sei es auch nicht relevant, dass </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:263:50');"
-                >emu_content/07/07-06-undecidability.emu:263:50</span></span></span>\(\negdiag\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   unentscheidbar ist. Das ist allerdings auch nicht,
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:263:50');"
-                >emu_content/07/07-06-undecidability.emu:263:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >was uns interessiert: unser Ziel war, zu zeigen, dass </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:264:50');"
-                >emu_content/07/07-06-undecidability.emu:264:50</span></span></span>\(\halt\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   unentscheidbar ist, und
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:264:50');"
-                >emu_content/07/07-06-undecidability.emu:264:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >die Unentscheidbarkeit von </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:265:50');"
-                >emu_content/07/07-06-undecidability.emu:265:50</span></span></span>\(\negdiag\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   war ein Schritt auf diesem Weg. Dass 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:265:50');"
-                >emu_content/07/07-06-undecidability.emu:265:50</span></span></span>\(\halt\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:265:50');"
-                >emu_content/07/07-06-undecidability.emu:265:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >unentscheidbar ist,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:266:50');"
-                >emu_content/07/07-06-undecidability.emu:266:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >ist in der Tat relevant, denn daraus folgt (nicht direkt, aber mit ein paar technischen Tricks),</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:267:50');"
-                >emu_content/07/07-06-undecidability.emu:267:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >dass im Prinzip</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:268:50');"
-                >emu_content/07/07-06-undecidability.emu:268:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:269:50');"
-                >emu_content/07/07-06-undecidability.emu:269:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >jede</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:269:50');"
-                  >emu_content/07/07-06-undecidability.emu:269:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   nichttriviale Frage über das Verhalten eines Programmcodes unentscheidbar ist.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:269:50');"
-                >emu_content/07/07-06-undecidability.emu:269:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Also sind</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:270:50');"
-                >emu_content/07/07-06-undecidability.emu:270:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >auch Fragen wie "Kann das Programm abstürzen?" oder "Kann ein unautorisierter Nutzer Zugang zu</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:271:50');"
-                >emu_content/07/07-06-undecidability.emu:271:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >XYZ erhalten?" unentscheidbar.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:272:50');"
-                >emu_content/07/07-06-undecidability.emu:272:50</span></span></span>
+          <p>
+            ja eine extrem konstruierte, nicht wirklich relevante Sprache sei (da hatte er Recht). Insofern
+            sei es auch nicht relevant, dass \(\negdiag\) unentscheidbar ist. Das ist allerdings auch nicht,
+            was uns interessiert: unser Ziel war, zu zeigen, dass \(\halt\) unentscheidbar ist, und
+            die Unentscheidbarkeit von \(\negdiag\) war ein Schritt auf diesem Weg. Dass \(\halt\)
+            unentscheidbar ist,
+            ist in der Tat relevant, denn daraus folgt (nicht direkt, aber mit ein paar technischen Tricks),
+            dass im Prinzip
+            <i>jede</i>
+             nichttriviale Frage über das Verhalten eines Programmcodes unentscheidbar ist.
+            Also sind
+            auch Fragen wie "Kann das Programm abstürzen?" oder "Kann ein unautorisierter Nutzer Zugang zu
+            XYZ erhalten?" unentscheidbar.
           </p>
           <div
             class="alert-info"
           >
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Das Wort </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:276:50');"
-                >emu_content/07/07-06-undecidability.emu:276:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Unentscheidbarkeit</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:276:50');"
-                  >emu_content/07/07-06-undecidability.emu:276:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   verwenden wir hier in seiner
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:276:50');"
-                >emu_content/07/07-06-undecidability.emu:276:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >technischen Bedeutung,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:277:50');"
-                >emu_content/07/07-06-undecidability.emu:277:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >die wir definiert haben: es gibt keine Turingmaschine, die das Problem entscheidet, also</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:278:50');"
-                >emu_content/07/07-06-undecidability.emu:278:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >auf jeder Eingabeinstanz terminiert und die richtige Antwort liefert. Es gibt also in der Tat</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:279:50');"
-                >emu_content/07/07-06-undecidability.emu:279:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Raum für Algorithmen, die Software untersuchen und diese gegebenenfalls verifizieren oder Fehler</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:280:50');"
-                >emu_content/07/07-06-undecidability.emu:280:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >/ Sicherheitslücken finden. Dies ist im Prinzip das sehr real existierende Forschungsfeld der</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:281:50');"
-                >emu_content/07/07-06-undecidability.emu:281:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Programmverifikation. Die Unentscheidbarkeit des Halteproblems impliziert nicht, dass man</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:282:50');"
-                >emu_content/07/07-06-undecidability.emu:282:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >auf dem Feld der Programmverifikation keine Fortschritte erzielen kann; sie impliziert nur,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:283:50');"
-                >emu_content/07/07-06-undecidability.emu:283:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >dass es keinen ultimaten Programmverifikator bzw. Bugfinder gibt.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-06-undecidability.emu:284:50');"
-                >emu_content/07/07-06-undecidability.emu:284:50</span></span></span>
+            Das Wort 
+            <i>Unentscheidbarkeit</i>
+             verwenden wir hier in seiner
+            technischen Bedeutung,
+            die wir definiert haben: es gibt keine Turingmaschine, die das Problem entscheidet, also
+            auf jeder Eingabeinstanz terminiert und die richtige Antwort liefert. Es gibt also in der Tat
+            Raum für Algorithmen, die Software untersuchen und diese gegebenenfalls verifizieren oder Fehler
+            / Sicherheitslücken finden. Dies ist im Prinzip das sehr real existierende Forschungsfeld der
+            Programmverifikation. Die Unentscheidbarkeit des Halteproblems impliziert nicht, dass man
+            auf dem Feld der Programmverifikation keine Fortschritte erzielen kann; sie impliziert nur,
+            dass es keinen ultimaten Programmverifikator bzw. Bugfinder gibt.
           </div>
         </div>
       </div>

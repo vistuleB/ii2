@@ -31,23 +31,9 @@
   >
     <a
       href="../vorlesungsskript.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >Inhaltsverzeichnis</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:12:50');"
-          >emu_content/05/05-10-not-context-free.emu:12:50</span></span></span></a><a
+    >Inhaltsverzeichnis</a><a
       href="05-09-general-parsing.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >&lt;&lt; Kapitel 5.9</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:16:50');"
-          >emu_content/05/05-10-not-context-free.emu:16:50</span></span></span></a>
+    >&lt;&lt; Kapitel 5.9</a>
   </div>
   <div
     id="link-to-overview"
@@ -55,23 +41,9 @@
   >
     <a
       href="/"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >zur Kursübersicht</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:23:50');"
-          >emu_content/05/05-10-not-context-free.emu:23:50</span></span></span></a><a
+    >zur Kursübersicht</a><a
       href="06-00-general-grammars.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >Kapitel 6.0 &gt;&gt;</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:27:50');"
-          >emu_content/05/05-10-not-context-free.emu:27:50</span></span></span></a>
+    >Kapitel 6.0 &gt;&gt;</a>
   </div>
   <div
     id="rightSideWrapper"
@@ -90,509 +62,56 @@
           >
             <span
               class="subChapterTitle"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >5.11</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:41:50');"
-                  >emu_content/05/05-10-not-context-free.emu:41:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Die Grenzen kontextfreier Sprachen</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:42:50');"
-                  >emu_content/05/05-10-not-context-free.emu:42:50</span></span></span></span>
+            >5.11
+              Die Grenzen kontextfreier Sprachen</span>
           </h1>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Im letzten Teilkapitel haben wir den CYK-Algorithmus kennengelernt. Dieser verwendet</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:45:50');"
-                >emu_content/05/05-10-not-context-free.emu:45:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >das Prinzip des </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:46:50');"
-                >emu_content/05/05-10-not-context-free.emu:46:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Dynamic Programming</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:46:50');"
-                  >emu_content/05/05-10-not-context-free.emu:46:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, um für eine allgemeine kontextfreie</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:46:50');"
-                >emu_content/05/05-10-not-context-free.emu:46:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Grammatik </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:47:50');"
-                >emu_content/05/05-10-not-context-free.emu:47:50</span></span></span>\(G\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und ein Eingabewort 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:47:50');"
-                >emu_content/05/05-10-not-context-free.emu:47:50</span></span></span>\(\gamma\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   einen Ableitungsbaum zu finden (oder
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:47:50');"
-                >emu_content/05/05-10-not-context-free.emu:47:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >festzustellen,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:48:50');"
-                >emu_content/05/05-10-not-context-free.emu:48:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >dass es</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:49:50');"
-                >emu_content/05/05-10-not-context-free.emu:49:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >keinen gibt und somit </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:50:50');"
-                >emu_content/05/05-10-not-context-free.emu:50:50</span></span></span>\(\gamma \not \in L(G)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >).</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:50:50');"
-                >emu_content/05/05-10-not-context-free.emu:50:50</span></span></span>
+          <p>
+            Im letzten Teilkapitel haben wir den CYK-Algorithmus kennengelernt. Dieser verwendet
+            das Prinzip des 
+            <i>Dynamic Programming</i>, um für eine allgemeine kontextfreie
+            Grammatik \(G\) und ein Eingabewort \(\gamma\) einen Ableitungsbaum zu finden (oder
+            festzustellen,
+            dass es
+            keinen gibt und somit \(\gamma \not \in L(G)\)).
           </p>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >In diesem Teilkapitel werden wir sehen, dass viele Sprachen gar nicht kontextfrei sind, und</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:53:50');"
-                >emu_content/05/05-10-not-context-free.emu:53:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >werden</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:54:50');"
-                >emu_content/05/05-10-not-context-free.emu:54:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >hoffentlich ein Gefühl dafür entwickeln, welche Konstruktionen Kontextfreiheit verhindern,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:55:50');"
-                >emu_content/05/05-10-not-context-free.emu:55:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >ähnlich wie</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:56:50');"
-                >emu_content/05/05-10-not-context-free.emu:56:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >"Verschachtelung" eine Sprache nicht-regulär macht.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:57:50');"
-                >emu_content/05/05-10-not-context-free.emu:57:50</span></span></span>
+          <p>
+            In diesem Teilkapitel werden wir sehen, dass viele Sprachen gar nicht kontextfrei sind, und
+            werden
+            hoffentlich ein Gefühl dafür entwickeln, welche Konstruktionen Kontextfreiheit verhindern,
+            ähnlich wie
+            "Verschachtelung" eine Sprache nicht-regulär macht.
           </p>
           <div
             class="well container theorem"
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Beispiel </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:63:50');"
-                  >emu_content/05/05-10-not-context-free.emu:63:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >5.11.1</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:66:50');"
-                    >emu_content/05/05-10-not-context-free.emu:66:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:67:50');"
-                  >emu_content/05/05-10-not-context-free.emu:67:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Betrachten wir die Sprache</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:68:50');"
-                >emu_content/05/05-10-not-context-free.emu:68:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:69:50');"
-                >emu_content/05/05-10-not-context-free.emu:69:50</span></span></span>$$\begin{align*}
+            >Beispiel 
+              <NumberedTitle>5.11.1</NumberedTitle>
+               
+            </span>Betrachten wir die Sprache
+            $$\begin{align*}
             L := \{ a^n b^n c^n \ | \ \ n \geq 0\} \ .
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:71:50');"
-                >emu_content/05/05-10-not-context-free.emu:71:50</span></span></span>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Ein Kellerautomat könnte nun alle </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:74:50');"
-                  >emu_content/05/05-10-not-context-free.emu:74:50</span></span></span>\(a\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     auf den Stack legen und dann, wenn die
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:74:50');"
-                  >emu_content/05/05-10-not-context-free.emu:74:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:75:50');"
-                  >emu_content/05/05-10-not-context-free.emu:75:50</span></span></span>\(b\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     beginnen, den Stapel abarbeiten. Allerdings hätte er dann, wenn die 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:75:50');"
-                  >emu_content/05/05-10-not-context-free.emu:75:50</span></span></span>\(c\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     kommen,
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:75:50');"
-                  >emu_content/05/05-10-not-context-free.emu:75:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >vergessen, wieviele </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:76:50');"
-                  >emu_content/05/05-10-not-context-free.emu:76:50</span></span></span>\(a\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     es denn waren. Irgendwie scheinen Kellerautomaten nicht für 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:76:50');"
-                  >emu_content/05/05-10-not-context-free.emu:76:50</span></span></span>\(L\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:76:50');"
-                  >emu_content/05/05-10-not-context-free.emu:76:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >geeignet. Dies ist natürlich nur eine Intuition. Vielleicht kennen wir einfach nicht alle</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:77:50');"
-                  >emu_content/05/05-10-not-context-free.emu:77:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Tricks,</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:78:50');"
-                  >emu_content/05/05-10-not-context-free.emu:78:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >die man mit Kellerautomaten (und somit mit kontextfreien Grammatiken) anstellen kann.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:79:50');"
-                  >emu_content/05/05-10-not-context-free.emu:79:50</span></span></span>
+            <p>
+              Ein Kellerautomat könnte nun alle \(a\) auf den Stack legen und dann, wenn die
+              \(b\) beginnen, den Stapel abarbeiten. Allerdings hätte er dann, wenn die \(c\) kommen,
+              vergessen, wieviele \(a\) es denn waren. Irgendwie scheinen Kellerautomaten nicht für \(L\)
+              geeignet. Dies ist natürlich nur eine Intuition. Vielleicht kennen wir einfach nicht alle
+              Tricks,
+              die man mit Kellerautomaten (und somit mit kontextfreien Grammatiken) anstellen kann.
             </p>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Wir werden nun beweisen, dass </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:82:50');"
-                  >emu_content/05/05-10-not-context-free.emu:82:50</span></span></span>\(L\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     nicht kontextfrei ist; dass es also für 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:82:50');"
-                  >emu_content/05/05-10-not-context-free.emu:82:50</span></span></span>\(L\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     keine
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:82:50');"
-                  >emu_content/05/05-10-not-context-free.emu:82:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >kontextfreie Grammatik gibt. Wir gehen wie folgt vor: wir nehmen eine kontextfreie</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:83:50');"
-                  >emu_content/05/05-10-not-context-free.emu:83:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Grammatik </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:84:50');"
-                  >emu_content/05/05-10-not-context-free.emu:84:50</span></span></span>\(G\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >, die jedes Wort </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:84:50');"
-                  >emu_content/05/05-10-not-context-free.emu:84:50</span></span></span>\(\gamma \in L\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     ableiten kann. Dann sehen wir uns den
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:84:50');"
-                  >emu_content/05/05-10-not-context-free.emu:84:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Ableitungsbaum</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:85:50');"
-                  >emu_content/05/05-10-not-context-free.emu:85:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >für ein "sehr langes" </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:86:50');"
-                  >emu_content/05/05-10-not-context-free.emu:86:50</span></span></span>\(\gamma\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     an und werden sehen, dass wir in 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:86:50');"
-                  >emu_content/05/05-10-not-context-free.emu:86:50</span></span></span>\(G\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     andere Wörter
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:86:50');"
-                  >emu_content/05/05-10-not-context-free.emu:86:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:87:50');"
-                  >emu_content/05/05-10-not-context-free.emu:87:50</span></span></span>\(\gamma'\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     ableiten
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:87:50');"
-                  >emu_content/05/05-10-not-context-free.emu:87:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >können, die nicht in </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:88:50');"
-                  >emu_content/05/05-10-not-context-free.emu:88:50</span></span></span>\(L\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     sind. Somit haben wir gezeigt, dass 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:88:50');"
-                  >emu_content/05/05-10-not-context-free.emu:88:50</span></span></span>\(G\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     keine korrekte
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:88:50');"
-                  >emu_content/05/05-10-not-context-free.emu:88:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Grammatik</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:89:50');"
-                  >emu_content/05/05-10-not-context-free.emu:89:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >für </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:90:50');"
-                  >emu_content/05/05-10-not-context-free.emu:90:50</span></span></span>\(L\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     ist. Als erstes verlangen wir, dass 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:90:50');"
-                  >emu_content/05/05-10-not-context-free.emu:90:50</span></span></span>\(G\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     in Chomsky-Normalform vorliegt.
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:90:50');"
-                  >emu_content/05/05-10-not-context-free.emu:90:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Dann schauen wir uns für ein </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:91:50');"
-                  >emu_content/05/05-10-not-context-free.emu:91:50</span></span></span>\(\gamma = a^n b^n c^n\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     den Ableitungsbaum an:
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:91:50');"
-                  >emu_content/05/05-10-not-context-free.emu:91:50</span></span></span>
+            <p>
+              Wir werden nun beweisen, dass \(L\) nicht kontextfrei ist; dass es also für \(L\) keine
+              kontextfreie Grammatik gibt. Wir gehen wie folgt vor: wir nehmen eine kontextfreie
+              Grammatik \(G\), die jedes Wort \(\gamma \in L\) ableiten kann. Dann sehen wir uns den
+              Ableitungsbaum
+              für ein "sehr langes" \(\gamma\) an und werden sehen, dass wir in \(G\) andere Wörter
+              \(\gamma'\) ableiten
+              können, die nicht in \(L\) sind. Somit haben wir gezeigt, dass \(G\) keine korrekte
+              Grammatik
+              für \(L\) ist. Als erstes verlangen wir, dass \(G\) in Chomsky-Normalform vorliegt.
+              Dann schauen wir uns für ein \(\gamma = a^n b^n c^n\) den Ableitungsbaum an:
             </p>
             <figure>
               <img
@@ -601,152 +120,12 @@
                 loading="lazy"
               >
             </figure>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Nun betrachten wir in diesem Ableitungsbaum den längsten Pfad von </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:97:50');"
-                >emu_content/05/05-10-not-context-free.emu:97:50</span></span></span>\(S\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   zu einem
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:97:50');"
-                >emu_content/05/05-10-not-context-free.emu:97:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Nichtterminalknoten, der direkt über den Terminalen steht. Wenn dieser Länge </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:98:50');"
-                >emu_content/05/05-10-not-context-free.emu:98:50</span></span></span>\(d\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   hat (also
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:98:50');"
-                >emu_content/05/05-10-not-context-free.emu:98:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:99:50');"
-                >emu_content/05/05-10-not-context-free.emu:99:50</span></span></span>\(d\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   Kanten lang ist), dann hat der Baum höchstens 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:99:50');"
-                >emu_content/05/05-10-not-context-free.emu:99:50</span></span></span>\(2^d\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   Blätter, also 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:99:50');"
-                >emu_content/05/05-10-not-context-free.emu:99:50</span></span></span>\(|\gamma| \leq 2^d\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:99:50');"
-                >emu_content/05/05-10-not-context-free.emu:99:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wenn nun </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:100:50');"
-                >emu_content/05/05-10-not-context-free.emu:100:50</span></span></span>\(|\gamma| \geq 2^{|N|} =: p\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ist, dann gibt es einen Pfad der Länge 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:100:50');"
-                >emu_content/05/05-10-not-context-free.emu:100:50</span></span></span>\(|N|\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:100:50');"
-                >emu_content/05/05-10-not-context-free.emu:100:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >von diesem </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:101:50');"
-                >emu_content/05/05-10-not-context-free.emu:101:50</span></span></span>\(X\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   aufwärts richtung 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:101:50');"
-                >emu_content/05/05-10-not-context-free.emu:101:50</span></span></span>\(S\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Auf diesem liegen </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:101:50');"
-                >emu_content/05/05-10-not-context-free.emu:101:50</span></span></span>\(|N|+1\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   Nichtterminalsymbole,
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:101:50');"
-                >emu_content/05/05-10-not-context-free.emu:101:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >mehr als es in </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:102:50');"
-                >emu_content/05/05-10-not-context-free.emu:102:50</span></span></span>\(G\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   gibt; also muss ein Terminalsymbol zweimal vorkommen:
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:102:50');"
-                >emu_content/05/05-10-not-context-free.emu:102:50</span></span></span>
+            Nun betrachten wir in diesem Ableitungsbaum den längsten Pfad von \(S\) zu einem
+            Nichtterminalknoten, der direkt über den Terminalen steht. Wenn dieser Länge \(d\) hat (also
+            \(d\) Kanten lang ist), dann hat der Baum höchstens \(2^d\) Blätter, also \(|\gamma| \leq 2^d\).
+            Wenn nun \(|\gamma| \geq 2^{|N|} =: p\) ist, dann gibt es einen Pfad der Länge \(|N|\)
+            von diesem \(X\) aufwärts richtung \(S\). Auf diesem liegen \(|N|+1\) Nichtterminalsymbole,
+            mehr als es in \(G\) gibt; also muss ein Terminalsymbol zweimal vorkommen:
             <figure>
               <img
                 style="height:14em"
@@ -754,343 +133,26 @@
                 loading="lazy"
               >
             </figure>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Der Pfad vom oberen zum unteren </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:108:50');"
-                >emu_content/05/05-10-not-context-free.emu:108:50</span></span></span>\(Z\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   hat höchstens Länge 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:108:50');"
-                >emu_content/05/05-10-not-context-free.emu:108:50</span></span></span>\(N\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   (so haben wir diesen Pfad
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:108:50');"
-                >emu_content/05/05-10-not-context-free.emu:108:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >gewählt),</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:109:50');"
-                >emu_content/05/05-10-not-context-free.emu:109:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >und somit hat das Unterwort </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:110:50');"
-                >emu_content/05/05-10-not-context-free.emu:110:50</span></span></span>\(vwx\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   höchstens 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:110:50');"
-                >emu_content/05/05-10-not-context-free.emu:110:50</span></span></span>\(p = 2^{|N|}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   Zeichen.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:110:50');"
-                >emu_content/05/05-10-not-context-free.emu:110:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wenn wir nun das Wort </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:111:50');"
-                >emu_content/05/05-10-not-context-free.emu:111:50</span></span></span>\(a^nb^nc^n\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   für ein sehr großes 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:111:50');"
-                >emu_content/05/05-10-not-context-free.emu:111:50</span></span></span>\(n\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   betrachten, sagen wir
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:111:50');"
-                >emu_content/05/05-10-not-context-free.emu:111:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:112:50');"
-                >emu_content/05/05-10-not-context-free.emu:112:50</span></span></span>\(n \geq p = 2^{|N|}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, dann kann das Wort </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:112:50');"
-                >emu_content/05/05-10-not-context-free.emu:112:50</span></span></span>\(vwx\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   nicht alle drei Symbole 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:112:50');"
-                >emu_content/05/05-10-not-context-free.emu:112:50</span></span></span>\(a,b,c\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   enthalten;
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:112:50');"
-                >emu_content/05/05-10-not-context-free.emu:112:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >sonst würde es ja alle </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:113:50');"
-                >emu_content/05/05-10-not-context-free.emu:113:50</span></span></span>\(n\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   Symbole 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:113:50');"
-                >emu_content/05/05-10-not-context-free.emu:113:50</span></span></span>\(b\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und noch weitere enthalten, wäre also länger als
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:113:50');"
-                >emu_content/05/05-10-not-context-free.emu:113:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:114:50');"
-                >emu_content/05/05-10-not-context-free.emu:114:50</span></span></span>\(n \geq p\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >; allerdings haben wir ja gesehen, dass </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:114:50');"
-                >emu_content/05/05-10-not-context-free.emu:114:50</span></span></span>\(|vwx| \leq p\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   gilt.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:114:50');"
-                >emu_content/05/05-10-not-context-free.emu:114:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Nehmen wir nun also der Einfachheit halber an, dass </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:115:50');"
-                >emu_content/05/05-10-not-context-free.emu:115:50</span></span></span>\(vwx\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   nicht das Symbol 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:115:50');"
-                >emu_content/05/05-10-not-context-free.emu:115:50</span></span></span>\(c\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   enthält:
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:115:50');"
-                >emu_content/05/05-10-not-context-free.emu:115:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:116:50');"
-                >emu_content/05/05-10-not-context-free.emu:116:50</span></span></span>\(vwx \in \{a,b\}^*\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   (der andere Fall ist symmetrisch und kann mit den gleichen Argumenten wie
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:116:50');"
-                >emu_content/05/05-10-not-context-free.emu:116:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >unten</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:117:50');"
-                >emu_content/05/05-10-not-context-free.emu:117:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >behandelt werden).</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:118:50');"
-                >emu_content/05/05-10-not-context-free.emu:118:50</span></span></span>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Nun holen wir zum entscheidenden Schlag aus: wir "pumpen" das Wort </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:121:50');"
-                  >emu_content/05/05-10-not-context-free.emu:121:50</span></span></span>\(\gamma\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     auf, indem
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:121:50');"
-                  >emu_content/05/05-10-not-context-free.emu:121:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >wir die Teilbäume mit </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:122:50');"
-                  >emu_content/05/05-10-not-context-free.emu:122:50</span></span></span>\(Z\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     an der Wurzel wiederholen. Konkret besagt ja oberer Baum,
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:122:50');"
-                  >emu_content/05/05-10-not-context-free.emu:122:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >dass </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:123:50');"
-                  >emu_content/05/05-10-not-context-free.emu:123:50</span></span></span>\(\gamma\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     wie folgt hergeleitet wurde:
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:123:50');"
-                  >emu_content/05/05-10-not-context-free.emu:123:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:124:50');"
-                  >emu_content/05/05-10-not-context-free.emu:124:50</span></span></span>$$\begin{align*}
+            Der Pfad vom oberen zum unteren \(Z\) hat höchstens Länge \(N\) (so haben wir diesen Pfad
+            gewählt),
+            und somit hat das Unterwort \(vwx\) höchstens \(p = 2^{|N|}\) Zeichen.
+            Wenn wir nun das Wort \(a^nb^nc^n\) für ein sehr großes \(n\) betrachten, sagen wir
+            \(n \geq p = 2^{|N|}\), dann kann das Wort \(vwx\) nicht alle drei Symbole \(a,b,c\) enthalten;
+            sonst würde es ja alle \(n\) Symbole \(b\) und noch weitere enthalten, wäre also länger als
+            \(n \geq p\); allerdings haben wir ja gesehen, dass \(|vwx| \leq p\) gilt.
+            Nehmen wir nun also der Einfachheit halber an, dass \(vwx\) nicht das Symbol \(c\) enthält:
+            \(vwx \in \{a,b\}^*\) (der andere Fall ist symmetrisch und kann mit den gleichen Argumenten wie
+            unten
+            behandelt werden).
+            <p>
+              Nun holen wir zum entscheidenden Schlag aus: wir "pumpen" das Wort \(\gamma\) auf, indem
+              wir die Teilbäume mit \(Z\) an der Wurzel wiederholen. Konkret besagt ja oberer Baum,
+              dass \(\gamma\) wie folgt hergeleitet wurde:
+              $$\begin{align*}
               S \Step{}^* u Z v \Step{}^* uvZxy \Step{}^* uvwxy
               \end{align*}$$
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:126:50');"
-                  >emu_content/05/05-10-not-context-free.emu:126:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Insbesondere heißt das, dass </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:127:50');"
-                  >emu_content/05/05-10-not-context-free.emu:127:50</span></span></span>\(Z \Step{}^* vZx\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     gilt. Wir können diesen
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:127:50');"
-                  >emu_content/05/05-10-not-context-free.emu:127:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Schritt also wiederholen:</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:128:50');"
-                  >emu_content/05/05-10-not-context-free.emu:128:50</span></span></span>
+              Insbesondere heißt das, dass \(Z \Step{}^* vZx\) gilt. Wir können diesen
+              Schritt also wiederholen:
             </p>
             <figure>
               <img
@@ -1099,67 +161,12 @@
                 loading="lazy"
               >
             </figure>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >und somit das Wort </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:134:50');"
-                  >emu_content/05/05-10-not-context-free.emu:134:50</span></span></span>\(uvvwxxy\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     und ganz allgemein jedes Wort
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:134:50');"
-                  >emu_content/05/05-10-not-context-free.emu:134:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:135:50');"
-                  >emu_content/05/05-10-not-context-free.emu:135:50</span></span></span>$$\begin{align*}
+            <p>
+              und somit das Wort \(uvvwxxy\) und ganz allgemein jedes Wort
+              $$\begin{align*}
               uv^i w x^i y
               \end{align*}$$
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:137:50');"
-                  >emu_content/05/05-10-not-context-free.emu:137:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >ableiten, für jedes </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:138:50');"
-                  >emu_content/05/05-10-not-context-free.emu:138:50</span></span></span>\(i \geq 0\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >. Selbst für </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:138:50');"
-                  >emu_content/05/05-10-not-context-free.emu:138:50</span></span></span>\(i = 0\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     geht das:
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:138:50');"
-                  >emu_content/05/05-10-not-context-free.emu:138:50</span></span></span>
+              ableiten, für jedes \(i \geq 0\). Selbst für \(i = 0\) geht das:
             </p>
             <figure>
               <img
@@ -1170,863 +177,76 @@
             </figure>
             <p>
             </p>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Betrachten wir nun das Wort </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:144:50');"
-                >emu_content/05/05-10-not-context-free.emu:144:50</span></span></span>\(uwy\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Wir haben ja gesehen, dass in</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:144:50');"
-                >emu_content/05/05-10-not-context-free.emu:144:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:145:50');"
-                >emu_content/05/05-10-not-context-free.emu:145:50</span></span></span>\(uvwxy\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   alle 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:145:50');"
-                >emu_content/05/05-10-not-context-free.emu:145:50</span></span></span>\(c\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >-Symbole rechts von </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:145:50');"
-                >emu_content/05/05-10-not-context-free.emu:145:50</span></span></span>\(vwx\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   liegen, also in 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:145:50');"
-                >emu_content/05/05-10-not-context-free.emu:145:50</span></span></span>\(y\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:145:50');"
-                >emu_content/05/05-10-not-context-free.emu:145:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Das Wort </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:146:50');"
-                >emu_content/05/05-10-not-context-free.emu:146:50</span></span></span>\(uwy\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   hat also immer noch 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:146:50');"
-                >emu_content/05/05-10-not-context-free.emu:146:50</span></span></span>\(n\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   viele 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:146:50');"
-                >emu_content/05/05-10-not-context-free.emu:146:50</span></span></span>\(c\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >-Symbole. Allerdings hat</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:146:50');"
-                >emu_content/05/05-10-not-context-free.emu:146:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >es die Symbole in </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:147:50');"
-                >emu_content/05/05-10-not-context-free.emu:147:50</span></span></span>\(v\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:147:50');"
-                >emu_content/05/05-10-not-context-free.emu:147:50</span></span></span>\(x\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   verloren! Wir wissen nicht, wieviele davon 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:147:50');"
-                >emu_content/05/05-10-not-context-free.emu:147:50</span></span></span>\(a\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:147:50');"
-                >emu_content/05/05-10-not-context-free.emu:147:50</span></span></span>\(b\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:147:50');"
-                >emu_content/05/05-10-not-context-free.emu:147:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >waren,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:148:50');"
-                >emu_content/05/05-10-not-context-free.emu:148:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >aber eines ist ganz klar: in </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:149:50');"
-                >emu_content/05/05-10-not-context-free.emu:149:50</span></span></span>\(uwy\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   kommen die Symbole 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:149:50');"
-                >emu_content/05/05-10-not-context-free.emu:149:50</span></span></span>\(a,b,c\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   nicht mehr gleich
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:149:50');"
-                >emu_content/05/05-10-not-context-free.emu:149:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >häufig vor, und somit </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:150:50');"
-                >emu_content/05/05-10-not-context-free.emu:150:50</span></span></span>\(uwy\not \in L\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:150:50');"
-                >emu_content/05/05-10-not-context-free.emu:150:50</span></span></span>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Wir haben also gezeigt, dass die kontextfreie Grammatik </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:153:50');"
-                  >emu_content/05/05-10-not-context-free.emu:153:50</span></span></span>\(G\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:153:50');"
-                  >emu_content/05/05-10-not-context-free.emu:153:50</span></span></span><i><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >nicht</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:153:50');"
-                    >emu_content/05/05-10-not-context-free.emu:153:50</span></span></span></i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     die Sprache
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:153:50');"
-                  >emu_content/05/05-10-not-context-free.emu:153:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:154:50');"
-                  >emu_content/05/05-10-not-context-free.emu:154:50</span></span></span>\(L\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     erzeugt: wenn wir alle 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:154:50');"
-                  >emu_content/05/05-10-not-context-free.emu:154:50</span></span></span>\(\gamma \in L\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     erzeugen kann, dann
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:154:50');"
-                  >emu_content/05/05-10-not-context-free.emu:154:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >kann sie auch Wörter wie </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:155:50');"
-                  >emu_content/05/05-10-not-context-free.emu:155:50</span></span></span>\(uwy \not \in L\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     erzeugen. Da unsere Argumentation keine
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:155:50');"
-                  >emu_content/05/05-10-not-context-free.emu:155:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Annahmen über </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:156:50');"
-                  >emu_content/05/05-10-not-context-free.emu:156:50</span></span></span>\(G\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     getroffen hat, außer, dass sie kontextfrei ist, haben wir gezeigt:
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:156:50');"
-                  >emu_content/05/05-10-not-context-free.emu:156:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:157:50');"
-                  >emu_content/05/05-10-not-context-free.emu:157:50</span></span></span>\(L\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     ist keine kontextfreie Sprache.
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:157:50');"
-                  >emu_content/05/05-10-not-context-free.emu:157:50</span></span></span>
+            Betrachten wir nun das Wort \(uwy\). Wir haben ja gesehen, dass in
+            \(uvwxy\) alle \(c\)-Symbole rechts von \(vwx\) liegen, also in \(y\).
+            Das Wort \(uwy\) hat also immer noch \(n\) viele \(c\)-Symbole. Allerdings hat
+            es die Symbole in \(v\) und \(x\) verloren! Wir wissen nicht, wieviele davon \(a\) und \(b\)
+            waren,
+            aber eines ist ganz klar: in \(uwy\) kommen die Symbole \(a,b,c\) nicht mehr gleich
+            häufig vor, und somit \(uwy\not \in L\).
+            <p>
+              Wir haben also gezeigt, dass die kontextfreie Grammatik \(G\) 
+              <i>nicht</i>
+               die Sprache
+              \(L\) erzeugt: wenn wir alle \(\gamma \in L\) erzeugen kann, dann
+              kann sie auch Wörter wie \(uwy \not \in L\) erzeugen. Da unsere Argumentation keine
+              Annahmen über \(G\) getroffen hat, außer, dass sie kontextfrei ist, haben wir gezeigt:
+              \(L\) ist keine kontextfreie Sprache.
             </p>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:160:50');"
-                  >emu_content/05/05-10-not-context-free.emu:160:50</span></span></span><b><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Vorsicht!</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:160:50');"
-                    >emu_content/05/05-10-not-context-free.emu:160:50</span></span></span></b><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     Wir haben angenommen, das 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:160:50');"
-                  >emu_content/05/05-10-not-context-free.emu:160:50</span></span></span>\(uwy\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     weniger Zeichen hat
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:160:50');"
-                  >emu_content/05/05-10-not-context-free.emu:160:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >als </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:161:50');"
-                  >emu_content/05/05-10-not-context-free.emu:161:50</span></span></span>\(uvwxy\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >, weil ja </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:161:50');"
-                  >emu_content/05/05-10-not-context-free.emu:161:50</span></span></span>\(v\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     und 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:161:50');"
-                  >emu_content/05/05-10-not-context-free.emu:161:50</span></span></span>\(x\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     fehlen. Kann aber 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:161:50');"
-                  >emu_content/05/05-10-not-context-free.emu:161:50</span></span></span>\(v = x = \epsilon\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     eintreten?
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:161:50');"
-                  >emu_content/05/05-10-not-context-free.emu:161:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Dies würde unsere Argumentation zerstören. Hier kommt wieder die</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:162:50');"
-                  >emu_content/05/05-10-not-context-free.emu:162:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Chomsky-Normalform zur Hilfe: es gibt keine Produktionen </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:163:50');"
-                  >emu_content/05/05-10-not-context-free.emu:163:50</span></span></span>\(X \rightarrow \epsilon\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >,</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:163:50');"
-                  >emu_content/05/05-10-not-context-free.emu:163:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >(außer vielleicht für das Startsymbol </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:164:50');"
-                  >emu_content/05/05-10-not-context-free.emu:164:50</span></span></span>\(S\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >, welches dann aber nicht auf einer rechten Seite</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:164:50');"
-                  >emu_content/05/05-10-not-context-free.emu:164:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >auftreten dürfte). Ganz allgemein: wenn eine Grammatik </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:165:50');"
-                  >emu_content/05/05-10-not-context-free.emu:165:50</span></span></span>\(G\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     in Chomsky-Normalform ein
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:165:50');"
-                  >emu_content/05/05-10-not-context-free.emu:165:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Wort </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:166:50');"
-                  >emu_content/05/05-10-not-context-free.emu:166:50</span></span></span>\(\gamma\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     herleitet und 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:166:50');"
-                  >emu_content/05/05-10-not-context-free.emu:166:50</span></span></span>\(\gamma \ne \epsilon\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >, dann kommt in der Ableitung keine</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:166:50');"
-                  >emu_content/05/05-10-not-context-free.emu:166:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:167:50');"
-                  >emu_content/05/05-10-not-context-free.emu:167:50</span></span></span>\(\epsilon\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >-Produktion zur Anwendung.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:167:50');"
-                  >emu_content/05/05-10-not-context-free.emu:167:50</span></span></span>
+            <p>
+              <b>Vorsicht!</b>
+               Wir haben angenommen, das \(uwy\) weniger Zeichen hat
+              als \(uvwxy\), weil ja \(v\) und \(x\) fehlen. Kann aber \(v = x = \epsilon\) eintreten?
+              Dies würde unsere Argumentation zerstören. Hier kommt wieder die
+              Chomsky-Normalform zur Hilfe: es gibt keine Produktionen \(X \rightarrow \epsilon\),
+              (außer vielleicht für das Startsymbol \(S\), welches dann aber nicht auf einer rechten Seite
+              auftreten dürfte). Ganz allgemein: wenn eine Grammatik \(G\) in Chomsky-Normalform ein
+              Wort \(\gamma\) herleitet und \(\gamma \ne \epsilon\), dann kommt in der Ableitung keine
+              \(\epsilon\)-Produktion zur Anwendung.
             </p>
           </div>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Die obige Argumentationslinie ist als </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:170:50');"
-                >emu_content/05/05-10-not-context-free.emu:170:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Pumping Lemma für kontextfreie Sprachen</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:170:50');"
-                  >emu_content/05/05-10-not-context-free.emu:170:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   bekannt:
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:170:50');"
-                >emu_content/05/05-10-not-context-free.emu:170:50</span></span></span>
+          <p>
+            Die obige Argumentationslinie ist als 
+            <i>Pumping Lemma für kontextfreie Sprachen</i>
+             bekannt:
           </p>
           <div
             class="well container theorem"
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Theorem </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:176:50');"
-                  >emu_content/05/05-10-not-context-free.emu:176:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >5.11.2</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:179:50');"
-                    >emu_content/05/05-10-not-context-free.emu:179:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:180:50');"
-                  >emu_content/05/05-10-not-context-free.emu:180:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:181:50');"
-                >emu_content/05/05-10-not-context-free.emu:181:50</span></span></span><b><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >(Pumping Lemma für kontextfreie Sprachen)</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:181:50');"
-                  >emu_content/05/05-10-not-context-free.emu:181:50</span></span></span></b><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:181:50');"
-                >emu_content/05/05-10-not-context-free.emu:181:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Für jede kontextfreie Grammatik </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:182:50');"
-                >emu_content/05/05-10-not-context-free.emu:182:50</span></span></span>\(G\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   gibt es eine Zahl 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:182:50');"
-                >emu_content/05/05-10-not-context-free.emu:182:50</span></span></span>\(p \in \N\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, so dass jedes</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:182:50');"
-                >emu_content/05/05-10-not-context-free.emu:182:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wort </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:183:50');"
-                >emu_content/05/05-10-not-context-free.emu:183:50</span></span></span>\(\gamma \in L(G)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   der Länge 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:183:50');"
-                >emu_content/05/05-10-not-context-free.emu:183:50</span></span></span>\(|\gamma| \geq p\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   zerlegt werden kann in
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:183:50');"
-                >emu_content/05/05-10-not-context-free.emu:183:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:184:50');"
-                >emu_content/05/05-10-not-context-free.emu:184:50</span></span></span>$$\begin{align*}
+            >Theorem 
+              <NumberedTitle>5.11.2</NumberedTitle>
+               
+            </span><b>(Pumping Lemma für kontextfreie Sprachen)</b>
+            Für jede kontextfreie Grammatik \(G\) gibt es eine Zahl \(p \in \N\), so dass jedes
+            Wort \(\gamma \in L(G)\) der Länge \(|\gamma| \geq p\) zerlegt werden kann in
+            $$\begin{align*}
             \gamma = uvwxy \ ,
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:186:50');"
-                >emu_content/05/05-10-not-context-free.emu:186:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wobei </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:187:50');"
-                >emu_content/05/05-10-not-context-free.emu:187:50</span></span></span>\(|vwx| \leq p\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   gilt und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:187:50');"
-                >emu_content/05/05-10-not-context-free.emu:187:50</span></span></span>\(v,x\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   nicht beide 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:187:50');"
-                >emu_content/05/05-10-not-context-free.emu:187:50</span></span></span>\(\epsilon\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   sind, so dass
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:187:50');"
-                >emu_content/05/05-10-not-context-free.emu:187:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:188:50');"
-                >emu_content/05/05-10-not-context-free.emu:188:50</span></span></span>$$\begin{align*}
+            wobei \(|vwx| \leq p\) gilt und \(v,x\) nicht beide \(\epsilon\) sind, so dass
+            $$\begin{align*}
             u v^i w x^i y \in L(G)
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:190:50');"
-                >emu_content/05/05-10-not-context-free.emu:190:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >gilt, für alle </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:191:50');"
-                >emu_content/05/05-10-not-context-free.emu:191:50</span></span></span>\(i \geq 0\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:191:50');"
-                >emu_content/05/05-10-not-context-free.emu:191:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Die Zahl </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:192:50');"
-                >emu_content/05/05-10-not-context-free.emu:192:50</span></span></span>\(p\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   kann zum Beispiel als 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:192:50');"
-                >emu_content/05/05-10-not-context-free.emu:192:50</span></span></span>\(2^{N_{\rm CNF}}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   gewählt werden, wobei 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:192:50');"
-                >emu_content/05/05-10-not-context-free.emu:192:50</span></span></span>\(N_{\rm CNF}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:192:50');"
-                >emu_content/05/05-10-not-context-free.emu:192:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >die</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:193:50');"
-                >emu_content/05/05-10-not-context-free.emu:193:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Anzahl der Nichtterminale in einer zu </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:194:50');"
-                >emu_content/05/05-10-not-context-free.emu:194:50</span></span></span>\(G\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   äquivalenten Chomsky-Normalform ist.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:194:50');"
-                >emu_content/05/05-10-not-context-free.emu:194:50</span></span></span>
+            gilt, für alle \(i \geq 0\).
+            Die Zahl \(p\) kann zum Beispiel als \(2^{N_{\rm CNF}}\) gewählt werden, wobei \(N_{\rm CNF}\)
+            die
+            Anzahl der Nichtterminale in einer zu \(G\) äquivalenten Chomsky-Normalform ist.
           </div>
           <div
             class="well well-lg numbered-exercise container"
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Übungsaufgabe </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:200:50');"
-                  >emu_content/05/05-10-not-context-free.emu:200:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >5.11.1</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:203:50');"
-                    >emu_content/05/05-10-not-context-free.emu:203:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:204:50');"
-                  >emu_content/05/05-10-not-context-free.emu:204:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Sei </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:205:50');"
-                >emu_content/05/05-10-not-context-free.emu:205:50</span></span></span>\(L \subseteq \{a,b,c\}^n\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   die Sprache aller Wörter
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:205:50');"
-                >emu_content/05/05-10-not-context-free.emu:205:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:206:50');"
-                >emu_content/05/05-10-not-context-free.emu:206:50</span></span></span>$$\begin{align*}
+            >Übungsaufgabe 
+              <NumberedTitle>5.11.1</NumberedTitle>
+               
+            </span>Sei \(L \subseteq \{a,b,c\}^n\) die Sprache aller Wörter
+            $$\begin{align*}
             \{\alpha c \alpha \ | \ \alpha \in \{a,b\}^* \} \ .
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:208:50');"
-                >emu_content/05/05-10-not-context-free.emu:208:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >In Worten: rechts und links vom </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:209:50');"
-                >emu_content/05/05-10-not-context-free.emu:209:50</span></span></span>\(c\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   in der Mitte muss das gleiche Teilwort stehen.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:209:50');"
-                >emu_content/05/05-10-not-context-free.emu:209:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Zeigen Sie analog zu dem vorherigen Beweis, dass </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:210:50');"
-                >emu_content/05/05-10-not-context-free.emu:210:50</span></span></span>\(L\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   nicht kontextfrei ist.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:210:50');"
-                >emu_content/05/05-10-not-context-free.emu:210:50</span></span></span>
+            In Worten: rechts und links vom \(c\) in der Mitte muss das gleiche Teilwort stehen.
+            Zeigen Sie analog zu dem vorherigen Beweis, dass \(L\) nicht kontextfrei ist.
           </div>
           <div
             id="exericse-power-2"
@@ -2034,1345 +254,188 @@
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Übungsaufgabe </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:217:50');"
-                  >emu_content/05/05-10-not-context-free.emu:217:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >5.11.2</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:220:50');"
-                    >emu_content/05/05-10-not-context-free.emu:220:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:221:50');"
-                  >emu_content/05/05-10-not-context-free.emu:221:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Sie </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:222:50');"
-                >emu_content/05/05-10-not-context-free.emu:222:50</span></span></span>\(L \subseteq \{1\}^*\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   die Sprache aller Wörter, deren Länge
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:222:50');"
-                >emu_content/05/05-10-not-context-free.emu:222:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >eine Zweierpotenz ist:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:223:50');"
-                >emu_content/05/05-10-not-context-free.emu:223:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:224:50');"
-                >emu_content/05/05-10-not-context-free.emu:224:50</span></span></span>$$\begin{align*}
+            >Übungsaufgabe 
+              <NumberedTitle>5.11.2</NumberedTitle>
+               
+            </span>Sie \(L \subseteq \{1\}^*\) die Sprache aller Wörter, deren Länge
+            eine Zweierpotenz ist:
+            $$\begin{align*}
             L := \{ 1^n \ | \ n = 2^d \textnormal{ für ein \(d \in \N\)} \}
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:226:50');"
-                >emu_content/05/05-10-not-context-free.emu:226:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Also </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:227:50');"
-                >emu_content/05/05-10-not-context-free.emu:227:50</span></span></span>\(L = \{1, 11, 1111, 11111111, 1111111111111111, \dots\}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Zeigen Sie, dass </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:227:50');"
-                >emu_content/05/05-10-not-context-free.emu:227:50</span></span></span>\(L\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   nicht
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:227:50');"
-                >emu_content/05/05-10-not-context-free.emu:227:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >kontextfrei ist.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:228:50');"
-                >emu_content/05/05-10-not-context-free.emu:228:50</span></span></span>
+            Also \(L = \{1, 11, 1111, 11111111, 1111111111111111, \dots\}\). Zeigen Sie, dass \(L\) nicht
+            kontextfrei ist.
           </div>
-          <h3><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Mengenoperationen auf kontextfreien Sprachen</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:231:50');"
-                >emu_content/05/05-10-not-context-free.emu:231:50</span></span></span>
+          <h3>
+            Mengenoperationen auf kontextfreien Sprachen
           </h3>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >Im Kapitel über reguläre Sprachen hatten wir folgende Abschlusseigenschaften:</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:232:50');"
-              >emu_content/05/05-10-not-context-free.emu:232:50</span></span></span>
+          Im Kapitel über reguläre Sprachen hatten wir folgende Abschlusseigenschaften:
           <div
             class="well container theorem"
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Theorem </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:238:50');"
-                  >emu_content/05/05-10-not-context-free.emu:238:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >5.11.3</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:241:50');"
-                    >emu_content/05/05-10-not-context-free.emu:241:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:242:50');"
-                  >emu_content/05/05-10-not-context-free.emu:242:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wenn </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:243:50');"
-                >emu_content/05/05-10-not-context-free.emu:243:50</span></span></span>\(L_1, L_2\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   reguläre Sprachen sind, dann sind die folgenden
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:243:50');"
-                >emu_content/05/05-10-not-context-free.emu:243:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Sprachen auch regulär:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:244:50');"
-                >emu_content/05/05-10-not-context-free.emu:244:50</span></span></span>
+            >Theorem 
+              <NumberedTitle>5.11.3</NumberedTitle>
+               
+            </span>Wenn \(L_1, L_2\) reguläre Sprachen sind, dann sind die folgenden
+            Sprachen auch regulär:
             <ol>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:248:50');"
-                    >emu_content/05/05-10-not-context-free.emu:248:50</span></span></span>\(L_1 \cup L_2\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >. Das war einfach: wir kombinieren die Grammatiken</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:248:50');"
-                    >emu_content/05/05-10-not-context-free.emu:248:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >und fügen die Startproduktionen </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:249:50');"
-                    >emu_content/05/05-10-not-context-free.emu:249:50</span></span></span>\(S \rightarrow S_1 \ | \ S_2\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       hinzu.
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:249:50');"
-                    >emu_content/05/05-10-not-context-free.emu:249:50</span></span></span>
+              <li>
+                \(L_1 \cup L_2\). Das war einfach: wir kombinieren die Grammatiken
+                und fügen die Startproduktionen \(S \rightarrow S_1 \ | \ S_2\) hinzu.
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:252:50');"
-                    >emu_content/05/05-10-not-context-free.emu:252:50</span></span></span>\(L_1 \circ L_2\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >. Das war schon schwieriger, ging aber auch irgendwie.</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:252:50');"
-                    >emu_content/05/05-10-not-context-free.emu:252:50</span></span></span>
+              <li>
+                \(L_1 \circ L_2\). Das war schon schwieriger, ging aber auch irgendwie.
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:255:50');"
-                    >emu_content/05/05-10-not-context-free.emu:255:50</span></span></span>\(L_1^*\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >. Das ging ähnlich zum vorherigen.</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:255:50');"
-                    >emu_content/05/05-10-not-context-free.emu:255:50</span></span></span>
+              <li>
+                \(L_1^*\). Das ging ähnlich zum vorherigen.
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:258:50');"
-                    >emu_content/05/05-10-not-context-free.emu:258:50</span></span></span>\(\bar{L}_1 := \Sigma^* \setminus L_1\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >, die Komplementsprache. Das ist einfach,</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:258:50');"
-                    >emu_content/05/05-10-not-context-free.emu:258:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >sobald man einen endlichen Automaten für </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:259:50');"
-                    >emu_content/05/05-10-not-context-free.emu:259:50</span></span></span>\(L_1\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       gebaut hat: man tauscht akzeptierende
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:259:50');"
-                    >emu_content/05/05-10-not-context-free.emu:259:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >und nicht-akzeptierende Zustände aus.</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:260:50');"
-                    >emu_content/05/05-10-not-context-free.emu:260:50</span></span></span>
+              <li>
+                \(\bar{L}_1 := \Sigma^* \setminus L_1\), die Komplementsprache. Das ist einfach,
+                sobald man einen endlichen Automaten für \(L_1\) gebaut hat: man tauscht akzeptierende
+                und nicht-akzeptierende Zustände aus.
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:263:50');"
-                    >emu_content/05/05-10-not-context-free.emu:263:50</span></span></span>\(L_1^R\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >, die Sprache, die entsteht, wenn man jedes Wort in </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:263:50');"
-                    >emu_content/05/05-10-not-context-free.emu:263:50</span></span></span>\(L_1\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       von rechts nach
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:263:50');"
-                    >emu_content/05/05-10-not-context-free.emu:263:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >links liest. Dies ist gar nicht so offensichtlich, wenn man reguläre Grammatiken oder</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:264:50');"
-                    >emu_content/05/05-10-not-context-free.emu:264:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >endliche Automaten ansieht. Wenn man aber für </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:265:50');"
-                    >emu_content/05/05-10-not-context-free.emu:265:50</span></span></span>\(L_1\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       einen 
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:265:50');"
-                    >emu_content/05/05-10-not-context-free.emu:265:50</span></span></span><i><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >regulären Ausdruck</span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:265:50');"
-                      >emu_content/05/05-10-not-context-free.emu:265:50</span></span></span></i><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:265:50');"
-                    >emu_content/05/05-10-not-context-free.emu:265:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >gebaut</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:266:50');"
-                    >emu_content/05/05-10-not-context-free.emu:266:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >hat, wird es zur Trivialität: einfach den Ausdruck umdrehen.</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:267:50');"
-                    >emu_content/05/05-10-not-context-free.emu:267:50</span></span></span>
+              <li>
+                \(L_1^R\), die Sprache, die entsteht, wenn man jedes Wort in \(L_1\) von rechts nach
+                links liest. Dies ist gar nicht so offensichtlich, wenn man reguläre Grammatiken oder
+                endliche Automaten ansieht. Wenn man aber für \(L_1\) einen 
+                <i>regulären Ausdruck</i>
+                gebaut
+                hat, wird es zur Trivialität: einfach den Ausdruck umdrehen.
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:270:50');"
-                    >emu_content/05/05-10-not-context-free.emu:270:50</span></span></span>\(L_1 \cap L_2\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >. Hierfür könnte man für </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:270:50');"
-                    >emu_content/05/05-10-not-context-free.emu:270:50</span></span></span>\(L_1, L_2\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       jeweils endliche Automaten
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:270:50');"
-                    >emu_content/05/05-10-not-context-free.emu:270:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:271:50');"
-                    >emu_content/05/05-10-not-context-free.emu:271:50</span></span></span>\(M_1, M_2\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       bauen und die dann "parallel" laufen lassen; man muss nun sehen, dass man
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:271:50');"
-                    >emu_content/05/05-10-not-context-free.emu:271:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >dieses parallele Laufen</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:272:50');"
-                    >emu_content/05/05-10-not-context-free.emu:272:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >mit </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:273:50');"
-                    >emu_content/05/05-10-not-context-free.emu:273:50</span></span></span><i><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >einem</span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:273:50');"
-                      >emu_content/05/05-10-not-context-free.emu:273:50</span></span></span></i><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       Automaten simulieren kann: dieser hat als Zustandsmenge 
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:273:50');"
-                    >emu_content/05/05-10-not-context-free.emu:273:50</span></span></span>\(Q_1 \times
-                Q_2\)
-                <span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >,</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:274:50');"
-                    >emu_content/05/05-10-not-context-free.emu:274:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >merkt sich also in </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:275:50');"
-                    >emu_content/05/05-10-not-context-free.emu:275:50</span></span></span><i><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >einem</span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:275:50');"
-                      >emu_content/05/05-10-not-context-free.emu:275:50</span></span></span></i><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       Zustand, in welchen Zuständen 
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:275:50');"
-                    >emu_content/05/05-10-not-context-free.emu:275:50</span></span></span>\(M_1\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       und 
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:275:50');"
-                    >emu_content/05/05-10-not-context-free.emu:275:50</span></span></span>\(M_2\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:275:50');"
-                    >emu_content/05/05-10-not-context-free.emu:275:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >sind.</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:276:50');"
-                    >emu_content/05/05-10-not-context-free.emu:276:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Oder man macht es sich einfach:</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:277:50');"
-                    >emu_content/05/05-10-not-context-free.emu:277:50</span></span></span>
+              <li>
+                \(L_1 \cap L_2\). Hierfür könnte man für \(L_1, L_2\) jeweils endliche Automaten
+                \(M_1, M_2\) bauen und die dann "parallel" laufen lassen; man muss nun sehen, dass man
+                dieses parallele Laufen
+                mit 
+                <i>einem</i>
+                 Automaten simulieren kann: dieser hat als Zustandsmenge \(Q_1 \times
+                Q_2\),
+                merkt sich also in 
+                <i>einem</i>
+                 Zustand, in welchen Zuständen \(M_1\) und \(M_2\)
+                sind.
+                Oder man macht es sich einfach:
                 <ul>
-                  <li><span><span
-                        class="tooltip-3003-container"
-                      ><span
-                          class="tooltip-3003-text"
-                        >Nach Punkt 4 sind </span><span
-                          class="tooltip-3003"
-                          onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:281:50');"
-                        >emu_content/05/05-10-not-context-free.emu:281:50</span></span></span>\(\bar{L}_1\)<span><span
-                        class="tooltip-3003-container"
-                      ><span
-                          class="tooltip-3003-text"
-                        >
-                           und 
-                        </span><span
-                          class="tooltip-3003"
-                          onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:281:50');"
-                        >emu_content/05/05-10-not-context-free.emu:281:50</span></span></span>\(\bar{L}_2\)<span><span
-                        class="tooltip-3003-container"
-                      ><span
-                          class="tooltip-3003-text"
-                        >
-                           regulär.
-                        </span><span
-                          class="tooltip-3003"
-                          onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:281:50');"
-                        >emu_content/05/05-10-not-context-free.emu:281:50</span></span></span>
+                  <li>
+                    Nach Punkt 4 sind \(\bar{L}_1\) und \(\bar{L}_2\) regulär.
                   </li>
-                  <li><span><span
-                        class="tooltip-3003-container"
-                      ><span
-                          class="tooltip-3003-text"
-                        >Nach Punkt 1 daher auch </span><span
-                          class="tooltip-3003"
-                          onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:284:50');"
-                        >emu_content/05/05-10-not-context-free.emu:284:50</span></span></span>\(\bar{L}_1 \cup \bar{L}_2\)<span><span
-                        class="tooltip-3003-container"
-                      ><span
-                          class="tooltip-3003-text"
-                        >
-                           ist regulär.
-                        </span><span
-                          class="tooltip-3003"
-                          onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:284:50');"
-                        >emu_content/05/05-10-not-context-free.emu:284:50</span></span></span>
+                  <li>
+                    Nach Punkt 1 daher auch \(\bar{L}_1 \cup \bar{L}_2\) ist regulär.
                   </li>
-                  <li><span><span
-                        class="tooltip-3003-container"
-                      ><span
-                          class="tooltip-3003-text"
-                        >Nach Punkt 4 ist daher wiederum </span><span
-                          class="tooltip-3003"
-                          onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:287:50');"
-                        >emu_content/05/05-10-not-context-free.emu:287:50</span></span></span>\(\overline{\bar{L}_1 \cup \bar{L}_2}\)<span><span
-                        class="tooltip-3003-container"
-                      ><span
-                          class="tooltip-3003-text"
-                        >
-                           regulär,
-                        </span><span
-                          class="tooltip-3003"
-                          onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:287:50');"
-                        >emu_content/05/05-10-not-context-free.emu:287:50</span></span>
-                      
-                      <span
-                        class="tooltip-3003-container"
-                      ><span
-                          class="tooltip-3003-text"
-                        >was</span><span
-                          class="tooltip-3003"
-                          onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:288:50');"
-                        >emu_content/05/05-10-not-context-free.emu:288:50</span></span>
-                      
-                      <span
-                        class="tooltip-3003-container"
-                      ><span
-                          class="tooltip-3003-text"
-                        >nach den De-Morganschen Gesetzen die gleiche Menge ist wie </span><span
-                          class="tooltip-3003"
-                          onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:289:50');"
-                        >emu_content/05/05-10-not-context-free.emu:289:50</span></span></span>\(L_1 \cap L_2\)<span><span
-                        class="tooltip-3003-container"
-                      ><span
-                          class="tooltip-3003-text"
-                        >.</span><span
-                          class="tooltip-3003"
-                          onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:289:50');"
-                        >emu_content/05/05-10-not-context-free.emu:289:50</span></span></span>
+                  <li>
+                    Nach Punkt 4 ist daher wiederum \(\overline{\bar{L}_1 \cup \bar{L}_2}\) regulär,
+                    was
+                    nach den De-Morganschen Gesetzen die gleiche Menge ist wie \(L_1 \cap L_2\).
                   </li>
                 </ul>
               </li>
             </ol>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wie sieht es nun aus, wenn </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:290:50');"
-                >emu_content/05/05-10-not-context-free.emu:290:50</span></span></span>\(L_1, L_2\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:290:50');"
-                >emu_content/05/05-10-not-context-free.emu:290:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >kontextfreie</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:290:50');"
-                  >emu_content/05/05-10-not-context-free.emu:290:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   Sprachen sind? Welche der
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:290:50');"
-                >emu_content/05/05-10-not-context-free.emu:290:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >obigen Kombinationen sind dann ebenfalls kontextfrei?</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:291:50');"
-                >emu_content/05/05-10-not-context-free.emu:291:50</span></span></span>
+            Wie sieht es nun aus, wenn \(L_1, L_2\) 
+            <i>kontextfreie</i>
+             Sprachen sind? Welche der
+            obigen Kombinationen sind dann ebenfalls kontextfrei?
             <div
               class="well well-lg numbered-exercise container"
             >
               <span
                 class="numbered-title"
-              ><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Übungsaufgabe </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:297:50');"
-                    >emu_content/05/05-10-not-context-free.emu:297:50</span></span></span><NumberedTitle><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >5.11.3</span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:300:50');"
-                      >emu_content/05/05-10-not-context-free.emu:300:50</span></span></span></NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:301:50');"
-                    >emu_content/05/05-10-not-context-free.emu:301:50</span></span></span></span><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Seien </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:302:50');"
-                  >emu_content/05/05-10-not-context-free.emu:302:50</span></span></span>\(L_1, L_2\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     kontextfrei. Zeigen Sie, dass die folgenden Sprachen auch kontextfrei
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:302:50');"
-                  >emu_content/05/05-10-not-context-free.emu:302:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >sind:</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:303:50');"
-                  >emu_content/05/05-10-not-context-free.emu:303:50</span></span></span>
+              >Übungsaufgabe 
+                <NumberedTitle>5.11.3</NumberedTitle>
+                 
+              </span>Seien \(L_1, L_2\) kontextfrei. Zeigen Sie, dass die folgenden Sprachen auch kontextfrei
+              sind:
               <ol>
-                <li><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      ></span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:307:50');"
-                      >emu_content/05/05-10-not-context-free.emu:307:50</span></span></span>\(L_1 \cup L_2\)<span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      ></span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:307:50');"
-                      >emu_content/05/05-10-not-context-free.emu:307:50</span></span></span>
+                <li>
+                  \(L_1 \cup L_2\)
                 </li>
-                <li><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      ></span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:310:50');"
-                      >emu_content/05/05-10-not-context-free.emu:310:50</span></span></span>\(L_1 \circ L_2\)<span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      ></span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:310:50');"
-                      >emu_content/05/05-10-not-context-free.emu:310:50</span></span></span>
+                <li>
+                  \(L_1 \circ L_2\)
                 </li>
-                <li><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      ></span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:313:50');"
-                      >emu_content/05/05-10-not-context-free.emu:313:50</span></span></span>\(L_1^*\)<span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      ></span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:313:50');"
-                      >emu_content/05/05-10-not-context-free.emu:313:50</span></span></span>
+                <li>
+                  \(L_1^*\)
                 </li>
-                <li><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >Überspringen wir </span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:316:50');"
-                      >emu_content/05/05-10-not-context-free.emu:316:50</span></span></span>\(\bar{L}_1\)<span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >; dieses ist nämlich im Allgemeinen nicht kontextfrei.</span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:316:50');"
-                      >emu_content/05/05-10-not-context-free.emu:316:50</span></span></span>
+                <li>
+                  Überspringen wir \(\bar{L}_1\); dieses ist nämlich im Allgemeinen nicht kontextfrei.
                 </li>
-                <li><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      ></span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:319:50');"
-                      >emu_content/05/05-10-not-context-free.emu:319:50</span></span></span>\(L_1^R\)<span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      ></span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:319:50');"
-                      >emu_content/05/05-10-not-context-free.emu:319:50</span></span></span>
+                <li>
+                  \(L_1^R\)
                 </li>
-                <li><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >Überspringen wir </span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:322:50');"
-                      >emu_content/05/05-10-not-context-free.emu:322:50</span></span></span>\(L_1 \cap L_2\)<span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >; dieses ist nämlich im Allgemeinen nicht</span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:322:50');"
-                      >emu_content/05/05-10-not-context-free.emu:322:50</span></span>
-                    
-                    <span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >kontextfrei.</span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:323:50');"
-                      >emu_content/05/05-10-not-context-free.emu:323:50</span></span></span>
+                <li>
+                  Überspringen wir \(L_1 \cap L_2\); dieses ist nämlich im Allgemeinen nicht
+                  kontextfrei.
                 </li>
               </ol>
-              <p><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:326:50');"
-                    >emu_content/05/05-10-not-context-free.emu:326:50</span></span></span><b><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >Tip:</span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:326:50');"
-                      >emu_content/05/05-10-not-context-free.emu:326:50</span></span></span></b><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       dies ist viel einacher als für reguläre Grammatiken.
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:326:50');"
-                    >emu_content/05/05-10-not-context-free.emu:326:50</span></span></span>
+              <p>
+                <b>Tip:</b>
+                 dies ist viel einacher als für reguläre Grammatiken.
               </p>
             </div>
           </div>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >Wie schon angedeutet, geben uns Komplement und Schnittmenge im Allgemeinen keine kontextfreie</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:327:50');"
-              >emu_content/05/05-10-not-context-free.emu:327:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >Sprache.</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:328:50');"
-              >emu_content/05/05-10-not-context-free.emu:328:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >Das Gegenbeispiel haben wir schon fast gesehen:</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:329:50');"
-              >emu_content/05/05-10-not-context-free.emu:329:50</span></span></span>
+          Wie schon angedeutet, geben uns Komplement und Schnittmenge im Allgemeinen keine kontextfreie
+          Sprache.
+          Das Gegenbeispiel haben wir schon fast gesehen:
           <div
             class="well container theorem"
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Beobachtung </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:335:50');"
-                  >emu_content/05/05-10-not-context-free.emu:335:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >5.11.4</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:338:50');"
-                    >emu_content/05/05-10-not-context-free.emu:338:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:339:50');"
-                  >emu_content/05/05-10-not-context-free.emu:339:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Der Schnitt </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:340:50');"
-                >emu_content/05/05-10-not-context-free.emu:340:50</span></span></span>\(L_1 \cap L_2\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   zweier kontextfreier Sprachen
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:340:50');"
-                >emu_content/05/05-10-not-context-free.emu:340:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >ist im Allgemeinen </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:341:50');"
-                >emu_content/05/05-10-not-context-free.emu:341:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >nicht</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:341:50');"
-                  >emu_content/05/05-10-not-context-free.emu:341:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   kontextfrei.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:341:50');"
-                >emu_content/05/05-10-not-context-free.emu:341:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Ein Beispiel ist</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:342:50');"
-                >emu_content/05/05-10-not-context-free.emu:342:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:343:50');"
-                >emu_content/05/05-10-not-context-free.emu:343:50</span></span></span>$$\begin{align*}
+            >Beobachtung 
+              <NumberedTitle>5.11.4</NumberedTitle>
+               
+            </span>Der Schnitt \(L_1 \cap L_2\) zweier kontextfreier Sprachen
+            ist im Allgemeinen 
+            <i>nicht</i>
+             kontextfrei.
+            Ein Beispiel ist
+            $$\begin{align*}
             L_1&amp;:= \{a^n b^n c^* \ | \ n \geq 0 \}\\
             L_2&amp;:= \{a^* b^n c^n \ | \ n \geq 0 \}
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:346:50');"
-                >emu_content/05/05-10-not-context-free.emu:346:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Diese sind beide kontextfrei (schreiben Sie jeweils eine Grammatik, wenn Sie's nicht glauben).</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:347:50');"
-                >emu_content/05/05-10-not-context-free.emu:347:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Der</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:348:50');"
-                >emu_content/05/05-10-not-context-free.emu:348:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Schnitt allerdings ist</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:349:50');"
-                >emu_content/05/05-10-not-context-free.emu:349:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:350:50');"
-                >emu_content/05/05-10-not-context-free.emu:350:50</span></span></span>$$\begin{align*}
+            Diese sind beide kontextfrei (schreiben Sie jeweils eine Grammatik, wenn Sie's nicht glauben).
+            Der
+            Schnitt allerdings ist
+            $$\begin{align*}
             L_1 \cap L_2 = \{a^n b^n c^n \ | \ n \geq 0\} \ ,
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:352:50');"
-                >emu_content/05/05-10-not-context-free.emu:352:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >genau diejenige Sprache, für die wir oben gezeigt haben, dass sie nicht kontextfrei ist.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:353:50');"
-                >emu_content/05/05-10-not-context-free.emu:353:50</span></span></span>
+            genau diejenige Sprache, für die wir oben gezeigt haben, dass sie nicht kontextfrei ist.
           </div>
           <div
             class="well container theorem"
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Beobachtung </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:359:50');"
-                  >emu_content/05/05-10-not-context-free.emu:359:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >5.11.5</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:362:50');"
-                    >emu_content/05/05-10-not-context-free.emu:362:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:363:50');"
-                  >emu_content/05/05-10-not-context-free.emu:363:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Das Komplement </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:364:50');"
-                >emu_content/05/05-10-not-context-free.emu:364:50</span></span></span>\(L\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   einer kontextfreien Sprache ist im Allgemeinen 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:364:50');"
-                >emu_content/05/05-10-not-context-free.emu:364:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >nicht</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:364:50');"
-                  >emu_content/05/05-10-not-context-free.emu:364:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   kontextfrei.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:364:50');"
-                >emu_content/05/05-10-not-context-free.emu:364:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >\\</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:365:50');"
-                >emu_content/05/05-10-not-context-free.emu:365:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Warum? Wenn er es wäre, dann wäre mit Hilfe von Punkt 1 auch</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:366:50');"
-                >emu_content/05/05-10-not-context-free.emu:366:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:367:50');"
-                >emu_content/05/05-10-not-context-free.emu:367:50</span></span></span>$$\begin{align*}
+            >Beobachtung 
+              <NumberedTitle>5.11.5</NumberedTitle>
+               
+            </span>Das Komplement \(L\) einer kontextfreien Sprache ist im Allgemeinen 
+            <i>nicht</i>
+             kontextfrei.
+            \\
+            Warum? Wenn er es wäre, dann wäre mit Hilfe von Punkt 1 auch
+            $$\begin{align*}
             L_1 \cap L_2 = \overline{ \bar{L}_1 \cup \bar{L_2}}
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:369:50');"
-                >emu_content/05/05-10-not-context-free.emu:369:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >kontextfrei, was es aber im Allgemeinen nicht ist. Befriedigender wäre es allerdings, wenn wir</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:370:50');"
-                >emu_content/05/05-10-not-context-free.emu:370:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >ein konkretes Beispiel hätten.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:371:50');"
-                >emu_content/05/05-10-not-context-free.emu:371:50</span></span></span>
+            kontextfrei, was es aber im Allgemeinen nicht ist. Befriedigender wäre es allerdings, wenn wir
+            ein konkretes Beispiel hätten.
           </div>
           <div
             class="well well-lg numbered-exercise container"
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Übungsaufgabe </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:377:50');"
-                  >emu_content/05/05-10-not-context-free.emu:377:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >5.11.4</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:380:50');"
-                    >emu_content/05/05-10-not-context-free.emu:380:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:381:50');"
-                  >emu_content/05/05-10-not-context-free.emu:381:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Sei </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:382:50');"
-                >emu_content/05/05-10-not-context-free.emu:382:50</span></span></span>\(L := \{a^n b^n c^n\}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Wir wissen bereits, dass </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:382:50');"
-                >emu_content/05/05-10-not-context-free.emu:382:50</span></span></span>\(L\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   nicht kontextfrei ist.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:382:50');"
-                >emu_content/05/05-10-not-context-free.emu:382:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Zeigen Sie, dass </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:383:50');"
-                >emu_content/05/05-10-not-context-free.emu:383:50</span></span></span>\(\bar{L}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   kontextfrei ist.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:383:50');"
-                >emu_content/05/05-10-not-context-free.emu:383:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Die Sprache </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:384:50');"
-                >emu_content/05/05-10-not-context-free.emu:384:50</span></span></span>\(\bar{L}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ist somit ein Beispiel für eine kontextfreie Sprache,
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:384:50');"
-                >emu_content/05/05-10-not-context-free.emu:384:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >deren Komplement, also </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:385:50');"
-                >emu_content/05/05-10-not-context-free.emu:385:50</span></span></span>\(L\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, nicht kontextfrei ist.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:385:50');"
-                >emu_content/05/05-10-not-context-free.emu:385:50</span></span></span>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:388:50');"
-                  >emu_content/05/05-10-not-context-free.emu:388:50</span></span></span><b><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Tip.</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:388:50');"
-                    >emu_content/05/05-10-not-context-free.emu:388:50</span></span></span></b><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     Listen Sie alle Möglichkeiten auf, wie ein Wort 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:388:50');"
-                  >emu_content/05/05-10-not-context-free.emu:388:50</span></span></span>\(w\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     nicht
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:388:50');"
-                  >emu_content/05/05-10-not-context-free.emu:388:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >in </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:389:50');"
-                  >emu_content/05/05-10-not-context-free.emu:389:50</span></span></span>\(L\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     sein kann: (1) es hat nicht die Form 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:389:50');"
-                  >emu_content/05/05-10-not-context-free.emu:389:50</span></span></span>\(a^* b^* c^*\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >; (2) es hat die Form,</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:389:50');"
-                  >emu_content/05/05-10-not-context-free.emu:389:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >hat aber mehr </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:390:50');"
-                  >emu_content/05/05-10-not-context-free.emu:390:50</span></span></span>\(a\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     als es 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:390:50');"
-                  >emu_content/05/05-10-not-context-free.emu:390:50</span></span></span>\(b\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     hat; (2) es hat mehr 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:390:50');"
-                  >emu_content/05/05-10-not-context-free.emu:390:50</span></span></span>\(a\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     als es 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:390:50');"
-                  >emu_content/05/05-10-not-context-free.emu:390:50</span></span></span>\(c\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     hat...
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-10-not-context-free.emu:390:50');"
-                  >emu_content/05/05-10-not-context-free.emu:390:50</span></span></span>
+            >Übungsaufgabe 
+              <NumberedTitle>5.11.4</NumberedTitle>
+               
+            </span>Sei \(L := \{a^n b^n c^n\}\). Wir wissen bereits, dass \(L\) nicht kontextfrei ist.
+            Zeigen Sie, dass \(\bar{L}\) kontextfrei ist.
+            Die Sprache \(\bar{L}\) ist somit ein Beispiel für eine kontextfreie Sprache,
+            deren Komplement, also \(L\), nicht kontextfrei ist.
+            <p>
+              <b>Tip.</b>
+               Listen Sie alle Möglichkeiten auf, wie ein Wort \(w\) nicht
+              in \(L\) sein kann: (1) es hat nicht die Form \(a^* b^* c^*\); (2) es hat die Form,
+              hat aber mehr \(a\) als es \(b\) hat; (2) es hat mehr \(a\) als es \(c\) hat...
             </p>
           </div>
         </div>

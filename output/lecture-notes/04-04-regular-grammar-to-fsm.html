@@ -31,23 +31,9 @@
   >
     <a
       href="../vorlesungsskript.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >Inhaltsverzeichnis</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:12:50');"
-          >emu_content/04/04-04-regular-grammar-to-fsm.emu:12:50</span></span></span></a><a
+    >Inhaltsverzeichnis</a><a
       href="04-03-nfsm.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >&lt;&lt; Kapitel 4.3</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:16:50');"
-          >emu_content/04/04-04-regular-grammar-to-fsm.emu:16:50</span></span></span></a>
+    >&lt;&lt; Kapitel 4.3</a>
   </div>
   <div
     id="link-to-overview"
@@ -55,23 +41,9 @@
   >
     <a
       href="/"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >zur Kursübersicht</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:23:50');"
-          >emu_content/04/04-04-regular-grammar-to-fsm.emu:23:50</span></span></span></a><a
+    >zur Kursübersicht</a><a
       href="04-05-regular-expressions.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >Kapitel 4.5 &gt;&gt;</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:27:50');"
-          >emu_content/04/04-04-regular-grammar-to-fsm.emu:27:50</span></span></span></a>
+    >Kapitel 4.5 &gt;&gt;</a>
   </div>
   <div
     id="rightSideWrapper"
@@ -90,1192 +62,180 @@
           >
             <span
               class="subChapterTitle"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >4.4</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:41:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:41:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Von einer regulären Grammatik zu einem endlichen Automaten</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:42:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:42:50</span></span></span></span>
+            >4.4
+              Von einer regulären Grammatik zu einem endlichen Automaten</span>
           </h1>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >In diesem Unterkapitel wollen wir das Gelernte an einem konkreten Beispiel anwenden.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:45:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:45:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wir beginnen (1) mit einer Beschreibung eines Formats in natürlicher Sprache; (2) basteln uns</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:46:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:46:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >daraus</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:47:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:47:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >mit Hilfe des "Baukastenprinzips" eine reguläre Sprache; (3) säubern diese, indem wir Regeln</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:48:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:48:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >der Form </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:49:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:49:50</span></span></span>\(X \rightarrow Y\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:49:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:49:50</span></span></span>\(X \rightarrow a\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   eliminieren; (4) bauen einen
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:49:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:49:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >nichtdeterministischen</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:50:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:50:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >endlichen Automaten; (5) transformieren diesen in einen deterministischen endlichen Automaten.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:51:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:51:50</span></span></span>
+          <p>
+            In diesem Unterkapitel wollen wir das Gelernte an einem konkreten Beispiel anwenden.
+            Wir beginnen (1) mit einer Beschreibung eines Formats in natürlicher Sprache; (2) basteln uns
+            daraus
+            mit Hilfe des "Baukastenprinzips" eine reguläre Sprache; (3) säubern diese, indem wir Regeln
+            der Form \(X \rightarrow Y\) und \(X \rightarrow a\) eliminieren; (4) bauen einen
+            nichtdeterministischen
+            endlichen Automaten; (5) transformieren diesen in einen deterministischen endlichen Automaten.
           </p>
-          <h2><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >1. Beschreibung des Formats in natürlicher Sprache</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:54:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:54:50</span></span></span>
+          <h2>
+            1. Beschreibung des Formats in natürlicher Sprache
           </h2>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Unsere Sprache </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:57:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:57:50</span></span></span>\(L\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   soll so ähnlich sein wie die der erlaubten Domainnamen, allerdings mit ein
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:57:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:57:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >paar Abänderungen,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:58:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:58:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >um die obigen Transformationen spannender zu machen. Ein Wort in unserer Sprache besteht aus</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:59:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:59:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >einer</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:60:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:60:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >nichtleeren Folge von </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:61:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:61:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Labels</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:61:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:61:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   die jeweils durch einen 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:61:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:61:50</span></span></span>
-            <code><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:61:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:61:50</span></span></span>
+          <p>
+            Unsere Sprache \(L\) soll so ähnlich sein wie die der erlaubten Domainnamen, allerdings mit ein
+            paar Abänderungen,
+            um die obigen Transformationen spannender zu machen. Ein Wort in unserer Sprache besteht aus
+            einer
+            nichtleeren Folge von 
+            <i>Labels</i>
+             die jeweils durch einen 
+            <code>
+              .
             </code>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   separiert sind.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:61:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:61:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Jedes Label ist eine nichtleere Folge von Blöcken (ein nichtleerer String aus Buchstaben und</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:62:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:62:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Zahlen), separiert</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:63:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:63:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >durch </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:64:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:64:50</span></span></span>
-            <code><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >:</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:64:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:64:50</span></span></span>
+             separiert sind.
+            Jedes Label ist eine nichtleere Folge von Blöcken (ein nichtleerer String aus Buchstaben und
+            Zahlen), separiert
+            durch 
+            <code>
+              :
             </code>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   oder 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:64:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:64:50</span></span></span>
-            <code><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >-</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:64:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:64:50</span></span></span>
+             oder 
+            <code>
+              -
             </code>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   aber niemals durch beides innerhalb eines Blockes.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:64:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:64:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Also:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:65:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:65:50</span></span></span>
+             aber niemals durch beides innerhalb eines Blockes.
+            Also:
           </p>
           <div
             style="text-align:center"
           >
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:69:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:69:50</span></span></span>
-            <code><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >bla:bla:blue.xyz-12-zx.b:x:yyy:xxx:aaa</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:69:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:69:50</span></span></span>
+            
+            <code>
+              bla:bla:blue.xyz-12-zx.b:x:yyy:xxx:aaa
             </code>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:69:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:69:50</span></span></span>
+            
           </div>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >ist ein Wort in </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:70:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:70:50</span></span></span>\(L\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >, aber</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:70:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:70:50</span></span></span>
+          ist ein Wort in \(L\), aber
           <div
             style="text-align:center"
           >
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:74:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:74:50</span></span></span>
-            <code><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >a:b-c.hello</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:74:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:74:50</span></span></span>
+            
+            <code>
+              a:b-c.hello
             </code>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:74:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:74:50</span></span></span>
+            
           </div>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >ist kein Wort in </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:75:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:75:50</span></span></span>\(L\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >, da das erste Label die Separatoren </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:75:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:75:50</span></span></span>
-          <code><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:75:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:75:50</span></span></span>
+          ist kein Wort in \(L\), da das erste Label die Separatoren 
+          <code>
+            :
           </code>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >
-                 und 
-              </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:75:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:75:50</span></span></span>
-          <code><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >-</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:75:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:75:50</span></span></span>
+           und 
+          <code>
+            -
           </code>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >
-                 mischt.
-              </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:75:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:75:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >Habe ich</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:76:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:76:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:77:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:77:50</span></span></span>\(L\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >
-                 genau genug beschrieben? Stellen wir eine Meta-Frage: Was zählt überhaupt als 
-              </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:77:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:77:50</span></span></span><i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >genaue</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:77:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:77:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Beschreibung</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:78:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:78:50</span></span></span></i><span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >
-                 einer
-              </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:78:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:78:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >Sprache? Wir können uns dem Mund fusselig reden und Beispiele und Nicht-Beispiele angeben, am Ende</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:79:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:79:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >aber werden</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:80:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:80:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >wir irgendwann beginnen, formale Regeln aufzustellen, die unsere Sprache beschreiben - wir werden</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:81:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:81:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >also im Prinzip</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:82:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:82:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >eine </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:83:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:83:50</span></span></span><i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Grammatik</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:83:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:83:50</span></span></span></i><span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >
-                 schreiben. Tun wir dies also.
-              </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:83:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:83:50</span></span></span>
-          <h2><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >2. Eine reguläre Grammatik</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:86:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:86:50</span></span></span>
+           mischt.
+          Habe ich
+          \(L\) genau genug beschrieben? Stellen wir eine Meta-Frage: Was zählt überhaupt als 
+          <i>genaue
+            Beschreibung</i>
+           einer
+          Sprache? Wir können uns dem Mund fusselig reden und Beispiele und Nicht-Beispiele angeben, am Ende
+          aber werden
+          wir irgendwann beginnen, formale Regeln aufzustellen, die unsere Sprache beschreiben - wir werden
+          also im Prinzip
+          eine 
+          <i>Grammatik</i>
+           schreiben. Tun wir dies also.
+          <h2>
+            2. Eine reguläre Grammatik
           </h2>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Beginnen wir mit dem Alphabet.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:89:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:89:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Da es 62 alphanumerische Zeichen gibt: </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:90:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:90:50</span></span></span>
-            <code><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >a..zA..Z0..9</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:90:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:90:50</span></span></span>
+          <p>
+            Beginnen wir mit dem Alphabet.
+            Da es 62 alphanumerische Zeichen gibt: 
+            <code>
+              a..zA..Z0..9
             </code>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und wir uns keine unnötige
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:90:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:90:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Arbeit machen wollen,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:91:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:91:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >beschränken wir uns auf ein Zeichen: </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:92:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:92:50</span></span></span>
-            <code><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >a</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:92:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:92:50</span></span></span>
+             und wir uns keine unnötige
+            Arbeit machen wollen,
+            beschränken wir uns auf ein Zeichen: 
+            <code>
+              a
             </code>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Dazu kommen die Separatoren</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:92:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:92:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:93:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:93:50</span></span></span>
-            <code><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >:-.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:93:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:93:50</span></span></span>
+            . Dazu kommen die Separatoren
+            
+            <code>
+              :-.
             </code>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Also: </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:93:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:93:50</span></span></span>\(\Sigma = \{a,.,:,-\}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Stellen Sie sich einfach vor, </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:93:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:93:50</span></span></span>\(a\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   stehe
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:93:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:93:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >für beliebige alphanumerische Zeichen. Sowohl Grammatik als auch Automaten lassen sich einfach</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:94:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:94:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >anpassen.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:95:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:95:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wir beginnen ganz unten und schreiben eine Grammatik für</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:96:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:96:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Blöcke, also nichtleere Strings aus alphanumerischen Zeichen.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:97:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:97:50</span></span></span>
+            . Also: \(\Sigma = \{a,.,:,-\}\). Stellen Sie sich einfach vor, \(a\) stehe
+            für beliebige alphanumerische Zeichen. Sowohl Grammatik als auch Automaten lassen sich einfach
+            anpassen.
+            Wir beginnen ganz unten und schreiben eine Grammatik für
+            Blöcke, also nichtleere Strings aus alphanumerischen Zeichen.
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:98:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:98:50</span></span></span>$$\begin{align*}
+          $$\begin{align*}
           B&amp;\rightarrow a \ | \ aB
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:100:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:100:50</span></span></span>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Als nächstes führen wir ein nichtterminales Symbole </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:103:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:103:50</span></span></span>\(C\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   für Labels mit 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:103:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:103:50</span></span></span>
-            <code><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >:</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:103:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:103:50</span></span></span>
+          <p>
+            Als nächstes führen wir ein nichtterminales Symbole \(C\) für Labels mit 
+            <code>
+              :
             </code>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ein
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:103:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:103:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >und ein Nichtterminal </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:104:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:104:50</span></span></span>\(D\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   für Labels mit 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:104:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:104:50</span></span></span>
-            <code><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >-</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:104:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:104:50</span></span></span>
+             ein
+            und ein Nichtterminal \(D\) für Labels mit 
+            <code>
+              -
             </code>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Wir wählen die Buchstaben </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:104:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:104:50</span></span></span>\(C,D\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:104:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:104:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >weil</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:105:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:105:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:106:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:106:50</span></span></span>
-            <code><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >:</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:106:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:106:50</span></span></span>
+            . Wir wählen die Buchstaben \(C,D\),
+            weil
+            
+            <code>
+              :
             </code>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   auf Englisch 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:106:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:106:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >colon</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:106:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:106:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:106:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:106:50</span></span></span>
-            <code><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >-</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:106:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:106:50</span></span></span>
+             auf Englisch 
+            <i>colon</i>
+             und 
+            <code>
+              -
             </code>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:106:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:106:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >dash</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:106:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:106:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   heißt.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:106:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:106:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:107:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:107:50</span></span></span>\(C\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >-Labels können wir uns nach dem Baukastenprizip bauen, in dem</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:107:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:107:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wir </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:108:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:108:50</span></span></span><a
+             
+            <i>dash</i>
+             heißt.
+            \(C\)-Labels können wir uns nach dem Baukastenprizip bauen, in dem
+            wir 
+            <a
               href="./04-01-regular-grammars.html#operation-L(.L)*"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Theorem 4.1.14</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:112:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:112:50</span></span></span></a><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   anwenden.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:113:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:113:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wir fügen zur "End-Produktion" </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:114:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:114:50</span></span></span>\(B \rightarrow a\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   eine weiter Produktion 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:114:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:114:50</span></span></span>\(B \rightarrow a:B\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:114:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:114:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >hinzu und</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:115:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:115:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >tun das gleiche für </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:116:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:116:50</span></span></span>\(B \rightarrow b\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Allerdings benennen wir </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:116:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:116:50</span></span></span>\(B\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   in 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:116:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:116:50</span></span></span>\(C\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   um, damit keine
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:116:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:116:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Verwechslungsgefahr mit</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:117:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:117:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >dem ursprünglichen </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:118:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:118:50</span></span></span>\(B\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   aufkommt. Das gleiche machen wir für 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:118:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:118:50</span></span></span>\(D\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:118:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:118:50</span></span></span>
+            >Theorem 4.1.14</a>
+             anwenden.
+            Wir fügen zur "End-Produktion" \(B \rightarrow a\) eine weiter Produktion \(B \rightarrow a:B\)
+            hinzu und
+            tun das gleiche für \(B \rightarrow b\). Allerdings benennen wir \(B\) in \(C\) um, damit keine
+            Verwechslungsgefahr mit
+            dem ursprünglichen \(B\) aufkommt. Das gleiche machen wir für \(D\).
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:119:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:119:50</span></span></span>$$\begin{align*}
+          $$\begin{align*}
           C&amp;\rightarrow a \ | \ aC \ | \ a{:}C \\
           D&amp;\rightarrow a \ | \ aD \ | \ a{-}D \\
           T&amp;\rightarrow C \ | D
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:123:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:123:50</span></span></span>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Von </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:126:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:126:50</span></span></span>\(L\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   lassen sich nun also alle Labels ableiten. Wir brauchen nun zum Schluss wieder
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:126:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:126:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >eine Folge von </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:127:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:127:50</span></span></span>\(L\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, mit </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:127:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:127:50</span></span></span>
-            <code><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:127:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:127:50</span></span></span>
+          <p>
+            Von \(L\) lassen sich nun also alle Labels ableiten. Wir brauchen nun zum Schluss wieder
+            eine Folge von \(L\), mit 
+            <code>
+              .
             </code>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   separiert, müssen also wieder
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:127:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:127:50</span></span></span><a
+             separiert, müssen also wieder<a
               href="./04-01-regular-grammars.html#operation-L(.L)*"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Theorem 4.1.14</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:131:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:131:50</span></span></span></a><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   anwenden, dieses
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:132:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:132:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >mal auf die von </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:133:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:133:50</span></span></span>\(T\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   erzeugte Sprache. Im Ergebnis benennen wir das Startsymbol in 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:133:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:133:50</span></span></span>\(S\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   um.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:133:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:133:50</span></span></span>
+            >Theorem 4.1.14</a>
+             anwenden, dieses
+            mal auf die von \(T\) erzeugte Sprache. Im Ergebnis benennen wir das Startsymbol in \(S\) um.
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:134:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:134:50</span></span></span>$$\begin{align*}
+          $$\begin{align*}
           S&amp;\rightarrow C \ | \ D \\
           C&amp;\rightarrow a \ | \ aC \ | \ a{:}C \ | a{.}S \ \\
           D&amp;\rightarrow a \ | \ aD \ | \ a\text{-}D \ | \ a{.}S \\
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:138:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:138:50</span></span></span>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Um eine "richtig" reguläre Sprache zu erhalten, entzerren wir die erweitert regulären</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:141:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:141:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Produktionen</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:142:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:142:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wie </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:143:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:143:50</span></span></span>\(C \rightarrow a{:}C\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Dafür brauchen wir neue Symbole </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:143:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:143:50</span></span></span>\(C', D', S'\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:143:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:143:50</span></span></span>
+          <p>
+            Um eine "richtig" reguläre Sprache zu erhalten, entzerren wir die erweitert regulären
+            Produktionen
+            wie \(C \rightarrow a{:}C\). Dafür brauchen wir neue Symbole \(C', D', S'\):
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:144:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:144:50</span></span></span>$$\begin{align*}
+          $$\begin{align*}
           S&amp;\rightarrow C \ | \ D \\
           C&amp;\rightarrow a \ | \ aC \ | \ aC'\ | \ aS' \\
           C'&amp;\rightarrow {:}C \\
@@ -1283,128 +243,18 @@
           D'&amp;\rightarrow \text{-}D \\
           S'&amp;\rightarrow {.}S
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:151:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:151:50</span></span></span>
-          <h2><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >3. Die reguläre Grammatik säubern</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:154:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:154:50</span></span></span>
+          <h2>
+            3. Die reguläre Grammatik säubern
           </h2>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wir wollen nun alle Produktionen der Form </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:157:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:157:50</span></span></span>\(Y \rightarrow x\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   eliminieren. Hierfür nehmen wir
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:157:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:157:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >uns</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:158:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:158:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:159:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:159:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >ein</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:159:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:159:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   neues Nichtterminal 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:159:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:159:50</span></span></span>\(E\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und ersetzen 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:159:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:159:50</span></span></span>\(Y \rightarrow x\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   durch 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:159:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:159:50</span></span></span>\(Y \rightarrow
+          <p>
+            Wir wollen nun alle Produktionen der Form \(Y \rightarrow x\) eliminieren. Hierfür nehmen wir
+            uns
+            <i>ein</i>
+             neues Nichtterminal \(E\) und ersetzen \(Y \rightarrow x\) durch \(Y \rightarrow
             xE\)
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:160:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:160:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >und fügen die Produktion </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:161:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:161:50</span></span></span>\(E \rightarrow \epsilon\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   hinzu.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:161:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:161:50</span></span></span>
+            und fügen die Produktion \(E \rightarrow \epsilon\) hinzu.
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:162:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:162:50</span></span></span>$$\begin{align*}
+          $$\begin{align*}
           S&amp;\rightarrow C \ | \ D \\
           C&amp;\rightarrow aE \ | \ aC \ | \ aC'\ | \ aS' \\
           C'&amp;\rightarrow {:}C \\
@@ -1413,253 +263,28 @@
           S'&amp;\rightarrow {.}S \\
           E&amp;\rightarrow \epsilon
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:170:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:170:50</span></span></span>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >In einem zweiten Schritt wollen wir die Produktionen </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:173:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:173:50</span></span></span>\(S \rightarrow C\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:173:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:173:50</span></span></span>\(S \rightarrow D\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:173:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:173:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >eliminieren,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:174:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:174:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >sodass wir nur noch Produktionen der From </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:175:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:175:50</span></span></span>\(X \rightarrow aY\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:175:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:175:50</span></span></span>\(E \rightarrow \epsilon\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:175:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:175:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >haben.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:176:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:176:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wir gehen vor wie in </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:177:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:177:50</span></span></span><a
+          <p>
+            In einem zweiten Schritt wollen wir die Produktionen \(S \rightarrow C\) und \(S \rightarrow D\)
+            eliminieren,
+            sodass wir nur noch Produktionen der From \(X \rightarrow aY\) und \(E \rightarrow \epsilon\)
+            haben.
+            Wir gehen vor wie in 
+            <a
               href="./04-01-regular-grammars.html#theorem-regular-simplified"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Theorem</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:181:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:181:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >4.1.7</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:182:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:182:50</span></span></span></a><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   beschrieben.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:183:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:183:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wir ersetzen </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:184:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:184:50</span></span></span>\(S \rightarrow C\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   also durch alle Produktionen der Form 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:184:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:184:50</span></span></span>\(S \rightarrow \alpha\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:184:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:184:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wobei</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:185:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:185:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:186:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:186:50</span></span></span>\(\alpha\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   eine Wortform ist, die sich aus 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:186:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:186:50</span></span></span>\(C\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ableiten lässt und nicht nur aus einem
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:186:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:186:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >einzelnen Nichtterminal</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:187:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:187:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >besteht; dies trifft glücklicherweise auf </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:188:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:188:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >alle</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:188:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:188:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   rechten Seiten der 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:188:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:188:50</span></span></span>\(C\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >-Produktionen</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:188:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:188:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >zu; gleiches gilt</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:189:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:189:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >für </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:190:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:190:50</span></span></span>\(D\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Wir erhalten:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:190:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:190:50</span></span></span>
+            >Theorem
+              4.1.7</a>
+             beschrieben.
+            Wir ersetzen \(S \rightarrow C\) also durch alle Produktionen der Form \(S \rightarrow \alpha\),
+            wobei
+            \(\alpha\) eine Wortform ist, die sich aus \(C\) ableiten lässt und nicht nur aus einem
+            einzelnen Nichtterminal
+            besteht; dies trifft glücklicherweise auf 
+            <i>alle</i>
+             rechten Seiten der \(C\)-Produktionen
+            zu; gleiches gilt
+            für \(D\). Wir erhalten:
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:191:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:191:50</span></span></span>$$\begin{align*}
+          $$\begin{align*}
           S&amp;\rightarrow aE \ | \ aC \ | \ aC'\ | \ aS' \ | \ aD \ | \ a D' \\
           C&amp;\rightarrow aE \ | \ aC \ | \ aC'\ | \ aS' \ \\
           C'&amp;\rightarrow {:}C \\
@@ -1668,49 +293,12 @@
           S'&amp;\rightarrow {.}S \\
           E&amp;\rightarrow \epsilon
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:199:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:199:50</span></span></span>
-          <h2><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >4. Einen nichtdeterministischen endlichen Automaten bauen</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:202:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:202:50</span></span></span>
+          <h2>
+            4. Einen nichtdeterministischen endlichen Automaten bauen
           </h2>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Dies sollte nun einfach sein. Wir erschaffen Zustände </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:205:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:205:50</span></span></span>\(S, C, C', D, D', S', E\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:205:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:205:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >übersetzen jeden Grammatik-Pfeil in einen Automaten-Pfeil.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:206:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:206:50</span></span></span>
+          <p>
+            Dies sollte nun einfach sein. Wir erschaffen Zustände \(S, C, C', D, D', S', E\) und
+            übersetzen jeden Grammatik-Pfeil in einen Automaten-Pfeil.
           </p>
           <figure>
             <img
@@ -1719,250 +307,42 @@
               loading="lazy"
             >
           </figure>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Ich habe die Zeichen </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:214:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:214:50</span></span></span>
-            <code><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >.:-</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:214:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:214:50</span></span></span>
+          <p>
+            Ich habe die Zeichen 
+            <code>
+              .:-
             </code>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   rot unterlegt, weil man sie sonst kaum erkennen würde in
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:214:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:214:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >dem Automaten.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:215:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:215:50</span></span></span>
+             rot unterlegt, weil man sie sonst kaum erkennen würde in
+            dem Automaten.
           </p>
-          <h2><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >5. Den nichtdeterministischen Automaten in einen deterministischen umwandeln</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:218:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:218:50</span></span></span>
+          <h2>
+            5. Den nichtdeterministischen Automaten in einen deterministischen umwandeln
           </h2>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Unser nichtdeterministischer endlicher Automat hat Zustandsmenge </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:221:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:221:50</span></span></span>\(Q = \{S, S', C, C', D, D',
-            E\}\)
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, also insgesamt</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:222:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:222:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >sieben Zustände. Wenn wir genau nach Buch vorgingen, müssten wir den endlichen Automaten auf der</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:223:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:223:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Zustandsmenge </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:224:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:224:50</span></span></span>\(2^Q\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:224:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:224:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >definieren, er hätte also </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:225:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:225:50</span></span></span>\(2^7 = 128\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   viele Zustände. Das wäre jetzt für einen Rechner kein
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:225:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:225:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Problem, aber</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:226:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:226:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >in diesem vorlesungsskript doch etwas ungünstig.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:227:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:227:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wir gehen </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:228:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:228:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >lazy</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:228:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:228:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   vor, erschaffen Zustände in 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:228:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:228:50</span></span></span>\(2^Q\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   also nur dann, wenn wir sie
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:228:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:228:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >brauchen.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:229:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:229:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wir beginnen mit dem Zustand </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:230:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:230:50</span></span></span>\(\{S\}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und legen dann an jeden Zustand Kanten an, jeweils mit
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:230:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:230:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:231:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:231:50</span></span></span>\(a, :, -, . \)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   beschriftet, und erschaffen, falls nötig, dabei neue Zustände. In der folgenden
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:231:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:231:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Animation</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:232:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:232:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >sehen Sie manchmal den mit einem Kreuz markierten Fehlerzustand (trap state). Die akzeptierenden</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:233:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:233:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Zustände sind mit fettem Rand markiert.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:234:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:234:50</span></span></span>
+          <p>
+            Unser nichtdeterministischer endlicher Automat hat Zustandsmenge \(Q = \{S, S', C, C', D, D',
+            E\}\), also insgesamt
+            sieben Zustände. Wenn wir genau nach Buch vorgingen, müssten wir den endlichen Automaten auf der
+            Zustandsmenge \(2^Q\)
+            definieren, er hätte also \(2^7 = 128\) viele Zustände. Das wäre jetzt für einen Rechner kein
+            Problem, aber
+            in diesem vorlesungsskript doch etwas ungünstig.
+            Wir gehen 
+            <i>lazy</i>
+             vor, erschaffen Zustände in \(2^Q\) also nur dann, wenn wir sie
+            brauchen.
+            Wir beginnen mit dem Zustand \(\{S\}\) und legen dann an jeden Zustand Kanten an, jeweils mit
+            \(a, :, -, . \) beschriftet, und erschaffen, falls nötig, dabei neue Zustände. In der folgenden
+            Animation
+            sehen Sie manchmal den mit einem Kreuz markierten Fehlerzustand (trap state). Die akzeptierenden
+            Zustände sind mit fettem Rand markiert.
           </p>
           <figure
             id="figure-ColonDashPeriod"
             class="centered-figure well"
           >
             <div>
-              <p><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Der nichtdeterministische Automat</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:241:50');"
-                    >emu_content/04/04-04-regular-grammar-to-fsm.emu:241:50</span></span></span>
+              <p>
+                Der nichtdeterministische Automat
               </p>
               <img
                 style="height:10em"
@@ -2141,14 +521,8 @@
                 >
                 </li>
               </ol>
-              <p><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Der deterministische Automat, Schritt für Schritt gebaut: </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:353:50');"
-                    >emu_content/04/04-04-regular-grammar-to-fsm.emu:353:50</span></span></span>
+              <p>
+                Der deterministische Automat, Schritt für Schritt gebaut: 
               </p>
               <div
                 style="display:inline-block"
@@ -2373,409 +747,59 @@
               </div>
             </div>
           </figure>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Dieser Automat hat deutlich weniger also 128 Zustände, nämlich mit nur sieben genau so</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:494:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:494:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >viele wie der nichtdeterministische (es ist Zufall, dass beide gleich viele Zustände haben;</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:495:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:495:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >messen</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:496:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:496:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Sie dieser Tatsache keine Bedeutung bei). Wir könnten nun von diesem Automaten ausgehend</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:497:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:497:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wiederum eine reguläre Grammtik bauen, die in diesem Falle sogar einfacher und klarer</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:498:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:498:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wäre als die ursprüngliche. Wenn wir erweitert reguläre Grammatiken erlauben, so können</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:499:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:499:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wir den deterministischen Automaten besonders konzise in eine Grammatik fassen:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:500:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:500:50</span></span></span>
+          <p>
+            Dieser Automat hat deutlich weniger also 128 Zustände, nämlich mit nur sieben genau so
+            viele wie der nichtdeterministische (es ist Zufall, dass beide gleich viele Zustände haben;
+            messen
+            Sie dieser Tatsache keine Bedeutung bei). Wir könnten nun von diesem Automaten ausgehend
+            wiederum eine reguläre Grammtik bauen, die in diesem Falle sogar einfacher und klarer
+            wäre als die ursprüngliche. Wenn wir erweitert reguläre Grammatiken erlauben, so können
+            wir den deterministischen Automaten besonders konzise in eine Grammatik fassen:
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:501:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:501:50</span></span></span>$$\begin{align*}
+          $$\begin{align*}
           S&amp;\rightarrow aT \\
           T&amp;\rightarrow {.}S \ | \ aT \ | \ {:}aC \ | \ \text{-}a D \\
           C&amp;\rightarrow aC \ | \ {:}aC \ | \ {.}S \\
           D&amp;\rightarrow aD \ | \ \text{-}aD \ | \ {.}S
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:506:50');"
-              >emu_content/04/04-04-regular-grammar-to-fsm.emu:506:50</span></span></span>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Die Zustände des deterministischen Automaten beschreiben im Prinzip das, was wir uns merken</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:509:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:509:50</span></span>
+          <p>
+            Die Zustände des deterministischen Automaten beschreiben im Prinzip das, was wir uns merken
+            müssen, wenn wir so einen String "parsen": Zustand \( \{C',C,E,D,D',S'\}\), der
+            in der Grammatik dann zum Nichtterminal \(T\) wird, bedeutet beispielsweise
+            <i>das Label hat schon begonnen, wir wissen aber noch nicht, ob es eines mit
               
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >müssen, wenn wir so einen String "parsen": Zustand </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:510:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:510:50</span></span></span>\( \{C',C,E,D,D',S'\}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, der</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:510:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:510:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >in der Grammatik dann zum Nichtterminal </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:511:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:511:50</span></span></span>\(T\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   wird, bedeutet beispielsweise
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:511:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:511:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:512:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:512:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >das Label hat schon begonnen, wir wissen aber noch nicht, ob es eines mit</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:512:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:512:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:513:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:513:50</span></span></span>
-              <code><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >:</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:513:50');"
-                    >emu_content/04/04-04-regular-grammar-to-fsm.emu:513:50</span></span></span>
+              <code>
+                :
               </code>
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     oder eines mit 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:513:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:513:50</span></span></span>
-              <code><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >-</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:513:50');"
-                    >emu_content/04/04-04-regular-grammar-to-fsm.emu:513:50</span></span></span>
+               oder eines mit 
+              <code>
+                -
               </code>
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     ist.
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:513:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:513:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Der Zustand </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:514:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:514:50</span></span></span>\(\{C',C,E,S'\}\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     bzw. das Nichtterminal 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:514:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:514:50</span></span></span>\(C\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     heißt dann
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:514:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:514:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >`:`</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:515:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:515:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wir sind innerhalb eines Labels mit </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:515:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:515:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:517:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:517:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:517:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:517:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:518:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:518:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:518:50');"
-                >emu_content/04/04-04-regular-grammar-to-fsm.emu:518:50</span></span></span>
+               ist.
+              Der Zustand \(\{C',C,E,S'\}\) bzw. das Nichtterminal \(C\) heißt dann
+              `:`</i>wir sind innerhalb eines Labels mit 
+            <i>.
+              </i>
           </p>
           <div
             class="well well-lg numbered-exercise container"
           >
-            <p><span
+            <p>
+              <span
                 class="numbered-title"
-              ><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Übungsaufgabe </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:525:50');"
-                    >emu_content/04/04-04-regular-grammar-to-fsm.emu:525:50</span></span></span><NumberedTitle><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >4.4.1</span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:528:50');"
-                      >emu_content/04/04-04-regular-grammar-to-fsm.emu:528:50</span></span></span></NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:529:50');"
-                    >emu_content/04/04-04-regular-grammar-to-fsm.emu:529:50</span></span></span></span><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Erinnern Sie sich an </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:530:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:530:50</span></span></span><a
+              >Übungsaufgabe 
+                <NumberedTitle>4.4.1</NumberedTitle>
+                 
+              </span>Erinnern Sie sich an 
+              <a
                 href="./04-03-nfsm#exercise-divisibility"
-              ><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Aufgabe 4.3.1</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:534:50');"
-                    >emu_content/04/04-04-regular-grammar-to-fsm.emu:534:50</span></span></span></a><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >. Hier</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:535:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:535:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >sehen</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:536:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:536:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Sie einen nichtdeterministischen endlichen Automaten für die Sprache </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:537:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:537:50</span></span></span>\(L_4 \cup L_6\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >, also</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:537:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:537:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >die Sprache aller Wörter </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:538:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:538:50</span></span></span>\(1^n\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     für ein 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:538:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:538:50</span></span></span>\(n\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >, das durch 4 oder 6 teilbar ist.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:538:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:538:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Da unser Alphabet </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:539:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:539:50</span></span></span>\(\Sigma = \{1\}\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     eh nur aus einem Zeichen besteht, habe ich auf die
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:539:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:539:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Beschriftung</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:540:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:540:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >der Kanten verzichtet.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:541:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:541:50</span></span></span>
+              >Aufgabe 4.3.1</a>. Hier
+              sehen
+              Sie einen nichtdeterministischen endlichen Automaten für die Sprache \(L_4 \cup L_6\), also
+              die Sprache aller Wörter \(1^n\) für ein \(n\), das durch 4 oder 6 teilbar ist.
+              Da unser Alphabet \(\Sigma = \{1\}\) eh nur aus einem Zeichen besteht, habe ich auf die
+              Beschriftung
+              der Kanten verzichtet.
             </p>
             <figure>
               <img
@@ -2784,71 +808,13 @@
                 loading="lazy"
               >
             </figure>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Dieser Automat hat 11 Zustände. Sein Potenzmengenautomat hätte also </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:549:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:549:50</span></span></span>\(2^{11} = 2048\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:549:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:549:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Zustände.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:550:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:550:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Führen Sie die Konstruktion </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:551:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:551:50</span></span></span><i><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >lazy</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:551:50');"
-                    >emu_content/04/04-04-regular-grammar-to-fsm.emu:551:50</span></span></span></i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     durch, indem Sie vom Startzustand 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:551:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:551:50</span></span></span>\(\{S\}\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:551:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:551:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >ausgehend die Folgezustände konstruieren. Wieviele Zustände bekommen Sie?</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-04-regular-grammar-to-fsm.emu:552:50');"
-                  >emu_content/04/04-04-regular-grammar-to-fsm.emu:552:50</span></span></span>
+            <p>
+              Dieser Automat hat 11 Zustände. Sein Potenzmengenautomat hätte also \(2^{11} = 2048\)
+              Zustände.
+              Führen Sie die Konstruktion 
+              <i>lazy</i>
+               durch, indem Sie vom Startzustand \(\{S\}\)
+              ausgehend die Folgezustände konstruieren. Wieviele Zustände bekommen Sie?
             </p>
           </div>
         </div>

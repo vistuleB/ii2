@@ -31,23 +31,9 @@
   >
     <a
       href="../vorlesungsskript.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >Inhaltsverzeichnis</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:12:50');"
-          >emu_content/07/07-03-Turing-encoding.emu:12:50</span></span></span></a><a
+    >Inhaltsverzeichnis</a><a
       href="07-02-Turing-machines-examples.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >&lt;&lt; Kapitel 7.2</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:16:50');"
-          >emu_content/07/07-03-Turing-encoding.emu:16:50</span></span></span></a>
+    >&lt;&lt; Kapitel 7.2</a>
   </div>
   <div
     id="link-to-overview"
@@ -55,23 +41,9 @@
   >
     <a
       href="/"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >zur Kursübersicht</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:23:50');"
-          >emu_content/07/07-03-Turing-encoding.emu:23:50</span></span></span></a><a
+    >zur Kursübersicht</a><a
       href="07-03-Turing-variants.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >Kapitel 7.3 &gt;&gt;</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:27:50');"
-          >emu_content/07/07-03-Turing-encoding.emu:27:50</span></span></span></a>
+    >Kapitel 7.3 &gt;&gt;</a>
   </div>
   <div
     id="rightSideWrapper"
@@ -90,1527 +62,183 @@
           >
             <span
               class="subChapterTitle"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >7.3</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:41:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:41:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Die universelle Turingmaschine</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:42:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:42:50</span></span></span></span>
+            >7.3
+              Die universelle Turingmaschine</span>
           </h1>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wir haben mit der Turingmaschine ein einfaches aber doch sehr mächtiges Modell einer</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:45:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:45:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Rechenmaschine kennengelernt.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:46:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:46:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Sie haben vielleicht mittlerweile - auch durch Ihre Programmiererfahrung - das Gefühl, das man</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:47:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:47:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >im Prinzip alles, was</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:48:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:48:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >man überhaupt programmieren kann, auch auf einer Turingmaschine hinkriegt.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:49:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:49:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Versetzen Sie sich nun in die Lage der Menschen vor ungefähr 100 Jahren. Damals gab es durchaus</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:50:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:50:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Rechenmaschinen.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:51:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:51:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Maschinen zum Addieren und sogar zum Multiplizieren gibt es schon seit</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:52:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:52:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >dem 17. Jahrhunder (</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:53:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:53:50</span></span></span><a
+          <p>
+            Wir haben mit der Turingmaschine ein einfaches aber doch sehr mächtiges Modell einer
+            Rechenmaschine kennengelernt.
+            Sie haben vielleicht mittlerweile - auch durch Ihre Programmiererfahrung - das Gefühl, das man
+            im Prinzip alles, was
+            man überhaupt programmieren kann, auch auf einer Turingmaschine hinkriegt.
+            Versetzen Sie sich nun in die Lage der Menschen vor ungefähr 100 Jahren. Damals gab es durchaus
+            Rechenmaschinen.
+            Maschinen zum Addieren und sogar zum Multiplizieren gibt es schon seit
+            dem 17. Jahrhunder (<a
               href="https://en.wikipedia.org/wiki/Mechanical_calculator"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Wikipedia:</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:57:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:57:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Mechanical calculator</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:58:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:58:50</span></span></span></a><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >).</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:59:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:59:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Leider musste man für jede Aufgabe eine neue Maschine erfinden und auch bauen. Zahlen addieren?</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:60:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:60:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Maschine bauen. Multiplizieren?</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:61:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:61:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Neue Maschine bauen. Verschlüsselung brechen? Neue Maschine bauen. Und so weiter.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:62:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:62:50</span></span></span>
+            >Wikipedia:
+              Mechanical calculator</a>).
+            Leider musste man für jede Aufgabe eine neue Maschine erfinden und auch bauen. Zahlen addieren?
+            Maschine bauen. Multiplizieren?
+            Neue Maschine bauen. Verschlüsselung brechen? Neue Maschine bauen. Und so weiter.
           </p>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Die Idee einer </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:65:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:65:50</span></span></span><a
+          <p>
+            Die Idee einer 
+            <a
               href="https://en.wikipedia.org/wiki/Mechanical_calculator#Programmable_mechanical_calculators"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >programmierbaren</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:69:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:69:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Maschine</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:70:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:70:50</span></span></span></a><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:71:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:71:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >die erstmals circa 1834 mit Charles Babbage aufkam, ist, dass man neben den Eingabedaten (z.B.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:72:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:72:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >die zu multiplizierenden Zahlen) auch</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:73:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:73:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >die Rechenvorschrift (das Programm) als Eingabe übergibt. Hätte man so eine Maschine, dann</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:74:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:74:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >müsste man nicht für jede neue Aufgabe</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:75:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:75:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >eine neue Maschine entwerfen; man könnte </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:76:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:76:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >eine</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:76:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:76:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   Maschine bauen und sie für die jeweilige
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:76:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:76:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Aufgabe </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:77:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:77:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >programmieren</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:77:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:77:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, indem</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:77:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:77:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >ihr auf einem separaten Eingabeband die Rechenvorschrift überreicht. Von heute aus gesehen ist</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:78:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:78:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >diese Idee nicht mehr allzu überraschend, weil</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:79:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:79:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >diese Maschinen überall anzutreffen sind. Damals aber war es revolutionär. Um dies, zumindest</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:80:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:80:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >auf dem Papier, in die Realität zu übersetzen,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:81:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:81:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >müssen wir zwei Fragen beantworten.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:82:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:82:50</span></span></span>
+            >programmierbaren
+              Maschine</a>,
+            die erstmals circa 1834 mit Charles Babbage aufkam, ist, dass man neben den Eingabedaten (z.B.
+            die zu multiplizierenden Zahlen) auch
+            die Rechenvorschrift (das Programm) als Eingabe übergibt. Hätte man so eine Maschine, dann
+            müsste man nicht für jede neue Aufgabe
+            eine neue Maschine entwerfen; man könnte 
+            <i>eine</i>
+             Maschine bauen und sie für die jeweilige
+            Aufgabe 
+            <i>programmieren</i>, indem
+            ihr auf einem separaten Eingabeband die Rechenvorschrift überreicht. Von heute aus gesehen ist
+            diese Idee nicht mehr allzu überraschend, weil
+            diese Maschinen überall anzutreffen sind. Damals aber war es revolutionär. Um dies, zumindest
+            auf dem Papier, in die Realität zu übersetzen,
+            müssen wir zwei Fragen beantworten.
           </p>
           <ol>
-            <li><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Wie können wir eine Rechenvorschrift (d.h. ein Programm) so codifizieren, dass wir es im</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:86:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:86:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Prinzip als eine Zeichenkette aufschreiben und einer</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:87:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:87:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Maschine übergeben können?</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:88:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:88:50</span></span></span>
+            <li>
+              Wie können wir eine Rechenvorschrift (d.h. ein Programm) so codifizieren, dass wir es im
+              Prinzip als eine Zeichenkette aufschreiben und einer
+              Maschine übergeben können?
             </li>
-            <li><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Welche Maschine könnte so eine Rechenvorschrift lesen und sie an gegebenen Eingabedaten dann</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:91:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:91:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >auch ausführen?</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:92:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:92:50</span></span></span>
+            <li>
+              Welche Maschine könnte so eine Rechenvorschrift lesen und sie an gegebenen Eingabedaten dann
+              auch ausführen?
             </li>
           </ol>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Es stellt sich heraus, dass wir beide Antworten (beinahe) schon kennen. Eine beliebige</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:95:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:95:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Rechenvorschrift können wir, da sind wir uns mittlerweile</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:96:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:96:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >recht sicher, als Turingmaschine </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:97:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:97:50</span></span></span>\(M\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   implementieren. Diese können wir über einem Alphabet
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:97:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:97:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >codieren und erhalten ein Wort</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:98:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:98:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:99:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:99:50</span></span></span>\(\enc(M)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Wie tun wir das? Nun ja, auf </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:99:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:99:50</span></span></span><a
+          <p>
+            Es stellt sich heraus, dass wir beide Antworten (beinahe) schon kennen. Eine beliebige
+            Rechenvorschrift können wir, da sind wir uns mittlerweile
+            recht sicher, als Turingmaschine \(M\) implementieren. Diese können wir über einem Alphabet
+            codieren und erhalten ein Wort
+            \(\enc(M)\). Wie tun wir das? Nun ja, auf 
+            <a
               href="https://turingmachinesimulator.com"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >turingmachinesimulator.com</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:103:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:103:50</span></span></span></a><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   haben wir das
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:104:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:104:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >bereits getan:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:105:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:105:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >eine Turingmaschine mit Alphabet </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:106:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:106:50</span></span></span>\(\Sigma\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   können wir dort als String über dem Alphabet
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:106:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:106:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:107:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:107:50</span></span></span>$$\begin{align*}
+            >turingmachinesimulator.com</a>
+             haben wir das
+            bereits getan:
+            eine Turingmaschine mit Alphabet \(\Sigma\) können wir dort als String über dem Alphabet
+            $$\begin{align*}
             \Sigma \cup \{a,\dots,z,A\dots,Z,0,\dots,9\} \cup \{\texttt{&lt;}, \texttt{-}, \texttt{&gt;},
             \texttt{,}, \texttt{_}, \texttt{\n}, \dots\}
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:110:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:110:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >codieren. Codierung ist im Prinzip kein Problem, wir werden aber ein paar Subtilitäten</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:111:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:111:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >ansprechen.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:112:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:112:50</span></span></span>
+            codieren. Codierung ist im Prinzip kein Problem, wir werden aber ein paar Subtilitäten
+            ansprechen.
           </p>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Punkt 2 ist schwieriger. Können wir eine Maschine bauen, die als eingabe (1) die Codierung</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:115:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:115:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:116:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:116:50</span></span></span>\(\enc(M)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   einer Turingmaschine und (2) ein Eingabewort
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:116:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:116:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:117:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:117:50</span></span></span>\(w \in \Sigma^*\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   entgegennimmt und dann die Berechnung 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:117:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:117:50</span></span></span>\(M(x)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   simuliert bzw. zu dem Ergebnis
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:117:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:117:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >gelangt, zu dem auch </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:118:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:118:50</span></span></span>\(M(x)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   gelangen würde?
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:118:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:118:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Die Programmierer von </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:119:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:119:50</span></span></span><a
+          <p>
+            Punkt 2 ist schwieriger. Können wir eine Maschine bauen, die als eingabe (1) die Codierung
+            \(\enc(M)\) einer Turingmaschine und (2) ein Eingabewort
+            \(w \in \Sigma^*\) entgegennimmt und dann die Berechnung \(M(x)\) simuliert bzw. zu dem Ergebnis
+            gelangt, zu dem auch \(M(x)\) gelangen würde?
+            Die Programmierer von 
+            <a
               href="https://turingmachinesimulator.com"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >turingmachinesimulator.com</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:123:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:123:50</span></span></span></a><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   haben dies
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:124:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:124:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >offensichtlich geschafft:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:125:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:125:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >sie haben eine Maschine "gebaut" (also wohl einen Server gemietet und eine Webseite mit viel</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:126:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:126:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Javascript programmiert), der</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:127:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:127:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >eine Turingmaschine in einer spezifischen Codierung und ein Eingabewort einliest und dann diese</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:128:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:128:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >simuliert.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:129:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:129:50</span></span></span>
+            >turingmachinesimulator.com</a>
+             haben dies
+            offensichtlich geschafft:
+            sie haben eine Maschine "gebaut" (also wohl einen Server gemietet und eine Webseite mit viel
+            Javascript programmiert), der
+            eine Turingmaschine in einer spezifischen Codierung und ein Eingabewort einliest und dann diese
+            simuliert.
           </p>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >In diesem Teilkapitel werden wir sehen, wie wir eine Turingmaschine </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:132:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:132:50</span></span></span>\(M\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   über einem
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:132:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:132:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >fixen, nicht von </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:133:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:133:50</span></span></span>\(M\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   abhängigen Alphabet codieren können.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:133:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:133:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Im nächsten Teilkapitel werden wir uns überlegen, wie man einen Turingmaschinen-Simulator selbst</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:134:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:134:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >als</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:135:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:135:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Turingmaschine implementieren kann. Also eine Turingmaschine </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:136:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:136:50</span></span></span>\(U\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, die als Input Wörter der</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:136:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:136:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Form</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:137:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:137:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:138:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:138:50</span></span></span>$$\begin{align*}
+          <p>
+            In diesem Teilkapitel werden wir sehen, wie wir eine Turingmaschine \(M\) über einem
+            fixen, nicht von \(M\) abhängigen Alphabet codieren können.
+            Im nächsten Teilkapitel werden wir uns überlegen, wie man einen Turingmaschinen-Simulator selbst
+            als
+            Turingmaschine implementieren kann. Also eine Turingmaschine \(U\), die als Input Wörter der
+            Form
+            $$\begin{align*}
             c\#x
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:140:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:140:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >entgegennimmt und dann</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:141:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:141:50</span></span></span>
+            entgegennimmt und dann
           </p>
           <ol
             class="nested"
           >
-            <li><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:146:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:146:50</span></span></span><b><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >ablehnt</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:146:50');"
-                    >emu_content/07/07-03-Turing-encoding.emu:146:50</span></span></span></b><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >, falls </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:146:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:146:50</span></span></span>\(c\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     keine gültige Codierung einer Turingmaschine 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:146:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:146:50</span></span></span>\(M\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:146:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:146:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >ist,</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:147:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:147:50</span></span></span>
+            <li>
+              <b>ablehnt</b>, falls \(c\) keine gültige Codierung einer Turingmaschine \(M\)
+              ist,
             </li>
-            <li><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >ansonsten, falls also </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:150:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:150:50</span></span></span>\(c = \enc(M)\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >, dann</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:150:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:150:50</span></span></span>
+            <li>
+              ansonsten, falls also \(c = \enc(M)\), dann
               <ol
                 class="nested"
               >
-                <li><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      ></span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:155:50');"
-                      >emu_content/07/07-03-Turing-encoding.emu:155:50</span></span></span><b><span><span
-                        class="tooltip-3003-container"
-                      ><span
-                          class="tooltip-3003-text"
-                        >akzeptiert</span><span
-                          class="tooltip-3003"
-                          onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:155:50');"
-                        >emu_content/07/07-03-Turing-encoding.emu:155:50</span></span></span></b><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >
-                         falls 
-                      </span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:155:50');"
-                      >emu_content/07/07-03-Turing-encoding.emu:155:50</span></span></span>\(M(x)\)<span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >
-                         akzeptiert;
-                      </span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:155:50');"
-                      >emu_content/07/07-03-Turing-encoding.emu:155:50</span></span></span>
+                <li>
+                  <b>akzeptiert</b>
+                   falls \(M(x)\) akzeptiert;
                 </li>
-                <li><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      ></span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:158:50');"
-                      >emu_content/07/07-03-Turing-encoding.emu:158:50</span></span></span><b><span><span
-                        class="tooltip-3003-container"
-                      ><span
-                          class="tooltip-3003-text"
-                        >ablehnt</span><span
-                          class="tooltip-3003"
-                          onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:158:50');"
-                        >emu_content/07/07-03-Turing-encoding.emu:158:50</span></span></span></b><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >, falls </span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:158:50');"
-                      >emu_content/07/07-03-Turing-encoding.emu:158:50</span></span></span>\(M(x)\)<span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >
-                         ablehnt
-                      </span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:158:50');"
-                      >emu_content/07/07-03-Turing-encoding.emu:158:50</span></span></span>
+                <li>
+                  <b>ablehnt</b>, falls \(M(x)\) ablehnt
                 </li>
-                <li><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      ></span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:161:50');"
-                      >emu_content/07/07-03-Turing-encoding.emu:161:50</span></span></span><b><span><span
-                        class="tooltip-3003-container"
-                      ><span
-                          class="tooltip-3003-text"
-                        >nicht terminiert</span><span
-                          class="tooltip-3003"
-                          onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:161:50');"
-                        >emu_content/07/07-03-Turing-encoding.emu:161:50</span></span></span></b><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >, falls </span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:161:50');"
-                      >emu_content/07/07-03-Turing-encoding.emu:161:50</span></span></span>\(M(x)\)<span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >
-                         nicht terminiert.
-                      </span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:161:50');"
-                      >emu_content/07/07-03-Turing-encoding.emu:161:50</span></span></span>
+                <li>
+                  <b>nicht terminiert</b>, falls \(M(x)\) nicht terminiert.
                 </li>
               </ol>
             </li>
           </ol>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Falls wir bei </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:162:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:162:50</span></span></span>\(M\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   nicht nur an Akzeptieren / Ablehnen interessiert sind, sondern am Ergebnis der
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:162:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:162:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Berechnung,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:163:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:163:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >dann hätten wir gerne, dass </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:164:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:164:50</span></span></span>\(U (\enc(M)\#x)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   am Ende den gleichen Bandinhalt hat wie 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:164:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:164:50</span></span></span>\(M(x)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   am
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:164:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:164:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Ende;</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:165:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:165:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >hierbei gibt es allerdings eine Schwierigkeit mit den Details der Codierung, die wir gleich</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:166:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:166:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >ansprechen werden.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:167:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:167:50</span></span></span>
+          <p>
+            Falls wir bei \(M\) nicht nur an Akzeptieren / Ablehnen interessiert sind, sondern am Ergebnis der
+            Berechnung,
+            dann hätten wir gerne, dass \(U (\enc(M)\#x)\) am Ende den gleichen Bandinhalt hat wie \(M(x)\) am
+            Ende;
+            hierbei gibt es allerdings eine Schwierigkeit mit den Details der Codierung, die wir gleich
+            ansprechen werden.
           </p>
-          <h3><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Die Codierung</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:170:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:170:50</span></span></span>
+          <h3>
+            Die Codierung
           </h3>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >Zuerst müssen wir uns auf ein Eingabealphabet </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:171:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:171:50</span></span></span>\(\Sigma\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >
-                 einigen. Im Ernstfall genügt immer 
-              </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:171:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:171:50</span></span></span>\(\Sigma
-          = \{0,1\}\)
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >, allerdings</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:172:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:172:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >gibt es keinen Grund, für die Definitionen nicht allgemeine endliche Alphabete </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:173:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:173:50</span></span></span>\(\Sigma\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:173:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:173:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >zuzulassen. Wir wollen</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:174:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:174:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >nun ein Codierungsalphabet </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:175:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:175:50</span></span></span>\(\Lambda\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >
-                 und eine Codierungsfunktion 
-              </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:175:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:175:50</span></span></span>\(\enc\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >, so dass</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:175:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:175:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:176:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:176:50</span></span></span>$$\begin{align*}
+          Zuerst müssen wir uns auf ein Eingabealphabet \(\Sigma\) einigen. Im Ernstfall genügt immer \(\Sigma
+          = \{0,1\}\), allerdings
+          gibt es keinen Grund, für die Definitionen nicht allgemeine endliche Alphabete \(\Sigma\)
+          zuzulassen. Wir wollen
+          nun ein Codierungsalphabet \(\Lambda\) und eine Codierungsfunktion \(\enc\), so dass
+          $$\begin{align*}
           \enc(M) \in \Lambda^*
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:178:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:178:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >für jede Turingmaschine </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:179:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:179:50</span></span></span>\(M\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >
-                 mit Eingabealphabet 
-              </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:179:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:179:50</span></span></span>\(\Sigma\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >
-                 gilt.
-              </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:179:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:179:50</span></span></span>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:182:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:182:50</span></span></span><b><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Erster, zum scheitern verurteilter Versuch.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:182:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:182:50</span></span></span></b><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   Sei 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:182:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:182:50</span></span></span>\(M\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   eine Turingmaschine
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:182:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:182:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >mit Eingabealphabet </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:183:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:183:50</span></span></span>\(\Sigma\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, Arbeitsalphabet </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:183:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:183:50</span></span></span>\(\Gamma\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, Zustandsmenge </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:183:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:183:50</span></span></span>\(Q\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, Startzustand</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:183:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:183:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:184:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:184:50</span></span></span>\(\qstart\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, akzeptierendem Zustand</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:184:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:184:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:185:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:185:50</span></span></span>\(\qaccept\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und Übergangsfunktion 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:185:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:185:50</span></span></span>\(\delta\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:185:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:185:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wir codieren </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:186:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:186:50</span></span></span>\(M\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   wie folgt: wenn
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:186:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:186:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:187:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:187:50</span></span></span>$$\begin{align*}
+          für jede Turingmaschine \(M\) mit Eingabealphabet \(\Sigma\) gilt.
+          <p>
+            <b>Erster, zum scheitern verurteilter Versuch.</b>
+             Sei \(M\) eine Turingmaschine
+            mit Eingabealphabet \(\Sigma\), Arbeitsalphabet \(\Gamma\), Zustandsmenge \(Q\), Startzustand
+            \(\qstart\), akzeptierendem Zustand
+            \(\qaccept\) und Übergangsfunktion \(\delta\).
+            Wir codieren \(M\) wie folgt: wenn
+            $$\begin{align*}
             \delta(q,x) = (r,y,\texttt{R}) \\
             \delta(q,y) = (s,z,\texttt{L}) \\
             \dots
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:191:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:191:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >dann schreiben wir in der Codierung</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:192:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:192:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:193:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:193:50</span></span></span>$$\begin{align*}
+            dann schreiben wir in der Codierung
+            $$\begin{align*}
             \qstart \# \qaccept \# qxryR \# qyszL \# \dots
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:195:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:195:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Unser Codierungsalphabet ist also</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:196:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:196:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:197:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:197:50</span></span></span>$$\begin{align*}
+            Unser Codierungsalphabet ist also
+            $$\begin{align*}
             \Lambda := Q \cup \Gamma \cup \{\#, \texttt{L}, \texttt{S}, \texttt{R}\} \ .
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:199:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:199:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Sehen Sie das Problem? Das Codierungsalphabet ist nicht uniform: wir brauchen, abhängig von der</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:200:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:200:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Zustandsmenge </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:201:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:201:50</span></span></span>\(Q\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:201:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:201:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >dem Bandalphabet </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:202:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:202:50</span></span></span>\(\Gamma\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   jeweils neue Alphabete. Wir wollen aber ein 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:202:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:202:50</span></span></span>\(\Lambda\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, da für</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:202:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:202:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:203:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:203:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >alle</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:203:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:203:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   Turingmaschinen
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:203:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:203:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >mit Eingabealphabet </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:204:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:204:50</span></span></span>\(\Sigma\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   funktioniert.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:204:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:204:50</span></span></span>
+            Sehen Sie das Problem? Das Codierungsalphabet ist nicht uniform: wir brauchen, abhängig von der
+            Zustandsmenge \(Q\) und
+            dem Bandalphabet \(\Gamma\) jeweils neue Alphabete. Wir wollen aber ein \(\Lambda\), da für
+            <i>alle</i>
+             Turingmaschinen
+            mit Eingabealphabet \(\Sigma\) funktioniert.
           </p>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:207:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:207:50</span></span></span><b><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Zweiter, erfolgreicher Versuch.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:207:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:207:50</span></span></span></b><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:207:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:207:50</span></span></span>
+          <p>
+            <b>Zweiter, erfolgreicher Versuch.</b>
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >Wir müssen also die Zustandsmenge </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:208:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:208:50</span></span></span>\(Q\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >
-                 und die Zeichen 
-              </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:208:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:208:50</span></span></span>\(\Gamma \setminus \Sigma\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >
-                 erst einmal
-              </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:208:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:208:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >selbst codieren, beispielsweise</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:209:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:209:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >über dem Alphabet </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:210:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:210:50</span></span></span>\(\{0,1\}\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >. Die </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:210:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:210:50</span></span></span>\(\delta\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >-Tabelle der Turingmaschine für </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:210:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:210:50</span></span></span>\(\{a^nb^nc^n\}\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:210:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:210:50</span></span></span>
+          Wir müssen also die Zustandsmenge \(Q\) und die Zeichen \(\Gamma \setminus \Sigma\) erst einmal
+          selbst codieren, beispielsweise
+          über dem Alphabet \(\{0,1\}\). Die \(\delta\)-Tabelle der Turingmaschine für \(\{a^nb^nc^n\}\)
           <figure>
             <img
               style="height:10em"
@@ -1618,14 +246,7 @@
               loading="lazy"
             >
           </figure>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >würde dann zu folgender Tabelle:</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:216:50');"
-              >emu_content/07/07-03-Turing-encoding.emu:216:50</span></span></span>
+          würde dann zu folgender Tabelle:
           <figure>
             <img
               style="height:10em"
@@ -1633,703 +254,90 @@
               loading="lazy"
             >
           </figure>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wenn wir dies nun als </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:224:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:224:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >ein</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:224:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:224:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   Wort in obigen Schema schreiben, können wir für eine
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:224:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:224:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Tabellenzelle</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:225:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:225:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:226:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:226:50</span></span></span>\(\delta(q,x) = (r,y,R)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   nicht einfach 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:226:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:226:50</span></span></span>\(qxryR\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   schreiben, auch nicht einfach die Codierungen
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:226:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:226:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >zusammenschreiben:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:227:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:227:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >in diesem Falle würde nämlich</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:228:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:228:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:229:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:229:50</span></span></span>\(\delta(00,0) = (11,0,\texttt{R})\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   zu 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:229:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:229:50</span></span></span>\(000110\texttt{R}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und wir würden nicht mehr erkennen,
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:229:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:229:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wo welches</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:230:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:230:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Zeichen beginnt und aufhört. Wir brauchen ein Separatorzeichen, beispielsweise ein Komma.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:231:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:231:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Aus Gründen, die später klar werden werden, schließen wir die Codierung der Turingmaschine</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:232:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:232:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >mit einem </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:233:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:233:50</span></span></span>\(\texttt{;}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ab.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:233:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:233:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Die Codierung der obigen Maschine ist dann also</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:234:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:234:50</span></span></span>
+          <p>
+            Wenn wir dies nun als 
+            <i>ein</i>
+             Wort in obigen Schema schreiben, können wir für eine
+            Tabellenzelle
+            \(\delta(q,x) = (r,y,R)\) nicht einfach \(qxryR\) schreiben, auch nicht einfach die Codierungen
+            zusammenschreiben:
+            in diesem Falle würde nämlich
+            \(\delta(00,0) = (11,0,\texttt{R})\) zu \(000110\texttt{R}\) und wir würden nicht mehr erkennen,
+            wo welches
+            Zeichen beginnt und aufhört. Wir brauchen ein Separatorzeichen, beispielsweise ein Komma.
+            Aus Gründen, die später klar werden werden, schließen wir die Codierung der Turingmaschine
+            mit einem \(\texttt{;}\) ab.
+            Die Codierung der obigen Maschine ist dann also
           </p>
 <pre
   class="container"
 >
-<span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->00#100#00,a,01,1,S#00,b,L#00,c,L#00,1,L#00,0,11,0,R#01,a,R#01,b,10,1,S#01,1,R#10,b,R#10,c,00,1,S#10,1,R#11,1,R#11,0,100#;</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:238:50');"
->emu_content/07/07-03-Turing-encoding.emu:238:50</span></span></span>
+00#100#00,a,01,1,S#00,b,L#00,c,L#00,1,L#00,0,11,0,R#01,a,R#01,b,10,1,S#01,1,R#10,b,R#10,c,00,1,S#10,1,R#11,1,R#11,0,100#;
 </pre>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >In dieser Codierung behalten wir zwei Konventionen bei: wenn eine Regel</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:241:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:241:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >"fehlt", also beispielsweise für </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:242:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:242:50</span></span></span>\(\delta(10,a)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   die Zelle leer ist, dann
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:242:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:242:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >soll das in den Zustand </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:243:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:243:50</span></span></span>\(\qreject\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   führen; wenn in der Zelle
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:243:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:243:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >nur ein Richtungszeichen, also beispielsweise </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:244:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:244:50</span></span></span>
-            <tt><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >01,1,R</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:247:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:247:50</span></span></span>
+          <p>
+            In dieser Codierung behalten wir zwei Konventionen bei: wenn eine Regel
+            "fehlt", also beispielsweise für \(\delta(10,a)\) die Zelle leer ist, dann
+            soll das in den Zustand \(\qreject\) führen; wenn in der Zelle
+            nur ein Richtungszeichen, also beispielsweise 
+            <tt>
+              01,1,R
             </tt>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   steht,
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:248:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:248:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >dann ist das eine Abkürzung für</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:249:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:249:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:250:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:250:50</span></span></span>$$\begin{align*}
+             steht,
+            dann ist das eine Abkürzung für
+            $$\begin{align*}
             \delta(01,1) = (01,1,\texttt{R}),
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:252:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:252:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >also</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:253:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:253:50</span></span></span>
-            <tt><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >#01,1,01,1,R#</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:256:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:256:50</span></span></span>
+            also
+            <tt>
+              #01,1,01,1,R#
             </tt>
           </p>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wir können nun </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:259:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:259:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >jede</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:259:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:259:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   Turingmaschine
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:259:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:259:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >über dem Alphabet</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:260:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:260:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:261:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:261:50</span></span></span>\(\Sigma\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   codieren als Wort über dem Alphabet
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:261:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:261:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:262:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:262:50</span></span></span>$$\begin{align*}
+          <p>
+            Wir können nun 
+            <i>jede</i>
+             Turingmaschine
+            über dem Alphabet
+            \(\Sigma\) codieren als Wort über dem Alphabet
+            $$\begin{align*}
             \Lambda := \writelambda
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:264:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:264:50</span></span></span>
           </p>
           <div
             class="well container theorem"
           >
-            <p><span
+            <p>
+              <span
                 class="numbered-title"
-              ><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Definition </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:271:50');"
-                    >emu_content/07/07-03-Turing-encoding.emu:271:50</span></span></span><NumberedTitle><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >7.3.1</span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:274:50');"
-                      >emu_content/07/07-03-Turing-encoding.emu:274:50</span></span></span></NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       /Beobachtung.
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:275:50');"
-                    >emu_content/07/07-03-Turing-encoding.emu:275:50</span></span></span></span><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     Zu einem Eingabealphabet
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:276:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:276:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:277:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:277:50</span></span></span>\(\Sigma\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     definieren wir das 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:277:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:277:50</span></span></span><i><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Codierungsalphabet</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:277:50');"
-                    >emu_content/07/07-03-Turing-encoding.emu:277:50</span></span></span></i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:277:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:277:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:278:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:278:50</span></span></span>\(\Lambda := \writelambda\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >,</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:278:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:278:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >wobei wir annehmen, dass </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:279:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:279:50</span></span></span>\(\texttt{#}, \texttt{,}, \texttt{L}, \texttt{S}, \texttt{R},
+              >Definition 
+                <NumberedTitle>7.3.1</NumberedTitle>
+                 /Beobachtung.</span>
+               Zu einem Eingabealphabet
+              \(\Sigma\) definieren wir das 
+              <i>Codierungsalphabet</i>
+              \(\Lambda := \writelambda\),
+              wobei wir annehmen, dass \(\texttt{#}, \texttt{,}, \texttt{L}, \texttt{S}, \texttt{R},
               \texttt{;}
-              \not \in \Sigma\)
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >. Wir können nun jede Turingmaschine </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:281:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:281:50</span></span></span>\(M\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     mit Eingabealphabet
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:281:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:281:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:282:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:282:50</span></span></span>\(\Sigma\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     als String 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:282:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:282:50</span></span></span>\(\enc(M) \in \Lambda^*\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     codieren.
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:282:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:282:50</span></span></span>
+              \not \in \Sigma\). Wir können nun jede Turingmaschine \(M\) mit Eingabealphabet
+              \(\Sigma\) als String \(\enc(M) \in \Lambda^*\) codieren.
             </p>
           </div>
           <div
             class="alert-info container"
           >
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:286:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:286:50</span></span></span><b><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Anmerkungen:</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:286:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:286:50</span></span></span></b><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:286:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:286:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   das Wort 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:288:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:288:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Codierung</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:288:50');"
-                  >emu_content/07/07-03-Turing-encoding.emu:288:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   suggeriert, dass wir, gegeben
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:288:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:288:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >den String </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:289:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:289:50</span></span></span>\(c = \enc(M)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   die
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:289:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:289:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >ursprüngliche Turingmaschine </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:290:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:290:50</span></span></span>\(M\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   rekonstruieren können. Das gilt natürlich nur
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:290:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:290:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >beschränkt: eventuell decodieren wir </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:291:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:291:50</span></span></span>\(c\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   zu einer Maschine 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:291:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:291:50</span></span></span>\(M'\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, die sich</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:291:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:291:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >von </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:292:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:292:50</span></span></span>\(M\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   in denen Namen der Zustände und der Bandalphabetsymbole unterscheidet. Allerdings
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:292:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:292:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >stimmen die Funktionen</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:293:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:293:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:294:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:294:50</span></span></span>\(f_M: \Sigma^* \rightarrow \{\texttt{accept}, \texttt{reject}, \texttt{undefined}\}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:294:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:294:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >und</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:295:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:295:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:296:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:296:50</span></span></span>\(f_{M'}: \Sigma^* \rightarrow \{\texttt{accept}, \texttt{reject}, \texttt{undefined}\}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:296:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:296:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >überein.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-03-Turing-encoding.emu:297:50');"
-                >emu_content/07/07-03-Turing-encoding.emu:297:50</span></span></span>
+            <b>Anmerkungen:</b>
+             
+             das Wort 
+            <i>Codierung</i>
+             suggeriert, dass wir, gegeben
+            den String \(c = \enc(M)\) die
+            ursprüngliche Turingmaschine \(M\) rekonstruieren können. Das gilt natürlich nur
+            beschränkt: eventuell decodieren wir \(c\) zu einer Maschine \(M'\), die sich
+            von \(M\) in denen Namen der Zustände und der Bandalphabetsymbole unterscheidet. Allerdings
+            stimmen die Funktionen
+            \(f_M: \Sigma^* \rightarrow \{\texttt{accept}, \texttt{reject}, \texttt{undefined}\}\)
+            und
+            \(f_{M'}: \Sigma^* \rightarrow \{\texttt{accept}, \texttt{reject}, \texttt{undefined}\}\)
+            überein.
           </div>
         </div>
       </div>

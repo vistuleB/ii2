@@ -31,23 +31,9 @@
   >
     <a
       href="../vorlesungsskript.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >Inhaltsverzeichnis</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:12:50');"
-          >emu_content/04/04-03-nfsm.emu:12:50</span></span></span></a><a
+    >Inhaltsverzeichnis</a><a
       href="04-02-finite-state-machines.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >&lt;&lt; Kapitel 4.2</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:16:50');"
-          >emu_content/04/04-03-nfsm.emu:16:50</span></span></span></a>
+    >&lt;&lt; Kapitel 4.2</a>
   </div>
   <div
     id="link-to-overview"
@@ -55,23 +41,9 @@
   >
     <a
       href="/"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >zur Kursübersicht</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:23:50');"
-          >emu_content/04/04-03-nfsm.emu:23:50</span></span></span></a><a
+    >zur Kursübersicht</a><a
       href="04-04-regular-grammar-to-fsm.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >Kapitel 4.4 &gt;&gt;</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:27:50');"
-          >emu_content/04/04-03-nfsm.emu:27:50</span></span></span></a>
+    >Kapitel 4.4 &gt;&gt;</a>
   </div>
   <div
     id="rightSideWrapper"
@@ -90,68 +62,15 @@
           >
             <span
               class="subChapterTitle"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >4.3</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:41:50');"
-                  >emu_content/04/04-03-nfsm.emu:41:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Nichtdeterministische Endliche Automaten</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:42:50');"
-                  >emu_content/04/04-03-nfsm.emu:42:50</span></span></span></span>
+            >4.3
+              Nichtdeterministische Endliche Automaten</span>
           </h1>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Ein nichtdeterministischer Automat ist, informell ausgedrückt, wie ein</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:45:50');"
-                >emu_content/04/04-03-nfsm.emu:45:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >deterministischer Automat, nur dass es für eine</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:46:50');"
-                >emu_content/04/04-03-nfsm.emu:46:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Zustand-Symbol-Kombination beliebig viele ausgehende Pfeile (eventuell</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:47:50');"
-                >emu_content/04/04-03-nfsm.emu:47:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >gar keinen) geben kann. Hier ist das Beispiel von vorhin, leicht</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:48:50');"
-                >emu_content/04/04-03-nfsm.emu:48:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >abgewandelt:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:49:50');"
-                >emu_content/04/04-03-nfsm.emu:49:50</span></span></span>
+          <p>
+            Ein nichtdeterministischer Automat ist, informell ausgedrückt, wie ein
+            deterministischer Automat, nur dass es für eine
+            Zustand-Symbol-Kombination beliebig viele ausgehende Pfeile (eventuell
+            gar keinen) geben kann. Hier ist das Beispiel von vorhin, leicht
+            abgewandelt:
           </p>
           <figure>
             <img
@@ -160,663 +79,81 @@
               loading="lazy"
             >
           </figure>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Ein Pfeil beschreibt also nicht unbedingt einen Zustandsübergang, der</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:57:50');"
-                >emu_content/04/04-03-nfsm.emu:57:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:58:50');"
-                >emu_content/04/04-03-nfsm.emu:58:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >geschieht</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:58:50');"
-                  >emu_content/04/04-03-nfsm.emu:58:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, sondern einen, der </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:58:50');"
-                >emu_content/04/04-03-nfsm.emu:58:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >möglich</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:58:50');"
-                  >emu_content/04/04-03-nfsm.emu:58:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ist. Formal
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:58:50');"
-                >emu_content/04/04-03-nfsm.emu:58:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >gesprochen ist </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:59:50');"
-                >emu_content/04/04-03-nfsm.emu:59:50</span></span></span>\(\delta\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   nun keine Funktion mehr, sondern eine
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:59:50');"
-                >emu_content/04/04-03-nfsm.emu:59:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:60:50');"
-                >emu_content/04/04-03-nfsm.emu:60:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Relation</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:60:50');"
-                  >emu_content/04/04-03-nfsm.emu:60:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:60:50');"
-                >emu_content/04/04-03-nfsm.emu:60:50</span></span></span>
+          <p>
+            Ein Pfeil beschreibt also nicht unbedingt einen Zustandsübergang, der
+            <i>geschieht</i>, sondern einen, der 
+            <i>möglich</i>
+             ist. Formal
+            gesprochen ist \(\delta\) nun keine Funktion mehr, sondern eine
+            <i>Relation</i>:
           </p>
           <div
             class="well container theorem"
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Definition </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:66:50');"
-                  >emu_content/04/04-03-nfsm.emu:66:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >4.3.1</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:69:50');"
-                    >emu_content/04/04-03-nfsm.emu:69:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:70:50');"
-                  >emu_content/04/04-03-nfsm.emu:70:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:71:50');"
-                >emu_content/04/04-03-nfsm.emu:71:50</span></span></span><b><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >(Nichtdeterministischer endlicher Automat, non-deterministic finite state machine)</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:71:50');"
-                  >emu_content/04/04-03-nfsm.emu:71:50</span></span></span></b><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:71:50');"
-                >emu_content/04/04-03-nfsm.emu:71:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Ein nichtdeterministischer endlicher Automat besteht aus</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:72:50');"
-                >emu_content/04/04-03-nfsm.emu:72:50</span></span></span>
+            >Definition 
+              <NumberedTitle>4.3.1</NumberedTitle>
+               
+            </span><b>(Nichtdeterministischer endlicher Automat, non-deterministic finite state machine)</b>
+            Ein nichtdeterministischer endlicher Automat besteht aus
             <ul>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >einem endlichen Eingabealphaet </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:76:50');"
-                    >emu_content/04/04-03-nfsm.emu:76:50</span></span></span>\(\Sigma\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >,</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:76:50');"
-                    >emu_content/04/04-03-nfsm.emu:76:50</span></span></span>
+              <li>
+                einem endlichen Eingabealphaet \(\Sigma\),
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >einer endlichen Menge </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:79:50');"
-                    >emu_content/04/04-03-nfsm.emu:79:50</span></span></span>\(Q\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       von Zuständen,
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:79:50');"
-                    >emu_content/04/04-03-nfsm.emu:79:50</span></span></span>
+              <li>
+                einer endlichen Menge \(Q\) von Zuständen,
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >einem Startzustand </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:82:50');"
-                    >emu_content/04/04-03-nfsm.emu:82:50</span></span></span>\(\qstart \in Q\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >,</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:82:50');"
-                    >emu_content/04/04-03-nfsm.emu:82:50</span></span></span>
+              <li>
+                einem Startzustand \(\qstart \in Q\),
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >einer Menge </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:85:50');"
-                    >emu_content/04/04-03-nfsm.emu:85:50</span></span></span>\(F \subseteq Q\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       von akzeptierenden Endzuständen,
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:85:50');"
-                    >emu_content/04/04-03-nfsm.emu:85:50</span></span></span>
+              <li>
+                einer Menge \(F \subseteq Q\) von akzeptierenden Endzuständen,
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >einer Zustandsübergangsrelation </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:88:50');"
-                    >emu_content/04/04-03-nfsm.emu:88:50</span></span></span>\(\delta \subseteq Q \times \Sigma
-                \times Q\)
-                <span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >.</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:89:50');"
-                    >emu_content/04/04-03-nfsm.emu:89:50</span></span></span>
+              <li>
+                einer Zustandsübergangsrelation \(\delta \subseteq Q \times \Sigma
+                \times Q\).
               </li>
             </ul>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Formal gesehen ist also ein Automat ein Quintupel </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:90:50');"
-                >emu_content/04/04-03-nfsm.emu:90:50</span></span></span>\(M = (\Sigma, Q,
-            \qstart, F, \delta)\)
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:91:50');"
-                >emu_content/04/04-03-nfsm.emu:91:50</span></span></span>
+            Formal gesehen ist also ein Automat ein Quintupel \(M = (\Sigma, Q,
+            \qstart, F, \delta)\).
           </div>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >Von nun an bezeichnen wir endliche Automaten auch als</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:92:50');"
-              >emu_content/04/04-03-nfsm.emu:92:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:93:50');"
-              >emu_content/04/04-03-nfsm.emu:93:50</span></span></span><i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >deterministische</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:93:50');"
-                >emu_content/04/04-03-nfsm.emu:93:50</span></span></span></i><span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >
-                 endliche Automaten, um den Unterschied zu den
-              </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:93:50');"
-              >emu_content/04/04-03-nfsm.emu:93:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >nichtdeterministischen zu verdeutlichen. Wenn in einem deterministischen</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:94:50');"
-              >emu_content/04/04-03-nfsm.emu:94:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >endlichen Automaten </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:95:50');"
-              >emu_content/04/04-03-nfsm.emu:95:50</span></span></span>\(\delta(q,x) = q'\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >
-                 war, so hatte das die Bedeutung
-              </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:95:50');"
-              >emu_content/04/04-03-nfsm.emu:95:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:96:50');"
-              >emu_content/04/04-03-nfsm.emu:96:50</span></span></span><i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wenn der Automat im Zustand </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:96:50');"
-                >emu_content/04/04-03-nfsm.emu:96:50</span></span></span>\(q\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ist und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:96:50');"
-                >emu_content/04/04-03-nfsm.emu:96:50</span></span></span>\(x\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   liest, so geht er in Zustand 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:96:50');"
-                >emu_content/04/04-03-nfsm.emu:96:50</span></span></span>\(q'\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   über
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:96:50');"
-                >emu_content/04/04-03-nfsm.emu:96:50</span></span></span></i><span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >; wenn nun in einem nichtdeterministischen Automaten </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:96:50');"
-              >emu_content/04/04-03-nfsm.emu:96:50</span></span></span>\((q,x,q') \in
-          \delta\)
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >
-                 gilt, so bedeutet das,
-              </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:97:50');"
-              >emu_content/04/04-03-nfsm.emu:97:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:98:50');"
-              >emu_content/04/04-03-nfsm.emu:98:50</span></span></span><i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wenn der Automat im Zustand </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:98:50');"
-                >emu_content/04/04-03-nfsm.emu:98:50</span></span></span>\(q\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ist und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:98:50');"
-                >emu_content/04/04-03-nfsm.emu:98:50</span></span></span>\(x\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   liest, so kann er in
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:98:50');"
-                >emu_content/04/04-03-nfsm.emu:98:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Zustand </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:99:50');"
-                >emu_content/04/04-03-nfsm.emu:99:50</span></span></span>\(q'\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   übergehen
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:99:50');"
-                >emu_content/04/04-03-nfsm.emu:99:50</span></span></span></i><span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >. Analog zu den deterministischen Automaten definieren wir eine</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:99:50');"
-              >emu_content/04/04-03-nfsm.emu:99:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >erweiterte Zustandsübergangsrelation.</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:100:50');"
-              >emu_content/04/04-03-nfsm.emu:100:50</span></span></span>
+          Von nun an bezeichnen wir endliche Automaten auch als
+          <i>deterministische</i>
+           endliche Automaten, um den Unterschied zu den
+          nichtdeterministischen zu verdeutlichen. Wenn in einem deterministischen
+          endlichen Automaten \(\delta(q,x) = q'\) war, so hatte das die Bedeutung
+          <i>wenn der Automat im Zustand \(q\) ist und \(x\) liest, so geht er in Zustand \(q'\) über</i>; wenn nun in einem nichtdeterministischen Automaten \((q,x,q') \in
+          \delta\) gilt, so bedeutet das,
+          <i>wenn der Automat im Zustand \(q\) ist und \(x\) liest, so kann er in
+            Zustand \(q'\) übergehen</i>. Analog zu den deterministischen Automaten definieren wir eine
+          erweiterte Zustandsübergangsrelation.
           <div
             class="well container theorem"
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Definition </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:106:50');"
-                  >emu_content/04/04-03-nfsm.emu:106:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >4.3.2</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:109:50');"
-                    >emu_content/04/04-03-nfsm.emu:109:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:110:50');"
-                  >emu_content/04/04-03-nfsm.emu:110:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:111:50');"
-                >emu_content/04/04-03-nfsm.emu:111:50</span></span></span><b><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >(Erweiterte Zuständsübergangsfunktion)</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:111:50');"
-                  >emu_content/04/04-03-nfsm.emu:111:50</span></span></span></b><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:111:50');"
-                >emu_content/04/04-03-nfsm.emu:111:50</span></span></span>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Für einen nichtdeterministischen endlichen Automaten </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:114:50');"
-                  >emu_content/04/04-03-nfsm.emu:114:50</span></span></span>\((\Sigma, Q,
-              \qstart, F, \delta)\)
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     definieren wir die
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:115:50');"
-                  >emu_content/04/04-03-nfsm.emu:115:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:116:50');"
-                  >emu_content/04/04-03-nfsm.emu:116:50</span></span></span><i><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >erweiterte Zustandsübergangsrelation</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:116:50');"
-                    >emu_content/04/04-03-nfsm.emu:116:50</span></span></span></i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:116:50');"
-                  >emu_content/04/04-03-nfsm.emu:116:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:117:50');"
-                  >emu_content/04/04-03-nfsm.emu:117:50</span></span></span>\(\hat{\delta}\subseteq Q \times \Sigma^* \rightarrow Q\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     als die
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:117:50');"
-                  >emu_content/04/04-03-nfsm.emu:117:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Menge aller Zustand-Wort-Zustand-Tripel </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:118:50');"
-                  >emu_content/04/04-03-nfsm.emu:118:50</span></span></span>\((q,x_1 x_2 \dots
-              x_n,q')\)
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >, für die wir Zwischenzustände </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:119:50');"
-                  >emu_content/04/04-03-nfsm.emu:119:50</span></span></span>\(q = \qstart, q_1, q_2,
-              \dots, q_n = q'\)
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     finden können mit 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:120:50');"
-                  >emu_content/04/04-03-nfsm.emu:120:50</span></span></span>$$ (\qstart, x_1, q_1), (q_1,
-              x_2, q_2), \dots, (q_{n-1}, x_n, q_n) \in \delta $$
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     Dies schließt
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:121:50');"
-                  >emu_content/04/04-03-nfsm.emu:121:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >den Fall </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:122:50');"
-                  >emu_content/04/04-03-nfsm.emu:122:50</span></span></span>\(n = 0\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     mit ein, also 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:122:50');"
-                  >emu_content/04/04-03-nfsm.emu:122:50</span></span></span>\((q, \epsilon, q) \in
-              \hat{\delta}\)
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >. Wie zuvor schreiben wir </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:123:50');"
-                  >emu_content/04/04-03-nfsm.emu:123:50</span></span></span>\(q
-              \stackrel{\alpha}{\rightarrow} q'\)
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:124:50');"
-                  >emu_content/04/04-03-nfsm.emu:124:50</span></span></span>
+            >Definition 
+              <NumberedTitle>4.3.2</NumberedTitle>
+               
+            </span><b>(Erweiterte Zuständsübergangsfunktion)</b>.
+            <p>
+              Für einen nichtdeterministischen endlichen Automaten \((\Sigma, Q,
+              \qstart, F, \delta)\) definieren wir die
+              <i>erweiterte Zustandsübergangsrelation</i>
+              \(\hat{\delta}\subseteq Q \times \Sigma^* \rightarrow Q\) als die
+              Menge aller Zustand-Wort-Zustand-Tripel \((q,x_1 x_2 \dots
+              x_n,q')\), für die wir Zwischenzustände \(q = \qstart, q_1, q_2,
+              \dots, q_n = q'\) finden können mit $$ (\qstart, x_1, q_1), (q_1,
+              x_2, q_2), \dots, (q_{n-1}, x_n, q_n) \in \delta $$ Dies schließt
+              den Fall \(n = 0\) mit ein, also \((q, \epsilon, q) \in
+              \hat{\delta}\). Wie zuvor schreiben wir \(q
+              \stackrel{\alpha}{\rightarrow} q'\).
             </p>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Die von </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:127:50');"
-                  >emu_content/04/04-03-nfsm.emu:127:50</span></span></span>\(M\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     akzeptierte Sprache ist 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:127:50');"
-                  >emu_content/04/04-03-nfsm.emu:127:50</span></span></span>$$ L(M) := \{\alpha \in
+            <p>
+              Die von \(M\) akzeptierte Sprache ist $$ L(M) := \{\alpha \in
               \Sigma^* \ | \ \textnormal{ es gibt ein } q \in F \textnormal{ mit }
               \qstart \stackrel{\alpha}{\rightarrow} q \} $$
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:129:50');"
-                  >emu_content/04/04-03-nfsm.emu:129:50</span></span></span>
             </p>
           </div>
           <div
@@ -824,198 +161,26 @@
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Beobachtung </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:135:50');"
-                  >emu_content/04/04-03-nfsm.emu:135:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >4.3.3</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:138:50');"
-                    >emu_content/04/04-03-nfsm.emu:138:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:139:50');"
-                  >emu_content/04/04-03-nfsm.emu:139:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Sei </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:140:50');"
-                >emu_content/04/04-03-nfsm.emu:140:50</span></span></span>\(M = (\Sigma, Q, \qstart, F, \delta)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ein nichtdeterministischer
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:140:50');"
-                >emu_content/04/04-03-nfsm.emu:140:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >endlicher Automat. Dann gibt es eine reguläre Grammatik </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:141:50');"
-                >emu_content/04/04-03-nfsm.emu:141:50</span></span></span>\(G\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   mit
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:141:50');"
-                >emu_content/04/04-03-nfsm.emu:141:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:142:50');"
-                >emu_content/04/04-03-nfsm.emu:142:50</span></span></span>\(L(G) = L(M)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:142:50');"
-                >emu_content/04/04-03-nfsm.emu:142:50</span></span></span>
+            >Beobachtung 
+              <NumberedTitle>4.3.3</NumberedTitle>
+               
+            </span>Sei \(M = (\Sigma, Q, \qstart, F, \delta)\) ein nichtdeterministischer
+            endlicher Automat. Dann gibt es eine reguläre Grammatik \(G\) mit
+            \(L(G) = L(M)\).
           </div>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wir führen hier den Beweis nicht noch einmal; er ist mehr oder weniger</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:145:50');"
-                >emu_content/04/04-03-nfsm.emu:145:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >identisch mit dem Beweis von</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:146:50');"
-                >emu_content/04/04-03-nfsm.emu:146:50</span></span></span><a
+          <p>
+            Wir führen hier den Beweis nicht noch einmal; er ist mehr oder weniger
+            identisch mit dem Beweis von<a
               href="./04-02-finite-state-machines.html#theorem-fsm-regular"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Theorem 4.2.5</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:150:50');"
-                  >emu_content/04/04-03-nfsm.emu:150:50</span></span></span></a><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >; wir haben nämlich in jenem Beweis nirgends verwendet, dass</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:151:50');"
-                >emu_content/04/04-03-nfsm.emu:151:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:152:50');"
-                >emu_content/04/04-03-nfsm.emu:152:50</span></span></span>\(\delta\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   eine 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:152:50');"
-                >emu_content/04/04-03-nfsm.emu:152:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Funktion</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:152:50');"
-                  >emu_content/04/04-03-nfsm.emu:152:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ist, und daher geht mit einem
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:152:50');"
-                >emu_content/04/04-03-nfsm.emu:152:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:153:50');"
-                >emu_content/04/04-03-nfsm.emu:153:50</span></span></span>\(\delta\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, das eine </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:153:50');"
-                >emu_content/04/04-03-nfsm.emu:153:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Relation</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:153:50');"
-                  >emu_content/04/04-03-nfsm.emu:153:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ist, alles ganz genau gleich.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:153:50');"
-                >emu_content/04/04-03-nfsm.emu:153:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Allerdings gilt nun auch der Umkehrschluss: zu einer regulären</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:154:50');"
-                >emu_content/04/04-03-nfsm.emu:154:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Grammatik gibt es einen nichtdeterministischen endlichen Automaten:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:155:50');"
-                >emu_content/04/04-03-nfsm.emu:155:50</span></span></span>
+            >Theorem 4.2.5</a>; wir haben nämlich in jenem Beweis nirgends verwendet, dass
+            \(\delta\) eine 
+            <i>Funktion</i>
+             ist, und daher geht mit einem
+            \(\delta\), das eine 
+            <i>Relation</i>
+             ist, alles ganz genau gleich.
+            Allerdings gilt nun auch der Umkehrschluss: zu einer regulären
+            Grammatik gibt es einen nichtdeterministischen endlichen Automaten:
           </p>
           <div
             id="theorem-nfsm-regular"
@@ -1023,393 +188,36 @@
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Theorem </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:162:50');"
-                  >emu_content/04/04-03-nfsm.emu:162:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >4.3.4</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:165:50');"
-                    >emu_content/04/04-03-nfsm.emu:165:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:166:50');"
-                  >emu_content/04/04-03-nfsm.emu:166:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Sei </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:167:50');"
-                >emu_content/04/04-03-nfsm.emu:167:50</span></span></span>\(G = (\Sigma, N, P, S)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   eine reguläre Grammatik. Dann gibt es
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:167:50');"
-                >emu_content/04/04-03-nfsm.emu:167:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >einen nichtdeterministischen endlichen Automaten </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:168:50');"
-                >emu_content/04/04-03-nfsm.emu:168:50</span></span></span>\(M\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   mit 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:168:50');"
-                >emu_content/04/04-03-nfsm.emu:168:50</span></span></span>\(L(G) =
-            L(M)\)
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:169:50');"
-                >emu_content/04/04-03-nfsm.emu:169:50</span></span></span>
+            >Theorem 
+              <NumberedTitle>4.3.4</NumberedTitle>
+               
+            </span>Sei \(G = (\Sigma, N, P, S)\) eine reguläre Grammatik. Dann gibt es
+            einen nichtdeterministischen endlichen Automaten \(M\) mit \(L(G) =
+            L(M)\).
           </div>
           <div
             class="well container"
           >
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:173:50');"
-                >emu_content/04/04-03-nfsm.emu:173:50</span></span></span><b><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Beweis.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:173:50');"
-                  >emu_content/04/04-03-nfsm.emu:173:50</span></span></span></b><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:173:50');"
-                >emu_content/04/04-03-nfsm.emu:173:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Unser Automat hat als Zustandsmenge </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:174:50');"
-                >emu_content/04/04-03-nfsm.emu:174:50</span></span></span>\(N\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, die Menge der</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:174:50');"
-                >emu_content/04/04-03-nfsm.emu:174:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >nichtterminalen Symbole und als Startzustand </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:175:50');"
-                >emu_content/04/04-03-nfsm.emu:175:50</span></span></span>\(S\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, das Startsymbol</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:175:50');"
-                >emu_content/04/04-03-nfsm.emu:175:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >der Grammatik </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:176:50');"
-                >emu_content/04/04-03-nfsm.emu:176:50</span></span></span>\(G\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Wir definieren </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:176:50');"
-                >emu_content/04/04-03-nfsm.emu:176:50</span></span></span>\(\delta\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, indem wir jeden</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:176:50');"
-                >emu_content/04/04-03-nfsm.emu:176:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:177:50');"
-                >emu_content/04/04-03-nfsm.emu:177:50</span></span></span>\(G\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >-Pfeil in einem </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:177:50');"
-                >emu_content/04/04-03-nfsm.emu:177:50</span></span></span>\(M\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >-Pfeil umwandeln: eine Produktion </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:177:50');"
-                >emu_content/04/04-03-nfsm.emu:177:50</span></span></span>$$ X
-            \rightarrow a Y $$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   in 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:178:50');"
-                >emu_content/04/04-03-nfsm.emu:178:50</span></span></span>\(G\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   wird dann zu 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:178:50');"
-                >emu_content/04/04-03-nfsm.emu:178:50</span></span></span>$$ (X, a, Y) \in \delta $$<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:178:50');"
-                >emu_content/04/04-03-nfsm.emu:178:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >also einem Pfeil </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:179:50');"
-                >emu_content/04/04-03-nfsm.emu:179:50</span></span></span>\(X \stackrel{a}{\rightarrow} Y\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   in 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:179:50');"
-                >emu_content/04/04-03-nfsm.emu:179:50</span></span></span>\(M\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Für jede</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:179:50');"
-                >emu_content/04/04-03-nfsm.emu:179:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Regel der Form </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:180:50');"
-                >emu_content/04/04-03-nfsm.emu:180:50</span></span></span>\(X \rightarrow \epsilon\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   machen wir 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:180:50');"
-                >emu_content/04/04-03-nfsm.emu:180:50</span></span></span>\(X\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   zu einem
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:180:50');"
-                >emu_content/04/04-03-nfsm.emu:180:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Endzustand.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:181:50');"
-                >emu_content/04/04-03-nfsm.emu:181:50</span></span></span>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Was aber mit Regeln der Form </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:184:50');"
-                  >emu_content/04/04-03-nfsm.emu:184:50</span></span></span>\(X \rightarrow Y\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >? Hierfür könnte man</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:184:50');"
-                  >emu_content/04/04-03-nfsm.emu:184:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Nichtdeterministische Automaten mit </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:185:50');"
-                  >emu_content/04/04-03-nfsm.emu:185:50</span></span></span>\(\epsilon\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >-Übergängen</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:185:50');"
-                  >emu_content/04/04-03-nfsm.emu:185:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >definieren, die also vom Zustand </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:186:50');"
-                  >emu_content/04/04-03-nfsm.emu:186:50</span></span></span>\(X\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     nach 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:186:50');"
-                  >emu_content/04/04-03-nfsm.emu:186:50</span></span></span>\(Y\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     wechseln können,
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:186:50');"
-                  >emu_content/04/04-03-nfsm.emu:186:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >ohne ein Eingabesymbol zu lesen; wir gehen hier einen anderen Weg</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:187:50');"
-                  >emu_content/04/04-03-nfsm.emu:187:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >und verweisen auf</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:188:50');"
-                  >emu_content/04/04-03-nfsm.emu:188:50</span></span></span><a
+            <b>Beweis.</b>
+            Unser Automat hat als Zustandsmenge \(N\), die Menge der
+            nichtterminalen Symbole und als Startzustand \(S\), das Startsymbol
+            der Grammatik \(G\). Wir definieren \(\delta\), indem wir jeden
+            \(G\)-Pfeil in einem \(M\)-Pfeil umwandeln: eine Produktion $$ X
+            \rightarrow a Y $$ in \(G\) wird dann zu $$ (X, a, Y) \in \delta $$
+            also einem Pfeil \(X \stackrel{a}{\rightarrow} Y\) in \(M\). Für jede
+            Regel der Form \(X \rightarrow \epsilon\) machen wir \(X\) zu einem
+            Endzustand.
+            <p>
+              Was aber mit Regeln der Form \(X \rightarrow Y\)? Hierfür könnte man
+              Nichtdeterministische Automaten mit \(\epsilon\)-Übergängen
+              definieren, die also vom Zustand \(X\) nach \(Y\) wechseln können,
+              ohne ein Eingabesymbol zu lesen; wir gehen hier einen anderen Weg
+              und verweisen auf<a
                 href="./04-01-regular-grammars.html#theorem-regular-simplified"
-              ><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Theorem 4.1.7</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:192:50');"
-                    >emu_content/04/04-03-nfsm.emu:192:50</span></span></span></a><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >, welches uns erlaubt, Regeln der Form </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:193:50');"
-                  >emu_content/04/04-03-nfsm.emu:193:50</span></span></span>\(X \rightarrow Y\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     und 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:193:50');"
-                  >emu_content/04/04-03-nfsm.emu:193:50</span></span></span>\(X
-              \rightarrow a\)
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     zu eliminieren.
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:194:50');"
-                  >emu_content/04/04-03-nfsm.emu:194:50</span></span></span><span
+              >Theorem 4.1.7</a>, welches uns erlaubt, Regeln der Form \(X \rightarrow Y\) und \(X
+              \rightarrow a\) zu eliminieren.<span
                 class="qed"
-              ><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:198:50');"
-                    >emu_content/04/04-03-nfsm.emu:198:50</span></span></span>\(\square\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:198:50');"
-                    >emu_content/04/04-03-nfsm.emu:198:50</span></span></span></span>
+              >\(\square\)</span>
             </p>
           </div>
           <div
@@ -1417,83 +225,17 @@
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Beispiel </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:204:50');"
-                  >emu_content/04/04-03-nfsm.emu:204:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >4.3.5</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:207:50');"
-                    >emu_content/04/04-03-nfsm.emu:207:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:208:50');"
-                  >emu_content/04/04-03-nfsm.emu:208:50</span></span></span></span>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Wir betrachten abermals die</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:211:50');"
-                  >emu_content/04/04-03-nfsm.emu:211:50</span></span></span><a
+            >Beispiel 
+              <NumberedTitle>4.3.5</NumberedTitle>
+               
+            </span>
+            <p>
+              Wir betrachten abermals die<a
                 href="./04-01-regular-grammars.html#example-aaabb"
-              ><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >reguläre Grammatik aus dem vorherigen Kapitel 4.1</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:215:50');"
-                    >emu_content/04/04-03-nfsm.emu:215:50</span></span></span></a><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >: </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:216:50');"
-                  >emu_content/04/04-03-nfsm.emu:216:50</span></span></span>$$\begin{align*} S&amp;\rightarrow \epsilon \ |\ a S \ | \ b T \\ T&
-              \rightarrow \epsilon \ | \ b T \ \end{align*}$$
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     und auch den
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:217:50');"
-                  >emu_content/04/04-03-nfsm.emu:217:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >(falschen) endlichen Automaten, den wir im letzten Kapitel dafür</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:218:50');"
-                  >emu_content/04/04-03-nfsm.emu:218:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >gebaut haben:</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:219:50');"
-                  >emu_content/04/04-03-nfsm.emu:219:50</span></span></span>
+              >reguläre Grammatik aus dem vorherigen Kapitel 4.1</a>: $$\begin{align*} S&amp;\rightarrow \epsilon \ |\ a S \ | \ b T \\ T&
+              \rightarrow \epsilon \ | \ b T \ \end{align*}$$ und auch den
+              (falschen) endlichen Automaten, den wir im letzten Kapitel dafür
+              gebaut haben:
             </p>
             <figure>
               <img
@@ -1502,129 +244,18 @@
                 loading="lazy"
               >
             </figure>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Wir sehen nun, dass dies genau der nichtdeterministische Automat</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:227:50');"
-                  >emu_content/04/04-03-nfsm.emu:227:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >ist, den wir nach </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:228:50');"
-                  >emu_content/04/04-03-nfsm.emu:228:50</span></span></span><a
+            <p>
+              Wir sehen nun, dass dies genau der nichtdeterministische Automat
+              ist, den wir nach 
+              <a
                 href="#theorem-nfsm-regular"
-              ><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Theorem 4.3.4</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:232:50');"
-                    >emu_content/04/04-03-nfsm.emu:232:50</span></span></span></a><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >bauen können. Die Zustandsübergangsrelation </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:233:50');"
-                  >emu_content/04/04-03-nfsm.emu:233:50</span></span></span>\(\delta\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     ist 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:233:50');"
-                  >emu_content/04/04-03-nfsm.emu:233:50</span></span></span>$$ \delta
-              = \{(S,a,S), (S,b,S), (T,b,T) \} \ . $$
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     Jeder Zustand ist ein
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:234:50');"
-                  >emu_content/04/04-03-nfsm.emu:234:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Endzustand, allerdings heißt das nicht, dass der Automat jedes Wort</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:235:50');"
-                  >emu_content/04/04-03-nfsm.emu:235:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >akzeptiert. Für </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:236:50');"
-                  >emu_content/04/04-03-nfsm.emu:236:50</span></span></span>\(\alpha = ba\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     beispielsweise gibt es keinen
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:236:50');"
-                  >emu_content/04/04-03-nfsm.emu:236:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Zustand </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:237:50');"
-                  >emu_content/04/04-03-nfsm.emu:237:50</span></span></span>\(q\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     mit 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:237:50');"
-                  >emu_content/04/04-03-nfsm.emu:237:50</span></span></span>\(S \stackrel{ba}{\rightarrow} q\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >, geschweige</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:237:50');"
-                  >emu_content/04/04-03-nfsm.emu:237:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >denn einen akzeptierenden Endzustand. Daher gilt: </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:238:50');"
-                  >emu_content/04/04-03-nfsm.emu:238:50</span></span></span>\(ba \not \in
-              L(M)\)
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:239:50');"
-                  >emu_content/04/04-03-nfsm.emu:239:50</span></span></span>
+              >Theorem 4.3.4</a>bauen können. Die Zustandsübergangsrelation \(\delta\) ist $$ \delta
+              = \{(S,a,S), (S,b,S), (T,b,T) \} \ . $$ Jeder Zustand ist ein
+              Endzustand, allerdings heißt das nicht, dass der Automat jedes Wort
+              akzeptiert. Für \(\alpha = ba\) beispielsweise gibt es keinen
+              Zustand \(q\) mit \(S \stackrel{ba}{\rightarrow} q\), geschweige
+              denn einen akzeptierenden Endzustand. Daher gilt: \(ba \not \in
+              L(M)\).
             </p>
           </div>
           <div
@@ -1632,202 +263,33 @@
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Beispiel </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:245:50');"
-                  >emu_content/04/04-03-nfsm.emu:245:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >4.3.6</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:248:50');"
-                    >emu_content/04/04-03-nfsm.emu:248:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:249:50');"
-                  >emu_content/04/04-03-nfsm.emu:249:50</span></span></span></span>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Wir betrachten die</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:252:50');"
-                  >emu_content/04/04-03-nfsm.emu:252:50</span></span></span><a
+            >Beispiel 
+              <NumberedTitle>4.3.6</NumberedTitle>
+               
+            </span>
+            <p>
+              Wir betrachten die<a
                 href="./04-01-regular-grammars.html#exercise-no-a-or-no-b"
-              ><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >reguläre Grammatik aus Übungsaufgabe 4.1.7</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:256:50');"
-                    >emu_content/04/04-03-nfsm.emu:256:50</span></span></span></a><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >:</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:257:50');"
-                  >emu_content/04/04-03-nfsm.emu:257:50</span></span></span>
+              >reguläre Grammatik aus Übungsaufgabe 4.1.7</a>:
             </p>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:258:50');"
-                >emu_content/04/04-03-nfsm.emu:258:50</span></span></span>$$\begin{align*} S&amp;\rightarrow A \ | \ B \\ A&amp;\rightarrow \epsilon \
+            $$\begin{align*} S&amp;\rightarrow A \ | \ B \\ A&amp;\rightarrow \epsilon \
             | \ b A \ | \ c A \\ B&amp;\rightarrow \epsilon \ | \ a B \ | \ c B
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:260:50');"
-                >emu_content/04/04-03-nfsm.emu:260:50</span></span></span>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Bevor wir einen nichtdeterministischen Automaten bauen können,</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:263:50');"
-                  >emu_content/04/04-03-nfsm.emu:263:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >müssen wir erst die Produktionen der Form </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:264:50');"
-                  >emu_content/04/04-03-nfsm.emu:264:50</span></span></span>\(X \rightarrow Y\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:264:50');"
-                  >emu_content/04/04-03-nfsm.emu:264:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >eliminieren bzw. ersetzen. Wenn Sie Aufgabe 4.1.7 gelöst haben,</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:265:50');"
-                  >emu_content/04/04-03-nfsm.emu:265:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >haben Sie wahrscheinlich in etwa folgende Grammatik erhalten:</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:266:50');"
-                  >emu_content/04/04-03-nfsm.emu:266:50</span></span></span>
+            <p>
+              Bevor wir einen nichtdeterministischen Automaten bauen können,
+              müssen wir erst die Produktionen der Form \(X \rightarrow Y\)
+              eliminieren bzw. ersetzen. Wenn Sie Aufgabe 4.1.7 gelöst haben,
+              haben Sie wahrscheinlich in etwa folgende Grammatik erhalten:
             </p>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:267:50');"
-                >emu_content/04/04-03-nfsm.emu:267:50</span></span></span>$$\begin{align*} S&amp;\rightarrow \epsilon \ | \ bA \ | \ cA \ | \ aB \ |
+            $$\begin{align*} S&amp;\rightarrow \epsilon \ | \ bA \ | \ cA \ | \ aB \ |
             \ cB\\ A&amp;\rightarrow \epsilon \ | \ bA \ | \ cA \\ B&amp;\rightarrow
-            \epsilon \ | \ aB \ | \ cB \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   Also insgesamt 11 statt 8
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:269:50');"
-                >emu_content/04/04-03-nfsm.emu:269:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Produktionen. Alle Nichtterminale erlauben auf ihrer rechten Seite ein</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:270:50');"
-                >emu_content/04/04-03-nfsm.emu:270:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:271:50');"
-                >emu_content/04/04-03-nfsm.emu:271:50</span></span></span>\(\epsilon\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und werden so zu akzeptierenden Zuständen. Die
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:271:50');"
-                >emu_content/04/04-03-nfsm.emu:271:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Zustandsübergangsrelation </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:272:50');"
-                >emu_content/04/04-03-nfsm.emu:272:50</span></span></span>\(\delta\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ist also 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:272:50');"
-                >emu_content/04/04-03-nfsm.emu:272:50</span></span></span>$$\begin{align*} \delta&
+            \epsilon \ | \ aB \ | \ cB \end{align*}$$ Also insgesamt 11 statt 8
+            Produktionen. Alle Nichtterminale erlauben auf ihrer rechten Seite ein
+            \(\epsilon\) und werden so zu akzeptierenden Zuständen. Die
+            Zustandsübergangsrelation \(\delta\) ist also $$\begin{align*} \delta&
             = \{(S,b,A), (S,c,A), (S,a,B), (S,c,B), (A,b,A), (A,c,A), (B,a,B),
-            (B,c,B)\} \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   Der nichtdeterminische Automat schaut also so
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:274:50');"
-                >emu_content/04/04-03-nfsm.emu:274:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >aus:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:275:50');"
-                >emu_content/04/04-03-nfsm.emu:275:50</span></span></span>
+            (B,c,B)\} \end{align*}$$ Der nichtdeterminische Automat schaut also so
+            aus:
             <figure>
               <img
                 style="height: 10em"
@@ -1842,202 +304,31 @@
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Übungsaufgabe </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:287:50');"
-                  >emu_content/04/04-03-nfsm.emu:287:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >4.3.1</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:290:50');"
-                    >emu_content/04/04-03-nfsm.emu:290:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:291:50');"
-                  >emu_content/04/04-03-nfsm.emu:291:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Sei </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:292:50');"
-                >emu_content/04/04-03-nfsm.emu:292:50</span></span></span>\(\Sigma = \{1\}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:292:50');"
-                >emu_content/04/04-03-nfsm.emu:292:50</span></span></span>\(L_k := \{1^n \ | \textnormal{ $n$ ist
-            durch $k$ teilbar} \}\)
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Schreiben Sie für </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:293:50');"
-                >emu_content/04/04-03-nfsm.emu:293:50</span></span></span>\(L_k\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   einen
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:293:50');"
-                >emu_content/04/04-03-nfsm.emu:293:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >deterministischen endlichen Automaten.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:294:50');"
-                >emu_content/04/04-03-nfsm.emu:294:50</span></span></span>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Schreiben Sie eine reguläre Grammatik für die Sprache </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:297:50');"
-                  >emu_content/04/04-03-nfsm.emu:297:50</span></span></span>\(L_5 \cup
-              L_7\)
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >, also die Strings aus 1, deren Länge durch 5 oder durch 7</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:298:50');"
-                  >emu_content/04/04-03-nfsm.emu:298:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >teilbar ist.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:299:50');"
-                  >emu_content/04/04-03-nfsm.emu:299:50</span></span></span>
+            >Übungsaufgabe 
+              <NumberedTitle>4.3.1</NumberedTitle>
+               
+            </span>Sei \(\Sigma = \{1\}\) und \(L_k := \{1^n \ | \textnormal{ $n$ ist
+            durch $k$ teilbar} \}\). Schreiben Sie für \(L_k\) einen
+            deterministischen endlichen Automaten.
+            <p>
+              Schreiben Sie eine reguläre Grammatik für die Sprache \(L_5 \cup
+              L_7\), also die Strings aus 1, deren Länge durch 5 oder durch 7
+              teilbar ist.
             </p>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Zeichnen Sie nun einen nichtdeterministischen endlichen Automaten</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:302:50');"
-                  >emu_content/04/04-03-nfsm.emu:302:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >für </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:303:50');"
-                  >emu_content/04/04-03-nfsm.emu:303:50</span></span></span>\(L_5 \cup L_7\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:303:50');"
-                  >emu_content/04/04-03-nfsm.emu:303:50</span></span></span>
+            <p>
+              Zeichnen Sie nun einen nichtdeterministischen endlichen Automaten
+              für \(L_5 \cup L_7\).
             </p>
           </div>
-          <h2><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Nichtdeterministische endliche Automaten deterministisch machen</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:306:50');"
-                >emu_content/04/04-03-nfsm.emu:306:50</span></span></span>
+          <h2>
+            Nichtdeterministische endliche Automaten deterministisch machen
           </h2>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wir werden nun zeigen, dass man zu jedem nichtdeterministischen</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:309:50');"
-                >emu_content/04/04-03-nfsm.emu:309:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Automaten </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:310:50');"
-                >emu_content/04/04-03-nfsm.emu:310:50</span></span></span>\(M\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   einen äquivalenten deterministischen Automaten 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:310:50');"
-                >emu_content/04/04-03-nfsm.emu:310:50</span></span></span>\(M'\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:310:50');"
-                >emu_content/04/04-03-nfsm.emu:310:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >bauen kann. Bevor wir eine allgemeine Konstruktion zeigen, fragen wir</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:311:50');"
-                >emu_content/04/04-03-nfsm.emu:311:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >uns, wie wir beispielsweise für den nichtdeterministischen endlichen</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:312:50');"
-                >emu_content/04/04-03-nfsm.emu:312:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Automaten </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:313:50');"
-                >emu_content/04/04-03-nfsm.emu:313:50</span></span></span>\(M\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:313:50');"
-                >emu_content/04/04-03-nfsm.emu:313:50</span></span></span>
+          <p>
+            Wir werden nun zeigen, dass man zu jedem nichtdeterministischen
+            Automaten \(M\) einen äquivalenten deterministischen Automaten \(M'\)
+            bauen kann. Bevor wir eine allgemeine Konstruktion zeigen, fragen wir
+            uns, wie wir beispielsweise für den nichtdeterministischen endlichen
+            Automaten \(M\):
           </p>
           <figure>
             <img
@@ -2046,95 +337,14 @@
               loading="lazy"
             >
           </figure>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >und das Eingabewort </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:321:50');"
-                >emu_content/04/04-03-nfsm.emu:321:50</span></span></span>\(\alpha = 1001100\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   überprüfen können, ob
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:321:50');"
-                >emu_content/04/04-03-nfsm.emu:321:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:322:50');"
-                >emu_content/04/04-03-nfsm.emu:322:50</span></span></span>\(1001100 \in L(M)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   gilt. Einem determinischen endlichen Automaten
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:322:50');"
-                >emu_content/04/04-03-nfsm.emu:322:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >können wir ja das Eingabewort einfach füttern und schauen, was der</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:323:50');"
-                >emu_content/04/04-03-nfsm.emu:323:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Automat tut; bei nichtdeterministischen Automaten müssen wir schauen,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:324:50');"
-                >emu_content/04/04-03-nfsm.emu:324:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >was er alles tun könnte. Wir plazieren einen kleinen farbigen Punkt in</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:325:50');"
-                >emu_content/04/04-03-nfsm.emu:325:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >jeden Zustand, in dem sich der Automat befinden könnte; am Anfang hat</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:326:50');"
-                >emu_content/04/04-03-nfsm.emu:326:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >der Startzustand </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:327:50');"
-                >emu_content/04/04-03-nfsm.emu:327:50</span></span></span>\(A\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   einen roten Punkt.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:327:50');"
-                >emu_content/04/04-03-nfsm.emu:327:50</span></span></span>
+          <p>
+            und das Eingabewort \(\alpha = 1001100\) überprüfen können, ob
+            \(1001100 \in L(M)\) gilt. Einem determinischen endlichen Automaten
+            können wir ja das Eingabewort einfach füttern und schauen, was der
+            Automat tut; bei nichtdeterministischen Automaten müssen wir schauen,
+            was er alles tun könnte. Wir plazieren einen kleinen farbigen Punkt in
+            jeden Zustand, in dem sich der Automat befinden könnte; am Anfang hat
+            der Startzustand \(A\) einen roten Punkt.
           </p>
           <figure
             class="centered-figure well container"
@@ -2468,387 +678,33 @@
               </div>
             </div>
           </figure>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Am Ende landet der grüne Punkt im Zustand </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:535:50');"
-                >emu_content/04/04-03-nfsm.emu:535:50</span></span></span>\(E\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Das Wort ist also in</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:535:50');"
-                >emu_content/04/04-03-nfsm.emu:535:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:536:50');"
-                >emu_content/04/04-03-nfsm.emu:536:50</span></span></span>\(L(M)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Das können wir auch ganz allgemein tun. Wenn Zustand </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:536:50');"
-                >emu_content/04/04-03-nfsm.emu:536:50</span></span></span>\(q\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:536:50');"
-                >emu_content/04/04-03-nfsm.emu:536:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >einen "Punkt" hat und Zeichen </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:537:50');"
-                >emu_content/04/04-03-nfsm.emu:537:50</span></span></span>\(x\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   gelesen wird, dann teilt sich
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:537:50');"
-                >emu_content/04/04-03-nfsm.emu:537:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >dieser Punkt und plaziert einen Kind-Punkt in jedem Zustand </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:538:50');"
-                >emu_content/04/04-03-nfsm.emu:538:50</span></span></span>\(q'\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:538:50');"
-                >emu_content/04/04-03-nfsm.emu:538:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >für den </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:539:50');"
-                >emu_content/04/04-03-nfsm.emu:539:50</span></span></span>\(q \stackrel{x}{\rightarrow} q'\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   gilt. Formal gesprochen:
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:539:50');"
-                >emu_content/04/04-03-nfsm.emu:539:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >für eine Menge </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:540:50');"
-                >emu_content/04/04-03-nfsm.emu:540:50</span></span></span>\(R \subseteq Q\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   von Zuständen (die, die gerade einen
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:540:50');"
-                >emu_content/04/04-03-nfsm.emu:540:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >"Punkt" haben) und ein Eingabe-Symbol </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:541:50');"
-                >emu_content/04/04-03-nfsm.emu:541:50</span></span></span>\(x\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   definieren wir
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:541:50');"
-                >emu_content/04/04-03-nfsm.emu:541:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:542:50');"
-                >emu_content/04/04-03-nfsm.emu:542:50</span></span></span>$$\begin{align*} \Delta(R, x) := \{q' \in Q \ | \ \textnormal{ es gibt }
-            \ q \in R \textnormal{ mit } q \step{x} q'\} \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   Für ein
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:543:50');"
-                >emu_content/04/04-03-nfsm.emu:543:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Eingabewort </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:544:50');"
-                >emu_content/04/04-03-nfsm.emu:544:50</span></span></span>\(\alpha= x_1 \dots x_n\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   fangen wir nun mit 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:544:50');"
-                >emu_content/04/04-03-nfsm.emu:544:50</span></span></span>\(R_0 =
-            \{\qstart\}\)
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   an, das entspricht dem einen roten Punkt auf dem
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:545:50');"
-                >emu_content/04/04-03-nfsm.emu:545:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Startzustand, und berechnen dann jeweils </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:546:50');"
-                >emu_content/04/04-03-nfsm.emu:546:50</span></span></span>\(R_i = \Delta(R_{i-1},
-            x_i)\)
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >; wenn die Menge </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:547:50');"
-                >emu_content/04/04-03-nfsm.emu:547:50</span></span></span>\(R_n\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   einen akzeptierenden Endzustand enthält
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:547:50');"
-                >emu_content/04/04-03-nfsm.emu:547:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >(dieser also am Ende einen "Punkt" hat), gilt </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:548:50');"
-                >emu_content/04/04-03-nfsm.emu:548:50</span></span></span>\(\alpha \in L(M)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:548:50');"
-                >emu_content/04/04-03-nfsm.emu:548:50</span></span></span>
+          <p>
+            Am Ende landet der grüne Punkt im Zustand \(E\). Das Wort ist also in
+            \(L(M)\). Das können wir auch ganz allgemein tun. Wenn Zustand \(q\)
+            einen "Punkt" hat und Zeichen \(x\) gelesen wird, dann teilt sich
+            dieser Punkt und plaziert einen Kind-Punkt in jedem Zustand \(q'\),
+            für den \(q \stackrel{x}{\rightarrow} q'\) gilt. Formal gesprochen:
+            für eine Menge \(R \subseteq Q\) von Zuständen (die, die gerade einen
+            "Punkt" haben) und ein Eingabe-Symbol \(x\) definieren wir
+            $$\begin{align*} \Delta(R, x) := \{q' \in Q \ | \ \textnormal{ es gibt }
+            \ q \in R \textnormal{ mit } q \step{x} q'\} \end{align*}$$ Für ein
+            Eingabewort \(\alpha= x_1 \dots x_n\) fangen wir nun mit \(R_0 =
+            \{\qstart\}\) an, das entspricht dem einen roten Punkt auf dem
+            Startzustand, und berechnen dann jeweils \(R_i = \Delta(R_{i-1},
+            x_i)\); wenn die Menge \(R_n\) einen akzeptierenden Endzustand enthält
+            (dieser also am Ende einen "Punkt" hat), gilt \(\alpha \in L(M)\).
           </p>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Treten Sie einen Schritt zurück und betrachten, was wir mit </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:551:50');"
-                >emu_content/04/04-03-nfsm.emu:551:50</span></span></span>\(\Delta\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:551:50');"
-                >emu_content/04/04-03-nfsm.emu:551:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >definiert haben: wir haben eine Zustandsübergangsfunktion definiert,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:552:50');"
-                >emu_content/04/04-03-nfsm.emu:552:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >die nun aber nicht auf Zuständen sondern auf Zustands</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:553:50');"
-                >emu_content/04/04-03-nfsm.emu:553:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >mengen</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:553:50');"
-                  >emu_content/04/04-03-nfsm.emu:553:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:553:50');"
-                >emu_content/04/04-03-nfsm.emu:553:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >operiert. Das heißt, im Gegensatz zu </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:554:50');"
-                >emu_content/04/04-03-nfsm.emu:554:50</span></span></span>\(\delta\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, das eine Funktion</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:554:50');"
-                >emu_content/04/04-03-nfsm.emu:554:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:555:50');"
-                >emu_content/04/04-03-nfsm.emu:555:50</span></span></span>\(\delta: Q \times \Sigma \rightarrow Q\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ist, ist 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:555:50');"
-                >emu_content/04/04-03-nfsm.emu:555:50</span></span></span>$$\begin{align*}
-            \Delta: 2^Q \times \Sigma \rightarrow 2^Q \ . \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   Wenn Sie
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:556:50');"
-                >emu_content/04/04-03-nfsm.emu:556:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >die Schreibweise </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:557:50');"
-                >emu_content/04/04-03-nfsm.emu:557:50</span></span></span>\(2^Q\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   nicht kennen: dies ist die Potenzmenge von
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:557:50');"
-                >emu_content/04/04-03-nfsm.emu:557:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:558:50');"
-                >emu_content/04/04-03-nfsm.emu:558:50</span></span></span>\(Q\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, also die Menge aller Untermengen, was die leere Menge</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:558:50');"
-                >emu_content/04/04-03-nfsm.emu:558:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:559:50');"
-                >emu_content/04/04-03-nfsm.emu:559:50</span></span></span>\(\emptyset\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und die "volle Menge" 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:559:50');"
-                >emu_content/04/04-03-nfsm.emu:559:50</span></span></span>\(Q\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   selbst miteinschließt. Wir
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:559:50');"
-                >emu_content/04/04-03-nfsm.emu:559:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >haben also folgendes Theorem:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:560:50');"
-                >emu_content/04/04-03-nfsm.emu:560:50</span></span></span>
+          <p>
+            Treten Sie einen Schritt zurück und betrachten, was wir mit \(\Delta\)
+            definiert haben: wir haben eine Zustandsübergangsfunktion definiert,
+            die nun aber nicht auf Zuständen sondern auf Zustands<i>mengen</i>
+            operiert. Das heißt, im Gegensatz zu \(\delta\), das eine Funktion
+            \(\delta: Q \times \Sigma \rightarrow Q\) ist, ist $$\begin{align*}
+            \Delta: 2^Q \times \Sigma \rightarrow 2^Q \ . \end{align*}$$ Wenn Sie
+            die Schreibweise \(2^Q\) nicht kennen: dies ist die Potenzmenge von
+            \(Q\), also die Menge aller Untermengen, was die leere Menge
+            \(\emptyset\) und die "volle Menge" \(Q\) selbst miteinschließt. Wir
+            haben also folgendes Theorem:
           </p>
           <div
             id="nfsm-to-fsm"
@@ -2856,197 +712,25 @@
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Theorem </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:567:50');"
-                  >emu_content/04/04-03-nfsm.emu:567:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >4.3.7</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:570:50');"
-                    >emu_content/04/04-03-nfsm.emu:570:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:571:50');"
-                  >emu_content/04/04-03-nfsm.emu:571:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:572:50');"
-                >emu_content/04/04-03-nfsm.emu:572:50</span></span></span><b><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >(Einen nichtdeterministischen endlichen Automaten deterministisch</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:572:50');"
-                  >emu_content/04/04-03-nfsm.emu:572:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >machen).</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:573:50');"
-                  >emu_content/04/04-03-nfsm.emu:573:50</span></span></span></b><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:573:50');"
-                >emu_content/04/04-03-nfsm.emu:573:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Sei </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:574:50');"
-                >emu_content/04/04-03-nfsm.emu:574:50</span></span></span>\(M = (\Sigma, Q, \qstart, F, \delta)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ein nichtdeterministischer
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:574:50');"
-                >emu_content/04/04-03-nfsm.emu:574:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Automat; dann heiße der deterministische Automat </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:575:50');"
-                >emu_content/04/04-03-nfsm.emu:575:50</span></span></span>\(M' = (\Sigma, 2^Q,
-            \{\qstart\}, \mathcal{F}, \Delta)\)
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   mit Endzustandsmenge
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:576:50');"
-                >emu_content/04/04-03-nfsm.emu:576:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:577:50');"
-                >emu_content/04/04-03-nfsm.emu:577:50</span></span></span>\(\mathcal{F}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   definiert als 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:577:50');"
-                >emu_content/04/04-03-nfsm.emu:577:50</span></span></span>$$\begin{align*} \mathcal{F} := \{X
-            \subseteq Q \ | \ X \cap F \ne \emptyset\} \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:578:50');"
-                >emu_content/04/04-03-nfsm.emu:578:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Zustandsübergangsfunktion </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:579:50');"
-                >emu_content/04/04-03-nfsm.emu:579:50</span></span></span>\(\Delta\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   definiert als 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:579:50');"
-                >emu_content/04/04-03-nfsm.emu:579:50</span></span></span>$$\begin{align*}
+            >Theorem 
+              <NumberedTitle>4.3.7</NumberedTitle>
+               
+            </span><b>(Einen nichtdeterministischen endlichen Automaten deterministisch
+              machen).</b>
+            Sei \(M = (\Sigma, Q, \qstart, F, \delta)\) ein nichtdeterministischer
+            Automat; dann heiße der deterministische Automat \(M' = (\Sigma, 2^Q,
+            \{\qstart\}, \mathcal{F}, \Delta)\) mit Endzustandsmenge
+            \(\mathcal{F}\) definiert als $$\begin{align*} \mathcal{F} := \{X
+            \subseteq Q \ | \ X \cap F \ne \emptyset\} \end{align*}$$ und
+            Zustandsübergangsfunktion \(\Delta\) definiert als $$\begin{align*}
             \Delta : \quad&amp;2^Q \times \Sigma \rightarrow 2^Q \\&amp;(R, x) \mapsto
             \{q' \in Q \ | \ \textnormal{ es gibt } \ q \in R \textnormal{ mit } q
-            \step{x} q'\} \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   der 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:582:50');"
-                >emu_content/04/04-03-nfsm.emu:582:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Potenzmengenautomat</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:582:50');"
-                  >emu_content/04/04-03-nfsm.emu:582:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Es gilt</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:582:50');"
-                >emu_content/04/04-03-nfsm.emu:582:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:583:50');"
-                >emu_content/04/04-03-nfsm.emu:583:50</span></span></span>\(L(M) = L(M')\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:583:50');"
-                >emu_content/04/04-03-nfsm.emu:583:50</span></span></span>
+            \step{x} q'\} \end{align*}$$ der 
+            <i>Potenzmengenautomat</i>. Es gilt
+            \(L(M) = L(M')\).
           </div>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wir folgern also</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:586:50');"
-                >emu_content/04/04-03-nfsm.emu:586:50</span></span></span>
+          <p>
+            Wir folgern also
           </p>
           <div
             id="regular-grammar-to-fsm"
@@ -3054,276 +738,32 @@
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Theorem </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:593:50');"
-                  >emu_content/04/04-03-nfsm.emu:593:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >4.3.8</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:596:50');"
-                    >emu_content/04/04-03-nfsm.emu:596:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:597:50');"
-                  >emu_content/04/04-03-nfsm.emu:597:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Zu jeder regulären Sprache </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:598:50');"
-                >emu_content/04/04-03-nfsm.emu:598:50</span></span></span>\(L\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   gibt es einen deterministischen
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:598:50');"
-                >emu_content/04/04-03-nfsm.emu:598:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >endlichen Automaten </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:599:50');"
-                >emu_content/04/04-03-nfsm.emu:599:50</span></span></span>\(M\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   mit 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:599:50');"
-                >emu_content/04/04-03-nfsm.emu:599:50</span></span></span>\(L(M) = L\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:599:50');"
-                >emu_content/04/04-03-nfsm.emu:599:50</span></span></span>
+            >Theorem 
+              <NumberedTitle>4.3.8</NumberedTitle>
+               
+            </span>Zu jeder regulären Sprache \(L\) gibt es einen deterministischen
+            endlichen Automaten \(M\) mit \(L(M) = L\).
           </div>
           <div
             class="well container theorem"
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Beispiel </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:605:50');"
-                  >emu_content/04/04-03-nfsm.emu:605:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >4.3.9</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:608:50');"
-                    >emu_content/04/04-03-nfsm.emu:608:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:609:50');"
-                  >emu_content/04/04-03-nfsm.emu:609:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Der obige nichtdeterminische Automaten </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:610:50');"
-                >emu_content/04/04-03-nfsm.emu:610:50</span></span></span>\(M\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, der die Sprache aller</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:610:50');"
-                >emu_content/04/04-03-nfsm.emu:610:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wörter, deren viertletztes Zeichen eine 1 ist, akzeptiert, hat fünf</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:611:50');"
-                >emu_content/04/04-03-nfsm.emu:611:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Zustände. Sein Potenzmengenautomat </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:612:50');"
-                >emu_content/04/04-03-nfsm.emu:612:50</span></span></span>\(M'\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   hätte also 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:612:50');"
-                >emu_content/04/04-03-nfsm.emu:612:50</span></span></span>\(2^5 = 32\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:612:50');"
-                >emu_content/04/04-03-nfsm.emu:612:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Allerdings sehen wir, dass alle "relevanten" Zustände von </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:613:50');"
-                >emu_content/04/04-03-nfsm.emu:613:50</span></span></span>\(M\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   den
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:613:50');"
-                >emu_content/04/04-03-nfsm.emu:613:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Zustand </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:614:50');"
-                >emu_content/04/04-03-nfsm.emu:614:50</span></span></span>\(A\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   enthalten. Dieser wird nie verschwinden. Also sehen wir,
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:614:50');"
-                >emu_content/04/04-03-nfsm.emu:614:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >dass man </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:615:50');"
-                >emu_content/04/04-03-nfsm.emu:615:50</span></span></span>\(M'\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   mit 16 Zuständen implementieren kann (die anderen,
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:615:50');"
-                >emu_content/04/04-03-nfsm.emu:615:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >die, die nicht </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:616:50');"
-                >emu_content/04/04-03-nfsm.emu:616:50</span></span></span>\(A\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   enthalten, sind 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:616:50');"
-                >emu_content/04/04-03-nfsm.emu:616:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >unerreichbar</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:616:50');"
-                  >emu_content/04/04-03-nfsm.emu:616:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >). Da 16</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:616:50');"
-                >emu_content/04/04-03-nfsm.emu:616:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >immer noch recht groß für eine Abbildung ist, nehmen wir uns die</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:617:50');"
-                >emu_content/04/04-03-nfsm.emu:617:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Sprache aller Wörter, deren </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:618:50');"
-                >emu_content/04/04-03-nfsm.emu:618:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >drittletztes Zeichen</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:618:50');"
-                  >emu_content/04/04-03-nfsm.emu:618:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:618:50');"
-                >emu_content/04/04-03-nfsm.emu:618:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >eine 1 ist. Der nichtdeterministische Automat hierfür ist</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:619:50');"
-                >emu_content/04/04-03-nfsm.emu:619:50</span></span></span>
+            >Beispiel 
+              <NumberedTitle>4.3.9</NumberedTitle>
+               
+            </span>Der obige nichtdeterminische Automaten \(M\), der die Sprache aller
+            Wörter, deren viertletztes Zeichen eine 1 ist, akzeptiert, hat fünf
+            Zustände. Sein Potenzmengenautomat \(M'\) hätte also \(2^5 = 32\).
+            Allerdings sehen wir, dass alle "relevanten" Zustände von \(M\) den
+            Zustand \(A\) enthalten. Dieser wird nie verschwinden. Also sehen wir,
+            dass man \(M'\) mit 16 Zuständen implementieren kann (die anderen,
+            die, die nicht \(A\) enthalten, sind 
+            <i>unerreichbar</i>). Da 16
+            immer noch recht groß für eine Abbildung ist, nehmen wir uns die
+            Sprache aller Wörter, deren 
+            <i>drittletztes Zeichen</i>
+            eine 1 ist. Der nichtdeterministische Automat hierfür ist
             <figure>
               <img
                 style="height: 10em"
@@ -3331,14 +771,8 @@
                 loading="lazy"
               >
             </figure>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Der Potenzmengenautomat hat die Zustandsmenge</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:627:50');"
-                  >emu_content/04/04-03-nfsm.emu:627:50</span></span></span>
+            <p>
+              Der Potenzmengenautomat hat die Zustandsmenge
             </p>
             <figure
               class="centered-figure well"
@@ -3607,133 +1041,18 @@
                 </div>
               </div>
             </figure>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Wenn wir uns vorstellen, dass wir vor das Eingabewort </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:795:50');"
-                  >emu_content/04/04-03-nfsm.emu:795:50</span></span></span>\(\alpha\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     die
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:795:50');"
-                  >emu_content/04/04-03-nfsm.emu:795:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Zeichen 000 stellen, also </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:796:50');"
-                  >emu_content/04/04-03-nfsm.emu:796:50</span></span></span>\(\alpha\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     durch 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:796:50');"
-                  >emu_content/04/04-03-nfsm.emu:796:50</span></span></span>\(000\alpha\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     ersetzen,
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:796:50');"
-                  >emu_content/04/04-03-nfsm.emu:796:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >dann codiert jeder Zustand genau die letzten drei Zeichen des</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:797:50');"
-                  >emu_content/04/04-03-nfsm.emu:797:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Eingabewortes, die der Automat gelesen hat. Der Zustand </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:798:50');"
-                  >emu_content/04/04-03-nfsm.emu:798:50</span></span></span>\(ACD\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:798:50');"
-                  >emu_content/04/04-03-nfsm.emu:798:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >bedeutet zum Beispiel</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:799:50');"
-                  >emu_content/04/04-03-nfsm.emu:799:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:800:50');"
-                  >emu_content/04/04-03-nfsm.emu:800:50</span></span></span><i><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >die letzten drei Zeichen waren </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:800:50');"
-                    >emu_content/04/04-03-nfsm.emu:800:50</span></span></span>\(110\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:800:50');"
-                    >emu_content/04/04-03-nfsm.emu:800:50</span></span></span></i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:800:50');"
-                  >emu_content/04/04-03-nfsm.emu:800:50</span></span></span>
+            <p>
+              Wenn wir uns vorstellen, dass wir vor das Eingabewort \(\alpha\) die
+              Zeichen 000 stellen, also \(\alpha\) durch \(000\alpha\) ersetzen,
+              dann codiert jeder Zustand genau die letzten drei Zeichen des
+              Eingabewortes, die der Automat gelesen hat. Der Zustand \(ACD\)
+              bedeutet zum Beispiel
+              <i>die letzten drei Zeichen waren \(110\)</i>
             </p>
           </div>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Im folgenden Unterkapitel werden wir alle Transformationen, die wir</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:803:50');"
-                >emu_content/04/04-03-nfsm.emu:803:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >bisher gesehen haben, an einem konkreten Beispiel anwenden.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/04/04-03-nfsm.emu:804:50');"
-                >emu_content/04/04-03-nfsm.emu:804:50</span></span></span>
+          <p>
+            Im folgenden Unterkapitel werden wir alle Transformationen, die wir
+            bisher gesehen haben, an einem konkreten Beispiel anwenden.
           </p>
         </div>
       </div>

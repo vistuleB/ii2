@@ -31,23 +31,9 @@
   >
     <a
       href="../vorlesungsskript.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >Inhaltsverzeichnis</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:12:50');"
-          >emu_content/05/05-05-a-LR-parsing-by-hand.emu:12:50</span></span></span></a><a
+    >Inhaltsverzeichnis</a><a
       href="05-04-LL1-grammars.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >&lt;&lt; Kapitel 5.4</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:16:50');"
-          >emu_content/05/05-05-a-LR-parsing-by-hand.emu:16:50</span></span></span></a>
+    >&lt;&lt; Kapitel 5.4</a>
   </div>
   <div
     id="link-to-overview"
@@ -55,23 +41,9 @@
   >
     <a
       href="/"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >zur Kursübersicht</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:23:50');"
-          >emu_content/05/05-05-a-LR-parsing-by-hand.emu:23:50</span></span></span></a><a
+    >zur Kursübersicht</a><a
       href="05-05-b-Parser-in-Java.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >Kapitel 5.5 &gt;&gt;</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:27:50');"
-          >emu_content/05/05-05-a-LR-parsing-by-hand.emu:27:50</span></span></span></a>
+    >Kapitel 5.5 &gt;&gt;</a>
   </div>
   <div
     id="rightSideWrapper"
@@ -90,881 +62,102 @@
           >
             <span
               class="subChapterTitle"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >5.5</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:41:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:41:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >LR-Parser per Hand entwerfen</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:42:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:42:50</span></span></span></span>
+            >5.5
+              LR-Parser per Hand entwerfen</span>
           </h1>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Betrachten wir die kontextfreie Grammatik </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:45:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:45:50</span></span></span>\(G\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   für arithmetische Ausdrücke mit den
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:45:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:45:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Variablen </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:46:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:46:50</span></span></span>\(x, y, z\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und strenger Klammerung über dem Alphabet
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:46:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:46:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:47:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:47:50</span></span></span>\(\Sigma = \{x, y, z, (, ), +, *\}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:47:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:47:50</span></span></span>
+          <p>
+            Betrachten wir die kontextfreie Grammatik \(G\) für arithmetische Ausdrücke mit den
+            Variablen \(x, y, z\) und strenger Klammerung über dem Alphabet
+            \(\Sigma = \{x, y, z, (, ), +, *\}\):
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:48:50');"
-              >emu_content/05/05-05-a-LR-parsing-by-hand.emu:48:50</span></span></span>$$\begin{align*}
+          $$\begin{align*}
           S&amp;\rightarrow x \ |\ y\ |\ z \\
           S&amp;\rightarrow (S+S) \\
           S&amp;\rightarrow (S*S)
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:52:50');"
-              >emu_content/05/05-05-a-LR-parsing-by-hand.emu:52:50</span></span></span>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Sie kann also </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:55:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:55:50</span></span></span>\((x + (y*z))\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ableiten aber eben nicht 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:55:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:55:50</span></span></span>\((x + y + z)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Wie können wir nun einen</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:55:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:55:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Parser für </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:56:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:56:50</span></span></span>\(G\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   schreiben? Also einen Algorithmus, der ein Wort 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:56:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:56:50</span></span></span>\(w \in \Sigma^*\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   nimmt und einen
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:56:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:56:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Ableitungsbaum konstruiert (falls </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:57:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:57:50</span></span></span>\(w \in L(G)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >)?</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:57:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:57:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wenn wir uns an das LL-Paradigma halten und eine Linksableitung bauen wollen, dann stoßen wir</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:58:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:58:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >schon ganz am Anfang auf ein Problem: wenn zum Beispiel</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:59:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:59:50</span></span></span>
+          <p>
+            Sie kann also \((x + (y*z))\) ableiten aber eben nicht \((x + y + z)\). Wie können wir nun einen
+            Parser für \(G\) schreiben? Also einen Algorithmus, der ein Wort \(w \in \Sigma^*\) nimmt und einen
+            Ableitungsbaum konstruiert (falls \(w \in L(G)\))?
+            Wenn wir uns an das LL-Paradigma halten und eine Linksableitung bauen wollen, dann stoßen wir
+            schon ganz am Anfang auf ein Problem: wenn zum Beispiel
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:60:50');"
-              >emu_content/05/05-05-a-LR-parsing-by-hand.emu:60:50</span></span></span>$$\begin{align*}
+          $$\begin{align*}
           w = ((((\dots
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:62:50');"
-              >emu_content/05/05-05-a-LR-parsing-by-hand.emu:62:50</span></span></span>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >dann wissen wir nicht, ob wir als ersten Schritt </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:65:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:65:50</span></span></span>\(S \rightarrow (S+S)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   oder 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:65:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:65:50</span></span></span>\(S \rightarrow
-            (S*S)\)
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   tätigen sollen. Das geht auch nicht, wenn wir 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:66:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:66:50</span></span></span>\(k\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   Zeichen vorauslesen dürfen, weil
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:66:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:66:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >der </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:67:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:67:50</span></span></span>\((((\dots\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >-Präfix ja länger als </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:67:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:67:50</span></span></span>\(k\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   sein kann. Nein, wir müssen anders vorgehen.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:67:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:67:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wir könnten beispielsweise die Grammatik ändern:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:68:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:68:50</span></span></span>
+          <p>
+            dann wissen wir nicht, ob wir als ersten Schritt \(S \rightarrow (S+S)\) oder \(S \rightarrow
+            (S*S)\) tätigen sollen. Das geht auch nicht, wenn wir \(k\) Zeichen vorauslesen dürfen, weil
+            der \((((\dots\)-Präfix ja länger als \(k\) sein kann. Nein, wir müssen anders vorgehen.
+            Wir könnten beispielsweise die Grammatik ändern:
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:69:50');"
-              >emu_content/05/05-05-a-LR-parsing-by-hand.emu:69:50</span></span></span>$$\begin{align*}
+          $$\begin{align*}
           S&amp;\rightarrow x \ | \ y \ | \ z \\
           S&amp;\rightarrow (SOS) \\
           O&amp;\rightarrow + \ | \ *
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:73:50');"
-              >emu_content/05/05-05-a-LR-parsing-by-hand.emu:73:50</span></span></span>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Das geht aber nicht immer:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:76:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:76:50</span></span></span>
+          <p>
+            Das geht aber nicht immer:
           </p>
           <div
             id="example-more-a-than-b"
             class="well container theorem"
           >
-            <p><span
+            <p>
+              <span
                 class="numbered-title"
-              ><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Beispiel </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:84:50');"
-                    >emu_content/05/05-05-a-LR-parsing-by-hand.emu:84:50</span></span></span><NumberedTitle><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >5.5.1</span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:87:50');"
-                      >emu_content/05/05-05-a-LR-parsing-by-hand.emu:87:50</span></span></span></NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:88:50');"
-                    >emu_content/05/05-05-a-LR-parsing-by-hand.emu:88:50</span></span></span></span><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     Betrachten wir die recht einfache Sprache 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:89:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:89:50</span></span></span>
+              >Beispiel 
+                <NumberedTitle>5.5.1</NumberedTitle>
+                 
+              </span>
+               Betrachten wir die recht einfache Sprache 
             </p>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:90:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:90:50</span></span></span>$$\begin{align*}
+            $$\begin{align*}
             L_2 := \{a^{m+k} b^m c \ | \ m \geq 1, k \geq 0 \} \ ,
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:92:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:92:50</span></span></span>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >also </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:95:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:95:50</span></span></span><i><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >beliebig viele </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:95:50');"
-                    >emu_content/05/05-05-a-LR-parsing-by-hand.emu:95:50</span></span></span>\(a\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >'s, gefolgt von gleich vielen oder weniger </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:95:50');"
-                    >emu_content/05/05-05-a-LR-parsing-by-hand.emu:95:50</span></span></span>\(b\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >'s (aber mindestens</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:95:50');"
-                    >emu_content/05/05-05-a-LR-parsing-by-hand.emu:95:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >einem), abgeschlossen</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:96:50');"
-                    >emu_content/05/05-05-a-LR-parsing-by-hand.emu:96:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >mit einem </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:97:50');"
-                    >emu_content/05/05-05-a-LR-parsing-by-hand.emu:97:50</span></span></span>\(c\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:97:50');"
-                    >emu_content/05/05-05-a-LR-parsing-by-hand.emu:97:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:98:50');"
-                    >emu_content/05/05-05-a-LR-parsing-by-hand.emu:98:50</span></span></span></i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >. Eine</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:98:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:98:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Grammatik ist schnell geschrieben:</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:99:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:99:50</span></span></span>
+            <p>
+              also 
+              <i>beliebig viele \(a\)'s, gefolgt von gleich vielen oder weniger \(b\)'s (aber mindestens
+                einem), abgeschlossen
+                mit einem \(c\)
+                </i>. Eine
+              Grammatik ist schnell geschrieben:
             </p>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >\begin{align}</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:100:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:100:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >S&amp;\rightarrow aS \\</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:101:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:101:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >S&amp;\rightarrow Xc \\</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:102:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:102:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >X&amp;\rightarrow aXb \\</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:103:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:103:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >X&amp;\rightarrow ab</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:104:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:104:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >\end{align}</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:105:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:105:50</span></span></span>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Wenn wir jetzt die ersten </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:108:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:108:50</span></span></span>\(k\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     Zeichen lesen: 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:108:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:108:50</span></span></span>\(aaaa \dots\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >, dann</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:108:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:108:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >gibt es keinen Weg, zu entscheiden, ob danach gleich viele oder weniger</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:109:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:109:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:110:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:110:50</span></span></span>\(b\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >'s folgen werden, ob wir also </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:110:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:110:50</span></span></span>\(S \rightarrow sS\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     oder 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:110:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:110:50</span></span></span>\(S \rightarrow Xc\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     anwenden sollen.
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:110:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:110:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Das lässt sich auch nicht durch Umschreiben der Grammatik lösen. Wir müssen</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:111:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:111:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >lesen, bis wir ein </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:112:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:112:50</span></span></span>\(b\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     sehen.
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:112:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:112:50</span></span></span>
+            $$\begin{align}
+            S&amp;\rightarrow aS \\
+            S&amp;\rightarrow Xc \\
+            X&amp;\rightarrow aXb \\
+            X&amp;\rightarrow ab
+            \end{align}$$
+            <p>
+              Wenn wir jetzt die ersten \(k\) Zeichen lesen: \(aaaa \dots\), dann
+              gibt es keinen Weg, zu entscheiden, ob danach gleich viele oder weniger
+              \(b\)'s folgen werden, ob wir also \(S \rightarrow sS\) oder \(S \rightarrow Xc\) anwenden sollen.
+              Das lässt sich auch nicht durch Umschreiben der Grammatik lösen. Wir müssen
+              lesen, bis wir ein \(b\) sehen.
             </p>
           </div>
-          <h2><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Das LR-Paradigma</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:115:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:115:50</span></span></span>
+          <h2>
+            Das LR-Paradigma
           </h2>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wir brauchen einen Paradigmenwechsel. Das LL-Paradigma war ja, mit </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:118:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:118:50</span></span></span>\(S\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   zu starten und,
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:118:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:118:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >geleitet von den nächsten </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:119:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:119:50</span></span></span>\(k\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   Zeichen, zu entscheiden, welche Ableitungsregel als nächstes
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:119:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:119:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >anzuwenden ist. Hierbei haben wir immer versucht, für das am weitesten</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:120:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:120:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >links stehende Nichtterminal eine Regel zu finden. Wir beschreiben nun ein ganz anderes</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:121:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:121:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Vorgehen: wir lesen das Eingabewort </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:122:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:122:50</span></span></span>\(v\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   von links nach rechts, unterhalten also
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:122:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:122:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >einen </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:123:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:123:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Stack</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:123:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:123:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, auf dem ein Präfix </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:123:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:123:50</span></span></span>\(\gamma\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   von 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:123:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:123:50</span></span></span>\(v\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   liegt,
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:123:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:123:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >bis wir am rechten Ende die rechte Seite einer Produktionsregel erkennen - bis also</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:124:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:124:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:125:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:125:50</span></span></span>\(\gamma = \alpha \beta\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und es eine Produktion 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:125:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:125:50</span></span></span>\(X \rightarrow \beta\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   gibt. Dann ersetzen
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:125:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:125:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wir </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:126:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:126:50</span></span></span>\(\alpha \beta\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   durch 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:126:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:126:50</span></span></span>\(\alpha X\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:126:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:126:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Unser Stack enthält nun keine Präfix von </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:127:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:127:50</span></span></span>\(v\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   mehr, sondern eine Wortform 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:127:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:127:50</span></span></span>\(\gamma\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:127:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:127:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Zusammen mit dem ungelesenen Teil </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:128:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:128:50</span></span></span>\(w\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   des Eingabewortes ergibt das eine
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:128:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:128:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wortform </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:129:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:129:50</span></span></span>\(\gamma w\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Solange es eine Rechtsableitung</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:129:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:129:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:130:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:130:50</span></span></span>\(S \Pets{} \gamma w \Pets{} v\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   gibt, sind wir auf dem richtigen Weg.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:130:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:130:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Am Besten betrachten wir ein Beispiel für</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:131:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:131:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:132:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:132:50</span></span></span>\(L_2 = \{a^{m+k} b^m c \ | \ m \geq 1, k \geq 0\}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Die Farbe grau bedeutet</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:132:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:132:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >hier, dass wir das Eingabezeichen noch nicht gelesen haben.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:133:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:133:50</span></span></span>
+          <p>
+            Wir brauchen einen Paradigmenwechsel. Das LL-Paradigma war ja, mit \(S\) zu starten und,
+            geleitet von den nächsten \(k\) Zeichen, zu entscheiden, welche Ableitungsregel als nächstes
+            anzuwenden ist. Hierbei haben wir immer versucht, für das am weitesten
+            links stehende Nichtterminal eine Regel zu finden. Wir beschreiben nun ein ganz anderes
+            Vorgehen: wir lesen das Eingabewort \(v\) von links nach rechts, unterhalten also
+            einen 
+            <i>Stack</i>, auf dem ein Präfix \(\gamma\) von \(v\) liegt,
+            bis wir am rechten Ende die rechte Seite einer Produktionsregel erkennen - bis also
+            \(\gamma = \alpha \beta\) und es eine Produktion \(X \rightarrow \beta\) gibt. Dann ersetzen
+            wir \(\alpha \beta\) durch \(\alpha X\).
+            Unser Stack enthält nun keine Präfix von \(v\) mehr, sondern eine Wortform \(\gamma\).
+            Zusammen mit dem ungelesenen Teil \(w\) des Eingabewortes ergibt das eine
+            Wortform \(\gamma w\). Solange es eine Rechtsableitung
+            \(S \Pets{} \gamma w \Pets{} v\) gibt, sind wir auf dem richtigen Weg.
+            Am Besten betrachten wir ein Beispiel für
+            \(L_2 = \{a^{m+k} b^m c \ | \ m \geq 1, k \geq 0\}\). Die Farbe grau bedeutet
+            hier, dass wir das Eingabezeichen noch nicht gelesen haben.
           </p>
           <figure
             class="centered-figure well container"
@@ -1311,23 +504,9 @@
               </div>
             </div>
           </figure>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Betrachten wir noch ein Beispiel, nun für die etwas nützlichere Grammatik</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:349:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:349:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >der streng geklammerten arithmetischen Ausdrücke.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:350:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:350:50</span></span></span>
+          <p>
+            Betrachten wir noch ein Beispiel, nun für die etwas nützlichere Grammatik
+            der streng geklammerten arithmetischen Ausdrücke.
           </p>
           <figure
             class="centered-figure well container"
@@ -1661,23 +840,10 @@
               </div>
             </div>
           </figure>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wenn wir uns nun die Ableitung ansehen, die wir gefunden haben:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:558:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:558:50</span></span></span>
+          <p>
+            Wenn wir uns nun die Ableitung ansehen, die wir gefunden haben:
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:559:50');"
-              >emu_content/05/05-05-a-LR-parsing-by-hand.emu:559:50</span></span></span>$$\begin{align*}
+          $$\begin{align*}
           \texttt{S} \Step{}
           \texttt{(S+S)} \Step{}
           \texttt{(S+(S*S))} \Step{}
@@ -1685,260 +851,39 @@
           \texttt{(S+(y*z))} \Step{}
           \texttt{(x+(y*z))}
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:566:50');"
-              >emu_content/05/05-05-a-LR-parsing-by-hand.emu:566:50</span></span></span>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >dann sehen wir, dass es sich um eine Rechtsableitung handelt. Daher der Name LR-Parsing: wir</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:569:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:569:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >beginnen links (daher das L) und suchen eine Rechtsableitung (daher das R), allerdings in</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:570:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:570:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >umgekehrter</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:571:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:571:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Reihenfolge. Statt von </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:572:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:572:50</span></span></span>\(S\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ausgehend 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:572:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:572:50</span></span></span>\(w\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   abzuleiten, also 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:572:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:572:50</span></span></span>\(S \Step{}^* w\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, versuchen</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:572:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:572:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wir </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:573:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:573:50</span></span></span>\(w\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   zu 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:573:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:573:50</span></span></span>\(S\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   zu 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:573:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:573:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >reduzieren</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:573:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:573:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, also </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:573:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:573:50</span></span></span>\(w \Pets{}^* S\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:573:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:573:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Allerdings ist das nicht immer so einfach: manchmal ist nicht auf den ersten Blick erkennbar,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:574:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:574:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >welche Produktionsregel wir (rückwärts) anwenden sollen. Hier ein etwas konstruiertes Beispiel:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:575:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:575:50</span></span></span>
+          <p>
+            dann sehen wir, dass es sich um eine Rechtsableitung handelt. Daher der Name LR-Parsing: wir
+            beginnen links (daher das L) und suchen eine Rechtsableitung (daher das R), allerdings in
+            umgekehrter
+            Reihenfolge. Statt von \(S\) ausgehend \(w\) abzuleiten, also \(S \Step{}^* w\), versuchen
+            wir \(w\) zu \(S\) zu 
+            <i>reduzieren</i>, also \(w \Pets{}^* S\).
+            Allerdings ist das nicht immer so einfach: manchmal ist nicht auf den ersten Blick erkennbar,
+            welche Produktionsregel wir (rückwärts) anwenden sollen. Hier ein etwas konstruiertes Beispiel:
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:576:50');"
-              >emu_content/05/05-05-a-LR-parsing-by-hand.emu:576:50</span></span></span>$$\begin{align*}
+          $$\begin{align*}
           S&amp;\rightarrow XYz \\
           X&amp;\rightarrow aXa \ | \ bXb \ | \ c \\
           Y&amp;\rightarrow Ya \ | \ Yb \ | \ a \ | \ b
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:580:50');"
-              >emu_content/05/05-05-a-LR-parsing-by-hand.emu:580:50</span></span></span>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Die erzeugte Sprache ist </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:583:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:583:50</span></span></span>
+          <p>
+            Die erzeugte Sprache ist 
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:584:50');"
-              >emu_content/05/05-05-a-LR-parsing-by-hand.emu:584:50</span></span></span>$$\begin{align*}
+          $$\begin{align*}
           L(G) = \{vcv^Rwz \ | \ v, w \in \{a,b\}^* \}
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:586:50');"
-              >emu_content/05/05-05-a-LR-parsing-by-hand.emu:586:50</span></span></span>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Betrachten wir das Eingabewort </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:589:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:589:50</span></span></span>\(acaba\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Wir schreiben nun immer</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:589:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:589:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >den bis jetzt gelesenen / geparsten Teil des Wortes, gefolgt von dem</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:590:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:590:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >ungelesen Teil in grau und dahinter</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:591:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:591:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >in Klammern ,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:592:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:592:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >was wir als nächstes tun, also das nächste Zeichen lesen oder eine</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:593:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:593:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Regel anwenden.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:594:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:594:50</span></span></span>
+          <p>
+            Betrachten wir das Eingabewort \(acaba\). Wir schreiben nun immer
+            den bis jetzt gelesenen / geparsten Teil des Wortes, gefolgt von dem
+            ungelesen Teil in grau und dahinter
+            in Klammern ,
+            was wir als nächstes tun, also das nächste Zeichen lesen oder eine
+            Regel anwenden.
           </p>
           <div
             class="container"
           >
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:598:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:598:50</span></span></span>$$\begin{align*}
+            $$\begin{align*}
             &amp;\textcolor{darkgray}{acabaz} \tag{lesen} \\
             &amp;a\textcolor{darkgray}{cabaz} \tag{lesen} \\
             &amp;ac\textcolor{darkgray}{abaz} \tag{reduzieren per $X \rightarrow c$} \\
@@ -1952,600 +897,84 @@
             &amp;XYz \tag{reduzieren per $S \rightarrow XYz$} \\
             &amp;S \tag{fertig}
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:611:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:611:50</span></span></span>
           </div>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Es stellen sich einige Fragen: woher wissen wir zum Beispiel bei</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:614:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:614:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:615:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:615:50</span></span></span>\(XYa\textcolor{darkgray}{z}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, dass wir per </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:615:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:615:50</span></span></span>\(Y \rightarrow Ya\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   reduzieren müssen
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:615:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:615:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >und nicht per </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:616:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:616:50</span></span></span>\(Y \rightarrow a\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >? Wir könnten ja auch auf</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:616:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:616:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:617:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:617:50</span></span></span>\(XYa \Pets{} XYY\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   reduzieren. Oder in Schritt 2, bei
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:617:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:617:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:618:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:618:50</span></span></span>\(a\textcolor{darkgray}{cabaz}\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Da könnten wir ja</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:618:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:618:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >gleich </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:619:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:619:50</span></span></span>\(a \Pets{} Y\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   reduzieren.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:619:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:619:50</span></span></span>
+          <p>
+            Es stellen sich einige Fragen: woher wissen wir zum Beispiel bei
+            \(XYa\textcolor{darkgray}{z}\), dass wir per \(Y \rightarrow Ya\) reduzieren müssen
+            und nicht per \(Y \rightarrow a\)? Wir könnten ja auch auf
+            \(XYa \Pets{} XYY\) reduzieren. Oder in Schritt 2, bei
+            \(a\textcolor{darkgray}{cabaz}\). Da könnten wir ja
+            gleich \(a \Pets{} Y\) reduzieren.
           </p>
           <div
             class="well container theorem"
           >
-            <p><span
+            <p>
+              <span
                 class="numbered-title"
-              ><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Beobachtung </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:626:50');"
-                    >emu_content/05/05-05-a-LR-parsing-by-hand.emu:626:50</span></span></span><NumberedTitle><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >5.5.2</span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:629:50');"
-                      >emu_content/05/05-05-a-LR-parsing-by-hand.emu:629:50</span></span></span></NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       .
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:630:50');"
-                    >emu_content/05/05-05-a-LR-parsing-by-hand.emu:630:50</span></span></span></span><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     Die Reduktion
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:631:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:631:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:632:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:632:50</span></span></span>\(XYa \Pets{} XYY\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     kann nicht richtig sein, weil 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:632:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:632:50</span></span></span>\(XYY\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     nie als Präfix in einer
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:632:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:632:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Rechtsableitung vorkommen kann. Genauer gesagt: es gibt kein </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:633:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:633:50</span></span></span>\(w \in \Sigma^*\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >, so dass</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:633:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:633:50</span></span></span>
+              >Beobachtung 
+                <NumberedTitle>5.5.2</NumberedTitle>
+                 .</span>
+               Die Reduktion
+              \(XYa \Pets{} XYY\) kann nicht richtig sein, weil \(XYY\) nie als Präfix in einer
+              Rechtsableitung vorkommen kann. Genauer gesagt: es gibt kein \(w \in \Sigma^*\), so dass
             </p>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:634:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:634:50</span></span></span>$$\begin{align*}
+            $$\begin{align*}
             S \Step{}^* XYYw \Step{} XYaw
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:636:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:636:50</span></span></span>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >eine Rechtsableitung ist.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:639:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:639:50</span></span></span>
+            <p>
+              eine Rechtsableitung ist.
             </p>
           </div>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wenn wir Glück haben, gibt es immer höchstens eine Reduktionsregel</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:642:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:642:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:643:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:643:50</span></span></span>\(\alpha \beta w \Pets{} \alpha X w\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, so dass</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:643:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:643:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:644:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:644:50</span></span></span>\(S \Step{}^* \alpha X w \Step{} \alpha \beta w\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   in einer Rechtsableitung vorkommen kann.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:644:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:644:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Das hängt von der Grammatik ab. Aber selbst dann brauchen wir einen Algorithmus, der</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:645:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:645:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >uns sagen kann, ob </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:646:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:646:50</span></span></span>\(XYa \Pets{} XYY\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ein korrekter Reduktionsschritt ist. Dies scheint
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:646:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:646:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >komplexer, als </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:647:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:647:50</span></span></span>\(w \stackrel{?}{\in} L\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   zu entscheiden, ist aber 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:647:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:647:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >einfacher</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:647:50');"
-                  >emu_content/05/05-05-a-LR-parsing-by-hand.emu:647:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >!</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:647:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:647:50</span></span></span>
+          <p>
+            Wenn wir Glück haben, gibt es immer höchstens eine Reduktionsregel
+            \(\alpha \beta w \Pets{} \alpha X w\), so dass
+            \(S \Step{}^* \alpha X w \Step{} \alpha \beta w\) in einer Rechtsableitung vorkommen kann.
+            Das hängt von der Grammatik ab. Aber selbst dann brauchen wir einen Algorithmus, der
+            uns sagen kann, ob \(XYa \Pets{} XYY\) ein korrekter Reduktionsschritt ist. Dies scheint
+            komplexer, als \(w \stackrel{?}{\in} L\) zu entscheiden, ist aber 
+            <i>einfacher</i>!
           </p>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Ein zweites Problem ist, dass wir eben manchmal kein Glück haben und es mehrere</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:650:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:650:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >plausible Reduktionsschritte geben kann. Ein Beispiel wäre die obere Grammatik, leicht</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:651:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:651:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >abgewandelt:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:652:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:652:50</span></span></span>
+          <p>
+            Ein zweites Problem ist, dass wir eben manchmal kein Glück haben und es mehrere
+            plausible Reduktionsschritte geben kann. Ein Beispiel wäre die obere Grammatik, leicht
+            abgewandelt:
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:653:50');"
-              >emu_content/05/05-05-a-LR-parsing-by-hand.emu:653:50</span></span></span>$$\begin{align*}
+          $$\begin{align*}
           S&amp;\rightarrow XY \tag{beachten Sie: oben hatten wir $S \rightarrow XYz$}\\
           X&amp;\rightarrow aXa \ | \ bXb \ | \ c \\
           Y&amp;\rightarrow Ya \ | \ Yb \ | \ a \ | \ b
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:657:50');"
-              >emu_content/05/05-05-a-LR-parsing-by-hand.emu:657:50</span></span></span>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wenn wir jetzt als einfaches Beispiel </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:660:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:660:50</span></span></span>\(cab\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   ableiten wollen:
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:660:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:660:50</span></span></span>
+          <p>
+            Wenn wir jetzt als einfaches Beispiel \(cab\) ableiten wollen:
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:661:50');"
-              >emu_content/05/05-05-a-LR-parsing-by-hand.emu:661:50</span></span></span>$$\begin{align*}
+          $$\begin{align*}
           \textcolor{darkgray}{cab} \tag{lesen} \\
           c\textcolor{darkgray}{ab} \tag{reduzieren per $X \rightarrow c$} \\
           X\textcolor{darkgray}{ab} \tag{lesen} \\
           Xa\textcolor{darkgray}{ab} \tag{reduzieren per $Y \rightarrow a$} \\
           XY\textcolor{darkgray}{b} \tag{reduzieren per $Y \rightarrow a$}
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:667:50');"
-              >emu_content/05/05-05-a-LR-parsing-by-hand.emu:667:50</span></span></span>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Jetzt liegt die Wortform </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:670:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:670:50</span></span></span>\(XY\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   auf unserem Stack und wir haben zwei Möglichkeiten:
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:670:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:670:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wir könnten reduzieren, also </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:671:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:671:50</span></span></span>\(XY \Pets{} S\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, oder das nächste Zeichen lesen.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:671:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:671:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Ersteres wäre inkorrekt:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:672:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:672:50</span></span></span>
+          <p>
+            Jetzt liegt die Wortform \(XY\) auf unserem Stack und wir haben zwei Möglichkeiten:
+            wir könnten reduzieren, also \(XY \Pets{} S\), oder das nächste Zeichen lesen.
+            Ersteres wäre inkorrekt:
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:673:50');"
-              >emu_content/05/05-05-a-LR-parsing-by-hand.emu:673:50</span></span></span>$$\begin{align*}
+          $$\begin{align*}
           XY\textcolor{darkgray}{b} \Pets{} S \textcolor{darkgray}{b} \ ,
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:675:50');"
-              >emu_content/05/05-05-a-LR-parsing-by-hand.emu:675:50</span></span></span>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wobei </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:678:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:678:50</span></span></span>\(Sb\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   eben keine Wortform ist, die in einer Rechtsableitung vorkommen könnte.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:678:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:678:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Das wissen wir aber erst, wenn wir </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:679:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:679:50</span></span></span>\(b\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   gelesen haben. Wäre das Eingabewort nämlich nur 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:679:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:679:50</span></span></span>\(ca\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:679:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:679:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >dann</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:680:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:680:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >wäre </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:681:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:681:50</span></span></span>\(XY \Pets{} S\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   tatsächlich die korrekte Reduktion. In der ersten Grammatik
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:681:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:681:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >hatten wir als "Work-around" ein </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:682:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:682:50</span></span></span>\(z\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   am Ende angehängt, um das Wortende zu erkennen.
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:682:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:682:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Im Allgemeinen ist es aber leichter, dem Parser zu erlauben, das nächste Zeichen zu lesen.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:683:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:683:50</span></span></span>
+          <p>
+            wobei \(Sb\) eben keine Wortform ist, die in einer Rechtsableitung vorkommen könnte.
+            Das wissen wir aber erst, wenn wir \(b\) gelesen haben. Wäre das Eingabewort nämlich nur \(ca\),
+            dann
+            wäre \(XY \Pets{} S\) tatsächlich die korrekte Reduktion. In der ersten Grammatik
+            hatten wir als "Work-around" ein \(z\) am Ende angehängt, um das Wortende zu erkennen.
+            Im Allgemeinen ist es aber leichter, dem Parser zu erlauben, das nächste Zeichen zu lesen.
           </p>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >All diese Gedanken theoretisch rigoros zu formulieren ist einigermaßen herausvordernd.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:686:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:686:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Daher werden wir erst einmal für eine Grammatik arithmetischer Ausdrücke einen</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:687:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:687:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Parser in Java implementieren.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/05/05-05-a-LR-parsing-by-hand.emu:688:50');"
-                >emu_content/05/05-05-a-LR-parsing-by-hand.emu:688:50</span></span></span>
+          <p>
+            All diese Gedanken theoretisch rigoros zu formulieren ist einigermaßen herausvordernd.
+            Daher werden wir erst einmal für eine Grammatik arithmetischer Ausdrücke einen
+            Parser in Java implementieren.
           </p>
         </div>
       </div>

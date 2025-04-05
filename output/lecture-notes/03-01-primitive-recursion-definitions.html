@@ -31,23 +31,9 @@
   >
     <a
       href="../vorlesungsskript.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >Inhaltsverzeichnis</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:12:50');"
-          >emu_content/03/03-01-primitive-recursion-definitions.emu:12:50</span></span></span></a><a
+    >Inhaltsverzeichnis</a><a
       href="03-00-Computability-NaturalNumbers.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >&lt;&lt; Kapitel 3.0</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:16:50');"
-          >emu_content/03/03-01-primitive-recursion-definitions.emu:16:50</span></span></span></a>
+    >&lt;&lt; Kapitel 3.0</a>
   </div>
   <div
     id="link-to-overview"
@@ -55,23 +41,9 @@
   >
     <a
       href="/"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >zur Kursübersicht</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:23:50');"
-          >emu_content/03/03-01-primitive-recursion-definitions.emu:23:50</span></span></span></a><a
+    >zur Kursübersicht</a><a
       href="03-02-primitive-recursion-constructions.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >Kapitel 3.2 &gt;&gt;</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:27:50');"
-          >emu_content/03/03-01-primitive-recursion-definitions.emu:27:50</span></span></span></a>
+    >Kapitel 3.2 &gt;&gt;</a>
   </div>
   <div
     id="rightSideWrapper"
@@ -90,623 +62,80 @@
           >
             <span
               class="subChapterTitle"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >3.1</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:41:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:41:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Primitive Rekursion: Motivation und Definitionen</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:42:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:42:50</span></span></span></span>
+            >3.1
+              Primitive Rekursion: Motivation und Definitionen</span>
           </h1>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Primitive Rekursion ist ein Versuch, Berechbarkeit von Funktionen </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:45:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:45:50</span></span></span>\(f: \N^k \rightarrow \N\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:45:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:45:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >anhand</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:46:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:46:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >eines "Baukastenprinzips" zu modellieren. Man stellt gewisse Basisfunktionen als "offensichtlich</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:47:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:47:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >berechenbar" zur Verfügung und beschreibt </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:48:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:48:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Kombinatoren</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:48:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:48:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, die aus bereits konstruierten</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:48:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:48:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Funktionen neue bauen können. Die primitiv-rekursiven Funktionen sind dann all jene, die</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:49:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:49:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >mittels der Kombinatoren von den Basisfunktionen ausgehend konstruiert werden können.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:50:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:50:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Die Basisfunktionen sind:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:51:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:51:50</span></span></span>
+          <p>
+            Primitive Rekursion ist ein Versuch, Berechbarkeit von Funktionen \(f: \N^k \rightarrow \N\)
+            anhand
+            eines "Baukastenprinzips" zu modellieren. Man stellt gewisse Basisfunktionen als "offensichtlich
+            berechenbar" zur Verfügung und beschreibt 
+            <i>Kombinatoren</i>, die aus bereits konstruierten
+            Funktionen neue bauen können. Die primitiv-rekursiven Funktionen sind dann all jene, die
+            mittels der Kombinatoren von den Basisfunktionen ausgehend konstruiert werden können.
+            Die Basisfunktionen sind:
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:52:50');"
-              >emu_content/03/03-01-primitive-recursion-definitions.emu:52:50</span></span></span>$$\begin{align*}
+          $$\begin{align*}
           \zero:&\N^* \rightarrow \N \\
           \vec{x}&amp;\mapsto 0
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:55:50');"
-              >emu_content/03/03-01-primitive-recursion-definitions.emu:55:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:56:50');"
-              >emu_content/03/03-01-primitive-recursion-definitions.emu:56:50</span></span></span>$$\begin{align*}
+          $$\begin{align*}
           \succ: \N&amp;\rightarrow \N \\
           x&amp;\mapsto x+1
           \end{align*}$$
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:59:50');"
-              >emu_content/03/03-01-primitive-recursion-definitions.emu:59:50</span></span></span>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Sind diese Funktionen "offensichtlich berechenbar"? Ich würde sagen, die fundamentale Eigenschaft</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:62:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:62:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >der natürlichen Zahlen ist, dass jede Zahl einen Nachfolger (successor) hat; daher ist irgendwie</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:63:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:63:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >klar, dass </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:64:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:64:50</span></span></span>\(\succ\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   berechen bar ist. Aber seien wir vorsichtig: wenn wir für natürliche Zahlen
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:64:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:64:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >die Dezimaldarstellung (oder Binärdarstellung, spielt keine Rolle) verwenden, dann ist</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:65:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:65:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >die Operation </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:66:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:66:50</span></span></span>\(x \mapsto x+1\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   bereits eine nicht ganz triviale Operation, sie erfordert
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:66:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:66:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >beispielsweise Schleifen (von rechts nach links durchgehen), if-then-else-Ausdrücke (gibt es ein</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:67:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:67:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Carry?)</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:68:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:68:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >etc. Daher sollten Sie so tun, also würden wir natürliche Zahlen in </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:69:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:69:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >unärer Schreibweise</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:69:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:69:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:69:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:69:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >(auhc Steinzeitnotation genannt)</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:70:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:70:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >darstellen, also vier </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:71:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:71:50</span></span></span>\( = 1111\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, sieben = </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:71:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:71:50</span></span></span>\(= 1111111\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Jezt</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:71:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:71:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >brauchen wir für succ kein if-then-else und keine Schleifen, denn</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:72:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:72:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:73:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:73:50</span></span></span>\(\succ(x) = 1x\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:73:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:73:50</span></span></span>
+          <p>
+            Sind diese Funktionen "offensichtlich berechenbar"? Ich würde sagen, die fundamentale Eigenschaft
+            der natürlichen Zahlen ist, dass jede Zahl einen Nachfolger (successor) hat; daher ist irgendwie
+            klar, dass \(\succ\) berechen bar ist. Aber seien wir vorsichtig: wenn wir für natürliche Zahlen
+            die Dezimaldarstellung (oder Binärdarstellung, spielt keine Rolle) verwenden, dann ist
+            die Operation \(x \mapsto x+1\) bereits eine nicht ganz triviale Operation, sie erfordert
+            beispielsweise Schleifen (von rechts nach links durchgehen), if-then-else-Ausdrücke (gibt es ein
+            Carry?)
+            etc. Daher sollten Sie so tun, also würden wir natürliche Zahlen in 
+            <i>unärer Schreibweise</i>
+            (auhc Steinzeitnotation genannt)
+            darstellen, also vier \( = 1111\), sieben = \(= 1111111\). Jezt
+            brauchen wir für succ kein if-then-else und keine Schleifen, denn
+            \(\succ(x) = 1x\).
           </p>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Eine weitere Klasse von "offensichtlich" berechenbaren Funktionen sind die sogenannten</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:76:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:76:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Projektionen</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:77:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:77:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:78:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:78:50</span></span></span>\(\pi^n_k\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >, definiert als</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:78:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:78:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:79:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:79:50</span></span></span>$$\begin{align*}
+          <p>
+            Eine weitere Klasse von "offensichtlich" berechenbaren Funktionen sind die sogenannten
+            Projektionen
+            \(\pi^n_k\), definiert als
+            $$\begin{align*}
             \pi^n_k : \N^n&amp;\rightarrow \N \\
             \vec{x}&amp;\mapsto x_k \ .
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:82:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:82:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Irgendwie sollte auch hier klar sein, dass die Vorschrift "gib von den 3 Argumenten, die Du</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:83:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:83:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >erhältst, das erste zurück" ohne Zweifel "berechenbar" ist.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:84:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:84:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Weil wir bald alles in einem Python-Framework implementieren werden, sei angemerkt,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:85:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:85:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >dass ich die Zählung der Indizes bei 0 beginnen lasse, also zum Beispiel</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:86:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:86:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:87:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:87:50</span></span></span>$$\begin{align*}
+            Irgendwie sollte auch hier klar sein, dass die Vorschrift "gib von den 3 Argumenten, die Du
+            erhältst, das erste zurück" ohne Zweifel "berechenbar" ist.
+            Weil wir bald alles in einem Python-Framework implementieren werden, sei angemerkt,
+            dass ich die Zählung der Indizes bei 0 beginnen lasse, also zum Beispiel
+            $$\begin{align*}
             \pi^3_0: (x,y,z) \mapsto x \\
             \pi^3_1: (x,y,z) \mapsto y \ .
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:90:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:90:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Auch die Stelligkeit </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:91:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:91:50</span></span></span>\(n\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   lasse ich oft weg und schreibe einfach 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:91:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:91:50</span></span></span>\(\pi_k\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   statt 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:91:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:91:50</span></span></span>\(\pi^n_k\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:91:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:91:50</span></span></span>
+            Auch die Stelligkeit \(n\) lasse ich oft weg und schreibe einfach \(\pi_k\) statt \(\pi^n_k\).
           </p>
-          <span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:92:50');"
-              >emu_content/03/03-01-primitive-recursion-definitions.emu:92:50</span></span></span><b><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Kombinatoren.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:92:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:92:50</span></span></span></b><span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              ></span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:92:50');"
-              >emu_content/03/03-01-primitive-recursion-definitions.emu:92:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >Die primitive Rekursion stellt zwei Kombinatoren zur Verfügung: Komposition (Verknüpfung) und</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:93:50');"
-              >emu_content/03/03-01-primitive-recursion-definitions.emu:93:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >primitive Rekursion.</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:94:50');"
-              >emu_content/03/03-01-primitive-recursion-definitions.emu:94:50</span></span></span>
+          <b>Kombinatoren.</b>
+          Die primitive Rekursion stellt zwei Kombinatoren zur Verfügung: Komposition (Verknüpfung) und
+          primitive Rekursion.
           <div
             class="well container theorem"
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Definition </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:100:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:100:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >3.1.1</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:103:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:103:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:104:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:104:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:105:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:105:50</span></span></span><b><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >(Komposition)</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:105:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:105:50</span></span></span></b><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:105:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:105:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Sei </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:106:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:106:50</span></span></span>\(f: \N^k \rightarrow \N\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:106:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:106:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:107:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:107:50</span></span></span>\(g_1, \dots, g_k: \N^l \rightarrow \N\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Dann ist</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:107:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:107:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:108:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:108:50</span></span></span>\(\comp(f, g_1, \dots, g_k)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   die Funktion
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:108:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:108:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:109:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:109:50</span></span></span>$$\begin{align*}
+            >Definition 
+              <NumberedTitle>3.1.1</NumberedTitle>
+               
+            </span><b>(Komposition)</b>
+            Sei \(f: \N^k \rightarrow \N\) und
+            \(g_1, \dots, g_k: \N^l \rightarrow \N\). Dann ist
+            \(\comp(f, g_1, \dots, g_k)\) die Funktion
+            $$\begin{align*}
             \N^l&amp;\rightarrow \N \\
             \vec{x}&amp;\mapsto f(g_1(\vec{x}), \dots, g_k(\vec{x}))
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:112:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:112:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Graphisch können Sie sich Komposition so vorstellen:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:113:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:113:50</span></span></span>
+            Graphisch können Sie sich Komposition so vorstellen:
             <figure>
               <img
                 style="height:15em"
@@ -715,1021 +144,189 @@
               >
             </figure>
           </div>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Um aber komplexere Operationen implementieren zu können, brauchen wir eine Art von Schleife.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:121:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:121:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Was ist die einfachste Art von Schleife oder Rekursion. Wir dürfen nur eine sehr beschränkte</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:122:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:122:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Form der Rekursion verwenden:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:123:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:123:50</span></span></span>
+          <p>
+            Um aber komplexere Operationen implementieren zu können, brauchen wir eine Art von Schleife.
+            Was ist die einfachste Art von Schleife oder Rekursion. Wir dürfen nur eine sehr beschränkte
+            Form der Rekursion verwenden:
           </p>
           <div
             class="well container theorem"
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Definition </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:129:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:129:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >3.1.2</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:132:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:132:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:133:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:133:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:134:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:134:50</span></span></span><b><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Primitive Rekursion</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:134:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:134:50</span></span></span></b><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:134:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:134:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Seien </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:135:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:135:50</span></span></span>\(g: \N^k \rightarrow \N\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   und 
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:135:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:135:50</span></span></span>\(h: \N^{k+2} \rightarrow \N\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >. Wir</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:135:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:135:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >definieren eine neue Funktion </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:136:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:136:50</span></span></span>\(f: \N^{k+1} \rightarrow \N\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   wie folgt:
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:136:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:136:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:137:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:137:50</span></span></span>$$\begin{align*}
+            >Definition 
+              <NumberedTitle>3.1.2</NumberedTitle>
+               
+            </span><b>Primitive Rekursion</b>
+            Seien \(g: \N^k \rightarrow \N\) und \(h: \N^{k+2} \rightarrow \N\). Wir
+            definieren eine neue Funktion \(f: \N^{k+1} \rightarrow \N\) wie folgt:
+            $$\begin{align*}
             f : \N^{k+1}&amp;\rightarrow \N \\
             (t, \vec{x})&amp;\rightarrow \begin{cases}
             g(\vec{x})&amp;\textnormal{ if $t=0$} \\
             h(f(t-1, \vec{x}), t-1, \vec{x})&amp;\textnormal{ if $t \geq 1$}.
             \end{cases}
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:143:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:143:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Für diese Konstruktion schreiben wir kompakt</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:144:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:144:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:145:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:145:50</span></span></span>\(f := \primrec(g,h)\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:145:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:145:50</span></span></span>
+            Für diese Konstruktion schreiben wir kompakt
+            \(f := \primrec(g,h)\).
           </div>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wenn Sie Rekursionshasser sind, dann können Sie sich es als Funktion mit einer</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:148:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:148:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:149:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:149:50</span></span></span>
-            <code><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >for</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:149:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:149:50</span></span></span>
+          <p>
+            Wenn Sie Rekursionshasser sind, dann können Sie sich es als Funktion mit einer
+            
+            <code>
+              for
             </code>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >-Schleife</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:149:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:149:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >vorstellen, in der nur eine lokale Variable erlaubt ist:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:150:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:150:50</span></span></span>
+            -Schleife
+            vorstellen, in der nur eine lokale Variable erlaubt ist:
           </p>
 <pre
   class="listing"
 >
-<span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
-></span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:154:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:154:50</span></span></span>
-<code><span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->def PrimRec(g, h):</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:154:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:154:50</span></span></span>
-</code>
-<span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
-></span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:154:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:154:50</span></span>
 
-<span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->
+<code>
+def PrimRec(g, h):
+</code>
+
  
-</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:156:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:156:50</span></span></span>
-<code><span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->def f(t,*x):</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:156:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:156:50</span></span></span>
+<code>
+def f(t,*x):
 </code>
-<span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
-></span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:156:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:156:50</span></span>
 
-<span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->
      
-</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:158:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:158:50</span></span></span>
-<code><span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->temp = g(*x)</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:158:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:158:50</span></span></span>
+<code>
+temp = g(*x)
 </code>
-<span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
-></span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:158:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:158:50</span></span>
 
-<span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->
      
-</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:160:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:160:50</span></span></span>
-<code><span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->for i in range(t):</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:160:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:160:50</span></span></span>
+<code>
+for i in range(t):
 </code>
-<span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
-></span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:160:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:160:50</span></span>
 
-<span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->
  
-</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:162:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:162:50</span></span></span>
-<code><span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->temp = h(temp, i, *x)</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:162:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:162:50</span></span></span>
+<code>
+temp = h(temp, i, *x)
 </code>
-<span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
-></span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:162:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:162:50</span></span>
 
-<span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->
      
-</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:164:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:164:50</span></span></span>
-<code><span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->return temp</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:164:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:164:50</span></span></span>
+<code>
+return temp
 </code>
-<span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
-></span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:164:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:164:50</span></span>
 
-<span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->
  
-</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:166:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:166:50</span></span></span>
-<code><span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->return f</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:166:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:166:50</span></span></span>
+<code>
+return f
 </code>
-<span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->
  
-</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:166:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:166:50</span></span></span>
 </pre>
-          <p><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Die Forderung, dass man nur </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:167:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:167:50</span></span></span><i><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >eine</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:167:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:167:50</span></span></span></i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   lokale Variable durch die Schleife führen darf, scheint
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:167:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:167:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >sehr restriktiv; es ist aber wohl die einfachste Form einer Schleife, die wirklich etwas</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:168:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:168:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >"schleifenhaftes" tut.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:169:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:169:50</span></span></span>
+          <p>
+            Die Forderung, dass man nur 
+            <i>eine</i>
+             lokale Variable durch die Schleife führen darf, scheint
+            sehr restriktiv; es ist aber wohl die einfachste Form einer Schleife, die wirklich etwas
+            "schleifenhaftes" tut.
           </p>
           <div
             class="well container theorem"
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Demo.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:175:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:175:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Speichern Sie die Datei </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:176:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:176:50</span></span></span><a
+            >Demo.</span>Speichern Sie die Datei 
+            <a
               href="../code/primitive-recursion/primrec.py"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >primrec.py</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:180:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:180:50</span></span></span></a><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   auf
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:181:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:181:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Ihrem Rechner.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:182:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:182:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Diese Datei stellt ein Framework für die Implementierung primitiv rekursiver Funktionen zur</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:183:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:183:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Verfügung.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:184:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:184:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Insbesondere implementiert sie die folgenden Funktion </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:185:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:185:50</span></span></span>\(\N^k \rightarrow \N\)<span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:185:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:185:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:186:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:186:50</span></span></span>$$\begin{align*}
+            >primrec.py</a>
+             auf
+            Ihrem Rechner.
+            Diese Datei stellt ein Framework für die Implementierung primitiv rekursiver Funktionen zur
+            Verfügung.
+            Insbesondere implementiert sie die folgenden Funktion \(\N^k \rightarrow \N\):
+            $$\begin{align*}
             {\rm zero}:&amp;\vec{x} \mapsto 0 \\
             {\rm succ}:&amp;x \mapsto x+1
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:189:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:189:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >als "übliche" Python-Funktionen. Darüberhinaus implementiert sie die folgenden</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:190:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:190:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Kombinatoren, welche Ihnen nach den</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:191:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:191:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Regeln der primitiven Rekursion neue Funktionen erstellt:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:192:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:192:50</span></span></span>
+            als "übliche" Python-Funktionen. Darüberhinaus implementiert sie die folgenden
+            Kombinatoren, welche Ihnen nach den
+            Regeln der primitiven Rekursion neue Funktionen erstellt:
             <ul>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:196:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:196:50</span></span></span>
-                <code><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >Proj(k)</span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:196:50');"
-                      >emu_content/03/03-01-primitive-recursion-definitions.emu:196:50</span></span></span>
+              <li>
+                
+                <code>
+                  Proj(k)
                 </code>
-                <span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >: erzeugt die Funktion</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:196:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:196:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:197:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:197:50</span></span></span>$$\begin{align*}
+                : erzeugt die Funktion
+                $$\begin{align*}
                 \pi_k : \N^*&amp;\rightarrow \N \\
                 \vec{x}&amp;\mapsto x_k \ .
                 \end{align*}$$
-                <span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:200:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:200:50</span></span></span>
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:203:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:203:50</span></span></span>
-                <code><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >Comp(f, g0, g1, ...)</span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:203:50');"
-                      >emu_content/03/03-01-primitive-recursion-definitions.emu:203:50</span></span></span>
+              <li>
+                
+                <code>
+                  Comp(f, g0, g1, ...)
                 </code>
-                <span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >: erzeugt die Funktion</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:203:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:203:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:204:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:204:50</span></span></span>$$\begin{align*}
+                : erzeugt die Funktion
+                $$\begin{align*}
                 \vec{x} \mapsto f(g0(x), g1(x), ...)
                 \end{align*}$$
-                <span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:206:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:206:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Sie als User müssen sicherstellen, dass die Stelligkeit von </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:207:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:207:50</span></span></span>\(f\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       mit der Anzahl der als
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:207:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:207:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:208:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:208:50</span></span></span>\(g_i\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       übergebenen Funktionen
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:208:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:208:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >übereinstimmt.</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:209:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:209:50</span></span></span>
+                Sie als User müssen sicherstellen, dass die Stelligkeit von \(f\) mit der Anzahl der als
+                \(g_i\) übergebenen Funktionen
+                übereinstimmt.
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:212:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:212:50</span></span></span>
-                <code><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >PrimRec(g,h)</span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:212:50');"
-                      >emu_content/03/03-01-primitive-recursion-definitions.emu:212:50</span></span></span>
+              <li>
+                
+                <code>
+                  PrimRec(g,h)
                 </code>
-                <span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >: erzeugt die Funktion</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:212:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:212:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:213:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:213:50</span></span></span>$$\begin{align*}
+                : erzeugt die Funktion
+                $$\begin{align*}
                 (t, \vec{x}) \mapsto \begin{cases}
                 g(\vec{x})&amp;\textnormal{ if $t=0$,} \\
                 h(f(t-1, \vec{x}), t-1, \vec{x})&amp;\textnormal{ if $t \geq 1$.}
                 \end{cases}
                 \end{align*}$$
-                <span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:218:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:218:50</span></span></span>
               </li>
             </ul>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Wenn wir die primitive Rekursion als "Programmiersprache" betrachten, dann heißt das, dass</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:221:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:221:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >wir</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:222:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:222:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >neue Funktionen bauen dürfen, indem wir </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:223:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:223:50</span></span></span>
-              <code><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >zero,succ,Proj,Comp,PrimRec</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:223:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:223:50</span></span></span>
+            <p>
+              Wenn wir die primitive Rekursion als "Programmiersprache" betrachten, dann heißt das, dass
+              wir
+              neue Funktionen bauen dürfen, indem wir 
+              <code>
+                zero,succ,Proj,Comp,PrimRec
               </code>
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     verwenden,
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:223:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:223:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >aber nicht selbst Python-Funktionen schreiben. Wir dürfen also nie selbst Integers in die</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:224:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:224:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Hand nehmen.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:225:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:225:50</span></span></span>
+               verwenden,
+              aber nicht selbst Python-Funktionen schreiben. Wir dürfen also nie selbst Integers in die
+              Hand nehmen.
             </p>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Lassen Sie mich das am Beispiel der Addition erklären. Ich will eine Funktion</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:228:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:228:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:229:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:229:50</span></span></span>\({\rm add}: \N^2 \rightarrow \N\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     schreiben, die ihre beiden Argumente addiert.
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:229:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:229:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Ich darf also nicht einfach python programmieren und</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:230:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:230:50</span></span></span>
+            <p>
+              Lassen Sie mich das am Beispiel der Addition erklären. Ich will eine Funktion
+              \({\rm add}: \N^2 \rightarrow \N\) schreiben, die ihre beiden Argumente addiert.
+              Ich darf also nicht einfach python programmieren und
             </p>
 <pre
   style="color:red; background-color: yellow;"
   class="listing"
 >
-<span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
-></span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:235:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:235:50</span></span></span>
-<code><span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->def add(x,y):</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:235:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:235:50</span></span></span>
-</code>
-<span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
-></span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:235:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:235:50</span></span>
 
-<span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->
- 
-</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:237:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:237:50</span></span></span>
-<code><span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->return x + y</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:237:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:237:50</span></span></span>
+<code>
+def add(x,y):
 </code>
-<span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
-></span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:237:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:237:50</span></span></span>
+
+ 
+<code>
+return x + y
+</code>
+
 </pre>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >schreiben, denn unsere "Programmiersprache" ist Primitive Rekursion, nicht Python! Wir</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:240:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:240:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >müssen uns </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:241:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:241:50</span></span></span>
-              <code><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >add</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:241:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:241:50</span></span></span>
+            <p>
+              schreiben, denn unsere "Programmiersprache" ist Primitive Rekursion, nicht Python! Wir
+              müssen uns 
+              <code>
+                add
               </code>
-              <span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     aus den Kombinatoren zusammenbasteln. Ich schreibe
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:241:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:241:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >nun </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:242:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:242:50</span></span></span>\({\rm add}(t,x)\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     statt 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:242:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:242:50</span></span></span>\({\rm add}(x,y)\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >, um den Rekursionsparameter </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:242:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:242:50</span></span></span>\(t\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     deutlich
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:242:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:242:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >zu machen.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:243:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:243:50</span></span></span>
+               aus den Kombinatoren zusammenbasteln. Ich schreibe
+              nun \({\rm add}(t,x)\) statt \({\rm add}(x,y)\), um den Rekursionsparameter \(t\) deutlich
+              zu machen.
             </p>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:244:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:244:50</span></span></span>$$\begin{align*}
+            $$\begin{align*}
             {\rm add}(t,x)&amp;= \begin{cases}
             x&amp;\textnormal{ if $t=0$} \\
             {\rm succ}({\rm add}(t-1,x))&amp;\textnormal{ if $t \geq 1$.}
@@ -1739,102 +336,23 @@
             {\rm succ}(\pi_0({\rm add}(t-1,x), t-1, x))&amp;\textnormal{ if $t \geq 1$.}
             \end{cases} \\
             \end{align*}$$
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:253:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:253:50</span></span></span>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Wir sehen also, dass dies eine Anwendung der primitiven Rekursion ist mit</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:256:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:256:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:257:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:257:50</span></span></span>\(g = \pi_0\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     und 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:257:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:257:50</span></span></span>\(h = {\comp}(\succ, \pi_0)\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >, also</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:257:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:257:50</span></span></span>
+            <p>
+              Wir sehen also, dass dies eine Anwendung der primitiven Rekursion ist mit
+              \(g = \pi_0\) und \(h = {\comp}(\succ, \pi_0)\), also
             </p>
 <pre
   class="listing"
 >
-<span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
-></span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:261:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:261:50</span></span></span>
-<code><span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->p0 = Proj(0)</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:261:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:261:50</span></span></span>
-</code>
-<span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
-></span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:261:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:261:50</span></span>
 
-<span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
-></span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:262:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:262:50</span></span></span>
-<code><span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
->add = PrimRec (p0, Comp(succ,p0))</span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:262:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:262:50</span></span></span>
+<code>
+p0 = Proj(0)
 </code>
-<span><span
-  class="tooltip-3003-container"
-><span
-  class="tooltip-3003-text"
-></span><span
-  class="tooltip-3003"
-  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:262:50');"
->emu_content/03/03-01-primitive-recursion-definitions.emu:262:50</span></span></span>
+
+
+<code>
+add = PrimRec (p0, Comp(succ,p0))
+</code>
+
 </pre>
           </div>
           <div
@@ -1842,205 +360,36 @@
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Übungsaufgabe </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:268:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:268:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >3.1.1</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:271:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:271:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:272:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:272:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Zeigen Sie, dass die folgenden Funktionen primitiv-rekursiv sind, und implementieren Sie sie</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:273:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:273:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >in meinem Python-Framework, so wie ich Addition mit</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:274:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:274:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:275:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:275:50</span></span></span>
-            <code><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >add = PrimRec (p0, Comp(succ,p0))</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:275:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:275:50</span></span></span>
+            >Übungsaufgabe 
+              <NumberedTitle>3.1.1</NumberedTitle>
+               
+            </span>Zeigen Sie, dass die folgenden Funktionen primitiv-rekursiv sind, und implementieren Sie sie
+            in meinem Python-Framework, so wie ich Addition mit
+            
+            <code>
+              add = PrimRec (p0, Comp(succ,p0))
             </code>
-            <span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                ></span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:275:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:275:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >implementiert habe:</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:276:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:276:50</span></span></span>
+            
+            implementiert habe:
             <ol>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:280:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:280:50</span></span></span>\({\rm mult}: (x,y) \mapsto x*y\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:280:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:280:50</span></span></span>
+              <li>
+                \({\rm mult}: (x,y) \mapsto x*y\)
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:283:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:283:50</span></span></span>\({\rm exp}: (a,b) \mapsto a^b\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:283:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:283:50</span></span></span>
+              <li>
+                \({\rm exp}: (a,b) \mapsto a^b\)
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:286:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:286:50</span></span></span>\({\rm pred}: x \mapsto \max(0, x-1)\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:286:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:286:50</span></span></span>
+              <li>
+                \({\rm pred}: x \mapsto \max(0, x-1)\)
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:289:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:289:50</span></span></span>\({\rm minus}: (x,y) \mapsto x-y\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:289:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:289:50</span></span></span>
+              <li>
+                \({\rm minus}: (x,y) \mapsto x-y\)
               </li>
             </ol>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  ></span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:292:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:292:50</span></span></span><b><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >Tip:</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:292:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:292:50</span></span></span></b><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     Für exp und minus ist es einfacher, die Argumente "umgedreht" zu
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:292:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:292:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >betrachten,</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:293:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:293:50</span></span>
-                
-                <span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >also </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:294:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:294:50</span></span></span>\((a,b) \mapsto b^a\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     und 
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:294:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:294:50</span></span></span>\((x,y) \mapsto y-x\)<span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >.</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:294:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:294:50</span></span></span>
+            <p>
+              <b>Tip:</b>
+               Für exp und minus ist es einfacher, die Argumente "umgedreht" zu
+              betrachten,
+              also \((a,b) \mapsto b^a\) und \((x,y) \mapsto y-x\).
             </p>
           </div>
           <div
@@ -2048,248 +397,52 @@
           >
             <span
               class="numbered-title"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Übungsaufgabe </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:300:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:300:50</span></span></span><NumberedTitle><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >3.1.2</span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:303:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:303:50</span></span></span></NumberedTitle><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >
-                     
-                  </span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:304:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:304:50</span></span></span></span><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Wenn Sie die vorherige Übungsaufgabe gelöst (oder darüber aufgegeben) haben,</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:305:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:305:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >sehen Sie sich die Datei</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:306:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:306:50</span></span></span><a
+            >Übungsaufgabe 
+              <NumberedTitle>3.1.2</NumberedTitle>
+               
+            </span>Wenn Sie die vorherige Übungsaufgabe gelöst (oder darüber aufgegeben) haben,
+            sehen Sie sich die Datei<a
               href="../code/primitive-recursion/stockpile.py"
-            ><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >stockpile.py</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:310:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:310:50</span></span></span></a><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >
-                   an,
-                </span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:311:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:311:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >in der ich diese Funktionen zum Großteil implementiert habe (basierend auf</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:312:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:312:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >den Übungen, die wir direkt in der Vorlesung gemacht haben).</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:313:50');"
-                >emu_content/03/03-01-primitive-recursion-definitions.emu:313:50</span></span></span>
-            <p><span><span
-                  class="tooltip-3003-container"
-                ><span
-                    class="tooltip-3003-text"
-                  >Experimentieren Sie weiter und implementieren Sie "Boolesche" Prädikate und Funktionen wie</span><span
-                    class="tooltip-3003"
-                    onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:316:50');"
-                  >emu_content/03/03-01-primitive-recursion-definitions.emu:316:50</span></span></span>
+            >stockpile.py</a>
+             an,
+            in der ich diese Funktionen zum Großteil implementiert habe (basierend auf
+            den Übungen, die wir direkt in der Vorlesung gemacht haben).
+            <p>
+              Experimentieren Sie weiter und implementieren Sie "Boolesche" Prädikate und Funktionen wie
             </p>
             <ul>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:320:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:320:50</span></span></span>
-                <code><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >isPositive</span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:320:50');"
-                      >emu_content/03/03-01-primitive-recursion-definitions.emu:320:50</span></span></span>
+              <li>
+                
+                <code>
+                  isPositive
                 </code>
-                <span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:320:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:320:50</span></span></span>
+                
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:323:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:323:50</span></span></span>
-                <code><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >greaterThan, lessThan, greaterEqual, lessEqual</span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:323:50');"
-                      >emu_content/03/03-01-primitive-recursion-definitions.emu:323:50</span></span></span>
+              <li>
+                
+                <code>
+                  greaterThan, lessThan, greaterEqual, lessEqual
                 </code>
-                <span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:323:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:323:50</span></span></span>
+                
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:326:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:326:50</span></span></span>
-                <code><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >max, min</span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:326:50');"
-                      >emu_content/03/03-01-primitive-recursion-definitions.emu:326:50</span></span></span>
+              <li>
+                
+                <code>
+                  max, min
                 </code>
-                <span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:326:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:326:50</span></span></span>
+                
               </li>
-              <li><span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:329:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:329:50</span></span></span>
-                <code><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >ifThenElse(x,y,z)</span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:329:50');"
-                      >emu_content/03/03-01-primitive-recursion-definitions.emu:329:50</span></span></span>
+              <li>
+                
+                <code>
+                  ifThenElse(x,y,z)
                 </code>
-                <span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >: dies soll </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:329:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:329:50</span></span></span>\(z\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       zurückliefern, falls
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:329:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:329:50</span></span>
-                  
-                  <span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    ></span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:330:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:330:50</span></span></span>\(x=0\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       (also 
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:330:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:330:50</span></span></span>
-                <code><span><span
-                      class="tooltip-3003-container"
-                    ><span
-                        class="tooltip-3003-text"
-                      >false</span><span
-                        class="tooltip-3003"
-                        onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:330:50');"
-                      >emu_content/03/03-01-primitive-recursion-definitions.emu:330:50</span></span></span>
+                : dies soll \(z\) zurückliefern, falls
+                \(x=0\) (also 
+                <code>
+                  false
                 </code>
-                <span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >) ist, und </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:330:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:330:50</span></span></span>\(y\)<span><span
-                    class="tooltip-3003-container"
-                  ><span
-                      class="tooltip-3003-text"
-                    >
-                       sonst.
-                    </span><span
-                      class="tooltip-3003"
-                      onClick="sendCmdTo3003('code --goto emu_content/03/03-01-primitive-recursion-definitions.emu:330:50');"
-                    >emu_content/03/03-01-primitive-recursion-definitions.emu:330:50</span></span></span>
+                ) ist, und \(y\) sonst.
               </li>
             </ul>
           </div>

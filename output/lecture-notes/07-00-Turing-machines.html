@@ -31,23 +31,9 @@
   >
     <a
       href="../vorlesungsskript.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >Inhaltsverzeichnis</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:12:50');"
-          >emu_content/07/07-00-Turing-machines.emu:12:50</span></span></span></a><a
+    >Inhaltsverzeichnis</a><a
       href="06-00-general-grammars.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >&lt;&lt; Kapitel 6.0</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:16:50');"
-          >emu_content/07/07-00-Turing-machines.emu:16:50</span></span></span></a>
+    >&lt;&lt; Kapitel 6.0</a>
   </div>
   <div
     id="link-to-overview"
@@ -55,23 +41,9 @@
   >
     <a
       href="/"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >zur Kursübersicht</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:23:50');"
-          >emu_content/07/07-00-Turing-machines.emu:23:50</span></span></span></a><a
+    >zur Kursübersicht</a><a
       href="07-01-Turing-machines-definition.html"
-    ><span><span
-          class="tooltip-3003-container"
-        ><span
-            class="tooltip-3003-text"
-          >Kapitel 7.1 &gt;&gt;</span><span
-            class="tooltip-3003"
-            onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:27:50');"
-          >emu_content/07/07-00-Turing-machines.emu:27:50</span></span></span></a>
+    >Kapitel 7.1 &gt;&gt;</a>
   </div>
   <div
     id="rightSideWrapper"
@@ -87,155 +59,22 @@
         >
           <span
             class="chapterTitle"
-          ><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >7.</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:39:50');"
-                >emu_content/07/07-00-Turing-machines.emu:39:50</span></span>
-              
-              <span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Turing-Maschinen</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:40:50');"
-                >emu_content/07/07-00-Turing-machines.emu:40:50</span></span></span></span>
+          >7.
+            Turing-Maschinen</span>
         </h1>
-        <p><span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >Wir haben in den vorherigen Kapitel mit primitiver Rekursion und </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:43:50');"
-              >emu_content/07/07-00-Turing-machines.emu:43:50</span></span></span>\(\lambda\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >-Kalkül</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:43:50');"
-              >emu_content/07/07-00-Turing-machines.emu:43:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >zwei Modelle kennengelernt, die den Begriff der </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:44:50');"
-              >emu_content/07/07-00-Turing-machines.emu:44:50</span></span></span><i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Berechnung</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:44:50');"
-                >emu_content/07/07-00-Turing-machines.emu:44:50</span></span></span></i><span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >
-                 formalisieren.
-              </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:44:50');"
-              >emu_content/07/07-00-Turing-machines.emu:44:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >Das </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:45:50');"
-              >emu_content/07/07-00-Turing-machines.emu:45:50</span></span></span>\(\lambda\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >-Kalkül ist im Prinzip eine reduktion funktionaler Programmiersprachen</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:45:50');"
-              >emu_content/07/07-00-Turing-machines.emu:45:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >auf das absolut essentielle. In diesem Kapitel lernen wir ein</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:46:50');"
-              >emu_content/07/07-00-Turing-machines.emu:46:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >weiteres Modell für Berechnung kennen, das im Allgemeinen als Standardmodell</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:47:50');"
-              >emu_content/07/07-00-Turing-machines.emu:47:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >gilt: die Turingmaschine. Anders als primitive Rekursion und </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:48:50');"
-              >emu_content/07/07-00-Turing-machines.emu:48:50</span></span></span>\(\lambda\)<span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >-Kalkül</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:48:50');"
-              >emu_content/07/07-00-Turing-machines.emu:48:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >sind Turingmaschinen auch eng mit dem Begriff des Laufzeitkomplexität und Speicherplatzkomplexität</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:49:50');"
-              >emu_content/07/07-00-Turing-machines.emu:49:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >verbunden und bilden somit das Fundament der </span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:50:50');"
-              >emu_content/07/07-00-Turing-machines.emu:50:50</span></span></span><i><span><span
-                class="tooltip-3003-container"
-              ><span
-                  class="tooltip-3003-text"
-                >Komplexitätstheorie</span><span
-                  class="tooltip-3003"
-                  onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:50:50');"
-                >emu_content/07/07-00-Turing-machines.emu:50:50</span></span></span></i><span><span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >, die sich insbesondere</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:50:50');"
-              >emu_content/07/07-00-Turing-machines.emu:50:50</span></span>
-            
-            <span
-              class="tooltip-3003-container"
-            ><span
-                class="tooltip-3003-text"
-              >mit dem Resourcenverbrauch bei Rechenprozessen beschäftigt.</span><span
-                class="tooltip-3003"
-                onClick="sendCmdTo3003('code --goto emu_content/07/07-00-Turing-machines.emu:51:50');"
-              >emu_content/07/07-00-Turing-machines.emu:51:50</span></span></span>
+        <p>
+          Wir haben in den vorherigen Kapitel mit primitiver Rekursion und \(\lambda\)-Kalkül
+          zwei Modelle kennengelernt, die den Begriff der 
+          <i>Berechnung</i>
+           formalisieren.
+          Das \(\lambda\)-Kalkül ist im Prinzip eine reduktion funktionaler Programmiersprachen
+          auf das absolut essentielle. In diesem Kapitel lernen wir ein
+          weiteres Modell für Berechnung kennen, das im Allgemeinen als Standardmodell
+          gilt: die Turingmaschine. Anders als primitive Rekursion und \(\lambda\)-Kalkül
+          sind Turingmaschinen auch eng mit dem Begriff des Laufzeitkomplexität und Speicherplatzkomplexität
+          verbunden und bilden somit das Fundament der 
+          <i>Komplexitätstheorie</i>, die sich insbesondere
+          mit dem Resourcenverbrauch bei Rechenprozessen beschäftigt.
         </p>
       </div>
     </div>
