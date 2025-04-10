@@ -11,7 +11,7 @@ pub fn our_pipeline() -> List(Pipe) {
     pp.normalize_begin_end_align(pp.DoubleDollar),
     pp.create_mathblock_and_math_elements([pp.DoubleDollar], [pp.BackslashParenthesis, pp.SingleDollar], pp.DoubleDollar, pp.BackslashParenthesis),
     [
-      dn.unwrap_tags(["WriterlyBlankLine"]),
+      dn.unwrap(["WriterlyBlankLine"]),
       dn.concatenate_text_nodes(),
     ],
     pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math", "code"]),
@@ -26,7 +26,7 @@ pub fn our_pipeline() -> List(Pipe) {
       dn.handles_substitute([]),
       dn.concatenate_text_nodes(),
       dn.remove_vertical_chunks_with_no_text_child(),
-      dn.unwrap_tag_when_child_of_tags(#("p", ["span", "code", "tt", "figcaption", "em"])),
+      dn.unwrap_when_child_of([#("p", ["span", "code", "tt", "figcaption", "em"])]),
       dn.free_children([#("pre", "p"), #("ul", "p"), #("ol", "p"), #("p", "p"), #("figure", "p")]),
       dn.generate_ti2_table_of_contents_html(#("TOCAuthorSuppliedContent", "li")),
       // dn.break_lines_into_span_tooltips("emu_content/"),

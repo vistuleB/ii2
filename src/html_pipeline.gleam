@@ -21,13 +21,9 @@ import infrastructure.{type Pipe}
 
 pub fn html_pipeline() -> List(Pipe) {
   [
-    // 1
-    identity(),
     find_replace_in_descendants_of([#("div", [#("<", "&lt;"), #(">", "&gt;")])]),
-    // 2
     remove_chapter_number_from_title(),
     trim_spaces_around_newlines(),
-    // 5
     replace_multiple_spaces_by_one(),
     extract_starting_and_ending_spaces(["i", "b", "strong", "em", "code"]),
     insert_bookend_text_if_no_attributes([
