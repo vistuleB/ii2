@@ -9,7 +9,10 @@ pub fn our_pipeline() -> List(Pipe) {
       dn.find_replace(#([#("&ensp;", " ")], []))
     ],
     pp.normalize_begin_end_align(pp.DoubleDollar),
-    pp.create_mathblock_and_math_elements([pp.DoubleDollar], [pp.BackslashParenthesis, pp.SingleDollar], pp.DoubleDollar, pp.BackslashParenthesis),
+    pp.create_mathblock_and_math_elements(
+      #([ pp.DoubleDollar ], pp.DoubleDollar),
+      #([ pp.BackslashParenthesis ], pp.BackslashParenthesis)
+    ),
     [
       dn.unwrap(["WriterlyBlankLine"]),
       dn.concatenate_text_nodes(),
