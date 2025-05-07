@@ -19,12 +19,13 @@
 <body>
 <section
   count="18"
-  title_gr="Rekursion kann nicht alles: die éter-Ackermann-Funktion"
-  title_en="ackermann"
-  number="3.3"
-  counter="DefCtr"
+  path="/lecture-notes17"
+  .="BookLevelSectionCounter 18"
   counter="ExoCtr"
-  path="/lecture-notes18"
+  counter="DefCtr"
+  number="3.3"
+  title_en="ackermann"
+  title_gr="Rekursion kann nicht alles: die éter-Ackermann-Funktion"
 >
   <div
     id="link-to-toc"
@@ -36,8 +37,8 @@
     >&lt;&lt; Kapitel 3.2</a>
   </div>
   <div
-    id="link-to-overview"
     style="text-align: end"
+    id="link-to-overview"
   >
     <a
       href="/"
@@ -273,17 +274,11 @@
             Für jedes feste \(m\) ist die ein-parametrige Funktion \(A_m := n \mapsto A(m,n)\)
             primitiv rekursiv und
             kann als Funktion mit \(m\) verschachtelten 
-            <code>
-              for
-            </code>
-            -Schleifen betrachtet werden.
+            <code>for</code>-Schleifen betrachtet werden.
             Es wird sich herausstellen, dass \(A_m\) in gewisser Weise die am schnellsten wachsende
             aller solcher Funktionen ist. Wäre also \(A(m,n)\) primitiv-rekursiv, dann könnten
             wir es mit \(d\) verschachtelten 
-            <code>
-              for
-            </code>
-            -Schleifen berechnen; was ein
+            <code>for</code>-Schleifen berechnen; was ein
             Widerspruch ist, weil bereits \(A_{d+1}\) schneller wächst als jede primitiv-rekursive
             Funktion mit \(d\) verschachtelten Schleifen.
           </p>
@@ -476,8 +471,8 @@
             In der Vorlesung am 7. Mai 2024 hatte ich den 
             <i>Grad</i>
              einer primitiv-rekursiven Funktion
-            definiert. Das ist in etwa die "Verschachtelungstiefe" von \(f\). Betrachten wir beispielsweise
-            die Funktion \(\pair(x,y) = {x + y + 1 \choose 2} + x\) und dröseln auf, wie wir diese
+            definiert. Das ist in etwa die "Verschachtelungstiefe" von $f$. Betrachten wir beispielsweise
+            die Funktion $\pair(x,y) = {x + y + 1 \choose 2} + x$ und dröseln auf, wie wir diese
             als primitiv-rekursive Funktion konstruiert haben:
           </p>
 <pre>
@@ -490,8 +485,8 @@ add = PrimRec (p0, Comp(succ, p0))
           </p>
           <figure>
             <img
-              style="height:25em"
               src="../img/primitive-rekursion/primitive-recursive-tree.svg"
+              style="height:25em"
             >
           </figure>
         </div>

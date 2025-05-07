@@ -19,12 +19,13 @@
 <body>
 <section
   count="3"
-  title_gr="CNF und DNF"
-  title_en="truth tables cnf dnf"
-  number="1.2"
-  counter="DefCtr"
+  path="/lecture-notes2"
+  .="BookLevelSectionCounter 3"
   counter="ExoCtr"
-  path="/lecture-notes3"
+  counter="DefCtr"
+  number="1.2"
+  title_en="truth tables cnf dnf"
+  title_gr="CNF und DNF"
 >
   <div
     id="link-to-toc"
@@ -36,8 +37,8 @@
     >&lt;&lt; Kapitel 1.1</a>
   </div>
   <div
-    id="link-to-overview"
     style="text-align: end"
+    id="link-to-overview"
   >
     <a
       href="/"
@@ -120,18 +121,11 @@
           das mir lesbarer erscheint). Insgesamt also:
           <figure>
             f = 
-            <code>
-              if
-            </code>
+            <code>if</code>
              \(x\) 
-            <code>
-              then
-            </code>
+            <code>then</code>
              \(\bar{y} \vee z\)
-            
-            <code>
-              else
-            </code>
+            <code>else</code>
              \(y \vee z\).
           </figure>
           <p>
@@ -167,20 +161,14 @@
             <li>
               Kombinieren Sie diese via
                
-              <code>
-                if
-              </code>
+              <code>if</code>
                \(x_1\) 
                
-              <code>
-                then
-              </code>
+              <code>then</code>
                
                \(C_1\)
                
-              <code>
-                else
-              </code>
+              <code>else</code>
                
                \(C_0\) zu einem Schaltkreis für \(f\) mit
               insgesamt \(n\) Input-Variablen.
@@ -234,11 +222,7 @@
           </h3>
           <p>
             Wenn Sie Rekursionshasser sind und generell lieber in
-            
-            <code>
-              for
-            </code>
-            -Schleifen denken, dann wird die nächste Konstruktion
+            <code>for</code>-Schleifen denken, dann wird die nächste Konstruktion
             mehr nach Ihrem Geschmack sein. Im Prinzip werden wir alle
             Kombinationen der Variablen auflisten, für die die Funktion 1 ausgibt.
             Stellen Sie sich vor, wir haben drei Variable \(x,y,z\) und einen
@@ -262,9 +246,9 @@
           </p>
           <figure>
             <img
-              style="height: 10em"
-              src="../img/circuits/dnf-example.svg"
               loading="lazy"
+              src="../img/circuits/dnf-example.svg"
+              style="height: 10em"
             >
           </figure>
           In diesem Schaltkreis habe ich die Input-Knoten mehrfach aufgeführt und
@@ -318,9 +302,9 @@
             wie man OR-Gates auf Ebene 1 entfernen kann! Als konkretes Beispiel:
             <figure>
               <img
-                style="height: 10em"
-                src="../img/circuits/dnf-dirty.svg"
                 loading="lazy"
+                src="../img/circuits/dnf-dirty.svg"
+                style="height: 10em"
               >
             </figure>
           </div>
@@ -351,9 +335,9 @@
           wir also alle Verbote mit AND verknüpfen, erhalten wir
           <figure>
             <img
-              style="height: 10em"
-              src="../img/circuits/cnf-example.svg"
               loading="lazy"
+              src="../img/circuits/cnf-example.svg"
+              style="height: 10em"
             >
           </figure>
           <div

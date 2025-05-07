@@ -19,12 +19,13 @@
 <body>
 <section
   count="42"
-  title_gr="Formale Definition und Beispiele"
-  title_en="Turing machines definition"
-  number="7.1"
-  counter="DefCtr"
+  path="/lecture-notes41"
+  .="BookLevelSectionCounter 42"
   counter="ExoCtr"
-  path="/lecture-notes42"
+  counter="DefCtr"
+  number="7.1"
+  title_en="Turing machines definition"
+  title_gr="Formale Definition und Beispiele"
 >
   <div
     id="link-to-toc"
@@ -36,8 +37,8 @@
     >&lt;&lt; Kapitel 7.0</a>
   </div>
   <div
-    id="link-to-overview"
     style="text-align: end"
+    id="link-to-overview"
   >
     <a
       href="/"
@@ -85,9 +86,9 @@
             class="centered-figure well container"
           >
             <a
-              data-slide="prev"
-              href="#turing-machine-example-01"
               class="left carousel-control-prev-icon"
+              href="#turing-machine-example-01"
+              data-slide="prev"
             >
               <div
                 class="carousel-nav-icon"
@@ -97,9 +98,9 @@
                 >
               </div>
             </a><a
-              data-slide="next"
-              href="#turing-machine-example-01"
               class="right carousel-control-next-icon"
+              href="#turing-machine-example-01"
+              data-slide="next"
             >
               <div
                 class="carousel-nav-icon"
@@ -110,122 +111,122 @@
               </div>
             </a>
             <div
-              style="display:inline-block"
-              data-interval="false"
-              class="carousel"
               id="turing-machine-example-01"
+              class="carousel"
+              data-interval="false"
+              style="display:inline-block"
             >
               <ol
                 class="carousel-indicators"
               >
                 <li
-                  class="active"
+                  data-target="#turing-machine-example-01"
                   data-slide-to="1"
-                  data-target="#turing-machine-example-01"
+                  class="active"
                 >
                 </li>
                 <li
+                  data-target="#turing-machine-example-01"
                   data-slide-to="2"
-                  data-target="#turing-machine-example-01"
                 >
                 </li>
                 <li
+                  data-target="#turing-machine-example-01"
                   data-slide-to="3"
-                  data-target="#turing-machine-example-01"
                 >
                 </li>
                 <li
+                  data-target="#turing-machine-example-01"
                   data-slide-to="4"
-                  data-target="#turing-machine-example-01"
                 >
                 </li>
                 <li
+                  data-target="#turing-machine-example-01"
                   data-slide-to="5"
-                  data-target="#turing-machine-example-01"
                 >
                 </li>
                 <li
+                  data-target="#turing-machine-example-01"
                   data-slide-to="6"
-                  data-target="#turing-machine-example-01"
                 >
                 </li>
                 <li
+                  data-target="#turing-machine-example-01"
                   data-slide-to="7"
-                  data-target="#turing-machine-example-01"
                 >
                 </li>
                 <li
-                  data-slide-to="8"
                   data-target="#turing-machine-example-01"
+                  data-slide-to="8"
                 >
                 </li>
               </ol>
               <div
-                style="display:inline-block"
                 class="carousel-inner"
+                style="display:inline-block"
               >
                 <div
                   class="item active"
                 >
                   <img
-                    style="height:15em"
                     src="../img/turing-machines/exampe-1/01.svg"
+                    style="height:15em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:15em"
                     src="../img/turing-machines/exampe-1/02.svg"
+                    style="height:15em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:15em"
                     src="../img/turing-machines/exampe-1/03.svg"
+                    style="height:15em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:15em"
                     src="../img/turing-machines/exampe-1/04.svg"
+                    style="height:15em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:15em"
                     src="../img/turing-machines/exampe-1/05.svg"
+                    style="height:15em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:15em"
                     src="../img/turing-machines/exampe-1/06.svg"
+                    style="height:15em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:15em"
                     src="../img/turing-machines/exampe-1/07.svg"
+                    style="height:15em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:15em"
                     src="../img/turing-machines/exampe-1/08.svg"
+                    style="height:15em"
                   >
                 </div>
               </div>
@@ -242,15 +243,15 @@
              erreicht. Bei 
             <i>Entscheidungsproblemen</i>, wo uns nur
             eine Ja/Nein-Antwort interessiert, wird die Antwort durch den Entzustand angegeben:
-            der Zustand \(\qaccept\) entspricht einem 
+            der Zustand $\qaccept$ entspricht einem 
             <i>Ja</i>, der Zustand
-            \(\qreject\) entspricht einem 
+            $\qreject$ entspricht einem 
             <i>Nein</i>. Diese zwei Endzustände reichen im Allgemeinen
             aus. Wenn wir von der Maschine eine komplexere Ausgabe als Ja/Nein erwarten, so
             betrachten wir als 
             <i>Ausgabe der Turingmaschine</i>
              den Inhalt des Bandes zu dem
-            Zeitpunkt, da die Maschine den Zustand \(\qaccept\) erreicht.
+            Zeitpunkt, da die Maschine den Zustand $\qaccept$ erreicht.
             Was brauchen wir also, um so eine Turingmaschine
             und ihre Arbeitsweise zu beschreiben?
           </p>
@@ -295,25 +296,18 @@
                 \delta : Q \times \Gamma \rightarrow Q \times \Gamma \times \lsr \ ,
                 \end{align*}$$
                 wobei 
-                <tt>
-                  L
-                </tt>
+                <tt>L</tt>
                  für 
                 <i>gehe eine Zelle nach links</i>
-                 steht,
-                <tt>
-                  R
-                </tt>
+                 steht,<tt>R</tt>
                  für rechts und 
-                <tt>
-                  S
-                </tt>
+                <tt>S</tt>
                  für 
                 <i>stay</i>, also die Anweisung, den Kopf
                 nicht zu bewegen.
               </li>
               <li>
-                Zwei besonderen Zuständen \(\qaccept\) und \(\qreject\).
+                Zwei besonderen Zuständen $\qaccept$ und $\qreject$.
               </li>
             </ol>
           </div>
@@ -339,9 +333,9 @@
           uns bereits bekannten mathematischen Begriffen beschreiben.
           <figure>
             <img
-              style="height:20em"
-              src="../img/turing-machines/configuration.svg"
               loading="lazy"
+              src="../img/turing-machines/configuration.svg"
+              style="height:20em"
             >
           </figure>
           <div
@@ -372,7 +366,7 @@
             <i>Zustand einer Konfiguration</i>
              \(C = uqv\) ist \(q\), also der innere
             Zustand, in dem sich die Maschine gerade befindet.
-            Wir bezeichnen mit \(\state(C)\). Formal:
+            Wir bezeichnen mit $\state(C)$. Formal:
             $$\begin{align*}
             \state: \mathcal{C}&amp;\rightarrow Q \\
             uqv&amp;\mapsto q \ .
@@ -380,15 +374,15 @@
             Eine Konfiguration \(C\) ist
             eine 
             <i>akzeptierende Endkonfiguration</i>
-             wenn \(\state(C) = \qaccept\) ist;
+             wenn $\state(C) = \qaccept$ ist;
             eine 
             <i>ablehnende Endkonfiguration</i>
-             , wenn \(\state(C) = \qreject\) ist.
+             , wenn $\state(C) = \qreject$ ist.
             In beiden Fällen ist \(C\) eine 
             <i>Endkonfiguration</i>.
           </div>
           <p>
-            Wenn also das Eingabewort \(w \in \Sigma^*\) und \(\qstart\) der Startzustand ist, dann ist
+            Wenn also das Eingabewort \(w \in \Sigma^*\) und $\qstart$ der Startzustand ist, dann ist
             $$\begin{align*}
             C_{\rm start} = \qstart{} w
             \end{align*}$$
@@ -414,9 +408,9 @@
             Momentaufnahmen
             <figure>
               <img
-                style="height:18em"
-                src="../img/turing-machines/configuration-two.svg"
                 loading="lazy"
+                src="../img/turing-machines/configuration-two.svg"
+                style="height:18em"
               >
             </figure>
             können also beide mit der Konfiguration \(aAAaq\#ba\) beschrieben werden, obwohl
@@ -435,18 +429,18 @@
             </p>
             <figure>
               <img
-                style="height:18em"
-                src="../img/turing-machines/two-stacks.svg"
                 loading="lazy"
+                src="../img/turing-machines/two-stacks.svg"
+                style="height:18em"
               >
             </figure>
             <p>
-              Alternativ können wir auch der Turingmaschine verbieten, das Blank-Symbol \(\Box\) jemals
+              Alternativ können wir auch der Turingmaschine verbieten, das Blank-Symbol $\Box$ jemals
               zu schreiben. Dann wäre also
-              \(\delta: Q \times \Gamma \rightarrow Q \times (\Gamma \setminus \{\Box\}) \times \lsr\).
+              $\delta: Q \times \Gamma \rightarrow Q \times (\Gamma \setminus \{\Box\}) \times \lsr$.
               All diese Betrachtungsweisen unterscheiden sich nicht wesentlich. Wir bleiben
-              bei unserem "alten" \(\delta\), erlauben also, \(\Box\) zu schreiben, und
-              leben damit, dass \(uqv\) und \(\Box \Box u q v \Box\) formal zwei verschiedene Konfigurationen
+              bei unserem "alten" $\delta$, erlauben also, $\Box$ zu schreiben, und
+              leben damit, dass $uqv$ und $\Box \Box u q v \Box$ formal zwei verschiedene Konfigurationen
               sind, auch wenn beide irgendwie das selbe beschreiben.
             </p>
           </div>
@@ -482,9 +476,9 @@
           \hat{\delta}(abAq_2bba\#)&amp;= abAaq_3ba\# \\
           \end{align*}$$
           gelten. Sie sehen:
-          Die Definition von \(\hat{\delta}\) ist nichts wirklich Tiefgründiges, sondern einfach
+          Die Definition von $\hat{\delta}$ ist nichts wirklich Tiefgründiges, sondern einfach
           eine Implementierung der Turingmaschinen-Momentaufnahme mit uns bereits
-          geläufigen mathematischen "Datenstrukturen" (hier: der Menge \(\Gamma^* \times Q \times \Gamma^*\)).
+          geläufigen mathematischen "Datenstrukturen" (hier: der Menge $\Gamma^* \times Q \times \Gamma^*$).
           Stellen Sie sich einfach
           vor, Sie müssten eine Turingmaschine in Java implementieren. Dann würden Sie es wahrscheilich
           irgendwie so ähnlich machen.
@@ -500,13 +494,11 @@
           also die Konfiguration, die die Turingmaschine nach \(i\) Rechenschritten erreicht hat.
           Weiterhin definieren wir
           \(\hat{\delta}^* (C)\) als die Endkonfiguration, die bei wiederholter
-          Anwendung von \(\hat{\delta}\) schlussendlich erreicht wird.
+          Anwendung von $\hat{\delta}$ schlussendlich erreicht wird.
           Hier taucht ein Problem auf: es ist nicht gesagt, dass die Turingmaschine,
           von Konfiguration \(C\) beginnend, überhaupt irgendwann in einer Endkonfiguration landen
           wird. Daher kann \(\hat{\delta}^*\) auch 
-          <tt>
-            undefined
-          </tt>
+          <tt>undefined</tt>
            sein:
           $$\begin{align*}
           \hat{\delta}^* (C) := \begin{cases}
@@ -516,12 +508,12 @@
           \end{cases}
           \end{align*}$$
           <p>
-            Nochmal zur Verdeutlichung: wenn \(\delta^{(i)}(C)\) eine Endkonfiguration ist,
-            dann ist auch \(\delta^{(j)}(C)\) eine, für jedes \(j \geq i\), weil
-            wir \(\hat{\delta}(C') = C'\) für jede Endkonfiguration \(C'\) definiert haben.
+            Nochmal zur Verdeutlichung: wenn $\delta^{(i)}(C)$ eine Endkonfiguration ist,
+            dann ist auch $\delta^{(j)}(C)$ eine, für jedes $j \geq i$, weil
+            wir $\hat{\delta}(C') = C'$ für jede Endkonfiguration $C'$ definiert haben.
             Es spielt also in der obigen Formulierung
-            <i>wenn es ein \(i\) gibt</i>
-             keine Rolle, welches solche \(i\) wir wählen.
+            <i>wenn es ein $i$ gibt</i>
+             keine Rolle, welches solche $i$ wir wählen.
           </p>
           Für ein Eingabewort \(x \in \Sigma^*\) können wir nun das Ergebnis der Berechnung
           von Turingmaschine \(M\) auf \(x = x_1 \dots x_n\) definieren:
@@ -533,10 +525,7 @@
           wir mit \(\hat{M}(x)\). Falls nie ein Endzustand erreicht wird (die Turingmaschine also
           endlos läuft),
           ist \(\hat{M}(x)\) 
-          <tt>
-            undefined
-          </tt>
-          .
+          <tt>undefined</tt>.
           <h2>
             Sprachen entscheiden
           </h2>
@@ -559,13 +548,8 @@
             zu tun haben und dieses mit einer Turingmaschine lösen wollen,
             so interessiert uns am Endergebnis \(\hat{M}(x)\) (also der erreichten Endkonfiguration)
             nicht der Bandinhalt, sondern nur, ob der Zustand 
-            <tt>
-              accept
-            </tt>
-             oder
-            <tt>
-              reject
-            </tt>
+            <tt>accept</tt>
+             oder<tt>reject</tt>
              ist. Wir definieren daher
             $$\begin{align*}
             f_M(x) = \begin{cases}
@@ -620,7 +604,7 @@
             x \in L \Longleftrightarrow f_M(x) = \texttt{accept}
             \end{align*}$$
             für alle \(x \in \Sigma^*\) gilt. Das heißt, dass \(M\) für \(x \not \in \Sigma^*\)
-            entweder irgendwann den Endzustand \(\qreject\) erreicht oder
+            entweder irgendwann den Endzustand $\qreject$ erreicht oder
             nie einen Endzustand erreicht.
             <p>
               Eine Sprache \(L \subseteq \Sigma^*\) heißt 
@@ -671,12 +655,12 @@
                 ist also weder Teil das Eingabealphabets noch des Ausgabealphabets.
               </li>
               <li>
-                \(M\) terminiert für jedes \(x \in \Sigma^*\).
+                $M$ terminiert für jedes $x \in \Sigma^*$.
               </li>
               <li>
-                 In der Endkonfiguration \(\hat{M}(x)\) steht auf dem Arbeitsband das
+                 In der Endkonfiguration $\hat{M}(x)$ steht auf dem Arbeitsband das
                 Wort \(g(x) \in \Sigma_2^*\) und der Kopf steht ganz links, also
-                \(\hat{M}(x) = \qaccept{} g(x)\).
+                $\hat{M}(x) = \qaccept{} g(x)$.
               </li>
             </ol>
           </div>

@@ -19,12 +19,13 @@
 <body>
 <section
   count="38"
-  title_gr="kontextfreie Sprachen parsen"
-  title_en="general parsing"
-  number="5.9"
-  counter="DefCtr"
+  path="/lecture-notes37"
+  .="BookLevelSectionCounter 38"
   counter="ExoCtr"
-  path="/lecture-notes38"
+  counter="DefCtr"
+  number="5.9"
+  title_en="general parsing"
+  title_gr="kontextfreie Sprachen parsen"
 >
   <div
     id="link-to-toc"
@@ -36,8 +37,8 @@
     >&lt;&lt; Kapitel 5.6</a>
   </div>
   <div
-    id="link-to-overview"
     style="text-align: end"
+    id="link-to-overview"
   >
     <a
       href="/"
@@ -297,30 +298,20 @@
               \step{} w_i \textnormal{ ist eine Produktion in $G$}\}\)
             </li>
             <li>
-              
-              <code>
-                for l = 2 .. n
-              </code>
-              
+              <code>for l = 2 .. n</code>
               <ol
-                type="I"
                 class=""
+                type="I"
               >
                 <li>
                    
-                  <code>
-                    for i = 0 .. n-l
-                  </code>
-                  
+                  <code>for i = 0 .. n-l</code>
                   <ol
-                    type="i"
                     class=""
+                    type="i"
                   >
                     <li>
-                      
-                      <code>
-                        k := i+l
-                      </code>
+                      <code>k := i+l</code>
                        
                       <span
                         class="comment"
@@ -334,20 +325,13 @@
                       Initialisiere \(N_{i,k} := \emptyset\)
                     </li>
                     <li>
-                      
-                      <code>
-                        for j = i+1 .. k-1:
-                      </code>
-                      
+                      <code>for j = i+1 .. k-1:</code>
                       <ol
-                        type="1"
                         class=""
+                        type="1"
                       >
                         <li>
-                          
-                          <code>
-                            for all productions
-                          </code>
+                          <code>for all productions</code>
                            \(X \rightarrow YZ\):
                           <ol
                             type="a"
@@ -360,49 +344,29 @@
                           </ol>
                         </li>
                         <li>
-                          
-                          <code>
-                            end for all productions
-                          </code>
-                          
+                          <code>end for all productions</code>
                         </li>
                       </ol>
                     </li>
                     <li>
-                      
-                      <code>
-                        end for j
-                      </code>
-                      
+                      <code>end for j</code>
                     </li>
                   </ol>
                 </li>
                 <li>
-                  
-                  <code>
-                    end for k
-                  </code>
+                  <code>end for k</code>
                    
                 </li>
               </ol>
             </li>
             <li>
-              
-              <code>
-                end for i
-              </code>
+              <code>end for i</code>
                
             </li>
             <li>
-              
-              <code>
-                return True if
-              </code>
+              <code>return True if</code>
                \(S \in N_{0,n}\) 
-              <code>
-                else return False
-              </code>
-              
+              <code>else return False</code>
             </li>
           </ul>
           <p>
@@ -465,9 +429,9 @@
               class="centered-figure well container-fluid"
             >
               <a
-                data-slide-to="0"
-                href="#cyk-demo"
                 class="left carousel-control-prev-icon"
+                href="#cyk-demo"
+                data-slide-to="0"
               >
                 <div
                   class="carousel-nav-icon"
@@ -477,9 +441,9 @@
                   >
                 </div>
               </a><a
-                data-slide="prev"
-                href="#cyk-demo"
                 class="left carousel-control-prev-icon"
+                href="#cyk-demo"
+                data-slide="prev"
               >
                 <div
                   class="carousel-nav-icon"
@@ -489,9 +453,9 @@
                   >
                 </div>
               </a><a
-                data-slide="next"
-                href="#cyk-demo"
                 class="right carousel-control-next-icon"
+                href="#cyk-demo"
+                data-slide="next"
               >
                 <div
                   class="carousel-nav-icon"
@@ -501,9 +465,9 @@
                   >
                 </div>
               </a><a
-                data-slide-to="37"
-                href="#cyk-demo"
                 class="right carousel-control-next-icon"
+                href="#cyk-demo"
+                data-slide-to="37"
               >
                 <div
                   class="carousel-nav-icon"
@@ -514,317 +478,317 @@
                 </div>
               </a>
               <div
-                style="display:inline-block"
-                data-interval="false"
-                class="carousel"
                 id="cyk-demo"
+                class="carousel"
+                data-interval="false"
+                style="display:inline-block"
               >
                 <div
-                  style="display:inline-block"
                   class="carousel-inner"
+                  style="display:inline-block"
                 >
                   <div
                     class="item active"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/01-01.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/01-02.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/01-03.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-01.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-02.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-03.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-04.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-05.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-06.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-07.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-08.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-09.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-10.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-11.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-12.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-13.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-14.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-15.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-16.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-17.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-18.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-19.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-20.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-21.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-22.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-23.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-24.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-25.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-26.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-27.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-28.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-29.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-30.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-31.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-32.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-33.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-34.svg"
+                      style="height:23em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:23em"
                       src="../img/context-free/CYK/02-35.svg"
+                      style="height:23em"
                     >
                   </div>
                 </div>

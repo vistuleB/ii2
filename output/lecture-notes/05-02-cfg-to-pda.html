@@ -19,12 +19,13 @@
 <body>
 <section
   count="30"
-  title_gr="Grammatiken und Kellerautomaten"
-  title_en="cfg to pda"
-  number="5.2"
-  counter="DefCtr"
+  path="/lecture-notes29"
+  .="BookLevelSectionCounter 30"
   counter="ExoCtr"
-  path="/lecture-notes30"
+  counter="DefCtr"
+  number="5.2"
+  title_en="cfg to pda"
+  title_gr="Grammatiken und Kellerautomaten"
 >
   <div
     id="link-to-toc"
@@ -36,8 +37,8 @@
     >&lt;&lt; Kapitel 5.1</a>
   </div>
   <div
-    id="link-to-overview"
     style="text-align: end"
+    id="link-to-overview"
   >
     <a
       href="/"
@@ -137,36 +138,23 @@
             B&amp;\rightarrow \texttt{[} C \texttt{]} S \\
             C&amp;\rightarrow \texttt{(} A \texttt{)} S \ | \ \texttt{()}S \\
             \end{align*}$$
-            Ein Wort in der erzeugten Sprache wäre zum Beispiel
-            <tt>
-              {[()()]()}()
-            </tt>
+            Ein Wort in der erzeugten Sprache wäre zum Beispiel<tt>{[()()]()}()</tt>
             <p>
               Schreiben wir nun einen Kellerautomaten, der diese Sprache akzeptiert. Die
               Idee ist, dass wir Terminalsymbole und Nichtterminalsymbole auf den Stack legen.
               Ein 
-              <tt>
-                [
-              </tt>
+              <tt>[</tt>
                oben auf dem Stack bedeutet dann 
               <i>ich will jetzt sofort ein 
-                <tt>
-                  [
-                </tt>
-                lesen</i>;
+                <tt>[</tt>lesen</i>;
               ein Nichtterminal wie \(A\) oben auf dem Stack bedeutet, dass
               wir als nächstes ein von \(A\) ableitbares Wort, also ein \(A \rightarrow w \in
               \Sigma^*\) lesen wollen.
               Um ein \(w\) mit \(A \rightarrow w\) lesen zu können, müssen wir 
               <i>sofort</i>
-               ein
-              <tt>
-                {
-              </tt>
+               ein<tt>{</tt>
                lesen, dann ein Wort \(v\) mit \(B \rightarrow v\), dann ein 
-              <tt>
-                }
-              </tt>
+              <tt>}</tt>
                und
               so weiter.
               Wir können das also im Automaten implementieren, indem wir
@@ -205,10 +193,7 @@
             ist und das Wort zu Ende ist, akzeptieren wir, und nur dann. Um festzustellen,
             dass wir wirklich den Stack ganz leer gemacht haben, brauchen wir die
             Markierung 
-            <tt>
-              $
-            </tt>
-            . Also:
+            <tt>$</tt>. Also:
             $$\begin{align*}
             (\qstart, \epsilon) \step{\epsilon} (q_1, S \$) \\
             (q_1, \$) \step{\epsilon} (\qend, \epsilon)
@@ -227,9 +212,9 @@
               class="centered-figure well"
             >
               <a
-                data-slide="prev"
-                href="#cfg-to-pda"
                 class="left carousel-control-prev-icon"
+                href="#cfg-to-pda"
+                data-slide="prev"
               >
                 <div
                   class="carousel-nav-icon"
@@ -239,9 +224,9 @@
                   >
                 </div>
               </a><a
-                data-slide="next"
-                href="#cfg-to-pda"
                 class="right carousel-control-next-icon"
+                href="#cfg-to-pda"
+                data-slide="next"
               >
                 <div
                   class="carousel-nav-icon"
@@ -252,437 +237,437 @@
                 </div>
               </a>
               <div
-                style="display:inline-block"
-                data-interval="false"
-                class="carousel"
                 id="cfg-to-pda"
+                class="carousel"
+                data-interval="false"
+                style="display:inline-block"
               >
                 <div
-                  style="display:inline-block"
                   class="carousel-inner"
+                  style="display:inline-block"
                 >
                   <div
                     class="item active"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/01.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/02.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/03.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/04.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/05.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/06.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/07.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/08.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/09.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/10.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/11.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/12.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/13.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/14.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/15.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/16.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/17.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/18.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/19.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/20.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/21.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/22.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/23.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/24.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/25.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/26.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/27.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/28.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/29.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/30.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/31.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/32.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/33.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/34.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/35.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/36.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/37.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/38.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/39.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/40.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/41.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/42.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/43.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/44.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/45.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/46.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/47.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/48.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/49.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/50.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/51.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/52.svg"
+                      style="height:22em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      style="height:22em"
                       src="../img/context-free/cfg-to-pda/53.svg"
+                      style="height:22em"
                     >
                   </div>
                 </div>
@@ -890,9 +875,9 @@
             </p>
             <figure>
               <img
-                style="height:10em"
-                src="../img/context-free/pda-to-cfg-diagram.svg"
                 loading="lazy"
+                src="../img/context-free/pda-to-cfg-diagram.svg"
+                style="height:10em"
               >
             </figure>
             <p>
@@ -906,9 +891,9 @@
             </p>
             <figure>
               <img
-                style="height:10em"
-                src="../img/context-free/pda-to-cfg-diagram-stack.svg"
                 loading="lazy"
+                src="../img/context-free/pda-to-cfg-diagram-stack.svg"
+                style="height:10em"
               >
             </figure>
             <p>

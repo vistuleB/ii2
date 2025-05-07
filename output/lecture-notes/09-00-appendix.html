@@ -19,12 +19,13 @@
 <body>
 <section
   count="52"
-  title_gr="- Manual für das Schreiben dieses Skripts"
-  title_en="appendix"
-  number="9.0"
-  counter="DefCtr"
+  path="/lecture-notes51"
+  .="BookLevelSectionCounter 52"
   counter="ExoCtr"
-  path="/lecture-notes52"
+  counter="DefCtr"
+  number="9.0"
+  title_en="appendix"
+  title_gr="- Manual für das Schreiben dieses Skripts"
 >
   <div
     id="link-to-toc"
@@ -36,8 +37,8 @@
     >&lt;&lt; Kapitel 8.1</a>
   </div>
   <div
-    id="link-to-overview"
     style="text-align: end"
+    id="link-to-overview"
   >
     <a
       href="/"
@@ -88,13 +89,9 @@
               on the new file you want to create. The ordering in which they
               appear (in the table of content and in the link structure given by
               the 
-              <code>
-                next
-              </code>
+              <code>next</code>
                nad 
-              <code>
-                prev
-              </code>
+              <code>prev</code>
                navigation links) is
               determined purely by the order in which they appear in<a
                 href="../javascript/table-of-contents.js"
@@ -108,58 +105,42 @@
               >
                 <p>
                   <span
-                    id="sauer-shelah-lemma"
                     class="numbered-title"
-                  >Sauer-Shelah lemma</span>Let \(A \subseteq \{0,1\}^n\). If \(|A| \gt {\rm vol}(n,r-1)\) then
-                  there exists some set \(I \subseteq [n]\) of indices with \(|I|
-                  \geq r\) such that
+                    id="sauer-shelah-lemma"
+                  >Sauer-Shelah lemma</span>Let $A \subseteq \{0,1\}^n$. If $|A| \gt {\rm vol}(n,r-1)$ then
+                  there exists some set $I \subseteq [n]$ of indices with $|I|
+                  \geq r$ such that
                 </p>
                 $$\begin{align*} \{ \mathbf{x}_I \ | \ \mathbf{x} \in A\} =
-                \{0,1\}^r \ , \end{align*}$$ in other words, the set \(I\) of
+                \{0,1\}^r \ , \end{align*}$$ in other words, the set $I$ of
                 coordinates is shattered.
               </div>
               and here is the source code:
 <pre>
 &lt;div class='well container theorem'&gt;
 &lt;p&gt;&lt;span class='numbered-title' id="sauer-shelah-lemma" data-label-title="Lemma"&gt;Lemma&lt;/span&gt;
-&lt;strong&gt;(Sauer-Shelah lemma).&lt;/strong&gt;Let \(A \subseteq \{0,1\}^n\). If \(|A| \gt {\rm vol}(n,r-1)\) then
-there exists some set \(I \subseteq [n]\) of indices with \(|I| \geq r\) such that&lt;/p&gt;
+&lt;strong&gt;(Sauer-Shelah lemma).&lt;/strong&gt;Let $A \subseteq \{0,1\}^n$. If $|A| \gt {\rm vol}(n,r-1)$ then
+there exists some set $I \subseteq [n]$ of indices with $|I| \geq r$ such that&lt;/p&gt;
 $$\begin{align*}
 \{ \mathbf{x}_I \ | \ \mathbf{x} \in A\} = \{0,1\}^r \ ,
 \end{align*}$$
-in other words, the set \(I\) of coordinates is shattered.
+in other words, the set $I$ of coordinates is shattered.
 &lt;/div class='well container theorem'&gt;
 </pre>
               You must give the environment 
-              <code>
-                div
-              </code>
+              <code>div</code>
                the class
-              
-              <code>
-                theorem
-              </code>
+              <code>theorem</code>
                and the title 
-              <code>
-                span
-              </code>
+              <code>span</code>
                the class
-              
-              <code>
-                nunbered-title
-              </code>
-              , otherwise the automatic numbering will
+              <code>nunbered-title</code>, otherwise the automatic numbering will
               not work.
               <p>
                 The attributes 
-                <code>
-                  id="sauer-shelah-lemma"
-                </code>
+                <code>id="sauer-shelah-lemma"</code>
                  and
-                
-                <code>
-                  data-label-title="Lemma"
-                </code>
+                <code>data-label-title="Lemma"</code>
                  are necessarily for
                 automatic referencing. Here is how you create a reference:
               </p>
@@ -167,33 +148,31 @@ in other words, the set \(I\) of coordinates is shattered.
                 class="well container"
               >
                 This follows easily from the<span
-                  data-ref="sauer-shelah-lemma"
                   class="reference"
+                  data-ref="sauer-shelah-lemma"
                 ></span>
                  just
                 above and<span
-                  data-ref="theorem-N-N^2"
                   class="reference"
+                  data-ref="theorem-N-N^2"
                 ></span>.
               </div>
               and here is the source code:
 <pre>
-Remember that&lt;span class="reference" data-ref="theorem-N-N^2"&gt;&lt;/span&gt; shows that \(\N\) and \(\N^2\) are equipotent.
+Remember that&lt;span class="reference" data-ref="theorem-N-N^2"&gt;&lt;/span&gt; shows that $\N$ and $\N^2$ are equipotent.
 </pre>
             </li>
             <p>
               To work, the 
-              <code>
-                id
-              </code>
+              <code>id</code>
                of a theorem (or a general environment)
               has to be unique 
               <i>across all files of the lecture notes</i>.
               Also, since we have to correctly compute the numbering of theorems
               like 
               <span
-                data-ref="theorem-N-N^2"
                 class="reference"
+                data-ref="theorem-N-N^2"
               ></span>, we
               would have to read the file containing it. So we'd have to write
               code that, while loading Chapter 9, loads all chapters of referenced
@@ -208,25 +187,14 @@ Remember that&lt;span class="reference" data-ref="theorem-N-N^2"&gt;&lt;/span&gt
               >put-all-in-one-page.html</a>that loads the table of content and all chapters (which takes quite
               a substantial amount of time, like 20 seconds or so) and extracts
               all environments with class 
-              <code>
-                theorem
-              </code>
+              <code>theorem</code>
                or
-              
-              <code>
-                exercise
-              </code>
+              <code>exercise</code>
                that have also class
-              
-              <code>
-                numbered-title
-              </code>
+              <code>numbered-title</code>
                and numbers them. If the environment has
               the attribute 
-              <code>
-                data-label-title
-              </code>
-              , then it adds an entry
+              <code>data-label-title</code>, then it adds an entry
               to a global dictionary. At the end, when all has been loaded, the
               web page will show this dictionary as a json object.
             </p>
@@ -251,10 +219,7 @@ Remember that&lt;span class="reference" data-ref="theorem-N-N^2"&gt;&lt;/span&gt
  http-server .  --cors
 </pre>
               Once this server is running, go to
-              
-              <code>
-                http://localhost:8080
-              </code>
+              <code>http://localhost:8080</code>
                in your browser.
             </div>
           </ol>

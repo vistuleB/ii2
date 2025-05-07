@@ -19,12 +19,13 @@
 <body>
 <section
   count="21"
-  title_gr="Grammatiken"
-  title_en="regular grammars"
-  number="4.1"
-  counter="DefCtr"
+  path="/lecture-notes20"
+  .="BookLevelSectionCounter 21"
   counter="ExoCtr"
-  path="/lecture-notes21"
+  counter="DefCtr"
+  number="4.1"
+  title_en="regular grammars"
+  title_gr="Grammatiken"
 >
   <div
     id="link-to-toc"
@@ -36,8 +37,8 @@
     >&lt;&lt; Kapitel 4.0</a>
   </div>
   <div
-    id="link-to-overview"
     style="text-align: end"
+    id="link-to-overview"
   >
     <a
       href="/"
@@ -74,8 +75,8 @@
             Grammatiken immer in linearer Zeit möglich.
           </p>
           <div
-            id="def-regular"
             class="well container theorem"
+            id="def-regular"
           >
             <span
               class="numbered-title"
@@ -105,8 +106,8 @@
             | \ n \textnormal{ ist gerade}\}\).
           </div>
           <div
-            id="example-aaabb"
             class="well container theorem"
+            id="example-aaabb"
           >
             <span
               class="numbered-title"
@@ -170,8 +171,8 @@
             \(11010\) ab. Beschreiben Sie in eigenen Worten die erzeugte Sprache.
           </div>
           <div
-            id="example-xxx1yyy"
             class="well well-lg numbered-exercise container"
+            id="example-xxx1yyy"
           >
             <span
               class="numbered-title"
@@ -220,20 +221,11 @@
             </span>Sei \(\Sigma = \{a,b,.\}\) und \(L \subseteq \Sigma^*\) die Sprache
             aller Strings der Form $$ x_1 . x_2 . x_3 . \cdots . x_n $$ wobei \(n
             \geq 2\) und jedes \(x_i \in \{a,b\}^+\), also zum Beispiel
-            
-            <code>
-              a.bba.aba
-            </code>
+            <code>a.bba.aba</code>
              aber nicht 
-            <code>
-              aba
-            </code>
+            <code>aba</code>
              und auch nicht
-            
-            <code>
-              a.b..a
-            </code>
-            
+            <code>a.b..a</code>
             Entwerfen Sie eine reguläre Grammatik für diese Sprache.
           </div>
           <div
@@ -346,8 +338,8 @@
               verzichten kann.
             </p>
             <div
-              id="theorem-regular-simplified"
               class="well container theorem"
+              id="theorem-regular-simplified"
             >
               <span
                 class="numbered-title"
@@ -404,20 +396,12 @@
               (X)&amp;:= N_k \cup \{Z \in N \ | \ \textnormal{ es gibt } Y \in
               N_k(X) \textnormal{ mit } Y \rightarrow Z \} \ . \end{align*}$$ Die
               Menge \(N_{k+1}(X)\) lässt sich also mit zwei geschachtelten
-              
-              <code>
-                for
-              </code>
-              -Schleifen berechnen: eine über die \(Y \in N_k\)
+              <code>for</code>-Schleifen berechnen: eine über die \(Y \in N_k\)
               und eine über die Produktionen \(Y \rightarrow Z\). Um
               \(N_{k+1}(X)\) für
               <i>alle</i>
               \(X \in N\) zu berechnen, brauchen wir eine weitere
-              
-              <code>
-                for
-              </code>
-              -Schleife. Wir berechnen nun \(N_{\geq k}\) für
+              <code>for</code>-Schleife. Wir berechnen nun \(N_{\geq k}\) für
               steigende \(k\), bis keine weitere Veränderung eintritt.
             </p>
             <div
@@ -441,8 +425,8 @@
               und man könnte abkürzen.
             </p>
             <div
-              id="exercise-no-a-or-no-b"
               class="well well-lg numbered-exercise container"
+              id="exercise-no-a-or-no-b"
             >
               <span
                 class="numbered-title"
@@ -503,18 +487,12 @@
               <li>
                 Ding 1, dann Ding 2, wie beispielsweise
                 <i>Username, dann 
-                  <code>
-                    @
-                  </code>
-                  , dann Domainname</i>
+                  <code>@</code>, dann Domainname</i>
               </li>
               <li>
                 Ding, bliebig oft wiederholt, wie beispielsweise
                 <i>eine beliebig lange Folge von Labels, mit
-                  
-                  <code>
-                    .
-                  </code>
+                  <code>.</code>
                    separiert.</i>
               </li>
               <li>
@@ -697,64 +675,39 @@
                  
               </span>Hier sehen Sie einen URL mit Query-String:
               <p>
-                
-                <code>
-                  https://web1.hszg.de/modulkatalog/index.php?activTopic=3&activNav=2&stid=566&frei=1&kennz=suche&activCont=1
-                </code>
-                
+                <code>https://web1.hszg.de/modulkatalog/index.php?activTopic=3&activNav=2&stid=566&frei=1&kennz=suche&activCont=1</code>
               </p>
               Der URL besteht aus mehreren Teilen:
               <ol>
                 <li>
                   Dem Protokoll. Hier ist das 
-                  <code>
-                    https
-                  </code>
-                  ; es kann aber
+                  <code>https</code>; es kann aber
                   auch 
-                  <code>
-                    http
-                  </code>
+                  <code>http</code>
                    oder 
-                  <code>
-                    ftp
-                  </code>
+                  <code>ftp</code>
                    sein.
                 </li>
                 <li>
                   Dem 
-                  <code>
-                    ://
-                  </code>
+                  <code>://</code>
                    nach dem Protokoll.
                 </li>
                 <li>
                   Dem Domainnamen, hier 
-                  <code>
-                    web1.hszg.de
-                  </code>
-                  .
+                  <code>web1.hszg.de</code>.
                 </li>
                 <li>
                   Optional nun einem Pfad, hier
-                  
-                  <code>
-                    /modulkatalog/index.php
-                  </code>
-                  .
+                  <code>/modulkatalog/index.php</code>.
                 </li>
                 <li>
                   Falls ein Pfad enthalten ist, dann optional ein 
-                  <code>
-                    ?
-                  </code>
-                  ,
+                  <code>?</code>,
                   gefolgt von einem Query-String; dieser besteht aus beliebig
                   vielen, aber mindestens einem Paar der Form Key=Value, wobei die
                   Paare mit einem 
-                  <code>
-                    &
-                  </code>
+                  <code>&</code>
                    separiert sind.
                 </li>
               </ol>
@@ -770,8 +723,8 @@
               recht häufig vorkommt.
             </p>
             <div
-              id="operation-L(.L)*"
               class="well container theorem"
+              id="operation-L(.L)*"
             >
               <span
                 class="numbered-title"

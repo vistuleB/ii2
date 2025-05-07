@@ -16,7 +16,7 @@ import writerly as wp
 const ins = string.inspect
 
 fn blame_us(message: String) -> bl.Blame {
-  bl.Blame(message, -1, [])
+  bl.Blame(message, -1, -1, [])
 }
 
 fn each_prev_next(

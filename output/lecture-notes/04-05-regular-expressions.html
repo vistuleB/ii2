@@ -19,12 +19,13 @@
 <body>
 <section
   count="25"
-  title_gr="Ausdrücke"
-  title_en="regular expressions"
-  number="4.5"
-  counter="DefCtr"
+  path="/lecture-notes24"
+  .="BookLevelSectionCounter 25"
   counter="ExoCtr"
-  path="/lecture-notes25"
+  counter="DefCtr"
+  number="4.5"
+  title_en="regular expressions"
+  title_gr="Ausdrücke"
 >
   <div
     id="link-to-toc"
@@ -36,8 +37,8 @@
     >&lt;&lt; Kapitel 4.4</a>
   </div>
   <div
-    id="link-to-overview"
     style="text-align: end"
+    id="link-to-overview"
   >
     <a
       href="/"
@@ -207,8 +208,8 @@
             Wir erhalten das folgende Ergebnis:
           </p>
           <div
-            id="regex-to-grammar"
             class="well container theorem"
+            id="regex-to-grammar"
           >
             <span
               class="numbered-title"
@@ -229,21 +230,15 @@
               <NumberedTitle>4.5.3</NumberedTitle>
                
             </span>Nehmen wir die Sprache der Wörter der Form 
-            <code>
-              bla:bla:blu.xyz-12-ab.b:x
-            </code>
+            <code>bla:bla:blu.xyz-12-ab.b:x</code>
              aus dem
             letzten Kapitel. Sie erinnern sich:
             eine endliche Folge von 
             <i>Labels</i>, wo ein Label eine nichtleere Folge von Blöcken ist, die
             entweder 
-            <code>
-              :
-            </code>
+            <code>:</code>
              oder durch 
-            <code>
-              -
-            </code>
+            <code>-</code>
              separiert sind, wobei innerhalb eines Labels
             immer nur ein
             Separatortyp vorkommen darf, und wobei ein Block eine nichtleere Folge von alphanumerischen
@@ -259,14 +254,9 @@
               B : = a^+
               \end{align*}$$
               Für ein Label müssen wir uns entscheiden, ob wir die Blöcke mit 
-              <code>
-                :
-              </code>
+              <code>:</code>
                oder
-              
-              <code>
-                -
-              </code>
+              <code>-</code>
                separieren; wir
               erhalten den regulären Ausdruck \(T\) für Labels ist also
               $$\begin{align*}
@@ -283,19 +273,12 @@
               haben, während \(T'\) eher
               die Arbeitsweise des determinisitschen Automaten reflektiert (wir lesen erst einmal einen
               Block und erst, wenn wir zum ersten mal auf
-              
-              <code>
-                :
-              </code>
+              <code>:</code>
                oder 
-              <code>
-                -
-              </code>
+              <code>-</code>
                stoßen, entscheiden wir uns für den "Typ" des Labels).
               Schlussendlich ist ein Wort in der Sprache eine mit 
-              <code>
-                .
-              </code>
+              <code>.</code>
                separierte Folge von
               Labels, also:
               $$\begin{align*}
@@ -324,40 +307,16 @@
 <pre>
 <code
   class="terminalPrompt"
->
-java TestRegex
-</code>
-<code
+>java TestRegex</code><code
   class="terminalOutput"
->
-Please enter a regular expression:
-</code>
- (a+)(:a+)*
-<code
+>Please enter a regular expression:</code>
+ (a+)(:a+)*<code
   class="terminalOutput"
->
-Enter words to be matched, one per line
-</code>
-
-<code>
-aaaaa:aa:aaaa:a
-</code>
-
-<code
+>Enter words to be matched, one per line</code><code>aaaaa:aa:aaaa:a</code><code
   class="terminalOutput"
->
-true
-</code>
-
-<code>
-aaa:aa:
-</code>
-
-<code
+>true</code><code>aaa:aa:</code><code
   class="terminalOutput"
->
-false
-</code>
+>false</code>
 </pre>
             <p>
               Schreiben Sie nun einen regulären Ausdruck \(R\) für die obige Sprache und testen Sie ihn
@@ -373,20 +332,12 @@ false
               <NumberedTitle>4.5.2</NumberedTitle>
                
             </span>In der Praxis gibt es bei reguläre Ausdrücken viele Abkürzung, so beschreibt
-            
-            <code>
-              [a-z]
-            </code>
+            <code>[a-z]</code>
              beispielsweise die Menge aller Kleinbuchstaben,
-            
-            <code>
-              [aoeiuy]
-            </code>
+            <code>[aoeiuy]</code>
              beschreibt die Menge \{a,o,e,i,u,y\} etc.
             Der reguläre Ausdruck 
-            <code>
-              [a-z]*[aeiuoy][a-z]*
-            </code>
+            <code>[a-z]*[aeiuoy][a-z]*</code>
              beschreibt also die
             Menge aller Wörter, die mindesten einen Vokal enthalten.
             Lesen Sie hierfür unter Anderem
@@ -478,9 +429,9 @@ false
               nichtdeterministischen endlichen Automaten (VNEA)</i>.
             <figure>
               <img
-                style="height:14em"
-                src="../img/finite-state-automata/to-regex/nea-to-vnea.svg"
                 loading="lazy"
+                src="../img/finite-state-automata/to-regex/nea-to-vnea.svg"
+                style="height:14em"
               >
             </figure>
             <p>
@@ -549,9 +500,9 @@ false
             </p>
             <figure>
               <img
-                style="height:10em"
-                src="../img/finite-state-automata/to-regex/eliminate-B.svg"
                 loading="lazy"
+                src="../img/finite-state-automata/to-regex/eliminate-B.svg"
+                style="height:10em"
               >
             </figure>
             <p>
@@ -579,9 +530,9 @@ false
             </p>
             <figure>
               <img
-                style="height:2.5em"
-                src="../img/finite-state-automata/to-regex/nvea-final.svg"
                 loading="lazy"
+                src="../img/finite-state-automata/to-regex/nvea-final.svg"
+                style="height:2.5em"
               >
             </figure>
             <p>
@@ -600,23 +551,20 @@ false
           </div>
           <p>
             Hier sehen Sie den ganzen Ablauf an unserer 
-            <code>
-              aaaa:a:aaa.aa-aa
-            </code>
-            -Sprache:
+            <code>aaaa:a:aaa.aa-aa</code>-Sprache:
           </p>
           <div
-            id="carousel-nfsm-to-regex"
             class="container"
+            id="carousel-nfsm-to-regex"
           >
             <div
               style="overflow-x: auto; margin: 1em;"
             >
               <figure>
                 <img
-                  style="height:20em"
-                  src="../img/finite-state-automata/to-regex/nfsm-to-regex-carpet.svg"
                   loading="lazy"
+                  src="../img/finite-state-automata/to-regex/nfsm-to-regex-carpet.svg"
+                  style="height:20em"
                 >
               </figure>
             </div>
@@ -632,9 +580,9 @@ false
             </span>Wandeln Sie nach dem eben beschriebenen Schema den Automaten
             <figure>
               <img
-                style="height:10em"
-                src="../img/finite-state-automata/nfsm-example-02.svg"
                 loading="lazy"
+                src="../img/finite-state-automata/nfsm-example-02.svg"
+                style="height:10em"
               >
             </figure>
             in einen regulären Ausdruck um.

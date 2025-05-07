@@ -19,12 +19,13 @@
 <body>
 <section
   count="6"
-  title_gr=""
-  title_en="majority"
-  number="1.5"
-  counter="DefCtr"
+  path="/lecture-notes5"
+  .="BookLevelSectionCounter 6"
   counter="ExoCtr"
-  path="/lecture-notes6"
+  counter="DefCtr"
+  number="1.5"
+  title_en="majority"
+  title_gr=""
 >
   <div
     id="link-to-toc"
@@ -36,8 +37,8 @@
     >&lt;&lt; Kapitel 1.4</a>
   </div>
   <div
-    id="link-to-overview"
     style="text-align: end"
+    id="link-to-overview"
   >
     <a
       href="/"
@@ -68,9 +69,9 @@
           Unser Ziel in diesem Teilkapitel ist es, Schaltkreise für die Majority-Funktion zu bauen:
           <figure>
             <img
-              style="height:10em"
-              src="../img/circuits/majority.svg"
               loading="lazy"
+              src="../img/circuits/majority.svg"
+              style="height:10em"
             >
           </figure>
           Diese nimmt \(n\) Bits als Input und gibt 1 aus, wenn mehr als \(n/2\) davon 1 sind.
@@ -82,9 +83,9 @@
           und als Schaltkreis so:
           <figure>
             <img
-              style="height:8em"
-              src="../img/circuits/maj3.svg"
               loading="lazy"
+              src="../img/circuits/maj3.svg"
+              style="height:8em"
             >
           </figure>
           <p>
@@ -152,9 +153,9 @@
             class="well container theorem"
           >
             <span
-              class="numbered-title"
-              data-counter="theorem"
               data-label="mid-level-lower-bound"
+              data-counter="theorem"
+              class="numbered-title"
             >Lemma 
               <NumberedTitle>1.5.1</NumberedTitle>
                .</span>Es gilt
@@ -221,10 +222,7 @@
           </p>
           <h3>
             Majority Top-Down mit 
-            <code>
-              if-then-else
-            </code>
-            -Gates
+            <code>if-then-else</code>-Gates
           </h3>
           Wenden wir nun statt Wahrheitstabelle die Top-Down-Methode an, modifiziert
           für monotone Funktionen wie in den<a
@@ -251,9 +249,9 @@
           \(\theta^{n-1}_k\) berechnen. Rekursiv fortgefühtr sieht das dann so aus:
           <figure>
             <img
-              style="height:15em"
-              src="../img/circuits/majority-theta-recursive.svg"
               loading="lazy"
+              src="../img/circuits/majority-theta-recursive.svg"
+              style="height:15em"
             >
           </figure>
           Die Konstruktion endet mit \(\theta^m_0\), was immer \(1\) ausgibt, und
@@ -278,9 +276,9 @@
           </p>
           <figure>
             <img
-              style="height:18em"
-              src="../img/circuits/majority-theta-dp.svg"
               loading="lazy"
+              src="../img/circuits/majority-theta-dp.svg"
+              style="height:18em"
             >
           </figure>
           <p>
@@ -292,31 +290,16 @@
 <pre
   class="listing"
 >
-
-<code>
-def binomial(n,k):
-</code>
-
+<code>def binomial(n,k):</code>
  
-<code>
-if k == 0 or k == n:
-</code>
-
+<code>if k == 0 or k == n:</code>
  
-<code>
-return 1
-</code>
+<code>return 1</code>
  
  
-<code>
-else:
-</code>
-
+<code>else:</code>
  
-<code>
-return binomial(n-1,k-1) + binomial(n-1,k)
-</code>
-
+<code>return binomial(n-1,k-1) + binomial(n-1,k)</code>
 </pre>
           der exponentielle Laufzeit aufweist, und der effizienten Implementierung mittels
           <i>Dynamic Programming</i>, bei welchem wir uns die Zwischenergebnisse merken.
@@ -356,9 +339,9 @@ return binomial(n-1,k-1) + binomial(n-1,k)
           \(000\dots 0\), also 0, und addieren die dann auf:
           <figure>
             <img
-              style="height:12em"
-              src="../img/circuits/majority-by-adding.svg"
               loading="lazy"
+              src="../img/circuits/majority-by-adding.svg"
+              style="height:12em"
             >
           </figure>
           <div
@@ -372,7 +355,7 @@ return binomial(n-1,k-1) + binomial(n-1,k)
             </span>Bestimmen Sie asymptotisch die Größe und die Tiefe dieses Schaltkreises.
             Achten Sie besonders bei der Berechnung der Größe darauf, dass die untersten Add-Gadgets
             ja 1-stellige oder dann 2-stellige Zahlen addieren müssen und erst die weniger obersten Gadgets
-            Zahlen mit \(\Theta(\log n)\) Bits als Input bekommen.
+            Zahlen mit $\Theta(\log n)$ Bits als Input bekommen.
           </div>
           <h3>
             \(O(\log n)\) Tiefe mit 2-for-3-Addierern.
@@ -405,9 +388,9 @@ return binomial(n-1,k-1) + binomial(n-1,k)
             Ich demonstriere das Beweisprinzip erst einmal mit drei Zahlen in Basis 10:
             <figure>
               <img
-                style="height:10em"
-                src="../img/circuits/2-for-3-adder-example.svg"
                 loading="lazy"
+                src="../img/circuits/2-for-3-adder-example.svg"
+                style="height:10em"
               >
             </figure>
             <p>
@@ -419,15 +402,15 @@ return binomial(n-1,k-1) + binomial(n-1,k)
             </p>
             <figure>
               <img
-                style="height:15em"
-                src="../img/circuits/2-for-3-adder-binary.svg"
                 loading="lazy"
+                src="../img/circuits/2-for-3-adder-binary.svg"
+                style="height:15em"
               >
             </figure>
             <p>
             </p>
             Dieser Schaltkreis hat insgesamt \(O(n)\) Gates und Tiefe 2 (wobei wir
-            die NOT-Gates im \(\oplus\)-Gate nicht mitzählen).<span
+            die NOT-Gates im $\oplus$-Gate nicht mitzählen).<span
               class="qed"
             >\(\square\)</span>
           </div>
@@ -482,10 +465,10 @@ return binomial(n-1,k-1) + binomial(n-1,k)
             </p>
             <ol>
               <li>
-                Wieviele 2-for-3-Addierer haben Sie in Ebene \(i\) des Baumes?
+                Wieviele 2-for-3-Addierer haben Sie in Ebene $i$ des Baumes?
               </li>
               <li>
-                Wieviel Bits haben die Zahlen auf Ebene \(i\), und wie groß muss daher
+                Wieviel Bits haben die Zahlen auf Ebene $i$, und wie groß muss daher
                 der 2-for-3-Addierer sein?
               </li>
               <li>
@@ -595,7 +578,7 @@ return binomial(n-1,k-1) + binomial(n-1,k)
                 <NumberedTitle>1.5.6</NumberedTitle>
                   (Signalstärke)</span>Sei \(\mathcal{C}\) eine Verteilung über Schaltkreise mit Input-Variablen
               \(x_1,\dots,x_n\). Wir sagen, dass \(\mathcal{C}\) 
-              <i>Signalstärke mindestens \(\delta\)</i>
+              <i>Signalstärke mindestens $\delta$</i>
               hat, wenn
               $$
               \forall x \in \{0,1\}: \quad \Pr_{C \in \mathcal{C}} [C(x) = \maj_n(x)]
@@ -710,8 +693,8 @@ return binomial(n-1,k-1) + binomial(n-1,k)
                   \(3s+4\);
                 </li>
                 <li>
-                  die Signalstärke von \(\mathcal{C}^{\otimes 3}\) ist
-                  \(\frac{3}{2} \delta - \frac{1}{2}\delta^3\).
+                  die Signalstärke von $\mathcal{C}^{\otimes 3}$ ist
+                  $\frac{3}{2} \delta - \frac{1}{2}\delta^3$.
                 </li>
               </ol>
             </div>
@@ -720,16 +703,16 @@ return binomial(n-1,k-1) + binomial(n-1,k)
             >
               <p>
                 <b>Beweis.</b>
-                Wir betrachten ein festes \(\x \in \cube^n\) mit \(\maj_n(\x) = 1\); der
-                Fall \(\maj_n(\x) = 0\) ist analog. Wir definieren
-                nun \(U := C_1(\x)\), \(V := C_2(\x)\) und \(W := C_3(\x)\). Da
-                \(C_1, C_2, C_3 \sim \mathcal{C}\) zufällige Schaltkreise sind, sind \(U, V, W\)
+                Wir betrachten ein festes $\x \in \cube^n$ mit $\maj<i>n(\x) = 1$; der
+                  Fall $\maj</i>n(\x) = 0$ ist analog. Wir definieren
+                nun $U := C<i>1(\x)$, $V := C</i>2(\x)$ und $W := C<i>3(\x)$. Da
+                  $C</i>1, C<i>2, C</i>3 \sim \mathcal{C}$ zufällige Schaltkreise sind, sind $U, V, W$
                 Zufallsvariable
-                über \(\cube\), und zwar 
-                <i>unabhängig</i>, weil wir \(C_1, C_2, C-3\) auch unabhängig
-                gesampelt haben. Wir wissen: \(\Pr[U=1] = \Pr[V=1] = \Pr[W=1] \geq \frac{1+\delta}{2} =:
-                p\).
-                Was ist nun \(\Pr[\maj_3(U,V,W) = 1]\)?
+                über $\cube$, und zwar 
+                <i>unabhängig</i>, weil wir $C<i>1, C</i>2, C-3$ auch unabhängig
+                gesampelt haben. Wir wissen: $\Pr[U=1] = \Pr[V=1] = \Pr[W=1] \geq \frac{1+\delta}{2} =:
+                p$.
+                Was ist nun $\Pr[\maj_3(U,V,W) = 1]$?
               </p>
               $$\begin{align*}
               \Pr[\maj_3(U,V,W)=1]&amp;= \Pr[U=V=W=1] + \Pr[\textnormal{genau zwei von $\{U,V,W\}$ sind 1}]
@@ -740,49 +723,49 @@ return binomial(n-1,k-1) + binomial(n-1,k)
               &amp;= \frac{1}{2} \left( 1 + \frac{3}{2} \delta - \frac{1}{2}\delta^3 \right) \ .
               \end{align*}$$
               <p>
-                Die Signalstärke von \(\mathcal{C}^{\otimes 3}\) ist also mindestens
-                \(\frac{3}{2} \delta - \frac{1}{2} \delta^3\).<span
+                Die Signalstärke von $\mathcal{C}^{\otimes 3}$ ist also mindestens
+                $\frac{3}{2} \delta - \frac{1}{2} \delta^3$.<span
                   class="qed"
                 >\(\square\)</span>
               </p>
             </div>
             <p>
-              Wir beginnen nun mit der Verteilung \(\mathcal{C}_0\) über Schaltkreise der
+              Wir beginnen nun mit der Verteilung $\mathcal{C}_0$ über Schaltkreise der
               Größe 1 und definieren 
             </p>
             $$\begin{align*}
             \mathcal{C}_{i+1} := (\mathcal{C}_i)^{\oplus 3} \ .
             \end{align*}$$
             <p>
-              Zur Wiederholung: um \(C \sim \mathcal{C}_{i+1}\) zu sampeln, sampeln wir unabhängig
-              drei Schaltkreise \(\sim \mathcal{C}_i\) und verknüpfen deren Output-Gates mit einem
-              \(\maj_3\)-Gadget. Wenn \(\mathcal{C}_i\) die Signalstärke \(\delta_i\) hat, dann
-              hat \(\mathcal{C}_{i+1}\) Signalstärke
-              \(\frac{3}{2} \delta_i - \frac{1}{2} \delta_i^3\).
-              Wenn \(\delta_i \leq 1/2\) sein sollte, dann ist das mindestens \(\frac{5}{4} \delta_i\).
-              Daraus folgt, dass nach höchstens \(i^* := \log_{5/4} n\) Rekursionsstufen eine Signalstärke
-              von mindestens \(1/2\) erreicht ist: \(\mathcal{C}_{i^*}\) hat Signalstärke mindestens
-              \(1/2\).
+              Zur Wiederholung: um $C \sim \mathcal{C}<i>{i+1}$ zu sampeln, sampeln wir unabhängig
+                drei Schaltkreise $\sim \mathcal{C}</i>i$ und verknüpfen deren Output-Gates mit einem
+              $\maj<i>3$-Gadget. Wenn $\mathcal{C}</i>i$ die Signalstärke $\delta<i>i$ hat, dann
+                hat $\mathcal{C}</i>{i+1}$ Signalstärke
+              $\frac{3}{2} \delta<i>i - \frac{1}{2} \delta</i>i^3$.
+              Wenn $\delta<i>i \leq 1/2$ sein sollte, dann ist das mindestens $\frac{5}{4} \delta</i>i$.
+              Daraus folgt, dass nach höchstens $i^* := \log<i>{5/4} n$ Rekursionsstufen eine Signalstärke
+                von mindestens $1/2$ erreicht ist: $\mathcal{C}</i>{i^*}$ hat Signalstärke mindestens
+              $1/2$.
             </p>
             <p>
               Wenn wir jetzt die rekursive Konstruktion fortsetzen, steigt die Signalstärke weiter an und
-              konvergiert gegen \(1\): \(\lim_{i \rightarrow \infty} \delta_i = 1\). Die Frage ist nur,
+              konvergiert gegen $1$: $\lim<i>{i \rightarrow \infty} \delta</i>i = 1$. Die Frage ist nur,
               wie schnell konvergiert es? Da wir nun nicht mehr an Wahrscheinlichkeiten interessiert sind,
               die
-              knapp über \(1/2\) liegen, sondern an solchen, die knapp unter \(1\) liegen,
-              führen wir einen Parameterwechsel durch: eine Verteilung \(\mathcal{C}\) von Schaltkreisen
-              mit Inputs \(x_1,\dots,x_n\)
+              knapp über $1/2$ liegen, sondern an solchen, die knapp unter $1$ liegen,
+              führen wir einen Parameterwechsel durch: eine Verteilung $\mathcal{C}$ von Schaltkreisen
+              mit Inputs $x<i>1,\dots,x</i>n$
               hat 
-              <i>Fehlerwahrscheinlichkeit \(\epsilon\)</i>, wenn
+              <i>Fehlerwahrscheinlichkeit $\epsilon$</i>, wenn
             </p>
             $$\begin{align*}
             \forall \x \in \cube^n: \Pr_{C \sim \mathcal{C}}[ C(\x) = \maj_n(\x)] \geq 1 - \epsilon \ .
             \end{align*}$$
             <p>
-              Eine Signalstärke von \(\delta\) entspricht einer Fehlerwahrscheinlichkeit von
-              \(\frac{1-\delta}{2}\).
-              Die Verteilung \(\mathcal{C}_{i^*}\) hat also eine Fehlerwahrscheinlichkeit von
-              höchstens \(\frac{1 - 1/2}{2} = 1/4\). Das obige Lemma, nun aus der Sicht der
+              Eine Signalstärke von $\delta$ entspricht einer Fehlerwahrscheinlichkeit von
+              $\frac{1-\delta}{2}$.
+              Die Verteilung $\mathcal{C}_{i^*}$ hat also eine Fehlerwahrscheinlichkeit von
+              höchstens $\frac{1 - 1/2}{2} = 1/4$. Das obige Lemma, nun aus der Sicht der
               Fehlerwahrscheinlichkeit,
               liest sich so:
             </p>
@@ -795,10 +778,10 @@ return binomial(n-1,k-1) + binomial(n-1,k)
                 >Behauptung 
                   <NumberedTitle>1.5.9</NumberedTitle>
                    .</span>
-                 Wenn \(\mathcal{C}\)
+                 Wenn $\mathcal{C}$
                 Fehlerwahrscheinlichkeit
-                \(\epsilon\) hat, dann hat \(\mathcal{C}^{\otimes 3}\) Fehlerwahrscheinlichkeit
-                \(3 \epsilon^2\)
+                $\epsilon$ hat, dann hat $\mathcal{C}^{\otimes 3}$ Fehlerwahrscheinlichkeit
+                $3 \epsilon^2$
               </p>
             </div>
             <div
@@ -807,26 +790,27 @@ return binomial(n-1,k-1) + binomial(n-1,k)
               <p>
                 <b>Beweis.</b>
                  Wie im Beweis vom Lemma setzen wir
-                \(p := \frac{1+p}{2} = 1-\epsilon\) und erhalten
+                $p := \frac{1+p}{2} = 1-\epsilon$ und erhalten
               </p>
               $$\begin{align*}
               \Pr[\maj_3(U,V,W) = 1]&amp;= p^3 + 3 p^2 (1-p) =
               (1 - \epsilon^3) + 3 (1- \epsilon)^2 \epsilon = 1 - 3 \epsilon^2 \ .
               \end{align*}$$
               <p>
-                Somit hat \(\mathcal{C}^{\otimes 3}\) Fehlerwahrscheinlichkeit \(3 \epsilon^2\).<span
+                Somit hat $\mathcal{C}^{\otimes 3}$ Fehlerwahrscheinlichkeit $3 \epsilon^2$.<span
                   class="qed"
                 >\(\square\)</span>
               </p>
             </div>
             <p>
-              Für \(i^* := \log_{5/4} n\) hat \(\mathcal{C}_{i^*}\) eine Fehlerwahrscheinlichkeit von
-              höchstens \(1/4\). Für \(i^* + 1\) wird das zu \(3 \pfrac{1}{4}^2 = \frac{3}{16}\) und
-              für \(i^* + 2\) zu \(3 \pfrac{3}{16}^2 = \frac{27}{256} \leq \frac{1}{9}\).
-              Wenn nun \(\epsilon \leq \frac{1}{9}\) ist, dann gilt \(3 \epsilon^2 \leq \epsilon^{3/2}\).
-              Wir definieren \(\epsilon_i := \frac{1 - \delta_i}{2}\), also die Fehlerwahrscheinlichkeit von
-              \(\mathcal{C}_i\). Es gilt also \(\epsilon_{i+1} \leq (\epsilon_i)^{3/2}\) für alle \(i \geq
-              i^*+2\)
+              Für $i^* := \log<i>{5/4} n$ hat $\mathcal{C}</i>{i^<b>}$ eine Fehlerwahrscheinlichkeit von
+                höchstens $1/4$. Für $i^</b>
+               + 1$ wird das zu $3 \pfrac{1}{4}^2 = \frac{3}{16}$ und
+              für $i^* + 2$ zu $3 \pfrac{3}{16}^2 = \frac{27}{256} \leq \frac{1}{9}$.
+              Wenn nun $\epsilon \leq \frac{1}{9}$ ist, dann gilt $3 \epsilon^2 \leq \epsilon^{3/2}$.
+              Wir definieren $\epsilon<i>i := \frac{1 - \delta</i>i}{2}$, also die Fehlerwahrscheinlichkeit von
+              $\mathcal{C}<i>i$. Es gilt also $\epsilon</i>{i+1} \leq (\epsilon_i)^{3/2}$ für alle $i \geq
+              i^*+2$
               und somit
             </p>
             $$\begin{align*}
@@ -834,12 +818,12 @@ return binomial(n-1,k-1) + binomial(n-1,k)
             \pfrac{1}{4}^{\pfrac{3}{2}^j} \ .
             \end{align*}$$
             <p>
-              Qualitativ sehen wir: solange \(\delta_i \leq 1/2\) gilt, wächst die Signalstärke exponentiell
-              an. Dieses exponentielle Wachstum kann natürlich nicht beliebig weitergehen. Jenseits
-              \(\delta_i \leq 1/2\) hört das auf, dafür 
+              Qualitativ sehen wir: solange $\delta<i>i \leq 1/2$ gilt, wächst die Signalstärke exponentiell
+                an. Dieses exponentielle Wachstum kann natürlich nicht beliebig weitergehen. Jenseits
+                $\delta</i>i \leq 1/2$ hört das auf, dafür 
               <i>fällt</i>
                nun die Fehlerwahrscheinlichkeit
-              <i>doppelt exponentiell</i>. Für \(j^* := \log_{3/2} n\) gilt dann
+              <i>doppelt exponentiell</i>. Für $j^* := \log_{3/2} n$ gilt dann
             </p>
             $$\begin{align*}
             \epsilon_{i^* + 2 + j^*} \leq \pfrac{1}{4}^{n} \lt 2^{-n} \ .
@@ -849,55 +833,55 @@ return binomial(n-1,k-1) + binomial(n-1,k)
             </p>
             <figure>
               <img
-                style="height:18em"
                 src="../img/circuits/majority-probability-labeled.svg"
+                style="height:18em"
               >
               <br>
-              Graph der Funktion \(p \mapsto p^3 + 3 p^2 (1-p)\)
+              Graph der Funktion $p \mapsto p^3 + 3 p^2 (1-p)$
               <hr>
               </hr>
             </figure>
             <figure>
               <img
-                style="height:18em"
                 src="../img/circuits/majority-probability-close-to-half-labeled.svg"
+                style="height:18em"
               >
               <br>
-              Signalstärke \(\delta\) wächst für \(p \in [1/2, 3/4]\) exponentiell.
+              Signalstärke $\delta$ wächst für $p \in [1/2, 3/4]$ exponentiell.
               <hr>
               </hr>
             </figure>
             <figure>
               <img
-                style="height:18em"
                 src="../img/circuits/majority-probability-close-to-one-labeled.svg"
+                style="height:18em"
               >
               <br>
-              Fehlerwahrscheinlichkeit \(\epsilon\) fällt für \(p \in [3/4, 1/2]\) doppelt
+              Fehlerwahrscheinlichkeit $\epsilon$ fällt für $p \in [3/4, 1/2]$ doppelt
               exponentiell.
               <hr>
               </hr>
             </figure>
             <p>
-              Wir setzen nun \(k := i^* + 2 + j^* = \log_{5/4} n + 2 + \log_{3/2} n = O(\log n)\) und
-              sehen, dass \(\mathcal{C}_k\) eine Verteilung über Schaltkreise mit
-              Tiefe \(O(\log n)\) und Fehlerwahrscheinlichkeit kleiner als \(2^{-n}\) ist.
-              Was nun kommt, ist ein absolutes Standardargument in probabilitischen Beweisen:
-              ein Union Bound. Das geht ungefähr so: wenn für jedes feste \(\b \in \cube^n\)
-              ein Schaltkreis \(C \mathcal{C}_k\) mit Wahrscheinlichkeit \(\epsilon_k\) irrt,
-              dann ist die Wahrscheinlichkeit, dass \(C\) sich für irgendein \(\x \in \cube^n\) irrt,
-              höchstens
-              \(2^n \epsilon_k\). Formal: für jedes \(\b \in \cube^n\) definieren wir
-              \(E_{\b}\) als die Menge der Schaltkreise mit Input-Variablen
-              \(x_1,\dots,x_n\), die sich auf \(\b\) irren, also
+              Wir setzen nun $k := i^* + 2 + j^* = \log<i>{5/4} n + 2 + \log</i>{3/2} n = O(\log n)$ und
+              sehen, dass $\mathcal{C}<i>k$ eine Verteilung über Schaltkreise mit
+                Tiefe $O(\log n)$ und Fehlerwahrscheinlichkeit kleiner als $2^{-n}$ ist.
+                Was nun kommt, ist ein absolutes Standardargument in probabilitischen Beweisen:
+                ein Union Bound. Das geht ungefähr so: wenn für jedes feste $\b \in \cube^n$
+                ein Schaltkreis $C \mathcal{C}</i>k$ mit Wahrscheinlichkeit $\epsilon<i>k$ irrt,
+                dann ist die Wahrscheinlichkeit, dass $C$ sich für irgendein $\x \in \cube^n$ irrt,
+                höchstens
+                $2^n \epsilon</i>k$. Formal: für jedes $\b \in \cube^n$ definieren wir
+              $E<i>{\b}$ als die Menge der Schaltkreise mit Input-Variablen
+                $x</i>1,\dots,x_n$, die sich auf $\b$ irren, also
             </p>
             $$\begin{align*}
             E_{\b} := \{\textnormal{Schaltkreise } C \textnormal{ über } x_1, \dots, x_n \ | \ C(\b) \ne
             \maj_n(\b) \} \ .
             \end{align*}$$
             <p>
-              Die Verteilung \(\mathcal{C}_k\) existiert ja im Wahrscheinlichkeitsraum aller
-              Boolescher Schaltkreise mit Inputs \(x_1,\dots, x_n\). Die Menge \(E_{\b}\)
+              Die Verteilung $\mathcal{C}<i>k$ existiert ja im Wahrscheinlichkeitsraum aller
+                Boolescher Schaltkreise mit Inputs $x</i>1,\dots, x<i>n$. Die Menge $E</i>{\b}$
               ist somit ein 
               <i>Ereignis</i>
                in diesem Raum. Ein extrem unwahrscheinliches Ereignis:
@@ -906,17 +890,17 @@ return binomial(n-1,k-1) + binomial(n-1,k)
             \forall \b \in \cube^n: \Pr_{C \sim \mathcal{C}_k} [ C \in E_{\b} ] = \epsilon_k \lt 2^{n-} \ .
             \end{align*}$$
             <p>
-              Oder kompakt ausgedrückt: \(\Pr_{\mathcal{C}_k} [E_{\b}] \lt 2^n\). Wir haben nun
-              ein Ereignis \(E_{\b}\) für jedes \(\b \in \cube^n\) und definieren
+              Oder kompakt ausgedrückt: $\Pr<i>{\mathcal{C}</i>k} [E<i>{\b}] \lt 2^n$. Wir haben nun
+                ein Ereignis $E</i>{\b}$ für jedes $\b \in \cube^n$ und definieren
             </p>
             $$\begin{align*}
             E := \bigcup_{\b \in \cube^n} E_{\b} \ .
             \end{align*}$$
             <p>
-              Was ist \(E\)? Es ist die Menge der Schaltkreise, die sich auf mindestens einem \(\b \in
-              \cube^n\)
-              irren. Was ist das Komplement \(\bar{E}\)? Das ist die Menge der Schaltkreise, die sich
-              auf keinem \(\b \in \cube^n\) irren, also die Menge der Schaltkreise, die \(\maj_n\) korrekt
+              Was ist $E$? Es ist die Menge der Schaltkreise, die sich auf mindestens einem $\b \in
+              \cube^n$
+              irren. Was ist das Komplement $\bar{E}$? Das ist die Menge der Schaltkreise, die sich
+              auf keinem $\b \in \cube^n$ irren, also die Menge der Schaltkreise, die $\maj_n$ korrekt
               berechnen. Es gilt nun
             </p>
             $$\begin{align*}
@@ -926,26 +910,26 @@ return binomial(n-1,k-1) + binomial(n-1,k)
             &amp;\lt \sum_{b \in \cube^n} 2^{-n} = 2^n 2^{-n} = 1 \ .
             \end{align*}$$
             <p>
-              Also \(\Pr_{\mathcal{C}_k}[E] \lt 1\) und somit \(\Pr_{\mathcal{C}_k}[\bar{E}] \gt 0\). Das
+              Also $\Pr<i>{\mathcal{C}</i>k}[E] \lt 1$ und somit $\Pr<i>{\mathcal{C}</i>k}[\bar{E}] \gt 0$. Das
               bedeutet,
-              dass ein zufälliger Schaltkreis \(C \sim \mathcal{C}_K\) mit positiver Wahrscheinlichkeit
-              die Funktion \(\maj_n\) korrekt berechnet. Jeder Schaltkreis, der unter \(\mathcal{C}_k\)
-              gesampelt werden kann, hat Tiefe \(O(\log n)\), Fan-in 2 und ist monoton, und somit schließen
-              wir:
-              es gibt einen monotonen Schaltkreis \(C\) mit Fan-in 2 und Tiefe \(O(\log n)\), der \(\maj_n\)
+              dass ein zufälliger Schaltkreis $C \sim \mathcal{C}<i>K$ mit positiver Wahrscheinlichkeit
+                die Funktion $\maj</i>n$ korrekt berechnet. Jeder Schaltkreis, der unter $\mathcal{C}<i>k$
+                gesampelt werden kann, hat Tiefe $O(\log n)$, Fan-in 2 und ist monoton, und somit schließen
+                wir:
+                es gibt einen monotonen Schaltkreis $C$ mit Fan-in 2 und Tiefe $O(\log n)$, der $\maj</i>n$
               berechnet.
             </p>
             <p>
-              Es bleibt die Frage, wie groß dieser Schaltkreis \(C\) ist. Seien wir hier bequem: ein
-              Schaltkreis mit Fan-in 2 und einem Output-Gate hat höchstens \(2^i\) Gates, die Abstand
-              \(i\) vom Output-Gate haben. Somit hat ein Schaltkreis mit Fan-in 2 und Tiefe \(d\) höchstens
+              Es bleibt die Frage, wie groß dieser Schaltkreis $C$ ist. Seien wir hier bequem: ein
+              Schaltkreis mit Fan-in 2 und einem Output-Gate hat höchstens $2^i$ Gates, die Abstand
+              $i$ vom Output-Gate haben. Somit hat ein Schaltkreis mit Fan-in 2 und Tiefe $d$ höchstens
             </p>
             $$\begin{align*}
             1 + 2 + 4 + \dots + 2^d = 2^{d+1}-1
             \end{align*}$$
             <p>
-              Gates. Ein Schaltkreis mit Fan-in 2 und Tiefe \(c \log_2 n\) hat also
-              insgesamt höchstens \(2^{c \log n + 1 } - 1 = O(n^c) = O(\poly(n))\) Gates.<span
+              Gates. Ein Schaltkreis mit Fan-in 2 und Tiefe $c \log_2 n$ hat also
+              insgesamt höchstens $2^{c \log n + 1 } - 1 = O(n^c) = O(\poly(n))$ Gates.<span
                 class="qed"
               >\(\square\)</span>
             </p>
@@ -959,15 +943,15 @@ return binomial(n-1,k-1) + binomial(n-1,k)
               >Übungsaufgabe 
                 <NumberedTitle>1.5.5</NumberedTitle>
                  
-              </span>Präzisieren Sie die Größe von Valiants Schaltkreis und bestimmen ein \(c \in \R\), so dass
-              er die Größe \(\Theta(n^c)\) hat.
+              </span>Präzisieren Sie die Größe von Valiants Schaltkreis und bestimmen ein $c \in \R$, so dass
+              er die Größe $\Theta(n^c)$ hat.
             </p>
           </div>
           <p>
             Wir könnten nun noch ehrgeiziger sein und einen monotonen Schaltkreis mit Fan-in 2,
-            Tiefe \(O(\log n)\) und 
+            Tiefe $O(\log n)$ und 
             <i>linearer</i>
-             Größe \(O(n)\) anstreben.
+             Größe $O(n)$ anstreben.
           </p>
         </div>
       </div>

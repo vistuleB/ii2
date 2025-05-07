@@ -19,12 +19,13 @@
 <body>
 <section
   count="29"
-  title_gr="und Ableitungsbäume"
-  title_en="ableitungen"
-  number="5.1"
-  counter="DefCtr"
+  path="/lecture-notes28"
+  .="BookLevelSectionCounter 29"
   counter="ExoCtr"
-  path="/lecture-notes29"
+  counter="DefCtr"
+  number="5.1"
+  title_en="ableitungen"
+  title_gr="und Ableitungsbäume"
 >
   <div
     id="link-to-toc"
@@ -36,8 +37,8 @@
     >&lt;&lt; Kapitel 5.0</a>
   </div>
   <div
-    id="link-to-overview"
     style="text-align: end"
+    id="link-to-overview"
   >
     <a
       href="/"
@@ -123,9 +124,9 @@
           </p>
           <figure>
             <img
-              style="height: 15em"
-              src="../img/cfg/syntax-tree-a*(a+a).svg"
               loading="lazy"
+              src="../img/cfg/syntax-tree-a*(a+a).svg"
+              style="height: 15em"
             >
           </figure>
           <p>
@@ -136,51 +137,21 @@
 <pre
   class="listing container"
 >
-
-<code>
-def treeToLeftDerivation (tree):
-</code>
-
+<code>def treeToLeftDerivation (tree):</code>
  
-<code>
-print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
-</code>
-
+<code>print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)</code>
  
-<code>
-for child in tree.children (from left ro right):
-</code>
-
+<code>for child in tree.children (from left ro right):</code>
  
-<code>
-treeToLeftDerivation(child)
-</code>
-
-
-<code>
-
-</code>
-
-
-<code>
-def treeToRightDerivation (tree):
-</code>
-
+<code>treeToLeftDerivation(child)</code>
+<code></code>
+<code>def treeToRightDerivation (tree):</code>
  
-<code>
-for child in tree.children (from left ro right):
-</code>
-
+<code>for child in tree.children (from left ro right):</code>
  
-<code>
-treeToLeftDerivation(child)
-</code>
-
+<code>treeToLeftDerivation(child)</code>
  
-<code>
-print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
-</code>
-
+<code>print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)</code>
 </pre>
           <p>
             Beachten Sie, dass wir in beiden Fällen die Liste Kinder von links

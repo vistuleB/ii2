@@ -19,12 +19,13 @@
 <body>
 <section
   count="5"
-  title_gr="Funktionen und monotone Schaltkreise"
-  title_en="monotone circuits"
-  number="1.4"
-  counter="DefCtr"
+  path="/lecture-notes4"
+  .="BookLevelSectionCounter 5"
   counter="ExoCtr"
-  path="/lecture-notes5"
+  counter="DefCtr"
+  number="1.4"
+  title_en="monotone circuits"
+  title_gr="Funktionen und monotone Schaltkreise"
 >
   <div
     id="link-to-toc"
@@ -36,8 +37,8 @@
     >&lt;&lt; Kapitel 1.3</a>
   </div>
   <div
-    id="link-to-overview"
     style="text-align: end"
+    id="link-to-overview"
   >
     <a
       href="/"
@@ -80,9 +81,9 @@
           </p>
           <figure>
             <img
-              style="height:10em"
-              src="../img/circuits/hasse-diagram.svg"
               loading="lazy"
+              src="../img/circuits/hasse-diagram.svg"
+              style="height:10em"
             >
           </figure>
           <p>
@@ -135,9 +136,9 @@
           </p>
           <figure>
             <img
-              style="height:10em"
-              src="../img/circuits/hasse-clouds.svg"
               loading="lazy"
+              src="../img/circuits/hasse-clouds.svg"
+              style="height:10em"
             >
           </figure>
           <p>
@@ -161,9 +162,9 @@
           </p>
           <figure>
             <img
-              style="height:10em"
-              src="../img/circuits/monotone-or-not.svg"
               loading="lazy"
+              src="../img/circuits/monotone-or-not.svg"
+              style="height:10em"
             >
           </figure>
           <p>
@@ -172,8 +173,8 @@
             folgendes beweisen:
           </p>
           <div
-            id="theorem-monotone"
             class="well container theorem"
+            id="theorem-monotone"
           >
             <span
               class="numbered-title"
@@ -217,9 +218,9 @@
             </p>
             <figure>
               <img
-                style="height:10em"
-                src="../img/circuits/hasse-diagram.svg"
                 loading="lazy"
+                src="../img/circuits/hasse-diagram.svg"
+                style="height:10em"
               >
             </figure>
             <p>
@@ -246,9 +247,9 @@
             aber beliebig viele AND- und OR-Gates.
             <figure>
               <img
-                style="height:10em"
-                src="../img/circuits/triple-negator.svg"
                 loading="lazy"
+                src="../img/circuits/triple-negator.svg"
+                style="height:10em"
               >
             </figure>
           </div>
@@ -265,8 +266,8 @@
             Beweisstrategien einzugehen.
           </p>
           <div
-            id="theorem-1"
             class="well container theorem"
+            id="theorem-1"
           >
             <span
               class="numbered-title"
@@ -329,10 +330,7 @@
             class="well container"
           >
             <b>Erster Beweis. Top-Down mit 
-              <code>
-                if-then-else
-              </code>
-              .</b>
+              <code>if-then-else</code>.</b>
             <p>
               In diesem Beweis verwende ich die zweite oben erwähnte Technik: bereits bekanntes
               abwandeln. Was kennen wir denn bereits? Wir kennen
@@ -444,8 +442,8 @@
                 null Variablen tun zu haben. Allerdings: warum? In Java hätten Sie bestimmt kein Problem
                 mit
 <pre
-  style="margin:2ch"
   class="listing"
+  style="margin:2ch"
 >
 public boolean constantFalse() {
 return false;
@@ -482,8 +480,8 @@ return true;
                   noch der Java-Compiler werden Probleme mit der Funktion
                 </p>
 <pre
-  style="margin:2ch"
   class="listing"
+  style="margin:2ch"
 >
 public boolean constantFalse(boolean x) {
 return false;
@@ -491,9 +489,7 @@ return false;
 </pre>
                 <p>
                   haben. Ja in der Tat, Java toleriert es, dass Sie 
-                  <code>
-                    constantFalse
-                  </code>
+                  <code>constantFalse</code>
                    zweimal
                   deklariert haben, einmal als Funktion mit 0 Input-Variablen, einmal als
                   Funktion mit einer Input-Variablen. Um hundertprozentig korrekt zu sein, müssten wir
@@ -576,16 +572,13 @@ return false;
                 die Teilergebnisse wieder 
                 <i>sinnvoll zusammenfügen</i>. Dies
                 tun wir in diesem Falle mit einem 
-                <code>
-                  if-then-else
-                </code>
-                -Gate:
+                <code>if-then-else</code>-Gate:
               </p>
               <figure>
                 <img
-                  style="height:15em"
-                  src="../img/circuits/top-down-if-then-else.svg"
                   loading="lazy"
+                  src="../img/circuits/top-down-if-then-else.svg"
+                  style="height:15em"
                 >
               </figure>
               <p>
@@ -645,10 +638,7 @@ return false;
             class="well container"
           >
             <b>Erster Beweis. Top-Down mit 
-              <code>
-                if-then-else
-              </code>
-              .</b>
+              <code>if-then-else</code>.</b>
             <p>
               Wir verfolgen die Beweistechnik "Bekanntes abwandeln und hoffen".
               Das Bekannte ist die Konstruktion im Beweis von Theorem 1, also
@@ -666,16 +656,13 @@ return false;
               wenn Sie Lust haben; oder versuchen Sie, es sich intuitiv klar zu machen).
               Per Induktionshypothese gibt es also monotone Schaltkreise für \(f_0\) und \(f_1\). Wir
               kombinieren diese mit einem 
-              <code>
-                if-then-else
-              </code>
-              -Gate und erhalten:
+              <code>if-then-else</code>-Gate und erhalten:
             </p>
             <figure>
               <img
-                style="height:15em"
-                src="../img/circuits/top-down-if-then-else-2.svg"
                 loading="lazy"
+                src="../img/circuits/top-down-if-then-else-2.svg"
+                style="height:15em"
               >
             </figure>
             <p>
@@ -683,18 +670,15 @@ return false;
               \(n-1\)
               viele).
               Erkennen Sie das Problem mit der Konstruktion? Klar: das 
-              <code>
-                if-then-else
-              </code>
-              -Gate ist
+              <code>if-then-else</code>-Gate ist
               nicht
               monoton. Unser Schaltkreis schaut also in Wirklichkeit so aus:
             </p>
             <figure>
               <img
-                style="height:18em"
-                src="../img/circuits/top-down-if-then-else-3.svg"
                 loading="lazy"
+                src="../img/circuits/top-down-if-then-else-3.svg"
+                style="height:18em"
               >
             </figure>
             <p>
@@ -708,9 +692,9 @@ return false;
             </p>
             <figure>
               <img
-                style="height:18em"
-                src="../img/circuits/top-down-if-then-else-4.svg"
                 loading="lazy"
+                src="../img/circuits/top-down-if-then-else-4.svg"
+                style="height:18em"
               >
             </figure>
             <p>
@@ -736,9 +720,9 @@ return false;
             </p>
             <figure>
               <img
-                style="height:18em"
-                src="../img/circuits/top-down-if-then-else-monotone.svg"
                 loading="lazy"
+                src="../img/circuits/top-down-if-then-else-monotone.svg"
+                style="height:18em"
               >
             </figure>
             <p>
@@ -824,9 +808,9 @@ return false;
             </p>
             <figure>
               <img
-                style="height:18em"
-                src="../img/circuits/top-down-if-then-else-monotone-finished.svg"
                 loading="lazy"
+                src="../img/circuits/top-down-if-then-else-monotone-finished.svg"
+                style="height:18em"
               >
             </figure>
             <p>

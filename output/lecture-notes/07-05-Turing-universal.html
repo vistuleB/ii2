@@ -19,12 +19,13 @@
 <body>
 <section
   count="46"
-  title_gr="simulieren Turing-Maschinen: die universelle Turing-Maschine"
-  title_en="Turing universal"
-  number="7.5"
-  counter="DefCtr"
+  path="/lecture-notes45"
+  .="BookLevelSectionCounter 46"
   counter="ExoCtr"
-  path="/lecture-notes46"
+  counter="DefCtr"
+  number="7.5"
+  title_en="Turing universal"
+  title_gr="simulieren Turing-Maschinen: die universelle Turing-Maschine"
 >
   <div
     id="link-to-toc"
@@ -36,8 +37,8 @@
     >&lt;&lt; Kapitel 7.3</a>
   </div>
   <div
-    id="link-to-overview"
     style="text-align: end"
+    id="link-to-overview"
   >
     <a
       href="/"
@@ -66,9 +67,9 @@
               Turing-Maschinen simulieren Turing-Maschinen: die universelle Turing-Maschine</span>
           </h1>
           <p>
-            Im letzten Teilkapitel haben wir gesehen, wie wir jede Turingmaschine \(M
-            \)mit
-            Eingabealphabet \(\Sigma\) codieren können als
+            Im letzten Teilkapitel haben wir gesehen, wie wir jede Turingmaschine $M
+            $mit
+            Eingabealphabet $\Sigma$ codieren können als
           </p>
           $$\begin{align*}
           \enc(M) \in \Lambda^* \ ,
@@ -81,10 +82,10 @@
           \end{align*}$$
           <p>
             Diese Codierungsschema enthält implizit Codierungsfunktionen
-            \(\enc_Q : Q \rightarrow \{0,1\}^+\) und \(\enc_\Gamma: \Gamma \rightarrow
-            \Sigma \cup \{0,1\}^+\),
-            die wir verwenden, um die Zustände und Arbeitszeichen von \(M\) in
-            \(\Lambda\)-Zeichen zu
+            $\enc<i>Q : Q \rightarrow \{0,1\}^+$ und $\enc</i>\Gamma: \Gamma \rightarrow
+            \Sigma \cup \{0,1\}^+$,
+            die wir verwenden, um die Zustände und Arbeitszeichen von $M$ in
+            $\Lambda$-Zeichen zu
             übersetzen.
             Für eine Konfiguration
           </p>
@@ -92,7 +93,7 @@
           C = u_1 \dots u_m q v_1 \dots v_n
           \end{align*}$$
           <p>
-            der Maschine \(M\) definieren wir die Codierung von \(C\) als
+            der Maschine $M$ definieren wir die Codierung von $C$ als
           </p>
           $$\begin{align*}
           \enc(C) := \enc_\Gamma(u_1) \texttt{#} \enc_\Gamma(u_2) \dots \texttt{#}
@@ -103,26 +104,26 @@
           <p>
             Das ist alles nicht besonders tiefgründig und dient allein dazu,
             sicherzustellen, dass wir
-            die Konfigurationen von \(M\) darstellen können in dem Alphabet \(\Lambda\),
+            die Konfigurationen von $M$ darstellen können in dem Alphabet $\Lambda$,
             das
             <i>unabhängig</i>
-             von \(M\) ist. Dass wir also 
+             von $M$ ist. Dass wir also 
             <i>jede</i>
             Turingmaschine
-            \(M\) mit Eingabealphabet \(\Sigma\) und 
+            $M$ mit Eingabealphabet $\Sigma$ und 
             <i>jede</i>
              ihrer Konfigurationen
             als Strings über 
             <i>einem</i>
-             festen Alphabet \(\Lambda\) darstellen
+             festen Alphabet $\Lambda$ darstellen
             können.
           </p>
           <p>
             Eine Turingmaschine simulieren heißt nun, einen String
-            \(\enc(M)\texttt{;}w\) mit \(w \in \Sigma^*\) zu lesen und
-            daraus den String \(\enc(\hat{\delta}^*_M (w))\) zu berechnen, also
-            das Ergebnis \(\hat{\delta}^*_M(w)\), passend codiert über dem Alphabet
-            \(\Lambda\).
+            $\enc(M)\texttt{;}w$ mit $w \in \Sigma^<b>$ zu lesen und
+              daraus den String $\enc(\hat{\delta}^</b><i>M (w))$ zu berechnen, also
+              das Ergebnis $\hat{\delta}^*</i>M(w)$, passend codiert über dem Alphabet
+            $\Lambda$.
             Das zentrale Ergebnis dieses Teilkapitels ist, dass wir diese Simulation
             selbst mit einer Turingmaschine implementieren können.
           </p>
@@ -141,47 +142,47 @@
                 Turingmaschine).</b>
                Zu
               jedem
-              endlichen Eingabealphabet \(\Sigma\) sei
-              \(\Lambda := \writelambda\) das Codierungsalphabet. Es gibt es
+              endlichen Eingabealphabet $\Sigma$ sei
+              $\Lambda := \writelambda$ das Codierungsalphabet. Es gibt es
               eine
-              Turingmaschine \(U = U_{\Sigma}\) mit Eingabealphabet
-              \(\Lambda\),
-              so dass für alle \(c \in \Lambda^*\) und \(w \in \Sigma^*\)
-              die Turingmaschine \(U\) mit Eingabewort \(x \in \Lambda^*\)
+              Turingmaschine $U = U_{\Sigma}$ mit Eingabealphabet
+              $\Lambda$,
+              so dass für alle $c \in \Lambda^<b>$ und $w \in \Sigma^</b>$
+              die Turingmaschine $U$ mit Eingabewort $x \in \Lambda^*$
               folgendes tut:
             </p>
             <ul>
               <li>
-                Falls \(x\) nicht die Form
-                \(\enc(M) \texttt{;} w\) mit \(w \in \Sigma^*\) hat,
+                Falls $x$ nicht die Form
+                $\enc(M) \texttt{;} w$ mit $w \in \Sigma^*$ hat,
                 lehnt sie ab;
               </li>
               <li>
-                Ansonsten, falls also \(c = \enc(M)\) für eine Turingmaschine
-                \(M\) ist:
+                Ansonsten, falls also $c = \enc(M)$ für eine Turingmaschine
+                $M$ ist:
                 <ul>
                   <li>
-                    Falls \(M\) mit Eingabewort \(w\) nicht
-                    terminiert, dann terminiert \(U\) mit
-                    Eingabewort \(c \texttt{;} w\) auch nicht.
+                    Falls $M$ mit Eingabewort $w$ nicht
+                    terminiert, dann terminiert $U$ mit
+                    Eingabewort $c \texttt{;} w$ auch nicht.
                   </li>
                   <li>
-                    Falls \(M\) mit Eingabewort \(w\) eine
-                    Endkonfiguration \(C = uqv\) erreicht,
+                    Falls $M$ mit Eingabewort $w$ eine
+                    Endkonfiguration $C = uqv$ erreicht,
                     dann
-                    erreicht \(U\) mit
-                    Eingabewort \(c \texttt{;} w\) die
+                    erreicht $U$ mit
+                    Eingabewort $c \texttt{;} w$ die
                     Endkonfiguration
-                    \(q\ \enc(C)\). Das heißt insbesondere,
-                    dass \(U\) genau dann akzeptiert, wenn \(M\)
+                    $q\ \enc(C)$. Das heißt insbesondere,
+                    dass $U$ genau dann akzeptiert, wenn $M$
                     akzeptiert, und genau dann ablehnt, wenn
-                    \(M\) ablehnt.
+                    $M$ ablehnt.
                   </li>
                 </ul>
               </li>
             </ul>
             <p>
-              \(U\) akzeptiert also die Sprache
+              $U$ akzeptiert also die Sprache
             </p>
             $$\begin{align*}
             \{ c w \ | \ w \in \Sigma^* \textnormal{ und } c = \enc(M) \textnormal{
@@ -189,45 +190,45 @@
             \end{align*}$$
           </div>
           <div
-            style="margin-bottom:1em"
             class="alert-info container"
+            style="margin-bottom:1em"
           >
             <p>
               <b>Ein technischer aber letztendlich irrelevanter Punkt:
                 </b>
                die Mengen
-              \(Q\) und \(\Gamma\) der Turingmaschine \(M\) können ja beliebige
+              $Q$ und $\Gamma$ der Turingmaschine $M$ können ja beliebige
               (endliche) Mengen sein,
-              und weder \(\Lambda\) noch die Turingmaschine \(U\) haben "Kenntnis"
+              und weder $\Lambda$ noch die Turingmaschine $U$ haben "Kenntnis"
               von ihnen.
-              Wir nehmen aber aus Gründen der Einfachheit an, dass \(Q\) immer
+              Wir nehmen aber aus Gründen der Einfachheit an, dass $Q$ immer
               die Zustände
-              \(\qaccept\) und \(\qreject\) enthält und auch \(U\) diese Zustände
+              $\qaccept$ und $\qreject$ enthält und auch $U$ diese Zustände
               verwendet.
-              Daraus ergibt sich, dass für eine Endkonfiguration \(uqv\) von \(M\)
-              zwar \(q \in \{\qaccept, \qreject\}\) gilt, allerdings \(\enc(q)
-              \in \{0,1\}^+\),
-              da wir diese \(M\)-Zustände binär codieren. Somit ist
-              \(q\ \enc(uqv) \in \{\qaccept, \qreject\} \times \Lambda^*\) eine
-              Endkonfiguration von \(U\).
+              Daraus ergibt sich, dass für eine Endkonfiguration $uqv$ von $M$
+              zwar $q \in \{\qaccept, \qreject\}$ gilt, allerdings $\enc(q)
+              \in \{0,1\}^+$,
+              da wir diese $M$-Zustände binär codieren. Somit ist
+              $q\ \enc(uqv) \in \{\qaccept, \qreject\} \times \Lambda^*$ eine
+              Endkonfiguration von $U$.
             </p>
             <p>
-              Des weiteren gehen wir davon aus, dass das Blank-Symbol \(\Box\)
+              Des weiteren gehen wir davon aus, dass das Blank-Symbol $\Box$
               für alle
-              Turingmaschinen \(M\) mit Eingabealphabet \(\Sigma\) das gleiche
+              Turingmaschinen $M$ mit Eingabealphabet $\Sigma$ das gleiche
               ist. Auch
-              \(U\) verwendet es. Wenn wir allerdings \(M\) codieren, so wird auch
-              \(\Box\) als \(\enc(\Box) \in \{0,1\}^+\) codiert, wie jedes
-              Arbeitssymbol \(z \in \Gamma
-              \setminus \Sigma\) von \(M\)
+              $U$ verwendet es. Wenn wir allerdings $M$ codieren, so wird auch
+              $\Box$ als $\enc(\Box) \in \{0,1\}^+$ codiert, wie jedes
+              Arbeitssymbol $z \in \Gamma
+              \setminus \Sigma$ von $M$
               binär codiert wird. Das heißt insbesondere, dass
-              für eine \(M\)-Konfiguration \(C\) die Codierung \(\enc(C)\) kein
-              \(\Box\) enthält (selbst
-              wenn \(C\) als Konfiguration von \(M\) dies tut), und in der Tat ist
+              für eine $M$-Konfiguration $C$ die Codierung $\enc(C)$ kein
+              $\Box$ enthält (selbst
+              wenn $C$ als Konfiguration von $M$ dies tut), und in der Tat ist
               ja
-              \(\enc(C) \in \Lambda^*\), und \(\Lambda\) ist das Eingabealphabet
-              von \(U\) mit
-              \(\Box \not \in \Lambda\).
+              $\enc(C) \in \Lambda^*$, und $\Lambda$ ist das Eingabealphabet
+              von $U$ mit
+              $\Box \not \in \Lambda$.
             </p>
           </div>
           <div
@@ -235,7 +236,7 @@
           >
             <p>
               <b>Beweis.</b>
-              Den Beweis in allen Details zu führen hieße, die Maschine \(U\)
+              Den Beweis in allen Details zu führen hieße, die Maschine $U$
               konkret als Turingmaschine
               zu implementieren. Wir tun dies nicht. Wir beschränken uns auf
               eine High-Level-Beschreibung
@@ -246,9 +247,9 @@
             class="centered-figure well container-fluid"
           >
             <a
-              data-slide="prev"
-              href="#universal-TM"
               class="left carousel-control-prev-icon"
+              href="#universal-TM"
+              data-slide="prev"
             >
               <div
                 class="carousel-nav-icon"
@@ -258,9 +259,9 @@
                 >
               </div>
             </a><a
-              data-slide="next"
-              href="#universal-TM"
               class="right carousel-control-next-icon"
+              href="#universal-TM"
+              data-slide="next"
             >
               <div
                 class="carousel-nav-icon"
@@ -271,785 +272,785 @@
               </div>
             </a>
             <div
-              style="display:inline-block"
-              data-interval="false"
-              class="carousel"
               id="universal-TM"
+              class="carousel"
+              data-interval="false"
+              style="display:inline-block"
             >
               <ol
                 class="carousel-indicators"
               >
                 <li
-                  class="active"
+                  data-target="#universal-TM"
                   data-slide-to="1"
-                  data-target="#universal-TM"
+                  class="active"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="2"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="3"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="4"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="5"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="6"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="7"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="8"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="9"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="10"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="11"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="12"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="13"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="14"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="15"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="16"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="17"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="18"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="19"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="20"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="21"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="22"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="23"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="24"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="25"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="26"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="27"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="28"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="29"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="30"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="31"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="32"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="33"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="34"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="35"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="36"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="37"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="38"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="39"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="40"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="41"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="42"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="43"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="44"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="45"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="46"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="47"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="48"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="49"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="50"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="51"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="52"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="53"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="54"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="55"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="56"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="57"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
+                  data-target="#universal-TM"
                   data-slide-to="58"
-                  data-target="#universal-TM"
                 >
                 </li>
                 <li
-                  data-slide-to="59"
                   data-target="#universal-TM"
+                  data-slide-to="59"
                 >
                 </li>
               </ol>
               <div
-                style="display:inline-block"
                 class="carousel-inner"
+                style="display:inline-block"
               >
                 <div
                   class="item active"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-01-01.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-01-02.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-01-03.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-01-04.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-02-01.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-01.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-02.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-03.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-04.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-05.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-06.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-07.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-08.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-09.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-10.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-11.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-12.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-13.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-14.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-15.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-16.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-17.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-18.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-19.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-20.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-21.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-22.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-23.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-24.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-25.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-26.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-27.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-28.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-29.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-30.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-31.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-32.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-33.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-34.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-35.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-36.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-37.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-38.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-39.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-40.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-41.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-42.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-43.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-44.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-45.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-46.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-47.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-48.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-49.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-50.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-51.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-52.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-53.svg"
+                    style="height:22em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:22em"
                     src="../img/turing-machines/universal/universal-03-54.svg"
+                    style="height:22em"
                   >
                 </div>
               </div>

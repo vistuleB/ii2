@@ -28,7 +28,7 @@ type Ti2EmitterError {
 }
 
 fn blame_us(message: String) -> Blame {
-  Blame(message, -1, [])
+  Blame(message, -1, -1, [])
 }
 
 fn prepend_0(number: String) {

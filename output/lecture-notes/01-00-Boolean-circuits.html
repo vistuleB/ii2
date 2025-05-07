@@ -19,12 +19,13 @@
 <body>
 <section
   count="1"
-  title_gr="Schaltkreise"
-  title_en="Boolean circuits"
-  number="1.0"
-  counter="DefCtr"
+  path="/lecture-notes0"
+  .="BookLevelSectionCounter 1"
   counter="ExoCtr"
-  path="/lecture-notes1"
+  counter="DefCtr"
+  number="1.0"
+  title_en="Boolean circuits"
+  title_gr="Schaltkreise"
 >
   <div
     id="link-to-toc"
@@ -34,8 +35,8 @@
     >Inhaltsverzeichnis</a>
   </div>
   <div
-    id="link-to-overview"
     style="text-align: end"
+    id="link-to-overview"
   >
     <a
       href="/"
@@ -68,33 +69,21 @@
         genannt, die mehrere (typischerweise ein oder zwei)
         Signale zu einem Ausgabe-Signal kombinieren. Die Signale können nur zwei Werte annehmen:
         wahr/falsch bzw. 1/0 bzw. 
-        <tt>
-          true/false
-        </tt>
-        . Hier sehen Sie die drei üblichsten Gatter:
+        <tt>true/false</tt>. Hier sehen Sie die drei üblichsten Gatter:
         <figure>
           <img
-            style="height:10em"
-            src="../img/circuits/and-or-not-gates.svg"
             loading="lazy"
+            src="../img/circuits/and-or-not-gates.svg"
+            style="height:10em"
           >
         </figure>
         Von links nach rechts sind dies: das Und-Gatter (<i>and-gate</i>), Oder-Gatter (<i>or-gate</i>) und
         das
         Nicht-Gatter (<i>not-gate</i>). In C, C++ und Java kennen Sie diese Booleschen Operatoren als
-        
-        <code>
-          &&
-        </code>
-        , 
-        <code>
-          ||
-        </code>
+        <code>&&</code>, 
+        <code>||</code>
          und 
-        <code>
-          !
-        </code>
-        . Was diese Operatoren
+        <code>!</code>. Was diese Operatoren
         <i>tun</i>, können wir als 
         <i>Wahrheitstabelle</i>
          darstellen.
@@ -133,23 +122,16 @@
         </p>
         <figure>
           <img
-            style="height:13em"
-            src="../img/circuits/if-then-else-gate.svg"
             loading="lazy"
+            src="../img/circuits/if-then-else-gate.svg"
+            style="height:13em"
           >
           <figcaption>
-            
-            <code>
-              if
-            </code>
+            <code>if</code>
              \(x\) 
-            <code>
-              then
-            </code>
+            <code>then</code>
              \(y\) 
-            <code>
-              else
-            </code>
+            <code>else</code>
              \(z\)
           </figcaption>
         </figure>
@@ -163,9 +145,9 @@
         </p>
         <figure>
           <img
-            style="height:13em"
-            src="../img/circuits/if-then-else-gate-with-values.svg"
             loading="lazy"
+            src="../img/circuits/if-then-else-gate-with-values.svg"
+            style="height:13em"
           >
           <figcaption>
             Das if-then-else-Gate mit einer konkreten Belegung und einem Ausgabewert
@@ -193,9 +175,9 @@
               Ein \(n\)-faches XOR-Gate
               <figure>
                 <img
-                  style="height:5em"
-                  src="../img/circuits/n-fold-xor.svg"
                   loading="lazy"
+                  src="../img/circuits/n-fold-xor.svg"
+                  style="height:5em"
                 >
                  ,
               </figure>
@@ -225,9 +207,9 @@
         </p>
         <figure>
           <img
-            style="height:10em"
-            src="../img/circuits/and-fan-in-n.svg"
             loading="lazy"
+            src="../img/circuits/and-fan-in-n.svg"
+            style="height:10em"
           >
         </figure>
         <p>
@@ -241,9 +223,9 @@
         </p>
         <figure>
           <img
-            style="height:10em"
-            src="../img/circuits/and-n-fold-linear-depth.svg"
             loading="lazy"
+            src="../img/circuits/and-n-fold-linear-depth.svg"
+            style="height:10em"
           >
         </figure>
         <p>
@@ -251,9 +233,9 @@
         </p>
         <figure>
           <img
-            style="height:10em"
-            src="../img/circuits/and-n-fold-log-depth.svg"
             loading="lazy"
+            src="../img/circuits/and-n-fold-log-depth.svg"
+            style="height:10em"
           >
         </figure>
         <p>
@@ -268,9 +250,9 @@
         </p>
         <figure>
           <img
-            style="height:10em"
-            src="../img/circuits/flipflop.svg"
             loading="lazy"
+            src="../img/circuits/flipflop.svg"
+            style="height:10em"
           >
         </figure>
         <p>

@@ -19,12 +19,13 @@
 <body>
 <section
   count="31"
-  title_gr="Gute kontextfreie Grammatiken entwerfen"
-  title_en="exercise design grammars"
-  number="5.3"
-  counter="DefCtr"
+  path="/lecture-notes30"
+  .="BookLevelSectionCounter 31"
   counter="ExoCtr"
-  path="/lecture-notes31"
+  counter="DefCtr"
+  number="5.3"
+  title_en="exercise design grammars"
+  title_gr="Gute kontextfreie Grammatiken entwerfen"
 >
   <div
     id="link-to-toc"
@@ -36,8 +37,8 @@
     >&lt;&lt; Kapitel 5.2</a>
   </div>
   <div
-    id="link-to-overview"
     style="text-align: end"
+    id="link-to-overview"
   >
     <a
       href="/"
@@ -77,9 +78,9 @@
               href="../../demos/drawManualGrammar.html"
             >
               <img
-                style="height:20em"
-                src="../img/cfg-manual-screenshot-2.png"
                 loading="lazy"
+                src="../img/cfg-manual-screenshot-2.png"
+                style="height:20em"
               >
             </a>
           </figure>
@@ -150,18 +151,14 @@ S -&gt; "(" S "]" S;
             "korrekten" URLs; also Folgen von mindestens zwei 
             <i>Labels</i>, die
             durch 
-            <code>
-              .
-            </code>
+            <code>.</code>
              separiert sind. Sie können den "Regelvorschlag"
             ganz links unten in der App reinkopieren, um automatisch Regeln für alphanumerische
             Zeichen zu bekommen (allerdings verschlechtert das die Laufzeit; ich habe erstmal
             gar nicht auf Effizienz geachtet).
             <p>
               Geben Sie das Eingabewort 
-              <code>
-                a.aaaaa.aaaa.aaaa.aaaa.aaaa
-              </code>
+              <code>a.aaaaa.aaaa.aaaa.aaaa.aaaa</code>
                ein. Wie
               sieht Ihr Backtrack-Baum aus? Hat er viele Sackgassen? Können Sie Ihre Grammatik
               so abändern, dass sie zwar noch die gleiche Sprache erzeugt, aber keine / nur wenige
@@ -220,9 +217,7 @@ S -&gt; ;
 </pre>
             Überlegen Sie, was diese "bedeutet". Sie sehen, die Grammatik ist
             nicht eindeutig. Das Wort 
-            <code>
-              [([()(
-            </code>
+            <code>[([()(</code>
              hat zwei
             verschiedene Ableitungsbäume. Können Sie eine äquivalente
             <i>eindeutige</i>

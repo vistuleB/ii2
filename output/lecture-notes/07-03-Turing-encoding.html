@@ -19,12 +19,13 @@
 <body>
 <section
   count="44"
-  title_gr="universelle Turingmaschine"
-  title_en="Turing encoding"
-  number="7.3"
-  counter="DefCtr"
+  path="/lecture-notes43"
+  .="BookLevelSectionCounter 44"
   counter="ExoCtr"
-  path="/lecture-notes44"
+  counter="DefCtr"
+  number="7.3"
+  title_en="Turing encoding"
+  title_gr="universelle Turingmaschine"
 >
   <div
     id="link-to-toc"
@@ -36,8 +37,8 @@
     >&lt;&lt; Kapitel 7.2</a>
   </div>
   <div
-    id="link-to-overview"
     style="text-align: end"
+    id="link-to-overview"
   >
     <a
       href="/"
@@ -150,8 +151,8 @@
             simuliert.
           </p>
           <p>
-            In diesem Teilkapitel werden wir sehen, wie wir eine Turingmaschine \(M\) über einem
-            fixen, nicht von \(M\) abhängigen Alphabet codieren können.
+            In diesem Teilkapitel werden wir sehen, wie wir eine Turingmaschine $M$ über einem
+            fixen, nicht von $M$ abhängigen Alphabet codieren können.
             Im nächsten Teilkapitel werden wir uns überlegen, wie man einen Turingmaschinen-Simulator selbst
             als
             Turingmaschine implementieren kann. Also eine Turingmaschine \(U\), die als Input Wörter der
@@ -241,17 +242,17 @@
           über dem Alphabet \(\{0,1\}\). Die \(\delta\)-Tabelle der Turingmaschine für \(\{a^nb^nc^n\}\)
           <figure>
             <img
-              style="height:10em"
-              src="../img/turing-machines/exampe-2-aabbcc/delta-table.svg"
               loading="lazy"
+              src="../img/turing-machines/exampe-2-aabbcc/delta-table.svg"
+              style="height:10em"
             >
           </figure>
           würde dann zu folgender Tabelle:
           <figure>
             <img
-              style="height:10em"
-              src="../img/turing-machines/exampe-2-aabbcc/delta-table-encoded.svg"
               loading="lazy"
+              src="../img/turing-machines/exampe-2-aabbcc/delta-table-encoded.svg"
+              style="height:10em"
             >
           </figure>
           <p>
@@ -266,7 +267,7 @@
             wo welches
             Zeichen beginnt und aufhört. Wir brauchen ein Separatorzeichen, beispielsweise ein Komma.
             Aus Gründen, die später klar werden werden, schließen wir die Codierung der Turingmaschine
-            mit einem \(\texttt{;}\) ab.
+            mit einem $\texttt{;}$ ab.
             Die Codierung der obigen Maschine ist dann also
           </p>
 <pre
@@ -277,20 +278,15 @@
           <p>
             In dieser Codierung behalten wir zwei Konventionen bei: wenn eine Regel
             "fehlt", also beispielsweise für \(\delta(10,a)\) die Zelle leer ist, dann
-            soll das in den Zustand \(\qreject\) führen; wenn in der Zelle
+            soll das in den Zustand $\qreject$ führen; wenn in der Zelle
             nur ein Richtungszeichen, also beispielsweise 
-            <tt>
-              01,1,R
-            </tt>
+            <tt>01,1,R</tt>
              steht,
             dann ist das eine Abkürzung für
             $$\begin{align*}
             \delta(01,1) = (01,1,\texttt{R}),
             \end{align*}$$
-            also
-            <tt>
-              #01,1,01,1,R#
-            </tt>
+            also<tt>#01,1,01,1,R#</tt>
           </p>
           <p>
             Wir können nun 
@@ -312,13 +308,13 @@
                 <NumberedTitle>7.3.1</NumberedTitle>
                  /Beobachtung.</span>
                Zu einem Eingabealphabet
-              \(\Sigma\) definieren wir das 
+              $\Sigma$ definieren wir das 
               <i>Codierungsalphabet</i>
-              \(\Lambda := \writelambda\),
-              wobei wir annehmen, dass \(\texttt{#}, \texttt{,}, \texttt{L}, \texttt{S}, \texttt{R},
+              $\Lambda := \writelambda$,
+              wobei wir annehmen, dass $\texttt{#}, \texttt{,}, \texttt{L}, \texttt{S}, \texttt{R},
               \texttt{;}
-              \not \in \Sigma\). Wir können nun jede Turingmaschine \(M\) mit Eingabealphabet
-              \(\Sigma\) als String \(\enc(M) \in \Lambda^*\) codieren.
+              \not \in \Sigma$. Wir können nun jede Turingmaschine $M$ mit Eingabealphabet
+              $\Sigma$ als String $\enc(M) \in \Lambda^*$ codieren.
             </p>
           </div>
           <div
@@ -329,14 +325,14 @@
              das Wort 
             <i>Codierung</i>
              suggeriert, dass wir, gegeben
-            den String \(c = \enc(M)\) die
-            ursprüngliche Turingmaschine \(M\) rekonstruieren können. Das gilt natürlich nur
-            beschränkt: eventuell decodieren wir \(c\) zu einer Maschine \(M'\), die sich
-            von \(M\) in denen Namen der Zustände und der Bandalphabetsymbole unterscheidet. Allerdings
+            den String $c = \enc(M)$ die
+            ursprüngliche Turingmaschine $M$ rekonstruieren können. Das gilt natürlich nur
+            beschränkt: eventuell decodieren wir $c$ zu einer Maschine $M'$, die sich
+            von $M$ in denen Namen der Zustände und der Bandalphabetsymbole unterscheidet. Allerdings
             stimmen die Funktionen
-            \(f_M: \Sigma^* \rightarrow \{\texttt{accept}, \texttt{reject}, \texttt{undefined}\}\)
-            und
-            \(f_{M'}: \Sigma^* \rightarrow \{\texttt{accept}, \texttt{reject}, \texttt{undefined}\}\)
+            $f<i>M: \Sigma^* \rightarrow \{\texttt{accept}, \texttt{reject}, \texttt{undefined}\}$
+              und
+              $f</i>{M'}: \Sigma^* \rightarrow \{\texttt{accept}, \texttt{reject}, \texttt{undefined}\}$
             überein.
           </div>
         </div>

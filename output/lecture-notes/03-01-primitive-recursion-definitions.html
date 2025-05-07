@@ -19,12 +19,13 @@
 <body>
 <section
   count="16"
-  title_gr="Rekursion: Motivation und Definitionen"
-  title_en="primitive recursion definitions"
-  number="3.1"
-  counter="DefCtr"
+  path="/lecture-notes15"
+  .="BookLevelSectionCounter 16"
   counter="ExoCtr"
-  path="/lecture-notes16"
+  counter="DefCtr"
+  number="3.1"
+  title_en="primitive recursion definitions"
+  title_gr="Rekursion: Motivation und Definitionen"
 >
   <div
     id="link-to-toc"
@@ -36,8 +37,8 @@
     >&lt;&lt; Kapitel 3.0</a>
   </div>
   <div
-    id="link-to-overview"
     style="text-align: end"
+    id="link-to-overview"
   >
     <a
       href="/"
@@ -138,9 +139,9 @@
             Graphisch können Sie sich Komposition so vorstellen:
             <figure>
               <img
-                style="height:15em"
-                src="../img/primitive-rekursion/composition.svg"
                 loading="lazy"
+                src="../img/primitive-rekursion/composition.svg"
+                style="height:15em"
               >
             </figure>
           </div>
@@ -159,7 +160,7 @@
                
             </span><b>Primitive Rekursion</b>
             Seien \(g: \N^k \rightarrow \N\) und \(h: \N^{k+2} \rightarrow \N\). Wir
-            definieren eine neue Funktion \(f: \N^{k+1} \rightarrow \N\) wie folgt:
+            definieren eine neue Funktion $f: \N^{k+1} \rightarrow \N$ wie folgt:
             $$\begin{align*}
             f : \N^{k+1}&amp;\rightarrow \N \\
             (t, \vec{x})&amp;\rightarrow \begin{cases}
@@ -172,50 +173,25 @@
           </div>
           <p>
             Wenn Sie Rekursionshasser sind, dann können Sie sich es als Funktion mit einer
-            
-            <code>
-              for
-            </code>
-            -Schleife
+            <code>for</code>-Schleife
             vorstellen, in der nur eine lokale Variable erlaubt ist:
           </p>
 <pre
   class="listing"
 >
-
-<code>
-def PrimRec(g, h):
-</code>
-
+<code>def PrimRec(g, h):</code>
  
-<code>
-def f(t,*x):
-</code>
-
+<code>def f(t,*x):</code>
      
-<code>
-temp = g(*x)
-</code>
-
+<code>temp = g(*x)</code>
      
-<code>
-for i in range(t):
-</code>
-
+<code>for i in range(t):</code>
  
-<code>
-temp = h(temp, i, *x)
-</code>
-
+<code>temp = h(temp, i, *x)</code>
      
-<code>
-return temp
-</code>
-
+<code>return temp</code>
  
-<code>
-return f
-</code>
+<code>return f</code>
  
 </pre>
           <p>
@@ -248,22 +224,14 @@ return f
             Regeln der primitiven Rekursion neue Funktionen erstellt:
             <ul>
               <li>
-                
-                <code>
-                  Proj(k)
-                </code>
-                : erzeugt die Funktion
+                <code>Proj(k)</code>: erzeugt die Funktion
                 $$\begin{align*}
                 \pi_k : \N^*&amp;\rightarrow \N \\
                 \vec{x}&amp;\mapsto x_k \ .
                 \end{align*}$$
               </li>
               <li>
-                
-                <code>
-                  Comp(f, g0, g1, ...)
-                </code>
-                : erzeugt die Funktion
+                <code>Comp(f, g0, g1, ...)</code>: erzeugt die Funktion
                 $$\begin{align*}
                 \vec{x} \mapsto f(g0(x), g1(x), ...)
                 \end{align*}$$
@@ -272,11 +240,7 @@ return f
                 übereinstimmt.
               </li>
               <li>
-                
-                <code>
-                  PrimRec(g,h)
-                </code>
-                : erzeugt die Funktion
+                <code>PrimRec(g,h)</code>: erzeugt die Funktion
                 $$\begin{align*}
                 (t, \vec{x}) \mapsto \begin{cases}
                 g(\vec{x})&amp;\textnormal{ if $t=0$,} \\
@@ -289,9 +253,7 @@ return f
               Wenn wir die primitive Rekursion als "Programmiersprache" betrachten, dann heißt das, dass
               wir
               neue Funktionen bauen dürfen, indem wir 
-              <code>
-                zero,succ,Proj,Comp,PrimRec
-              </code>
+              <code>zero,succ,Proj,Comp,PrimRec</code>
                verwenden,
               aber nicht selbst Python-Funktionen schreiben. Wir dürfen also nie selbst Integers in die
               Hand nehmen.
@@ -302,26 +264,17 @@ return f
               Ich darf also nicht einfach python programmieren und
             </p>
 <pre
-  style="color:red; background-color: yellow;"
   class="listing"
+  style="color:red; background-color: yellow;"
 >
-
-<code>
-def add(x,y):
-</code>
-
+<code>def add(x,y):</code>
  
-<code>
-return x + y
-</code>
-
+<code>return x + y</code>
 </pre>
             <p>
               schreiben, denn unsere "Programmiersprache" ist Primitive Rekursion, nicht Python! Wir
               müssen uns 
-              <code>
-                add
-              </code>
+              <code>add</code>
                aus den Kombinatoren zusammenbasteln. Ich schreibe
               nun \({\rm add}(t,x)\) statt \({\rm add}(x,y)\), um den Rekursionsparameter \(t\) deutlich
               zu machen.
@@ -343,16 +296,8 @@ return x + y
 <pre
   class="listing"
 >
-
-<code>
-p0 = Proj(0)
-</code>
-
-
-<code>
-add = PrimRec (p0, Comp(succ,p0))
-</code>
-
+<code>p0 = Proj(0)</code>
+<code>add = PrimRec (p0, Comp(succ,p0))</code>
 </pre>
           </div>
           <div
@@ -365,11 +310,7 @@ add = PrimRec (p0, Comp(succ,p0))
                
             </span>Zeigen Sie, dass die folgenden Funktionen primitiv-rekursiv sind, und implementieren Sie sie
             in meinem Python-Framework, so wie ich Addition mit
-            
-            <code>
-              add = PrimRec (p0, Comp(succ,p0))
-            </code>
-            
+            <code>add = PrimRec (p0, Comp(succ,p0))</code>
             implementiert habe:
             <ol>
               <li>
@@ -412,37 +353,18 @@ add = PrimRec (p0, Comp(succ,p0))
             </p>
             <ul>
               <li>
-                
-                <code>
-                  isPositive
-                </code>
-                
+                <code>isPositive</code>
               </li>
               <li>
-                
-                <code>
-                  greaterThan, lessThan, greaterEqual, lessEqual
-                </code>
-                
+                <code>greaterThan, lessThan, greaterEqual, lessEqual</code>
               </li>
               <li>
-                
-                <code>
-                  max, min
-                </code>
-                
+                <code>max, min</code>
               </li>
               <li>
-                
-                <code>
-                  ifThenElse(x,y,z)
-                </code>
-                : dies soll \(z\) zurückliefern, falls
+                <code>ifThenElse(x,y,z)</code>: dies soll \(z\) zurückliefern, falls
                 \(x=0\) (also 
-                <code>
-                  false
-                </code>
-                ) ist, und \(y\) sonst.
+                <code>false</code>) ist, und \(y\) sonst.
               </li>
             </ul>
           </div>

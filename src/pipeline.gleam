@@ -14,6 +14,13 @@ pub fn our_pipeline() -> List(Pipe) {
       #([ pp.BackslashParenthesis ], pp.BackslashParenthesis)
     ),
     [
+      dn.add_attributes([
+        #("Book", "counter", "BookLevelSectionCounter"),
+      ]),
+      dn.associate_counter_by_prepending_incrementing_attribute([
+        #("section", "BookLevelSectionCounter"),
+      ]),
+      dn.add_attributes([#("section", "path", "/lecture-notes::øøBookLevelSectionCounter")]),
       dn.unwrap(["WriterlyBlankLine"]),
       dn.concatenate_text_nodes(),
     ],
@@ -24,11 +31,11 @@ pub fn our_pipeline() -> List(Pipe) {
     [
       dn.counters_substitute_and_assign_handles(),
       dn.handles_generate_ids(),
-      dn.define_article_output_path(#("section", "/lecture-notes", "path")),
+      // dn.define_article_output_path(#("section", "/lecture-notes", "path")),
       dn.handles_generate_dictionary([#("section", "path")]),
       dn.handles_substitute([]),
       dn.concatenate_text_nodes(),
-      dn.remove_vertical_chunks_with_no_text_child(),
+      dn.unwrap_vertical_chunks_with_no_text_child(),
       dn.unwrap_when_child_of([#("p", ["span", "code", "tt", "figcaption", "em"])]),
       dn.free_children([#("pre", "p"), #("ul", "p"), #("ol", "p"), #("p", "p"), #("figure", "p")]),
       dn.generate_ti2_table_of_contents_html(#("TOCAuthorSuppliedContent", "li")),

@@ -19,12 +19,13 @@
 <body>
 <section
   count="20"
-  title_gr="Sprachen - Einführung und Beispiele"
-  title_en="formal languages"
-  number="4.0"
-  counter="DefCtr"
+  path="/lecture-notes19"
+  .="BookLevelSectionCounter 20"
   counter="ExoCtr"
-  path="/lecture-notes20"
+  counter="DefCtr"
+  number="4.0"
+  title_en="formal languages"
+  title_gr="Sprachen - Einführung und Beispiele"
 >
   <div
     id="link-to-toc"
@@ -36,8 +37,8 @@
     >&lt;&lt; Kapitel 3.4</a>
   </div>
   <div
-    id="link-to-overview"
     style="text-align: end"
+    id="link-to-overview"
   >
     <a
       href="/"
@@ -737,81 +738,31 @@ thomas.schmitz@hszg.de
 <pre
   class="listing container"
 >
-
-<code>
-find : Bst -&gt; String -&gt; Maybe String
-</code>
-
-
-<code>
-find tree key =
-</code>
-
+<code>find : Bst -&gt; String -&gt; Maybe String</code>
+<code>find tree key =</code>
  
-<code>
-case tree of
-</code>
-
+<code>case tree of</code>
  
-<code>
-Empty _ -&gt;
-</code>
-
+<code>Empty _ -&gt;</code>
  
-<code>
-Nothing
-</code>
-
-
-<code>
-
-</code>
-
+<code>Nothing</code>
+<code></code>
  
-<code>
-Node ( keyHere, valueHere ) leftChild rightChild -&gt;
-</code>
-
+<code>Node ( keyHere, valueHere ) leftChild rightChild -&gt;</code>
  
-<code>
-if key == keyHere then
-</code>
-
+<code>if key == keyHere then</code>
  
-<code>
-Just valueHere
-</code>
-
-
-<code>
-
-</code>
-
+<code>Just valueHere</code>
+<code></code>
  
-<code>
-else if key&lt; keyHere then
-</code>
-
+<code>else if key&lt; keyHere then</code>
  
-<code>
-find leftChild key
-</code>
-
-
-<code>
-
-</code>
-
+<code>find leftChild key</code>
+<code></code>
  
-<code>
-else
-</code>
-
+<code>else</code>
  
-<code>
-find rightChild key
-</code>
-
+<code>find rightChild key</code>
 </pre>
           <p>
             Als letztes Beispiel sehen Sie hier eine svg-Datei. Dies ist ein Dateiformat für Vektorgrafiken.
@@ -819,16 +770,14 @@ find rightChild key
             diesem
             Falle ein Kreis mit einer Geraden: 
             <img
-              style="height:4em"
               src="../img/svg-example.svg"
+              style="height:4em"
             >
           </p>
 <pre
   class="listing container"
 >
-
-<code>
-<span
+<code><span
   class="RawText"
 ></span><span
   class="LessThanBracket"
@@ -868,9 +817,7 @@ find rightChild key
   class="GreaterThanBracket"
 >&gt;</span><span
   class="LineBreak"
-></span>
-</code>
-<span
+></span></code><span
   class="LineBreak"
 ></span><span
   class="WaitingForAttribute"
@@ -894,12 +841,8 @@ find rightChild key
   class="StartTag"
 >svg</span><span
   class="LessThanBracket"
->&lt;</span>
-<code>
-
-
-</code>
-<span
+>&lt;</span><code>
+</code><span
   class="LineBreak"
 ></span><span
   class="WaitingForAttribute"
@@ -919,12 +862,8 @@ find rightChild key
   class="WaitingForAttribute"
 >
  
-</span>
-<code>
-
-
-</code>
-<span
+</span><code>
+</code><span
   class="LineBreak"
 ></span><span
   class="WaitingForAttribute"
@@ -958,12 +897,8 @@ find rightChild key
   class="WaitingForAttribute"
 >
  
-</span>
-<code>
-
-
-</code>
-<span
+</span><code>
+</code><span
   class="LineBreak"
 ></span><span
   class="WaitingForAttribute"
@@ -983,12 +918,8 @@ find rightChild key
   class="WaitingForAttribute"
 >
  
-</span>
-<code>
-
-
-</code>
-<span
+</span><code>
+</code><span
   class="LineBreak"
 ></span><span
   class="GreaterThanBracket"
@@ -1006,12 +937,8 @@ find rightChild key
   class="WaitingForAttribute"
 >
  
-</span>
-<code>
-
-
-</code>
-<span
+</span><code>
+</code><span
   class="LineBreak"
 ></span><span
   class="GreaterThanBracket"
@@ -1033,12 +960,8 @@ find rightChild key
   class="StartTag"
 >g</span><span
   class="LessThanBracket"
->&lt;</span>
-<code>
-
-
-</code>
-<span
+>&lt;</span><code>
+</code><span
   class="LineBreak"
 ></span><span
   class="WaitingForAttribute"
@@ -1062,12 +985,8 @@ find rightChild key
   class="StartTag"
 >circle</span><span
   class="LessThanBracket"
->&lt;</span>
-<code>
-
-
-</code>
-<span
+>&lt;</span><code>
+</code><span
   class="LineBreak"
 ></span><span
   class="GreaterThanBracket"
@@ -1115,12 +1034,8 @@ find rightChild key
   class="WaitingForAttribute"
 >
  
-</span>
-<code>
-
-
-</code>
-<span
+</span><code>
+</code><span
   class="LineBreak"
 ></span><span
   class="DoubleQuote"
@@ -1140,12 +1055,8 @@ find rightChild key
   class="StartTag"
 >path</span><span
   class="LessThanBracket"
->&lt;</span>
-<code>
-
-
-</code>
-<span
+>&lt;</span><code>
+</code><span
   class="LineBreak"
 ></span><span
   class="RawText"
@@ -1169,12 +1080,8 @@ find rightChild key
   class="WaitingForAttribute"
 >
  
-</span>
-<code>
-
-
-</code>
-<span
+</span><code>
+</code><span
   class="LineBreak"
 ></span><span
   class="GreaterThanBracket"
@@ -1182,12 +1089,8 @@ find rightChild key
   class="EndTag"
 >/g</span><span
   class="LessThanBracket"
->&lt;</span>
-<code>
-
-
-</code>
-<span
+>&lt;</span><code>
+</code><span
   class="LineBreak"
 ></span><span
   class="GreaterThanBracket"
@@ -1195,12 +1098,8 @@ find rightChild key
   class="EndTag"
 >/svg</span><span
   class="LessThanBracket"
->&lt;</span>
-<code>
-
-
+>&lt;</span><code>
 </code>
-
 </pre>
           <p>
             Was haben diese vier Beispiele gemeinsam? Es handelt sich in allen Fällen um 
@@ -1237,20 +1136,14 @@ find rightChild key
             <i>Domainnamen</i>, die
             mit
             einem 
-            <code>
-              @
-            </code>
+            <code>@</code>
              verbunden sind.
             Der Benutzername ist ein nichtleerer String bestehend aus Groß- und Kleinbuchstaben, Zahlen, und
-            Punkten (
-            <code>
-              .`).
+            Punkten (<code>.`).
               Erster und letzter Buchstaben dürfen keine Punkte sein, außerdem dürfen keine zwei Punkte
               nebeneinander stehen.
               Der Domainname ist eine Folge von mindestenes zwei _Labels_, die jeweils mit einem
-              
-            </code>
-            .` separiert sind. Ein Label
+              </code>.` separiert sind. Ein Label
             ist ein nichtleerer String aus Groß- und Kleinbuchstaben, Zahlen und dem Bindestrich
             (`-`).
           </div>
@@ -1258,9 +1151,7 @@ find rightChild key
             Die genauen Regeln mögen von Anbieter zu Anbieter variieren; ich habe mich mal an das gehalten,
             was
             ich experimentell bei 
-            <code>
-              gmail.com
-            </code>
+            <code>gmail.com</code>
              herausgefunden
             habe. Die obige Beschreibung ist (hoffentlich) verständlich und präzise und unzweideutig.
             Allerdings
@@ -1290,34 +1181,20 @@ find rightChild key
 </pre>
           <p>
             Wie können wir nun beispielsweise eine ähnliche Ableitungsregeln für 
-            <code>
-              &lt;Domain&gt;
-            </code>
-            
+            <code>&lt;Domain&gt;</code>
             erstellen? Eine 
-            <code>
-              &lt;Domain&gt;
-            </code>
+            <code>&lt;Domain&gt;</code>
              soll
             eine Folge aus mindestens zwei 
-            <code>
-              &lt;Label&gt;
-            </code>
+            <code>&lt;Label&gt;</code>
              sein, jeweils durch einen
-            
-            <code>
-              .
-            </code>
-            
+            <code>.</code>
             separiert. Wir erreichen dies, indem wir einen an Rekursion
             erinnernden Trick anwenden: entweder gibt es genau zwei Labels oder die Domain beginnt mit einem
             Label,
             gefolgt von einem Punkt und wiederum einer 
             <i>Folge von mindestens zwei durch 
-              <code>
-                .
-              </code>
-              
+              <code>.</code>
               separierten Labels</i>,
             also wiederum etwas, das wie ein Domainname aussieht. Daher:
           </p>
@@ -1333,22 +1210,15 @@ find rightChild key
             Wir geben also 
             <i>zwei</i>
              Möglichkeiten an, wie mit einem 
-            <code>
-              &lt;Domain&gt;
-            </code>
+            <code>&lt;Domain&gt;</code>
              zu
             verfahren ist.
             Was ist nun 
-            <code>
-              &lt;Label&gt;
-            </code>
-            ? Dies ist eine nichtleere Folge von in Domainnamen
+            <code>&lt;Label&gt;</code>? Dies ist eine nichtleere Folge von in Domainnamen
             erlaubten
             Zeichen.
             Diese sind alphanumerisch (Buchstaben und Zahlen) und der Strich 
-            <code>
-              -
-            </code>
+            <code>-</code>
              (in der Praxis
             sind
             eventuell noch weitere Zeichen erlaubt;
@@ -1363,10 +1233,7 @@ find rightChild key
             Wie formulieren wir 
             <i>nichtleere Folge von ...</i>
              mit unserer 
-            <code>
-              --&gt;
-            </code>
-            -Notation?
+            <code>--&gt;</code>-Notation?
             Wieder mit dem Rekursionstrick:
           </p>
 <pre
@@ -1384,9 +1251,7 @@ find rightChild key
 </pre>
           <p>
             Nun müssen wir noch Regeln für 
-            <code>
-              &lt;AlphaNum&gt;
-            </code>
+            <code>&lt;AlphaNum&gt;</code>
              angeben. Hier führen wir eine
             weitere
             Konvention ein: nämlich, dass wir
@@ -1525,11 +1390,7 @@ find rightChild key
 </pre>
           <p>
             Beachten Sie: ich habe hier absichtlich nicht
-            
-            <code>
-              &lt;AlphaNum&gt; *-&gt;* a *|* ... *|* z
-            </code>
-            
+            <code>&lt;AlphaNum&gt; *-&gt;* a *|* ... *|* z</code>
             geschrieben, weil ich in diesem Beispiel wirklich alles ausschreiben wollte und mit der
             ...-Notation
             schon wieder etwas menschen- aber nicht maschinenlesbares
@@ -1537,20 +1398,12 @@ find rightChild key
           </p>
           <p>
             Wir brauchen noch Regeln für 
-            <code>
-              &lt;User&gt;
-            </code>
-            . Dies ist ein nichtleerer String aus
+            <code>&lt;User&gt;</code>. Dies ist ein nichtleerer String aus
             alphanumerischen Zeichen und dem Punkt 
-            <code>
-              .
-            </code>
-            , wobei
+            <code>.</code>, wobei
             der Punkt nicht am Anfang und nicht am Ende stehen darf. Also: eine nichtleere Folge von
             <i>Namensblöcken</i>, die jeweils durch 
-            <code>
-              .
-            </code>
+            <code>.</code>
              separiert sind,
             wobei ein Namensblock eine nichtleere Folge alphanumerischer Zeichen ist.
           </p>
@@ -1570,49 +1423,18 @@ find rightChild key
             einmal im Ganzen:
           </p>
 <pre
-  id="email-context-free-grammar"
   class="container listing"
+  id="email-context-free-grammar"
 >
-
-<code>
-&lt;EmailAddress&gt;    *-&gt;* &lt;User&gt; @&lt;Domain&gt;
-</code>
-
-
-<code>
-&lt;Domain&gt;          *-&gt;* &lt;Label&gt; .&lt;Label&gt; *|*&lt;Label&gt; .&lt;Domain&gt;
-</code>
-
-
-<code>
-&lt;User&gt;            *-&gt;* &lt;NameBlock&gt; *|*&lt;NameBlock&gt; .&lt;User&gt;
-</code>
-
-
-<code>
-&lt;NameBlock&gt;       *-&gt;* &lt;AlphaNum&gt; *|*&lt;AlphaNum&gt;&lt;NameBlock&gt;
-</code>
-
-
-<code>
-&lt;Label&gt;           *-&gt;* &lt;AlphaNumOrDash&gt; *|*&lt;AlphaNumOrDash&gt;&lt;Label&gt;
-</code>
-
-
-<code>
-&lt;AlphaNumOrDash&gt;  *-&gt;* &lt;AlphaNum&gt; *|* -
-</code>
+<code>&lt;EmailAddress&gt;    *-&gt;* &lt;User&gt; @&lt;Domain&gt;</code>
+<code>&lt;Domain&gt;          *-&gt;* &lt;Label&gt; .&lt;Label&gt; *|*&lt;Label&gt; .&lt;Domain&gt;</code>
+<code>&lt;User&gt;            *-&gt;* &lt;NameBlock&gt; *|*&lt;NameBlock&gt; .&lt;User&gt;</code>
+<code>&lt;NameBlock&gt;       *-&gt;* &lt;AlphaNum&gt; *|*&lt;AlphaNum&gt;&lt;NameBlock&gt;</code>
+<code>&lt;Label&gt;           *-&gt;* &lt;AlphaNumOrDash&gt; *|*&lt;AlphaNumOrDash&gt;&lt;Label&gt;</code>
+<code>&lt;AlphaNumOrDash&gt;  *-&gt;* &lt;AlphaNum&gt; *|* -</code>
  
-
-<code>
-&lt;AlphaNum&gt;        *-&gt;* a *|* b *|* c *|* d *|* e *|* f *|* g *|* h *|* i *|* j *|* k *|* l *|* m *|* n *|* o *|* p *|* q *|* r *|* s *|* t *|* u *|* v *|* w *|* x *|* y *|* z
-</code>
-
-
-<code>
-&lt;AlphaNum&gt;        *-&gt;* A *|* B *|* C *|* D *|* E *|* F *|* G *|* H *|* I *|* J *|* K *|* L *|* M *|* N *|* O *|* P *|* Q *|* R *|* S *|* T *|* U *|* V *|* W *|* X *|* Y *|* Z
-</code>
-
+<code>&lt;AlphaNum&gt;        *-&gt;* a *|* b *|* c *|* d *|* e *|* f *|* g *|* h *|* i *|* j *|* k *|* l *|* m *|* n *|* o *|* p *|* q *|* r *|* s *|* t *|* u *|* v *|* w *|* x *|* y *|* z</code>
+<code>&lt;AlphaNum&gt;        *-&gt;* A *|* B *|* C *|* D *|* E *|* F *|* G *|* H *|* I *|* J *|* K *|* L *|* M *|* N *|* O *|* P *|* Q *|* R *|* S *|* T *|* U *|* V *|* W *|* X *|* Y *|* Z</code>
 </pre>
           <h2>
             Ein Beispiel einer formalen Grammatik und einer Ableitung
@@ -1654,9 +1476,7 @@ find rightChild key
               obigen
               Beispiel
               sind wir ja an Emailadressen interessiert, also ist 
-              <code>
-                &lt;EmailAddress&gt;
-              </code>
+              <code>&lt;EmailAddress&gt;</code>
                das
               Startsymbol.
             </li>
@@ -1675,97 +1495,55 @@ find rightChild key
 <pre
   class="container"
 >
-
-<code>
-&lt;EmailAddress&gt;  *-&gt;*&lt;User&gt;@&lt;Domain&gt;
-</code>
-
+<code>&lt;EmailAddress&gt;  *-&gt;*&lt;User&gt;@&lt;Domain&gt;</code>
  
-<code>
-*-&gt;*&lt;NameBlock&gt;.&lt;User&gt;@&lt;Domain&gt;
-</code>
+<code>*-&gt;*&lt;NameBlock&gt;.&lt;User&gt;@&lt;Domain&gt;</code>
  
  
-<code>
-*-&gt;*&lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Domain&gt;
-</code>
+<code>*-&gt;*&lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Domain&gt;</code>
  
  
-<code>
-*-&gt;*&lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Domain&gt;
-</code>
+<code>*-&gt;*&lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Domain&gt;</code>
  
  
-<code>
-*-&gt;*&lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;
-</code>
+<code>*-&gt;*&lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;</code>
  
  
-<code>
-*-&gt;*&lt;AlphaNum&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;
-</code>
+<code>*-&gt;*&lt;AlphaNum&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;</code>
  
  
-<code>
-*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;
-</code>
+<code>*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;</code>
  
  
-<code>
-*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;Label&gt;.&lt;Label&gt;
-</code>
+<code>*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;Label&gt;.&lt;Label&gt;</code>
  
  
-<code>
-*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;Label&gt;
-</code>
+<code>*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;Label&gt;</code>
  
  
-<code>
-*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;Label&gt;
-</code>
+<code>*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;Label&gt;</code>
  
  
-<code>
-*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt;
-</code>
+<code>*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt;</code>
  
  
-<code>
-*-&gt;* d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt;
-</code>
+<code>*-&gt;* d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt;</code>
  
  
-<code>
-*-&gt;* d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;e
-</code>
-
+<code>*-&gt;* d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;e</code>
  
-<code>
-*-&gt;* d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de
-</code>
-
+<code>*-&gt;* d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de</code>
  
-<code>
-*-&gt;* d.s@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de
-</code>
-
+<code>*-&gt;* d.s@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de</code>
  
-<code>
-*-&gt;* d.s@&lt;AlphaNumOrDash&gt;.b.de
-</code>
-
+<code>*-&gt;* d.s@&lt;AlphaNumOrDash&gt;.b.de</code>
  
-<code>
-*-&gt;* d.s@a.b.de
-</code>
+<code>*-&gt;* d.s@a.b.de</code>
  
 </pre>
           <p>
             Nach dem gleichen Schema könnten wir 
-            <code>
-              d.s.@-.-.--
-            </code>
+            <code>d.s.@-.-.--</code>
              ableiten, was
             darauf schließen lässt, dass unsere Grammatik nicht wirklich das
             tut, was wir beabsichtigen, dass sie nämlich 
@@ -1782,10 +1560,7 @@ find rightChild key
               <NumberedTitle>4.0.1</NumberedTitle>
                
             </span>Formulieren Sie weitere Regeln, um unsinnige Domainnamen wie 
-            <code>
-              -.-.--
-            </code>
-            
+            <code>-.-.--</code>
             zu verbieten. Wie müssen Sie die obige Grammatik ändern?
           </div>
           <h1>
@@ -1803,16 +1578,12 @@ find rightChild key
             Wenn wir über formale Sprachen reden, so liegt immer eine (endliche) Menge von
             Symbolen zugrunde, das Alphabet \(\Sigma\). Im Emailadressen-Beispiel war (\Sigma) recht groß:
             die 52 Buchstaben; 10 Ziffern; die Zeichen 
-            <code>
-              @ . -
-            </code>
+            <code>@ . -</code>
              
             . Für Java-Programme oder
             andere Programmiersprachen kämen
             noch weitere Zeichen hinzu, zum Beispiel 
-            <code>
-              + - / \ { }
-            </code>
+            <code>+ - / \ { }</code>
              
              und so weiter;
             wenn wir alle Unicode-Zeichen miteinschließen, landen wir im Millionenbereich.

@@ -19,12 +19,13 @@
 <body>
 <section
   count="17"
-  title_gr="Rekursion: Konstruktionen und Tricks"
-  title_en="primitive recursion constructions"
-  number="3.2"
-  counter="DefCtr"
+  path="/lecture-notes16"
+  .="BookLevelSectionCounter 17"
   counter="ExoCtr"
-  path="/lecture-notes17"
+  counter="DefCtr"
+  number="3.2"
+  title_en="primitive recursion constructions"
+  title_gr="Rekursion: Konstruktionen und Tricks"
 >
   <div
     id="link-to-toc"
@@ -36,8 +37,8 @@
     >&lt;&lt; Kapitel 3.1</a>
   </div>
   <div
-    id="link-to-overview"
     style="text-align: end"
+    id="link-to-overview"
   >
     <a
       href="/"
@@ -80,10 +81,7 @@
           hier die Indizierung immer bei 0 beginnen lasse, im Python-Code sowie im Mathematik-Modus (in der
           Vorlesung hatte ich an der Tafel das oft bei 1 beginnen lassen, entschuldigen Sie die Inkonsistenz).
           Multiplikation geht nach dem gleichen Schema. Wir schreiben 
-          <code>
-            mult
-          </code>
-          
+          <code>mult</code>
           in der Schleifenform, wie sie die primitive Rekursion zulässt, und schreiben in Orange
           auch gleich die Funktionen \(g\) und \(h\) dazu:
 <pre
@@ -177,20 +175,12 @@ temp = i
             Verfügung. Alles andere müssen wir als natürliche Zahlen nach einem von uns
             selbst gewählten Schema codieren. Für Boolesche Werte ist das recht naheliegend.
             Wir codieren 
-            <code>
-              True
-            </code>
+            <code>True</code>
              als 1 und 
-            <code>
-              False
-            </code>
+            <code>False</code>
              als 0.
             Unser erstes Prädikat, also Funktion mit Booleschem Ausgabewert, ist
-            
-            <code>
-              isPositive
-            </code>
-            :
+            <code>isPositive</code>:
           </p>
 <pre
   class="container"
@@ -307,9 +297,7 @@ return new</i>function
           <i>eine</i>
            lokale Variable
           führen dürfen, hier meistens 
-          <code>
-            temp
-          </code>
+          <code>temp</code>
            genannt.
           Manche Funktionen scheinen inhärent mindestens zwei zu benötigen.
           Betrachten wir den Fall der Fibonacci-Zahlen:
@@ -335,16 +323,11 @@ a = b-a
 </pre>
           Doch selbst dann hätten wir immer noch zwei lokale Variable.
           Die Fibonacci-Zahlen rekursiv per
-          
-          <code>
-            return F(n-1)+F(n-2)
-          </code>
+          <code>return F(n-1)+F(n-2)</code>
            scheint noch weiter weg zu sein
           vom Paradigma der primitiven Rekursion; primitive Rekursion verzweigt sich nie.
           Dennoch ist es möglich, 
-          <code>
-            fib
-          </code>
+          <code>fib</code>
            primitiv rekursiv zu implementieren.
           Hauptzutat hierbei ist es, dass wir 
           <i>Paare</i>
@@ -419,34 +402,17 @@ temp = add(temp,i)
 >
 <code
   class="pythonPrompt"
->
-pair(5,pair(7,9))
-</code>
-<code
+>pair(5,pair(7,9))</code><code
   class="terminalOutput"
->
-11031
-</code>
-<code
+>11031</code><code
   class="pythonPrompt"
->
-pair(7,9)
-</code>
-<code
+>pair(7,9)</code><code
   class="terminalOutput"
->
-143
-</code>
-<code
+>143</code><code
   class="pythonPrompt"
->
-pair(5,143)
-</code>
-<code
+>pair(5,143)</code><code
   class="terminalOutput"
->
-11031
-</code>
+>11031</code>
 </pre>
           <p>
             Das Problem ist, dass wir das Ende der Liste nicht kennen. Wir lösen das Problem, indem
@@ -466,44 +432,21 @@ pair(5,143)
 >
 <code
   class="pythonPrompt"
->
-push(11, push(7, push(5, 0)))
-</code>
-<code
+>push(11, push(7, push(5, 0)))</code><code
   class="terminalOutput"
->
-90537
-</code>
-<code
+>90537</code><code
   class="pythonPrompt"
->
-head(90537)
-</code>
-<code
+>head(90537)</code><code
   class="terminalOutput"
->
-11
-</code>
-<code
+>11</code><code
   class="pythonPrompt"
->
-head(tail(90537))
-</code>
-<code
+>head(tail(90537))</code><code
   class="terminalOutput"
->
-7
-</code>
-<code
+>7</code><code
   class="pythonPrompt"
->
-head(tail(tail(90537)))
-</code>
-<code
+>head(tail(tail(90537)))</code><code
   class="terminalOutput"
->
-5
-</code>
+>5</code>
 </pre>
           <p>
             <b>Native Implementierung.</b>
@@ -521,24 +464,16 @@ head(tail(tail(90537)))
             <i>nativ</i>
              in Python zu implementieren, also beispielsweise in meiner
             Datei 
-            <code>
-              stockpile.py
-            </code>
-            :
+            <code>stockpile.py</code>:
           </p>
 <pre
   class="listing"
 >
 <code
   style="counter-set: listing 63;"
->
-def pair(x,y):
-</code>
+>def pair(x,y):</code>
  
-<code>
-return int(((x+y+1) * (x+y)) / 2 + x )
-</code>
-
+<code>return int(((x+y+1) * (x+y)) / 2 + x )</code>
 </pre>
         </div>
       </div>

@@ -19,12 +19,13 @@
 <body>
 <section
   count="4"
-  title_gr=""
-  title_en="binary adder"
-  number="1.3"
-  counter="DefCtr"
+  path="/lecture-notes3"
+  .="BookLevelSectionCounter 4"
   counter="ExoCtr"
-  path="/lecture-notes4"
+  counter="DefCtr"
+  number="1.3"
+  title_en="binary adder"
+  title_gr=""
 >
   <div
     id="link-to-toc"
@@ -36,8 +37,8 @@
     >&lt;&lt; Kapitel 1.2</a>
   </div>
   <div
-    id="link-to-overview"
     style="text-align: end"
+    id="link-to-overview"
   >
     <a
       href="/"
@@ -126,9 +127,9 @@
           </p>
           <figure>
             <img
-              style="height:10em"
-              src="../img/circuits/adder-ripple.svg"
               loading="lazy"
+              src="../img/circuits/adder-ripple.svg"
+              style="height:10em"
             >
           </figure>
           <p>
@@ -158,16 +159,14 @@
               <NumberedTitle>1.3.1</NumberedTitle>
                
             </span>Bauen Sie einen Schaltkreis 
-            <tt>
-              oneBitAdder:
-            </tt>
+            <tt>oneBitAdder:</tt>
              \( \{0,1\}^3 \rightarrow \{0,1\}^2\) für
             folgende Funktionalität:
             <figure>
               <img
-                style="height:10em"
-                src="../img/circuits/onebitadder.svg"
                 loading="lazy"
+                src="../img/circuits/onebitadder.svg"
+                style="height:10em"
               >
             </figure>
             Versuchen Sie, so wenig Gates wie möglich zu verwenden. Entscheiden Sie sich
@@ -215,9 +214,9 @@
           </p>
           <figure>
             <img
-              style="height:6em"
-              src="../img/circuits/adder-ripple-only-carry.svg"
               loading="lazy"
+              src="../img/circuits/adder-ripple-only-carry.svg"
+              style="height:6em"
             >
           </figure>
           <p>
@@ -244,7 +243,7 @@
           \vee
           (g_0 \wedge p_1 \wedge \dots \wedge p_k) \ .
           $$
-          Und voilà: dies ist ein Schaltkreis für \(c_{k+1}\) und hat Tiefe 2 (wenn wir \(g_i\) und \(p_i\) als
+          Und voilà: dies ist ein Schaltkreis für \(c_{k+1}\) und hat Tiefe 2 (wenn wir $g<i>i$ und $p</i>i$ als
           Inputgates betrachten).
           Wie groß ist er? Er hat \(k\) OR-gates und
           \(1 + 2 + \dots + k\) AND-gates, insgesamt also \(\Theta(k^2)\) Gates.
@@ -323,15 +322,15 @@
           </p>
           <figure>
             <img
-              style="height:11em"
-              src="../img/circuits/carry-generate-interval.svg"
               loading="lazy"
+              src="../img/circuits/carry-generate-interval.svg"
+              style="height:11em"
             >
             <br>
             <img
-              style="height:11em"
-              src="../img/circuits/carry-propagate-interval.svg"
               loading="lazy"
+              src="../img/circuits/carry-propagate-interval.svg"
+              style="height:11em"
             >
           </figure>
           <p>
@@ -389,8 +388,8 @@
             \{ c \cdot 2^d, c \cdot 2^d + 1, \dots, c \cdot 2^{d} + 2^{d} - 1\}
             $$
             Es wird eventuell klarer, wenn wir uns die Binärdarstellung anschauen: \([a,b]\) ist ein
-            Binärintervall, wenn \(a\) und \(b\) folgende Binärdarstellung haben:
-            \(a = (c00\dots 0)_2\) und \(b = (c 11 \dots 1)_2\), wobei \(c\) selbst aus mehreren Bits bestehen
+            Binärintervall, wenn $a$ und $b$ folgende Binärdarstellung haben:
+            \(a = (c00\dots 0)_2\) und \(b = (c 11 \dots 1)_2\), wobei $c$ selbst aus mehreren Bits bestehen
             kann.
           </div>
           <p>
@@ -444,22 +443,22 @@
             Wir basteln uns also am Besten ein "\(pg\)-Gate" mit vier Inputs und zwei Outputs:
             <figure>
               <img
-                style="height:10em"
-                src="../img/circuits/pg-gate.svg"
                 loading="lazy"
+                src="../img/circuits/pg-gate.svg"
+                style="height:10em"
               >
             </figure>
             Mit Hilfe dieses Gates können wir
             \(p_{c0*^k}, g_{c0*^k}\) und \(p_{c1*^k}, g_{c1*^k}\)
             zu \(p_{c*^{k+1}}, g_{c*^{k+1}}\) kombinieren. Wir fangen
             nun mit Binärintervallen der Größe \(1\) an und arbeiten uns hoch.
-            Der Übersichtlichkeit halber schreiben wir \(pg_I\) für das Paar
-            \((p_I, g_I)\). Für \(n=16\) schaut das so aus:
+            Der Übersichtlichkeit halber schreiben wir $pg<i>I$ für das Paar
+              $(p</i>I, g_I)$. Für \(n=16\) schaut das so aus:
             <figure>
               <img
-                style="height:18em"
-                src="../img/circuits/pg-all-gates.svg"
                 loading="lazy"
+                src="../img/circuits/pg-all-gates.svg"
+                style="height:18em"
               >
             </figure>
             <p>
@@ -555,11 +554,11 @@
             <p>
             </p>
             <p>
-              es handelt sich bei \([l+1,k]\) also um ein Binärintervall.
+              es handelt sich bei $[l+1,k]$ also um ein Binärintervall.
               Eine äquivalente Definition von
               \(l\) wäre: das kleinste \(l\), so dass \([l+1,k]\) ein Binärintervall ist.
               Wir zerlegen nun
-              \([0,k] = [0,l] \cup [k+1,l]\) und berechnen \(pg_{[0,k]}\) so:
+              $[0,k] = [0,l] \cup [k+1,l]$ und berechnen \(pg_{[0,k]}\) so:
             </p>
             <p>
             </p>
@@ -569,9 +568,9 @@
             </p>
             <figure>
               <img
-                style="height:5em"
-                src="../img/circuits/pg0k.svg"
                 loading="lazy"
+                src="../img/circuits/pg0k.svg"
+                style="height:5em"
               >
             </figure>
             <p>
@@ -606,9 +605,9 @@
             </p>
             <figure>
               <img
-                style="height:18em"
-                src="../img/circuits/pg-0-30.svg"
                 loading="lazy"
+                src="../img/circuits/pg-0-30.svg"
+                style="height:18em"
               >
             </figure>
             <p>
@@ -658,9 +657,9 @@
             </p>
             <figure>
               <img
-                style="height:20em"
-                src="../img/circuits/pg-prefices-16.svg"
                 loading="lazy"
+                src="../img/circuits/pg-prefices-16.svg"
+                style="height:20em"
               >
             </figure>
             <p>
@@ -676,9 +675,9 @@
             </p>
             <figure>
               <img
-                style="height:15em"
-                src="../img/circuits/pg-gadget-no-need-p.svg"
                 loading="lazy"
+                src="../img/circuits/pg-gadget-no-need-p.svg"
+                style="height:15em"
               >
             </figure>
             <p>

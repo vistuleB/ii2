@@ -19,12 +19,13 @@
 <body>
 <section
   count="36"
-  title_gr="Rand, Blüten und die DK-Grammatik"
-  title_en="d linker Rand und Bluete"
-  number="5.5"
-  counter="DefCtr"
+  path="/lecture-notes35"
+  .="BookLevelSectionCounter 36"
   counter="ExoCtr"
-  path="/lecture-notes36"
+  counter="DefCtr"
+  number="5.5"
+  title_en="d linker Rand und Bluete"
+  title_gr="Rand, Blüten und die DK-Grammatik"
 >
   <div
     id="link-to-toc"
@@ -36,8 +37,8 @@
     >&lt;&lt; Kapitel 5.5</a>
   </div>
   <div
-    id="link-to-overview"
     style="text-align: end"
+    id="link-to-overview"
   >
     <a
       href="/"
@@ -67,7 +68,7 @@
           </h1>
           <p>
             In diesem Teilkapitel werden wir sehen,
-            wie wir für eine gültige Wortform \(\gamma\)
+            wie wir für eine gültige Wortform $\gamma$
             den korrekten Linksreduktionsschritt
           </p>
           $$\begin{align*}
@@ -75,9 +76,9 @@
           \end{align*}$$
           <p>
             finden. Als erstes müssen wir uns überlegen,
-            wie die Front \(\front(\gamma) = \alpha \beta\)
+            wie die Front $\front(\gamma) = \alpha \beta$
             überhaupt aussehen kann. Wenn wir
-            uns den Ableitungsbaum von \(\gamma\) ansehen,
+            uns den Ableitungsbaum von $\gamma$ ansehen,
             wird das einigermaßen offensichtlich sein.
           </p>
           <p>
@@ -110,9 +111,9 @@
             class="centered-figure well container"
           >
             <a
-              data-slide="prev"
-              href="#right-left-messy"
               class="left carousel-control-prev-icon"
+              href="#right-left-messy"
+              data-slide="prev"
             >
               <div
                 class="carousel-nav-icon"
@@ -122,9 +123,9 @@
                 >
               </div>
             </a><a
-              data-slide="next"
-              href="#right-left-messy"
               class="right carousel-control-next-icon"
+              href="#right-left-messy"
+              data-slide="next"
             >
               <div
                 class="carousel-nav-icon"
@@ -135,57 +136,57 @@
               </div>
             </a>
             <div
-              style="display:inline-block"
-              data-interval="false"
-              class="carousel"
               id="right-left-messy"
+              class="carousel"
+              data-interval="false"
+              style="display:inline-block"
             >
               <ol
                 class="carousel-indicators"
               >
                 <li
-                  class="active"
+                  data-target="#right-left-messy"
                   data-slide-to="1"
-                  data-target="#right-left-messy"
+                  class="active"
                 >
                 </li>
                 <li
+                  data-target="#right-left-messy"
                   data-slide-to="2"
-                  data-target="#right-left-messy"
                 >
                 </li>
                 <li
-                  data-slide-to="3"
                   data-target="#right-left-messy"
+                  data-slide-to="3"
                 >
                 </li>
               </ol>
               <div
-                style="display:inline-block"
                 class="carousel-inner"
+                style="display:inline-block"
               >
                 <div
                   class="item active"
                 >
                   <img
-                    style="height:16em"
                     src="../img/context-free/LR/G-right-derivation.svg"
+                    style="height:16em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:16em"
                     src="../img/context-free/LR/G-left-derivation.svg"
+                    style="height:16em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:16em"
                     src="../img/context-free/LR/G-messy-derivation.svg"
+                    style="height:16em"
                   >
                 </div>
               </div>
@@ -199,8 +200,8 @@
           </p>
           <figure>
             <img
-              style="height:40em"
               src="../img/context-free/LR/G-tree-large.svg"
+              style="height:40em"
             >
           </figure>
           <div
@@ -224,8 +225,8 @@
           </div>
           <figure>
             <img
-              style="height:40em"
               src="../img/context-free/LR/G-tree-large-colored.svg"
+              style="height:40em"
             >
           </figure>
           <p>
@@ -273,16 +274,16 @@
             $$\begin{align*}
             S \Step{R}^* \alpha \beta w
             \end{align*}$$
-            dar. Die Wortform \(\alpha\beta\), also linker Rand plus Blüte, nennen wir
+            dar. Die Wortform $\alpha\beta$, also linker Rand plus Blüte, nennen wir
             die 
             <i>Front</i>
-             von \(\mathcal{T}\) und schreiben sie als \(\front(\mathcal{T})\).
+             von $\mathcal{T}$ und schreiben sie als $\front(\mathcal{T})$.
             Wir sagen auch, dass \(\beta\) 
             <i>eine Blüte von \(\gamma\)</i>
              und
-            \(\alpha\beta\) die 
+            $\alpha\beta$ die 
             <i>Front</i>
-             von \(\gamma\) ist,
+             von $\gamma$ ist,
             ohne über den Ableitungsbaum \(\mathcal{T}\) selbst zu reden.
             Hierbei ist zu beachten, dass in einer mehrdeutigen Grammatik
             eine gültige Wortform mehrere Ableitungsbäume und somit
@@ -312,9 +313,9 @@
             class="centered-figure well container"
           >
             <a
-              data-slide="prev"
-              href="#remove-flowers"
               class="left carousel-control-prev-icon"
+              href="#remove-flowers"
+              data-slide="prev"
             >
               <div
                 class="carousel-nav-icon"
@@ -324,9 +325,9 @@
                 >
               </div>
             </a><a
-              data-slide="next"
-              href="#remove-flowers"
               class="right carousel-control-next-icon"
+              href="#remove-flowers"
+              data-slide="next"
             >
               <div
                 class="carousel-nav-icon"
@@ -337,148 +338,148 @@
               </div>
             </a>
             <div
-              style="display:inline-block"
-              data-interval="false"
-              class="carousel"
               id="remove-flowers"
+              class="carousel"
+              data-interval="false"
+              style="display:inline-block"
             >
               <ol
                 class="carousel-indicators"
               >
                 <li
-                  class="active"
+                  data-target="#remove-flowers"
                   data-slide-to="1"
-                  data-target="#remove-flowers"
+                  class="active"
                 >
                 </li>
                 <li
+                  data-target="#remove-flowers"
                   data-slide-to="2"
-                  data-target="#remove-flowers"
                 >
                 </li>
                 <li
+                  data-target="#remove-flowers"
                   data-slide-to="3"
-                  data-target="#remove-flowers"
                 >
                 </li>
                 <li
+                  data-target="#remove-flowers"
                   data-slide-to="4"
-                  data-target="#remove-flowers"
                 >
                 </li>
                 <li
+                  data-target="#remove-flowers"
                   data-slide-to="5"
-                  data-target="#remove-flowers"
                 >
                 </li>
                 <li
+                  data-target="#remove-flowers"
                   data-slide-to="6"
-                  data-target="#remove-flowers"
                 >
                 </li>
                 <li
+                  data-target="#remove-flowers"
                   data-slide-to="7"
-                  data-target="#remove-flowers"
                 >
                 </li>
                 <li
+                  data-target="#remove-flowers"
                   data-slide-to="8"
-                  data-target="#remove-flowers"
                 >
                 </li>
                 <li
+                  data-target="#remove-flowers"
                   data-slide-to="9"
-                  data-target="#remove-flowers"
                 >
                 </li>
                 <li
-                  data-slide-to="10"
                   data-target="#remove-flowers"
+                  data-slide-to="10"
                 >
                 </li>
               </ol>
               <div
-                style="display:inline-block"
                 class="carousel-inner"
+                style="display:inline-block"
               >
                 <div
                   class="item active"
                 >
                   <img
-                    style="height:40em"
                     src="../img/context-free/LR/tree-destruction/01.svg"
+                    style="height:40em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:40em"
                     src="../img/context-free/LR/tree-destruction/02.svg"
+                    style="height:40em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:40em"
                     src="../img/context-free/LR/tree-destruction/03.svg"
+                    style="height:40em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:40em"
                     src="../img/context-free/LR/tree-destruction/04.svg"
+                    style="height:40em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:40em"
                     src="../img/context-free/LR/tree-destruction/05.svg"
+                    style="height:40em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:40em"
                     src="../img/context-free/LR/tree-destruction/06.svg"
+                    style="height:40em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:40em"
                     src="../img/context-free/LR/tree-destruction/07.svg"
+                    style="height:40em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:40em"
                     src="../img/context-free/LR/tree-destruction/08.svg"
+                    style="height:40em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:40em"
                     src="../img/context-free/LR/tree-destruction/09.svg"
+                    style="height:40em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    style="height:40em"
                     src="../img/context-free/LR/tree-destruction/10.svg"
+                    style="height:40em"
                   >
                 </div>
               </div>
@@ -502,8 +503,8 @@
           </p>
           <figure>
             <img
-              style="height:20em"
               src="../img/context-free/LR/schema-linker-rand-bluete-stamm.svg"
+              style="height:20em"
             >
           </figure>
           <p>
@@ -542,15 +543,15 @@
               >Lemma 
                 <NumberedTitle>5.8.3</NumberedTitle>
                  
-              </span>Die Sprache \(\Front(G)\) ist regulär.
+              </span>Die Sprache $\Front(G)$ ist regulär.
               Insbesondere gibt es eine erweitert reguläre Grammatik \(\hat{G}\) für
-              \(\Front(G)\), so dass die Blüte genau die im letzen Ableitungsschritt
+              $\Front(G)$, so dass die Blüte genau die im letzen Ableitungsschritt
               erzeugten Terminalsymbole sind.
             </p>
           </div>
           <p>
             Hier ist etwas Mentalgymnastik vonnöten: aus Sicht der Sprache
-            \(\Front(G)\) sind \(\Sigma \cup N\) 
+            $\Front(G)$ sind \(\Sigma \cup N\) 
             <i>Terminalsymbole</i>. Sie können
             ja schließlich in den Wörtern der Sprache auftauchen.
             Die Grammatik \(\hat{G}\) hat also die Terminalsymbole
@@ -561,20 +562,20 @@
             dem \(\boxed{X}\) in den obigen Bäumen, wo also \(N\) als Blatt vorkommt;
             das \(\hat{X} \in \hat{N}\) entspricht dem
             <img
-              style="height:1.5em"
               src="../img/context-free/LR/circle-X.svg"
+              style="height:1.5em"
             >
             ,
             also wo \(W\) als innerer Knoten vorkommt. Bevor ich
             \(\hat{G}\) formal definiere, zeige ich den obigen Ableitungsbaum
-            (ohne rechten Rand, weil der ja bei \(\front(G)\) eh fehlt)
+            (ohne rechten Rand, weil der ja bei $\front(G)$ eh fehlt)
             und annotiere jeden Knoten auf dem Stamm mit der entsprechenden
             \(\hat{G}\)-Produktion.
           </p>
           <figure>
             <img
-              style="height:40em"
               src="../img/context-free/LR/hat-G-derivation.svg"
+              style="height:40em"
             >
           </figure>
           <div
@@ -659,12 +660,12 @@
           <p>
             Nochmals: Produktionen wie
             \(\dk{B} \rightarrow \dkt{y A} \dk{S}\) sind erweitert regulär
-            weil \(\dkt{y}\) und \(\dkt{A}\) aus Sicht von \(\hat{G}\) beides
+            weil $\dkt{y}$ und $\dkt{A}$ aus Sicht von \(\hat{G}\) beides
             Terminalsymbole sind. Wir können nun unseren \(LR(0)\)-Parser beschreiben:
           </p>
           <div
-            id="algorithm-LR-parser"
             class="well container theorem"
+            id="algorithm-LR-parser"
           >
             <span
               class="numbered-title"
@@ -717,19 +718,19 @@
               <b>Beweis.</b>
               Der erste Teil der Bedeutung ist einfach zu sehen.
               Jeder Reduktionsschritt ist ein Linksreduktionsschritt, und
-              wenn man Ende \(S\) steht, waren es auch alles
+              wenn man Ende $S$ steht, waren es auch alles
               <i>korrekte</i>
                Linksreduktionsschritte.
             </p>
             <p>
               Der zweite Teil ist schwieriger. Wir nehmen also
-              an, dass \(G\) eine LR(0)-Grammatik ist.
+              an, dass $G$ eine LR(0)-Grammatik ist.
               Da \(G\) eindeutig ist, hat jede gültige Wortform
               \(\gamma\) eine eindeutige Rechtsableitung und einen
               dazugehörigen Ableitungsbaum \(\mathcal{T}\); somit
-              ist \(\front(\gamma) := \front(\mathcal{T})\) eindeutig bestimmt.
+              ist $\front(\gamma) := \front(\mathcal{T})$ eindeutig bestimmt.
               Beachten Sie, dass rechts
-              von \(\front(\gamma)\) nur Terminalsymbole folgen.
+              von $\front(\gamma)$ nur Terminalsymbole folgen.
               Betrachten wir einen Zeitpunkt während des Parsing-Prozesses.
               Sei \(\gamma\) der Stackinhalt und \(w\) der ungelesene
               Teil des Eingabewortes. Wir werden beweisen, dass zu jedem Zeitpunkt folgende
@@ -743,8 +744,8 @@
             <p>
               <b>Beweis.</b>
               Die Behauptung gilt offensichtlich am Anfang, da
-              \(\gamma = \epsilon\) und \(w\in L\) ist und
-              somit \(\gamma w = w\) eine gültige Wortform ist. Des weiteren
+              $\gamma = \epsilon$ und \(w\in L\) ist und
+              somit $\gamma w = w$ eine gültige Wortform ist. Des weiteren
               ist der Stack leer, also \(\gamma = \epsilon\), und daher
               sicherlich ein Präfix von \(\front(w)\).
               Wir zeigen nun, dass, wenn die Invariante in Schritt \(t\) gilt,
@@ -754,36 +755,36 @@
             <ol>
               <li>
                 Der Parser wendet Schritt 1 an, also \(\gamma \in \Front(G)\).
-                Das heißt nach Definition von \(\Front(G)\), dass es ein \(w' \in \Sigma^*\) gibt,
+                Das heißt nach Definition von $\Front(G)$, dass es ein \(w' \in \Sigma^*\) gibt,
                 so dass \(\gamma w'\) eine gültige Wortform ist
-                und \(\gamma = \front(\gamma w')\). Also
+                und $\gamma = \front(\gamma w')$. Also
                 $$\begin{align*}
                 S \Step{R}^* \alpha A w' \Step{R}^* \alpha \beta w'
                 \end{align*}$$
-                mit \(\gamma = \alpha \beta\). Es sind \(\alpha\) und \(\beta\) also
-                linker Rand und Blüte von \(\gamma w'\). Somit ist
+                mit $\gamma = \alpha \beta$. Es sind $\alpha$ und $\beta$ also
+                linker Rand und Blüte von $\gamma w'$. Somit ist
                 $$\begin{align}
                 \alpha \beta w' \rstep{} \alpha' A w'
                 \label{left-reduction-w'}
                 \end{align}$$
                 ein korrekter Linksreduktionsschritt.
-                Die letzte \(\dk{G}\)-Produktion
-                in der Ableitung von \(\dk{S} \Step{}^* \gamma\) war somit
-                \(\dk{A} \rightarrow \beta\); somit ersetzt der Parser
-                das \(\beta\) auf dem Stack durch \(A\); führt also die Linksreduktion
+                Die letzte $\dk{G}$-Produktion
+                in der Ableitung von $\dk{S} \Step{}^* \gamma$ war somit
+                $\dk{A} \rightarrow \beta$; somit ersetzt der Parser
+                das $\beta$ auf dem Stack durch $A$; führt also die Linksreduktion
                 $$\begin{align}
                 \alpha \beta w \rstep{} \alpha A w
                 \label{left-reduction-w}
                 \end{align}$$
                 an. Da (\ref{left-reduction-w'}) korrekt ist und
-                \(\alpha \beta w\) nach Invariante eine gültige Wortform ist, ist
+                $\alpha \beta w$ nach Invariante eine gültige Wortform ist, ist
                 nach LR(0)-Bedingung auch (\ref{left-reduction-w}) ein korrekter
-                Schritt; \(\alpha Aw\) ist also auch eine gültige Wortform; somit
+                Schritt; $\alpha Aw$ ist also auch eine gültige Wortform; somit
                 gilt Teil (i) der Invariante.
                 Um zu sehen, dass (ii) gilt, beachten Sie, dass nun
                 auf dem Stack oben ein Nichtterminal liegt: \(A\);
                 da rechts vom aktiven Teil nur Terminale stehen, muss
-                \(\alpha A\) ein Präfix von \(\front(\alpha A w)\) sein.
+                \(\alpha A\) ein Präfix von $\front(\alpha A w)$ sein.
               </li>
               <li>
                 Der Parser wendet Schritt 2 an, also \(w = cw'\), er liest
@@ -793,13 +794,13 @@
                 Teil (i) der Behauptung gilt offensichtlich, da \(\gamma' w' = \gamma w\)
                 und somit immer noch eine gültige Wortform ist.
                 Um zu sehen, dass Teil (ii) gilt, beachten Sie erstens,
-                dass Teil (ii) vor dem Schritt galt, also \(\gamma\) ein Präfix
-                von \(\front(\gamma w)\) ist; zweitens, dass
+                dass Teil (ii) vor dem Schritt galt, also $\gamma$ ein Präfix
+                von $\front(\gamma w)$ ist; zweitens, dass
                 \(\gamma \not \in \Front(G)\) ist (sonst hätte der Parser Schritt 1 angewandt); somit
-                ist \(\gamma\) ein 
+                ist $\gamma$ ein 
                 <i>echter</i>
-                 Präfix von \(\front(\gamma w)\) und somit
-                ist \(\gamma c\) immer noch ein Präfix von \(\front(\gamma w)\).
+                 Präfix von $\front(\gamma w)$ und somit
+                ist $\gamma c$ immer noch ein Präfix von $\front(\gamma w)$.
               </li>
             </ol>
             <p>
