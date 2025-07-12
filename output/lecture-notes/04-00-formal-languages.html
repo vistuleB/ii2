@@ -19,13 +19,13 @@
 <body>
 <section
   count="20"
-  path="/lecture-notes19"
   .="BookLevelSectionCounter 20"
-  counter="ExoCtr"
-  counter="DefCtr"
-  number="4.0"
-  title_en="formal languages"
   title_gr="Sprachen - Einführung und Beispiele"
+  title_en="formal languages"
+  number="4.0"
+  counter="DefCtr"
+  counter="ExoCtr"
+  path="/lecture-notes20"
 >
   <div
     id="link-to-toc"
@@ -37,8 +37,8 @@
     >&lt;&lt; Kapitel 3.4</a>
   </div>
   <div
-    style="text-align: end"
     id="link-to-overview"
+    style="text-align: end"
   >
     <a
       href="/"
@@ -770,8 +770,8 @@ thomas.schmitz@hszg.de
             diesem
             Falle ein Kreis mit einer Geraden: 
             <img
-              src="../img/svg-example.svg"
               style="height:4em"
+              src="../img/svg-example.svg"
             >
           </p>
 <pre
@@ -1139,13 +1139,15 @@ thomas.schmitz@hszg.de
             <code>@</code>
              verbunden sind.
             Der Benutzername ist ein nichtleerer String bestehend aus Groß- und Kleinbuchstaben, Zahlen, und
-            Punkten (<code>.`).
-              Erster und letzter Buchstaben dürfen keine Punkte sein, außerdem dürfen keine zwei Punkte
-              nebeneinander stehen.
-              Der Domainname ist eine Folge von mindestenes zwei _Labels_, die jeweils mit einem
-              </code>.` separiert sind. Ein Label
+            Punkten (<code>.</code>).
+            Erster und letzter Buchstaben dürfen keine Punkte sein, außerdem dürfen keine zwei Punkte
+            nebeneinander stehen.
+            Der Domainname ist eine Folge von mindestenes zwei 
+            <i>Labels</i>, die jeweils mit einem
+            <code>.</code>
+             separiert sind. Ein Label
             ist ein nichtleerer String aus Groß- und Kleinbuchstaben, Zahlen und dem Bindestrich
-            (`-`).
+            (<code>-</code>).
           </div>
           <p>
             Die genauen Regeln mögen von Anbieter zu Anbieter variieren; ich habe mich mal an das gehalten,
@@ -1168,7 +1170,7 @@ thomas.schmitz@hszg.de
           </p>
           <p>
             Eine Emailadresse ist von der Form 
-            <i>Benutzername</i>`@`<i>Domainnname</i>. Dies
+            <i>Benutzername</i><code>@</code><i>Domainnname</i>. Dies
             können wir als 
             <i>Ableitungsregel</i>
              darstellen:
@@ -1423,8 +1425,8 @@ thomas.schmitz@hszg.de
             einmal im Ganzen:
           </p>
 <pre
-  class="container listing"
   id="email-context-free-grammar"
+  class="container listing"
 >
 <code>&lt;EmailAddress&gt;    *-&gt;* &lt;User&gt; @&lt;Domain&gt;</code>
 <code>&lt;Domain&gt;          *-&gt;* &lt;Label&gt; .&lt;Label&gt; *|*&lt;Label&gt; .&lt;Domain&gt;</code>
@@ -1557,7 +1559,7 @@ thomas.schmitz@hszg.de
             <span
               class="numbered-title"
             >Übungsaufgabe 
-              <NumberedTitle>4.0.1</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.1</NumberedTitle>
                
             </span>Formulieren Sie weitere Regeln, um unsinnige Domainnamen wie 
             <code>-.-.--</code>
@@ -1675,7 +1677,7 @@ thomas.schmitz@hszg.de
             <span
               class="numbered-title"
             >Definition 
-              <NumberedTitle>4.0.1</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.1</NumberedTitle>
                
             </span><b>(Kontextfreie Grammatik).</b>
             Eine 
@@ -1723,7 +1725,7 @@ thomas.schmitz@hszg.de
             <span
               class="numbered-title"
             >Beispiel 
-              <NumberedTitle>4.0.2</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.2</NumberedTitle>
                
             </span>Wir betrachten die Grammatik \(G = (\{a,b\}, \{S, A, B\}, P, S)\) mit den Produktionsregeln
             $$\begin{align*}
@@ -1759,7 +1761,7 @@ thomas.schmitz@hszg.de
             <span
               class="numbered-title"
             >Definition 
-              <NumberedTitle>4.0.3</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.3</NumberedTitle>
                
             </span>Gegeben sei eine kontextfreie Grammatik \(G = (\Sigma, N, P, S)\).
             Ein String \(\alpha \in (\Sigma \cup N)^*\) heißt 
@@ -1825,7 +1827,7 @@ thomas.schmitz@hszg.de
             <span
               class="numbered-title"
             >Definition 
-              <NumberedTitle>4.0.4</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.4</NumberedTitle>
                
             </span><b>(Die von einer Grammatik erzeugte Sprache).</b>
             Sei \(G = (\Sigma, N, P, S) \) eine kontextfreie Grammatik. Die von \(G\) erzeugte Sprache
@@ -1850,7 +1852,7 @@ thomas.schmitz@hszg.de
           <span
             class="numbered-title"
           >Beispiel 
-            <NumberedTitle>4.0.5</NumberedTitle>
+            <NumberedTitle>::::ChapterCtr.::::SectionCtr.5</NumberedTitle>
              .</span>Sei \(G\) die zuletzt betrachtete Grammatik. Dann ist \(L(G)\) die
           Menge aller Wörter der Form \(a^* b^*\), also Wörter, in denen auf beliebig viele
           \(a\)'s beliebig viele \(b\)'s folgen.
@@ -1864,7 +1866,7 @@ thomas.schmitz@hszg.de
           <span
             class="numbered-title"
           >Beispiel 
-            <NumberedTitle>4.0.6</NumberedTitle>
+            <NumberedTitle>::::ChapterCtr.::::SectionCtr.6</NumberedTitle>
              
           </span>Wir betrachten die Grammatik \(G_2 = (\{a,b\}, \{S\}, P, S)\) mit den Produktionsregeln
           $$\begin{align}

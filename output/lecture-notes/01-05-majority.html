@@ -19,13 +19,13 @@
 <body>
 <section
   count="6"
-  path="/lecture-notes5"
   .="BookLevelSectionCounter 6"
-  counter="ExoCtr"
-  counter="DefCtr"
-  number="1.5"
-  title_en="majority"
   title_gr=""
+  title_en="majority"
+  number="1.5"
+  counter="DefCtr"
+  counter="ExoCtr"
+  path="/lecture-notes6"
 >
   <div
     id="link-to-toc"
@@ -37,8 +37,8 @@
     >&lt;&lt; Kapitel 1.4</a>
   </div>
   <div
-    style="text-align: end"
     id="link-to-overview"
+    style="text-align: end"
   >
     <a
       href="/"
@@ -63,15 +63,15 @@
           >
             <span
               class="subChapterTitle"
-            >1.5
+            >::::ChapterCtr.5
               Majority</span>
           </h1>
           Unser Ziel in diesem Teilkapitel ist es, Schaltkreise für die Majority-Funktion zu bauen:
           <figure>
             <img
-              loading="lazy"
-              src="../img/circuits/majority.svg"
               style="height:10em"
+              src="../img/circuits/majority.svg"
+              loading="lazy"
             >
           </figure>
           Diese nimmt \(n\) Bits als Input und gibt 1 aus, wenn mehr als \(n/2\) davon 1 sind.
@@ -83,9 +83,9 @@
           und als Schaltkreis so:
           <figure>
             <img
-              loading="lazy"
-              src="../img/circuits/maj3.svg"
               style="height:8em"
+              src="../img/circuits/maj3.svg"
+              loading="lazy"
             >
           </figure>
           <p>
@@ -100,7 +100,7 @@
             <span
               class="numbered-title"
             >Übungsaufgabe 
-              <NumberedTitle>1.5.1</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.1</NumberedTitle>
                
             </span>Sei \(n\) eine ungerade Zahl. Zeigen Sie, dass \(\maj_n\) für genau
             die Hälfte aller \(2^n\) möglichen Eingaben eine 1 ausgibt (und für die
@@ -141,7 +141,7 @@
           </p>
           $$\begin{align}
           \maj_n (x_1,\dots,x_n) = \bigvee_{\substack{I \subseteq [n] \\ |I| = k}} \bigwedge_{i \in I} x_i
-          \ .
+           .
           \label{johns-equation}
           \end{align}$$
           <p>
@@ -153,11 +153,11 @@
             class="well container theorem"
           >
             <span
-              data-label="mid-level-lower-bound"
-              data-counter="theorem"
               class="numbered-title"
+              data-counter="theorem"
+              data-label="mid-level-lower-bound"
             >Lemma 
-              <NumberedTitle>1.5.1</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.1</NumberedTitle>
                .</span>Es gilt
             $$
             {n \choose {\ceil{n/2}}} \geq \frac{2^n}{n+1} \ .
@@ -249,9 +249,9 @@
           \(\theta^{n-1}_k\) berechnen. Rekursiv fortgefühtr sieht das dann so aus:
           <figure>
             <img
-              loading="lazy"
-              src="../img/circuits/majority-theta-recursive.svg"
               style="height:15em"
+              src="../img/circuits/majority-theta-recursive.svg"
+              loading="lazy"
             >
           </figure>
           Die Konstruktion endet mit \(\theta^m_0\), was immer \(1\) ausgibt, und
@@ -276,9 +276,9 @@
           </p>
           <figure>
             <img
-              loading="lazy"
-              src="../img/circuits/majority-theta-dp.svg"
               style="height:18em"
+              src="../img/circuits/majority-theta-dp.svg"
+              loading="lazy"
             >
           </figure>
           <p>
@@ -320,7 +320,7 @@
             <span
               class="numbered-title"
             >Theorem 
-              <NumberedTitle>1.5.2</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.2</NumberedTitle>
                
             </span>Die Funktion
             \(\maj_n (x_1,\dots,x_n)\) kann mit einem Schaltkreis der Größe \(O(n^2)\),
@@ -339,9 +339,9 @@
           \(000\dots 0\), also 0, und addieren die dann auf:
           <figure>
             <img
-              loading="lazy"
-              src="../img/circuits/majority-by-adding.svg"
               style="height:12em"
+              src="../img/circuits/majority-by-adding.svg"
+              loading="lazy"
             >
           </figure>
           <div
@@ -350,7 +350,7 @@
             <span
               class="numbered-title"
             >Übungsaufgabe 
-              <NumberedTitle>1.5.2</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.2</NumberedTitle>
                
             </span>Bestimmen Sie asymptotisch die Größe und die Tiefe dieses Schaltkreises.
             Achten Sie besonders bei der Berechnung der Größe darauf, dass die untersten Add-Gadgets
@@ -371,7 +371,7 @@
             <span
               class="numbered-title"
             >Lemma 
-              <NumberedTitle>1.5.3</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.3</NumberedTitle>
                 (2-for-3 Adder)</span>Es gibt einen Schaltkreis mit \(O(n)\) Gates,
             Tiefe 2 und Fan-In 2, der als Input drei
             \(n\)-stellige Binärzahlen \(x,y,z\) nimmt
@@ -388,9 +388,9 @@
             Ich demonstriere das Beweisprinzip erst einmal mit drei Zahlen in Basis 10:
             <figure>
               <img
-                loading="lazy"
-                src="../img/circuits/2-for-3-adder-example.svg"
                 style="height:10em"
+                src="../img/circuits/2-for-3-adder-example.svg"
+                loading="lazy"
               >
             </figure>
             <p>
@@ -402,9 +402,9 @@
             </p>
             <figure>
               <img
-                loading="lazy"
-                src="../img/circuits/2-for-3-adder-binary.svg"
                 style="height:15em"
+                src="../img/circuits/2-for-3-adder-binary.svg"
+                loading="lazy"
               >
             </figure>
             <p>
@@ -447,7 +447,7 @@
             <span
               class="numbered-title"
             >Theorem 
-              <NumberedTitle>1.5.4</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.4</NumberedTitle>
                .</span>Die Konstruktion mit 2-for-3-Addierern gibt uns einen Schaltkreis
             für Majority mit Fan-in 2, Tiefe \(O(\log n)\) und
             Größe \(O (n \log n)\)
@@ -459,7 +459,7 @@
               <span
                 class="numbered-title"
               >Übungsaufgabe 
-                <NumberedTitle>1.5.3</NumberedTitle>
+                <NumberedTitle>::::ChapterCtr.::::SectionCtr.3</NumberedTitle>
                  
               </span>Führen Sie eine genauere Abschätzung der Größe durch. Untersuchen Sie insbesondere:
             </p>
@@ -525,7 +525,7 @@
             <span
               class="numbered-title"
             >Übungsaufgabe 
-              <NumberedTitle>1.5.4</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.4</NumberedTitle>
                
             </span>dass polynomiell viele (in diesem Falle: \(O(n^2)\) viele) Gates ausreichen.
             Zeigen Sie, wie die gerade skizzierte Konstruktion so ausgeführt werden kann,
@@ -539,7 +539,7 @@
             <span
               class="numbered-title"
             >Theorem 
-              <NumberedTitle>1.5.5</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.5</NumberedTitle>
                .</span>Es gibt einen monotonen Schaltkreis mit Fan-in 2, Tiefe \(O(\log n)\) und Größe
             \(\poly(n)\), der \(\maj_n\) berechnet.
           </div>
@@ -575,7 +575,7 @@
               <span
                 class="numbered-title"
               >Definition 
-                <NumberedTitle>1.5.6</NumberedTitle>
+                <NumberedTitle>::::ChapterCtr.::::SectionCtr.6</NumberedTitle>
                   (Signalstärke)</span>Sei \(\mathcal{C}\) eine Verteilung über Schaltkreise mit Input-Variablen
               \(x_1,\dots,x_n\). Wir sagen, dass \(\mathcal{C}\) 
               <i>Signalstärke mindestens $\delta$</i>
@@ -598,7 +598,7 @@
               <span
                 class="numbered-title"
               >Lemma 
-                <NumberedTitle>1.5.7</NumberedTitle>
+                <NumberedTitle>::::ChapterCtr.::::SectionCtr.7</NumberedTitle>
                  .</span>Es gibt eine Wahrscheinlichkeitsverteilung \(\mathcal{C}_0\) über monotone Schaltkreise der
               Größe 1,
               die Signalstärke \(\frac{1}{n}\) hat.
@@ -638,7 +638,7 @@
               $$\begin{align*}
               \Pr_{C \sim \mathcal{C}_0} [C(\x) = 1] = \Pr_{I \in [n]} [x_I = 1]&amp;= \frac{| \{i \in [n]\
               |
-              \ x_i = 1\}}{n} \geq \frac{k+1}{n} \\
+               x_i = 1\}}{n} \geq \frac{k+1}{n} \\
               &amp;= \frac{k+1}{2k+1} = \frac{k + \frac{1}{2} + \frac{1}{2}}{2k+1} \\
               &amp;= \frac{1}{2} + \frac{1}{2n} \ .
               \end{align*}$$
@@ -679,7 +679,7 @@
               <span
                 class="numbered-title"
               >Lemma 
-                <NumberedTitle>1.5.8</NumberedTitle>
+                <NumberedTitle>::::ChapterCtr.::::SectionCtr.8</NumberedTitle>
                  
               </span>Falls \(\mathcal{C}\) eine Verteilung über Schaltkreise der Tiefe
               \(d\) und Größe \(s\) ist und \(\mathcal{C}\) Signalstärke \(\delta\) hat, dann gilt:
@@ -776,7 +776,7 @@
                 <span
                   class="numbered-title"
                 >Behauptung 
-                  <NumberedTitle>1.5.9</NumberedTitle>
+                  <NumberedTitle>::::ChapterCtr.::::SectionCtr.9</NumberedTitle>
                    .</span>
                  Wenn $\mathcal{C}$
                 Fehlerwahrscheinlichkeit
@@ -803,9 +803,8 @@
               </p>
             </div>
             <p>
-              Für $i^* := \log<i>{5/4} n$ hat $\mathcal{C}</i>{i^<b>}$ eine Fehlerwahrscheinlichkeit von
-                höchstens $1/4$. Für $i^</b>
-               + 1$ wird das zu $3 \pfrac{1}{4}^2 = \frac{3}{16}$ und
+              Für $i^* := \log<i>{5/4} n$ hat $\mathcal{C}</i>{i^*}$ eine Fehlerwahrscheinlichkeit von
+              höchstens $1/4$. Für $i^* + 1$ wird das zu $3 \pfrac{1}{4}^2 = \frac{3}{16}$ und
               für $i^* + 2$ zu $3 \pfrac{3}{16}^2 = \frac{27}{256} \leq \frac{1}{9}$.
               Wenn nun $\epsilon \leq \frac{1}{9}$ ist, dann gilt $3 \epsilon^2 \leq \epsilon^{3/2}$.
               Wir definieren $\epsilon<i>i := \frac{1 - \delta</i>i}{2}$, also die Fehlerwahrscheinlichkeit von
@@ -833,31 +832,28 @@
             </p>
             <figure>
               <img
+                style="height:18em"
                 src="../img/circuits/majority-probability-labeled.svg"
-                style="height:18em"
               >
-              <br>
-              Graph der Funktion $p \mapsto p^3 + 3 p^2 (1-p)$
+              <br>Graph der Funktion $p \mapsto p^3 + 3 p^2 (1-p)$
               <hr>
               </hr>
             </figure>
             <figure>
               <img
+                style="height:18em"
                 src="../img/circuits/majority-probability-close-to-half-labeled.svg"
-                style="height:18em"
               >
-              <br>
-              Signalstärke $\delta$ wächst für $p \in [1/2, 3/4]$ exponentiell.
+              <br>Signalstärke $\delta$ wächst für $p \in [1/2, 3/4]$ exponentiell.
               <hr>
               </hr>
             </figure>
             <figure>
               <img
-                src="../img/circuits/majority-probability-close-to-one-labeled.svg"
                 style="height:18em"
+                src="../img/circuits/majority-probability-close-to-one-labeled.svg"
               >
-              <br>
-              Fehlerwahrscheinlichkeit $\epsilon$ fällt für $p \in [3/4, 1/2]$ doppelt
+              <br>Fehlerwahrscheinlichkeit $\epsilon$ fällt für $p \in [3/4, 1/2]$ doppelt
               exponentiell.
               <hr>
               </hr>
@@ -941,7 +937,7 @@
               <span
                 class="numbered-title"
               >Übungsaufgabe 
-                <NumberedTitle>1.5.5</NumberedTitle>
+                <NumberedTitle>::::ChapterCtr.::::SectionCtr.5</NumberedTitle>
                  
               </span>Präzisieren Sie die Größe von Valiants Schaltkreis und bestimmen ein $c \in \R$, so dass
               er die Größe $\Theta(n^c)$ hat.

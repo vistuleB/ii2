@@ -42,10 +42,10 @@ fn ti2_splitter(
   root: VXML,
 ) -> Result(List(#(String, VXML, FragmentType)), Ti2SplitterError) {
   let chapter_vxmls = infra.descendants_with_tag(root, "section")
-  io.println(
-    "the number of chapters found was: "
-    <> chapter_vxmls |> list.length |> string.inspect,
-  )
+  // io.println(
+  //   "the number of chapters found was: "
+  //   <> chapter_vxmls |> list.length |> string.inspect,
+  // )
   use toc_vxml <- infra.on_error_on_ok(
     infra.unique_child_with_tag(root, "TOCAuthorSuppliedContent"),
     with_on_error: fn(error) {

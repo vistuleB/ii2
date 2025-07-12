@@ -19,13 +19,13 @@
 <body>
 <section
   count="25"
-  path="/lecture-notes24"
   .="BookLevelSectionCounter 25"
-  counter="ExoCtr"
-  counter="DefCtr"
-  number="4.5"
-  title_en="regular expressions"
   title_gr="Ausdrücke"
+  title_en="regular expressions"
+  number="4.5"
+  counter="DefCtr"
+  counter="ExoCtr"
+  path="/lecture-notes25"
 >
   <div
     id="link-to-toc"
@@ -37,8 +37,8 @@
     >&lt;&lt; Kapitel 4.4</a>
   </div>
   <div
-    style="text-align: end"
     id="link-to-overview"
+    style="text-align: end"
   >
     <a
       href="/"
@@ -63,7 +63,7 @@
           >
             <span
               class="subChapterTitle"
-            >4.5
+            >::::ChapterCtr.5
               Reguläre Ausdrücke</span>
           </h1>
           <p>
@@ -136,7 +136,7 @@
             <span
               class="numbered-title"
             >Definition 
-              <NumberedTitle>4.5.1</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.1</NumberedTitle>
                
             </span>Sei \(\Sigma\) einendliches Alphabet. Die regulären Audrücke über \(\Sigma\) sind induktiv
             definiert wie folgt und beschreiben folgende Sprachen:
@@ -208,13 +208,13 @@
             Wir erhalten das folgende Ergebnis:
           </p>
           <div
-            class="well container theorem"
             id="regex-to-grammar"
+            class="well container theorem"
           >
             <span
               class="numbered-title"
             >Lemma 
-              <NumberedTitle>4.5.2</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.2</NumberedTitle>
                
             </span>Die von einem regulären Ausdruck \(R\) beschriebene Sprache \(L(R)\) ist regulär.
           </div>
@@ -227,7 +227,7 @@
             <span
               class="numbered-title"
             >Beispiel 
-              <NumberedTitle>4.5.3</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.3</NumberedTitle>
                
             </span>Nehmen wir die Sprache der Wörter der Form 
             <code>bla:bla:blu.xyz-12-ab.b:x</code>
@@ -296,7 +296,7 @@
             <span
               class="numbered-title"
             >Übungsaufgabe 
-              <NumberedTitle>4.5.1</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.1</NumberedTitle>
                
             </span>Laden Sie sich 
             <a
@@ -329,7 +329,7 @@
             <span
               class="numbered-title"
             >Übungsaufgabe 
-              <NumberedTitle>4.5.2</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.2</NumberedTitle>
                
             </span>In der Praxis gibt es bei reguläre Ausdrücken viele Abkürzung, so beschreibt
             <code>[a-z]</code>
@@ -377,7 +377,7 @@
             <span
               class="numbered-title"
             >Theorem 
-              <NumberedTitle>4.5.4</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.4</NumberedTitle>
                
             </span>Sei \(L\) eine reguläre Sprache. Dann gibt es einen regulären Ausdruck \(R\), der \(L\)
             beschreibt,
@@ -429,9 +429,9 @@
               nichtdeterministischen endlichen Automaten (VNEA)</i>.
             <figure>
               <img
-                loading="lazy"
-                src="../img/finite-state-automata/to-regex/nea-to-vnea.svg"
                 style="height:14em"
+                src="../img/finite-state-automata/to-regex/nea-to-vnea.svg"
+                loading="lazy"
               >
             </figure>
             <p>
@@ -443,7 +443,7 @@
               <span
                 class="numbered-title"
               >Definition 
-                <NumberedTitle>4.5.5</NumberedTitle>
+                <NumberedTitle>::::ChapterCtr.::::SectionCtr.5</NumberedTitle>
                  
               </span><b>(Verallgemeinerter nichtdeterministischer endlicher Automat, VNEA).</b>
               Ein VNEA besteht aus einem Alphabet \(\Sigma\), einer Zustandsmenge \(Q\), einen
@@ -500,9 +500,9 @@
             </p>
             <figure>
               <img
-                loading="lazy"
-                src="../img/finite-state-automata/to-regex/eliminate-B.svg"
                 style="height:10em"
+                src="../img/finite-state-automata/to-regex/eliminate-B.svg"
+                loading="lazy"
               >
             </figure>
             <p>
@@ -530,9 +530,9 @@
             </p>
             <figure>
               <img
-                loading="lazy"
-                src="../img/finite-state-automata/to-regex/nvea-final.svg"
                 style="height:2.5em"
+                src="../img/finite-state-automata/to-regex/nvea-final.svg"
+                loading="lazy"
               >
             </figure>
             <p>
@@ -554,17 +554,17 @@
             <code>aaaa:a:aaa.aa-aa</code>-Sprache:
           </p>
           <div
-            class="container"
             id="carousel-nfsm-to-regex"
+            class="container"
           >
             <div
               style="overflow-x: auto; margin: 1em;"
             >
               <figure>
                 <img
-                  loading="lazy"
-                  src="../img/finite-state-automata/to-regex/nfsm-to-regex-carpet.svg"
                   style="height:20em"
+                  src="../img/finite-state-automata/to-regex/nfsm-to-regex-carpet.svg"
+                  loading="lazy"
                 >
               </figure>
             </div>
@@ -575,14 +575,14 @@
             <span
               class="numbered-title"
             >Übungsaufgabe 
-              <NumberedTitle>4.5.3</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.3</NumberedTitle>
                
             </span>Wandeln Sie nach dem eben beschriebenen Schema den Automaten
             <figure>
               <img
-                loading="lazy"
-                src="../img/finite-state-automata/nfsm-example-02.svg"
                 style="height:10em"
+                src="../img/finite-state-automata/nfsm-example-02.svg"
+                loading="lazy"
               >
             </figure>
             in einen regulären Ausdruck um.

@@ -19,13 +19,13 @@
 <body>
 <section
   count="11"
-  path="/lecture-notes10"
   .="BookLevelSectionCounter 11"
-  counter="ExoCtr"
-  counter="DefCtr"
-  number="2.3"
-  title_en="sets like R"
   title_gr="die so groß wie $\R$ sind"
+  title_en="sets like R"
+  number="2.3"
+  counter="DefCtr"
+  counter="ExoCtr"
+  path="/lecture-notes11"
 >
   <div
     id="link-to-toc"
@@ -37,8 +37,8 @@
     >&lt;&lt; Kapitel 2.2</a>
   </div>
   <div
-    style="text-align: end"
     id="link-to-overview"
+    style="text-align: end"
   >
     <a
       href="/"
@@ -63,7 +63,7 @@
           >
             <span
               class="subChapterTitle"
-            >2.3
+            >::::ChapterCtr.3
               Mengen, die so groß wie $\R$ sind</span>
           </h1>
           <p>
@@ -91,7 +91,7 @@
               <span
                 class="numbered-title"
               >Beobachtung 
-                <NumberedTitle>2.3.1</NumberedTitle>
+                <NumberedTitle>::::ChapterCtr.::::SectionCtr.1</NumberedTitle>
                  
               </span>
                Es gilt $\R \approx
@@ -137,7 +137,7 @@
               <span
                 class="numbered-title"
               >Übungsaufgabe 
-                <NumberedTitle>2.3.1</NumberedTitle>
+                <NumberedTitle>::::ChapterCtr.::::SectionCtr.1</NumberedTitle>
                  
               </span>Zeigen Sie $\R \approx \R^+$.
             </p>
@@ -149,7 +149,7 @@
               <span
                 class="numbered-title"
               >Übungsaufgabe 
-                <NumberedTitle>2.3.2</NumberedTitle>
+                <NumberedTitle>::::ChapterCtr.::::SectionCtr.2</NumberedTitle>
                  
               </span>Zeigen Sie, dass $\R_0^+ \approx \R^+$ gilt. Sie müssen "die 0
               verschwinden lassen".
@@ -160,10 +160,10 @@
           >
             <p>
               <span
-                class="numbered-title"
                 id="exercise-open-closed-half-open"
+                class="numbered-title"
               >Übungsaufgabe 
-                <NumberedTitle>2.3.3</NumberedTitle>
+                <NumberedTitle>::::ChapterCtr.::::SectionCtr.3</NumberedTitle>
                  
               </span>Zeigen Sie, dass $[0,1]$, $[0,1)$, $(0,1]$ und $(0,1)$ alle
               gleichmächtig sind.
@@ -185,10 +185,10 @@
           >
             <p>
               <span
-                class="numbered-title"
                 id="theorem-R-bitstrings"
+                class="numbered-title"
               >Theorem 
-                <NumberedTitle>2.3.2</NumberedTitle>
+                <NumberedTitle>::::ChapterCtr.::::SectionCtr.2</NumberedTitle>
                  
               </span>$\R \approx \{0,1\}^{\N}$.
             </p>
@@ -200,8 +200,8 @@
               <b>Beweis.</b>
               Die Beweisidee ist einfach, allerdings gehen erst einmal ein paar
               Dinge schief, die man wieder flicken muss. Da laut<span
-                class="reference"
                 data-ref="exercise-open-closed-half-open"
+                class="reference"
               ></span>$\R \approx [0,1)$ gilt, reicht es, eine Bijektion $f : [0,1)
               \rightarrow \{0,1\}^{\N}$ zu konstruieren. So geht's:
             </p>
@@ -244,7 +244,7 @@
                 <span
                   class="numbered-title"
                 >Übungsaufgabe 
-                  <NumberedTitle>2.3.4</NumberedTitle>
+                  <NumberedTitle>::::ChapterCtr.::::SectionCtr.4</NumberedTitle>
                    
                 </span>Sei $Y := \{ a<i>1 a</i>2 a<i>3 \dots \in \{0,1\}^{\N} \ | \ \exists\ n
                   \geq 1: a</i>i = 0 \ \forall i \geq n\}$ die Menge aller $0/1$-Folgen
@@ -262,7 +262,7 @@
                 <span
                   class="numbered-title"
                 >Übungsaufgabe 
-                  <NumberedTitle>2.3.5</NumberedTitle>
+                  <NumberedTitle>::::ChapterCtr.::::SectionCtr.5</NumberedTitle>
                    
                 </span>Verwenden Sie die vorherige Übungsaufgabe, um $Y$ zu verdoppeln
                 und somit eine Bijektion von $[0,1) \rightarrow \{0,1\}^{\N}$ zu
@@ -270,8 +270,8 @@
               </p>
               <figure>
                 <img
-                  src="../img/infinite-sets/interval-sequences-fill-the-gaps.svg"
                   style="width: 80%"
+                  src="../img/infinite-sets/interval-sequences-fill-the-gaps.svg"
                 >
               </figure>
             </div>
@@ -289,10 +289,10 @@
           >
             <p>
               <span
-                class="numbered-title"
                 id="theorem-square-interval"
+                class="numbered-title"
               >Theorem 
-                <NumberedTitle>2.3.3</NumberedTitle>
+                <NumberedTitle>::::ChapterCtr.::::SectionCtr.3</NumberedTitle>
                  
               </span>Es gilt $\R^2 \approx \R$.
             </p>
@@ -303,8 +303,8 @@
             <p>
               <b>Beweis.</b>
                Mithilfe von<span
-                class="reference"
                 data-ref="theorem-R-bitstrings"
+                class="reference"
               ></span>
                geht
               das ganz einfach. Da $\R \approx \{0,1\}^\N$ gilt, reicht es
@@ -329,8 +329,8 @@
           <p>
             Aus der Funktion $f: \{0,1\}^{\N} \times \{0,1\}^{\N} \mapsto
             \{0,1\}^{\N}$ aus<span
-              class="reference"
               data-ref="theorem-square-interval"
+              class="reference"
             ></span>können wir eine (fast) bijektive Funktion $[0,1) \times [0,1)
             \rightarrow [0,1)$ bauen. Wir nehmen zwei Zahlen $0 \leq x,y \lt 1$,
             schreiben sie in Binärdarstellung und vereinigen sie dann per
@@ -352,8 +352,8 @@
           </p>
           <figure>
             <img
-              src="../img/infinite-sets/bijection-square-interval.png"
               style="height: 20em"
+              src="../img/infinite-sets/bijection-square-interval.png"
             >
             <br>
             <div>
@@ -385,7 +385,7 @@
               <span
                 class="numbered-title"
               >Beobachtung 
-                <NumberedTitle>2.3.4</NumberedTitle>
+                <NumberedTitle>::::ChapterCtr.::::SectionCtr.4</NumberedTitle>
                  
               </span>
                Die Funktion
@@ -433,8 +433,8 @@
           </p>
           <figure>
             <img
-              src="../img/infinite-sets/interval-to-square.svg"
               style="height: 10em"
+              src="../img/infinite-sets/interval-to-square.svg"
             >
           </figure>
           <p>
@@ -448,9 +448,9 @@
             class="centered-figure well container"
           >
             <a
-              class="left carousel-control-prev-icon"
-              href="#interval-to-square"
               data-slide="prev"
+              href="#interval-to-square"
+              class="left carousel-control-prev-icon"
             >
               <div
                 class="carousel-nav-icon"
@@ -460,9 +460,9 @@
                 >
               </div>
             </a><a
-              class="right carousel-control-next-icon"
-              href="#interval-to-square"
               data-slide="next"
+              href="#interval-to-square"
+              class="right carousel-control-next-icon"
             >
               <div
                 class="carousel-nav-icon"
@@ -473,70 +473,70 @@
               </div>
             </a>
             <div
-              id="interval-to-square"
-              class="carousel"
-              data-interval="false"
               style="display: inline-block"
+              data-interval="false"
+              class="carousel"
+              id="interval-to-square"
             >
               <ol
                 class="carousel-indicators"
               >
                 <li
-                  data-target="#interval-to-square"
-                  data-slide-to="1"
                   class="active"
+                  data-slide-to="1"
+                  data-target="#interval-to-square"
                 >
                 </li>
                 <li
-                  data-target="#interval-to-square"
                   data-slide-to="2"
+                  data-target="#interval-to-square"
                 >
                 </li>
                 <li
-                  data-target="#interval-to-square"
                   data-slide-to="3"
+                  data-target="#interval-to-square"
                 >
                 </li>
                 <li
-                  data-target="#interval-to-square"
                   data-slide-to="4"
+                  data-target="#interval-to-square"
                 >
                 </li>
               </ol>
               <div
-                class="carousel-inner"
                 style="display: inline-block"
+                class="carousel-inner"
               >
                 <div
                   class="item active"
                 >
                   <img
+                    style="height: 15em"
                     src="../img/infinite-sets/interval-to-square-animation/figures-01-01.svg"
-                    style="height: 15em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 15em"
                     src="../img/infinite-sets/interval-to-square-animation/figures-01-02.svg"
-                    style="height: 15em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 15em"
                     src="../img/infinite-sets/interval-to-square-animation/figures-01-03.svg"
-                    style="height: 15em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    src="../img/infinite-sets/interval-to-square-animation/figures-01-04.svg"
                     style="height: 15em"
+                    src="../img/infinite-sets/interval-to-square-animation/figures-01-04.svg"
                   >
                 </div>
               </div>
@@ -556,7 +556,7 @@
               <span
                 class="numbered-title"
               >Theorem 
-                <NumberedTitle>2.3.5</NumberedTitle>
+                <NumberedTitle>::::ChapterCtr.::::SectionCtr.5</NumberedTitle>
                  
               </span>
                $\R \approx \R^{\N}$.
@@ -581,8 +581,8 @@
             </p>
             <figure>
               <img
-                src="../img/infinite-sets/table-infinite-sequences.svg"
                 style="width: 40%"
+                src="../img/infinite-sets/table-infinite-sequences.svg"
               >
             </figure>
             <p>
@@ -593,8 +593,8 @@
             </p>
             <figure>
               <img
-                src="../img/infinite-sets/table-infinite-sequences-with-blue.svg"
                 style="width: 40%"
+                src="../img/infinite-sets/table-infinite-sequences-with-blue.svg"
               >
             </figure>
             <p>
@@ -603,8 +603,8 @@
             </p>
             <figure>
               <img
-                src="../img/infinite-sets/table-infinite-sequences-with-s.svg"
                 style="width: 40%"
+                src="../img/infinite-sets/table-infinite-sequences-with-s.svg"
               >
             </figure>
             <span
@@ -660,16 +660,16 @@
             man $A \uplus B$ so definieren;
           </p>
           $$\begin{align*} A \uplus B := \{ (a,0) \ | \ a \in A\} \cup \{ (b,1) \ |
-          \ b \in B\} \ . \end{align*}$$
+           b \in B\} \ . \end{align*}$$
           <div
             class="well container theorem"
           >
             <p>
               <span
-                class="numbered-title"
                 id="calculating-with-cardinals"
+                class="numbered-title"
               >Theorem 
-                <NumberedTitle>2.3.6</NumberedTitle>
+                <NumberedTitle>::::ChapterCtr.::::SectionCtr.6</NumberedTitle>
                  
               </span><b>(mit Kardinalzahlen rechnen)</b>. Es gelten die
               üblichen Rechenregeln:
@@ -699,10 +699,10 @@
           >
             <p>
               <span
-                class="numbered-title"
                 id="replacing-equipotent-cardinals"
+                class="numbered-title"
               >Theorem 
-                <NumberedTitle>2.3.7</NumberedTitle>
+                <NumberedTitle>::::ChapterCtr.::::SectionCtr.7</NumberedTitle>
                  
               </span>Seien $A, A', B$ Mengen und $A \approx A'$. Dann gilt
             </p>
@@ -735,16 +735,16 @@
               <span
                 class="numbered-title"
               >Übungsaufgabe 
-                <NumberedTitle>2.3.6</NumberedTitle>
+                <NumberedTitle>::::ChapterCtr.::::SectionCtr.6</NumberedTitle>
                  
               </span>
                Beweisen Sie so
               viele Punkte von<span
-                class="reference"
                 data-ref="calculating-with-cardinals"
-              ></span>und<span
                 class="reference"
+              ></span>und<span
                 data-ref="replacing-equipotent-cardinals"
+                class="reference"
               ></span>, wie Sie wollen.
             </p>
             <p>
@@ -768,7 +768,7 @@
               <span
                 class="numbered-title"
               >Übungsaufgabe 
-                <NumberedTitle>2.3.7</NumberedTitle>
+                <NumberedTitle>::::ChapterCtr.::::SectionCtr.7</NumberedTitle>
                  
               </span>Zeigen Sie, dass $2^{\N} \approx \cuben$ gilt.
             </p>
@@ -825,7 +825,7 @@
               <span
                 class="numbered-title"
               >Definition 
-                <NumberedTitle>2.3.8</NumberedTitle>
+                <NumberedTitle>::::ChapterCtr.::::SectionCtr.8</NumberedTitle>
                  
               </span><b>(Dichte Partialordnung)</b>
                Eine Partialordnung
@@ -849,7 +849,7 @@
               <span
                 class="numbered-title"
               >Übungsaufgabe 
-                <NumberedTitle>2.3.8</NumberedTitle>
+                <NumberedTitle>::::ChapterCtr.::::SectionCtr.8</NumberedTitle>
                  
               </span>Finden Sie in $(2^\N, \subseteq)$ eine Kette $X$, so dass $(X,
               \subseteq)$ dicht ist. Also: eine Menge $X$, so dass für alle $A,C

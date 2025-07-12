@@ -24,10 +24,10 @@ pub fn our_pipeline() -> List(Desugarer) {
     pp.symmetric_delim_splitting("_", "_", "i", ["MathBlock", "Math", "code"]),
     pp.symmetric_delim_splitting("\\*", "*", "b", ["MathBlock", "Math", "code"]),
     [
-      dl.identity(),
       dl.counters_substitute_and_assign_handles(),
       dl.handles_generate_ids(),
       dl.handles_generate_dictionary([#("section", "path")]),
+      dl.identity(),
       dl.handles_substitute([]),
       dl.concatenate_text_nodes(),
       dl.unwrap_tags_when_no_child_meets_condition(#(["p"], infra.is_text_or_is_one_of(_, ["b", "i", "a", "span"]))),

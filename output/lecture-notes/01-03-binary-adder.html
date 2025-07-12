@@ -19,13 +19,13 @@
 <body>
 <section
   count="4"
-  path="/lecture-notes3"
   .="BookLevelSectionCounter 4"
-  counter="ExoCtr"
-  counter="DefCtr"
-  number="1.3"
-  title_en="binary adder"
   title_gr=""
+  title_en="binary adder"
+  number="1.3"
+  counter="DefCtr"
+  counter="ExoCtr"
+  path="/lecture-notes4"
 >
   <div
     id="link-to-toc"
@@ -37,8 +37,8 @@
     >&lt;&lt; Kapitel 1.2</a>
   </div>
   <div
-    style="text-align: end"
     id="link-to-overview"
+    style="text-align: end"
   >
     <a
       href="/"
@@ -63,7 +63,7 @@
           >
             <span
               class="subChapterTitle"
-            >1.3
+            >::::ChapterCtr.3
               Binär-Addierer</span>
           </h1>
           <h3>
@@ -127,9 +127,9 @@
           </p>
           <figure>
             <img
-              loading="lazy"
-              src="../img/circuits/adder-ripple.svg"
               style="height:10em"
+              src="../img/circuits/adder-ripple.svg"
+              loading="lazy"
             >
           </figure>
           <p>
@@ -156,7 +156,7 @@
             <span
               class="numbered-title"
             >Übungsaufgabe 
-              <NumberedTitle>1.3.1</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.1</NumberedTitle>
                
             </span>Bauen Sie einen Schaltkreis 
             <tt>oneBitAdder:</tt>
@@ -164,9 +164,9 @@
             folgende Funktionalität:
             <figure>
               <img
-                loading="lazy"
-                src="../img/circuits/onebitadder.svg"
                 style="height:10em"
+                src="../img/circuits/onebitadder.svg"
+                loading="lazy"
               >
             </figure>
             Versuchen Sie, so wenig Gates wie möglich zu verwenden. Entscheiden Sie sich
@@ -214,9 +214,9 @@
           </p>
           <figure>
             <img
-              loading="lazy"
-              src="../img/circuits/adder-ripple-only-carry.svg"
               style="height:6em"
+              src="../img/circuits/adder-ripple-only-carry.svg"
+              loading="lazy"
             >
           </figure>
           <p>
@@ -281,7 +281,7 @@
             <span
               class="numbered-title"
             >Definition 
-              <NumberedTitle>1.3.1</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.1</NumberedTitle>
                 (Carry propagate / generate für Intervalle)</span>Sei \(I = \{a,a+1, \dots, b\}\) ein Intervall natürlicher Zahlen. Die Werte
             \(p_I\) und \(g_I\) sind wie folgt definiert:
             <ul>
@@ -322,15 +322,15 @@
           </p>
           <figure>
             <img
-              loading="lazy"
-              src="../img/circuits/carry-generate-interval.svg"
               style="height:11em"
+              src="../img/circuits/carry-generate-interval.svg"
+              loading="lazy"
             >
             <br>
             <img
-              loading="lazy"
-              src="../img/circuits/carry-propagate-interval.svg"
               style="height:11em"
+              src="../img/circuits/carry-propagate-interval.svg"
+              loading="lazy"
             >
           </figure>
           <p>
@@ -349,7 +349,7 @@
             <span
               class="numbered-title"
             >Beobachtung 
-              <NumberedTitle>1.3.2</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.2</NumberedTitle>
                
             </span>Wenn wir \([a,b] = [a,i] \cup [i+1,b] \) schreiben für \(a \lt i \lt b\), dann gilt
             $$\begin{align*}
@@ -381,7 +381,7 @@
             <span
               class="numbered-title"
             >Definition 
-              <NumberedTitle>1.3.3</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.3</NumberedTitle>
                
             </span>Ein Binärintervall ist eine Menge natürlicher Zahlen der Form
             $$
@@ -398,7 +398,7 @@
             ist das \(1100, 1101, 1110, 1111\). Wir können es also auch mit
             in 
             <i>Sternchennotation</i>
-             mit [11**] notieren.
+             mit [11<b></b>] notieren.
           </p>
           <div
             class="well well-lg numbered-exercise container"
@@ -406,7 +406,7 @@
             <span
               class="numbered-title"
             >Übungsaufgabe 
-              <NumberedTitle>1.3.2</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.2</NumberedTitle>
                
             </span>Seit \(n = 2^d-1\). Wie viele Binärintervalle gibt es in
             \(\{0,\dots,n-1\}\)?
@@ -417,7 +417,7 @@
             <span
               class="numbered-title"
             >Lemma 
-              <NumberedTitle>1.3.4</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.4</NumberedTitle>
                
             </span>Es gibt einen Schaltkreis mit Input-Gates \(x_0,\dots,x_{n-1}, y_0, \dots, y_{n-1}\) mit
             Größe \(6n - 4 \in O(n)\) und Tiefe \(2\, \ceil{\log_2 n} + 1 \ \in O(\log n)\) und
@@ -443,9 +443,9 @@
             Wir basteln uns also am Besten ein "\(pg\)-Gate" mit vier Inputs und zwei Outputs:
             <figure>
               <img
-                loading="lazy"
-                src="../img/circuits/pg-gate.svg"
                 style="height:10em"
+                src="../img/circuits/pg-gate.svg"
+                loading="lazy"
               >
             </figure>
             Mit Hilfe dieses Gates können wir
@@ -456,9 +456,9 @@
               $(p</i>I, g_I)$. Für \(n=16\) schaut das so aus:
             <figure>
               <img
-                loading="lazy"
-                src="../img/circuits/pg-all-gates.svg"
                 style="height:18em"
+                src="../img/circuits/pg-all-gates.svg"
+                loading="lazy"
               >
             </figure>
             <p>
@@ -509,7 +509,7 @@
             <span
               class="numbered-title"
             >Lemma 
-              <NumberedTitle>1.3.5</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.5</NumberedTitle>
                
             </span>Es gibt einen Schaltkreis der Größe \(2n\) und
             Tiefe \(2 \ceil{\log_2 n} - 2 = O(\log n)\), der die \(p_I, g_I\) für Binärintervalle
@@ -568,9 +568,9 @@
             </p>
             <figure>
               <img
-                loading="lazy"
-                src="../img/circuits/pg0k.svg"
                 style="height:5em"
+                src="../img/circuits/pg0k.svg"
+                loading="lazy"
               >
             </figure>
             <p>
@@ -605,9 +605,9 @@
             </p>
             <figure>
               <img
-                loading="lazy"
-                src="../img/circuits/pg-0-30.svg"
                 style="height:18em"
+                src="../img/circuits/pg-0-30.svg"
+                loading="lazy"
               >
             </figure>
             <p>
@@ -657,9 +657,9 @@
             </p>
             <figure>
               <img
-                loading="lazy"
-                src="../img/circuits/pg-prefices-16.svg"
                 style="height:20em"
+                src="../img/circuits/pg-prefices-16.svg"
+                loading="lazy"
               >
             </figure>
             <p>
@@ -675,9 +675,9 @@
             </p>
             <figure>
               <img
-                loading="lazy"
-                src="../img/circuits/pg-gadget-no-need-p.svg"
                 style="height:15em"
+                src="../img/circuits/pg-gadget-no-need-p.svg"
+                loading="lazy"
               >
             </figure>
             <p>
@@ -716,7 +716,7 @@
             <span
               class="numbered-title"
             >Übungsaufgabe 
-              <NumberedTitle>1.3.3</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.3</NumberedTitle>
                
             </span>Bauen Sie einen Schaltkreis für die Boolesche Funktion
             "less-than":

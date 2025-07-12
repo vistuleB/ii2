@@ -19,13 +19,13 @@
 <body>
 <section
   count="23"
-  path="/lecture-notes22"
   .="BookLevelSectionCounter 23"
-  counter="ExoCtr"
-  counter="DefCtr"
-  number="4.3"
-  title_en="nfsm"
   title_gr="Endliche Automaten"
+  title_en="nfsm"
+  number="4.3"
+  counter="DefCtr"
+  counter="ExoCtr"
+  path="/lecture-notes23"
 >
   <div
     id="link-to-toc"
@@ -37,8 +37,8 @@
     >&lt;&lt; Kapitel 4.2</a>
   </div>
   <div
-    style="text-align: end"
     id="link-to-overview"
+    style="text-align: end"
   >
     <a
       href="/"
@@ -63,7 +63,7 @@
           >
             <span
               class="subChapterTitle"
-            >4.3
+            >::::ChapterCtr.3
               Nichtdeterministische Endliche Automaten</span>
           </h1>
           <p>
@@ -75,9 +75,9 @@
           </p>
           <figure>
             <img
-              loading="lazy"
-              src="../img/finite-state-automata/nfsm-example-01.svg"
               style="height: 10em"
+              src="../img/finite-state-automata/nfsm-example-01.svg"
+              loading="lazy"
             >
           </figure>
           <p>
@@ -94,7 +94,7 @@
             <span
               class="numbered-title"
             >Definition 
-              <NumberedTitle>4.3.1</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.1</NumberedTitle>
                
             </span><b>(Nichtdeterministischer endlicher Automat, non-deterministic finite state machine)</b>
             Ein nichtdeterministischer endlicher Automat besteht aus
@@ -135,7 +135,7 @@
             <span
               class="numbered-title"
             >Definition 
-              <NumberedTitle>4.3.2</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.2</NumberedTitle>
                
             </span><b>(Erweiterte Zuständsübergangsfunktion)</b>.
             <p>
@@ -163,7 +163,7 @@
             <span
               class="numbered-title"
             >Beobachtung 
-              <NumberedTitle>4.3.3</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.3</NumberedTitle>
                
             </span>Sei \(M = (\Sigma, Q, \qstart, F, \delta)\) ein nichtdeterministischer
             endlicher Automat. Dann gibt es eine reguläre Grammatik \(G\) mit
@@ -184,13 +184,13 @@
             Grammatik gibt es einen nichtdeterministischen endlichen Automaten:
           </p>
           <div
-            class="well container theorem"
             id="theorem-nfsm-regular"
+            class="well container theorem"
           >
             <span
               class="numbered-title"
             >Theorem 
-              <NumberedTitle>4.3.4</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.4</NumberedTitle>
                
             </span>Sei \(G = (\Sigma, N, P, S)\) eine reguläre Grammatik. Dann gibt es
             einen nichtdeterministischen endlichen Automaten \(M\) mit \(L(G) =
@@ -227,7 +227,7 @@
             <span
               class="numbered-title"
             >Beispiel 
-              <NumberedTitle>4.3.5</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.5</NumberedTitle>
                
             </span>
             <p>
@@ -240,9 +240,9 @@
             </p>
             <figure>
               <img
-                loading="lazy"
-                src="../img/finite-state-automata/finite-state-machine-example-03.svg"
                 style="height: 10em"
+                src="../img/finite-state-automata/finite-state-machine-example-03.svg"
+                loading="lazy"
               >
             </figure>
             <p>
@@ -265,7 +265,7 @@
             <span
               class="numbered-title"
             >Beispiel 
-              <NumberedTitle>4.3.6</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.6</NumberedTitle>
                
             </span>
             <p>
@@ -283,7 +283,7 @@
               haben Sie wahrscheinlich in etwa folgende Grammatik erhalten:
             </p>
             $$\begin{align*} S&amp;\rightarrow \epsilon \ | \ bA \ | \ cA \ | \ aB \ |
-            \ cB\\ A&amp;\rightarrow \epsilon \ | \ bA \ | \ cA \\ B&amp;\rightarrow
+             cB\\ A&amp;\rightarrow \epsilon \ | \ bA \ | \ cA \\ B&amp;\rightarrow
             \epsilon \ | \ aB \ | \ cB \end{align*}$$ Also insgesamt 11 statt 8
             Produktionen. Alle Nichtterminale erlauben auf ihrer rechten Seite ein
             \(\epsilon\) und werden so zu akzeptierenden Zuständen. Die
@@ -293,20 +293,20 @@
             aus:
             <figure>
               <img
-                loading="lazy"
-                src="../img/finite-state-automata/nfsm-example-02.svg"
                 style="height: 10em"
+                src="../img/finite-state-automata/nfsm-example-02.svg"
+                loading="lazy"
               >
             </figure>
           </div>
           <div
-            class="well well-lg numbered-exercise container"
             id="exercise-divisibility"
+            class="well well-lg numbered-exercise container"
           >
             <span
               class="numbered-title"
             >Übungsaufgabe 
-              <NumberedTitle>4.3.1</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.1</NumberedTitle>
                
             </span>Sei \(\Sigma = \{1\}\) und \(L_k := \{1^n \ | \textnormal{ $n$ ist
             durch $k$ teilbar} \}\). Schreiben Sie für \(L_k\) einen
@@ -333,9 +333,9 @@
           </p>
           <figure>
             <img
-              loading="lazy"
-              src="../img/finite-state-automata/nfsm-example-01.svg"
               style="height: 10em"
+              src="../img/finite-state-automata/nfsm-example-01.svg"
+              loading="lazy"
             >
           </figure>
           <p>
@@ -351,9 +351,9 @@
             class="centered-figure well container"
           >
             <a
-              class="left carousel-control-prev-icon"
-              href="#nfsm-balls"
               data-slide="prev"
+              href="#nfsm-balls"
+              class="left carousel-control-prev-icon"
             >
               <div
                 class="carousel-nav-icon"
@@ -363,9 +363,9 @@
                 >
               </div>
             </a><a
-              class="right carousel-control-next-icon"
-              href="#nfsm-balls"
               data-slide="next"
+              href="#nfsm-balls"
+              class="right carousel-control-next-icon"
             >
               <div
                 class="carousel-nav-icon"
@@ -376,304 +376,304 @@
               </div>
             </a>
             <div
-              id="nfsm-balls"
-              class="carousel"
-              data-interval="false"
               style="display: inline-block"
+              data-interval="false"
+              class="carousel"
+              id="nfsm-balls"
             >
               <ol
                 class="carousel-indicators"
               >
                 <li
-                  data-target="#nfsm-balls"
-                  data-slide-to="1"
                   class="active"
+                  data-slide-to="1"
+                  data-target="#nfsm-balls"
                 >
                 </li>
                 <li
-                  data-target="#nfsm-balls"
                   data-slide-to="2"
+                  data-target="#nfsm-balls"
                 >
                 </li>
                 <li
-                  data-target="#nfsm-balls"
                   data-slide-to="3"
+                  data-target="#nfsm-balls"
                 >
                 </li>
                 <li
-                  data-target="#nfsm-balls"
                   data-slide-to="4"
+                  data-target="#nfsm-balls"
                 >
                 </li>
                 <li
-                  data-target="#nfsm-balls"
                   data-slide-to="5"
+                  data-target="#nfsm-balls"
                 >
                 </li>
                 <li
-                  data-target="#nfsm-balls"
                   data-slide-to="6"
+                  data-target="#nfsm-balls"
                 >
                 </li>
                 <li
-                  data-target="#nfsm-balls"
                   data-slide-to="7"
+                  data-target="#nfsm-balls"
                 >
                 </li>
                 <li
-                  data-target="#nfsm-balls"
                   data-slide-to="8"
+                  data-target="#nfsm-balls"
                 >
                 </li>
                 <li
-                  data-target="#nfsm-balls"
                   data-slide-to="9"
+                  data-target="#nfsm-balls"
                 >
                 </li>
                 <li
-                  data-target="#nfsm-balls"
                   data-slide-to="10"
+                  data-target="#nfsm-balls"
                 >
                 </li>
                 <li
-                  data-target="#nfsm-balls"
                   data-slide-to="11"
+                  data-target="#nfsm-balls"
                 >
                 </li>
                 <li
-                  data-target="#nfsm-balls"
                   data-slide-to="12"
+                  data-target="#nfsm-balls"
                 >
                 </li>
                 <li
-                  data-target="#nfsm-balls"
                   data-slide-to="13"
+                  data-target="#nfsm-balls"
                 >
                 </li>
                 <li
-                  data-target="#nfsm-balls"
                   data-slide-to="14"
+                  data-target="#nfsm-balls"
                 >
                 </li>
                 <li
-                  data-target="#nfsm-balls"
                   data-slide-to="15"
+                  data-target="#nfsm-balls"
                 >
                 </li>
                 <li
-                  data-target="#nfsm-balls"
                   data-slide-to="16"
+                  data-target="#nfsm-balls"
                 >
                 </li>
                 <li
-                  data-target="#nfsm-balls"
                   data-slide-to="17"
+                  data-target="#nfsm-balls"
                 >
                 </li>
                 <li
-                  data-target="#nfsm-balls"
                   data-slide-to="18"
+                  data-target="#nfsm-balls"
                 >
                 </li>
                 <li
-                  data-target="#nfsm-balls"
                   data-slide-to="19"
+                  data-target="#nfsm-balls"
                 >
                 </li>
                 <li
-                  data-target="#nfsm-balls"
                   data-slide-to="20"
+                  data-target="#nfsm-balls"
                 >
                 </li>
                 <li
-                  data-target="#nfsm-balls"
                   data-slide-to="21"
+                  data-target="#nfsm-balls"
                 >
                 </li>
                 <li
-                  data-target="#nfsm-balls"
                   data-slide-to="22"
+                  data-target="#nfsm-balls"
                 >
                 </li>
               </ol>
               <div
-                class="carousel-inner"
                 style="display: inline-block"
+                class="carousel-inner"
               >
                 <div
                   class="item active"
                 >
                   <img
+                    style="height: 12em"
                     src="../img/finite-state-automata/nfsm-colored-balls-01.svg"
-                    style="height: 12em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 12em"
                     src="../img/finite-state-automata/nfsm-colored-balls-02.svg"
-                    style="height: 12em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 12em"
                     src="../img/finite-state-automata/nfsm-colored-balls-03.svg"
-                    style="height: 12em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 12em"
                     src="../img/finite-state-automata/nfsm-colored-balls-04.svg"
-                    style="height: 12em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 12em"
                     src="../img/finite-state-automata/nfsm-colored-balls-05.svg"
-                    style="height: 12em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 12em"
                     src="../img/finite-state-automata/nfsm-colored-balls-06.svg"
-                    style="height: 12em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 12em"
                     src="../img/finite-state-automata/nfsm-colored-balls-07.svg"
-                    style="height: 12em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 12em"
                     src="../img/finite-state-automata/nfsm-colored-balls-08.svg"
-                    style="height: 12em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 12em"
                     src="../img/finite-state-automata/nfsm-colored-balls-09.svg"
-                    style="height: 12em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 12em"
                     src="../img/finite-state-automata/nfsm-colored-balls-10.svg"
-                    style="height: 12em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 12em"
                     src="../img/finite-state-automata/nfsm-colored-balls-11.svg"
-                    style="height: 12em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 12em"
                     src="../img/finite-state-automata/nfsm-colored-balls-12.svg"
-                    style="height: 12em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 12em"
                     src="../img/finite-state-automata/nfsm-colored-balls-13.svg"
-                    style="height: 12em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 12em"
                     src="../img/finite-state-automata/nfsm-colored-balls-14.svg"
-                    style="height: 12em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 12em"
                     src="../img/finite-state-automata/nfsm-colored-balls-15.svg"
-                    style="height: 12em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 12em"
                     src="../img/finite-state-automata/nfsm-colored-balls-16.svg"
-                    style="height: 12em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 12em"
                     src="../img/finite-state-automata/nfsm-colored-balls-17.svg"
-                    style="height: 12em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 12em"
                     src="../img/finite-state-automata/nfsm-colored-balls-18.svg"
-                    style="height: 12em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 12em"
                     src="../img/finite-state-automata/nfsm-colored-balls-19.svg"
-                    style="height: 12em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 12em"
                     src="../img/finite-state-automata/nfsm-colored-balls-20.svg"
-                    style="height: 12em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
+                    style="height: 12em"
                     src="../img/finite-state-automata/nfsm-colored-balls-21.svg"
-                    style="height: 12em"
                   >
                 </div>
                 <div
                   class="item"
                 >
                   <img
-                    src="../img/finite-state-automata/nfsm-colored-balls-22.svg"
                     style="height: 12em"
+                    src="../img/finite-state-automata/nfsm-colored-balls-22.svg"
                   >
                 </div>
               </div>
@@ -688,7 +688,7 @@
             für eine Menge \(R \subseteq Q\) von Zuständen (die, die gerade einen
             "Punkt" haben) und ein Eingabe-Symbol \(x\) definieren wir
             $$\begin{align*} \Delta(R, x) := \{q' \in Q \ | \ \textnormal{ es gibt }
-            \ q \in R \textnormal{ mit } q \step{x} q'\} \end{align*}$$ Für ein
+             q \in R \textnormal{ mit } q \step{x} q'\} \end{align*}$$ Für ein
             Eingabewort \(\alpha= x_1 \dots x_n\) fangen wir nun mit \(R_0 =
             \{\qstart\}\) an, das entspricht dem einen roten Punkt auf dem
             Startzustand, und berechnen dann jeweils \(R_i = \Delta(R_{i-1},
@@ -708,13 +708,13 @@
             haben also folgendes Theorem:
           </p>
           <div
-            class="well container theorem"
             id="nfsm-to-fsm"
+            class="well container theorem"
           >
             <span
               class="numbered-title"
             >Theorem 
-              <NumberedTitle>4.3.7</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.7</NumberedTitle>
                
             </span><b>(Einen nichtdeterministischen endlichen Automaten deterministisch
               machen).</b>
@@ -734,13 +734,13 @@
             Wir folgern also
           </p>
           <div
-            class="well container theorem"
             id="regular-grammar-to-fsm"
+            class="well container theorem"
           >
             <span
               class="numbered-title"
             >Theorem 
-              <NumberedTitle>4.3.8</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.8</NumberedTitle>
                
             </span>Zu jeder regulären Sprache \(L\) gibt es einen deterministischen
             endlichen Automaten \(M\) mit \(L(M) = L\).
@@ -751,7 +751,7 @@
             <span
               class="numbered-title"
             >Beispiel 
-              <NumberedTitle>4.3.9</NumberedTitle>
+              <NumberedTitle>::::ChapterCtr.::::SectionCtr.9</NumberedTitle>
                
             </span>Der obige nichtdeterminische Automaten \(M\), der die Sprache aller
             Wörter, deren viertletztes Zeichen eine 1 ist, akzeptiert, hat fünf
@@ -767,9 +767,9 @@
             eine 1 ist. Der nichtdeterministische Automat hierfür ist
             <figure>
               <img
-                loading="lazy"
-                src="../img/finite-state-automata/nfsm-example-04-third-from-right.svg"
                 style="height: 10em"
+                src="../img/finite-state-automata/nfsm-example-04-third-from-right.svg"
+                loading="lazy"
               >
             </figure>
             <p>
@@ -779,9 +779,9 @@
               class="centered-figure well"
             >
               <a
-                class="left carousel-control-prev-icon"
-                href="#potenzmengenautomat"
                 data-slide="prev"
+                href="#potenzmengenautomat"
+                class="left carousel-control-prev-icon"
               >
                 <div
                   class="carousel-nav-icon"
@@ -791,9 +791,9 @@
                   >
                 </div>
               </a><a
-                class="right carousel-control-next-icon"
-                href="#potenzmengenautomat"
                 data-slide="next"
+                href="#potenzmengenautomat"
+                class="right carousel-control-next-icon"
               >
                 <div
                   class="carousel-nav-icon"
@@ -804,239 +804,239 @@
                 </div>
               </a>
               <div
-                id="potenzmengenautomat"
-                class="carousel"
-                data-interval="false"
                 style="display:inline-block"
+                data-interval="false"
+                class="carousel"
+                id="potenzmengenautomat"
               >
                 <ol
                   class="carousel-indicators"
                 >
                   <li
-                    data-target="#potenzmengenautomat"
-                    data-slide-to="1"
                     class="active"
+                    data-slide-to="1"
+                    data-target="#potenzmengenautomat"
                   >
                   </li>
                   <li
-                    data-target="#potenzmengenautomat"
                     data-slide-to="2"
+                    data-target="#potenzmengenautomat"
                   >
                   </li>
                   <li
-                    data-target="#potenzmengenautomat"
                     data-slide-to="3"
+                    data-target="#potenzmengenautomat"
                   >
                   </li>
                   <li
-                    data-target="#potenzmengenautomat"
                     data-slide-to="4"
+                    data-target="#potenzmengenautomat"
                   >
                   </li>
                   <li
-                    data-target="#potenzmengenautomat"
                     data-slide-to="5"
+                    data-target="#potenzmengenautomat"
                   >
                   </li>
                   <li
-                    data-target="#potenzmengenautomat"
                     data-slide-to="6"
+                    data-target="#potenzmengenautomat"
                   >
                   </li>
                   <li
-                    data-target="#potenzmengenautomat"
                     data-slide-to="7"
+                    data-target="#potenzmengenautomat"
                   >
                   </li>
                   <li
-                    data-target="#potenzmengenautomat"
                     data-slide-to="8"
+                    data-target="#potenzmengenautomat"
                   >
                   </li>
                   <li
-                    data-target="#potenzmengenautomat"
                     data-slide-to="9"
+                    data-target="#potenzmengenautomat"
                   >
                   </li>
                   <li
-                    data-target="#potenzmengenautomat"
                     data-slide-to="10"
+                    data-target="#potenzmengenautomat"
                   >
                   </li>
                   <li
-                    data-target="#potenzmengenautomat"
                     data-slide-to="11"
+                    data-target="#potenzmengenautomat"
                   >
                   </li>
                   <li
-                    data-target="#potenzmengenautomat"
                     data-slide-to="12"
+                    data-target="#potenzmengenautomat"
                   >
                   </li>
                   <li
-                    data-target="#potenzmengenautomat"
                     data-slide-to="13"
+                    data-target="#potenzmengenautomat"
                   >
                   </li>
                   <li
-                    data-target="#potenzmengenautomat"
                     data-slide-to="14"
+                    data-target="#potenzmengenautomat"
                   >
                   </li>
                   <li
-                    data-target="#potenzmengenautomat"
                     data-slide-to="15"
+                    data-target="#potenzmengenautomat"
                   >
                   </li>
                   <li
-                    data-target="#potenzmengenautomat"
                     data-slide-to="16"
+                    data-target="#potenzmengenautomat"
                   >
                   </li>
                   <li
-                    data-target="#potenzmengenautomat"
                     data-slide-to="17"
+                    data-target="#potenzmengenautomat"
                   >
                   </li>
                 </ol>
                 <div
-                  class="carousel-inner"
                   style="display:inline-block"
+                  class="carousel-inner"
                 >
                   <div
                     class="item active"
                   >
                     <img
+                      style="height:18em"
                       src="../img/finite-state-automata/potenzmengenautomat/01.svg"
-                      style="height:18em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
+                      style="height:18em"
                       src="../img/finite-state-automata/potenzmengenautomat/02.svg"
-                      style="height:18em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
+                      style="height:18em"
                       src="../img/finite-state-automata/potenzmengenautomat/03.svg"
-                      style="height:18em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
+                      style="height:18em"
                       src="../img/finite-state-automata/potenzmengenautomat/04.svg"
-                      style="height:18em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
+                      style="height:18em"
                       src="../img/finite-state-automata/potenzmengenautomat/05.svg"
-                      style="height:18em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
+                      style="height:18em"
                       src="../img/finite-state-automata/potenzmengenautomat/06.svg"
-                      style="height:18em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
+                      style="height:18em"
                       src="../img/finite-state-automata/potenzmengenautomat/07.svg"
-                      style="height:18em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
+                      style="height:18em"
                       src="../img/finite-state-automata/potenzmengenautomat/08.svg"
-                      style="height:18em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
+                      style="height:18em"
                       src="../img/finite-state-automata/potenzmengenautomat/09.svg"
-                      style="height:18em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
+                      style="height:18em"
                       src="../img/finite-state-automata/potenzmengenautomat/10.svg"
-                      style="height:18em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
+                      style="height:18em"
                       src="../img/finite-state-automata/potenzmengenautomat/11.svg"
-                      style="height:18em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
+                      style="height:18em"
                       src="../img/finite-state-automata/potenzmengenautomat/12.svg"
-                      style="height:18em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
+                      style="height:18em"
                       src="../img/finite-state-automata/potenzmengenautomat/13.svg"
-                      style="height:18em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
+                      style="height:18em"
                       src="../img/finite-state-automata/potenzmengenautomat/14.svg"
-                      style="height:18em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
+                      style="height:18em"
                       src="../img/finite-state-automata/potenzmengenautomat/15.svg"
-                      style="height:18em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
+                      style="height:18em"
                       src="../img/finite-state-automata/potenzmengenautomat/16.svg"
-                      style="height:18em"
                     >
                   </div>
                   <div
                     class="item"
                   >
                     <img
-                      src="../img/finite-state-automata/potenzmengenautomat/17.svg"
                       style="height:18em"
+                      src="../img/finite-state-automata/potenzmengenautomat/17.svg"
                     >
                   </div>
                 </div>
