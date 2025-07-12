@@ -1,46 +1,40 @@
 import gleam/list
-import infrastructure.{type Pipe}
+import infrastructure.{type Desugarer} as infra
 import prefabricated_pipelines as pp
-import desugarer_names as dn
+import desugarer_library as dl
 
-pub fn our_pipeline() -> List(Pipe) {
+pub fn our_pipeline() -> List(Desugarer) {
   [
     [
-      dn.find_replace(#([#("&ensp;", " ")], []))
+      dl.find_replace(#([#("&ensp;", " ")], []))
     ],
-    pp.normalize_begin_end_align(pp.DoubleDollar),
+    pp.normalize_begin_end_align(infra.DoubleDollar),
     pp.create_mathblock_and_math_elements(
-      #([ pp.DoubleDollar ], pp.DoubleDollar),
-      #([ pp.BackslashParenthesis ], pp.BackslashParenthesis)
+      #([infra.DoubleDollar], infra.DoubleDollar),
+      #([infra.BackslashParenthesis], infra.BackslashParenthesis)
     ),
     [
-      dn.add_attributes([
-        #("Book", "counter", "BookLevelSectionCounter"),
-      ]),
-      dn.associate_counter_by_prepending_incrementing_attribute([
-        #("section", "BookLevelSectionCounter"),
-      ]),
-      dn.add_attributes([#("section", "path", "/lecture-notes::øøBookLevelSectionCounter")]),
-      dn.unwrap(["WriterlyBlankLine"]),
-      dn.concatenate_text_nodes(),
+      dl.add_attributes([#("Book", "counter", "BookLevelSectionCounter")]),
+      dl.associate_counter_by_prepending_incrementing_attribute([#("section", "BookLevelSectionCounter")]),
+      dl.add_attributes([#("section", "path", "/lecture-notes::øøBookLevelSectionCounter")]),
+      dl.unwrap(["WriterlyBlankLine"]),
+      dl.concatenate_text_nodes(),
     ],
     pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math", "code"]),
     pp.symmetric_delim_splitting("_", "_", "i", ["MathBlock", "Math", "code"]),
-    [dn.identity()],
     pp.symmetric_delim_splitting("\\*", "*", "b", ["MathBlock", "Math", "code"]),
     [
-      dn.counters_substitute_and_assign_handles(),
-      dn.handles_generate_ids(),
-      // dn.define_article_output_path(#("section", "/lecture-notes", "path")),
-      dn.handles_generate_dictionary([#("section", "path")]),
-      dn.handles_substitute([]),
-      dn.concatenate_text_nodes(),
-      dn.unwrap_vertical_chunks_with_no_text_child(),
-      dn.unwrap_when_child_of([#("p", ["span", "code", "tt", "figcaption", "em"])]),
-      dn.free_children([#("pre", "p"), #("ul", "p"), #("ol", "p"), #("p", "p"), #("figure", "p")]),
-      dn.generate_ti2_table_of_contents_html(#("TOCAuthorSuppliedContent", "li")),
-      // dn.break_lines_into_span_tooltips("emu_content/"),
-      dn.fold_tag_contents_into_text(["MathBlock", "Math", "MathDollar"]),
+      dl.identity(),
+      dl.counters_substitute_and_assign_handles(),
+      dl.handles_generate_ids(),
+      dl.handles_generate_dictionary([#("section", "path")]),
+      dl.handles_substitute([]),
+      dl.concatenate_text_nodes(),
+      dl.unwrap_tags_when_no_child_meets_condition(#(["p"], infra.is_text_or_is_one_of(_, ["b", "i", "a", "span"]))),
+      dl.unwrap_when_child_of([#("p", ["span", "code", "tt", "figcaption", "em"])]),
+      dl.free_children([#("pre", "p"), #("ul", "p"), #("ol", "p"), #("p", "p"), #("figure", "p")]),
+      dl.generate_ti2_table_of_contents_html(#("TOCAuthorSuppliedContent", "li")),
+      dl.fold_tag_contents_into_text(["MathBlock", "Math", "MathDollar"]),
     ]
   ]
   |> list.flatten

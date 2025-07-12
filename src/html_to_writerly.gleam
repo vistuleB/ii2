@@ -6,7 +6,7 @@ import gleam/option.{type Option}
 import gleam/pair
 import gleam/result
 import gleam/string
-import html_pipeline.{html_pipeline}
+import html_pipeline
 import infrastructure as infra
 import simplifile
 import vxml.{type VXML} as vp
@@ -183,8 +183,8 @@ fn construct_right_nav(next_file: Option(String)) {
 }
 
 fn splitter(vxml: VXML, file: String) -> Result(List(#(String, VXML, Nil)), a) {
-  let emu_file = file |> string.drop_end(5) <> ".emu"
-  Ok([#(emu_file, vxml, Nil)])
+  let wly_file = file |> string.drop_end(5) <> ".wly"
+  Ok([#(wly_file, vxml, Nil)])
 }
 
 fn remove_line_break_from_end(res: String) -> String {
@@ -217,8 +217,8 @@ fn get_title_internal(vxml: VXML) -> String {
     vp.T(_, _) -> ""
     vp.V(_, _, _, children) -> {
       case
-        infra.children_with_attr(vxml, "class", "subChapterTitle"),
-        infra.children_with_attr(vxml, "class", "chapterTitle")
+        infra.children_with_class(vxml, "subChapterTitle"),
+        infra.children_with_class(vxml, "chapterTitle")
       {
         [found, ..], _ -> title_from_vxml(found)
         _, [found, ..] -> title_from_vxml(found)
@@ -272,7 +272,7 @@ fn emitter(
     |> list.map(result.unwrap(_, -1))
   let assert True = chapter_number >= 1
   let assert True = section_number >= 0
-  let chapter_directory = "emu_content/" <> chapter_number_as_string
+  let chapter_directory = "wly_content/" <> chapter_number_as_string
 
   case section_number == 0 {
     False -> Nil
@@ -280,11 +280,13 @@ fn emitter(
       let _ = simplifile.create_directory(chapter_directory)
       let assert Ok(_) =
         simplifile.write(
-          chapter_directory <> "/" <> "__parent.emu",
-          "|> Chapter\n    counter SectionCtr\n    title_gr "
-            <> title_german
-            <> "\n    title_en "
-            <> title_en,
+          chapter_directory <> "/" <> "__parent.wly",
+          "|> Chapter
+    counter=SectionCtr
+    title_gr="
+          <> title_german
+          <> "\n    title_en="
+          <> title_en,
         )
       Nil
     }
@@ -375,11 +377,8 @@ pub fn html_to_writerly(
 
     let renderer =
       vr.Renderer(
-        assembler: wp.assemble_blamed_lines,
-        source_parser: vr.default_html_source_parser(
-          _,
-          amendments.spotlight_args,
-        ),
+        assembler: bl.path_to_blamed_lines_easy_mode,
+        source_parser: vr.default_html_source_parser(_, amendments.spotlight_args),
         pipeline: html_pipeline.html_pipeline(),
         splitter: fn(vxml) { splitter(vxml, file) },
         emitter: fn(pair) { emitter(pair, prev, next) },
