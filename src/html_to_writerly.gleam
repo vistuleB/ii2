@@ -380,7 +380,7 @@ pub fn html_to_writerly(
     let renderer =
       vr.Renderer(
         assembler: bl.path_to_blamed_lines_easy_mode,
-        source_parser: vr.default_writerly_source_parser(
+        source_parser: vr.default_html_source_parser(
           amendments.spotlight_key_values,
         ),
         pipeline: html_pipeline.html_pipeline(),
