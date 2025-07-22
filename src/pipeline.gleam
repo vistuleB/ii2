@@ -1,22 +1,25 @@
+import desugarer_library as dl
 import gleam/list
 import infrastructure.{type Desugarer} as infra
 import prefabricated_pipelines as pp
-import desugarer_library as dl
-
 pub fn our_pipeline() -> List(Desugarer) {
   [
     [
-      dl.find_replace(#([#("&ensp;", " ")], []))
+      dl.find_replace(#([#("&ensp;", " ")], [])),
+      dl.normalize_begin_end_align(#(infra.DoubleDollar, [infra.DoubleDollar])),
     ],
-    pp.normalize_begin_end_align(infra.DoubleDollar),
-    pp.create_mathblock_and_math_elements(
-      #([infra.DoubleDollar], infra.DoubleDollar),
-      #([infra.BackslashParenthesis], infra.BackslashParenthesis)
+    pp.create_math_elements(
+      [infra.DoubleDollar, infra.DoubleDollar, infra.BackslashParenthesis],
+      infra.DoubleDollar,
     ),
     [
       dl.add_attributes([#("Book", "counter", "BookLevelSectionCounter")]),
-      dl.associate_counter_by_prepending_incrementing_attribute([#("section", "BookLevelSectionCounter")]),
-      dl.add_attributes([#("section", "path", "/lecture-notes::øøBookLevelSectionCounter")]),
+      dl.associate_counter_by_prepending_incrementing_attribute([
+        #("section", "BookLevelSectionCounter"),
+      ]),
+      dl.add_attributes([
+        #("section", "path", "/lecture-notes::øøBookLevelSectionCounter"),
+      ]),
       dl.unwrap(["WriterlyBlankLine"]),
       dl.concatenate_text_nodes(),
     ],
@@ -28,14 +31,24 @@ pub fn our_pipeline() -> List(Desugarer) {
       dl.handles_generate_ids(),
       dl.handles_generate_dictionary([#("section", "path")]),
       dl.identity(),
-      dl.handles_substitute([]),
+      dl.handles_substitute(#([], "", #("", []), #("", []))),
       dl.concatenate_text_nodes(),
-      dl.unwrap_tags_when_no_child_meets_condition(#(["p"], infra.is_text_or_is_one_of(_, ["b", "i", "a", "span"]))),
-      dl.unwrap_when_child_of([#("p", ["span", "code", "tt", "figcaption", "em"])]),
-      dl.free_children([#("pre", "p"), #("ul", "p"), #("ol", "p"), #("p", "p"), #("figure", "p")]),
+      dl.unwrap_if_no_child_satisfies(
+        #(["p"], infra.is_text_or_is_one_of(_, ["b", "i", "a", "span"])),
+      ),
+      dl.unwrap_when_child_of([
+        #("p", ["span", "code", "tt", "figcaption", "em"]),
+      ]),
+      dl.free_children([
+        #("pre", "p"),
+        #("ul", "p"),
+        #("ol", "p"),
+        #("p", "p"),
+        #("figure", "p"),
+      ]),
       dl.generate_ti2_table_of_contents_html(#("TOCAuthorSuppliedContent", "li")),
       dl.fold_tag_contents_into_text(["MathBlock", "Math", "MathDollar"]),
-    ]
+    ],
   ]
   |> list.flatten
 }
