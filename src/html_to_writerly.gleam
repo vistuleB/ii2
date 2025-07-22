@@ -182,9 +182,12 @@ fn construct_right_nav(next_file: Option(String)) {
   )
 }
 
-fn splitter(vxml: VXML, file: String) -> Result(List(#(String, VXML, Nil)), a) {
+fn splitter(
+  vxml: VXML,
+  file: String,
+) -> Result(List(vr.OutputFragment(Nil, VXML)), a) {
   let wly_file = file |> string.drop_end(5) <> ".wly"
-  Ok([#(wly_file, vxml, Nil)])
+  Ok([vr.OutputFragment(wly_file, vxml, Nil)])
 }
 
 fn remove_line_break_from_end(res: String) -> String {
@@ -242,11 +245,12 @@ fn get_title(vxmls: List(VXML)) -> String {
 }
 
 fn emitter(
-  triple: #(String, VXML, Nil),
+  fragment: vr.OutputFragment(Nil, VXML),
   prev_file: Option(String),
   next_file: Option(String),
-) -> Result(#(String, List(bl.BlamedLine), Nil), String) {
-  let #(filename, vxml, Nil) = triple
+) -> Result(vr.OutputFragment(Nil, List(bl.BlamedLine)), String) {
+  let filename = fragment.path
+  let vxml = fragment.payload
   let title_en =
     filename
     |> string.drop_end(4)
@@ -279,15 +283,9 @@ fn emitter(
     True -> {
       let _ = simplifile.create_directory(chapter_directory)
       let assert Ok(_) =
-        simplifile.write(
-          chapter_directory <> "/" <> "__parent.wly",
-          "|> Chapter
+        simplifile.write(chapter_directory <> "/" <> "__parent.wly", "|> Chapter
     counter=SectionCtr
-    title_gr="
-          <> title_german
-          <> "\n    title_en="
-          <> title_en,
-        )
+    title_gr=" <> title_german <> "\n    title_en=" <> title_en)
       Nil
     }
   }
@@ -308,7 +306,7 @@ fn emitter(
     )
   let writerlys = wp.vxmls_to_writerlys([root])
 
-  Ok(#(
+  Ok(vr.OutputFragment(
     chapter_directory <> "/" <> filename,
     wp.writerlys_to_blamed_lines(writerlys),
     Nil,
@@ -361,16 +359,20 @@ pub fn html_to_writerly(
   each_prev_next(files, option.None, fn(file, prev, next) {
     let path = dir <> "/" <> file
     use <- infra.on_false_on_true(
-      amendments.spotlight_args_files
+      amendments.spotlight_paths
       |> list.any(fn(f) { string.contains(path, f) || string.is_empty(f) })
-        || list.is_empty(amendments.spotlight_args_files),
+        || list.is_empty(amendments.spotlight_paths),
       Nil,
     )
 
     io.println("html_to_writerly converting " <> path <> " to writerly (?)")
 
     let parameters =
-      vr.RendererParameters(input_dir: path, output_dir: option.Some("."))
+      vr.RendererParameters(
+        input_dir: path,
+        output_dir: ".",
+        prettifier_on_by_default: False,
+      )
       |> vr.amend_renderer_paramaters_by_command_line_amendment(amendments)
 
     io.println("after amend_renderer...")
@@ -378,17 +380,19 @@ pub fn html_to_writerly(
     let renderer =
       vr.Renderer(
         assembler: bl.path_to_blamed_lines_easy_mode,
-        source_parser: vr.default_html_source_parser(_, amendments.spotlight_args),
+        source_parser: vr.default_writerly_source_parser(
+          amendments.spotlight_key_values,
+        ),
         pipeline: html_pipeline.html_pipeline(),
         splitter: fn(vxml) { splitter(vxml, file) },
-        emitter: fn(pair) { emitter(pair, prev, next) },
-        prettifier: vr.empty_prettifier,
+        emitter: fn(fragment) { emitter(fragment, prev, next) },
+        prettifier: vr.default_prettier_prettifier,
       )
 
     io.println("after renderer = ...")
 
     let debug_options =
-      vr.empty_renderer_debug_options("../renderer_artifacts")
+      vr.default_renderer_debug_options()
       |> vr.amend_renderer_debug_options_by_command_line_amendment(
         amendments,
         html_pipeline.html_pipeline(),
