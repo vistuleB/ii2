@@ -2,16 +2,16 @@ import desugarer_library as dl
 import gleam/list
 import infrastructure.{type Desugarer} as infra
 import prefabricated_pipelines as pp
+
 pub fn our_pipeline() -> List(Desugarer) {
   [
     [
       dl.find_replace(#([#("&ensp;", " ")], [])),
       dl.normalize_begin_end_align(#(infra.DoubleDollar, [infra.DoubleDollar])),
     ],
-    pp.create_math_elements(
-      [infra.DoubleDollar, infra.DoubleDollar, infra.BackslashParenthesis],
-      infra.DoubleDollar,
-    ),
+    pp.create_math_elements([infra.BackslashParenthesis], infra.SingleDollar),
+    pp.create_math_elements([infra.BackslashSquareBracket], infra.SingleDollar),
+    pp.create_mathblock_elements([infra.DoubleDollar], infra.DoubleDollar),
     [
       dl.add_attributes([#("Book", "counter", "BookLevelSectionCounter")]),
       dl.associate_counter_by_prepending_incrementing_attribute([
