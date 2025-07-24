@@ -26,7 +26,7 @@ pub fn html_pipeline() -> List(Desugarer) {
     )),
     dl.unwrap_tags_if_no_attributes(["i", "b", "strong", "em", "code"]),
     // 10
-    dl.fold_tags_into_text([#("go23_xU", "")]),
+    dl.fold_tags_into_text_depr([#("go23_xU", "")]),
     dl.remove_empty_lines(),
     dl.insert_ti2_counter_commands(#(
       "::++ChapterCtr.",
@@ -57,6 +57,6 @@ pub fn html_pipeline() -> List(Desugarer) {
       Some("NumberedTitle"),
     )),
     dl.surround_elements_by(#(["NumberedTitle"], "go23_xU", "go23_xU")),
-    dl.fold_tags_into_text([#("go23_xU", " ")]),
+    dl.fold_tags_into_text_depr([#("go23_xU", " ")]),
   ]
 }

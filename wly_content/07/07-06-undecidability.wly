@@ -147,10 +147,13 @@
                         entweder
                         |> ol
                             |> li
+
                                 \(f_H(z) = \texttt{accept}\) aber \(z \not \in \halt\), oder 
                             |> li
+
                                 \(f_H(z) = \texttt{reject}\) aber \(z \in \halt\) , oder 
                             |> li
+
                                 \(f_H(z) = \texttt{undefined}\), d.h. $H$ terminiert auf Eingabewort $z$ nicht.
                         Wir setzen nun $y := \enc(D)$ und $z := yy$, wobei \(D\) eine neue
                         Turingmaschine ist, die wir auf Basis von \(H\)
@@ -161,10 +164,13 @@
                         entweder
                         |> ol
                             |> li
+
                                 \(f_H(yy) = \texttt{accept}\) aber \(yy \not \in \halt\), oder
                             |> li
+
                                 \(f_H(yy) = \texttt{reject}\) aber \(yy \in \halt\), oder 
                             |> li
+
                                 \(f_H(yy) = \texttt{undefined}\).
                         Wenn uns dies gelingt, so haben wir gezeigt, dass \(H\) nicht
                         die Sprache \(\halt\) entscheidet: im Fall 3 terminiert
@@ -186,6 +192,7 @@
                             \ Zur Erinnerung: $y := \enc(D)$. Wir unterscheiden drei Fälle.
                             |> ul
                                 |> li
+
                                     \(H(yy) = \texttt{reject}\). Dann geht der Aufruf von
                                     \(D(y)\) also in den 
                                     |> tt
@@ -198,6 +205,7 @@
                                     Die Maschine \(H\) hat eine falsche Antwort
                                     für \(\halt\) geliefert.
                                 |> li
+
                                     \(H(yy) = \texttt{accept}\). Dann geht
                                     der Aufruf von \(D(y)\) in Zeile 3,
                                     und \(D(y) = \texttt{reject}\), somit \(yy = \enc(D) y \not \in \halt\).

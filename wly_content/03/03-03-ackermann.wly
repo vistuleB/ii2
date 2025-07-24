@@ -398,6 +398,7 @@
                         die Funktion $\pair(x,y) = {x + y + 1 \choose 2} + x$ und dröseln auf, wie wir diese
                         als primitiv-rekursive Funktion konstruiert haben:
                     |> pre
+
                         pair = Comp(add, p0, Comp(choose2,Comp(add,p0,Comp(succ,p1))))
                         choose2 = PrimRec(zero, Comp(add,p0,p1))
                         add = PrimRec (p0, Comp(succ, p0))
