@@ -6,7 +6,7 @@ import prefabricated_pipelines as pp
 pub fn our_pipeline() -> List(Desugarer) {
   [
     [
-      dl.find_replace_depr(#([#("&ensp;", " ")], [])),
+      dl.find_replace_outside(#("&ensp;", " ", [])),
       dl.normalize_begin_end_align(#(infra.DoubleDollar, [infra.DoubleDollar])),
     ],
     pp.create_math_elements([infra.BackslashParenthesis], infra.SingleDollar),
