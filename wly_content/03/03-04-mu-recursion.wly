@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=03-03-ackermann.html
-
             &lt;&lt; Kapitel 3.3
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=04-00-formal-languages.html
-
             Kapitel 4.0 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,16 +33,13 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Ein Schritt weiter:  while-Schleifen und \(\mu\)-Rekursion
                     Primitive Rekursion erlaubt uns Schleifen, allerdings nur in einer sehr restriktiven Form:
                     |> ol
                         |> li
-
                             Wir müssen anfangs bereits angeben, wie oft wir die Schleife durchlaufen wollen;
                         |> li
-
                             wir dürfen nur eine lokale Variable mitführen (und den Iterationsindex).
                     Der zweite Punkt ist keine echte Beschränkung, wie wir gesehen haben: wenn wir zwei lokale
                     Variablen \(a,b\) führen wollen, können wir die via der Bijektion
@@ -55,10 +48,8 @@
                     immer, wie oft wir eine Tätigkeit wiederholen müssen, bis wir fertig sind,
                     und ob wir überhaupt jemals fertig werden. Sie kennen vielleicht die Collatz-Vermutung.
                     |> h2
-
                         Die Collatz-Vermutung
                     |> p
-
                         Wir definieren eine Funktion $f: \N_+ \rightarrow \N_+$ wie folgt:
                     \begin{align*}
                     f : \N_+&amp;\rightarrow \N_+ \\
@@ -69,7 +60,6 @@
                     \end{cases}
                     \end{align*}
                     |> p
-
                         Für eine natürliche Zahl $n$ können wir dann die Collatz-Folge definieren:
                         $n, f(n), f(f(n)), ...$. Man sieht leicht, dass diese Folge in einer Schleife
                         landen kann:
@@ -78,16 +68,13 @@
                     \mapsto 4 \mapsto 2 \mapsto 1 \dots
                     \end{align*}
                     |> p
-
                         Wir beenden die Sequenz daher üblicherweise, wenn wir bei 1 (und somit in dieser Dreierschleife)
                         gelandet sind.
                         Es kann allerdings etwas länger dauern: 
                     |> figure
-
                         7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1.
                     Oder noch länger. Wenn wir mit 27 beginnen, dann erhalten wir die Folge
                     |> figure
-
                         27, 82, 41, 124, 62, 31, 94, 47, 142, 71, 214, 107, 322, 161, 484, 242, 121, 364, 182, 91, 274,
                         137, 412, 206, 103, 310, 155, 466, 233, 700, 350, 175, 526, 263, 790, 395, 1186, 593, 1780, 890,
                         445, 1336, 668, 334, 167, 502, 251, 754, 377, 1132, 566, 283, 850, 425, 1276, 638, 319, 958,
@@ -95,13 +82,11 @@
                         2051, 6154, 3077, 9232, 4616, 2308, 1154, 577, 1732, 866, 433, 1300, 650, 325, 976, 488, 244,
                         122, 61, 184, 92, 46, 23, 70, 35, 106, 53, 160, 80, 40, 20, 10, 5, 16, 8, 4, 2, 1
                     |> p
-
                         Experimentieren Sie! Ich habe dafür die Html-Seite 
                         |> a
                             href=../code/primitive-recursion/collatz.html
-
                             collatz.html
-                        &ensp;erstellt.
+                        \ erstellt.
                         Es scheint: egal, wo Sie anfangen, Sie enden immer bei 1. Allerdings wissen wir nicht
                         im Voraus, _wie oft_ wir die Funktion $f$ anwenden müssen. Und wir wissen nicht einmal,
                         ob man immer bei 1 ankommt, ob es andere Zyklen gibt oder ob es Startwerte gibt, für die die
@@ -109,49 +94,42 @@
                         die Collatz-Vermutung zahlreichen Lösungsversuchung widersetzt und demonstriert eindrucksvoll,
                         dass auch mathematische Probleme mit sehr einfacher Formulierung extrem schwierig sein können.
                     |> h3
-
                         While-Schleifen
                     |> p
-
                         Eine Einschränkung primitiv-rekursiver Funktionen ist also, dass wir immer vor der Schleife
                         angeben müssen, wie oft diese durchlaufen werden soll. Es gibt also keine
                         `while`-Schleifen. Führen wir diese nun ein.
                     |> pre
                         class=listing
-
                         `def While (condition, step):`
 
-                        &ensp;`def f(x):`
+                        \ `def f(x):`
 
-                        &ensp;&ensp;`temp = x`
+                        \  `temp = x`
 
-                        &ensp;&ensp;`while (condition(temp)):`
+                        \  `while (condition(temp)):`
 
-                        &ensp;&ensp;&ensp;`temp = step(temp)`
+                        \   `temp = step(temp)`
 
-                        &ensp;&ensp;`return temp` 
+                        \  `return temp` 
 
-                        &ensp;`return f` 
+                        \ `return f` 
                     |> div
                         class=well well-lg numbered-exercise container
                         |> p
                             |> span
                                 class=numbered-title
-
                                 Übungsaufgabe 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                &ensp;
+                                \ 
                             Schreiben Sie mit Hilfe von `While`, `PrimRec` und `Comp`
                             eine Funktion `collatzList`, die aus einer Zahl
                             die Collatz-Folge baut, also
                         |> pre
                             |> code
                                 class=pythonPrompt
-
                                 collatzList(7)
                             |> code
                                 class=terminalOutput
-
                                 []

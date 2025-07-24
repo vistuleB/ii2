@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=04-03-nfsm.html
-
             &lt;&lt; Kapitel 4.3
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=04-05-regular-expressions.html
-
             Kapitel 4.5 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,11 +33,9 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Von einer regulären Grammatik zu einem endlichen Automaten
                     |> p
-
                         In diesem Unterkapitel wollen wir das Gelernte an einem konkreten Beispiel anwenden.
                         Wir beginnen (1) mit einer Beschreibung eines Formats in natürlicher Sprache; (2) basteln uns
                         daraus
@@ -50,10 +44,8 @@
                         nichtdeterministischen
                         endlichen Automaten; (5) transformieren diesen in einen deterministischen endlichen Automaten.
                     |> h2
-
                         1. Beschreibung des Formats in natürlicher Sprache
                     |> p
-
                         Unsere Sprache \(L\) soll so ähnlich sein wie die der erlaubten Domainnamen, allerdings mit ein
                         paar Abänderungen,
                         um die obigen Transformationen spannender zu machen. Ein Wort in unserer Sprache besteht aus
@@ -65,12 +57,10 @@
                         Also:
                     |> div
                         style=text-align:center
-
                         `bla:bla:blue.xyz-12-zx.b:x:yyy:xxx:aaa`
                     ist ein Wort in \(L\), aber
                     |> div
                         style=text-align:center
-
                         `a:b-c.hello`
                     ist kein Wort in \(L\), da das erste Label die Separatoren `:` und `-` mischt.
                     Habe ich
@@ -82,10 +72,8 @@
                     also im Prinzip
                     eine _Grammatik_ schreiben. Tun wir dies also.
                     |> h2
-
                         2. Eine reguläre Grammatik
                     |> p
-
                         Beginnen wir mit dem Alphabet.
                         Da es 62 alphanumerische Zeichen gibt: `a..zA..Z0..9` und wir uns keine unnötige
                         Arbeit machen wollen,
@@ -99,7 +87,6 @@
                     B&amp;\rightarrow a \ | \ aB
                     \end{align*}
                     |> p
-
                         Als nächstes führen wir ein nichtterminales Symbole \(C\) für Labels mit `:` ein
                         und ein Nichtterminal \(D\) für Labels mit `-`. Wir wählen die Buchstaben \(C,D\),
                         weil
@@ -108,9 +95,8 @@
                         wir 
                         |> a
                             href=./04-01-regular-grammars.html#operation-L(.L)*
-
                             Theorem 4.1.14
-                        &ensp;anwenden.
+                        \ anwenden.
                         Wir fügen zur "End-Produktion" \(B \rightarrow a\) eine weiter Produktion \(B \rightarrow a:B\)
                         hinzu und
                         tun das gleiche für \(B \rightarrow b\). Allerdings benennen wir \(B\) in \(C\) um, damit keine
@@ -122,14 +108,12 @@
                     T&amp;\rightarrow C \ | D
                     \end{align*}
                     |> p
-
                         Von \(L\) lassen sich nun also alle Labels ableiten. Wir brauchen nun zum Schluss wieder
                         eine Folge von \(L\), mit `.` separiert, müssen also wieder
                         |> a
                             href=./04-01-regular-grammars.html#operation-L(.L)*
-
                             Theorem 4.1.14
-                        &ensp;anwenden, dieses
+                        \ anwenden, dieses
                         mal auf die von \(T\) erzeugte Sprache. Im Ergebnis benennen wir das Startsymbol in \(S\) um.
                     \begin{align*}
                     S&amp;\rightarrow C \ | \ D \\
@@ -137,7 +121,6 @@
                     D&amp;\rightarrow a \ | \ aD \ | \ a\text{-}D \ | \ a{.}S \\
                     \end{align*}
                     |> p
-
                         Um eine "richtig" reguläre Sprache zu erhalten, entzerren wir die erweitert regulären
                         Produktionen
                         wie \(C \rightarrow a{:}C\). Dafür brauchen wir neue Symbole \(C', D', S'\):
@@ -150,10 +133,8 @@
                     S'&amp;\rightarrow {.}S
                     \end{align*}
                     |> h2
-
                         3. Die reguläre Grammatik säubern
                     |> p
-
                         Wir wollen nun alle Produktionen der Form \(Y \rightarrow x\) eliminieren. Hierfür nehmen wir
                         uns
                         _ein_ neues Nichtterminal \(E\) und ersetzen \(Y \rightarrow x\) durch \(Y \rightarrow
@@ -169,7 +150,6 @@
                     E&amp;\rightarrow \epsilon
                     \end{align*}
                     |> p
-
                         In einem zweiten Schritt wollen wir die Produktionen \(S \rightarrow C\) und \(S \rightarrow D\)
                         eliminieren,
                         sodass wir nur noch Produktionen der From \(X \rightarrow aY\) und \(E \rightarrow \epsilon\)
@@ -177,10 +157,9 @@
                         Wir gehen vor wie in 
                         |> a
                             href=./04-01-regular-grammars.html#theorem-regular-simplified
-
                             Theorem
                             4.1.7
-                        &ensp;beschrieben.
+                        \ beschrieben.
                         Wir ersetzen \(S \rightarrow C\) also durch alle Produktionen der Form \(S \rightarrow \alpha\),
                         wobei
                         \(\alpha\) eine Wortform ist, die sich aus \(C\) ableiten lässt und nicht nur aus einem
@@ -198,10 +177,8 @@
                     E&amp;\rightarrow \epsilon
                     \end{align*}
                     |> h2
-
                         4. Einen nichtdeterministischen endlichen Automaten bauen
                     |> p
-
                         Dies sollte nun einfach sein. Wir erschaffen Zustände \(S, C, C', D, D', S', E\) und
                         übersetzen jeden Grammatik-Pfeil in einen Automaten-Pfeil.
                     |> figure
@@ -210,14 +187,11 @@
                             src=../img/finite-state-automata/nfsm-example-03-big.svg
                             loading=lazy
                     |> p
-
                         Ich habe die Zeichen `.:-` rot unterlegt, weil man sie sonst kaum erkennen würde in
                         dem Automaten.
                     |> h2
-
                         5. Den nichtdeterministischen Automaten in einen deterministischen umwandeln
                     |> p
-
                         Unser nichtdeterministischer endlicher Automat hat Zustandsmenge \(Q = \{S, S', C, C', D, D',
                         E\}\), also insgesamt
                         sieben Zustände. Wenn wir genau nach Buch vorgingen, müssten wir den endlichen Automaten auf der
@@ -237,7 +211,6 @@
                         class=centered-figure well
                         |> div
                             |> p
-
                                 Der nichtdeterministische Automat
                             |> img
                                 style=height:10em
@@ -349,7 +322,6 @@
                                     data-slide-to=27
                                     data-target=#nfsm-to-fsm
                             |> p
-
                                 Der deterministische Automat, Schritt für Schritt gebaut: 
                             |> div
                                 style=display:inline-block
@@ -490,7 +462,6 @@
                                         style=height:18em
                                         src=../img/finite-state-automata/transformation/27.svg
                     |> p
-
                         Dieser Automat hat deutlich weniger also 128 Zustände, nämlich mit nur sieben genau so
                         viele wie der nichtdeterministische (es ist Zufall, dass beide gleich viele Zustände haben;
                         messen
@@ -505,7 +476,6 @@
                     D&amp;\rightarrow aD \ | \ \text{-}aD \ | \ {.}S
                     \end{align*}
                     |> p
-
                         Die Zustände des deterministischen Automaten beschreiben im Prinzip das, was wir uns merken
                         müssen, wenn wir so einen String "parsen": Zustand \( \{C',C,E,D,D',S'\}\), der
                         in der Grammatik dann zum Nichtterminal \(T\) wird, bedeutet beispielsweise
@@ -521,16 +491,13 @@
                         |> p
                             |> span
                                 class=numbered-title
-
                                 Übungsaufgabe 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                &ensp;
+                                \ 
                             Erinnern Sie sich an 
                             |> a
                                 href=./04-03-nfsm#exercise-divisibility
-
                                 Aufgabe 4.3.1
                             . Hier
                             sehen
@@ -545,7 +512,6 @@
                                 src=../img/finite-state-automata/divisibility-automaton/divisibility.svg
                                 loading=lazy
                         |> p
-
                             Dieser Automat hat 11 Zustände. Sein Potenzmengenautomat hätte also \(2^{11} = 2048\)
                             Zustände.
                             Führen Sie die Konstruktion _lazy_ durch, indem Sie vom Startzustand \(\{S\}\)

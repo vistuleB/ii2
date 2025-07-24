@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=02-04-diagonalization.html
-
             &lt;&lt; Kapitel 2.4
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=02-06-Trichotomiesatz.html
-
             Kapitel 2.6 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,11 +33,9 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Das Schröder-Bernstein-Theorem
                     |> p
-
                         Betrachten wir noch einmal einen Beweis, dass $[0,1] \times [0,1]
                         \approx [0,1]$. Wir nehmen zwei Zahlen $(x,y) \in [0,1] \times [0,1]$
                         und schreiben sie in Binärdarstellung $0.x_1 x_2 x_3 \dots$ und $0.y_1
@@ -59,18 +53,15 @@
                         |> p
                             |> span
                                 class=numbered-title
-
                                 Definition 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
-                            &ensp;Seien $A$ und $B$
+                                \ 
+                            \ Seien $A$ und $B$
                             zwei Mengen. Wir schreiben $A \leq B$, wenn es eine injektive
                             Funktion $f : A \rightarrow B$ gibt. Falls $A \leq B$ und $A \not
                             \approx B$ gilt, so schreiben wir $A \lt B$.
                     |> p
-
                         Beispielsweise haben wir $\N \lt \R$. Obige injektive Funktion $f :
                         [0,1]\times [0,1]\rightarrow [0,1]$ bezeugt, dass $[0,1] \times [0,1]
                         \leq [0,1]$. Gilt auch $[0,1] \leq [0,1] \times [0,1]$? Natürlich: die
@@ -89,12 +80,10 @@
                         |> p
                             |> span
                                 class=numbered-title
-
                                 Theorem 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
+                                \ 
                             *(Schröder-Bernstein-Theorem).* Seien $A$ und $B$
                             zwei Mengen. Wenn $A \leq B$ und $B \leq A$ gilt, dann gilt $A
                             \approx B$. In Worten: wenn es injektive Funktionen $f: A
@@ -103,7 +92,6 @@
                     |> div
                         class=well container
                         |> p
-
                             *Beweis.*
                             Wir tun so, als ob $A \cap B = \emptyset$ gälte. Falls dies nicht
                             der Fall sein sollte, können wir $A$ durch $A \times \{0\} = \{
@@ -173,7 +161,6 @@
                                             style=width: 100%
                                             src=../img/infinite-sets/schroeder-bernstein-digraph-4.svg
                         |> p
-
                             Wenn wir die Menge $A \cup B$ zusammen mit den $f$- und $g$-Pfeilen
                             als Graphen auf einer unendlichen Menge betrachten, dann sehen wir,
                             dass es vier Arten von Komponenten: (1) unendliche Pfade, die mit
@@ -238,7 +225,6 @@
                                             style=width: 100%
                                             src=../img/infinite-sets/schroeder-bernstein-bijektion-3.svg
                         |> p
-
                             Formalisieren wir das ein bisschen. Wir definieren eine Folge $X_0,
                             X_1, \dots$, sodass $X_{2i} \subseteq B$ und $X_{2i+1} \subseteq A$
                             für alle $i \geq 0$ gilt:
@@ -246,7 +232,6 @@
                         g(X_{2i}) \\ X_{2i+2}&amp;:= f(X_{2i+1})\\ A'&amp;:= X_1 \cup X_ 3 \cup
                         X_5 \cup X_7 \cup \dots \ . \end{align*}
                         |> p
-
                             In Worten: $X_0$ sind die $B$-Punkte, die keine eingehende $f$-Kante
                             haben. $X_i$ sind dann diejenigen Knoten, die auf einem Pfad vom Typ
                             (2) liegen und von dem (blauen, in $B$ liegenden) Anfangspunkt
@@ -257,7 +242,6 @@
                         &amp;\textnormal{ if $a \in A \setminus A'$} \\ g^{-1}(a)&amp;\textnormal{
                         if $a \in A'$.} \end{cases} \end{align*}
                         |> p
-
                             Wir müssen nun zeigen, dass $h$ bijektiv ist (falls das noch nicht
                             klar sein sollte).
                         |> div
@@ -265,18 +249,15 @@
                             |> p
                                 |> span
                                     class=numbered-title
-
                                     Behauptung 
                                     |> NumberedTitle
-
                                         ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                    &ensp;&ensp;1.
-                                &ensp;$g^{-1}(a)$ ist
+                                    \  1.
+                                \ $g^{-1}(a)$ ist
                                 definiert für jedes $a \in A'$.
                         |> div
                             class=well container-fluid
                             |> p
-
                                 *Beweis.*
                                 Wenn $a \in A'$ gilt, dann gilt $a \in X_{2i+1}$, also für einen
                                 ungeraden Index. Nach Konstruktion gilt $X_{2i+1} = g(X_{2i})$,
@@ -285,10 +266,8 @@
                                 Worten: $g^{-1}(a)$ ist definiert.
                             |> span
                                 class=qed
-
                                 \(\square\)
                         |> p
-
                             Eindeutig ist $g^{-1}(a)$ sowieso, falls es existiert. Wir sehen
                             nun: $h$ ist wohldefiniert. Ist es injektiv?
                         |> div
@@ -296,18 +275,15 @@
                             |> p
                                 |> span
                                     class=numbered-title
-
                                     Behauptung 
                                     |> NumberedTitle
-
                                         ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                    &ensp;&ensp;2.
-                                &ensp;$h$ ist
+                                    \  2.
+                                \ $h$ ist
                                 injektiv.
                         |> div
                             class=well container-fluid
                             |> p
-
                                 *Beweis.*
                                 Seien $a, a' \in A$ zwei verschiedene Elemente. Wir unterscheiden
                                 drei Fälle: (1) Wenn $a, a' \in A \setminus A'$, dann gilt $h(a) =
@@ -327,32 +303,27 @@
                                 a$ und somit auch $b \ne b'$.
                                 |> span
                                     class=qed
-
                                     \(\square\)
                         |> div
                             class=well container-fluid subtheorem
                             |> p
                                 |> span
                                     class=numbered-title
-
                                     Behauptung 
                                     |> NumberedTitle
-
                                         ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                    &ensp;&ensp;3.
-                                &ensp;$h$ ist
+                                    \  3.
+                                \ $h$ ist
                                 surjektiv.
                         |> div
                             class=well container-fluid
                             |> p
-
                                 *Beweis.*
                                 Wir unterscheiden zwei Fälle. (1) Wenn $b \in X_0 \cup X_2 \cup
                                 X_4 \cup \dots$ ist, also sagen wir $b \in X_{2i}$, dann sei $a :=
                                 f(b)$. Es gilt $a \in X_{2i+1}$ und daher $h(a) = g^{-1}(a) = b$.
                                 Das Element $b$ hat also ein Urbild, nämlich $a$.
                             |> p
-
                                 (2) Wenn $b \not \in B'$, dann gilt insbesondere $b \not \in X_0 =
                                 B \setminus {\rm img}(f)$; also $b \in {\rm img} (f)$. Es gibt
                                 also ein $a \in A$ mit $f(a) = b$. Was ist $h(a)$? Wenn $a \in A
@@ -362,17 +333,13 @@
                                 wir befänden uns also in Fall (1).
                             |> span
                                 class=qed
-
                                 \(\square\)
                         |> p
-
                             Wir haben nun gezeigt, dass $h$ definiert ist, injektiv und
                             surjektiv ist. Damit ist $h$ eine Bijektion.
                             |> span
                                 class=qed
-
                                 \(\square\)
                     |> p
-
                         Wenn Sie der formale Beweis zu sehr verwirrt, dann halten Sie sich
                         einfach an die Bilder mit den zwei Arten von Punkten und Pfeilen.

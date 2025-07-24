@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=05-06-dk-automat.html
-
             &lt;&lt; Kapitel 5.6
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=05-10-not-context-free.html
-
             Kapitel 5.10 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,30 +33,25 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Allgemeine kontextfreie Sprachen parsen
                     |> p
-
                         Wir haben drei Methoden kennengelernt, kontextfreie Sprachen zu parsen:
                         rekursiver Abstieg (mit Demoseite 
                         |> a
                             href=../../demos/drawManualGrammar.html
-
                             drawManualGrammar.html
                         ),
                         die LL-Parser (die die Mengen \(\First_k(X)\) berechnen, wie
                         auf 
                         |> a
                             href=../../demos/drawFirstComputation.html
-
                             drawFirstComputation.html
-                        &ensp;demonstriert),
+                        \ demonstriert),
                         und die LR-Parser (die die Teilbäume auf den Stack legen und nach Blüten suchen,
                         hier die Demoseite 
                         |> a
                             href=../../demos/drawLR0ParserPrefixArithmetic.html
-
                             drawLR0ParserPrefixArithmetic
                         für arithmetische Ausdrücke).
                         Rekursiver Abstieg kann, wenn man nicht vorsichtig ist, in Endlosschleifen landen und
@@ -95,7 +86,6 @@
                         die gleiche Sprache \(L\) erzeugt, mehrdeutig sein muss; man sagt, die Sprache
                         \(L\) ist _inhärent mehrdeutig_.
                     |> p
-
                         Für nichtdeterministische oder gar mehrdeutige Grammatiken / Sprachen sind LL- und LR-Parser
                         unbrauchbar. Gibt es eine allgemeine Methode, die für alle Grammatiken funktioniert?
                         Ja, den sogenannten CYK-Algorithmus. Nur leider ist die nicht besonders schnell. Sie hat
@@ -103,7 +93,6 @@
                         in der theoretischen Informatik als _effizient_ durchgeht, in der Praxis leider
                         meist unbrauchbar ist.
                     |> h3
-
                         Chomsky-Normalform
                     Eine kontextfreie Grammatik ist in _Chomsky-Normalform_, wenn jede Produktion eine
                     der folgenden Formen hat:
@@ -122,16 +111,13 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Theorem 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Zu jeder kontextfreien Grammatik gibt es eine äquivalente Grammatik in
                         Chomsky-Normalform.
                     |> p
-
                         Anstatt hier einen formalen Beweis anzugeben (den Sie sich, wenn Sie wollen, im Lehrbuch oder auf
                         Wikipedia anschauen können),
                         lasse ich Sie lieber anhand einer Übungsaufgabe die Konstruktion von selbst verstehen:
@@ -139,12 +125,10 @@
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Finden Sie zu der folgenden kontextfreien Grammatik
                         \begin{align*}
                         S&amp;\rightarrow A \ | \ Bb \ | \ C \\
@@ -154,24 +138,19 @@
                         \end{align*}
                         eine äquivalente in Chomsky-Normalform.
                         |> p
-
                             Fragen, die Sie sich dabei stellen sollten:
                         |> ol
                             |> li
-
                                 Für welche Nichtterminale gibt es \(U \Step{}^* V\)? Zeichnen Sie ein Bildchen mit all
                                 diesen \(\Step{}^*\)-Pfeilen.
                             |> li
-
                                 Von welchen Nichtterminalen können Sie überhaupt Wörter ableiten, also \(U \Step{}^* w
                                 \in \Sigma^*\)? Wie
                                 finden Sie das im Allgemeinen heraus?
                             |> li
-
                                 Welche Nichtterminale können \(\epsilon\) ableiten, also \(U \Step{}^* \epsilon\)? Wie
                                 finden Sie das im Allgemeinen heraus?
                     |> p
-
                         Wenn nun \(G\) in Chomsky-Normalform vorliegt und wir für ein gegebenes Eingabewort \(w\)
                         eine Ableitung \(G: S \Step{}^* w\) finden wollen (oder feststellen, dass es keine gibt),
                         so ist die erste Beobachtung, dass eine Linksableitung die Form
@@ -188,10 +167,8 @@
                         das eine enorme Laufzeit verursachen. Der Trick besteht darin, Zwischenergebnisse systematisch
                         zu berechnen, um somit Laufzeit zu sparen.
                     |> h3
-
                         Der CYK-Algorithmus
                     |> p
-
                         Die oben skizzierte Idee ist im CYK-Algorithmus konkretisiert (benannt nach John Cocke, Daniel
                         Younger und Tadao Kasami).
                         Für die praktische Anwendung ist dieser weniger relevant. Dafür ist er ein wunderbares Beispiel
@@ -200,9 +177,8 @@
                         Vorlesung 
                         |> a
                             href=../../AuK/index.html
-
                             Algorithmen und Komplexität
-                        &ensp;im dritten Semester
+                        \ im dritten Semester
                         ausführlicher kennenlernen wollen. Wir beschränken uns bei dem folgenden Algorithmus
                         zunächst darauf, die Frage zu beantworten, ob den überhaupt \(S \Step{}^* w\) gilt,
                         und interessieren uns erst einmal nicht dafür eine solche Ableitung auch zu finden (in der
@@ -210,7 +186,6 @@
                         allgemeinerin
                         _Suchproblem_).
                     |> p
-
                         Der Entwurf eines Dynamic-Programming-Algorithmus beginnt oft mit der folgenden Frage:
                         _Was sind sinnvolle Zwischenergebnisse?_ In unserem Falle sind Ableitungen der Form
                         \begin{align*}
@@ -261,68 +236,52 @@
                     |> ul
                         class=nested
                         |> li
-
                             Initialisiere für alle \(0 \leq i \lt n\) die Mengen \(N_{i,i+1} := \{X \in N \ | \ X
                             \step{} w_i \textnormal{ ist eine Produktion in $G$}\}\)
                         |> li
-
                             `for l = 2 .. n`
                             |> ol
                                 type=I
                                 class=
                                 |> li
-
-                                    &ensp;`for i = 0 .. n-l`
+                                    \ `for i = 0 .. n-l`
                                     |> ol
                                         type=i
                                         class=
                                         |> li
-
                                             `k := i+l` 
                                             |> span
                                                 class=comment
-
                                                 # wir betrachten das Interval
                                                 w[i:k] der Länge l
                                         |> li
-
                                             Berechne \(N_{i,k}\) wie in \((\ref{equation-Nij})\). Konkret heißt das:
                                         |> li
-
                                             Initialisiere \(N_{i,k} := \emptyset\)
                                         |> li
-
                                             `for j = i+1 .. k-1:`
                                             |> ol
                                                 type=1
                                                 class=
                                                 |> li
-
                                                     `for all productions` \(X \rightarrow YZ\):
                                                     |> ol
                                                         type=a
                                                         |> li
-
                                                             füge \(X\) zu \(N_{i,k}\) hinzu, falls \(Y \in N_{i,j}\) und
                                                             \(Z
                                                             \in N_{j,k}\) gilt. 
                                                 |> li
-
                                                     `end for all productions`
                                         |> li
-
                                             `end for j`
                                 |> li
-
                                     `end for k` 
                         |> li
-
                             `end for i` 
                         |> li
-
                             `return True if` \(S \in N_{0,n}\) `else return False`
                     |> p
-
                         Was ist die Laufzeit des Algorithmus? Sei \(g\) die Anzahl der Produktionen in \(G\) der
                         Form \(X \rightarrow YZ\). Die innerste Schleife, also Punkt a, wird jedes Mal \(g\) mal
                         durchlaufen, und somit
@@ -343,17 +302,14 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beobachtung 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Sei \(n = |w|\) die Länge des Eingabewortes und \(g\) die Anzahl der Produktionen der Form
                         \(X \rightarrow YZ\). Dann ist die Laufzeit des CYK-Algorithmus proportional zu
                         \(g \cdot n^3\).
                     |> p
-
                         *Achtung:* wir haben die Kosten für die allererste Zeile vernachlässigt.
                         Überlegen
                         Sie sich, wie viel Laufzeit diese verursachen kann und überzeugen Sie sich, dass dies in den
@@ -363,10 +319,8 @@
                         class=well container theorem subtheorem
                         |> span
                             class=numbered-title
-
                             Demo
                         |> p
-
                             Betrachten wir die Grammatik
                         \begin{align*}
                         S&amp;\rightarrow AB \ | \ BC \ | \ AC \\
@@ -375,7 +329,6 @@
                         C&amp;\rightarrow BC \ | \ AS \ | \ z
                         \end{align*}
                         |> p
-
                             und das Eingabewort \(xyxxz\).
                         |> figure
                             class=centered-figure well container-fluid
@@ -610,7 +563,6 @@
                                             style=height:23em
                                             src=../img/context-free/CYK/02-35.svg
                         |> p
-
                             Wenn wir uns zusätzlich zu jedem \(X \in N_{i,k}\) noch merken, durch
                             welche Regeln \(X \rightarrow YZ\) es aufgenommen wurde und
                             für welches \(j\) man \(Y \in N_{i,j}, Z \in N_{j,k}\) hat, dann können wir

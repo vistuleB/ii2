@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=05-09-general-parsing.html
-
             &lt;&lt; Kapitel 5.9
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=06-00-general-grammars.html
-
             Kapitel 6.0 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,11 +33,9 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Die Grenzen kontextfreier Sprachen
                     |> p
-
                         Im letzten Teilkapitel haben wir den CYK-Algorithmus kennengelernt. Dieser verwendet
                         das Prinzip des _Dynamic Programming_, um für eine allgemeine kontextfreie
                         Grammatik \(G\) und ein Eingabewort \(\gamma\) einen Ableitungsbaum zu finden (oder
@@ -49,7 +43,6 @@
                         dass es
                         keinen gibt und somit \(\gamma \not \in L(G)\)).
                     |> p
-
                         In diesem Teilkapitel werden wir sehen, dass viele Sprachen gar nicht kontextfrei sind, und
                         werden
                         hoffentlich ein Gefühl dafür entwickeln, welche Konstruktionen Kontextfreiheit verhindern,
@@ -59,18 +52,15 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beispiel 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Betrachten wir die Sprache
                         \begin{align*}
                         L := \{ a^n b^n c^n \ | \ \ n \geq 0\} \ .
                         \end{align*}
                         |> p
-
                             Ein Kellerautomat könnte nun alle \(a\) auf den Stack legen und dann, wenn die
                             \(b\) beginnen, den Stapel abarbeiten. Allerdings hätte er dann, wenn die \(c\) kommen,
                             vergessen, wieviele \(a\) es denn waren. Irgendwie scheinen Kellerautomaten nicht für \(L\)
@@ -78,7 +68,6 @@
                             Tricks,
                             die man mit Kellerautomaten (und somit mit kontextfreien Grammatiken) anstellen kann.
                         |> p
-
                             Wir werden nun beweisen, dass \(L\) nicht kontextfrei ist; dass es also für \(L\) keine
                             kontextfreie Grammatik gibt. Wir gehen wie folgt vor: wir nehmen eine kontextfreie
                             Grammatik \(G\), die jedes Wort \(\gamma \in L\) ableiten kann. Dann sehen wir uns den
@@ -117,7 +106,6 @@
                         unten
                         behandelt werden).
                         |> p
-
                             Nun holen wir zum entscheidenden Schlag aus: wir "pumpen" das Wort \(\gamma\) auf, indem
                             wir die Teilbäume mit \(Z\) an der Wurzel wiederholen. Konkret besagt ja oberer Baum,
                             dass \(\gamma\) wie folgt hergeleitet wurde:
@@ -149,14 +137,12 @@
                         aber eines ist ganz klar: in \(uwy\) kommen die Symbole \(a,b,c\) nicht mehr gleich
                         häufig vor, und somit \(uwy\not \in L\).
                         |> p
-
                             Wir haben also gezeigt, dass die kontextfreie Grammatik \(G\) _nicht_ die Sprache
                             \(L\) erzeugt: wenn wir alle \(\gamma \in L\) erzeugen kann, dann
                             kann sie auch Wörter wie \(uwy \not \in L\) erzeugen. Da unsere Argumentation keine
                             Annahmen über \(G\) getroffen hat, außer, dass sie kontextfrei ist, haben wir gezeigt:
                             \(L\) ist keine kontextfreie Sprache.
                         |> p
-
                             *Vorsicht!* Wir haben angenommen, das \(uwy\) weniger Zeichen hat
                             als \(uvwxy\), weil ja \(v\) und \(x\) fehlen. Kann aber \(v = x = \epsilon\) eintreten?
                             Dies würde unsere Argumentation zerstören. Hier kommt wieder die
@@ -166,18 +152,15 @@
                             Wort \(\gamma\) herleitet und \(\gamma \ne \epsilon\), dann kommt in der Ableitung keine
                             \(\epsilon\)-Produktion zur Anwendung.
                     |> p
-
                         Die obige Argumentationslinie ist als _Pumping Lemma für kontextfreie Sprachen_ bekannt:
                     |> div
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Theorem 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         *(Pumping Lemma für kontextfreie Sprachen)*
                         Für jede kontextfreie Grammatik \(G\) gibt es eine Zahl \(p \in \N\), so dass jedes
                         Wort \(\gamma \in L(G)\) der Länge \(|\gamma| \geq p\) zerlegt werden kann in
@@ -196,12 +179,10 @@
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Sei \(L \subseteq \{a,b,c\}^n\) die Sprache aller Wörter
                         \begin{align*}
                         \{\alpha c \alpha \ | \ \alpha \in \{a,b\}^* \} \ .
@@ -213,12 +194,10 @@
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Sie \(L \subseteq \{1\}^*\) die Sprache aller Wörter, deren Länge
                         eine Zweierpotenz ist:
                         \begin{align*}
@@ -227,46 +206,37 @@
                         Also \(L = \{1, 11, 1111, 11111111, 1111111111111111, \dots\}\). Zeigen Sie, dass \(L\) nicht
                         kontextfrei ist.
                     |> h3
-
                         Mengenoperationen auf kontextfreien Sprachen
                     Im Kapitel über reguläre Sprachen hatten wir folgende Abschlusseigenschaften:
                     |> div
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Theorem 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Wenn \(L_1, L_2\) reguläre Sprachen sind, dann sind die folgenden
                         Sprachen auch regulär:
                         |> ol
                             |> li
-
                                 \(L_1 \cup L_2\). Das war einfach: wir kombinieren die Grammatiken
                                 und fügen die Startproduktionen \(S \rightarrow S_1 \ | \ S_2\) hinzu.
                             |> li
-
                                 \(L_1 \circ L_2\). Das war schon schwieriger, ging aber auch irgendwie.
                             |> li
-
                                 \(L_1^*\). Das ging ähnlich zum vorherigen.
                             |> li
-
                                 \(\bar{L}_1 := \Sigma^* \setminus L_1\), die Komplementsprache. Das ist einfach,
                                 sobald man einen endlichen Automaten für \(L_1\) gebaut hat: man tauscht akzeptierende
                                 und nicht-akzeptierende Zustände aus.
                             |> li
-
                                 \(L_1^R\), die Sprache, die entsteht, wenn man jedes Wort in \(L_1\) von rechts nach
                                 links liest. Dies ist gar nicht so offensichtlich, wenn man reguläre Grammatiken oder
                                 endliche Automaten ansieht. Wenn man aber für \(L_1\) einen _regulären Ausdruck_
                                 gebaut
                                 hat, wird es zur Trivialität: einfach den Ausdruck umdrehen.
                             |> li
-
                                 \(L_1 \cap L_2\). Hierfür könnte man für \(L_1, L_2\) jeweils endliche Automaten
                                 \(M_1, M_2\) bauen und die dann "parallel" laufen lassen; man muss nun sehen, dass man
                                 dieses parallele Laufen
@@ -277,13 +247,10 @@
                                 Oder man macht es sich einfach:
                                 |> ul
                                     |> li
-
                                         Nach Punkt 4 sind \(\bar{L}_1\) und \(\bar{L}_2\) regulär.
                                     |> li
-
                                         Nach Punkt 1 daher auch \(\bar{L}_1 \cup \bar{L}_2\) ist regulär.
                                     |> li
-
                                         Nach Punkt 4 ist daher wiederum \(\overline{\bar{L}_1 \cup \bar{L}_2}\) regulär,
                                         was
                                         nach den De-Morganschen Gesetzen die gleiche Menge ist wie \(L_1 \cap L_2\).
@@ -293,36 +260,27 @@
                             class=well well-lg numbered-exercise container
                             |> span
                                 class=numbered-title
-
                                 Übungsaufgabe 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                &ensp;
+                                \ 
                             Seien \(L_1, L_2\) kontextfrei. Zeigen Sie, dass die folgenden Sprachen auch kontextfrei
                             sind:
                             |> ol
                                 |> li
-
                                     \(L_1 \cup L_2\)
                                 |> li
-
                                     \(L_1 \circ L_2\)
                                 |> li
-
                                     \(L_1^*\)
                                 |> li
-
                                     Überspringen wir \(\bar{L}_1\); dieses ist nämlich im Allgemeinen nicht kontextfrei.
                                 |> li
-
                                     \(L_1^R\)
                                 |> li
-
                                     Überspringen wir \(L_1 \cap L_2\); dieses ist nämlich im Allgemeinen nicht
                                     kontextfrei.
                             |> p
-
                                 *Tip:* dies ist viel einacher als für reguläre Grammatiken.
                     Wie schon angedeutet, geben uns Komplement und Schnittmenge im Allgemeinen keine kontextfreie
                     Sprache.
@@ -331,12 +289,10 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beobachtung 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Der Schnitt \(L_1 \cap L_2\) zweier kontextfreier Sprachen
                         ist im Allgemeinen _nicht_ kontextfrei.
                         Ein Beispiel ist
@@ -355,12 +311,10 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beobachtung 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Das Komplement \(L\) einer kontextfreien Sprache ist im Allgemeinen _nicht_ kontextfrei.
                         \\
                         Warum? Wenn er es wäre, dann wäre mit Hilfe von Punkt 1 auch
@@ -373,18 +327,15 @@
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Sei \(L := \{a^n b^n c^n\}\). Wir wissen bereits, dass \(L\) nicht kontextfrei ist.
                         Zeigen Sie, dass \(\bar{L}\) kontextfrei ist.
                         Die Sprache \(\bar{L}\) ist somit ein Beispiel für eine kontextfreie Sprache,
                         deren Komplement, also \(L\), nicht kontextfrei ist.
                         |> p
-
                             *Tip.* Listen Sie alle Möglichkeiten auf, wie ein Wort \(w\) nicht
                             in \(L\) sein kann: (1) es hat nicht die Form \(a^* b^* c^*\); (2) es hat die Form,
                             hat aber mehr \(a\) als es \(b\) hat; (2) es hat mehr \(a\) als es \(c\) hat...

@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=04-05-regular-expressions.html
-
             &lt;&lt; Kapitel 4.5
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=04-07-exercises.html
-
             Kapitel 4.7 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,11 +33,9 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Die Grenzen regulärer Sprachen
                     |> p
-
                         Noch spannender, als zu erkunden, was möglich ist, ist aus Sicht eines theoretischen
                         Informatikers, zu erkunden, was _nicht möglich_ ist. Also Grenzen aufzuzeigen.
                         Wir haben in den letzten vier Teilkapiteln gezeigt, was man mit regulären Sprachen und endlichen
@@ -53,12 +47,10 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beispiel 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Sei \(L\) die Sprache aller Wörter über dem Alphabet \(\Sigma = \{a,b\}\), die die Form
                         \(a^n b^n\) haben; also eine beliebig lange Folge von \(a\)s, gefolgt von genau so vielen
                         \(b\)s.
@@ -68,7 +60,6 @@
                         S&amp;\rightarrow aSb
                         \end{align*}
                         |> p
-
                             Können wir eine reguläre Grammatik für \(L\) schreiben? Irgendwie klingt das nicht
                             plausibel.
                             Reguläre Grammatiken können ja immer nur ein Wort von links nach rechts erzeugen; für \(L\)
@@ -78,17 +69,14 @@
                             class=well well-lg numbered-exercise
                             |> span
                                 class=numbered-title
-
                                 Übungsaufgabe 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                &ensp;
+                                \ 
                             Versuchen Sie ein paar Minuten, eine reguläre Grammatik für \(L\) zu schreiben oder
                             versuchen Sie,
                             zu argumentieren, dass das nicht möglich ist.
                         |> p
-
                             Wir sind nun also recht überzeugt, dass \(L\) nicht regulär ist. Nur, wie können wir das
                             formal beweisen?
                             Vielleicht könnten wir annehmen, dass es eine reguläre Grammatik \(G = (\{a,b\}, N, P, S)\)
@@ -97,30 +85,23 @@
                             ob sie \(X \rightarrow aY\) oder \(X \rightarrow bY\) machen, und dann die darin involvieren
                             Nichtterminale \(X\) und \(Y\) weiter betrachten.
                         |> p
-
                             Zu Hilfe kommt uns die Tatsache, dass wir für reguläre Sprachen nun viele äquivalente
                             Modelle gefunden haben:
                         |> ol
                             |> li
-
                                 Reguläre Grammatiken.
                             |> li
-
                                 Erweitert reguläre Grammatiken, die also Produktionen wie \(X \rightarrow abY\)
                                 erlauben.
                             |> li
-
                                 Vereinfachte reguläre Grammatiken, in denen Produktionen wie \(X \rightarrow a\) und \(X
                                 \rightarrow Y\) nicht vorkommen;
                                 wo also die rechte Seite nie aus einem einzelnen Zeichen besteht.
                             |> li
-
                                 Endliche Automaten.
                             |> li
-
                                 Nichtdeterministische endliche Automaten.
                         |> p
-
                             Formal sind all diese Modelle gleich mächtig: wir können ein Modell in ein anderes umwandeln,
                             ohne
                             das die erzeugte bzw. akzeptierte Sprache sich ändern. Wenn wir nun zeigen wollen:
@@ -129,7 +110,6 @@
                             fünf aufgeführten
                             Modelle. Also:
                         |> p
-
                             Angenommen, \(L\) wäre regulär. Dann gäbe es auch einen endlichen Automaten \(M = (\{a,b\},
                             Q, q_0, F, \delta)\),
                             der \(L\) akzeptiert. Wir müssen zeigen, dass das nicht sein kann. Also dem Automaten \(M\)
@@ -141,7 +121,6 @@
                             gelesen hat. Vergisst er es, kann er bei den folgenden \(b\)'s nicht mehr richtig mitzählen.
                             Unser Plan ist also, das Gedächtnis des Automaten zu überfordern.
                         |> p
-
                             Setzen wir diesen Plan in die Tat um. Wir füttern dem Automaten eine Folge von
                             \(aaaaaaa...\) und
                             beobachten die Zustandsfolge \(q_0, q_1, q_2, \dots\), die sich daraus ergibt. Formal:
@@ -156,7 +135,6 @@
                             gerade
                             \(i\) viele oder \(j\) viele \(a\)'s gelesen hat. Nun schlagen wir zu:
                         |> p
-
                             Wir füttern den Automaten mit dem Wort \(a^i b^i\). Der Automat landet in einem Zustand
                             \(q^*\):
                             \begin{align*}
@@ -181,18 +159,15 @@
                             schließen wir:
                         |> div
                             style=text-align:center
-
                             Wenn \(M\) ein endlicher Automat ist, dann gilt \(L(M) \ne L\). Daher ist \(L\) keine
                             reguläre Sprache.
                         |> p
-
                             Zusammenfassend lautet unser Argument: wenn der Automat die Präfixe \(\alpha\) und
                             \(\alpha'\) nicht
                             unterscheiden kann, dann kann er die Wörter \(\alpha \beta\) und \(\alpha' \beta\) auch
                             nicht unterscheiden;
                             er muss also entweder beide akzeptieren oder beide ablehnen.
                     |> p
-
                         Das Argument, dass die Sprache \(\{a^nb^n \ | \ n \geq 0\}\) nicht regulär ist, war nicht allzu
                         schwer, fühlt sich
                         aber etwas _ad hoc_ an, also für diesen Fall maßgeschneidert. Es stellt sich aber heraus,
@@ -206,12 +181,10 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         *\(M\)-Äquivalenz*
                         Sei \(M= (\Sigma, Q, \qstart, F, \delta\) ein (deterministischer) endlicher Automat. Zwei Wörter
                         \(\alpha, \beta \in \Sigma^* \) sind
@@ -222,14 +195,12 @@
                         wenn \( \hat{\delta}(\qstart, \alpha) = \hat{\delta}(\qstart, \beta)\) gilt; wenn sie also
                         den Automaten in den gleichen Zustand bringen.
                     |> p
-
                         Wir können bereits ein bisschen über \(\equiv_M\) aussagen. Wenn beispielsweise \(M\) ein
                         endlicher Automat für die Sprache \(L\) ist und
                         \(\alpha \equiv_M \beta\) gilt, dann sind entweder beide Wörter in \(L\) (nämlich
                         wenn \(\hat{\delta}(\qstart, \alpha)\) ein akzeptierender Zustand ist)
                         oder beide Wörter nicht in \(L\) (falls es kein akzeptierender Zustand ist).
                     |> p
-
                         Auch sehen wir: wenn \(\alpha \equiv_M \beta\), dann gilt \(\alpha\gamma \equiv_M \beta\gamma\):
                         \(\alpha\) und \(\beta\) brigen den Automaten in den gleichen Zustand, und danach liest er in
                         beiden
@@ -238,12 +209,10 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         *\(L\)-Äquivalenz*
                         Sei \(L \subseteq \Sigma^*\) eine Sprache. Zwei Wörter \(\alpha, \beta \in \Sigma^*\) sind
                         _\(L\)-äquivalent_, geschrieben
@@ -257,17 +226,14 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beobachtung 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Sei \(L\) die vom endlichen Automaten \(M\) akzeptierte Sprache.
                         Wenn \(\alpha \equiv_M \beta\) gilt, dann auch \(\alpha \equiv_L \beta\).
                     |> div
                         class=well container
-
                         *Beweis.*
                         Nehmen wir an \(\alpha \equiv_M \beta\); es gibt also einen Zustand \(q\) mit
                         \begin{align*}
@@ -287,10 +253,8 @@
                         \beta\).
                         |> span
                             class=qed
-
                             \(\square\)
                     |> p
-
                         Hier ist nun ein allgemeiner Angriffsplan, wie man zeigt, dass eine Sprache \(L\) nicht regulär
                         ist: wir finden
                         eine unendliche Folge von Wörtern \(\alpha_1, \alpha_2, \alpha_3, \dots,\), die alle nicht
@@ -304,12 +268,10 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Sei \(L \subseteq \Sigma^*\). Der _Index von \(L\)_ ist die Anzahl von Äquivalenzklassen
                         der Relation
                         \(\equiv_L\), also die größtmögliche Anzahl gegenseitig nichtäquivalenter Wörter
@@ -318,19 +280,16 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beobachtung 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Sei \(M\) ein endlicher Automat von \(L\) die von ihm akzeptierte Sprache.
                         Dann ist der Index von \(L\) höchstens die Anzahl \(|Q|\) von Zuständen.
                         Im Umkehrschluss heißt das: wenn \(L\) unendlichen Index hat, dann gibt es keinen endlichen
                         Automaten, der \(L\) akzeptiert; \(L\) ist demnach nicht regulär.
                     |> div
                         class=well container
-
                         *Beweis.*
                         Wenn der Index von \(L\) größer wäre als \(|Q|\), dann hieße das, dass wir
                         \(k := |Q|+1\) nicht \(L\)-äquivalente \(\alpha_1, \dots, \alpha_{|Q|+1}\) finden können.
@@ -351,21 +310,17 @@
                         \(q = q'\) gelten würde.
                         |> span
                             class=qed
-
                             \(\square\)
                     |> div
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beispiel 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Die Sprache \(L = \{a^n b^n \ | \ n \geq 0\}\) ist nicht regulär.
                         |> p
-
                             In der Tat hat diese Sprache unendlichen Index. Die Wörter \(a, aa, aaa, aaaa, ...\) sind
                             alle
                             nicht \(L\)-äquivalent. Für \(a^i\) und \(a^j\) könnten wir zum Beispiel \(\gamma := b^i\)
@@ -375,12 +330,10 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beispiel 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Sei \(L \subseteq \{a,b\}^*\) die Sprache aller Palindrome. Also der Wörter \(\alpha\) mit
                         \(\alpha = \alpha^R\), wobei \(\alpha^R\) das Wort \(\alpha\) in umgekehrter Reihnfolge gelesen
                         ist.
@@ -394,12 +347,10 @@
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Betrachten Sie die Sprache aller \(\alpha\in \{a,b\}^*\), die gleich viele \(a\)'s wie \(b\)'s
                         haben:
                         \begin{align*}
@@ -407,28 +358,23 @@
                         \end{align*}
                         Zeigen Sie, dass diese Sprache nicht regulär ist.
                     |> p
-
                         Wie mächtig ist diese "Index-Methode"? Es stellt sich heraus, dass sie _vollständig_ ist:
                         wenn eine Sprache \(L\) endlichen Index hat, dann ist sie auch regulär.
                     |> div
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Theorem 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Eine Sprache \(L \subseteq \Sigma^*\) ist genau dann regulär, wenn sie endlichen Index hat.
                     |> div
                         class=well container
-
                         *Beweis.*
                         Eine Richtung haben wir bereits weiter oben gezeigt: wenn es zu \(L\) einen endlichen Automaten
                         mit Zustandsmenge \(Q\) gibt, dann ist der Index von \(L\) höchstens \(|Q|\).
                         |> p
-
                             Für die andere Richtung nehmen wir an, dass der Index von \(L\) endlich ist,
                             sagen wir \(n \in \N\). Es gibt also
                             \(\alpha_1,\dots,\alpha_n\), die alle paarweise nicht \(L\)-äquivalent sind.
@@ -448,7 +394,6 @@
                             Die Menge von Mengen \(\{A_1, A_2, \dots, A_n\}\) nennt man eine Partition oder
                             Partitionierung von \(\Sigma^*\).
                         |> p
-
                             Beachten Sie: wenn \(\alpha \equiv_L \beta\) und \(x \in \Sigma\), dann gilt auch
                             \(\alpha x \equiv \beta x\). (Überlegen Sie sich, warum!) Auch gilt für jedes \(1 \leq i
                             \leq n\):
@@ -457,7 +402,6 @@
                             leere Wort
                             \(\epsilon\) enthält.
                         |> p
-
                             Wir bauen nun einen endlichen Automaten mit der Zustandsmenge \(Q = \{1,2,\dots,n\}\).
                             Für \(i, j\) führen wir die Produktion
                             \begin{align*}
@@ -482,10 +426,8 @@
                             seiner Zustände ist gleich dem Index der Sprache \(L\).
                         |> span
                             class=qed
-
                             \(\square\)
                     |> p
-
                         Wir können den Index nicht nur verwenden, um zu argumentieren, dass eine Sprache nicht regulär
                         ist, sondern auch, um zu zeigen,
                         dass eine bestimmte Menge an Zuständen optimal ist.
@@ -493,12 +435,10 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beispiel 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Der nichtdeterministische endliche Automat
                         |> figure
                             |> img
@@ -513,16 +453,13 @@
                             class=well subtheorem theorem
                             |> span
                                 class=numbered-title
-
                                 Behauptung 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
+                                \ 
                             Die Sprache \(L\) hat Index 16. Alle Wörter in \(\{0,1\}^4\) sind nicht \(L\)-äquivalent.
                         |> div
                             class=well subtheorem
-
                             *Beweis.*
                             Seien \(\alpha:= a_1 a_2 a_3 a_4, \beta := b_1 b_2 b_3 b_4 \in \{0,1\}^4\) zwei verschiedene
                             Wörter. Dann gibt es ein
@@ -536,10 +473,8 @@
                             determinisitschen Automaten mit 16 Zuständen bauen.
                             |> span
                                 class=qed
-
                                 \(\square\)
                         |> p
-
                             Allgemeiner: sei \(L\) die Sprache aller \(\alpha \in \{0,1\}^n\), deren
                             \(n\)-letztes Zeichen eine 1 ist. Dann gibt es für \(L\) einen nichtdeterministischen
                             endlichen Automaten mit \(n+1\) Zuständen und einen determinisitschen mit

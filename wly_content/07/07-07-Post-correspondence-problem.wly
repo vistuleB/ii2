@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=07-06-undecidability.html
-
             &lt;&lt; Kapitel 7.6
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=07-08-PCP-applications.html
-
             Kapitel 7.8 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,11 +33,9 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Mehr über Unentscheidbarkeit: Das Postsche Korrespondenzproblem
                     |> p
-
                         Die Unentscheidbarkeit des Halteproblems
                         mag auf den ersten Blick esoterisch anmuten. Es taucht
                         ja nur auf, weil die Problemstellung irgendwie
@@ -52,7 +46,6 @@
                         haben und völlig harmlos wirken. Wie zum Beispiel
                         das rein kombinatorische _Postsche Korrespondenzproblem._
                     |> p
-
                         Im Postschen Korrespondenzproblem haben wir endlich
                         viele Kärtchen (auch _Kacheln_ genannt) gegeben,
                         die oben und unten jeweils ein Wort haben. Wir müssen
@@ -164,16 +157,13 @@
                                         style=height:18em
                                         src=../img/pcp/example-wikipedia/09.svg
                     |> p
-
                         (Diese Beispielinstanz ist von
                         |> a
                             href=https://en.wikipedia.org/wiki/Post_correspondence_problem
-
                             Wikipedia
                         ;
                         die graphische Darstellung stammt von mir.)
                     |> p
-
                         Schauen wir uns ein weiteres, komplizierteres Beispiel an.
                         Hier führen wir eine Sonderregel ein, nämlich
                         dass man mit der türkisen Kachel (der ersten) anfangen muss:
@@ -407,7 +397,6 @@
                                         style=height:18em
                                         src=../img/pcp/example-expo/25.svg
                     |> p
-
                         Können Sie das zweie PCP-Puzzle lösen und zu Ende führen?
                         Informell sehen wir bereits: um das Puzzle zu lösen, müssen
                         wir die \(\texttt{x}\) loswerden. Das geht nur, indem wir
@@ -424,27 +413,22 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;&ensp;(Postsches Korrespondenz-Problem, PCP)
+                            \  (Postsches Korrespondenz-Problem, PCP)
                         Sei \(\Sigma\) ein endliches Alphabet.
                         |> ul
                             |> li
-
                                 Eine
                                 _Kachel_ (auch _Kärtchen_ genannt) ist ein
                                 Paar \((\alpha : \beta) \in \Sigma^* \times \Sigma^*\).
                                 Hier bezeichnet \(\alpha\) das Wort auf der oberen Hälfte der Kachel
                                 und \(\beta\) das auf der unteren.
                             |> li
-
                                 Ein PCP-Puzzle (oder einfach nur Puzzle in diesem Zusammenhang)
                                 ist eine endliche Menge \(S\) von Kacheln.
                             |> li
-
                                 Eine Kachelung ist eine Folge \(s\) von Kacheln aus \(S\), also
                                 \begin{align*}
                                 s = (\alpha_{1} : \beta_{1}) (\alpha_{2} : \beta_{2}) \dots
@@ -458,11 +442,9 @@
                                 \bottom(s)&amp;:= \beta_1 \beta_2 \dots \beta_m \\
                                 \end{align*}
                             |> li
-
                                 Eine Kachelung \(s\) ist eine _Lösung_
                                 des Puzzles, wenn \(\top(s) = \bottom(s)\) gilt.
                     |> p
-
                         Illustrieren wir die Definitionen noch einmal
                         anhand des ersten Beispiels:
                     |> figure
@@ -470,7 +452,6 @@
                             style=height:12em
                             src=../img/pcp/example-wikipedia/04.svg
                     |> p
-
                         Das Puzzle besteht aus drei Kacheln:
                         \begin{align*}
                         k_1&amp;:= (a : baa) \\
@@ -485,7 +466,6 @@
                         Die Kachelung \(k_3 k_2 k_3\) ist noch keine Lösung, aber
                         \(k_3 k_2 k_3 k_1\) ist eine.
                     |> p
-
                         Für ein festes \(\Sigma\) können wir natürlich ein PCP-Puzzle
                         codieren, indem wir die Menge \(S\) der Kacheln
                         codieren, z.B. über dem Alphabet \(\Sigma \cup \{(, :, )\}\).
@@ -502,22 +482,18 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Theorem 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         PCP ist unentscheidbar.
                     |> div
                         class=well container
-
                         *Beweis.*
                         Wir zeigen: wenn PCP entscheidbar _wäre_, dann _wäre_
                         auch \(\halt\) entscheidbar. Da letzteres jedoch unentscheidbar
                         ist, muss auch PCP unentscheidbar sein.
                         |> p
-
                             Mehr im Detail: für eine Turingmaschine
                             \(M\) und ein Eingabewort \(x\) konstruieren wir
                             ein Puzzle \(S\), so dass \(S\) genau dann eine
@@ -525,7 +501,6 @@
                             Entscheidungsalgorithmus für das PCP könnte
                             somit auch \(\halt\) entscheiden.
                         |> p
-
                             Wie so oft in ähnlichen Beweisen machen wir einen
                             Zwischenschritt. Das _Modifizierte Postsche
                             Korrespondenzproblem (MPCP)
@@ -537,19 +512,16 @@
                             class=well subtheorem theorem
                             |> span
                                 class=numbered-title
-
                                 Lemma 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
+                                \ 
                             Gegeben ein MPCP-Puzzle \(S\), so können wir ein
                             (normales) PCP-Puzzle \(S'\) erstellen,
                             mit der Eigenschaft, dass \(S\) eine Lösung
                             hat genau dann, wenn \(S'\) eine Lösung hat.
                         |> div
                             class=well subtheorem
-
                             *Beweis.*
                             Im MPCP zwingen uns bereits die Spielregeln, mit der
                             markierten Startkachel zu beginnen. Wir müssen
@@ -574,7 +546,6 @@
                                     src=../img/pcp/mpcp-to-pcp-02.svg
                                     loading=lazy
                             |> p
-
                                 Die gesternten Kacheln zwingen uns nun dazu,
                                 mit der markierten zu beginnen, da diese ja die
                                 einzige ist, wo das erste Symbol oben und unten
@@ -590,7 +561,6 @@
                                     src=../img/pcp/mpcp-to-pcp-03.svg
                                     loading=lazy
                             |> p
-
                                 Sie sehen: die letzte Kachel ist die einzige, die
                                 am rechten Rand stehen kann. Sollte
                                 nun das MPCP-Puzzle \(S\) eine Lösung haben (die dann
@@ -611,10 +581,8 @@
                                 rechte Endkachel entfernen.
                                 |> span
                                     class=qed
-
                                     \(\square\)
                         |> p
-
                             Nun wissen wir also, dass wir den "Spieler" zwingen können,
                             mit einer bestimmten Kachel zu beginnen, ohne dies
                             explizit in die Spielregeln aufnehmen zu müssen. Unser
@@ -623,7 +591,6 @@
                             MPCP-Puzzle \(S\) zu konstruieren, das genau dann eine
                             Lösung hat, wenn \(M(x) = \texttt{accept}\) gilt.
                         |> p
-
                             Erinneren wir uns: eine _Konfiguration_ einer
                             Turingmaschine ist eine Folge
                             \begin{align*}
@@ -763,7 +730,6 @@
                                             style=height:12em
                                             src=../img/pcp/step-right/08.svg
                         |> p
-
                             Was geschieht nun? Für das Symbol \(q_1\), das ja einen Zustand
                             bezeichnet, gibt es keine Kopierkachel. Wenn nun
                             beispielsweise
@@ -845,12 +811,10 @@
                                             style=height:12em
                                             src=../img/pcp/step-left/05.svg
                         |> p
-
                             Hier brauchen wir halt eine Kopfkachel \((q_2yz:yq_1x_2)\) für
                             _jedes_ Bandsymbol \(y\), da die Regel immer anzuwenden ist,
                             egal, welches Symbol \(y\) links vom Schreib-Lese-Kopf steht.
                         |> p
-
                             Fassen wir zusammen, was wir bis jetzt gesehen haben. Wir
                             konstruieren Kopierkacheln \((x:x)\), die es dem Spieler erlauben,
                             die Konfiguration zu kopieren; Kopfkacheln, die den Spieler zwingen,
@@ -863,7 +827,6 @@
                                 src=../img/pcp/almost-all-tiles.svg
                                 loading=lazy
                         |> p
-
                             Wir sind noch nicht ganz fertig. Wir brauchen noch Regeln
                             für den Fall, dass der Schreib-Lese-Kopf am Rand des Bandinhaltes steht,
                             konkret also die "Umgebung" des Kopfes ein \(\texttt{#}\)-Zeichen
@@ -873,7 +836,6 @@
                             Leersymbol \(\_\) anzuhängen. Ich überlasse es an dieser
                             Stelle dem Leser / der Leserin, die Details hierfür auszuarbeiten.
                         |> p
-
                             Ganz zum Schluss müssen wir noch beschreiben, was geschieht, wenn die
                             Maschine in den akzeptierenden Zustand \(q^*\) wechselt.
                             Wir erschaffen Kacheln, die erlauben, alle Bandsymbole zu löschen,
@@ -884,7 +846,6 @@
                                 src=../img/pcp/tile-delete-symbols.svg
                                 loading=lazy
                         |> p
-
                             und ganz am Schluss eine Kachel \((\# : q^* \# \#)\), um alles
                             abzuschließen. Die letzten zwei Schritte sehen dann so aus:
                         |> figure
@@ -941,7 +902,6 @@
                                             style=height:10em
                                             src=../img/pcp/finish-03.svg
                         |> p
-
                             Strenggenommen müssten wir jetzt beweisen, dass das MPCP-Puzzle genau dann lösbar ist, wenn
                             die Turingmaschine akzeptiert. Hierfür könnten wir zum Beispiel zeigen, dass, wenn
                             \(s\) eine Kachelung ist, in welcher \(\top(s)\) und \(\bottom(s)\) beide auf dem Zeichen
@@ -956,5 +916,4 @@
                             Wir ersparen uns weitere Details.
                             |> span
                                 class=qed
-
                                 \(\square\)

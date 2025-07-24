@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=07-03-Turing-encoding.html
-
             &lt;&lt; Kapitel 7.3
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=07-05-Turing-universal.html
-
             Kapitel 7.5 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,14 +33,11 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Variationen: Mehrband-Maschinen, nichtdeterministische Maschinen
                     |> h2
-
                         Turingmaschinen mit mehreren Bändern
                     |> p
-
                         Im letzten Teilkapitel ist Ihnen bestimmt aufgefallen, dass es
                         auffallend lästig ist, selbst für einfache Sprachen wie \begin{align*}
                         \{a^n b^n c^n \ | \ n \geq 0 \} \end{align*} oder \begin{align*} \{wcw
@@ -56,7 +49,6 @@
                         das dann auch leichter zu programmieren ist. Dies ist die
                         _Mehrband-Turingmaschine_.
                     |> p
-
                         Eine Mehrband-Turingmaschine ist wie eine Turingmaschine, nur dass sie
                         statt einem \(k\) viele Bänder und somit auch \(k\) viele
                         Schreib-Lese-Köpfe hat. Die Zustandsübergangsfunktion \(\delta\) hat
@@ -135,79 +127,65 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beispiel 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Entwerfen wir nun eine Turingmaschine für die Palindromsprache
                         \begin{align*} L := \{ w \in \{a,b\}^* \ | \ w = w^R \} \ ,
                         \end{align*} In
                         |> a
                             href=./04-01-Turing-machines-examples.html#example-palindromes
-
                             Beispiel 4.2.2
                         haben wir dafür eine Einband-Turingmaschine geschrieben. Deren
                         Nachteil war, dass sie ständig zwischen dem linken und rechten Rand
                         hin-und-herlaufen musste.
                         |> p
-
                             Bauen wir nun eine Mehrband-Turingmaschine. Diese arbeitet in drei
                             einfachen und kurzen Phasen:
                         |> ol
                             |> li
                                 |> tt
-
                                     copy
                                 : kopiert das \(w\) auf das zweite Band
                             |> li
                                 |> tt
-
                                     rewind
                                 : bewegt den Kopf des ersten Bandes zurück zum
                                 Anfang
                             |> li
                                 |> tt
-
                                     compare
                                 : schaut, ob erstes und zweites Band den gleichen
                                 Inhalt haben.
                         Den "Quelltext" für
                         |> a
                             href=https://turingmachinesimulator.com
-
                             turingmachinesimulator.com
                         finden Sie in
                         |> a
                             href=../code/turing machines/palindrome-multiple-tapes.txt
-
                             palindrome-multiple-tapes.txt
                         .
                     |> div
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Schreiben Sie eine Mehrband-Turingmaschine, die Binärzahlen addiert.
                         Wenn also beispielsweise 
                         |> tt
-
                             1010+110
-                        &ensp;auf dem ersten Band
+                        \ auf dem ersten Band
                         (Eingabeband) steht, dann soll nach Abschluss der Berechnung das
                         Ergebnis auf dem Ausgabeband stehen, also 
                         |> tt
-
                             10000
                         .
                         |> p
-
                             *Tip.* Verwenden Sie drei Bänder. Sei der Bandinhalt
                             \(x+y\). In einer ersten Phase kopieren Sie \(x\) auf das zweite
                             Band. In der nächsten Phase gehen Sie ans Ende von \(y\). Dann
@@ -215,23 +193,19 @@
                             oder nicht, können Sie in Ihrem internen Zustand speichern. Eine
                             Regel wäre also zum Beispiel:
                         |> pre
-
                             carry1, 0, 0, _
                             carry0, 0, 0, 1,&lt;,&lt;,&lt;
                             carry1, 0, 1, _
                             carry1, 0, 1, 0,&lt;,&lt;,&lt;
                         |> p
-
                             Ein lästiges Detail ist, dass \(y\) kürzer sein könnte als \(x\) und
                             Sie daher in das 
                             |> tt
-
                                 +
-                            &ensp;reinlaufen könnten; wenn \(x\) kürzer
+                            \ reinlaufen könnten; wenn \(x\) kürzer
                             ist als \(y\), dann könnten Sie auf dem zweiten Band in ein
                             \(\square\) reinlaufen. Wie ist dieser Fall zu behandeln?
                     |> p
-
                         *Berechnete Sprache, berechnete Funktion.*
                         Die Begriffe des Akzpetierens und Ablehnens definieren wir genau wie
                         für die Einband-Turingmaschinen. Eine formale Definition der
@@ -243,10 +217,8 @@
                         Konvention so, dass sie ein designiertes Ausgabeband hat, auf dem nach
                         Abschluss der Berechnung das Ausgabewort \(f(x)\) steht.
                     |> h2
-
                         Einband-Maschinen können Mehrband-Maschinen simulieren
                     |> p
-
                         Es stellt sich heraus, dass mehrere Bänder zwar ein praktisches
                         Feature sind, aber nicht wirklich mehr Ausdruckskraft verlangen; was
                         eine Mehrband-Turingmaschine schafft, schafft eine
@@ -255,31 +227,25 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Theorem 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         *(Einband-Turingmaschine simuliert Mehrband-Turingmaschine)*. Sei \(M\) eine Turingmaschine mit \(k\) Bändern, wovon eines ein
                         designiertes Ausgabeband ist. Dann gibt es eine Einband-Turingmaschine
                         \(M'\) mit folgenden Eigenschaften:
                         |> ol
                             |> li
-
                                 \(M'(x)\) akzeptiert/lehnt ab/terminiert nicht genau dann, wenn
                                 \(M(x)\) akzeptiert/ablehnt/nicht terminiert.
                             |> li
-
                                 Wenn \(M(x)\) akzeptiert und \(y\) der Bandinhalt des
                                 Ausgabebandes ist, dann akzeptiert \(M'(x)\) auch, und der
                                 Bandinhalt (des einzigen Bandes, es gibt ja nur eins) ist \(y\).
                         |> p
-
                             In anderen Worten: \(M'\) simuliert \(M\).
                     |> div
                         class=well container
-
                         *Beweis.*
                         Der erste Trick ist, dass wir die \(k\) Bänder von \(M\)
                         "zusammenkleben" in ein neues Band, in welcher jede Zelle \(k\)
@@ -298,7 +264,6 @@
                                 src=../img/turing-machines/example-3-multitape/multitape-to-onetape-three-heads.svg
                                 loading=lazy
                         |> p
-
                             Wir lösen dies, indem wir die Kopfpositionen in das Band selbst
                             reinschreiben:
                         |> figure
@@ -307,7 +272,6 @@
                                 src=../img/turing-machines/example-3-multitape/multitape-to-onetape-one-head.svg
                                 loading=lazy
                         |> p
-
                             Das neue Bandalphabet ist also nicht \(\Gamma^k\) sondern \((\Gamma
                             \times \{\texttt{head}, \texttt{nohead}\} )^k\). Wo steht nun aber
                             denn der Kopf von \(M'\)? Jetzt kommt der schwierige Teil: um
@@ -512,38 +476,31 @@
                             für welches Band. All dies ist viel, aber immer noch endlich. Wir
                             können alles in einer endlichen Zustandsmenge \(Q'\) speichern.
                         |> p
-
                             Wenn der \(M\)-Zustand (der natürlich auch im \(M'\)-Zustand
                             gespeichert ist),
                             |> tt
-
                                 accept
                             erreicht hat, dann macht \(M'\) noch eine Aufräumphase, in welcher
                             sie alle Symbole, die nicht zum Ausgabeband gehören, durch
                             \(\square\) ersetzt. Dann wechselt sie in ihren eigenen
                             akzeptierenden Zustand 
                             |> tt
-
                                 accept'
                             .
                         |> span
                             class=qed
-
                             \(\square\)
                     |> h2
-
                         Einfügen versus Überschreiben
                     Folgende Aufgabe ist auf einer Einband-Turingmaschine sehr leicht:
                     gegeben ein Eingabewort \(w \in \{a,b\}^*\), ersetze jedes \(b\) durch
                     ein \(c\). In der Syntax von
                     |> a
                         href=https://turingmachinesimulator.com
-
                         turingmachinesimulator.com
                     :
                     |> pre
                         class=listing container
-
                         `name: replace_b_by_c`
                         `init: init` 
 
@@ -562,7 +519,6 @@
 
                         `accept, _, &gt;` 
                     |> p
-
                         Ungleich schwieriger ist die Aufgabe, jedes \(b\) durch ein \(bc\) zu
                         ersetzen, weil wir hier etwas
                         _einfügen_ wollen. Auf einer Einband-Turingmaschine müssen wir
@@ -570,7 +526,6 @@
                         rechts verschieben. Meinen Quelltext finden sie in
                         |> a
                             href=../code/turing machines/replace-b-by-bc.txt
-
                             replace-b-by-bc.txt
                         Können wir unserer Turingmaschine die Funktionalität geben, eine Zelle _einzufügen_ und alles von Kopf bis zum linken Ende um
                         eins nach links zu verschieben bzw. das analoge, aber nach rechts? Wir
@@ -578,15 +533,12 @@
                         aber zwei Fragen stellen:
                     |> ol
                         |> li
-
                             Ist das immer noch ein plausibles Modell einer Rechenmaschine? Ist
                             also unser neue Funktionalität physikalisch realisierbar?
                         |> li
-
                             Verleiht es wirklich neue Funktionalität, oder ist es nur
                             Syntaxzucker?
                     |> p
-
                         In diesem Fall ahnen Sie es wohl bereits: es ist nur Syntaxzucker. Die
                         Funktionalität des
                         _Einfügens/Verschiebens_ können wir leicht mit zwei Bändern
@@ -596,100 +548,80 @@
                         \end{align*} wird dann
                     |> pre
                         class=container
-
                         q, x, _
                         r, _, x, &gt;, &gt; 
                     Eine Linksbewegung ist etwas schwieriger zu implementieren. Aus
                     \(\delta(q,x) = (r,y,\texttt{L})\) wird
                     |> pre
                         class=container
-
                         q,  x, _
                         r', x, _, -, -
                         r', _, c
                         r,  c, _   
                         |> span
                             class=comment
-
                             // für jedes Zeichen c
                     |> p
-
                         Nehmen Sie die Beispielmaschine
                         |> a
                             href=../code/turing machines/go-left-go-right.txt
-
                             go-left-go-right.txt
                         , geben Sie sie auf
                         |> a
                             href=https://turingmachinesimulator.com
-
                             turingmachinesimulator.com
                         ein und starten Sie sie mit dem Eingabewort \(xxx\).
                     |> p
-
                         Ein neues Zeichen links vom Kopf einfügen ist nun einfach: aus
                         \begin{align*} \delta(q,x) = \textnormal{Zustand $r$, schreibe $y$ und
                         füge $z$ links vom Kopf ein} \end{align*} wird
                     |> pre
                         class=container
-
                         q,   x, _
                         r'', _, z, &gt;, &gt;
                         r'', c, _
                         r,   c, y, -, &gt; 
                         |> span
                             class=comment
-
                             // für jedes Zeichen c 
                     |> p
-
                         Sie können sich meine Implementierung in
                         |> a
                             href=../code/turing machines/insert-z-before-y.txt
-
                             insert-z-before-y.txt
                         ansehen. Geben Sie beispielsweise 
                         |> tt
-
                             xxyxyyxx
-                        &ensp;als Eingabewort
+                        \ als Eingabewort
                         ein.
                     |> p
-
                         Wir können von nun an also so tun, als hätten unsere Turingmaschinen
                         die Möglichkeit, zusätzliche Zellen einzufügen. In einer konkreten
                         Implementierung müssten wir dafür allerdings jedes Band durch zwei
                         Bänder ersetzen. Alternativ können Sie sich eine Turingmaschine
                         vorstellen, die statt \(k\) Bändern einfach \(2k\) Stapel hat.
                     |> h2
-
                         Die Dictionary-Maschine
                     |> p
-
                         Ein fundamentale Datenstruktur beim Programmieren sind
                         _Dictionaries_, die Key-Value-Paare speichern:
                     |> pre
                         class=container
                         |> code
                             class=terminalPrompt
-
                             python -i
                         |> code
                             class=pythonPrompt
-
                             dict = {"karl" : 42, "eva" : 35, "werner" : 20}
                         |> code
                             class=pythonPrompt
-
                             dict["eva"]
                         |> code
                             class=terminalOutput
-
                             35
                         |> code
                             class=pythonPrompt
                     |> p
-
                         Im Zweifelsfall sind diese als Hashmaps oder Rot-Schwarz-Bäume oder
                         B-Bäume implementiert. Hier interessiert uns nicht so sehr die
                         Laufzeit, sondern einfach die Funktionalität. Können wir für
@@ -698,16 +630,13 @@
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Schreiben Sie auf
                         |> a
                             href=https://turingmachinesimulator.com
-
                             turingmachinesimulator.com
                         eine Mehrband-Turingmaschine, die Inputs der Form \begin{align*} k [
                         k_1 : v_1; k_2 : v_2; \dots ; k_n : v_n ] \end{align*} entgegennimmt,
@@ -716,7 +645,6 @@
                         und akzeptiert, wenn es ein \(i\) gibt mit \(k = k_i\) und in diesem
                         Falle \(v_i\) auf das Ausgabeband schreibt.
                         |> p
-
                             *Tip:* Kopieren Sie erst einmal den gesuchten
                             Schlüssel \(k\) auf das zweite Band. Dann können Sie bequem den
                             Schlüssel \(k_i\) auf dem ersten Band mit dem auf dem zweiten Band
@@ -724,10 +652,8 @@
                             einfach mal an, dass alle Schlüssel gleiche Länge haben. Das erspart
                             Ihnen gefühlt 20 Zeilen im Programmcode der Turingmaschine.
                     |> h2
-
                         Nichtdeterministische Turingmaschinen
                     |> p
-
                         Bereits im Kapitel über reguläre Sprachen haben wir gesehen, dass
                         Nichtdeterminismus hilfreich ist, wenn wir Dinge beschreiben wollen,
                         auch wenn es kein realistisches Modell für Rechenmaschinen darstellt.
@@ -744,7 +670,6 @@
                         den nichtdeterministischen zu gehen) wird schnell chaotisch, und Sie
                         werden sich in den vielen Fallunterscheidungen verlieren.
                     |> p
-
                         Andererseits haben wir für endliche Automaten gezeigt, dass die
                         deterministischen und nichtdeterministischen Varianten tatsächlich
                         gleichmächtig sind (Potenzmengenkonstruktion). Für die
@@ -752,7 +677,6 @@
                         nicht (einen Beweis haben wir allerdings in der Vorlesung nicht
                         durchgenommen). Wie sieht es nun für Turingmaschinen aus?
                     |> p
-
                         Um nichtdeterministische Turingmaschinen zu definieren, müssen wir die
                         Zustandsübergangsfunktion \(\delta\) zu einer
                         Zustandsübergangsrelation machen. Statt \(\delta: Q \times \Gamma
@@ -773,7 +697,6 @@
                         sagen auch:
                         _Die Konfiguration \(C'\) ist von \(C\) aus erreichbar_.
                     |> p
-
                         Für ein Eingabewort \(x\) sie \(C_x := \texttt{start} x\) die
                         Startkonfiguration. Eine nichtdeterministische Turingmaschine
                         _akzeptiert_ \(x\), wenn es eine akzeptierende Endkonfiguration
@@ -789,26 +712,22 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         *(Akzeptieren und Entscheiden bei nichtdeterministischen Turingmaschinen).*
                         Eine nichtdeterministische Turingmaschine \(M\) akzeptiert die Sprache
                         \(L\) wenn \begin{align*} x \in L \Longleftrightarrow M \textnormal {
                         akzeptiert } x \end{align*} Für jedes \(x \not \in L\) gibt es also
                         keine akzeptierende Konfiguration \(C\) mit \(C_x \Rightarrow C\).
                         |> p
-
                             Die Turingmaschine \(M\) _entscheidet_ die Sprache \(L\),
                             wenn sie sie akzeptiert und es keine unendlich langen Ketten
                             \begin{align*} C_x \Step{} C_1 \Step{} C_2 \Step{} \dots
                             \end{align*} gibt.
                     |> div
                         class=alert-warning
-
                         Oft wird händeringend versucht, zu erklären, was denn eine
                         nichtdeterministische Turingmaschine
                         _tut_. Da lesen Sie dann beispielsweise, dass die
@@ -823,12 +742,10 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beispiel 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Beim Teilsummenproblem haben wir eine Liste von Waren (alles Unikate)
                         mit Preisen \(p_1, p_2, \dots, p_n\) und ein Guthaben \(g\) gegeben
                         und wollen wissen, ob wir unser Guthaben exakt ausgeben können. Ob es
@@ -847,7 +764,6 @@
                         ist in unserer Sprache \(L\) enthalten, wenn es nun eben eine
                         Teilmenge gibt, die sich genau zu 194 aufsummiert.
                         |> p
-
                             Entwerfen wir nun eine nichtdeterministische Turingmaschine \(M\)
                             für diese Sprache. \(M\) geht von links nach rechts alle Waren
                             durch. Jedes Mal, wenn ein Preis beginnt, haben wir die Möglichkeit,
@@ -885,40 +801,36 @@
                             \texttt{accept} \ , \end{align*} weil es eben eine vom Start aus
                             erreichbare akzeptierende Konfiguration gibt.
                     |> h2
-
                         Deterministische Turingmaschinen simulieren nichtdeterministische
                     |> p
-
                         Sind nun nichtdeterministische Turingmaschinen inhärent mächtiger?
                         Können Sie das Teilsummenproblem auch mit einer deterministischen
                         lösen? Klar! Hier ist mein Code in Elm, einer funktionalen
                         Programmiersprache: er probiert alle Möglichkeiten durch.
                     |> pre
                         class=listing container
-
                         `module SubsetSum exposing (..)`
                         ``
                         ``
                         `subsetSum : List Int -&gt; Int -&gt; Bool`
                         `subsetSum prices amount =`
 
-                        &ensp;`case ( prices, amount ) of`
+                        \ `case ( prices, amount ) of`
 
-                        &ensp;`( [], 0 ) -&gt;`
+                        \ `( [], 0 ) -&gt;`
 
-                        &ensp;`True`
+                        \ `True`
                         ``
 
-                        &ensp;`( x :: rest, _ ) -&gt;`
+                        \ `( x :: rest, _ ) -&gt;`
 
-                        &ensp;`subsetSum rest amount || subsetSum rest (amount - x)`
+                        \ `subsetSum rest amount || subsetSum rest (amount - x)`
                         ``
 
-                        &ensp;`( [], _ ) -&gt;`
+                        \ `( [], _ ) -&gt;`
 
-                        &ensp;`False`
+                        \ `False`
                     |> p
-
                         Auf einer deterministischen Turingmaschine wäre das deutlich
                         anstrengender, aber irgendwie auch möglich. Können wir jede
                         nichtdeterministische Turingmaschine deterministisch simulieren, indem
@@ -927,24 +839,20 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Theorem 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         *(Nichtdeterministische Turingmaschinen deterministischsimulieren)*
                         Sei \(M\) eine nichtdeterministische Turingmaschine. Dann gibt es eine
                         deterministische Maschine \(M'\) mit \(L(M) = L(M')\), d.h. \(M'\)
                         akzeptiert \(x\) genau dann, wenn \(M\) es akzeptiert.
                         |> p
-
                             Zusätzlich gilt: wenn \(M\) die Sprache nicht nur akzpetiert,
                             sondern entscheidet, dann entscheidet auch \(M'\) die Sprache
                             (terminiert also auf jedem Eingabewort).
                     |> div
                         class=well container
-
                         *Beweis.*
                         Als erstes führen wir eine kosmetische Änderung unserer
                         nichtdeterministischen Maschine durch: wir wollen, dass es für jedes
@@ -965,17 +873,14 @@
                                 src=../img/turing-machines/nondeterminism/three-to-two-2.svg
                                 loading=lazy
                         |> p
-
                             Sollte ein Paar \((q,c)\) weniger als zwei Folgemöglichkeiten geben,
                             so erfinden wir einfach neue, die jedoch direkt nach
                             |> tt
-
                                 reject
-                            &ensp;führen. Es sollte klar sein, dass diese Änderungen
+                            \ führen. Es sollte klar sein, dass diese Änderungen
                             rein kosmetisch sind und nichts an der Funktionsweise von \(M\)
                             ändern.
                         |> p
-
                             Nun bauen wir \(M\) um und geben ihr ein zweites Band. Auf diesem
                             Band soll ein Wort in \(\{0,1\}^*\) stehen. Wir machen \(M\)
                             deterministisch mit der folgenden Regel: wenn Du im Zustand \(q\)
@@ -988,7 +893,6 @@
                                 src=../img/turing-machines/nondeterminism/two-to-det.svg
                                 loading=lazy
                         |> p
-
                             Falls wir auf dem zweiten Band einem anderen Zeichen begegnen
                             (\(\square\) oder sonst etwas, das weder 0 noch 1 ist), dann lehnen
                             wir sofort ab. Wir haben nun eine deterministische Turingmaschine
@@ -1140,7 +1044,6 @@
                                             style=height: 23rm
                                             src=../img/turing-machines/det-simulates-nondet/14.svg
                         |> p
-
                             Nun bauen wir schlussendlich eine Maschine \(M'\), die in einer
                             Endlosschleife alle möglichen \(z \in \{0,1\}^*\) aufzählt, auf das
                             zweite Band schreibt, und \(M''\) neustartet. Geht das? Wir können
@@ -1149,5 +1052,4 @@
                             wirklich alle \(z \in \{0,1\}^*\) vorkommen.
                         |> span
                             class=qed
-
                             \(\square\)

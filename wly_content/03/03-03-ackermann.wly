@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=03-02-primitive-recursion-constructions.html
-
             &lt;&lt; Kapitel 3.2
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=03-04-mu-recursion.html
-
             Kapitel 3.4 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,11 +33,9 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Primitive Rekursion kann nicht alles: die éter-Ackermann-Funktion
                     |> p
-
                         In den vorhergehenden Teilkapiteln haben wir gesehen, dass Sie allerhand
                         mit primitiv rekursiven Funktionen implementieren können. Darunter Dinge,
                         die komplexere Rekursion oder Schleifen mit mehreren lokalen Variablen zu brauchen
@@ -52,42 +46,36 @@
                         als _eine_ natürliche Zahl codieren können und somit
                         der primitiven Rekursion zugänglich machen können.
                     |> p
-
                         Es liegt also Nahe, zu vermuten, dass primitive Rekursion bereits
                         den Berechenbarkeitsbegriff zufriedenstellend formalisiert: das also
                         alles "Berechenbare" auch primitiv rekursiv sei.
                         Der 
                         |> a
                             href=https://de.wikipedia.org/wiki/Ackermannfunktion
-
                             Wikipedia-Artikel
                             über die Ackermann-Funktion
-                        &ensp;schreibt, dass der deutsche Mathematiker
+                        \ schreibt, dass der deutsche Mathematiker
                         David Hilbert dies auch vermutete. Im Jahre 1926
                         jedoch definierte 
                         |> a
                             href=https://de.wikipedia.org/wiki/Wilhelm_Ackermann_(Mathematiker)
-
                             Wilhelm Ackermann
                         eine Funktion, die "offensichtlich berechenbar", jedoch nicht primitiv rekursiv ist.
                         Die Funktion, die wir heute die Ackermann-Funktion nennen, ist allerdings
                         eine vereinfachte Version, die 1935 von der ungarischen Mathematikerin
                         |> a
                             href=https://de.wikipedia.org/wiki/Rózsa_Péter
-
                             Rózsa Péter
-                        &ensp;gefunden wurde (obwohl
+                        \ gefunden wurde (obwohl
                         der letztere Artikel das Jahr 1955 nennt).
                     |> div
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         *(Péter-Ackermann-Funktion).*
                         \begin{align*}
                         A(m,n)&amp;:= \begin{cases}
@@ -109,7 +97,6 @@
                         n&amp;\mapsto A(m,n) \ .
                         \end{align*}
                     |> p
-
                         Es lohnt sich, diese Funktion für kleine Werte von \(m\) zu untersuchen.
                         Aus der Definition geht unmittelbar hervor, dass
                         \(A_0(n) = n+1\) ist.
@@ -145,22 +132,18 @@
                         Das ist schon genug, um eine Vermutung zu formulieren:
                         \(A_3(n) = 2^{n+3} - 3\) und diese dann per Indution zu beweisen.
                     |> h2
-
                         Die Péter-Ackermann-Funktion ist berechenbar
                     |> div
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Theorem 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Sei \(m \in \N\) gegeben. Die Funktion \(A_m\) ist primitiv rekursiv.
                     |> div
                         class=well container
-
                         *Beweis.*
                         Wir verwenden Induktion über \(m\). Für \(m=0\) gilt \(A_0(n)= n+1\) und somit
                         \(A_0 = \succ\). Sei nun also \(m \geq 1\). Wir sehen, dass
@@ -191,10 +174,8 @@
                         Eingabeparameter, ist primitiv rekursiv.
                         |> span
                             class=qed
-
                             \(\square\)
                     |> p
-
                         Wir haben also gezeigt, dass jedes \(A_m\) primitiv rekursiv ist.
                         Heißt das auch, dass die zwei-parametrige Funktion \(A(m,n)\) _berechenbar_ ist?
                         In der primitiven Rekursion haben wir keine Möglichkeit, den Index \(m\) als
@@ -207,26 +188,21 @@
                         sagen, dass es klar berechenbar ist; so wie wir ja auch leicht eine Funktion
                         implementieren könnten, die \(A(m,n)\) berechnet.
                     |> h2
-
                         Die Ackermann-Péter-Funktion ist nicht primitiv rekursiv
                     |> div
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Theorem 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Die Ackermann-Péter-Funktion ist nicht primitiv rekursiv.
                     Mein Beweis paraphrasiert im Wesentlichen den auf
                     |> a
                         href=https://planetmath.org/ackermannfunctionisnotprimitiverecursive
-
                         planetmath.org
                     |> p
-
                         *Die Aussage verstehen*. Beachten Sie, dass Theorem 3.3.3 nicht mit
                         Theorem 3.3.2 im Widerspruch steht. Theorem 3.3.3 besagt, dass \(A_m\) primitiv rekursiv ist,
                         für jedes \(m\). Die Zahl \(m\) ist hier also _Teil der Aussage_, nicht
@@ -234,14 +210,12 @@
                         Theorem 3.3.3 hingegen macht eine Aussage über _eine_ Funktion \(A(m,n)\) mit
                         _zwei_ Eingabeparametern, und \(m\) ist nun einer dieser beiden.
                     |> p
-
                         Anders ausgedrückt: sie können zwar jedes einzelne \(A_m\) in der "Programmiersprache" der
                         primitiven Rekursion implementieren, allerdings brauchen Sie für jedes \(m\) neuen Code.
                         Sie können keinen Code schreiben, der, gegeben \(m\), den Code für \(A_m\) irgendwie
                         implizit produziert und dann mit \(n\) aufruft. Jedenfalls nicht in der Programmiersprache
                         der primitiven Rekursion.
                     |> p
-
                         *Beweisidee.*
                         Für jedes feste \(m\) ist die ein-parametrige Funktion \(A_m := n \mapsto A(m,n)\)
                         primitiv rekursiv und
@@ -254,7 +228,6 @@
                     |> div
                         class=well container
                         |> p
-
                             *Beweis.*
                             Wir brauchen eine robuste Definition, was es heißt, dass eine Funktion \(f: \N \rightarrow \N \)
                             schneller wächst als
@@ -263,12 +236,10 @@
                             class=well subtheorem theorem
                             |> span
                                 class=numbered-title
-
                                 Definition 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;.
+                                \ .
                             Sei \(f: \N \rightarrow \N\) und \(g: \N^k \rightarrow \N\). Die Funktion
                             \(f\) _majorisiert_ \(g\), wenn
                             \begin{align*}
@@ -290,16 +261,13 @@
                             class=well subtheorem theorem
                             |> span
                                 class=numbered-title
-
                                 Lemma 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
+                                \ 
                             Für jede primitiv rekursive Funktion \(f: \N^k \rightarrow \N\) gibt
                             es ein \(r \in \N\), so dass \(f\) von \(A_r\) majorisiert wird.
                         |> p
-
                             Aus diesem Lemma folgt dann, dass \(A(m,n)\) selbst nicht
                             primitiv rekursiv sein kann. Wäre es dies, dann gäbe es ja ein
                             \(r\), so dass das ein-parametrige \(A_r\) die zwei-parametrige Funktion
@@ -313,17 +281,15 @@
                             \end{align*}
                             was offensichtlich ein Widerspruch ist, da beide Seiten gleich sind.
                         |> p
-
                             Wir werden nun das Lemma beweisen. Wir verwenden Induktion über die
                             Weise, in der die Funktion \(f\) konstruiert worden ist, also über die
                             Anzahl der Comp- und PrimRec-Kombinatoren, die wir zum Bau von \(f\) gebraucht haben.
                             Im folgenden schreiben wir, wenn wir einen Vektor \(\vec{x} = (x_1,\dots,x_n)\) aus
                             natürlichen Zahlen haben, oft \(x := \max(x_1,\dots,x_n)\).
                         |> p
-
                             *Induktionsbasis.* 
 
-                            &ensp;Wir betrachten wir die Basisfunktionen
+                            \ Wir betrachten wir die Basisfunktionen
                             \(\zero, \succ, \pi^n_k\).
                             Wir wissen bereits, dass \(A_0(n) = n+1\) ist, also \(A_0 = \succ\).
                             Leider majorisiert \(A_0\) also \(\succ\) nicht. Wie steht es mit
@@ -336,13 +302,11 @@
                             wobei wir die Schreibweise \(x = \max(\vec{x}) = \max(x_1,\dots,x_n)\) verwenden.
                             Wir schlussfolgern: \(A_2\) majorisiert jede Basisfunktion.
                         |> p
-
                             *Induktionsschritt.*
                             Wenn \(f\) keine Basisfunktion ist, dann wurde \(f\) mittels Komposition oder
                             primitiver Rekursion konstruiert. Für jeden Fall führen wir eine getrennte Rechnung
                             durch.
                         |> p
-
                             *Komposition:* \(f(\vec{x}) = g(h_1(\vec{x}), \dots, h_k(\vec{x}))\),
                             für primitiv rekursive Funktionen \(g, h_1, \dots, h_k\). Jede dieser Funktionen
                             wurde mit _weniger_ Kombinatoren konstruiert; somit wird jede dieser Funktionen
@@ -366,7 +330,6 @@
                             \end{align*}
                             Also: \(A_{q+2}\) majorisiert \(f\).
                         |> p
-
                             *Primitive Rekursion:* \(f = \primrec (g,h)\), also
                             \begin{align*}
                             f(t, \vec{x})&amp;=
@@ -381,17 +344,14 @@
                             class=well subtheorem theorem
                             |> span
                                 class=numbered-title
-
                                 Behauptung 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
+                                \ 
                             \(f(t, \vec{x}) \leq A_{q+1} (t+x)\), wobei
                             \(x = \max(\vec{x}) = \max(x_1,\dots,x_n)\).
                         |> div
                             class=well subtheorem
-
                             *Beweis.*
                             Wir verwenden Induktion über \(t\). Wenn \(t=0\) ist,
                             dann gilt
@@ -414,10 +374,8 @@
                             Somit ist die Behauptung bewiesen.
                             |> span
                                 class=qed
-
                                 \(\square\)
                         |> p
-
                             Die Behauptung reicht aber noch nicht, da
                             die rechte Seite der Ungleichung
                             \(f(t,\vec{x}) \lt A_{q+1}(t+x)\) eine Funktion in zwei
@@ -433,21 +391,17 @@
                         Es gilt also \(A_{q+2} \gt f\) und das Lemma ist bewiesen.
                         |> span
                             class=qed
-
                             \(\square\)
                     |> p
-
                         In der Vorlesung am 7. Mai 2024 hatte ich den _Grad_ einer primitiv-rekursiven Funktion
                         definiert. Das ist in etwa die "Verschachtelungstiefe" von $f$. Betrachten wir beispielsweise
                         die Funktion $\pair(x,y) = {x + y + 1 \choose 2} + x$ und dröseln auf, wie wir diese
                         als primitiv-rekursive Funktion konstruiert haben:
                     |> pre
-
                         pair = Comp(add, p0, Comp(choose2,Comp(add,p0,Comp(succ,p1))))
                         choose2 = PrimRec(zero, Comp(add,p0,p1))
                         add = PrimRec (p0, Comp(succ, p0))
                     |> p
-
                         dann können wir das auf Baum darstellen:
                     |> figure
                         |> img

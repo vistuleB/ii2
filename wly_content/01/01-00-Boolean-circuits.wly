@@ -8,18 +8,15 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=01-01-Fanin-Size-Depth.html
-
             Kapitel 1.1 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -31,7 +28,6 @@
                     class=hidden-title
                     |> span
                         class=chapterTitle
-
                         ::++ChapterCtr.
                         Boolesche Schaltkreise
                 Boolesche Schaltkreise sind ein idealisiertes Modell echter elektronischer Schaltkreise.
@@ -40,7 +36,6 @@
                 Signale zu einem Ausgabe-Signal kombinieren. Die Signale können nur zwei Werte annehmen:
                 wahr/falsch bzw. 1/0 bzw. 
                 |> tt
-
                     true/false
                 . Hier sehen Sie die drei üblichsten Gatter:
                 |> figure
@@ -81,7 +76,6 @@
                 Die dritte Zeile der mittleren Tabelle sagt beispielsweise aus, dass
                 \(1 \vee 0 = 1\) gilt.
                 |> p
-
                     Vielleicht wünschen Sie sich noch mehr Gates, zum Beispiel
                     ein if-then-else-Gate mit drei Inputs \(x,y,z\), welches
                     \(y\) ausgibt, wenn \(x\) wahr ist und ansonsten \(z\) ausgibt.
@@ -92,10 +86,8 @@
                         src=../img/circuits/if-then-else-gate.svg
                         loading=lazy
                     |> figcaption
-
                         `if` \(x\) `then` \(y\) `else` \(z\)
                 |> p
-
                     Jeder Schaltkreis _berechnet_ eine Funktion (formale Definition weiter unten).
                     Informell gesprochen, wenn wir Wahrheitswerte (0/1) in die Input-Gates reinstecken,
                     dann fließen diese durch den Schaltkreis und werden von den AND/OR/NOT-Gates entsprechend
@@ -106,52 +98,43 @@
                         src=../img/circuits/if-then-else-gate-with-values.svg
                         loading=lazy
                     |> figcaption
-
                         Das if-then-else-Gate mit einer konkreten Belegung und einem Ausgabewert
                 |> div
                     class=well well-lg numbered-exercise container
                     |> span
                         class=numbered-title
-
                         Übungsaufgabe 
                         |> NumberedTitle
-
                             ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                        &ensp;
+                        \ 
                     Bauen Sie folgende Gates aus And-, Or- und Not-Gates zusammen:
                     |> ol
                         |> li
-
                             Ein XOR-Gate \(x \oplus y\). Es gibt 1 aus, wenn einer der beiden
                             Inputs 1 ist und der andere 0.
                         |> li
-
                             Ein Majority-Gate \({\rm Maj}(x,y,z)\). Es gibt 1 aus, wenn mindestens zwei seiner Inputs
                             1 ist.
                         |> li
-
                             Ein \(n\)-faches XOR-Gate
                             |> figure
                                 |> img
                                     style=height:5em
                                     src=../img/circuits/n-fold-xor.svg
                                     loading=lazy
-                                &ensp;,
+                                \ ,
                             welches 1 ausgibt, wenn eine _ungerade_ Anzahl seiner Inputs
                             auf 1 stehen.
                         |> li
-
                             Ein \(n\)-faches Majority-Gate
                             \({\rm Maj} (x_1,\dots,x_n)\), welches 1 ausgibt, wenn mehr als
                             \(n/2\) der Inputs auf 1 stehen. Sie können annehmen, dass \(n\) ungerade
                             ist, wenn es Ihnen hilft.
                             |> p
-
                                 Können Sie vermeiden, dass Ihr Schaltkreis riesengroß wird?
                                 Kriegen Sie beispielsweise für \(n = 99\) einen Schaltkreis hin,
                                 den man realistischerweise herstellen kann?
                 |> p
-
                     Je nach Kontext kann es hilfreich sein, Gatter mit beliebig vielen Inputs zuzulassen, beispielsweise
                     \(x_1 \wedge x_2 \wedge \dots \wedge x_n\) als _ein_ Gate darzustellen:
                     |> figure
@@ -176,7 +159,6 @@
                             src=../img/circuits/and-n-fold-log-depth.svg
                             loading=lazy
                 |> p
-
                     Schaltkreise, wie wir sie in diesem Kapitel betrachten, sind immer azyklisch. Das heißt
                     insbesondere,
                     das Dinge mit "Feedback-Schleifen" wie Flipflops eben _keine_ Schaltkreis in unserem Sinn
@@ -187,7 +169,6 @@
                         src=../img/circuits/flipflop.svg
                         loading=lazy
                 |> p
-
                     Das Flipflop zeigt ein interessantes Verhalten: wenn \({\rm Reset} = 0, {\rm Set} = 1\) ist,
                     so ist der Ausgabe-Wert des unteren OR-Gates auf jeden Fall 1, und somit
                     ist \(\bar{Q} = 0\); somit sind wiederum beide Input-Werte des oberen OR-Gates 0 und
@@ -206,33 +187,27 @@
                     class=well container theorem
                     |> span
                         class=numbered-title
-
                         Definition 
                         |> NumberedTitle
-
                             ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        &ensp;
-                    &ensp;*(Boolesche Schaltkreise)*
+                        \ 
+                    \ *(Boolesche Schaltkreise)*
                     |> p
-
                         Ein Boolescher Schaltkreis ist ein gerichteter, azyklischer Graph (englisch
                         _directed acyclic graph_, kurz _DAG_), in welchem jeder
                         Knoten entweder
                         |> ul
                             |> li
-
                                 ein Input-Gate ist und mit einer Input-Variable oder eine Booleschen Konstant (0 oder 1)
                                 beschriftet ist und
                                 keine eingehenden Kanten hat (in-degree 0), oder
                             |> li
-
                                 mit AND-, OR- oder NOT beschriftet ist, 
                         wobei die mit NOT beschrifteten Knoten genau eine eingehende Kante haben
                         und die mit AND oder OR beschrifteten Knoten mindestens zwei eingehende Kanten haben. Mindestens
                         ein Knoten ist als _Output-Gate_ gekennzeichnet. Die Output-Gates sind ihrerseits
                         mit Output-Variablen \(y_1,\dots,y_m\) beschriftet.
                 |> p
-
                     Oft haben wir es mit Schaltkreisen mit nur einem Output-Gate zu tun; in diesem
                     Falle lassen wir die Beschriftung auch gerne weg, weil sie keine zusätzliche Information
                     bringt.
@@ -248,16 +223,13 @@
                     class=well container theorem
                     |> span
                         class=numbered-title
-
                         Beobachtung 
                         |> NumberedTitle
-
                             ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        &ensp;
+                        \ 
                     Ein Schaltkreis \(C\) mit \(n\) Input-Gates und \(m\) Output-Gates berechnet
                     eine Funktion \(f_C : \{0,1\}^n \rightarrow \{0,1\}^m\).
                 |> p
-
                     Es ist auch nicht weiter überraschend,
                     dass es Schaltkreise für die gleiche Funktion geben kann (sie haben für die Funktion
                     \(x_1 \wedge \dots \wedge x_n)\) auch bereits drei verschiedene Schaltkreise gesehen,
@@ -267,12 +239,10 @@
                     class=well container theorem
                     |> span
                         class=numbered-title
-
                         Definition 
                         |> NumberedTitle
-
                             ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                        &ensp;
+                        \ 
                     Zwei Boolesche Schaltkreise \(C, C'\) heißen äquivalent, wenn
                     \(f_C = f_{C'}\), wenn sie also die gleiche Funktion berechnen. Wir schreiben
                     \(C \equiv C'\).

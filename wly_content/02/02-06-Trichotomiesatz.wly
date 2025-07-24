@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=02-05-Schroeder-Bernstein.html
-
             &lt;&lt; Kapitel 2.5
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=03-00-Computability-NaturalNumbers.html
-
             Kapitel 3.0 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,32 +33,26 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Der Trichotomiesatz
                     |> p
-
                         Rekapitulieren wir: für zwei Mengen $A$ und $B$ schreiben $A \leq B$,
                         wenn es eine injektive Funktion $f : A \rightarrow B$ gibt. Das $\leq$
                         schaut wie eine Partialordnung aus.
                     |> ol
                         |> li
-
                             Es ist reflexiv, weil $A \leq A$ gilt: Die Identität ${\rm id}_A: A
                             \rightarrow A$ ist injektiv.
                         |> li
-
                             Es ist transitiv, weil aus $A \leq B$ und $B \leq C$ folgt, dass $A
                             \leq C$: Wenn $f: A \rightarrow B$ und $g: B \rightarrow C$ injektiv
                             sind, dann ist $g \circ f: A \rightarrow C, a \mapsto g(f(a))$ auch
                             injektiv.
                         |> li
-
                             Es ist (so gut wie) antisymmetrisch, weil aus $A \leq B$ und $B \leq
                             A$ zwar nicht $A = B$ folgt, aber laut Schröder-Bernstein-Theorem
                             immerhin $A \approx B$.
                     |> p
-
                         Wenn wir also equipotente Mengen als identifisch betrachten, dann ist
                         $\leq$ tatsächlich eine Partialordnung. Ist es eine totale Ordnung?
                         Gilt also immer $A \leq B$ oder $B \leq A$? Dies klingt
@@ -73,37 +63,30 @@
                         |> p
                             |> span
                                 class=numbered-title
-
                                 Theorem 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
+                                \ 
                             *(Trichotomiesatz der Mengenlehre).* Seien $A$ und
                             $B$ zwei Mengen. Dann gibt es eine injektive Funktion $f : A
                             \rightarrow B$ oder eine injektive Funktion $g : A \rightarrow B$.
                             Es gilt also immer genau einer der drei folgenden Fälle:
                         |> ol
                             |> li
-
                                 $A \lt B$,
                             |> li
-
                                 $A \approx B$,
                             |> li
-
                                 $A \gt B$.
                     |> div
                         class=well container
                         |> p
-
                             *(Unvollständiger) Beweis.*
                             Will man ein Objekt mit gewissen Eigenschaften (hier: Funktion,
                             injektiv) konstruieren, so lohnt es sich oft, die gestellten
                             Bedingungen zu relaxieren und sich langsam zu einer "richtigen"
                             Lösung hinzutasten.
                         |> p
-
                             Wir müssen zuerst uns in Erinnerung rufen, was eine
                             _Funktion_ formal ist. $A \times B := \{ (a,b) \ | \ a \in A,
                             b \in B\}$, die Menge aller Paare, heißt das
@@ -114,59 +97,49 @@
                             |> p
                                 |> span
                                     class=numbered-title
-
                                     Definition 
                                     |> NumberedTitle
-
                                         ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                    &ensp;.
-                                &ensp;Eine Relation $R
+                                    \ .
+                                \ Eine Relation $R
                                 \subseteq A \times B$ heißt
                             |> ul
                                 |> li
-
                                     _Funktion_, wenn es für jedes $a \in A$ genau ein $b \in
                                     B$ mit $(a,b) \in R$ gibt; wir schreiben dann üblicherweise $f$
                                     statt $R$ und schreiben $f(a)$, um dieses $b$ zu benennen.
                                 |> li
-
                                     _Matching_, wenn es für jedes $a \in A$
                                     _höchstens_ ein $b \in B$ gibt mit $(a,b) \in R$ und
                                     umgekehrt für jedes $b \in B$ höchstens ein $a \in A$ mit $(a,b)
                                     \in R$.
                                 |> li
-
                                     Wenn $R$ ein Matching ist, dann _sättigt_ $R$ die Menge
                                     $A$, wenn es für _jedes_ $a \in A$ ein $b \in B$ mit
                                     $(a,b) \in R$ gibt; es _sättigt_ $B$, wenn es für
                                     _jedes_ $b \in B$ ein $a \in A$ gibt mit $(a,b) \in R$.
                         |> p
-
                             Wir beobachten: wenn $R$ ein Matching ist und die Menge $A$ sättigt,
                             dann ist $R$ eine injektive Funktion, und umgekehrt. Wenn $R$ ein
                             Matching ist und sowohl $A$ als auch $B$ sättigt, dann ist $R$ eine
                             bijektive Funktion.
                         |> p
-
                             Wir betrachten nun die Menge $\mathcal{M}$ aller Matchings in $A
                             \times B$:
                         \begin{align*} \mathcal{M} := \{ R \subseteq A \times B \ | \ R
                         \textnormal{ ist ein Matching}\} \ . \end{align*}
                         |> p
-
                             $(\mathcal{M}, \subseteq)$ ist eine Partialordnung.
                         |> div
                             class=well container-fluid subtheorem
                             |> p
                                 |> span
                                     class=numbered-title
-
                                     Beobachtung 
                                     |> NumberedTitle
-
                                         ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                    &ensp;.
-                                &ensp;Wenn $R \in
+                                    \ .
+                                \ Wenn $R \in
                                 \mathcal{M}$ ein maximales Element in der Partialordnung
                                 $(\mathcal{M}, \subseteq)$ ist, dann sättigt es $A$ oder $B$ (oder
                                 beide). Wenn es $A$ sättigt, dann ist es eine injektive Funktion
@@ -176,7 +149,6 @@
                         |> div
                             class=well container
                             |> p
-
                                 *Beweis.*
                                 Nehmen wir an, dass es weder $A$ noch $B$ sättigt. Dann gibt es
                                 also ein $a \in A$, das mit keinem $b' \in B$ "gepaart" ist, und
@@ -185,10 +157,8 @@
                                 maximal.
                             |> span
                                 class=qed
-
                                 \(\square\)
                         |> p
-
                             Wir bekommen also unsere gewünschte injektive Funktion, solange wir
                             ein maximales Element in der Partialordnung $(\mathcal{M},
                             \subseteq)$ vorweisen können. Aber Vorsicht: nicht jede
@@ -202,22 +172,18 @@
                             |> p
                                 |> span
                                     class=numbered-title
-
                                     Definition 
                                     |> NumberedTitle
-
                                         ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                    &ensp;.
-                                &ensp;Sei $(X, \preceq)$
+                                    \ .
+                                \ Sei $(X, \preceq)$
                                 eine Partialordnung und $S \subseteq X$ eine Menge. Ein Element $x
                                 \in X$ ist eine _obere Schranke für $S$_ wenn
                             \begin{align*} s \leq x \quad \forall s \in S \end{align*}
                             |> p
-
                                 gilt. Dabei ist unerheblich, ob die obere Schranke $x$ selbst in
                                 $S$ ist oder nicht.
                         |> p
-
                             Die unendliche aufsteigende Folge $1,2,3,\dots$ hat
                             _keine obere Schranke_ in $\N$. Somit gibt es auch kein
                             maximales Element. Was nun mit $(\mathcal{M}, \subseteq)$? Wenn $M_1
@@ -232,22 +198,18 @@
                             |> p
                                 |> span
                                     class=numbered-title
-
                                     Beobachtung 
                                     |> NumberedTitle
-
                                         ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                    &ensp;.
-                                &ensp;Sei $S \subseteq
+                                    \ .
+                                \ Sei $S \subseteq
                                 \mathcal{M}$ eine Kette in $(\mathcal{M}, \subseteq)$, also eine
                                 Menge von Matchings, so dass für alle $M_1, M_2 \in S$ gilt: $M_1
                                 \subseteq M_2$ oder $M_2 \subseteq M_1$. Dann ist
                             \begin{align*} \bigcup_{M \in S} M \end{align*}
                             |> p
-
                                 selbst ein Matching.
                         |> p
-
                             Wir gehen nun wie folgt vor: wir starten mit einem beliebigen $M_0
                             \in \mathcal{M}$; solange dies nicht maximal ist, finden wir ein
                             größeres: $M_1 \supsetneq M_0$; und wieder und wieder. Dies ergibt
@@ -263,27 +225,22 @@
                             |> p
                                 |> span
                                     class=numbered-title
-
                                     Zornsches Lemma.
-                                &ensp;Sei $(X,
+                                \ Sei $(X,
                                 \preceq)$ eine Partialordnung. Wenn jede Kette $S \subseteq X$
                                 eine obere Schranke $x \in X$ hat, dann enthält $X$ mindestens ein
                                 maximales Element.
                         |> p
-
                             Wir sind nun fertig! Wir können das Zornsche Lemma auf
                             $(\mathcal{M}, \subseteq)$ anwenden und erhalten ein maximales
                             Matching. Dies sättigt $A$ oder $B$ und gibt uns somit eine
                             injektive Funktion $A \rightarrow B$ oder $B \rightarrow A$.
                             |> span
                                 class=qed
-
                                 \(\square\)
                     |> h3
-
                         Zornsches Lemma, Auswahlaxiom und die axiomatische Mengenlehre
                     |> p
-
                         Glauben Sie das, was das Zornsche Lemma besagt? Bei unendlichen Mengen
                         verlässt und leider schnell die Intuition, oder schlimmer: sie wird
                         trügerisch. Gegen Ende des 19. Jahrhunderts tauchten in der
@@ -296,12 +253,10 @@
                         Vorhaben war der deutsche Mathematiker
                         |> a
                             href=https://de.wikipedia.org/wiki/David_Hilbert
-
                             David Hilbert
                         , und somit ist es auch als
                         |> a
                             href=https://de.wikipedia.org/wiki/Hilbertprogramm
-
                             Hilbertprogramm
                         bekannt. Das Bestreben, mathematisches Beweisen und somit auch Rechnen
                         zu mechanisieren, trug maßgeblich zur Entwicklung der Informatik und

@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=07-03-Turing-variants.html
-
             &lt;&lt; Kapitel 7.3
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=07-06-undecidability.html
-
             Kapitel 7.6 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,11 +33,9 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Turing-Maschinen simulieren Turing-Maschinen: die universelle Turing-Maschine
                     |> p
-
                         Im letzten Teilkapitel haben wir gesehen, wie wir jede Turingmaschine $M
                         $mit
                         Eingabealphabet $\Sigma$ codieren können als
@@ -49,13 +43,11 @@
                     \enc(M) \in \Lambda^* \ ,
                     \end{align*}
                     |> p
-
                         also als String über dem Codierungsalphabet
                     \begin{align*}
                     \Lambda := \writelambda
                     \end{align*}
                     |> p
-
                         Diese Codierungsschema enthält implizit Codierungsfunktionen
                         $\enc_Q : Q \rightarrow \{0,1\}^+$ und $\enc_\Gamma: \Gamma \rightarrow
                         \Sigma \cup \{0,1\}^+$,
@@ -67,7 +59,6 @@
                     C = u_1 \dots u_m q v_1 \dots v_n
                     \end{align*}
                     |> p
-
                         der Maschine $M$ definieren wir die Codierung von $C$ als
                     \begin{align*}
                     \enc(C) := \enc_\Gamma(u_1) \texttt{#} \enc_\Gamma(u_2) \dots \texttt{#}
@@ -76,7 +67,6 @@
                     \enc_\Gamma(v_n) \in \Lambda^* \ .
                     \end{align*}
                     |> p
-
                         Das ist alles nicht besonders tiefgründig und dient allein dazu,
                         sicherzustellen, dass wir
                         die Konfigurationen von $M$ darstellen können in dem Alphabet $\Lambda$,
@@ -87,7 +77,6 @@
                         als Strings über _einem_ festen Alphabet $\Lambda$ darstellen
                         können.
                     |> p
-
                         Eine Turingmaschine simulieren heißt nun, einen String
                         $\enc(M)\texttt{;}w$ mit $w \in \Sigma^*$ zu lesen und
                         daraus den String $\enc(\hat{\delta}^*_M (w))$ zu berechnen, also
@@ -100,13 +89,11 @@
                         |> p
                             |> span
                                 class=numbered-title
-
                                 Theorem 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
-                            &ensp;*(Universelle
+                                \ 
+                            \ *(Universelle
                             Turingmaschine).* Zu
                             jedem
                             endlichen Eingabealphabet $\Sigma$ sei
@@ -119,22 +106,18 @@
                             folgendes tut:
                         |> ul
                             |> li
-
                                 Falls $x$ nicht die Form
                                 $\enc(M) \texttt{;} w$ mit $w \in \Sigma^*$ hat,
                                 lehnt sie ab;
                             |> li
-
                                 Ansonsten, falls also $c = \enc(M)$ für eine Turingmaschine
                                 $M$ ist:
                                 |> ul
                                     |> li
-
                                         Falls $M$ mit Eingabewort $w$ nicht
                                         terminiert, dann terminiert $U$ mit
                                         Eingabewort $c \texttt{;} w$ auch nicht.
                                     |> li
-
                                         Falls $M$ mit Eingabewort $w$ eine
                                         Endkonfiguration $C = uqv$ erreicht,
                                         dann
@@ -146,7 +129,6 @@
                                         akzeptiert, und genau dann ablehnt, wenn
                                         $M$ ablehnt.
                         |> p
-
                             $U$ akzeptiert also die Sprache
                         \begin{align*}
                         \{ c w \ | \ w \in \Sigma^* \textnormal{ und } c = \enc(M) \textnormal{
@@ -156,7 +138,6 @@
                         style=margin-bottom:1em
                         class=alert-info container
                         |> p
-
                             *Ein technischer aber letztendlich irrelevanter Punkt:
                             * die Mengen
                             $Q$ und $\Gamma$ der Turingmaschine $M$ können ja beliebige
@@ -174,7 +155,6 @@
                             $q\ \enc(uqv) \in \{\qaccept, \qreject\} \times \Lambda^*$ eine
                             Endkonfiguration von $U$.
                         |> p
-
                             Des weiteren gehen wir davon aus, dass das Blank-Symbol $\Box$
                             für alle
                             Turingmaschinen $M$ mit Eingabealphabet $\Sigma$ das gleiche
@@ -194,7 +174,6 @@
                     |> div
                         class=well container
                         |> p
-
                             *Beweis.*
                             Den Beweis in allen Details zu führen hieße, die Maschine $U$
                             konkret als Turingmaschine

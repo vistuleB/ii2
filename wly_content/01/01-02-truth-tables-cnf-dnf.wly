@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=01-01-Fanin-Size-Depth.html
-
             &lt;&lt; Kapitel 1.1
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=01-03-binary-adder.html
-
             Kapitel 1.3 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,11 +33,9 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Wahrheitstabellen, CNF und DNF
                     |> p
-
                         Wir haben gesehen, dass jeder Schaltkreis eine Boolesche Funktion
                         berechnet. In diesem Abschnitt wollen wir zeigen, dass es umgekehrt
                         auch gilt: zu jeder Booleschen Funktion gibt es einen Schaltkreis (ja:
@@ -62,10 +56,8 @@
                     berechnet? Ich stelle Ihnen drei Herangehensweisen vor.
                     |> h3
                         id=truth-table-top-down
-
                         Rekursiv, top-down
                     |> p
-
                         Wir teilen die Tabelle in die obere Hälfte (wo \(x=0\) gilt) und die
                         untere Hälfte:
                     \begin{align*} \color{red}{ \begin{array}{ccc|c} x&amp;y&amp;z&amp;f \\\hline
@@ -79,7 +71,6 @@
                     Hälfte "ist" 
                     |> span
                         style=color: red
-
                         \(y \vee z\)
                     . Die untere
                     Hälfte besteht auch aus drei Einsen und einer Null, allerdings ist die
@@ -87,73 +78,61 @@
                     Hälfte 
                     |> span
                         style=color: blue
-
                         \(\bar{y} \vee z\)
-                    &ensp;ist (ich
+                    \ ist (ich
                     schreibe im Fließtext übrigens gerne \(\bar{y}\) statt \(\neg y\), weil
                     das mir lesbarer erscheint). Insgesamt also:
                     |> figure
-
                         f = `if` \(x\) `then` \(\bar{y} \vee z\)
                         `else` \(y \vee z\).
                     |> p
-
                         Jetzt können wir das mit unserem if-then-else-Schaltkreis kombinieren.
                     |> div
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Führen Sie die Konstruktion zu Ende, indem Sie \(\bar{y} \vee z\) und
                         \(y \vee z\) mit dem if-then-else-Schaltkreis kombinieren.
                     |> p
-
                         Können wir das mit beliebigen Funktionen machen? Ja klar! Wir gehen
                         wie folgt vor:
                     |> ol
                         |> li
-
                             Teile die Tabelle in die oberen \(2^{n-1}\) Zeilen (für die \(x_1 =
                             0\) gilt) und die unteren \(2^{n-1}\) Zeilen (für die \(x_1 = 1\)
                             gilt) auf.
                         |> li
-
                             Jede Hälfte kann als Boolesche Funktion mit \(n-1\) Variablen
                             betrachtet werden. Bauen Sie rekursiv Schaltkreise \(C_0\) für die
                             obere und \(C_1\) für die untere Hälfte, beide mit Input-Variablen
                             \(x_2,\dots,x_n\).
                         |> li
-
                             Kombinieren Sie diese via
 
-                            &ensp;`if` \(x_1\) 
+                            \ `if` \(x_1\) 
 
-                            &ensp;`then` 
+                            \ `then` 
 
-                            &ensp;\(C_1\)
+                            \ \(C_1\)
 
-                            &ensp;`else` 
+                            \ `else` 
 
-                            &ensp;\(C_0\) zu einem Schaltkreis für \(f\) mit
+                            \ \(C_0\) zu einem Schaltkreis für \(f\) mit
                             insgesamt \(n\) Input-Variablen.
                     |> p
-
                         An dieser Stelle zahlt es sich aus, eine formale Notation einzuführen:
                     |> div
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Sei \(f: \{0,1\}^n \rightarrow \{0,1\}\) eine Boolesche Funktion, \(i
                         \in \{1,\dots,n\}\) ein Index und \(b \in \{0,1\}\) ein Wert. Dann ist
                         \(f|_{x_i=b}\) eine neue Funktion, und zwar \begin{align*} f|_{x_i=b}
@@ -161,23 +140,19 @@
                         \dots, x_n)&amp;\mapsto f(x_1,\dots,x_{i-1}, b, x_{i+1}, \dots, x_{n}) \
                         . \end{align*}
                         |> p
-
                             In Worten: wir fixieren den \(i\)-ten Input auf den Wert \(b\) und
                             erhalten eine Funktion in den restlichen \(n-1\) Variablen.
                     |> p
-
                         Das Ergebnis ist im Allgemeinen sehr groß, aber was erwarten Sie bei
                         einer Tabelle mit \(2^n\) Zeilen?
                     |> div
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Führen Sie das rekursive Verfahren durch, um für die folgende Funktion
                         auf 4 Variablen einen Schaltkreis zu bauen: $$ \begin{array}{cccc|c} u
                         &amp;x&amp;y&amp;z&amp;f \\\hline 0&amp;0&amp;0&amp;0&amp;1 \\ 0&amp;0&amp;0&amp;1&amp;1 \\ 0&
@@ -187,10 +162,8 @@
                         1&amp;1&amp;0&amp;0&amp;1 \\ 1&amp;1&amp;0&amp;1&amp;1 \\ 1&amp;1&amp;1&amp;0&amp;0 \\ 1&amp;1&
                         1&amp;1&amp;0\\ \end{array} $$
                     |> h3
-
                         Bottom-Up, als DNF
                     |> p
-
                         Wenn Sie Rekursionshasser sind und generell lieber in
                         `for`-Schleifen denken, dann wird die nächste Konstruktion
                         mehr nach Ihrem Geschmack sein. Im Prinzip werden wir alle
@@ -211,7 +184,6 @@
                     &amp;1&amp;x \wedge \bar{y} \wedge z \\ 1&amp;1&amp;0&amp;0&amp;\\ 1&amp;1&amp;1&amp;1&amp;x
                     \wedge y \wedge z \\ \end{array} $$
                     |> p
-
                         Mit einem großen OR zusammengeführt ergibt das dann
                     |> figure
                         |> img
@@ -230,31 +202,26 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Ein _Literal_ ist eine Variable \(x\) oder deren Negation
                         \(\bar{x}\). Ein _Term_ ist ein AND (auch: Konjunktion) von
                         Literalen (beispielsweise \(\bar{x} \wedge \bar{y} \wedge z)\). Eine
                         Formel in _disjunktiver Normalform_ (DNF) ist ein OR von
                         Termen.
                         |> p
-
                             Alternativ: eine DNF ist ein Schaltkreis der Tiefe 2 (wobei
                             NOT-Gates nicht mitzählen), dessen Output-Gate ein OR-Gate ist.
                     |> div
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Was, wenn einige der "mittleren" Gates (auf Tiefe 1) keine AND-Gates
                         sind, sondern auch OR-Gates? Dann wäre dies nach der ersten Definition
                         _keine_ DNF-Formel, nach der zweiten aber schon. Zeigen Sie,
@@ -265,10 +232,8 @@
                                 src=../img/circuits/dnf-dirty.svg
                                 loading=lazy
                     |> h3
-
                         Bottom-Up, als CNF
                     |> p
-
                         Zu der eben demonstrierten Konstruktion gibt es noch eine weitere,
                         dazu duale Konstruktion. Bildlich gesprochen listet DNF-Konstruktion
                         alle Möglichkeiten auf, wie man eine 1 erhalten kann. Dual dazu können
@@ -296,20 +261,16 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Eine Formel in _konjunktiver Normalform_ (CNF) ist ein AND von
                         Klauseln.
                         |> p
-
                             Alternativ: eine CNF-Formel ist ein Schaltkreis der Tiefe 2 (wobei
                             NOT-Gates nicht mitzählen), dessen Output-Gate ein AND-Gate ist.
                     |> p
-
                         In diesem konkreten Beispiel ist die CNF viel kürzer als die DNF (das
                         ist Zufall; ich habe meine Tabelle mit Zufallswerten erzeugt).
                         Allerdings können wir, ausgehend von der "rohen" DNF (oder CNF), diese
@@ -322,24 +283,20 @@
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Minimieren Sie die obige DNF (die mit den 6 Termen), indem Sie gewisse
                         Paare von Termen zu einem kürzeren zusammenfassen.
                     |> div
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Zeigen Sie, dass es zu jeder Booleschen Funktion \(f: \{0,1\}^n
                         \rightarrow \{0,1\}\) eine äquivalente DNF-Formel mit höchstens
                         \(2^{n-1}\) Termen gibt.
@@ -347,16 +304,13 @@
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Zeigen Sie, dass jede DNF-Formel für die Boolesche Funktion \(x_1
                         \oplus \dots \oplus x_n\) genau \(2^{n-1}\) Terme besitzen muss.
                     |> p
-
                         Sie haben eventuell von Methoden zur Minimierung von DNFs bzw. CNFs
                         oder Schaltkreisen im Allgemeinen gehört, z.B. Karnaugh-Diagramme.
                         Dies sind _Heuristiken_, die hilfreich sind, aber nicht
@@ -365,27 +319,23 @@
                         Optimierungsprobleme ist in der Tat Gegenstand aktiver Forschung,
                     |> ol
                         |> li
-
                             Wenn die Funktion (1) bereits als _Boolesche Formel_ vorliegt
                             (also Schaltkreise, in denen außer den Eingabe-Gates alle Gates nur
                             eine ausgehende Kante haben), so ist das Minimierungsproblem
                             \(Sigma_2^{P}\)-vollständig, siehe
                             |> a
                                 href=http://users.cms.caltech.edu/~umans/papers/BU07.pdf
-
                                 Buchfuhrer, David; Umans, Christopher (January 2011),
                                 _The complexity of Boolean formula minimization_ (JCSS
                                 2011) 
                             .
                         |> li
-
                             Wenn die Funktion (2) als Tabelle gegeben ist, dann ist die genaue
                             Komplexität nicht genau bekannt. Es hat in den letzten Jahren
                             Fortschritte gegeben (die nahelegen, dass das Problem tatsächlich
                             schwierig ist), z.B.
                             |> a
                                 href=https://drops.dagstuhl.de/opus/volltexte/2020/12574/pdf/LIPIcs-CCC-2020-22.pdf
-
                                 Ilango, Loff, and Oliveira.
                                 _NP-Hardness of Circuit Minimization for Multi-Output
                                 Functions_, (CCC 2020)

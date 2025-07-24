@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=03-00-Computability-NaturalNumbers.html
-
             &lt;&lt; Kapitel 3.0
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=03-02-primitive-recursion-constructions.html
-
             Kapitel 3.2 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,11 +33,9 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Primitive Rekursion: Motivation und Definitionen
                     |> p
-
                         Primitive Rekursion ist ein Versuch, Berechbarkeit von Funktionen \(f: \N^k \rightarrow \N\)
                         anhand
                         eines "Baukastenprinzips" zu modellieren. Man stellt gewisse Basisfunktionen als "offensichtlich
@@ -58,7 +52,6 @@
                     x&amp;\mapsto x+1
                     \end{align*}
                     |> p
-
                         Sind diese Funktionen "offensichtlich berechenbar"? Ich würde sagen, die fundamentale Eigenschaft
                         der natürlichen Zahlen ist, dass jede Zahl einen Nachfolger (successor) hat; daher ist irgendwie
                         klar, dass \(\succ\) berechen bar ist. Aber seien wir vorsichtig: wenn wir für natürliche Zahlen
@@ -72,7 +65,6 @@
                         brauchen wir für succ kein if-then-else und keine Schleifen, denn
                         \(\succ(x) = 1x\).
                     |> p
-
                         Eine weitere Klasse von "offensichtlich" berechenbaren Funktionen sind die sogenannten
                         Projektionen
                         \(\pi^n_k\), definiert als
@@ -96,12 +88,10 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         *(Komposition)*
                         Sei \(f: \N^k \rightarrow \N\) und
                         \(g_1, \dots, g_k: \N^l \rightarrow \N\). Dann ist
@@ -117,7 +107,6 @@
                                 src=../img/primitive-rekursion/composition.svg
                                 loading=lazy
                     |> p
-
                         Um aber komplexere Operationen implementieren zu können, brauchen wir eine Art von Schleife.
                         Was ist die einfachste Art von Schleife oder Rekursion. Wir dürfen nur eine sehr beschränkte
                         Form der Rekursion verwenden:
@@ -125,12 +114,10 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         *Primitive Rekursion*
                         Seien \(g: \N^k \rightarrow \N\) und \(h: \N^{k+2} \rightarrow \N\). Wir
                         definieren eine neue Funktion $f: \N^{k+1} \rightarrow \N$ wie folgt:
@@ -144,26 +131,24 @@
                         Für diese Konstruktion schreiben wir kompakt
                         \(f := \primrec(g,h)\).
                     |> p
-
                         Wenn Sie Rekursionshasser sind, dann können Sie sich es als Funktion mit einer
                         `for`-Schleife
                         vorstellen, in der nur eine lokale Variable erlaubt ist:
                         |> pre
                             class=listing
-
                             `def PrimRec(g, h):`
 
-                            &ensp;`def f(t,*x):`
+                            \ `def f(t,*x):`
 
-                            &ensp;&ensp;&ensp;&ensp;&ensp;`temp = g(*x)`
+                            \     `temp = g(*x)`
 
-                            &ensp;&ensp;&ensp;&ensp;&ensp;`for i in range(t):`
+                            \     `for i in range(t):`
 
-                            &ensp;`temp = h(temp, i, *x)`
+                            \ `temp = h(temp, i, *x)`
 
-                            &ensp;&ensp;&ensp;&ensp;&ensp;`return temp`
+                            \     `return temp`
 
-                            &ensp;`return f` 
+                            \ `return f` 
                         Die Forderung, dass man nur _eine_ lokale Variable durch die Schleife führen darf, scheint
                         sehr restriktiv; es ist aber wohl die einfachste Form einer Schleife, die wirklich etwas
                         "schleifenhaftes" tut.
@@ -171,14 +156,12 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Demo.
                         Speichern Sie die Datei 
                         |> a
                             href=../code/primitive-recursion/primrec.py
-
                             primrec.py
-                        &ensp;auf
+                        \ auf
                         Ihrem Rechner.
                         Diese Datei stellt ein Framework für die Implementierung primitiv rekursiver Funktionen zur
                         Verfügung.
@@ -192,14 +175,12 @@
                         Regeln der primitiven Rekursion neue Funktionen erstellt:
                         |> ul
                             |> li
-
                                 `Proj(k)`: erzeugt die Funktion
                                 \begin{align*}
                                 \pi_k : \N^*&amp;\rightarrow \N \\
                                 \vec{x}&amp;\mapsto x_k \ .
                                 \end{align*}
                             |> li
-
                                 `Comp(f, g0, g1, ...)`: erzeugt die Funktion
                                 \begin{align*}
                                 \vec{x} \mapsto f(g0(x), g1(x), ...)
@@ -208,7 +189,6 @@
                                 \(g_i\) übergebenen Funktionen
                                 übereinstimmt.
                             |> li
-
                                 `PrimRec(g,h)`: erzeugt die Funktion
                                 \begin{align*}
                                 (t, \vec{x}) \mapsto \begin{cases}
@@ -217,26 +197,22 @@
                                 \end{cases}
                                 \end{align*}
                         |> p
-
                             Wenn wir die primitive Rekursion als "Programmiersprache" betrachten, dann heißt das, dass
                             wir
                             neue Funktionen bauen dürfen, indem wir `zero,succ,Proj,Comp,PrimRec` verwenden,
                             aber nicht selbst Python-Funktionen schreiben. Wir dürfen also nie selbst Integers in die
                             Hand nehmen.
                         |> p
-
                             Lassen Sie mich das am Beispiel der Addition erklären. Ich will eine Funktion
                             \({\rm add}: \N^2 \rightarrow \N\) schreiben, die ihre beiden Argumente addiert.
                             Ich darf also nicht einfach python programmieren und
                         |> pre
                             style=color:red; background-color: yellow;
                             class=listing
-
                             `def add(x,y):`
 
-                            &ensp;`return x + y`
+                            \ `return x + y`
                         |> p
-
                             schreiben, denn unsere "Programmiersprache" ist Primitive Rekursion, nicht Python! Wir
                             müssen uns `add` aus den Kombinatoren zusammenbasteln. Ich schreibe
                             nun \({\rm add}(t,x)\) statt \({\rm add}(x,y)\), um den Rekursionsparameter \(t\) deutlich
@@ -252,43 +228,34 @@
                         \end{cases} \\
                         \end{align*}
                         |> p
-
                             Wir sehen also, dass dies eine Anwendung der primitiven Rekursion ist mit
                             \(g = \pi_0\) und \(h = {\comp}(\succ, \pi_0)\), also
                         |> pre
                             class=listing
-
                             `p0 = Proj(0)`
                             `add = PrimRec (p0, Comp(succ,p0))`
                     |> div
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Zeigen Sie, dass die folgenden Funktionen primitiv-rekursiv sind, und implementieren Sie sie
                         in meinem Python-Framework, so wie ich Addition mit
                         `add = PrimRec (p0, Comp(succ,p0))`
                         implementiert habe:
                         |> ol
                             |> li
-
                                 \({\rm mult}: (x,y) \mapsto x*y\)
                             |> li
-
                                 \({\rm exp}: (a,b) \mapsto a^b\)
                             |> li
-
                                 \({\rm pred}: x \mapsto \max(0, x-1)\)
                             |> li
-
                                 \({\rm minus}: (x,y) \mapsto x-y\)
                         |> p
-
                             *Tip:* Für exp und minus ist es einfacher, die Argumente "umgedreht" zu
                             betrachten,
                             also \((a,b) \mapsto b^a\) und \((x,y) \mapsto y-x\).
@@ -296,35 +263,27 @@
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Wenn Sie die vorherige Übungsaufgabe gelöst (oder darüber aufgegeben) haben,
                         sehen Sie sich die Datei
                         |> a
                             href=../code/primitive-recursion/stockpile.py
-
                             stockpile.py
-                        &ensp;an,
+                        \ an,
                         in der ich diese Funktionen zum Großteil implementiert habe (basierend auf
                         den Übungen, die wir direkt in der Vorlesung gemacht haben).
                         |> p
-
                             Experimentieren Sie weiter und implementieren Sie "Boolesche" Prädikate und Funktionen wie
                         |> ul
                             |> li
-
                                 `isPositive`
                             |> li
-
                                 `greaterThan, lessThan, greaterEqual, lessEqual`
                             |> li
-
                                 `max, min`
                             |> li
-
                                 `ifThenElse(x,y,z)`: dies soll \(z\) zurückliefern, falls
                                 \(x=0\) (also `false`) ist, und \(y\) sonst.

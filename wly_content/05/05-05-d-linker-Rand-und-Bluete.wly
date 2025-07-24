@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=05-05-c-LR-grammars.html
-
             &lt;&lt; Kapitel 5.5
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=05-06-dk-automat.html
-
             Kapitel 5.6 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,11 +33,9 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Linker Rand, Blüten und die DK-Grammatik
                     |> p
-
                         In diesem Teilkapitel werden wir sehen,
                         wie wir für eine gültige Wortform $\gamma$
                         den korrekten Linksreduktionsschritt
@@ -49,14 +43,12 @@
                     \gamma = \alpha \beta w \rstep{} \alpha X w
                     \end{align*}
                     |> p
-
                         finden. Als erstes müssen wir uns überlegen,
                         wie die Front $\front(\gamma) = \alpha \beta$
                         überhaupt aussehen kann. Wenn wir
                         uns den Ableitungsbaum von $\gamma$ ansehen,
                         wird das einigermaßen offensichtlich sein.
                     |> p
-
                         Zur Erinnerung:
                         Zu jeder Ableitung \(S \Step{}^* w \in \Sigma^*\) können wir
                         eindeutig einen _Ableitungsbaum_ zeichnen. Wenn die Grammatik
@@ -75,7 +67,6 @@
                     B&amp;\rightarrow yAS \ | \ Az \ | \ x \ | \ y \ | \ z
                     \end{align*}
                     |> p
-
                         Es ist zu diesem Zeitpunkt irrelevant, ob \(G\) eindeutig
                         oder sogar \(LR(0)\) ist. Ich interessiere mich
                         gerade nur für Ableitungsbäume von Wortformen.
@@ -133,7 +124,6 @@
                                         style=height:16em
                                         src=../img/context-free/LR/G-messy-derivation.svg
                     |> p
-
                         Fällt Ihnen etwas auf? Schauen Sie sich bitte noch ein weiteres
                         Beispiel an für den Ableitungsbaum einer in einer
                         gültigen Wortform, also von einer, die in einer
@@ -144,7 +134,6 @@
                             src=../img/context-free/LR/G-tree-large.svg
                     |> div
                         class=well container subtheorem
-
                         *Warten Sie!*
                         Scrollen Sie erst weiter, wenn Sie den Baum oben lang genug angeschaut haben!
                         Versuchen Sie selbst, die spezielle Form dieses Baumes möglichst
@@ -153,7 +142,6 @@
                         style=height:40em
                     |> div
                         class=well container subtheorem
-
                         *Auflösung.* Hier sehen Sie noch einmal
                         den gleichen Baum, nun aber gewisse Teile verschieden umrandet / eingefärbt.
                     |> figure
@@ -161,7 +149,6 @@
                             style=height:40em
                             src=../img/context-free/LR/G-tree-large-colored.svg
                     |> p
-
                         Sie sehen: links vom Stamm gibt es nur Blätter.
                         Rechts vom Stamm ist jedes Blatt ein Terminalsymbol.
                         Wir erkennen auch, was der letzte Ableitungsschritt war, der zu diesem
@@ -172,12 +159,10 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;&ensp;/ Beobachtung
+                            \  / Beobachtung
                         *(Stamm, linker Rand, Blüte, Front, rechter Rest)*
                         Sei \(S \Step{}^* \gamma\) eine Rechtsableitung, \(\gamma\) also
                         eine gültige Wortform, und
@@ -194,7 +179,6 @@
                         Im rechten Rest ist jedes Blatt ein
                         Terminalsymbol, ansonsten wäre es keine Rechtsableitung.
                         |> p
-
                             Die Beschriftung der Knoten im linken Rand ergibt eine Wortform \(\alpha\);
                             die Blüte ergibt \(\beta\).
                             Die Blätter im rechten Rand
@@ -214,7 +198,6 @@
                         also nicht eindeutig ist. Für eindeutige Grammatiken ist
                         die Unterteilung aber eindeutig.
                         |> p
-
                             Sei weiterhin \(A\) die Beschriftung des Elternknoten der Blüte
                             (notwenigerweise ein Nichtterminal; Terminale haben keine Kinder).
                             Dann ist \(A \rightarrow \beta\) eine Produktion in der Grammatik und
@@ -226,7 +209,6 @@
                             \end{align*}
                             ein korrekter Linksreduktionsschritt ist.
                     |> p
-
                         Wir können also, ausgehend von der Wortform \(\gamma\),
                         eine Linksreduktion \(\gamma \rstep{}^* S\) finden,
                         indem wir den Ableitungsbaum von \(\gamma\) zeichnen und
@@ -341,7 +323,6 @@
                                         style=height:40em
                                         src=../img/context-free/LR/tree-destruction/10.svg
                     |> p
-
                         Um für eine Wortform \(\gamma\) den korrekten Reduktionsschritt zu finden,
                         reicht es also aus, linken Rand und Blüte zu bestimmen, also
                         \(\alpha\) und \(\beta\), so dass \(\gamma = \alpha\beta w\)
@@ -351,7 +332,6 @@
                         schließlich müssen wir dafür doch den Ableitungsbaum von \(\gamma\) bilden,
                         was selbst wieder eine Parsing-Aufgabe ist???
                     |> p
-
                         An dieser Stelle zeigt sich die Genialität des DK-Ansatzes:
                         der Ableitungsbaum von \(\gamma\) kann beliebig verschachtelt sein,
                         aber Stamm, linker Rand und Blüte haben zusammen eine einfache,
@@ -361,19 +341,16 @@
                             style=height:20em
                             src=../img/context-free/LR/schema-linker-rand-bluete-stamm.svg
                     |> p
-
                         Die Aussage "Stamm, linker Rand und Blüte haben eine einfache Struktur"
                         können wir formalisieren.
                     |> div
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Für eine kontextfreie Grammatik \(G\) definieren wir
                         die Sprache \(\Front(G) \subseteq (\Sigma \cup N)^*\):
                         \begin{align*}
@@ -393,18 +370,15 @@
                         |> p
                             |> span
                                 class=numbered-title
-
                                 Lemma 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
+                                \ 
                             Die Sprache $\Front(G)$ ist regulär.
                             Insbesondere gibt es eine erweitert reguläre Grammatik \(\hat{G}\) für
                             $\Front(G)$, so dass die Blüte genau die im letzen Ableitungsschritt
                             erzeugten Terminalsymbole sind.
                     |> p
-
                         Hier ist etwas Mentalgymnastik vonnöten: aus Sicht der Sprache
                         $\Front(G)$ sind \(\Sigma \cup N\) _Terminalsymbole_. Sie können
                         ja schließlich in den Wörtern der Sprache auftauchen.
@@ -432,12 +406,10 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Sei \(G = (\Sigma, N, S, P)\) eine kontextfreie Grammatik. Die
                         Front-Grammatik oder DK-Grammatik von \(G\) ist
                         die _erweitert reguläre_ Grammatik \(\hat{G} = (\Sigma \cup N, \hat{N}, \hat{S},
@@ -460,24 +432,20 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beobachtung 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         \(\hat{G}\) erzeugt die Sprache
                         \(\Front(G)\).
                     |> div
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beispiel 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Für unsere Grammatik \(G\) oben ergeben sich folgende Produktionen
                         \(\hat{P}\) in \(\hat{G}\):
                         \begin{align*}
@@ -509,7 +477,6 @@
                         \end{array}
                         \end{align*}
                     |> p
-
                         Nochmals: Produktionen wie
                         \(\dk{B} \rightarrow \dkt{y A} \dk{S}\) sind erweitert regulär
                         weil $\dkt{y}$ und $\dkt{A}$ aus Sicht von \(\hat{G}\) beides
@@ -519,14 +486,12 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Algorithmus
                         *- Der \(LR(0)\)-Parser.*
                         Starte mit einem leerem Stack. Sei
                         \(\gamma\) der Inhalt des Stacks zu einem Zeitpunkt.
                         |> ol
                             |> li
-
                                 Wenn \(\gamma \in \Front(G)\), dann
                                 betrachte die letzte angewandte \(\hat{G}\)-Produktion
                                 \(\hat{X} \rightarrow \beta\) und schreibe
@@ -537,7 +502,6 @@
                                 \end{align*}
                                 Konkret: lösche \(\beta\) vom Stack und ersetze es durch \(A\).
                             |> li
-
                                 Falls \(\gamma \not \in \Front(G)\),
                                 lies das nächste Eingabezeichen und lege es auf den Stack.
                         Der Parser endet, wenn weder Schritt 1 noch Schritt 2 möglich sind;
@@ -547,17 +511,14 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Theorem 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Wenn der \(LR(0)\)-Parser akzeptiert, dann hat er eine Linksreduktion
                         \(w \rstep{}^* S\) und somit eine Rechtsableitung konstruiert; es gilt
                         also \(w \in L(G)\).
                         |> p
-
                             Wenn umgekehrt \(w \in L(G)\) gilt und
                             \(G\) die \(LR(0)\)-Bedingung erfüllt,
                             dann findet der
@@ -565,14 +526,12 @@
                     |> div
                         class=well container
                         |> p
-
                             *Beweis.*
                             Der erste Teil der Bedeutung ist einfach zu sehen.
                             Jeder Reduktionsschritt ist ein Linksreduktionsschritt, und
                             wenn man Ende $S$ steht, waren es auch alles
                             _korrekte_ Linksreduktionsschritte.
                         |> p
-
                             Der zweite Teil ist schwieriger. Wir nehmen also
                             an, dass $G$ eine LR(0)-Grammatik ist.
                             Da \(G\) eindeutig ist, hat jede gültige Wortform
@@ -586,12 +545,10 @@
                             Teil des Eingabewortes. Wir werden beweisen, dass zu jedem Zeitpunkt folgende
                             Invariante gilt:
                         |> p
-
                             *Behauptung.*
                             (i) \(\gamma w\) ist eine gültige Wortform. (ii)
                             \(\gamma\) ist ein Präfix von \(\front(\gamma w)\).
                         |> p
-
                             *Beweis.*
                             Die Behauptung gilt offensichtlich am Anfang, da
                             $\gamma = \epsilon$ und \(w\in L\) ist und
@@ -603,7 +560,6 @@
                             Es gibt nun zwei Möglichkeiten.
                             |> ol
                                 |> li
-
                                     Der Parser wendet Schritt 1 an, also \(\gamma \in \Front(G)\).
                                     Das heißt nach Definition von $\Front(G)$, dass es ein \(w' \in \Sigma^*\) gibt,
                                     so dass \(\gamma w'\) eine gültige Wortform ist
@@ -636,7 +592,6 @@
                                     da rechts vom aktiven Teil nur Terminale stehen, muss
                                     \(\alpha A\) ein Präfix von $\front(\alpha A w)$ sein.
                                 |> li
-
                                     Der Parser wendet Schritt 2 an, also \(w = cw'\), er liest
                                     \(c\) und legt es auf den Stack. Im nächsten Schritt
                                     ist der Stackinhalt \(\gamma' := \gamma c\) und das ungelesene Wort
@@ -655,5 +610,4 @@
                             Also muss \(\gamma = S\) gelten und der Parser akzeptiert.
                             |> span
                                 class=qed
-
                                 \(\square\)

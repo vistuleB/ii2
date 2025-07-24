@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=04-02-finite-state-machines.html
-
             &lt;&lt; Kapitel 4.2
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=04-04-regular-grammar-to-fsm.html
-
             Kapitel 4.4 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,11 +33,9 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Nichtdeterministische Endliche Automaten
                     |> p
-
                         Ein nichtdeterministischer Automat ist, informell ausgedrückt, wie ein
                         deterministischer Automat, nur dass es für eine
                         Zustand-Symbol-Kombination beliebig viele ausgehende Pfeile (eventuell
@@ -53,7 +47,6 @@
                             src=../img/finite-state-automata/nfsm-example-01.svg
                             loading=lazy
                     |> p
-
                         Ein Pfeil beschreibt also nicht unbedingt einen Zustandsübergang, der
                         _geschieht_, sondern einen, der _möglich_ ist. Formal
                         gesprochen ist \(\delta\) nun keine Funktion mehr, sondern eine
@@ -62,29 +55,22 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         *(Nichtdeterministischer endlicher Automat, non-deterministic finite state machine)*
                         Ein nichtdeterministischer endlicher Automat besteht aus
                         |> ul
                             |> li
-
                                 einem endlichen Eingabealphaet \(\Sigma\),
                             |> li
-
                                 einer endlichen Menge \(Q\) von Zuständen,
                             |> li
-
                                 einem Startzustand \(\qstart \in Q\),
                             |> li
-
                                 einer Menge \(F \subseteq Q\) von akzeptierenden Endzuständen,
                             |> li
-
                                 einer Zustandsübergangsrelation \(\delta \subseteq Q \times \Sigma
                                 \times Q\).
                         Formal gesehen ist also ein Automat ein Quintupel \(M = (\Sigma, Q,
@@ -102,15 +88,12 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         *(Erweiterte Zuständsübergangsfunktion)*.
                         |> p
-
                             Für einen nichtdeterministischen endlichen Automaten \((\Sigma, Q,
                             \qstart, F, \delta)\) definieren wir die
                             _erweiterte Zustandsübergangsrelation_
@@ -123,7 +106,6 @@
                             \hat{\delta}\). Wie zuvor schreiben wir \(q
                             \stackrel{\alpha}{\rightarrow} q'\).
                         |> p
-
                             Die von \(M\) akzeptierte Sprache ist $$ L(M) := \{\alpha \in
                             \Sigma^* \ | \ \textnormal{ es gibt ein } q \in F \textnormal{ mit }
                             \qstart \stackrel{\alpha}{\rightarrow} q \} $$
@@ -131,22 +113,18 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beobachtung 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Sei \(M = (\Sigma, Q, \qstart, F, \delta)\) ein nichtdeterministischer
                         endlicher Automat. Dann gibt es eine reguläre Grammatik \(G\) mit
                         \(L(G) = L(M)\).
                     |> p
-
                         Wir führen hier den Beweis nicht noch einmal; er ist mehr oder weniger
                         identisch mit dem Beweis von
                         |> a
                             href=./04-02-finite-state-machines.html#theorem-fsm-regular
-
                             Theorem 4.2.5
                         ; wir haben nämlich in jenem Beweis nirgends verwendet, dass
                         \(\delta\) eine _Funktion_ ist, und daher geht mit einem
@@ -158,18 +136,15 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Theorem 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Sei \(G = (\Sigma, N, P, S)\) eine reguläre Grammatik. Dann gibt es
                         einen nichtdeterministischen endlichen Automaten \(M\) mit \(L(G) =
                         L(M)\).
                     |> div
                         class=well container
-
                         *Beweis.*
                         Unser Automat hat als Zustandsmenge \(N\), die Menge der
                         nichtterminalen Symbole und als Startzustand \(S\), das Startsymbol
@@ -180,7 +155,6 @@
                         Regel der Form \(X \rightarrow \epsilon\) machen wir \(X\) zu einem
                         Endzustand.
                         |> p
-
                             Was aber mit Regeln der Form \(X \rightarrow Y\)? Hierfür könnte man
                             Nichtdeterministische Automaten mit \(\epsilon\)-Übergängen
                             definieren, die also vom Zustand \(X\) nach \(Y\) wechseln können,
@@ -188,30 +162,24 @@
                             und verweisen auf
                             |> a
                                 href=./04-01-regular-grammars.html#theorem-regular-simplified
-
                                 Theorem 4.1.7
                             , welches uns erlaubt, Regeln der Form \(X \rightarrow Y\) und \(X
                             \rightarrow a\) zu eliminieren.
                             |> span
                                 class=qed
-
                                 \(\square\)
                     |> div
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beispiel 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         |> p
-
                             Wir betrachten abermals die
                             |> a
                                 href=./04-01-regular-grammars.html#example-aaabb
-
                                 reguläre Grammatik aus dem vorherigen Kapitel 4.1
                             : \begin{align*} S&amp;\rightarrow \epsilon \ |\ a S \ | \ b T \\ T&
                             \rightarrow \epsilon \ | \ b T \ \end{align*} und auch den
@@ -223,12 +191,10 @@
                                 src=../img/finite-state-automata/finite-state-machine-example-03.svg
                                 loading=lazy
                         |> p
-
                             Wir sehen nun, dass dies genau der nichtdeterministische Automat
                             ist, den wir nach 
                             |> a
                                 href=#theorem-nfsm-regular
-
                                 Theorem 4.3.4
                             bauen können. Die Zustandsübergangsrelation \(\delta\) ist $$ \delta
                             = \{(S,a,S), (S,b,S), (T,b,T) \} \ . $$ Jeder Zustand ist ein
@@ -241,25 +207,20 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beispiel 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         |> p
-
                             Wir betrachten die
                             |> a
                                 href=./04-01-regular-grammars.html#exercise-no-a-or-no-b
-
                                 reguläre Grammatik aus Übungsaufgabe 4.1.7
                             :
                         \begin{align*} S&amp;\rightarrow A \ | \ B \\ A&amp;\rightarrow \epsilon \
                         | \ b A \ | \ c A \\ B&amp;\rightarrow \epsilon \ | \ a B \ | \ c B
                         \end{align*}
                         |> p
-
                             Bevor wir einen nichtdeterministischen Automaten bauen können,
                             müssen wir erst die Produktionen der Form \(X \rightarrow Y\)
                             eliminieren bzw. ersetzen. Wenn Sie Aufgabe 4.1.7 gelöst haben,
@@ -283,29 +244,23 @@
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Sei \(\Sigma = \{1\}\) und \(L_k := \{1^n \ | \textnormal{ $n$ ist
                         durch $k$ teilbar} \}\). Schreiben Sie für \(L_k\) einen
                         deterministischen endlichen Automaten.
                         |> p
-
                             Schreiben Sie eine reguläre Grammatik für die Sprache \(L_5 \cup
                             L_7\), also die Strings aus 1, deren Länge durch 5 oder durch 7
                             teilbar ist.
                         |> p
-
                             Zeichnen Sie nun einen nichtdeterministischen endlichen Automaten
                             für \(L_5 \cup L_7\).
                     |> h2
-
                         Nichtdeterministische endliche Automaten deterministisch machen
                     |> p
-
                         Wir werden nun zeigen, dass man zu jedem nichtdeterministischen
                         Automaten \(M\) einen äquivalenten deterministischen Automaten \(M'\)
                         bauen kann. Bevor wir eine allgemeine Konstruktion zeigen, fragen wir
@@ -317,7 +272,6 @@
                             src=../img/finite-state-automata/nfsm-example-01.svg
                             loading=lazy
                     |> p
-
                         und das Eingabewort \(\alpha = 1001100\) überprüfen können, ob
                         \(1001100 \in L(M)\) gilt. Einem determinischen endlichen Automaten
                         können wir ja das Eingabewort einfach füttern und schauen, was der
@@ -531,7 +485,6 @@
                                         style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-22.svg
                     |> p
-
                         Am Ende landet der grüne Punkt im Zustand \(E\). Das Wort ist also in
                         \(L(M)\). Das können wir auch ganz allgemein tun. Wenn Zustand \(q\)
                         einen "Punkt" hat und Zeichen \(x\) gelesen wird, dann teilt sich
@@ -547,7 +500,6 @@
                         x_i)\); wenn die Menge \(R_n\) einen akzeptierenden Endzustand enthält
                         (dieser also am Ende einen "Punkt" hat), gilt \(\alpha \in L(M)\).
                     |> p
-
                         Treten Sie einen Schritt zurück und betrachten, was wir mit \(\Delta\)
                         definiert haben: wir haben eine Zustandsübergangsfunktion definiert,
                         die nun aber nicht auf Zuständen sondern auf Zustands_mengen_
@@ -563,12 +515,10 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Theorem 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         *(Einen nichtdeterministischen endlichen Automaten deterministisch
                         machen).*
                         Sei \(M = (\Sigma, Q, \qstart, F, \delta)\) ein nichtdeterministischer
@@ -582,31 +532,26 @@
                         \step{x} q'\} \end{align*} der _Potenzmengenautomat_. Es gilt
                         \(L(M) = L(M')\).
                     |> p
-
                         Wir folgern also
                     |> div
                         id=regular-grammar-to-fsm
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Theorem 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Zu jeder regulären Sprache \(L\) gibt es einen deterministischen
                         endlichen Automaten \(M\) mit \(L(M) = L\).
                     |> div
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beispiel 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Der obige nichtdeterminische Automaten \(M\), der die Sprache aller
                         Wörter, deren viertletztes Zeichen eine 1 ist, akzeptiert, hat fünf
                         Zustände. Sein Potenzmengenautomat \(M'\) hätte also \(2^5 = 32\).
@@ -623,7 +568,6 @@
                                 src=../img/finite-state-automata/nfsm-example-04-third-from-right.svg
                                 loading=lazy
                         |> p
-
                             Der Potenzmengenautomat hat die Zustandsmenge
                         |> figure
                             class=centered-figure well
@@ -791,7 +735,6 @@
                                             style=height:18em
                                             src=../img/finite-state-automata/potenzmengenautomat/17.svg
                         |> p
-
                             Wenn wir uns vorstellen, dass wir vor das Eingabewort \(\alpha\) die
                             Zeichen 000 stellen, also \(\alpha\) durch \(000\alpha\) ersetzen,
                             dann codiert jeder Zustand genau die letzten drei Zeichen des
@@ -799,6 +742,5 @@
                             bedeutet zum Beispiel
                             _die letzten drei Zeichen waren \(110\)_
                     |> p
-
                         Im folgenden Unterkapitel werden wir alle Transformationen, die wir
                         bisher gesehen haben, an einem konkreten Beispiel anwenden.

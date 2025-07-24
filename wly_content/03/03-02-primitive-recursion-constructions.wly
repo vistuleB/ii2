@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=03-01-primitive-recursion-definitions.html
-
             &lt;&lt; Kapitel 3.1
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=03-03-ackermann.html
-
             Kapitel 3.3 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,20 +33,16 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Primitive Rekursion: Konstruktionen und Tricks
                     |> p
-
                         Ich beginne dieses Teilkapitel, manche der primitiv-rekursive Implementierungen in
                         |> a
                             href=../code/primitive-recursion/stockpile.py
-
                             stockpile.py
-                        &ensp;zu erklären und
+                        \ zu erklären und
                         werde dann weitere, weniger offensichtliche Konstruktionen diskutieren.
                     |> h2
-
                         Arithmetische Operationen
                     Wir haben bereits gesehen, dass wir die Addition per
                     \({\rm add} = \primrec (\pi_0, \comp(\succ, \pi_0)) \) schreiben können. Beachten Sie, dass ich
@@ -61,18 +53,15 @@
                     auch gleich die Funktionen \(g\) und \(h\) dazu:
                     |> pre
                         class=container
-
                         def mult(t,x):
                         temp = 0 
                         |> span
                             class=comment
-
                             = zero(x)
                         for i in range(t):
                         temp = add(temp,x) 
                         |> span
                             class=comment
-
                             = Comp(add, p_0, p2) (temp,i,x)
                         return temp
                     erinnern Sie sich daran: \(h\) muss immer eine Funktion in der lokalen Variable temp,
@@ -94,25 +83,21 @@
                     wir hier auf das Zwischenergebnis und die Laufvariable zugreifen müssen:
                     |> pre
                         class=container
-
                         def factorial(t):
                         temp = 1 
                         |> span
                             class=comment
-
                             = one()
                         for i in range(t):
                         temp = mult(temp,i+1) 
                         |> span
                             class=comment
-
                             = Comp(mult, p_0, Comp(succ, p_1)) (temp,i)
                         return temp
                     Wir können nicht einfach \(i+1\) schreiben! Wir müssen dies via \(\comp(\succ,\pi_1)\) konstruieren.
                     Denn: die Funktion \(h\) bekommt \({\rm temp}, i, \vec{x}\) als Input; \(\pi_1\) gibt
                     uns davon das \(i\) zurück und \(\comp(\succ, \pi_1)\) gibt uns \(i+1\).
                     |> p
-
                         Operationen wie \(\pred: t \mapsto t-1\) und \({\rm minus}\)
                         sind konzeptuell nur ein bisschen anders. Das liegt auch daran,
                         dass wir keine negativen Zahlen haben. Was ist
@@ -120,18 +105,15 @@
                         pred implementieren:
                     |> pre
                         class=container
-
                         def pred(t):
                         temp = 0 
                         |> span
                             class=comment
-
                             = zero()
                         for i in range(t):
                         temp = i 
                         |> span
                             class=comment
-
                             = p1 (temp,i) 
                         return temp
                     In Worten: wenn \(t=0\), dann geben wir einfach \(\zero()\)
@@ -142,7 +124,6 @@
                     \pred = \primrec(\zero, \pi_1)
                     \end{align*}
                     |> p
-
                         Für minus schreiben wir uns erst mal
                         \({\rm subtractFrom}: (t,x) \mapsto x-t\). Hierfür wenden wir einfach pred
                         \(t\) mal auf \(x\) an:
@@ -151,10 +132,8 @@
                         {\rm minus}&amp;= \comp({\rm subtractFrom}, \pi_1, \pi_0)
                         \end{align*}
                     |> h2
-
                         Boolesche Werte
                     |> p
-
                         Die primitive Rekursion stellt uns als "Datentyp" nur die natürlichen Zahlen zur
                         Verfügung. Alles andere müssen wir als natürliche Zahlen nach einem von uns
                         selbst gewählten Schema codieren. Für Boolesche Werte ist das recht naheliegend.
@@ -163,18 +142,15 @@
                         `isPositive`:
                     |> pre
                         class=container
-
                         def pred(t):
                         temp = 0 
                         |> span
                             class=comment
-
                             = zero()
                         for i in range(t):
                         temp = 1 
                         |> span
                             class=comment
-
                             = one 
                         return temp
                     und somit
@@ -182,11 +158,9 @@
                     {\rm isPositive} = \primrec(\zero, {\rm one})
                     \end{align*}
                     |> p
-
                         Auf ähnliche Weise können wir uns nun lessThan, lessEqual, and, or, not,
                         ifThenElse konstruieren.
                     |> h2
-
                         Wurzel und Suchen im Allgemeinen
                     Eine größere Herausforderung stellt die ganzzahlige Wurzel
                     \(x \mapsto \floor{\sqrt{x}}\) dar. Hierfür haben wir keine Formel
@@ -194,20 +168,16 @@
                     Es handelt sich um ein Suchproblem:
                     |> div
                         style=text-align:center
-
                         \(\floor{\sqrt{x}}\) ist die größte natürliche Zahl \(i\) mit
                         \(i^2 \leq x\).
                     |> p
-
                         Wir können auch den Suchraum begrenzen: da \(\sqrt{x} \leq x\) für alle natürlichen Zahlen, so
                         gilt: 
                     |> div
                         style=text-align:center
-
                         \(\floor{\sqrt{x}}\) ist die größte natürliche Zahl \(i \in \{0,1,\dots,x\}\) mit
                         \(i^2 \leq x\).
                     |> p
-
                         Das Prädikat
                         \begin{align*}
                         {\rm iSquareLessEqualX } (i,x)&amp;= [ i^2 \leq x ]
@@ -219,22 +189,18 @@
                         und damit können wir die ganzzahlige Wurzel schreiben als
                     |> pre
                         class=container
-
                         def largestIbelowTwithISquareLessEqualX(t,x):
                         temp = 0 
                         |> span
                             class=comment
-
                             = zero(x)
                         for i in range(t):
                         temp = ifThenElse(iSquareLessEqualX(i,x), i, temp) 
                         |> span
                             class=comment
-
                             = Comp(ifThenElse, Comp(iSquareLessEqual, p_1, p_2), p_1, p_0) (temp,i,x)
                         return temp
                     |> p
-
                         Was geht hier vor? Wenn
                         \({\rm iSquareLessEqualX}(i,x))\) True ist, dann ersetzen wir temp durch \(i\).
                         Ansonsten belassen wir es beim alten Wert; der endgültige Wert von temp ist
@@ -255,7 +221,6 @@
                     diese Konstruktion jedes Mal "von Hand" durchzuführen:
                     |> pre
                         class=container
-
                         def LargestLessThan(upperBound, predicate):
                         def new_function(*x):
                         temp = 0
@@ -265,13 +230,11 @@
                         return temp
                         return new_function
                     |> p
-
                         und somit können wir sqrt schreiben als
                     \begin{align*}
                     {\rm sqrt} = {\rm LargestLessThan} (\pi_0, {\rm iSquareLessEqual})
                     \end{align*}
                     |> h2
-
                         Paare und Listen
                     Eine recht stark anmutende Beschränkung primitiv rekursiver Funktionen ist
                     die Tatsache, dass wir in der Schleife nur _eine_ lokale Variable
@@ -280,7 +243,6 @@
                     Betrachten wir den Fall der Fibonacci-Zahlen:
                     |> pre
                         class=container
-
                         def fibIterative(t):
                         a = 0
                         b = 1
@@ -293,7 +255,6 @@
                     wir mit diesem schönen Trick eliminieren:
                     |> pre
                         class=container
-
                         b = a+b
                         a = b-a 
                     Doch selbst dann hätten wir immer noch zwei lokale Variable.
@@ -304,7 +265,6 @@
                     Hauptzutat hierbei ist es, dass wir _Paare_ als neue Datenstruktur
                     verwenden.
                     |> p
-
                         Erinnern Sie sich: die primitive Rekursion stellt uns als Datentyp von Haus aus
                         nur die natürlichen Zahlen zur Verfügung. Alles andere müssen wir nach einem
                         selbst gewählten Schema codieren. Bei Booleschen Werten war es einfach.
@@ -312,9 +272,8 @@
                         In 
                         |> a
                             href=02-00-infinite-sets.html
-
                             Kapitel 2: Unendliche Mengen
-                        &ensp;haben wir
+                        \ haben wir
                         die bijektive Funktion
                     \begin{align*}
                     \pair : \N^2&amp;\rightarrow \N \\
@@ -324,18 +283,15 @@
                     \({n \choose 2} = 1 + 2 + \cdots + (n-1)\) und somit
                     |> pre
                         class=container
-
                         def choose2(t):
                         temp = 0 
                         |> span
                             class=comment
-
                             = zero()
                         for i in range(t):
                         temp = add(temp,i) 
                         |> span
                             class=comment
-
                             = Comp(add, p0, p1)
                     und somit
                     \begin{align*}
@@ -343,7 +299,6 @@
                     \pair&amp;= \comp({\rm add}, \comp({\rm choose2}, \comp({\rm add}, \pi_0, \comp(\succ, \pi_1)), \pi_0)
                     \end{align*}
                     |> p
-
                         Um die Umkehrfunktionen \(\first, \second\) zu implementieren, die uns aus
                         \(\pair(x,y)\) wieder \(x\) und \(y\) berechnen, bestimmen wir erst
                         den Wert von \(x+y\). Wenn \(\pair(x,y) = n\) gilt und \(x+y=i)\) ist, dann ist
@@ -360,12 +315,10 @@
                     \second&amp;= \comp({\rm minus}, {\rm getXplusY}, \first)
                     \end{align*}
                     |> p
-
                         Listen können wir implementieren, indem wir Paare verschachtelt zusammenhängen,
                         z.B. \([5,7,9]\) wird zu 
                         |> span
                             style=color:red
-
                             \(\pair(5, \pair(7, 9))\)
                         . Das ist
                         natürlich
@@ -374,30 +327,23 @@
                         class=container
                         |> code
                             class=pythonPrompt
-
                             pair(5,pair(7,9))
                         |> code
                             class=terminalOutput
-
                             11031
                         |> code
                             class=pythonPrompt
-
                             pair(7,9)
                         |> code
                             class=terminalOutput
-
                             143
                         |> code
                             class=pythonPrompt
-
                             pair(5,143)
                         |> code
                             class=terminalOutput
-
                             11031
                     |> p
-
                         Das Problem ist, dass wir das Ende der Liste nicht kennen. Wir lösen das Problem, indem
                         wir die leere Liste mit \(0\) codieren und dann aber beim Davorhängen eines Elements
                         1 draufaddieren müssen, also
@@ -407,44 +353,34 @@
                     {\rm second} ({\rm list})&amp;= \second({\rm list} - 1)
                     \end{align*}
                     |> p
-
                         Jetzt klappt alles wunderbar:
                     |> pre
                         class=container
                         |> code
                             class=pythonPrompt
-
                             push(11, push(7, push(5, 0)))
                         |> code
                             class=terminalOutput
-
                             90537
                         |> code
                             class=pythonPrompt
-
                             head(90537)
                         |> code
                             class=terminalOutput
-
                             11
                         |> code
                             class=pythonPrompt
-
                             head(tail(90537))
                         |> code
                             class=terminalOutput
-
                             7
                         |> code
                             class=pythonPrompt
-
                             head(tail(tail(90537)))
                         |> code
                             class=terminalOutput
-
                             5
                     |> p
-
                         *Native Implementierung.* Die primitive Rekursion ist
                         ein theoretischer Berechenbarkeitsbegriff für Funktionen
                         auf natürlichen Zahlen. Es ist definitiv keine ernstzunehmende Programmiersprache.
@@ -461,6 +397,5 @@
                         class=listing
                         |> code
                             style=counter-set: listing 63;
-
                             def pair(x,y):
-                        &ensp;`return int(((x+y+1) * (x+y)) / 2 + x )`
+                        \ `return int(((x+y+1) * (x+y)) / 2 + x )`

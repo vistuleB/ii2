@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=05-05-b-Parser-in-Java.html
-
             &lt;&lt; Kapitel 5.5
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=05-05-d-linker-Rand-und-Bluete.html
-
             Kapitel 5.5 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,14 +33,11 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             LR-Grammatiken
                     |> h2
-
                         Motivation und Intuition
                     |> p
-
                         Die LL-Parser, die wir in Kapitel 5.4 gesehen haben,
                         versuchen, eine Linksableitung \(S \Step{}^* w\) Schritt für
                         Schritt zu konstruieren. Eine Hauptschwäche ist, dass Sie von
@@ -68,10 +61,8 @@
                     w \Pets{} \alpha_1 \Pets{} \alpha_2 \Pets{} \dots \Pets{} \alpha_{t-1} \Pets{} S
                     \end{align*}
                     |> h2
-
                         Notation
                     |> p
-
                         Da aus der Sicht unseres neuen Parsers die Rückwärtsanwendung einer Produktion
                         \(X \rightarrow \beta\), also der Schritt \(\alpha X \gamma \Leftarrow \alpha \beta \gamma\)
                         einen _Fortschritt_
@@ -84,12 +75,10 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         *(Reduktion und Linksreduktion)*
                         Seien
                         \(\alpha, \beta, \gamma \in (\Sigma \cup N)^*\) Wortformen und
@@ -100,7 +89,6 @@
                         und sagen _\(\alpha \beta \gamma\) reduziert zu \(\alpha X \gamma\)_.
                         Man nennt einen solchen Schritt auch einen _Reduktionsschritt_.
                         |> p
-
                             Wir nennen den Schritt einen _Linksreduktionsschritt_, wenn
                             rechts von \(\beta\) nur Terminale stehen. Wenn also
                             \(\gamma = w \in \Sigma^*\) und somit
@@ -113,7 +101,6 @@
                         Wir werden im folgenden nur Linksreduktionsschritte betrachten und
                         sagen daher manchmal auch einfach nur Reduktionsschritt.
                     |> p
-
                         *Beobachtung:* Wenn wir
                         einen Linksreduktionsschritt \(\alpha \beta w \rstep{} \alpha X w\)
                         betrachten, also
@@ -124,7 +111,6 @@
                         ersetzt worden ist; Linksreduktionen
                         entsprechen also einer Rechtsableitung.
                     |> p
-
                         In den vorherigen Kapiteln, insbesondere beim Implementieren eines Parsers, haben wir gesehen,
                         dass nicht jeder Linksreduktionsschritt automatisch auch korrekt ist.
                         Ein einfaches Beispiel war die "Zahlengrammatik"
@@ -134,13 +120,11 @@
                     D&amp;\rightarrow 0 \ | \ 1 \ | \ 2\ | \ 3\ | \ 4\ | \ 5\ | \ 6\ | \ 7\ | \ 8\ | \ 9
                     \end{align*}
                     |> p
-
                         So ist folgende Linksreduktion korrekt:
                     \begin{align*}
                     14 \rstep{} D4\rstep{} N4 \rstep{} ND \rstep{} N
                     \end{align*}
                     |> p
-
                         weil sie einer gültigen Rechtsableitung $N \Step{R}^* 14$ entspricht ($N$ ist das Startsymbol).
                         Folgende Reduktionen sind
                         allerdings inkorrekt:
@@ -148,14 +132,12 @@
                     \textcolor{red}{14 \rstep{} D4 \rstep{} DD}
                     \end{align*}
                     |> p
-
                         da zwar $DD \Step{R} D4$, allerdings es keine Rechtsableitung $N \Step{R}^* DD$ gibt.
                         Auch
                     \begin{align*}
                     \textcolor{red}{14 \rstep{} D4 \rstep{} N4 \rstep{} ND \rstep{} NN}
                     \end{align*}
                     |> p
-
                         ist inkorrekt. In unserer Java-Implementierung haben wir dieses Problem händisch gelöst, indem
                         wir der Regel $ND \rstep{} N$ den Vorzug vor $D \rstep{} N$ gegebene haben. Im allgemeinen
                         müssen wir definieren, was ein _korrekter_ Linksreduktionsschritt ist. Und dann
@@ -165,12 +147,10 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         *(Gültige Wortform, korrekter Reduktionsschritt)*
                         Eine Wortform \(\gamma \in (\Sigma \cup N)^*\) heißt _gültig_,
                         wenn es eine Rechtsableitung
@@ -184,14 +164,12 @@
                         heißt _korrekt_, wenn \(\alpha X w\) gültig ist.
                         In diesem Fall ist natürlich $\alpha \beta w$ selbst gültig.
                         |> p
-
                             Den Präfix $\alpha$ nennen wir eine
                             _Front_ der gültigen Wortform $\alpha \beta w$.
                             Wenn die Grammatik eindeutig ist, dann hat
                             jede gültige Wortform $\gamma$ genau eine Front, die wir
                             mit $\front(\gamma)$ bezeichnen.
                     |> p
-
                         Wenn wir uns erinnern, wie wir in den letzten zwei Teilkapiteln informell LR-Parser
                         entworfen und implementiert haben, dann sehen wir, dass in einem
                         Linksreduktionsschritt $\alpha \beta w \rstep{} \alpha X w$ die
@@ -200,18 +178,15 @@
                         Wir wünschen wir uns folgendes:
                     |> div
                         class=well container theorem
-
                         *Wunsch.*
                         Ob $\alpha \beta w \rstep{} \alpha X w$ gültig ist oder nicht,
                         wollen wir allein auf Grund der Front $\alpha \beta$ entscheiden können, das heißt,
                         ohne $w$ betrachten zu müssen.
                     |> p
-
                         Wir haben allerdings bereits gesehen, dass das nicht immer möglich ist. Bei der Implementierung
                         von
                         |> a
                             href=../code/parsing/arithmetic-in-class/ArithmeticGrammar.java
-
                             ArithmeticGrammar.java
                         zum Beispiel
                         haben wir manchmal das erste Zeichen von $w$ betrachten müssen. Allerdings behalten wir erst
@@ -221,7 +196,6 @@
                         $\alpha \beta w \rstep{} \alpha X w$ gültig ist.
                     |> ol
                         |> li
-
                             *Schlechter Fall 1:*
                             Es gibt für eine Wortform \(\gamma\) zwei
                             korrekte Linksreduktionsschritte:
@@ -234,7 +208,6 @@
                             S \Steps{R} \gamma'' \Step{R} \gamma \Steps{R} w \in \Sigma^* \\
                             \end{align*}
                             |> p
-
                                 (wir nehmen an, dass man aus jedem Nichtterminal
                                 mindestens ein Wort \(u \in \Sigma^*\) ableiten kann; andernfalls
                                 kann man solche _nutzlosen_ Nichtterminale eliminieren).
@@ -248,7 +221,6 @@
                                 Wir nehmen also an, dass die Grammatik \(G\) eindeutig ist und somit
                                 dieser Fall nicht eintreten kann.
                         |> li
-
                             *Schlechter Fall 2:*
                             Der Linksreduktionsschritt
                             \begin{align*}
@@ -259,7 +231,6 @@
                             \alpha \beta w' \rstep{} \alpha X w'
                             \end{align*}
                             |> p
-
                                 _nicht_ korrekt, obwohl \(\alpha\beta w'\) eine
                                 gültige Wortform ist.
                                 Dieser Fall ist schlecht, weil der Parser nur
@@ -273,12 +244,10 @@
                         class=well container subtheorem theorem
                         |> span
                             class=numbered-title
-
                             Beispiel 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Erinnern Sie sich: unsere obige Grammatik
                         \begin{align*}
                         S&amp;\step{1} aS \\
@@ -300,7 +269,6 @@
                         kann also nicht ohne Wissen über das, was dahinter kommt,
                         getroffen werden.
                     |> p
-
                         Wir definieren nun eine Klasse von Grammatiken, bei denen diese schlechten Fälle nicht
                         auftreten.
                     |> div
@@ -308,12 +276,10 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         *(\(LR(0)\)-Grammatiken)*
                         Eine kontextfreie Grammatik heißt \(LR(0)\)-Grammatik,
                         wenn keiner der obigen schlechten Fälle eintritt.
@@ -329,7 +295,6 @@
                         korrekt sind, sofern $w' \in \Sigma^*$ ist und \(\alpha \beta w'\) selbst eine gültige
                         Wortform ist.
                         |> p
-
                             In Worten/Graustufen: wenn wir
                             \begin{align*}
                             \alpha \beta \textcolor{gray}{w} \rstep{} \alpha X \textcolor{gray}{w}
@@ -343,12 +308,10 @@
                         |> p
                             |> span
                                 class=numbered-title
-
                                 Lemma 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
+                                \ 
                             *(LR(0), äquivalente Formulierung).*
                             Eine Grammatik $G$ ist LR(0) genau dann, wenn für
                             alle korrekten Linksreduktionsschritte
@@ -356,13 +319,11 @@
                             $\alpha' \beta' w' \rstep{} \alpha' X'w'$ gilt:
                         |> ol
                             |> li
-
                                 Falls $\alpha \beta = \alpha' \beta'$ dann
                                 auch $\beta = \beta'$ und $X= X'$; in Worten:
                                 wenn die Fronten identisch sind, dann auch die
                                 Reduktionsschritte.
                             |> li
-
                                 Wenn $\alpha' \beta' = \alpha \beta \varphi$ und
                                 $|\varphi| \geq 1$, dann
                                 $\varphi \not \in \Sigma^*$; in Worten: wenn
@@ -373,7 +334,6 @@
                     |> div
                         class=well container
                         |> p
-
                             *Beweis.*
                             Der Beweis ist leider etwas mechanisch und
                             repetitiv. Aber vielleicht ist es eine
@@ -387,14 +347,12 @@
                             |> p
                                 |> span
                                     class=numbered-title
-
                                     Wenn-Dann-Richtung.
                                 Wenn $G$ eine LR(0)-Grammatik ist, dann gelten
                                 die Schlussfolgerungen des Lemmas.
                         |> div
                             class=well container-fluid subtheorem
                             |> p
-
                                 *Beweis.* Um Punkt 1 zu zeigen,
                                 nehmen wir an, dass $\alpha \beta = \alpha' \beta'$ gilt.
                                 Da $\alpha \beta w \rstep{} \alpha X w$ korrekt
@@ -404,7 +362,6 @@
                             \alpha' \beta' w' = \alpha \beta w' \rstep{} \alpha X w'
                             \end{align*}
                             |> p
-
                                 ein korrekter Linksreduktionsschritt. Also sind
                                 $\alpha' \beta' w' \rstep{} \alpha X w'$ und
                                 $\alpha' \beta' w' \rstep{} \alpha' X' w'$ beides
@@ -413,7 +370,6 @@
                                 $\alpha X w' = \alpha' X' w'$, was $X = X'$ und
                                 somit $\beta = \beta'$ impliziert.
                             |> p
-
                                 Um Punkt 2 zu zeigen, nehmen wir an, dass
                                 $\alpha' \beta' = \alpha \beta \varphi$ gilt.
                                 Falls - entgegen der Schlussfolgerung - nun
@@ -423,7 +379,6 @@
                             \alpha X \varphi w'
                             \end{align*}
                             |> p
-
                                 ein korrekter Linksreduktionsschritt; nach Voraussetzung
                                 ist auch $\alpha' \beta' w' \rstep{} \alpha' X' w'$
                                 korrekt. Es gäbe also zwei korrekte Linksreduktionsschritte
@@ -436,14 +391,12 @@
                                 korrekter. 
                                 |> span
                                     class=qed
-
                                     \(\square\)
                         |> div
                             class=well container-fluid subtheorem
                             |> p
                                 |> span
                                     class=numbered-title
-
                                     Nur-dann-Richtung.
                                 Wenn die Grammatik $G$ die
                                 Schlussfolgerungen des Lemmas erfüllt und
@@ -451,7 +404,6 @@
                         |> div
                             class=well container-fluid subtheorem
                             |> p
-
                                 *Beweis.*
                                 Als erstes zeigen wir, dass $G$ eindeutig ist; dass es
                                 also für jede gültige Wortform genau einen korrekten
@@ -463,7 +415,6 @@
                             \gamma = \alpha' \beta' w'&amp;\rstep{} \alpha' X' w' \textnormal{ und} \\
                             \end{align*}
                             |> p
-
                                 gibt und müssen zeigen, dass es sich in der Tat um denselben
                                 Schritt handelt. Ohne Beschränkung der Allgemeinheit
                                 ist $|\alpha\beta| \leq |\alpha' \beta'|$ und
@@ -477,14 +428,12 @@
                                 sich um ein und den selben Linksreduktionsschritt. Die
                                 Gramatik ist eindeutig.
                             |> p
-
                                 Um den zweiten Punkt der LR(0)-Eigenschaft zu zeigen,
                                 nehmen wir an, dass
                             \begin{align*}
                             \alpha \beta w \rstep{} \alpha X w
                             \end{align*}
                             |> p
-
                                 ein korrekter Linksreduktionsschritt ist und
                                 $\gamma' := \alpha \beta w''$
                                 eine gültige Wortform ist mit $w'' \in \Sigma^*$.
@@ -495,7 +444,6 @@
                             \gamma' = \alpha' \beta' w' \rstep{} \alpha' X' w'
                             \end{align*}
                             |> p
-
                                 Da $\alpha \beta$ und $\alpha' \beta'$ beides
                                 Präfixe von $\gamma'$ sind, gibt es drei Fälle:
                                 (1) $\alpha\beta = \alpha' \beta'$;
@@ -506,7 +454,6 @@
                                 $\alpha \beta = \alpha' \beta' \varphi$
                                 mit $\varphi \ne \epsilon$.
                             |> p
-
                                 (1) Wenn nun $\alpha \beta = \alpha' \beta'$ gilt, dann
                                 sind nach Punkt 1 der Schlussfolgerung
                                 $\alpha' = \alpha$ und $\beta' = \beta$ und
@@ -515,7 +462,6 @@
                                 Somit ist $\alpha' X' w' = \alpha X w''$ und letztere ist
                                 eine gültige Wortform.
                             |> p
-
                                 (2) Wir haben zwei korrekte Linksreduktionsschritte
                                 $\alpha \beta w \rstep{} \alpha X w$ und
                                 $\alpha' \beta' w' \rstep{} alpha' X' w'$. Nach Punkt 2
@@ -525,26 +471,21 @@
                                 ist. (3) kann aus dem gleichen Grund nicht gelten.
                                 |> span
                                     class=qed
-
                                     \(\square\)
                         |> p
-
                             Wir haben nun beide Richtungen gezeigt und somit
                             das Lemma bewiesen.
                             |> span
                                 class=qed
-
                                 \(\square\)
                     |> div
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Zeigen Sie, dass die folgende Grammatik \(LR(0)\) ist:
                         \begin{align*}
                         S&amp;\rightarrow aS \\
@@ -558,12 +499,10 @@
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Wir ändern die Grammatik etwas ab:
                         \begin{align*}
                         S&amp;\rightarrow aS \\
@@ -577,12 +516,10 @@
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Zeigen Sie, dass die folgende Grammatik \(LR(0)\) ist:
                         \begin{align*}
                         S&amp;\rightarrow aS \\
@@ -597,16 +534,13 @@
                         Als ersten Schritt sollten Sie sich überlegen, wie gültige
                         Wortformen überhaupt aussehen können.
                     |> h2
-
                         Algorithmische Fragen
                     Es stellen sich unmittelbar zwei zentrale Fragen:
                     |> ol
                         |> li
-
                             Wie können wir verifizieren, ob eine gegebene Grammatik
                             die \(LR(0)\)-Bedingung erfüllt?
                         |> li
-
                             Falls sie es tut, wie können wir für eine gegebene gültige Wortform
                             \(\gamma\) den korrekten Reduktionsschritt
                             \begin{align*}
@@ -615,13 +549,11 @@
                             finden? Insbesondere die Zerlegung in
                             \(\gamma = \alpha \beta w\)?
                     |> p
-
                         Beide Aufgaben können mit Hilfe eines _endlichen Automaten_,
                         des DK-Automaten erledigt werden (DK steht als Abkürzung für Donald Knuth,
                         der als erstes diese Idee hatte).
                     |> div
                         class=container alert alert-warning
-
                         *Hinweis.* Was nun folgt, ist mathematisch
                         recht herausfordernd. Lesen Sie daher gerne auch
                         das Kapitel 2.4 (Deterministic context free languages) im Lehrbuch

@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=04-01-regular-grammars.html
-
             &lt;&lt; Kapitel 4.1
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=04-03-nfsm.html
-
             Kapitel 4.3 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,11 +33,9 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Endliche Automaten
                     |> p
-
                         Grammatiken erlauben es uns, gewisse Formate zu beschreiben. Das reicht uns aber nicht:
                         wir wollen Daten _parsen_, im engen Sinne also eine grammatische Ableitung rekonstruieren
                         und allgemein die Struktur eines gegebenen Wortes herausarbeiten. Ein bescheideneres Ziel
@@ -51,7 +45,6 @@
                         endliche Automaten verstehen als ein eingeschränktes Modell eines Rechners;
                         oder als Blaupause für einen effizienten Algorithmus, um reguläre Grammatiken zu parsen.
                     |> p
-
                         Hier sehen Sie ein Beispiel für einen endlichen Automaten über dem Alphabet \(\Sigma =
                         \{x,y,z\}\). Die Idee ist,
                         dass der Automat ein Wort \(\alpha\) Zeichen für Zeichen einliest. Die Pfeile zwischen den
@@ -67,7 +60,6 @@
                             src=../img/finite-state-automata/finite-state-machine-example-01.svg
                             loading=lazy
                     |> p
-
                         Um zu zeigen, wie der Automat ein Eingabewort verarbeitet, nehmen wir das Beispiel \(\alpha =
                         yxzxxyy\).
                     |> figure
@@ -300,7 +292,6 @@
                                         style=height:18em
                                         src=../img/finite-state-automata/fsa-example-01-25.svg
                     |> p
-
                         In diesem Beispiel endet der Automat im Zustand \(Y\). Sie sehen, dass der Zustand \(X\)
                         mit einem doppelten Rand markiert ist: dies symbolisiert, dass \(X\) ein _akzeptierender_
                         Endzustand ist. Wenn der Automat ein Wort \(\alpha\) abgearbeitet hat, _akzeptiert_ er
@@ -314,12 +305,10 @@
                             data-label-title=Definition
                             id=definition-finite-state-machine
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         *(Endlicher Automat, Finite State Machine).*
                         Ein endlicher Automat besteht aus einem endlichen Eingabealphaet \(\Sigma\), einer endlichen
                         Menge \(Q\) von Zuständen,
@@ -332,7 +321,6 @@
                         \end{align*}
                         Formal gesehen ist also ein Automat ein Quintupel \(M = (\Sigma, Q, \qstart, F, \delta)\).
                     |> p
-
                         Die Idee ist, dass der Automat im Zustand \(\qstart\) startet und nun in jedem Schritt ein
                         weiteres
                         Zeichen des Eingabewortes liest. Wenn er im Zustand \(q\) ist und das Zeichen \(x\) liest,
@@ -347,12 +335,10 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beispiel 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Betrachten wir den endlichen Automaten
                         |> figure
                             |> img
@@ -371,7 +357,6 @@
                         F&amp;= \{X\} \ .
                         \end{align*}
                         |> p
-
                             Um noch die Zustandsübergangsfunktion $\delta$ darzustellen, müssen wir uns überlegen,
                             wie wir Funktionen überhaupt darstellen. Da $\delta$ eine endliche Funktion ist,
                             können wir einfach alle Eingabewert-Ausgabewert-Paare hinschreiben, am Besten
@@ -392,7 +377,6 @@
                         \end{array}
                         \end{align*}
                         |> p
-
                             Da die Funktion $\delta$ bei jedem endlichen Automaten genau zwei
                             Eingabeparameter hat, können wir es eventuell übersichtlicher als
                             zweidimensionale Tabelle darstellen:
@@ -405,7 +389,6 @@
                         \end{array}
                         \end{align*}
                         |> p
-
                             Diese zwei Tabellen dienen in diesem Beispiel aber nur dazu, noch einmal
                             zu illustrieren, was ich damit meine, wenn ich sage, dass
                             $\delta$ eine Funktion von $Q \times \Sigma$ nach $Q$ ist. Wenn Sie
@@ -418,7 +401,6 @@
                                 src=../img/finite-state-automata/finite-state-machine-example-01.svg
                                 loading=lazy
                         |> p
-
                             Das ist eine völlig legitime Notation für eine Funktion $\delta: Q \times \Sigma \rightarrow
                             Q$
                             und genau so formal wie die Tabellenschreibweise.
@@ -426,12 +408,10 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         *(Erweiterte Zuständsübergangsfunktion)*.
                         Für einen endlichen Automaten \((\Sigma, Q, \qstart, F, \delta)\) definieren wir
                         die _erweiterte Zustandsübergangsfunktion_ \(\hat{\delta}: Q \times \Sigma^* \rightarrow
@@ -451,12 +431,10 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         *
                         (Akzeptierte Sprache).
                         *
@@ -470,12 +448,10 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beispiel 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Der endliche Automat, den wir oben bereits eingeführt haben:
                         |> figure
                             |> img
@@ -488,12 +464,10 @@
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Ändern Sie den Automaten aus dem letzten Beispiel so ab, dass die Bedingung _"die auf \(x\)
                         enden"_ entfällt, er also
                         alle Wörter akzeptiert, die die Folge \(xy\) nicht enthalten.
@@ -501,28 +475,23 @@
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Zeichnen Sie einen Automaten für die Sprache aller Wörter über \(\{a,b,c,d\}\), die
                         die Folge \(a,b,c,d\) enthalten.
                     |> div
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Zeichnen Sie einen Automaten für die Sprache aller Wörter über \(\{a,b,c,d\}\), die
                         genau vier \(a\) enthalten.
                     |> h2
-
                         Endliche Automaten zu regulären Grammatiken
                     Wenn wir einen endlichen Automaten gegeben haben, dann können wir leicht eine entsprechende reguläre
                     Grammatik
@@ -548,21 +517,17 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Theorem 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Sei \(M = (\Sigma, Q, \qstart, F, \delta)\) ein endlicher Automat. Dann gibt es eine reguläre
                         Grammatik
                         \(G = (\Sigma, N, P, S)\) mit \(L(G) = L(M)\).
                     |> p
-
                         Wir nehmen dies als Anlass, um mal wieder einen Induktionsbeweis im Detail durchzuführen.
                     |> div
                         class=well container
-
                         *Beweis.*
                         Wir setzen \(N = Q\) und \(S = \qstart\) und führen für jeden Zustandsübergang, der von
                         \(\delta\) beschrieben wird, eine Ableitungsregel ein:
@@ -581,17 +546,14 @@
                             class=well subtheorem theorem
                             |> span
                                 class=numbered-title
-
                                 Behauptung 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
+                                \ 
                             Sei \(\alpha \in \Sigma^*\) und \(q, q' \in Q\). Dann gilt
                             \(q \stackrel{\alpha}{\rightarrow} q'\) genau dann,
                             wenn \(q \Rightarrow^* \alpha q'\) in Grammatik \(G'\) gilt.
                         |> p
-
                             Bevor wir diese Behauptung beweisen, achten Sie auf die Bedeutung der Symbole. Der
                             einfache Pfeil in \(q \stackrel{\alpha}{\rightarrow} q'\) beschreibt die Arbeitsweise des
                             endlichen Automaten, dass nämlich
@@ -606,11 +568,9 @@
                             der Grammatik \(G'\).
                         |> div
                             class=well subtheorem
-
                             *Beweis.*
                             Wir verwenden Induktion über die Länge des Wortes \(\alpha\).
                             |> p
-
                                 *Induktionsbasis.* Wenn \(\alpha = \epsilon\) gilt, also \(\alpha\) die
                                 Länge 0 hat, dann
                                 gilt \(q \stackrel{\epsilon}{\rightarrow} q'\) genau dann, wenn \(q = q'\) ist. Wie kann
@@ -622,7 +582,6 @@
                                 \(q = q'\) gilt. Wir sehen: beide Aussagen sind äquivalent zu \(q = q'\) und somit auch
                                 äquivalent zueinander.
                             |> p
-
                                 *Induktionsschritt*. Wenn \(\alpha\) die Länge \(n+1\) hat, so schreiben
                                 wir \(\alpha = x \beta\)
                                 für ein Wort \(\beta \in \Sigma^*\) der Länge \(n\). Per Induktionshypothese können wir
@@ -633,15 +592,12 @@
                                 Unser Ziel ist es, zu zeigen, dass die beiden folgenden Aussagen äquivalent sind:
                                 |> ol
                                     |> li
-
                                         \(q \stackrel{x \beta}{\rightarrow} q'\) im endlichen Automaten \(M\),
                                     |> li
-
                                         \(q \Rightarrow^* x \beta q'\) in der Grammatik \(G'\).
                                 Wir müssen beide Richtungen zeigen, also zeigen, dass aus Aussage (1) die Aussage (2) folgt
                                 und umgekehrt.
                             |> p
-
                                 *Aus (1) folgt (2).* Nehmen wir also an, dass
                                 \(q \stackrel{x \beta}{\rightarrow} q'\) gilt und bezeichnen
                                 \(q_1 := \delta(q,x)\). Es gilt also
@@ -663,7 +619,6 @@
                                 $$
                                 Dies zeigt die erste Richtung.
                             |> p
-
                                 *Aus (2) folgt (1).*
                                 Nun nehmen wir an, dass \(q \Rightarrow^* x \beta q'\) gilt. Untersuchen wir die erste
                                 Produktion, die in dieser
@@ -694,10 +649,8 @@
                             Hiermit endet der Induktionsbeweis.
                             |> span
                                 class=qed
-
                                 \(\square\)
                         |> p
-
                             Wir haben nun die Behauptung bewiesen. Als nächstens betrachten wir die Grammatik \(G\) und
                             behaupten,
                             dass \(L(G) = L(M)\) gilt. Sei \(\alpha \in \Sigma\), dann behaupten wir also, dass wir
@@ -705,20 +658,16 @@
                             zwei Aussagen äquivalent sind:
                         |> ol
                             |> li
-
                                 \(\qstart \stackrel{\alpha}{\rightarrow} q'\) für einen Zustand \(q' \in F\),
                             |> li
-
                                 \(\qstart \Rightarrow^* \alpha\) in Grammatik \(G\).
                         |> p
-
                             Wenn nun also \(\qstart \stackrel{\alpha}{\rightarrow} q'\) gilt und \(q' \in F\), dann
                             wissen wir von der obigen Behauptung, dass es in \(G'\) die Ableitung
                             \(\qstart \Rightarrow^* \alpha q'\) gibt. Da \(q' \in F\) ist, enthält \(G\) die
                             Produktion \(q' \rightarrow \epsilon\), und somit können wir in \(G\) die Ableitung
                             \(\qstart \Rightarrow^* \alpha q' \Rightarrow \alpha\) machen.
                         |> p
-
                             In der anderen Richtung, wenn \(\qstart \Rightarrow^* \alpha\) in Grammatik \(G\) gilt, dann
                             betrachten wir den letzten Ableitungsschritt. Da \(\alpha\) keine Nichtterminalsymbole
                             enthält, muss im letzten Ableitungsschritt ein Nichtterminalsymbol
@@ -745,10 +694,8 @@
                             gilt. Dies ist genau Punkt 1, den wir zeigen wollten.
                             |> span
                                 class=qed
-
                                 \(\square\)
                     |> p
-
                         Beachten Sie, dass dieser Beweis eigentlich gar nicht so schwierig ist, wie er hier aussieht.
                         Ich habe
                         ihn absichtlich sehr formal und ausführlich geschrieben, um Ihnen das Prinzip des
@@ -758,12 +705,10 @@
                         class=well well-lg numbered-exercise container
                         |> span
                             class=numbered-title
-
                             Übungsaufgabe 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            &ensp;
+                            \ 
                         Schreiben Sie zu folgendem Automaten über dem Alphabet \(\Sigma = \{0,1,2,3,4,5,6,7,8,9\}\) eine
                         äquivalente reguläre Grammatik:
                         |> figure
@@ -773,10 +718,8 @@
                                 loading=lazy
                         und beschreiben Sie die Sprache in eigenen Worten.
                     |> h2
-
                         Reguläre Grammatiken zu endlichen Automaten?
                     |> p
-
                         Im letzten Abschnitt haben wir gesehen, wie wir zu einem gegebenen endlichen Automaten recht
                         einfach eine äquivalente
                         reguläre Grammatik schreibne können. Es drängt sich die Frage auf: geht das auch umgekehrt?
@@ -787,16 +730,13 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beispiel 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Betrachten wir die 
                         |> a
                             href=./04-01-regular-grammars.html#example-aaabb
-
                             reguläre Grammatik aus
                             dem vorherigen Kapitel 4.1
                         :
@@ -805,7 +745,6 @@
                         T&amp;\rightarrow \epsilon \ | \ b T \ .
                         \end{align*}
                         |> p
-
                             Versuchen wir, daraus einen endlichen Automaten zu bauen. Als Zustandsmenge nehmen wir die
                             Menge nichtterminaler Symbole \(\{S,T\}\), als
                             Startzustand das Startsymbol \(S\). Zustandsübergänge ergeben sich aus den
@@ -817,7 +756,6 @@
                                 src=../img/finite-state-automata/finite-state-machine-example-03.svg
                                 loading=lazy
                         |> p
-
                             Wie Sie sehen, ist das nicht ganz korrekt. Als erstes fällt ins Auge, dass alle Zustände
                             akzeptierende Endzustände sind.
                             Als zweites fällt uns auf, dass es bei \(T\) für das Eingabesymbol \(a\) keinen ausgehenden
@@ -840,16 +778,13 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beispiel 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Betrachten wir die 
                         |> a
                             href=./04-01-regular-grammars.html#example-xxx1yyy
-
                             reguläre Grammatik
                             aus
                             dem vorherigen Kapitel 4.1
@@ -868,7 +803,6 @@
                                 src=../img/finite-state-automata/finite-state-machine-example-05.svg
                                 loading=lazy
                         |> p
-
                             Leider ist diese Lösung auch nicht korrekt: jetzt gibt es zu viele Pfeile! Aus dem Zustand
                             \(A\) gehen zwei
                             Pfeile mit \(1\) beschriftet hinaus. Wenn wir uns vor Augen halten, was die von \(G\)
@@ -881,7 +815,6 @@
                             soll oder weiter
                             zum Zustand \(B\) gehen soll.
                     |> p
-
                         Um mit Fällen wie dem eben geschilderten umgehen zu können, erweitern wir die Definition des
                         endlichen Automaten
                         in nächsten Kapitel zu einem _nichtdeterministischen_ endlichen Automaten.

@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=07-02-Turing-machines-examples.html
-
             &lt;&lt; Kapitel 7.2
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=07-03-Turing-variants.html
-
             Kapitel 7.3 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,11 +33,9 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Die universelle Turingmaschine
                     |> p
-
                         Wir haben mit der Turingmaschine ein einfaches aber doch sehr mächtiges Modell einer
                         Rechenmaschine kennengelernt.
                         Sie haben vielleicht mittlerweile - auch durch Ihre Programmiererfahrung - das Gefühl, das man
@@ -53,7 +47,6 @@
                         dem 17. Jahrhunder (
                         |> a
                             href=https://en.wikipedia.org/wiki/Mechanical_calculator
-
                             Wikipedia:
                             Mechanical calculator
                         ).
@@ -61,11 +54,9 @@
                         Maschine bauen. Multiplizieren?
                         Neue Maschine bauen. Verschlüsselung brechen? Neue Maschine bauen. Und so weiter.
                     |> p
-
                         Die Idee einer 
                         |> a
                             href=https://en.wikipedia.org/wiki/Mechanical_calculator#Programmable_mechanical_calculators
-
                             programmierbaren
                             Maschine
                         ,
@@ -82,16 +73,13 @@
                         müssen wir zwei Fragen beantworten.
                     |> ol
                         |> li
-
                             Wie können wir eine Rechenvorschrift (d.h. ein Programm) so codifizieren, dass wir es im
                             Prinzip als eine Zeichenkette aufschreiben und einer
                             Maschine übergeben können?
                         |> li
-
                             Welche Maschine könnte so eine Rechenvorschrift lesen und sie an gegebenen Eingabedaten dann
                             auch ausführen?
                     |> p
-
                         Es stellt sich heraus, dass wir beide Antworten (beinahe) schon kennen. Eine beliebige
                         Rechenvorschrift können wir, da sind wir uns mittlerweile
                         recht sicher, als Turingmaschine \(M\) implementieren. Diese können wir über einem Alphabet
@@ -99,9 +87,8 @@
                         \(\enc(M)\). Wie tun wir das? Nun ja, auf 
                         |> a
                             href=https://turingmachinesimulator.com
-
                             turingmachinesimulator.com
-                        &ensp;haben wir das
+                        \ haben wir das
                         bereits getan:
                         eine Turingmaschine mit Alphabet \(\Sigma\) können wir dort als String über dem Alphabet
                         \begin{align*}
@@ -111,7 +98,6 @@
                         codieren. Codierung ist im Prinzip kein Problem, wir werden aber ein paar Subtilitäten
                         ansprechen.
                     |> p
-
                         Punkt 2 ist schwieriger. Können wir eine Maschine bauen, die als eingabe (1) die Codierung
                         \(\enc(M)\) einer Turingmaschine und (2) ein Eingabewort
                         \(w \in \Sigma^*\) entgegennimmt und dann die Berechnung \(M(x)\) simuliert bzw. zu dem Ergebnis
@@ -119,16 +105,14 @@
                         Die Programmierer von 
                         |> a
                             href=https://turingmachinesimulator.com
-
                             turingmachinesimulator.com
-                        &ensp;haben dies
+                        \ haben dies
                         offensichtlich geschafft:
                         sie haben eine Maschine "gebaut" (also wohl einen Server gemietet und eine Webseite mit viel
                         Javascript programmiert), der
                         eine Turingmaschine in einer spezifischen Codierung und ein Eingabewort einliest und dann diese
                         simuliert.
                     |> p
-
                         In diesem Teilkapitel werden wir sehen, wie wir eine Turingmaschine $M$ über einem
                         fixen, nicht von $M$ abhängigen Alphabet codieren können.
                         Im nächsten Teilkapitel werden wir uns überlegen, wie man einen Turingmaschinen-Simulator selbst
@@ -142,22 +126,17 @@
                         |> ol
                             class=nested
                             |> li
-
                                 *ablehnt*, falls \(c\) keine gültige Codierung einer Turingmaschine \(M\)
                                 ist,
                             |> li
-
                                 ansonsten, falls also \(c = \enc(M)\), dann
                                 |> ol
                                     class=nested
                                     |> li
-
                                         *akzeptiert* falls \(M(x)\) akzeptiert;
                                     |> li
-
                                         *ablehnt*, falls \(M(x)\) ablehnt
                                     |> li
-
                                         *nicht terminiert*, falls \(M(x)\) nicht terminiert.
                         Falls wir bei \(M\) nicht nur an Akzeptieren / Ablehnen interessiert sind, sondern am Ergebnis der
                         Berechnung,
@@ -166,7 +145,6 @@
                         hierbei gibt es allerdings eine Schwierigkeit mit den Details der Codierung, die wir gleich
                         ansprechen werden.
                     |> h3
-
                         Die Codierung
                     Zuerst müssen wir uns auf ein Eingabealphabet \(\Sigma\) einigen. Im Ernstfall genügt immer \(\Sigma
                     = \{0,1\}\), allerdings
@@ -178,7 +156,6 @@
                     \end{align*}
                     für jede Turingmaschine \(M\) mit Eingabealphabet \(\Sigma\) gilt.
                     |> p
-
                         *Erster, zum scheitern verurteilter Versuch.* Sei \(M\) eine Turingmaschine
                         mit Eingabealphabet \(\Sigma\), Arbeitsalphabet \(\Gamma\), Zustandsmenge \(Q\), Startzustand
                         \(\qstart\), akzeptierendem Zustand
@@ -203,7 +180,6 @@
                         _alle_ Turingmaschinen
                         mit Eingabealphabet \(\Sigma\) funktioniert.
                     |> p
-
                         *Zweiter, erfolgreicher Versuch.*
                     Wir müssen also die Zustandsmenge \(Q\) und die Zeichen \(\Gamma \setminus \Sigma\) erst einmal
                     selbst codieren, beispielsweise
@@ -220,7 +196,6 @@
                             src=../img/turing-machines/exampe-2-aabbcc/delta-table-encoded.svg
                             loading=lazy
                     |> p
-
                         Wenn wir dies nun als _ein_ Wort in obigen Schema schreiben, können wir für eine
                         Tabellenzelle
                         \(\delta(q,x) = (r,y,R)\) nicht einfach \(qxryR\) schreiben, auch nicht einfach die Codierungen
@@ -234,28 +209,23 @@
                         Die Codierung der obigen Maschine ist dann also
                     |> pre
                         class=container
-
                         00#100#00,a,01,1,S#00,b,L#00,c,L#00,1,L#00,0,11,0,R#01,a,R#01,b,10,1,S#01,1,R#10,b,R#10,c,00,1,S#10,1,R#11,1,R#11,0,100#;
                     |> p
-
                         In dieser Codierung behalten wir zwei Konventionen bei: wenn eine Regel
                         "fehlt", also beispielsweise für \(\delta(10,a)\) die Zelle leer ist, dann
                         soll das in den Zustand $\qreject$ führen; wenn in der Zelle
                         nur ein Richtungszeichen, also beispielsweise 
                         |> tt
-
                             01,1,R
-                        &ensp;steht,
+                        \ steht,
                         dann ist das eine Abkürzung für
                         \begin{align*}
                         \delta(01,1) = (01,1,\texttt{R}),
                         \end{align*}
                         also
                         |> tt
-
                             #01,1,01,1,R#
                     |> p
-
                         Wir können nun _jede_ Turingmaschine
                         über dem Alphabet
                         \(\Sigma\) codieren als Wort über dem Alphabet
@@ -267,13 +237,11 @@
                         |> p
                             |> span
                                 class=numbered-title
-
                                 Definition 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;/Beobachtung.
-                            &ensp;Zu einem Eingabealphabet
+                                \ /Beobachtung.
+                            \ Zu einem Eingabealphabet
                             $\Sigma$ definieren wir das _Codierungsalphabet_
                             $\Lambda := \writelambda$,
                             wobei wir annehmen, dass $\texttt{#}, \texttt{,}, \texttt{L}, \texttt{S}, \texttt{R},
@@ -282,10 +250,9 @@
                             $\Sigma$ als String $\enc(M) \in \Lambda^*$ codieren.
                     |> div
                         class=alert-info container
-
                         *Anmerkungen:* 
 
-                        &ensp;das Wort _Codierung_ suggeriert, dass wir, gegeben
+                        \ das Wort _Codierung_ suggeriert, dass wir, gegeben
                         den String $c = \enc(M)$ die
                         ursprüngliche Turingmaschine $M$ rekonstruieren können. Das gilt natürlich nur
                         beschränkt: eventuell decodieren wir $c$ zu einer Maschine $M'$, die sich

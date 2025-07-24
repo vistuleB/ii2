@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=07-07-Post-correspondence-problem.html
-
             &lt;&lt; Kapitel 7.7
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=08-00-Complexity-Theory.html
-
             Kapitel 8.0 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,11 +33,9 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Anwendungen des Postschen Korrespondenzproblems
                     |> p
-
                         Erinnerin Sie sich an kontextfreie Grammatiken? Das waren formale Grammatiken wie zum Beispiel
                         \begin{align*}
                         S&amp;\rightarrow Tc \\
@@ -65,18 +59,15 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Theorem 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
-                        &ensp;Wir wollen bestimmen, ob
+                            \ 
+                        \ Wir wollen bestimmen, ob
                         aus einer gegebenen kontextfreien Grammatik \(G\) ein Palindromwort ableitbar ist,
                         also ein \(\gamma\), das von rechts nach links gelesen gleich ist, sprich
                         \(\gamma = \gamma^R\). Dieses Problem ist unentscheidbar.
                         |> p
-
                             Formal gesehen müssten wir eine Codierung kontextfreier Grammatiken über einem festen
                             Alphabet (zum Beispiel \(\{0,1, \rightarrow, ;, \dots\}\) angeben, um dann die _Sprache
                             der
@@ -87,14 +78,12 @@
                             ersparen wir uns diese Formalitäten.
                     |> div
                         class=well container
-
                         *Beweis.*
                         Wir zeigen: wenn man zu einer gegebenen kontextfreien Grammatik entscheiden könnte,
                         ob sie ein Palindromwort ableiten kann, dann könnten wir auch entscheiden, ob ein
                         gegebenes PCP-Puzzle eine Lösung hat. Da wir bereits Letzteres als unentscheidbar
                         erkannt haben, schließen wir, dass Ersteres auch unentscheidbar ist.
                         |> p
-
                             Konkret sei uns nun also ein PCP-Puzzle \(P\) gegeben. Wir bauen daraus eine
                             kontextfreie Grammatik \(G\), so dass
                             \(G\) genau dann ein Palindromwort ableiten kann, wenn \(P\) eine Lösung hat.
@@ -115,17 +104,14 @@
                             class=well subtheorem theorem
                             |> span
                                 class=numbered-title
-
                                 Behauptung 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
-                            &ensp;Wenn die Grammatik \(G\) ein Palindromwort
+                                \ 
+                            \ Wenn die Grammatik \(G\) ein Palindromwort
                             ableiten kann, dann hat das PCP-Puzzle \(P\) eine Lösung.
                         |> div
                             class=well subtheorem
-
                             *Beweis.*
                             Die letzte angewandte Regel muss \(S \rightarrow \$\) sein, und somit hat
                             das abgeleitete Wort die Form
@@ -141,24 +127,20 @@
                             eine Lösung des PCP-Puzzles.
                             |> span
                                 class=qed
-
                                 \(\square\)
                         |> div
                             class=well subtheorem theorem
                             |> span
                                 class=numbered-title
-
                                 Behauptung 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
-                            &ensp;Wenn
+                                \ 
+                            \ Wenn
                             das PCP-Puzzle \(P\) eine Lösung hat, dann kann die Grammatik \(G\) ein Palindromwort
                             ableiten.
                         |> div
                             class=well subtheorem
-
                             *Beweis.*
                             Sei
                             \begin{align*}
@@ -181,7 +163,6 @@
                             Somit ist gezeigt, dass \(G\) ein Palindromwort ableiten kann.
                             |> span
                                 class=qed
-
                                 \(\square\)
                         Hätten wir nun also einen Algorithmus, der für eine gegebene kontextfreie Grammatik
                         entscheiden könnte, ob sie ein Palindromwort ableiten kann, dann könnten wir
@@ -191,47 +172,37 @@
                         nach der Lösbarkeit des gegebenen PCP-Puzzles.
                         |> span
                             class=qed
-
                             \(\square\)
                     |> h3
-
                         Reduktionen
                     |> p
-
                         Es lohnt sich, an dieser Stelle zu pausieren. Was Sie gerade gesehen haben,
                         ist eine _Reduktion_. Im "echten" Leben verwenden wir Reduktionen,
                         um bereits gefundene Lösungen zu "recyceln". Beispielsweise:
                     |> ul
                         |> li
-
                             *Aufgabe:* Zeigen Sie, dass die Funktion
                             \(n \mapsto n!\) im \(\lambda\)-Kalkül berechenbar ist.
                         |> li
-
                             Wir wissen bereits, wie man \(n \mapsto n!\) als
                             primitiv-rekursive Funktion schreibt.
                         |> li
-
                             Wir wissen bereits, wie man eine allgemeine primitiv rekursive Funktion
                             im \(\lambda\)-Kalkül implementiert.
                         |> li
-
                             Wir schließen nun, dass \(n \mapsto n!\) im \(\lambda\)-Kalkül implementierbar ist,
                             und ersparen uns die Details.
                     |> p
-
                         Im Kontext der Turing-Berechenbarkeit können wir dieses Prinzip wie folgt
                         formalisieren:
                     |> div
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Definition 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Seien \(L_1 \subseteq \Sigma_1\) und \(L_2 \subseteq \Sigma_2\) zwei Sprachen.
                         Eine _Reduktion von \(L_1\) nach \(L_2\)_ ist eine Turing-berechenbare Funktion
                         \begin{align*}
@@ -242,7 +213,6 @@
                         \forall x \in \Sigma_1^*: \ x \in L_1 \Leftrightarrow f(x) \in L_2 \ .
                         \end{align*}
                     |> p
-
                         Erinnern Sie sich: dass \(f\) Turing-berechenbar ist, heißt, dass es eine Turingmaschine
                         \(_f\) gibt mit einem dezidierten Ausgabe-Band, so dass \(M_f(x)\) für jedes Eingabewort
                         terminiert und zum Zeitpunkt der Terminierung \(f(x)\) auf das Ausgabeband geschrieben hat.
@@ -253,17 +223,14 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beobachtung 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
-                        &ensp;Wenn \(f\) eine Reduktion von \(L_1\) nach
+                            \ 
+                        \ Wenn \(f\) eine Reduktion von \(L_1\) nach
                         \(L_2\) ist und \(L_2\) entscheidbar ist, dann ist auch \(L_1\) entscheidbar.
                     |> div
                         class=well container
-
                         *Beweis.*
                         Sei \(M_2\) eine Turingmaschine, die \(L_2\) entscheidet und sei \(M_f\) die Turingmaschine,
                         die \(f\) berechnet.
@@ -281,7 +248,6 @@
                         und somit entscheidet \(M_1\) die Sprache \(L_1\).
                         |> span
                             class=qed
-
                             \(\square\)
                     Stellen Sie sich einfach vor, dass \(M_f\) der Code ist, den Sie selber schreiben müssen,
                     und \(M_2\) die "Bibliotheksfunktion" ist, die Sie ohne groß nachzudenken aufrufen,
@@ -294,24 +260,20 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beobachtung 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
-                        &ensp;Wenn \(f\) eine Reduktion von \(L_1\) nach
+                            \ 
+                        \ Wenn \(f\) eine Reduktion von \(L_1\) nach
                         \(L_2\) ist und \(L_1\) unentscheidbar ist, dann ist auch \(L_2\) unentscheidbar.
                     |> div
                         class=well container
-
                         *Beweis.*
                         Angenommen, \(L_2\) wäre entscheidbar. Dann wäre laut Behauptung 4.6.8 die Sprache
                         \(L_1\) ja auch entscheidbar, was sie aber nach Annahme nicht ist. Daher ist
                         \(L_2\) eben nicht entscheidbar.
                         |> span
                             class=qed
-
                             \(\square\)
                     Beachten Sie nun, dass so etwas wie Behauptung 4.6.9 bereits oben angewandt haben: wir haben
                     das Haltproblem auf das MPCP-Problem reduziert; jenes dann auf das PCP; und schließlich PCP
@@ -331,25 +293,20 @@
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Theorem 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         |> p
-
                             *(Schnittproblem kontextfreier Sprachen)*
                         Gegeben zwei kontextfreie Grammatiken \(G_1, G_2\). Es ist
                         unentscheidbar, ob \(L(G_1) \cap L(G_2)\) nichtleer ist, ob es
                         also ein Wort \(x\) mit \(x \in G_1\) und \(x \in G_2\) gibt.
                         |> p
-
                             Dieses Problem ist als _Schnittproblem kontextfreier Sprachen_
                             bekannt.
                     |> div
                         class=well container
-
                         *Beweis.*
                         Wir reduzieren das Palindromwortproblem (bereits bekannt) auf das Schnittproblem (neues
                         Problem).
@@ -369,18 +326,15 @@
                         Mit Behauptung 4.6.9 zusammen heißt das, dass das Schnittproblem unentscheidbar ist.
                         |> span
                             class=qed
-
                             \(\square\)
                     |> div
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Theorem 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         *(Mehrdeutigkeitsproblem kontextfreier Sprachen)*
                         Gegeben eine kontextfreie Grammatik \(G\). Es ist unentscheidbar,
                         ob \(G\) mehrdeutig ist, d.h., ob es ein Wort \(x \in \Sigma^*\) gibt,
@@ -388,7 +342,6 @@
                     |> div
                         style=background-color: rgba(255,0,0,0.1);
                         class=well container
-
                         *Falscher Beweis.*
                         Wir reduzieren das uns bereits bekannte Schnittproblem auf das Mehrdeutigkeitsproblem.
                         Gegeben seien zwei kontextfreie Grammatiken \(G_1, G_2\) mit Startsymbolen \(S_1, S_2\) und
@@ -418,10 +371,8 @@
                         Mehrdeutigkeitsproblem.
                         |> span
                             class=qed
-
                             \(\square\)
                     |> p
-
                         Haben Sie den Fehler im Beweis erkannt? Das Problem ist, dass es sein könnte, dass
                         \(G_1\) und \(G_2\) leeren Schnitt haben, \(G_1\) aber bereits mehrdeutig ist.
                         Die Ausgabe-Grammatik \(G\) wäre dann auch mehrdeutig; also hätte die Reduktion \(f\)
@@ -440,7 +391,6 @@
                         Michael Sipsers Buch _Introduction to the Theory of Computation_, third edition.
                     |> div
                         class=well container
-
                         *Beweis.*
                         Sei ein PCP-Puzzle \(P = \{ (\alpha_1:\beta_1), \dots, (\alpha_n : \beta_n)\}\) gegeben.
                         Wir erstellen nun eine kontextfreie Gramatik, die es dem "User" erlaubt, zu entscheiden,
@@ -460,5 +410,4 @@
                         eine Lösung hat. Wir haben nun also unsere Reduktion von PCP auf das Mehrdeutigkeitsproblem.
                         |> span
                             class=qed
-
                             \(\square\)

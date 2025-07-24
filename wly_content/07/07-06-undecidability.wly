@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=07-05-Turing-universal.html
-
             &lt;&lt; Kapitel 7.5
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=07-07-Post-correspondence-problem.html
-
             Kapitel 7.7 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,11 +33,9 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Turingmaschinen, Haltproblem und Unentscheidbarkeit
                     |> p
-
                         Im vorherigen Teilkapitel haben wir die _universelle Turingmaschine_ $U$ konstruiert, die
                         eine andere Turingmaschine, deren Codierung und Inputwort sie als Input gegeben hat, simulieren
                         kann.
@@ -51,7 +45,6 @@
                     \label{halting-language-old-encoding}
                     \end{align}
                     |> p
-
                         Allerdings: wenn $M$ auf $x$ nicht terminiert, dann terminiert $U$ auf $\enc(M)x$ auch
                         nicht. $U$ _akzeptiert_ die Sprache also, _entscheidet_ sie aber nicht. Wäre es
                         nicht schön, eine Turingmaschine zu haben, die diese Sprache entscheidet? Dann könnten wir jede
@@ -60,7 +53,6 @@
                         möglich ist. In der Literatur ist dies als die _Unentscheidbarkeit des Halteproblems_
                         (englisch _undecidability of the Halting problem_ bekannt).
                     |> p
-
                         Als vorbereitenden Schritt schauen wir uns kurz die Codierungsfunktion nochmal genauer an. Wir
                         bezeichnen
                         mit $\tm_{\Sigma}$ die Menge aller Turingmaschinen mit Inputalphabet $\Sigma$. Wir hatten
@@ -83,44 +75,37 @@
                     \halt := \{ \enc(M) w \ | \ M \textnormal{ akzeptiert } w\} \ .
                     \end{align*}
                     |> p
-
                         Wir können die universelle Turingmaschine $U$ leicht abwandeln, dass sie $\halt$ akzeptiert;
                         wir müssen nur einen Decodierungsschritt vorausschicken, der die neue Codierung $\enc(M) \in
                         \Sigma^*$
                         in unsere "alte" in $\Lambda^*$ übersetzt. Beachten Sie, dass das Zeichen $\texttt{;}$, das wir
                         auch blockcodiert haben, uns hilft, die Grenze zwischen $\enc(M)$ und $w$ zu erkennen.
                     |> p
-
                         Wir zeigen nun, dass $\halt$ unentscheidbar ist, dass es also keine Möglichkeit gibt,
                         das Nichtterminieren einer Maschine $M$ auf Eingabe $x$ vorauszusehen und abzufangen.
                     |> div
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Theorem 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         *(Unentscheidbarkeit des Halteproblems).*
                         Die Sprache \(\halt\) ist unentscheidbar.
                     |> p
-
                         Ich gebe erst einmal einen kurzen und knappen Widerspruchsbeweis. Falls das ihnen zu schnell
                         ging,
                         lesen Sie den zweiten Beweis, in dem ich mir mehr Zeit nehme.
                     |> div
                         class=well container
                         |> p
-
                             *Kurzer Beweis per Wiederspruch.* Nehmen wir an, es gäbe eine Maschine $H$,
                             die $\halt$ entscheidet. Dann wäre auch die Sprache
                         \begin{align*}
                         \diag := \{\enc(M) \ | \ \textnormal{$M$ akzeptiert $\enc(M)$} \}
                         \end{align*}
                         |> p
-
                             entscheidbar. Warum? Wir können einfach schauen, ob das Eingabewort $c$ die Form $\enc(M)$
                             hat
                             und in diesem Fall das Wort $\enc(M) \enc(M)$ der Maschine $H$ übergeben.
@@ -131,14 +116,12 @@
                         \negdiag := \{\enc(M) \ | \ \textnormal{$M$ akzeptiert $\enc(M)$ nicht}\}
                         \end{align*}
                         |> p
-
                             entscheidbar; wir müssen ja nur $\diag$ entscheiden und dann das Ergebnis negieren.
                             $\negdiag$
                             ist sozusagen die Menge aller Turingmaschinen, die _nicht_ ihre eigene Codierung als
                             Inputwort akzeptieren. Da $\negdiag$ nach Annahme entscheidbar ist, gibt es eine Maschine
                             $D$, die $\negdiag$ entscheidet.
                         |> p
-
                             Wir fragen uns jetzt: gehört $\enc(D)$ selbst zu $\negdiag$?
                         \begin{align*}
                         \enc(D) \in \negdiag&amp;\Longleftrightarrow \textnormal{$D$ akzeptiert $\enc(D)$ nicht}
@@ -148,17 +131,14 @@
                         &amp;\Longleftrightarrow \enc(D) \not \in \negdiag \tag{nach Annahme $L(D) = \negdiag$}
                         \end{align*}
                         |> p
-
                             Also $\enc(D) \in \negdiag \Longleftrightarrow \enc(M) \not \in \negdiag$, ein Widerspruch.
                             Unsere
                             Annahme, dass $\halt$ entscheidbar sei, ist also falsch.
                             |> span
                                 class=qed
-
                                 \(\square\)
                     |> div
                         class=well container
-
                         *Ausführlicher Beweis.* Ich finde Beweise durch Widerspruch immer
                         etwas unintuitiv, weil man die ganze Zeit im Konjunktiv argumentieren muss.
                         Daher hier ein Beweis ohne Widerspruch. Wir zeigen, dass $\halt$ unentscheidbar ist,
@@ -167,13 +147,10 @@
                         entweder
                         |> ol
                             |> li
-
                                 \(f_H(z) = \texttt{accept}\) aber \(z \not \in \halt\), oder 
                             |> li
-
                                 \(f_H(z) = \texttt{reject}\) aber \(z \in \halt\) , oder 
                             |> li
-
                                 \(f_H(z) = \texttt{undefined}\), d.h. $H$ terminiert auf Eingabewort $z$ nicht.
                         Wir setzen nun $y := \enc(D)$ und $z := yy$, wobei \(D\) eine neue
                         Turingmaschine ist, die wir auf Basis von \(H\)
@@ -184,13 +161,10 @@
                         entweder
                         |> ol
                             |> li
-
                                 \(f_H(yy) = \texttt{accept}\) aber \(yy \not \in \halt\), oder
                             |> li
-
                                 \(f_H(yy) = \texttt{reject}\) aber \(yy \in \halt\), oder 
                             |> li
-
                                 \(f_H(yy) = \texttt{undefined}\).
                         Wenn uns dies gelingt, so haben wir gezeigt, dass \(H\) nicht
                         die Sprache \(\halt\) entscheidet: im Fall 3 terminiert
@@ -199,26 +173,22 @@
                         Der Code für \(D\) ist sehr einfach:
                         |> pre
                             class=listing
-
                             `def D(x):`
 
-                            &ensp;`if H(xx) == accept then` 
+                            \ `if H(xx) == accept then` 
 
-                            &ensp;`reject` 
+                            \ `reject` 
 
-                            &ensp;`else` 
+                            \ `else` 
 
-                            &ensp;`accept`
+                            \ `accept`
                         |> p
-
-                            &ensp;Zur Erinnerung: $y := \enc(D)$. Wir unterscheiden drei Fälle.
+                            \ Zur Erinnerung: $y := \enc(D)$. Wir unterscheiden drei Fälle.
                             |> ul
                                 |> li
-
                                     \(H(yy) = \texttt{reject}\). Dann geht der Aufruf von
                                     \(D(y)\) also in den 
                                     |> tt
-
                                         else
                                     -Teil
                                     in den Zeilen 4-5 und
@@ -228,7 +198,6 @@
                                     Die Maschine \(H\) hat eine falsche Antwort
                                     für \(\halt\) geliefert.
                                 |> li
-
                                     \(H(yy) = \texttt{accept}\). Dann geht
                                     der Aufruf von \(D(y)\) in Zeile 3,
                                     und \(D(y) = \texttt{reject}\), somit \(yy = \enc(D) y \not \in \halt\).
@@ -236,7 +205,6 @@
                                     und \(H(yy) = \texttt{accept}\). Die Maschine
                                     \(H\) hat abermals eine falsche Antwort geliefert.
                                 |> li
-
                                     \(H(yy)\) terminiert nicht. Dann befinden
                                     wir uns in Fall 3: \(H\) kann
                                     \(\halt\) nicht entscheiden,
@@ -249,16 +217,13 @@
                         die Sprache \(\halt\) entscheiden; sie ist unentscheidbar.
                         |> span
                             class=qed
-
                             \(\square\)
                     |> p
-
                         Ein Student hat am 26. Juni 2024 angemerkt, dass die Sprache
                     \begin{align*}
                     \negdiag = \{\enc(M) \ | \ \textnormal{$M$ akzeptiert $\enc(M)$ nicht}\}
                     \end{align*}
                     |> p
-
                         ja eine extrem konstruierte, nicht wirklich relevante Sprache sei (da hatte er Recht). Insofern
                         sei es auch nicht relevant, dass $\negdiag$ unentscheidbar ist. Das ist allerdings auch nicht,
                         was uns interessiert: unser Ziel war, zu zeigen, dass $\halt$ unentscheidbar ist, und
@@ -272,7 +237,6 @@
                         XYZ erhalten?" unentscheidbar.
                     |> div
                         class=alert-info
-
                         Das Wort _Unentscheidbarkeit_ verwenden wir hier in seiner
                         technischen Bedeutung,
                         die wir definiert haben: es gibt keine Turingmaschine, die das Problem entscheidet, also

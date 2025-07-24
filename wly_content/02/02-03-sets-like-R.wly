@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=02-02-examples-of-equipotent-sets.html
-
             &lt;&lt; Kapitel 2.2
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=02-04-diagonalization.html
-
             Kapitel 2.4 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,11 +33,9 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Mengen, die so groß wie $\R$ sind
                     |> p
-
                         Im letzten Kapitel haben wir viele Mengen kennengelernt, die abzählbar
                         unendlich sind, also gleichmächtig mit $\N$. Hier werden wir nun
                         erkunden, welche Mengen gleichmächtig mit $\R$ sind. In der
@@ -58,67 +52,54 @@
                         |> p
                             |> span
                                 class=numbered-title
-
                                 Beobachtung 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
-                            &ensp;Es gilt $\R \approx
+                                \ 
+                            \ Es gilt $\R \approx
                             (0,1)$, wobei $(0,1)$ das offene Einheitsintervall ist.
                     |> div
                         class=well container
                         |> p
-
                             *Beweis.*
                             Wir können eine Bijektion explizit hinschreiben:
                         \begin{align*} f : \R&amp;\rightarrow (0,1) \\ x&amp;\mapsto
                         \frac{e^x}{e^x + 1} \end{align*}
                         |> p
-
                             Mit etwas reeller Analysis kann man nun zeigen:
                         |> ul
                             |> li
-
                                 $f$ ist stetig.
                             |> li
-
                                 $f$ ist streng monoton (z.B. weil $f'(x) \gt 0$ gilt).
                             |> li
-
                                 $\lim_{x \rightarrow -\infty} f(x) = 0$ und $\lim_{x \rightarrow
                                 \infty} f(x) = 1$.
                         |> p
-
                             Und somit ist $f$ eine Bijektion von $\R$ auf den Wertebereich von
                             $f$, also $(0,1)$.
                         |> span
                             class=qed
-
                             \(\square\)
                     |> div
                         class=well well-lg numbered-exercise container
                         |> p
                             |> span
                                 class=numbered-title
-
                                 Übungsaufgabe 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                &ensp;
+                                \ 
                             Zeigen Sie $\R \approx \R^+$.
                     |> div
                         class=well well-lg numbered-exercise container
                         |> p
                             |> span
                                 class=numbered-title
-
                                 Übungsaufgabe 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                &ensp;
+                                \ 
                             Zeigen Sie, dass $\R_0^+ \approx \R^+$ gilt. Sie müssen "die 0
                             verschwinden lassen".
                     |> div
@@ -127,16 +108,13 @@
                             |> span
                                 id=exercise-open-closed-half-open
                                 class=numbered-title
-
                                 Übungsaufgabe 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                &ensp;
+                                \ 
                             Zeigen Sie, dass $[0,1]$, $[0,1)$, $(0,1]$ und $(0,1)$ alle
                             gleichmächtig sind.
                     |> p
-
                         Wir führen nun eine neue Notation ein: $\{0,1\}^{\N}$ ist die Menge
                         aller unendlichen Folgen von $0$ und $1$. Formal gesehen bezeichnet
                         man für zwei Mengen $A$ und $B$ mit der Notation $A^B$ die Menge aller
@@ -152,17 +130,14 @@
                             |> span
                                 id=theorem-R-bitstrings
                                 class=numbered-title
-
                                 Theorem 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
+                                \ 
                             $\R \approx \{0,1\}^{\N}$.
                     |> div
                         class=well container
                         |> p
-
                             *Beweis.*
                             Die Beweisidee ist einfach, allerdings gehen erst einmal ein paar
                             Dinge schief, die man wieder flicken muss. Da laut
@@ -172,18 +147,15 @@
                             $\R \approx [0,1)$ gilt, reicht es, eine Bijektion $f : [0,1)
                             \rightarrow \{0,1\}^{\N}$ zu konstruieren. So geht's:
                         |> p
-
                             Jede Zahl $0 \leq x \lt 1$ lässt sich als (unendliche) Binärzahl
                             $(x)_2$ schreiben, beispielsweise
                         \begin{align*} \pfrac{1}{3}_2 = 0.01010101\dots \end{align*}
                         |> p
-
                             Wir erhalten nun unsere unendliche $0/1$-Folge, indem wir die
                             führende Null und den Punkt abschneiden: $f(1/3) = 010101\dots$. Das
                             geht für jede Zahl in $[0,1)$: $f(1/2) = 100000\dots$, $f(1/4) =
                             010000\dots$.
                         |> p
-
                             Die konstruierte Funktion $f$ ist injektiv: zwei verschiedene $0
                             \leq x \lt y \lt 1$ haben verschiedene Binärdarstellung und werden
                             somit zu zwie verschiedenen $0/1$-Folgen. Leider ist sie nicht
@@ -198,7 +170,6 @@
                         \begin{align*} X := \{ a_1 a_2 a_3 \dots \in \{0,1\}^{\N} \ | \
                         \exists\ n \geq 1: a_i = 1 \ \forall i \geq n\} \end{align*}
                         |> p
-
                             Unsere Funktion $f$ ist eine Bijektion von $[0,1)$ nach
                             $\{0,1\}^{\N} \setminus X$. Um daraus eine Bijektion $g : [0,1)
                             \rightarrow \{0,1\}^{\N}$ zu bauen, müssen wir die Lücken füllen,
@@ -208,30 +179,25 @@
                             |> p
                                 |> span
                                     class=numbered-title
-
                                     Übungsaufgabe 
                                     |> NumberedTitle
-
                                         ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                    &ensp;
+                                    \ 
                                 Sei $Y := \{ a_1 a_2 a_3 \dots \in \{0,1\}^{\N} \ | \ \exists\ n
                                 \geq 1: a_i = 0 \ \forall i \geq n\}$ die Menge aller $0/1$-Folgen
                                 mit einem unendlichen Schweif von Nullen. Offensichtlich gilt $X
                                 \approx Y$.
                             |> p
-
                                 Zeigen Sie, dass $Y \approx X \cup Y$ gilt.
                         |> div
                             class=well well-lg numbered-exercise container-fluid
                             |> p
                                 |> span
                                     class=numbered-title
-
                                     Übungsaufgabe 
                                     |> NumberedTitle
-
                                         ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                    &ensp;
+                                    \ 
                                 Verwenden Sie die vorherige Übungsaufgabe, um $Y$ zu verdoppeln
                                 und somit eine Bijektion von $[0,1) \rightarrow \{0,1\}^{\N}$ zu
                                 konstruieren. Vielleicht hilft Ihnen folgendes Bild:
@@ -241,10 +207,8 @@
                                     src=../img/infinite-sets/interval-sequences-fill-the-gaps.svg
                         |> span
                             class=qed
-
                             \(\square\)
                     |> p
-
                         Als nächstes zeigen wir, dass $\R \approx \R^2$ gilt. Dies ist schon
                         erstaunlich: der Zahlenstrahl und die zweidimensionale Ebene sollen
                         also gleichviele Elemente haben!
@@ -254,22 +218,19 @@
                             |> span
                                 id=theorem-square-interval
                                 class=numbered-title
-
                                 Theorem 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
+                                \ 
                             Es gilt $\R^2 \approx \R$.
                     |> div
                         class=well container
                         |> p
-
                             *Beweis.* Mithilfe von
                             |> span
                                 data-ref=theorem-R-bitstrings
                                 class=reference
-                            &ensp;geht
+                            \ geht
                             das ganz einfach. Da $\R \approx \{0,1\}^\N$ gilt, reicht es
                             nämlich, eine Bijektion $\{0,1\}^\N \times \{0,1\}^\N \rightarrow
                             \{0,1\}^\N$ zu konstruieren. Ein Element von $\{0,1\}^\N \times
@@ -277,7 +238,6 @@
                         \begin{align*} (a,b) = (a_1 a_2 a_3 \dots, b_1 b_2 b_3 \dots) \ .
                         \end{align*}
                         |> p
-
                             Wir müssen dieses Folgenpaar nun in _eine_ Folge codieren.
                             Ganz klar:
                         \begin{align*} (a_1 a_2 a_3 \dots, b_1 b_2 b_3 \dots) \mapsto (a_1 b_1
@@ -285,10 +245,8 @@
                         $\{0,1\}^\N \times \{0,1\}^\N \rightarrow \{0,1\}^\N$ .
                         |> span
                             class=qed
-
                             \(\square\)
                     |> p
-
                         Aus der Funktion $f: \{0,1\}^{\N} \times \{0,1\}^{\N} \mapsto
                         \{0,1\}^{\N}$ aus
                         |> span
@@ -303,12 +261,10 @@
                     \mapsto (01100010001000\dots) \mapsto (0.01\overline{1000})_2 =: z\ .
                     \end{align*}
                     |> p
-
                         Um herauszufinden, um welche Zahl es sich bei $z$ handelt,
                         multiplizieren wir sie mit 64:
                     \begin{align*} \end{align*}
                     |> p
-
                         Sie erreicht alle Zahlen bis auf diejenigen mit einem unendlichen
                         Schweif von Einsen. Sie ist hochgradig nichtstetig. Dennoch können wir
                         versuchen, sie zu plotten:
@@ -318,13 +274,11 @@
                             src=../img/infinite-sets/bijection-square-interval.png
                         |> br
                         |> div
-
                             Plot der (Fast-) Bijektion $f : [0,1) \times [0,1) \rightarrow
                             [0,1)$. Ausgabewerte sind mit Farbwerten / Helligkeitswerten
                             codiert. Grün/blass steht für niedrige Werte (nahe der 0),
                             rot/kräftig für hohe (nahe der 1).
                     |> p
-
                         Als nächstes versuche ich, die Umkehrfunktion $f^{-1} : [0,1) \mapsto
                         [0,1) \times [0,1)$ zu skizzieren. Das ist etwas schwierig, weil
                         $f^{-1}$ nicht stetig ist. Was macht $f^{-1}(z)$? Sie betrachtet $z
@@ -336,42 +290,34 @@
                     (0.\overline{010})_2, (0.\overline{001})) = \left(\frac{2}{7},
                     \frac{1}{7}\right) \ , \end{align*}
                     |> p
-
                         also $f^{-1}(1/7) = (2/7, 1/7)$.
                     |> div
                         class=well container theorem
                         |> p
                             |> span
                                 class=numbered-title
-
                                 Beobachtung 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
-                            &ensp;Die Funktion
+                                \ 
+                            \ Die Funktion
                             $f^{-1}$ bildet
                         |> ul
                             |> li
-
                                 $\left[0,\frac{1}{4}\right)$ auf $\left[0,\frac{1}{2}\right)
                                 \times \left[0,\frac{1}{2}\right)$ ab,
                             |> li
-
                                 $\left[\frac{1}{4},\frac{1}{2}\right)$ auf
                                 $\left[0,\frac{1}{2}\right) \times \left[\frac{1}{2},1\right)$,
                             |> li
-
                                 $\left[\frac{1}{2},\frac{3}{4}\right)$ auf
                                 $\left[\frac{1}{2},1\right) \times \left[0,\frac{1}{2}\right)$ und
                             |> li
-
                                 $\left[\frac{3}{4},1\right)$ auf $\left[\frac{1}{2},1\right)
                                 \times \left[\frac{1}{2},1\right)$.
                     |> div
                         class=well container
                         |> p
-
                             *Beweis.*
                             Wir zeigen den ersten Punkt. Sei $0 \leq z \lt 1/2$ und $(x,y) =
                             f^{-1}(z)$. Dann hat $z$ die Binärdarstellung $z =
@@ -381,10 +327,8 @@
                             Überlegungen.
                             |> span
                                 class=qed
-
                                 \(\square\)
                     |> p
-
                         Wenn wir also $z$ von $0$ nach $1$ wandern lassen, dann bewegt sich
                         $f^{-1}(z)$ von links unten nach links oben, springt dann nach rechts
                         unten und bewegt sich nach rechts oben. Grafisch stelle ich das wie
@@ -394,7 +338,6 @@
                             style=height: 10em
                             src=../img/infinite-sets/interval-to-square.svg
                     |> p
-
                         Beachten Sie, dass die Verbindungslinien zwischen den Kreisen Sprünge
                         sind, also Unstetigkeitsstellen von $f^{-1}$. Innerhalb der
                         Viertelintervalle (also z.B. innerhalb von $\left[\frac{1}{4},
@@ -462,7 +405,6 @@
                                         style=height: 15em
                                         src=../img/infinite-sets/interval-to-square-animation/figures-01-04.svg
                     |> p
-
                         Wir wissen nun, dass $\R \approx \R^2$ gilt. Ebenso können wir $\R
                         \approx \R^{k}$ für jedes $k \in \N^+$ zeigen. Wie sieht es aber mit
                         $\R^{\N}$ aus? Das ist die Menge aller Funktionen $\phi: \N
@@ -473,22 +415,18 @@
                         |> p
                             |> span
                                 class=numbered-title
-
                                 Theorem 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
-                            &ensp;$\R \approx \R^{\N}$.
+                                \ 
+                            \ $\R \approx \R^{\N}$.
                     |> div
                         class=well container
                         |> p
-
                             *Beweis.*
                             Da $\R \approx \cuben$ gilt, reicht es, zu zeigen, dass
                         \begin{align*} \cuben \approx \left(\cuben\right)^{\N} \end{align*}
                         |> p
-
                             gilt. Interpretieren wir die rechte Seite: das sind unendliche
                             Folgen von "Dingern", und jedes Ding ist wiederum eine unendliche
                             Folge von 0/1. Wir können uns jedes Ding als (unendliche) Zeile
@@ -501,7 +439,6 @@
                                 style=width: 40%
                                 src=../img/infinite-sets/table-infinite-sequences.svg
                         |> p
-
                             Wir wollen jetzt eine Bijektion $f : \cuben \times \cuben
                             \rightarrow \cuben$ definieren. Dafür wenden wir den gleichen Trick
                             an wie in dem Beweis, dass $\N \approx \N \times \N$ ist: wir
@@ -511,7 +448,6 @@
                                 style=width: 40%
                                 src=../img/infinite-sets/table-infinite-sequences-with-blue.svg
                         |> p
-
                             Schließlich definieren wir unsere Folge $s_1 s_2 s_3 \dots \in
                             \cuben$:
                         |> figure
@@ -520,17 +456,14 @@
                                 src=../img/infinite-sets/table-infinite-sequences-with-s.svg
                         |> span
                             class=qed
-
                             \(\square\)
                     |> p
-
                         Wir haben also die Beweisidee von $\N \times \N \approx \N$ recycelt.
                         Diese Beobachtung motiviert den folgenden, etwas kurz angebundenen
                         Beweis:
                     |> div
                         class=well container
                         |> p
-
                             *Zweiter Beweis.*
                             Um zu zeigen, dass $\R^\N \approx \R$ gilt, rechnen wir:
                         \begin{align} \R^\N&amp;\approx \left(\cuben\right)^{\N} \\&amp;\approx
@@ -538,10 +471,8 @@
                         \end{align}
                         |> span
                             class=qed
-
                             \(\square\)
                     |> p
-
                         Dürfen wir das? Dürfen wir Rechenregeln wie $\left(x^{b}\right)^c =
                         x^{b \cdot c}$ so einfach anwenden? Noch grundlegender, und das ist
                         auch ein Punkt im ersten Beweis, den ich unter den Teppich gekehrt
@@ -551,7 +482,6 @@
                         dürfen wir in den resultierenden Ausdrücken equipotente Mengen
                         austauschen?
                     |> p
-
                         Bevor wir das als Theorem formulieren, überlegen wir uns kurz, was
                         denn die Analoga zu den arithmetischen Operationen sind. Am klarsten
                         ist die Multiplikation: die Zahlenmultiplikation $a \cdot b$ hat als
@@ -574,29 +504,22 @@
                             |> span
                                 id=calculating-with-cardinals
                                 class=numbered-title
-
                                 Theorem 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
+                                \ 
                             *(mit Kardinalzahlen rechnen)*. Es gelten die
                             üblichen Rechenregeln:
                         |> ol
                             |> li
-
                                 $A \times (B \uplus C) \approx (A \times B) \uplus (A \times C)$,
                             |> li
-
                                 $A^{B} \times A^{C} \approx A^{B \uplus C}$,
                             |> li
-
                                 $\left(A^{B}\right)^C \approx A^{B \times C}$,
                         |> p
-
                             sowie Kommutativität und Assoziativität von $\uplus$ und $\times$.
                     |> p
-
                         Als zweites gilt, dass wir in so einem
                         "mengentheoretisch-arithmetischen" Ausdruck eine Menge $A$ durch eine
                         äquipotente Menge $A'$ ersetzen können:
@@ -606,30 +529,23 @@
                             |> span
                                 id=replacing-equipotent-cardinals
                                 class=numbered-title
-
                                 Theorem 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
+                                \ 
                             Seien $A, A', B$ Mengen und $A \approx A'$. Dann gilt
                         |> ol
                             |> li
-
                                 $A \uplus B \approx A' \uplus B$ (und natürlich auch $B \uplus A
                                 \approx B \uplus A'$).
                             |> li
-
                                 $A \times B \approx A' \times B$ (und natürlich auch $B \times A
                                 \approx B \times A'$).
                             |> li
-
                                 $A^B \approx \left(A'\right)^{B}$.
                             |> li
-
                                 $B^A \approx B^{A'}$.
                     |> p
-
                         Beachten Sie, dass ich Punkt 3 und 4 nicht zu einem Punkt
                         zusammengefasst habe. Punkt 4 folgt nämlich nicht unmittelbar aus
                         Punkt 3 sondern erfordert einen separaten Beweis.
@@ -638,13 +554,11 @@
                         |> p
                             |> span
                                 class=numbered-title
-
                                 Übungsaufgabe 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                &ensp;
-                            &ensp;Beweisen Sie so
+                                \ 
+                            \ Beweisen Sie so
                             viele Punkte von
                             |> span
                                 data-ref=calculating-with-cardinals
@@ -655,15 +569,12 @@
                                 class=reference
                             , wie Sie wollen.
                         |> p
-
                             *Hinweis.* Die Beweise sind alle nicht wirklich
                             schwierig. Sie müssen nur aufpassen, dass Sie sich nicht in der
                             Notation verlieren.
                     |> h3
-
                         Die Partialordnung $2^{\N}$.
                     |> p
-
                         Wir betrachten $2^{\N}$, die Potenzmenge von $\N$, also die Menge
                         aller Teilmengen.
                     |> div
@@ -671,15 +582,12 @@
                         |> p
                             |> span
                                 class=numbered-title
-
                                 Übungsaufgabe 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                &ensp;
+                                \ 
                             Zeigen Sie, dass $2^{\N} \approx \cuben$ gilt.
                     |> p
-
                         Die Elemente von $2^\N$, also Teilmengen $A \subseteq \N$, sind nach
                         Inklusion geordnet: $A \subseteq B$. Somit ist $\left(2^{\N},
                         \subseteq\right)$ eine Partialordnung. Eine _Kette_ in einer
@@ -697,7 +605,6 @@
                     \begin{align*} \{\emptyset, \{1\}, \{1,2\}, \{1,2,3\}, \dots,
                     \{1,2,\dots,k\}, \dots \} \end{align*}
                     |> p
-
                         Diese Kette hat zufälligerweise die Form $A_0 \subseteq A_1 \subseteq
                         A_2 \subseteq \dots$, d.h., die Elemente der Kette sind schön
                         sortiert, von klein nach groß. Dies muss nicht so sein: sei $k \N :=
@@ -711,7 +618,6 @@
                     \subseteq 2\N \cup \{1,3\} \subseteq 2\N \cup \{1,3,5\} \subseteq \dots
                     \end{align*}
                     |> p
-
                         Wenn wir ganz links noch $\{0\}$ hinschreiben und ganz rechts noch
                         $\N$, dann haben wir ein weiteres, eventuell ungewohntes Phänomen: das
                         Element $\{0\}$ in der Kette hat keinen eindeutigen
@@ -723,17 +629,14 @@
                         |> p
                             |> span
                                 class=numbered-title
-
                                 Definition 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
+                                \ 
                             *(Dichte Partialordnung)* Eine Partialordnung
                             $(X,\preceq)$ heißt _dicht_, wenn es für alle $x,z \in X$ mit
                             $x \prec z$ ein $y \in X$ gibt mit $x \prec y \prec z$.
                     |> p
-
                         Ein klassisches Beispiel für eine dichte Ordnung ist $(\Q, \lt)$. Wenn
                         $x \lt z$, dann ist $x \lt \frac{x+z}{2} \lt z$. Sie finden also immer
                         etwas dazwischen. Die Ordnung $(\Z, \lt)$ ist nicht dicht: zwischen
@@ -745,12 +648,10 @@
                         |> p
                             |> span
                                 class=numbered-title
-
                                 Übungsaufgabe 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                &ensp;
+                                \ 
                             Finden Sie in $(2^\N, \subseteq)$ eine Kette $X$, so dass $(X,
                             \subseteq)$ dicht ist. Also: eine Menge $X$, so dass für alle $A,C
                             \in X$ mit $A \ne C$ entweder $A \subsetneq C$ oder $C \subsetneq A$

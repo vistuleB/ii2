@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=05-01-ableitungen.html
-
             &lt;&lt; Kapitel 5.1
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=05-03-exercise-design-grammars.html
-
             Kapitel 5.3 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,25 +33,21 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             Kontextfreie Grammatiken und Kellerautomaten
                     |> div
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Theorem 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Zu jeder kontextfreien Grammatik \(G = (\Sigma, N, S, P)\) gibt es
                         einen Kellerautomaten \(M = (\Sigma, Q, \Gamma, \qstart, \delta)\), der
                         die gleiche Sprache akzeptiert, also \(L(G) = L(M)\).
                     |> div
                         class=well container
-
                         *Beweis.*
                         Der Beweis ist vergleichsweise einfach, weil wir die Grammatik eins zu eins in
                         Automatentransitionen übersetzen können.
@@ -91,18 +83,15 @@
                         ich das eh nicht.
                         |> span
                             class=qed
-
                             \(\square\)
                     |> div
                         class=well subtheorem container theorem
                         |> span
                             class=numbered-title
-
                             Beispiel 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Betrachten wir die Grammatik
                         \begin{align*}
                         S&amp;\rightarrow A \ | \ B \ | \ C \ | \ \epsilon \\
@@ -112,19 +101,15 @@
                         \end{align*}
                         Ein Wort in der erzeugten Sprache wäre zum Beispiel
                         |> tt
-
                             {[()()]()}()
                         |> p
-
                             Schreiben wir nun einen Kellerautomaten, der diese Sprache akzeptiert. Die
                             Idee ist, dass wir Terminalsymbole und Nichtterminalsymbole auf den Stack legen.
                             Ein 
                             |> tt
-
                                 [
-                            &ensp;oben auf dem Stack bedeutet dann _ich will jetzt sofort ein 
+                            \ oben auf dem Stack bedeutet dann _ich will jetzt sofort ein 
                             |> tt
-
                                 [
                             lesen_;
                             ein Nichtterminal wie \(A\) oben auf dem Stack bedeutet, dass
@@ -132,13 +117,11 @@
                             \Sigma^*\) lesen wollen.
                             Um ein \(w\) mit \(A \rightarrow w\) lesen zu können, müssen wir _sofort_ ein
                             |> tt
-
                                 {
-                            &ensp;lesen, dann ein Wort \(v\) mit \(B \rightarrow v\), dann ein 
+                            \ lesen, dann ein Wort \(v\) mit \(B \rightarrow v\), dann ein 
                             |> tt
-
                                 }
-                            &ensp;und
+                            \ und
                             so weiter.
                             Wir können das also im Automaten implementieren, indem wir
                             \(A\) vom Stack löschen und durch \(\texttt{\{} B \texttt{\}} S\) auf den Stack legen,
@@ -176,7 +159,6 @@
                         dass wir wirklich den Stack ganz leer gemacht haben, brauchen wir die
                         Markierung 
                         |> tt
-
                             $
                         . Also:
                         \begin{align*}
@@ -482,41 +464,33 @@
                                             style=height:22em
                                             src=../img/context-free/cfg-to-pda/53.svg
                     |> p
-
                         Die Gegenrichtung ist schwieriger.
                     |> div
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Theorem 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;.
+                            \ .
                         Zu jedem Kellerautomaten \(M\) gibt es eine kontextfreie Grammatik \(G\)
                         mit \(L(M) = L(G)\).
                     |> p
-
                         Ich folge hier im Wesentlichen dem Beweis aus Sipsers Kapitel 2.
                     |> div
                         class=well container
-
                         *Beweis.*
                         Sei \(M = (\Sigma, Q, \Gamma, \qstart, F, \delta)\) der Kellerautomat.
                         Als erstes führen wir drei Schönheitsoperation durch:
                         |> ol
                             |> li
-
                                 Der Automat hat einen einzigen akzeptierenden Zustand \(\qend\). Dies
                                 können wir einfach durch \(\epsilon\)-Übergänge erreichen.
                             |> li
-
                                 Der Automat leert den Stack, bevor er akzeptiert. Dies können wir
                                 z.B. dadurch erreichen, dass wir anfangs ein \(\$\) auf den Stack legen
                                 und am Ende den Stack poppen, bis wir \(\$\) gepoppt haben.
                             |> li
-
                                 Für jede Transition
                                 \begin{align*}
                                 (p, x) \step{a} (q, y)
@@ -542,7 +516,6 @@
                                 den
                                 Stack, um es gleich darauf runterzupoppen.
                         |> p
-
                             Wenn nun der Automat die eben beschriebene Form hat, so ist die
                             Idee, dass wir für
                             jedes Paar \(p,q\) von Zuständen ein Nichtterminalsymbol \(A_{pq}\) einführen, dass
@@ -555,7 +528,6 @@
                             ist. Dies kann auf zwei Weisen geschehen:
                         |> ol
                             |> li
-
                                 Fall 1: in der Konfigurationsfolge von \((p, \epsilon) \Step{w}^* (q,\epsilon) \)
                                 wird der Stack zwischendurch auch mal leer, und zwar nachdem der Präfix \(u\) des Wortes
                                 \(w = uv\) gelesen ist, und der Automat ist zu diesem Zeitpunkt im Zustand \(r\). Also:
@@ -570,7 +542,6 @@
                                 \end{align*}
                                 ein.
                             |> li
-
                                 Fall 2: in der Konfigurationsfolge von \((p, \epsilon) \Step{w}^* (q,\epsilon) \)
                                 ist der Stack zwischendurch nie leer. Das heißt wiederum, dass das im ersten
                                 Schritt gepushte Stacksymbol \(x\) am Ende gepoppt wird, also \(w = avb\) mit
@@ -597,7 +568,6 @@
                                 \end{align*}
                                 eine gültige Regel.
                         |> p
-
                             Schlussendlich führen wir noch die offensichtlich korrekten
                             Regeln \(A_pp \rightarrow \epsilon\) ein, da ja
                             \((p, \epsilon) \Step{\epsilon}^* (p, \epsilon)\) offensichtlich gilt (da ja
@@ -611,25 +581,21 @@
                         $(p,\epsilon) \step{a} (r,x)$, $(s,x) \step{b} (q,\epsilon)$ von Transitionen}
                         \end{align*}
                         |> p
-
                             Das Startsymbol der Grammatik ist natürlich \(A_{\qstart, \qend}\).
                         Auch hier verzichte ich auf einen formalen Beweis, dass \(L(G)=L(M)\) gilt. Der Beweis
                         verwendet (wenig überraschend) Induktion über die Länge der Ableitung bzw. Induktion über die
                         Länge der Konfigurationsfolge und ist in Sipsers Lehrbuch im Detail erklärt.
                         |> span
                             class=qed
-
                             \(\square\)
                     |> div
                         class=well container theorem
                         |> span
                             class=numbered-title
-
                             Beispiel 
                             |> NumberedTitle
-
                                 ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            &ensp;
+                            \ 
                         Wir betrachten die Sprache
                         \begin{align*}
                         a^m b (a|b)^* b a^m
@@ -640,7 +606,6 @@
                         aus dem letzten Theorem in eine Grammatik. Dann vergleichen wir die entstandene
                         Grammatik mit der, die wir per Hand aus der obigen Sprachbeschreibung bauen würden.
                         |> p
-
                             Unser Automat hat einen Zustand \(q_1\), in welchem er führenden \(a\)'s auf den Stack
                             legt und einen Zustand \(q_3\), in welchem er die \(a\)'s am Ende liest und
                             vom Stack poppt. Zwischen den beiden \(b\)'s in der Mitte ist er in einem
@@ -658,18 +623,15 @@
                         (q_3, \$)&amp;\step{\epsilon} (\qend, \epsilon)
                         \end{align*}
                         |> p
-
                             Die beiden rot gefärbten Transitionen benötigen eine Schönheitsoperation:
                         |> span
                             style=color:purple
-
                             \begin{align*}
                             (q_2, \epsilon)&amp;\step{a} (q'_2, x) \\
                             (q_2, \epsilon)&amp;\step{b} (q'_2, x) \\
                             (q'_2, x)&amp;\step{\epsilon} (q_2, \epsilon) \\
                             \end{align*}
                         |> p
-
                             Unsere Zustandsmenge ist also \(Q = \{\qstart, q_1, q_2, q'_2, q_3, \qend\}\).
                             Rein theoretisch müssten wir nun für alle Tripel \(p,r,q\) von Zuständen
                             eine Produktion \(A_{pq} \rightarrow A_{pr} A_{rq}\) einführen, also
@@ -677,7 +639,6 @@
                             indem wir die im Beweis beschriebene mechanische Prozedur mit
                             ein wenig selbständigem Denken kombinieren.
                         |> p
-
                             Die erste Beobachtung ist, dass wir gar nicht von jedem Zustand zu jedem
                             kommen können, sondern nur "vorwärts", also wie in diesem Diagramm:
                         |> figure
@@ -686,7 +647,6 @@
                                 src=../img/context-free/pda-to-cfg-diagram.svg
                                 loading=lazy
                         |> p
-
                             Nichtterminale wie \(A_{31}\) führen wir also gar nicht erst ein. Auch schreiben
                             wir \(A_{13}\) statt \(A_{q_1q_3}\) und verwenden die Indizes 0 für \(\qstart\) und
                             4 für \(\qend\). Als zweite Beobachtung sehen wir, dass man mit leerem
@@ -782,7 +742,6 @@
                             A_{22}&amp;\rightarrow \epsilon \\
                             \end{align*}
                         |> p
-
                             Überlegen wir nun, ausgehend von dieser Grammatik, was wir aus dem Startsymbol \(A_{13}\)
                             ableiten
                             können. Die einzigen zwei Produktionen mit \(A_{13}\) sind

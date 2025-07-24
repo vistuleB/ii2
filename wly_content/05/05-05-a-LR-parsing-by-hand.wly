@@ -8,22 +8,18 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=05-04-LL1-grammars.html
-
             &lt;&lt; Kapitel 5.4
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
         |> a
             href=05-05-b-Parser-in-Java.html
-
             Kapitel 5.5 &gt;&gt;
     |> div
         id=rightSideWrapper
@@ -37,11 +33,9 @@
                         class=hidden-title
                         |> span
                             class=subChapterTitle
-
                             ::::ChapterCtr.::++SectionCtr
                             LR-Parser per Hand entwerfen
                     |> p
-
                         Betrachten wir die kontextfreie Grammatik $G$ für arithmetische Ausdrücke mit den
                         Variablen $x, y, z$ und strenger Klammerung über dem Alphabet
                         $\Sigma = \{x, y, z, (, ), +, *\}$:
@@ -51,7 +45,6 @@
                     S&amp;\rightarrow (S*S)
                     \end{align*}
                     |> p
-
                         Sie kann also $(x + (y*z))$ ableiten aber eben nicht $(x + y + z)$. Wie können wir nun einen
                         Parser für $G$ schreiben? Also einen Algorithmus, der ein Wort $w \in \Sigma^*$ nimmt und einen
                         Ableitungsbaum konstruiert (falls $w \in L(G)$)?
@@ -61,7 +54,6 @@
                     w = ((((\dots
                     \end{align*}
                     |> p
-
                         dann wissen wir nicht, ob wir als ersten Schritt $S \rightarrow (S+S)$ oder $S \rightarrow
                         (S*S)$ tätigen sollen. Das geht auch nicht, wenn wir $k$ Zeichen vorauslesen dürfen, weil
                         der $(((\dots$-Präfix ja länger als $k$ sein kann. Nein, wir müssen anders vorgehen.
@@ -72,7 +64,6 @@
                     O&amp;\rightarrow + \ | \ *
                     \end{align*}
                     |> p
-
                         Das geht aber nicht immer:
                     |> div
                         id=example-more-a-than-b
@@ -80,18 +71,15 @@
                         |> p
                             |> span
                                 class=numbered-title
-
                                 Beispiel 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;
-                            &ensp;Betrachten wir die recht einfache Sprache 
+                                \ 
+                            \ Betrachten wir die recht einfache Sprache 
                         \begin{align*}
                         L_2 := \{a^{m+k} b^m c \ | \ m \geq 1, k \geq 0 \} \ ,
                         \end{align*}
                         |> p
-
                             also _beliebig viele $a$'s, gefolgt von gleich vielen oder weniger $b$'s (aber mindestens
                             einem), abgeschlossen
                             mit einem $c$
@@ -104,17 +92,14 @@
                         X&amp;\rightarrow ab
                         \end{align}
                         |> p
-
                             Wenn wir jetzt die ersten $k$ Zeichen lesen: $aaaa \dots$, dann
                             gibt es keinen Weg, zu entscheiden, ob danach gleich viele oder weniger
                             $b$'s folgen werden, ob wir also $S \rightarrow sS$ oder $S \rightarrow Xc$ anwenden sollen.
                             Das lässt sich auch nicht durch Umschreiben der Grammatik lösen. Wir müssen
                             lesen, bis wir ein $b$ sehen.
                     |> h2
-
                         Das LR-Paradigma
                     |> p
-
                         Wir brauchen einen Paradigmenwechsel. Das LL-Paradigma war ja, mit $S$ zu starten und,
                         geleitet von den nächsten $k$ Zeichen, zu entscheiden, welche Ableitungsregel als nächstes
                         anzuwenden ist. Hierbei haben wir immer versucht, für das am weitesten
@@ -345,7 +330,6 @@
                                         style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-23.svg
                     |> p
-
                         Betrachten wir noch ein Beispiel, nun für die etwas nützlichere Grammatik
                         der streng geklammerten arithmetischen Ausdrücke.
                     |> figure
@@ -554,7 +538,6 @@
                                         style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-22.svg
                     |> p
-
                         Wenn wir uns nun die Ableitung ansehen, die wir gefunden haben:
                     \begin{align*}
                     \texttt{S} \Step{}
@@ -565,7 +548,6 @@
                     \texttt{(x+(y*z))}
                     \end{align*}
                     |> p
-
                         dann sehen wir, dass es sich um eine Rechtsableitung handelt. Daher der Name LR-Parsing: wir
                         beginnen links (daher das L) und suchen eine Rechtsableitung (daher das R), allerdings in
                         umgekehrter
@@ -579,13 +561,11 @@
                     Y&amp;\rightarrow Ya \ | \ Yb \ | \ a \ | \ b
                     \end{align*}
                     |> p
-
                         Die erzeugte Sprache ist 
                     \begin{align*}
                     L(G) = \{vcv^Rwz \ | \ v, w \in \{a,b\}^* \}
                     \end{align*}
                     |> p
-
                         Betrachten wir das Eingabewort $acaba$. Wir schreiben nun immer
                         den bis jetzt gelesenen / geparsten Teil des Wortes, gefolgt von dem
                         ungelesen Teil in grau und dahinter
@@ -594,7 +574,6 @@
                         Regel anwenden.
                     |> div
                         class=container
-
                         \begin{align*}
                         &amp;\textcolor{darkgray}{acabaz} \tag{lesen} \\
                         &amp;a\textcolor{darkgray}{cabaz} \tag{lesen} \\
@@ -610,7 +589,6 @@
                         &amp;S \tag{fertig}
                         \end{align*}
                     |> p
-
                         Es stellen sich einige Fragen: woher wissen wir zum Beispiel bei
                         $XYa\textcolor{darkgray}{z}$, dass wir per $Y \rightarrow Ya$ reduzieren müssen
                         und nicht per $Y \rightarrow a$? Wir könnten ja auch auf
@@ -622,23 +600,19 @@
                         |> p
                             |> span
                                 class=numbered-title
-
                                 Beobachtung 
                                 |> NumberedTitle
-
                                     ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                &ensp;.
-                            &ensp;Die Reduktion
+                                \ .
+                            \ Die Reduktion
                             $XYa \Pets{} XYY$ kann nicht richtig sein, weil $XYY$ nie als Präfix in einer
                             Rechtsableitung vorkommen kann. Genauer gesagt: es gibt kein $w \in \Sigma^*$, so dass
                         \begin{align*}
                         S \Step{}^* XYYw \Step{} XYaw
                         \end{align*}
                         |> p
-
                             eine Rechtsableitung ist.
                     |> p
-
                         Wenn wir Glück haben, gibt es immer höchstens eine Reduktionsregel
                         $\alpha \beta w \Pets{} \alpha X w$, so dass
                         $S \Step{}^* \alpha X w \Step{} \alpha \beta w$ in einer Rechtsableitung vorkommen kann.
@@ -646,7 +620,6 @@
                         uns sagen kann, ob $XYa \Pets{} XYY$ ein korrekter Reduktionsschritt ist. Dies scheint
                         komplexer, als $w \stackrel{?}{\in} L$ zu entscheiden, ist aber _einfacher_!
                     |> p
-
                         Ein zweites Problem ist, dass wir eben manchmal kein Glück haben und es mehrere
                         plausible Reduktionsschritte geben kann. Ein Beispiel wäre die obere Grammatik, leicht
                         abgewandelt:
@@ -656,7 +629,6 @@
                     Y&amp;\rightarrow Ya \ | \ Yb \ | \ a \ | \ b
                     \end{align*}
                     |> p
-
                         Wenn wir jetzt als einfaches Beispiel $cab$ ableiten wollen:
                     \begin{align*}
                     \textcolor{darkgray}{cab} \tag{lesen} \\
@@ -666,7 +638,6 @@
                     XY\textcolor{darkgray}{b} \tag{reduzieren per $Y \rightarrow a$}
                     \end{align*}
                     |> p
-
                         Jetzt liegt die Wortform $XY$ auf unserem Stack und wir haben zwei Möglichkeiten:
                         wir könnten reduzieren, also $XY \Pets{} S$, oder das nächste Zeichen lesen.
                         Ersteres wäre inkorrekt:
@@ -674,7 +645,6 @@
                     XY\textcolor{darkgray}{b} \Pets{} S \textcolor{darkgray}{b} \ ,
                     \end{align*}
                     |> p
-
                         wobei $Sb$ eben keine Wortform ist, die in einer Rechtsableitung vorkommen könnte.
                         Das wissen wir aber erst, wenn wir $b$ gelesen haben. Wäre das Eingabewort nämlich nur $ca$,
                         dann
@@ -682,7 +652,6 @@
                         hatten wir als "Work-around" ein $z$ am Ende angehängt, um das Wortende zu erkennen.
                         Im Allgemeinen ist es aber leichter, dem Parser zu erlauben, das nächste Zeichen zu lesen.
                     |> p
-
                         All diese Gedanken theoretisch rigoros zu formulieren ist einigermaßen herausvordernd.
                         Daher werden wir erst einmal für eine Grammatik arithmetischer Ausdrücke einen
                         Parser in Java implementieren.

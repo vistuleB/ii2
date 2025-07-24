@@ -8,18 +8,15 @@
         id=link-to-toc
         |> a
             href=../vorlesungsskript.html
-
             Inhaltsverzeichnis
         |> a
             href=08-01-Time-hierarchy-theorem.html
-
             &lt;&lt; Kapitel 8.1
     |> div
         id=link-to-overview
         style=text-align: end
         |> a
             href=/
-
             zur Kursübersicht
     |> div
         id=rightSideWrapper
@@ -33,30 +30,25 @@
                         class=hidden-title
                         |> span
                             class=chapterTitle
-
                             ::++ChapterCtr.
                             Appendix - Manual für das Schreiben dieses Skripts
                     |> div
                         class=alert-info
-
                         Dieses Kapitel sind ausschließlich persönliche Notizen für mich dazu,
                         wie man "korrekt" dieses Skript schreibt, insbesondere wie man die
                         automatische Numerierung verwendet. Es ist also natürlich nicht Stoff
                         der Vorlesung.
                     |> p
-
                         Parts of these lecture notes are generated automatically with
                         javascript. This includes chapter and subchapter numbering, links to
                         next and previous chapters, the table of content, and theorem
                         numbering.
                     |> ol
                         |> li
-
                             If you want to add a new chapter, you have to do two things: add an
                             entry to
                             |> a
                                 href=../javascript/table-of-contents.js
-
                                 table-of-contents.js
                             .
                             Just follow the format there. Then add the linked file. Best to
@@ -67,11 +59,9 @@
                             determined purely by the order in which they appear in
                             |> a
                                 href=../javascript/table-of-contents.js
-
                                 table-of-contents.js
                             .
                         |> li
-
                             Theorem environments (theorems, lemmas, conjectures) can be created
                             as follows:
                             |> div
@@ -80,7 +70,6 @@
                                     |> span
                                         id=sauer-shelah-lemma
                                         class=numbered-title
-
                                         Sauer-Shelah lemma
                                     Let $A \subseteq \{0,1\}^n$. If $|A| \gt {\rm vol}(n,r-1)$ then
                                     there exists some set $I \subseteq [n]$ of indices with $|I|
@@ -90,7 +79,6 @@
                                 coordinates is shattered.
                             and here is the source code:
                             |> pre
-
                                 &lt;div class='well container theorem'&gt;
                                 &lt;p&gt;&lt;span class='numbered-title' id="sauer-shelah-lemma" data-label-title="Lemma"&gt;Lemma&lt;/span&gt;
                                 &lt;strong&gt;(Sauer-Shelah lemma).&lt;/strong&gt;Let $A \subseteq \{0,1\}^n$. If $|A| \gt {\rm vol}(n,r-1)$ then
@@ -105,18 +93,16 @@
                             `nunbered-title`, otherwise the automatic numbering will
                             not work.
                             |> p
-
                                 The attributes `id="sauer-shelah-lemma"` and
                                 `data-label-title="Lemma"` are necessarily for
                                 automatic referencing. Here is how you create a reference:
                             |> div
                                 class=well container
-
                                 This follows easily from the
                                 |> span
                                     data-ref=sauer-shelah-lemma
                                     class=reference
-                                &ensp;just
+                                \ just
                                 above and
                                 |> span
                                     data-ref=theorem-N-N^2
@@ -124,10 +110,8 @@
                                 .
                             and here is the source code:
                             |> pre
-
                                 Remember that&lt;span class="reference" data-ref="theorem-N-N^2"&gt;&lt;/span&gt; shows that $\N$ and $\N^2$ are equipotent.
                         |> p
-
                             To work, the `id` of a theorem (or a general environment)
                             has to be unique _across all files of the lecture notes_.
                             Also, since we have to correctly compute the numbering of theorems
@@ -142,11 +126,9 @@
                             _the entire lecture notes_ each time a single file is loaded.
                             This would take too much time, so we use a precompilation step:
                         |> p
-
                             I wrote an html page
                             |> a
                                 href=../javascript/put-all-in-one-page.html
-
                                 put-all-in-one-page.html
                             that loads the table of content and all chapters (which takes quite
                             a substantial amount of time, like 20 seconds or so) and extracts
@@ -157,30 +139,25 @@
                             to a global dictionary. At the end, when all has been loaded, the
                             web page will show this dictionary as a json object.
                         |> p
-
                             You should then copy this table and paste it in the beginning of the
                             file
                             |> a
                                 href=../javascript/number-my-theorems.js
-
                                 nunmber-my-theorems.js
                             . The point is that creating the table is expensive (must read all
                             chapters) but using it is cheap.
                         |> div
                             class=alert-warning
-
                             *Important:* 
 
-                            &ensp;The page
+                            \ The page
                             |> a
                                 href=../javascript/put-all-in-one-page.html
-
                                 put-all-in-one-page.html
                             does not work if you just open it by double-clicking in your file
                             explorer. It has to be hosted by an http-server server with CORS
                             enabled, for example
                             |> pre
-
-                                &ensp;http-server .  --cors
+                                \ http-server .  --cors
                             Once this server is running, go to
                             `http://localhost:8080` in your browser.
