@@ -6,19 +6,21 @@ import prefabricated_pipelines as pp
 pub fn our_pipeline() -> List(Desugarer) {
   [
     [
-      dl.find_replace_outside(#("&ensp;", " ", [])),
+      dl.find_replace__outside(#("&ensp;", " "), []),
       dl.normalize_begin_end_align(#(infra.DoubleDollar, [infra.DoubleDollar])),
     ],
     pp.create_math_elements([infra.BackslashParenthesis], infra.SingleDollar),
     pp.create_math_elements([infra.BackslashSquareBracket], infra.SingleDollar),
     pp.create_mathblock_elements([infra.DoubleDollar], infra.DoubleDollar),
     [
-      dl.append_attributes([#("Book", "counter", "BookLevelSectionCounter")]),
+      dl.append_attribute__batch([
+        #("Book", "counter", "BookLevelSectionCounter"),
+      ]),
       dl.associate_counter_by_prepending_incrementing_attribute(#(
         "section",
         "BookLevelSectionCounter",
       )),
-      dl.append_attributes([
+      dl.append_attribute__batch([
         #("section", "path", "/lecture-notes::øøBookLevelSectionCounter"),
       ]),
       dl.unwrap("WriterlyBlankLine"),
@@ -34,9 +36,11 @@ pub fn our_pipeline() -> List(Desugarer) {
       dl.identity(),
       dl.handles_substitute(#("", "", "", [], [])),
       dl.concatenate_text_nodes(),
-      dl.unwrap_if_no_child_meets_condition(
-        #("p", infra.is_text_or_is_one_of(_, ["b", "i", "a", "span"])),
-      ),
+      dl.unwrap_if_no_child_meets_condition(#(
+        "p",
+        infra.is_text_or_is_one_of(_, ["b", "i", "a", "span"]),
+        "",
+      )),
       dl.unwrap_if_child_of([#("p", ["span", "code", "tt", "figcaption", "em"])]),
       dl.free_children(#("pre", "p")),
       dl.free_children(#("ul", "p")),

@@ -9,7 +9,7 @@ pub fn html_pipeline() -> List(Desugarer) {
       #("div", [#("<", "&lt;"), #(">", "&gt;")]),
     ]),
     dl.remove_chapter_number_from_title(),
-    dl.trim_spaces_around_newlines([]),
+    dl.trim_spaces_around_newlines__outside([]),
     dl.replace_multiple_spaces_by_one(),
     dl.extract_starting_and_ending_spaces(["i", "b", "strong", "em", "code"]),
     dl.insert_bookend_text_if_no_attributes([
@@ -27,7 +27,7 @@ pub fn html_pipeline() -> List(Desugarer) {
     dl.unwrap_tags_if_no_attributes(["i", "b", "strong", "em", "code"]),
     // 10
     dl.fold_tag_into_text(#("go23_xU", "")),
-    dl.remove_empty_lines(),
+    dl.delete_empty_lines(),
     dl.insert_ti2_counter_commands(#(
       "::++ChapterCtr.",
       #("class", "chapterTitle"),
