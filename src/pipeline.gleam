@@ -48,7 +48,7 @@ pub fn our_pipeline() -> List(Desugarer) {
       dl.free_children(#("p", "p")),
       dl.free_children(#("figure", "p")),
       dl.generate_ti2_table_of_contents_html(#("TOCAuthorSuppliedContent", "li")),
-      dl.fold_tag_contents_into_text(["MathBlock", "Math", "MathDollar"]),
+      dl.fold_contents_into_text__batch(["MathBlock", "Math", "MathDollar"]),
     ],
   ]
   |> list.flatten
