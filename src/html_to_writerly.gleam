@@ -207,7 +207,8 @@ fn remove_line_break_from_start(res: String) -> String {
 fn title_from_vxml(vxml: VXML) -> String {
   let assert vp.V(_, _, _, title) = vxml
   wp.vxmls_to_writerlys(title)
-  |> wp.writerlys_to_string()
+  |> list.map(wp.writerly_to_string)
+  |> string.join("")
   |> string.split_once(" ")
   |> result.unwrap(#("", ""))
   |> pair.second()
@@ -308,7 +309,7 @@ fn emitter(
 
   Ok(vr.OutputFragment(
     chapter_directory <> "/" <> filename,
-    wp.writerlys_to_blamed_lines(writerlys),
+    list.map(writerlys, wp.writerly_to_blamed_lines) |> list.flatten,
     Nil,
   ))
 }
@@ -379,11 +380,15 @@ pub fn html_to_writerly(
 
     let renderer =
       vr.Renderer(
-        assembler: bl.path_to_blamed_lines_easy_mode,
+        assembler: fn(path) { bl.path_to_blamed_lines(path, 0) },
         source_parser: vr.default_html_source_parser(
           amendments.spotlight_key_values,
         ),
-        pipeline: html_pipeline.html_pipeline(),
+        pipeline: infra.wrap_desugarers(
+          html_pipeline.html_pipeline(),
+          infra.Off,
+          fn(x) { [x] },
+        ),
         splitter: fn(vxml) { splitter(vxml, file) },
         emitter: fn(fragment) { emitter(fragment, prev, next) },
         prettifier: vr.default_prettier_prettifier,
@@ -395,7 +400,9 @@ pub fn html_to_writerly(
       vr.default_renderer_debug_options()
       |> vr.amend_renderer_debug_options_by_command_line_amendment(
         amendments,
-        html_pipeline.html_pipeline(),
+        infra.wrap_desugarers(html_pipeline.html_pipeline(), infra.Off, fn(x) {
+          [x]
+        }),
       )
 
     io.println("after debug_options = ...")

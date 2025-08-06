@@ -323,7 +323,11 @@ pub fn main() {
           source_parser: vr.default_writerly_source_parser(
             amendments.spotlight_key_values,
           ),
-          pipeline: pipeline.our_pipeline(),
+          pipeline: infra.wrap_desugarers(
+            pipeline.our_pipeline(),
+            infra.Off,
+            fn(x) { [x] },
+          ),
           splitter: ti2_splitter,
           emitter: ti2_emitter,
           prettifier: vr.default_prettier_prettifier,
@@ -341,7 +345,9 @@ pub fn main() {
         vr.default_renderer_debug_options()
         |> vr.amend_renderer_debug_options_by_command_line_amendment(
           amendments,
-          pipeline.our_pipeline(),
+          infra.wrap_desugarers(pipeline.our_pipeline(), infra.Off, fn(x) {
+            [x]
+          }),
         )
 
       case vr.run_renderer(renderer, parameters, debug_options) {
