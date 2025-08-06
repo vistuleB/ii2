@@ -565,10 +565,8 @@ carry1, 0, 1, 0,&lt;,&lt;,&lt;
               >:
               <pre class="listing container">
 <code>name: replace_b_by_c</code>
-<code>init: init</code>
- 
-<code>accept: accept</code>
- 
+<code>init: init</code> 
+<code>accept: accept</code> 
 `<code>
 </code>init, a<code>
 </code>init, a, &gt;` 
@@ -577,8 +575,7 @@ carry1, 0, 1, 0,&lt;,&lt;,&lt;
 </code>init, c, &gt;` 
 `<code>
 </code>init, _` 
-<code>accept, _, &gt;</code>
- 
+<code>accept, _, &gt;</code> 
 </pre>
               <p>
                 Ungleich schwieriger ist die Aufgabe, jedes $b$ durch ein $bc$
@@ -628,10 +625,7 @@ r, _, x, &gt;, &gt;
 q,  x, _
 r', x, _, -, -
 r', _, c
-r,  c, _   
-<span
-  class="comment"
->// für jedes Zeichen c</span>
+r,  c, _   <span class="comment">// für jedes Zeichen c</span>
 </pre>
               <p>
                 Nehmen Sie die Beispielmaschine<a
@@ -651,11 +645,7 @@ r,  c, _
 q,   x, _
 r'', _, z, &gt;, &gt;
 r'', c, _
-r,   c, y, -, &gt; 
-<span
-  class="comment"
->// für jedes Zeichen c 
-</span>
+r,   c, y, -, &gt; <span class="comment">// für jedes Zeichen c </span>
 </pre>
               <p>
                 Sie können sich meine Implementierung in<a
@@ -679,17 +669,7 @@ r,   c, y, -, &gt;
                 <i>Dictionaries</i>, die Key-Value-Paare speichern:
               </p>
               <pre class="container">
-<code
-  class="terminalPrompt"
->python -i</code><code
-  class="pythonPrompt"
->dict = {"karl" : 42, "eva" : 35, "werner" : 20}</code><code
-  class="pythonPrompt"
->dict["eva"]</code><code
-  class="terminalOutput"
->35</code><code
-  class="pythonPrompt"
-></code>
+<code class="terminalPrompt">python -i</code><code class="pythonPrompt">dict = {"karl" : 42, "eva" : 35, "werner" : 20}</code><code class="pythonPrompt">dict["eva"]</code><code class="terminalOutput">35</code><code class="pythonPrompt"></code>
 </pre>
               <p>
                 Im Zweifelsfall sind diese als Hashmaps oder Rot-Schwarz-Bäume
@@ -914,22 +894,15 @@ r,   c, y, -, &gt;
 `</code>
 <code>subsetSum : List Int -&gt; Int -&gt; Bool</code>
 <code>subsetSum prices amount =</code>
- 
-<code>case ( prices, amount ) of</code>
- 
-<code>( [], 0 ) -&gt;</code>
- 
-<code>True</code>
+ <code>case ( prices, amount ) of</code>
+ <code>( [], 0 ) -&gt;</code>
+ <code>True</code>
 ``
- 
-<code>( x :: rest, _ ) -&gt;</code>
- 
-<code>subsetSum rest amount || subsetSum rest (amount - x)</code>
+ <code>( x :: rest, _ ) -&gt;</code>
+ <code>subsetSum rest amount || subsetSum rest (amount - x)</code>
 ``
- 
-<code>( [], _ ) -&gt;</code>
- 
-<code>False</code>
+ <code>( [], _ ) -&gt;</code>
+ <code>False</code>
 </pre>
               <p>
                 Auf einer deterministischen Turingmaschine wäre das deutlich

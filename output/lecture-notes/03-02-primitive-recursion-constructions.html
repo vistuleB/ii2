@@ -77,14 +77,8 @@
               schreiben in Orange auch gleich die Funktionen $g$ und $h$ dazu:
               <pre class="container">
 def mult(t,x):
-temp = 0 
-<span
-  class="comment"
->= zero(x)</span>for i in range(t):
-temp = add(temp,x) 
-<span
-  class="comment"
->= Comp(add, p_0, p2) (temp,i,x)</span>return temp
+temp = 0 <span class="comment">= zero(x)</span>for i in range(t):
+temp = add(temp,x) <span class="comment">= Comp(add, p_0, p2) (temp,i,x)</span>return temp
 </pre>
               erinnern Sie sich daran: $h$ muss immer eine Funktion in der
               lokalen Variable temp, der Laufvariable $i$ und $\vec{x}$ sein.
@@ -101,14 +95,8 @@ temp = add(temp,x)
               Zwischenergebnis und die Laufvariable zugreifen müssen:
               <pre class="container">
 def factorial(t):
-temp = 1 
-<span
-  class="comment"
->= one()</span>for i in range(t):
-temp = mult(temp,i+1) 
-<span
-  class="comment"
->= Comp(mult, p<i>0, Comp(succ, p</i>1)) (temp,i)</span>return temp
+temp = 1 <span class="comment">= one()</span>for i in range(t):
+temp = mult(temp,i+1) <span class="comment">= Comp(mult, p<i>0, Comp(succ, p</i>1)) (temp,i)</span>return temp
 </pre>
               Wir können nicht einfach $i+1$ schreiben! Wir müssen dies via
               $\comp(\succ,\pi_1)$ konstruieren. Denn: die Funktion $h$ bekommt
@@ -122,15 +110,8 @@ temp = mult(temp,i+1)
               </p>
               <pre class="container">
 def pred(t):
-temp = 0 
-<span
-  class="comment"
->= zero()</span>for i in range(t):
-temp = i 
-<span
-  class="comment"
->= p1 (temp,i) 
-</span>return temp
+temp = 0 <span class="comment">= zero()</span>for i in range(t):
+temp = i <span class="comment">= p1 (temp,i) </span>return temp
 </pre>
               In Worten: wenn $t=0$, dann geben wir einfach $\zero()$ zurück,
               also $0$. Ansonsten durchlaufen wir die Schleife $t$ mal; der
@@ -160,15 +141,8 @@ temp = i
               </p>
               <pre class="container">
 def pred(t):
-temp = 0 
-<span
-  class="comment"
->= zero()</span>for i in range(t):
-temp = 1 
-<span
-  class="comment"
->= one 
-</span>return temp
+temp = 0 <span class="comment">= zero()</span>for i in range(t):
+temp = 1 <span class="comment">= one </span>return temp
 </pre>
               und somit $$ \begin{align*} {\rm isPositive} = \primrec(\zero,
               {\rm one}) \end{align*} $$
@@ -203,14 +177,8 @@ temp = 1
               </p>
               <pre class="container">
 def largestIbelowTwithISquareLessEqualX(t,x):
-temp = 0 
-<span
-  class="comment"
->= zero(x)</span>for i in range(t):
-temp = ifThenElse(iSquareLessEqualX(i,x), i, temp) 
-<span
-  class="comment"
->= Comp(ifThenElse, Comp(iSquareLessEqual, p<i>1, p</i>2), p<i>1, p</i>0) (temp,i,x)</span>return temp
+temp = 0 <span class="comment">= zero(x)</span>for i in range(t):
+temp = ifThenElse(iSquareLessEqualX(i,x), i, temp) <span class="comment">= Comp(ifThenElse, Comp(iSquareLessEqual, p<i>1, p</i>2), p<i>1, p</i>0) (temp,i,x)</span>return temp
 </pre>
               <p>
                 Was geht hier vor? Wenn ${\rm iSquareLessEqualX}(i,x))$ True
@@ -298,14 +266,8 @@ a = b-a
               \choose 2} = 1 + 2 + \cdots + (n-1)$ und somit
               <pre class="container">
 def choose2(t):
-temp = 0 
-<span
-  class="comment"
->= zero()</span>for i in range(t):
-temp = add(temp,i) 
-<span
-  class="comment"
->= Comp(add, p0, p1)</span>
+temp = 0 <span class="comment">= zero()</span>for i in range(t):
+temp = add(temp,i) <span class="comment">= Comp(add, p0, p1)</span>
 </pre>
               und somit $$ \begin{align*} {\rm choose2}&amp;= \primrec(\zero,
               \comp({\rm add},\pi_0,\pi_1)) \\ \pair&amp;= \comp({\rm add},
@@ -333,19 +295,7 @@ temp = add(temp,i)
                 natürlich inkorrekt:
               </p>
               <pre class="container">
-<code
-  class="pythonPrompt"
->pair(5,pair(7,9))</code><code
-  class="terminalOutput"
->11031</code><code
-  class="pythonPrompt"
->pair(7,9)</code><code
-  class="terminalOutput"
->143</code><code
-  class="pythonPrompt"
->pair(5,143)</code><code
-  class="terminalOutput"
->11031</code>
+<code class="pythonPrompt">pair(5,pair(7,9))</code><code class="terminalOutput">11031</code><code class="pythonPrompt">pair(7,9)</code><code class="terminalOutput">143</code><code class="pythonPrompt">pair(5,143)</code><code class="terminalOutput">11031</code>
 </pre>
               <p>
                 Das Problem ist, dass wir das Ende der Liste nicht kennen. Wir
@@ -359,23 +309,7 @@ temp = add(temp,i)
               \second({\rm list} - 1) \end{align*} $$
               <p>Jetzt klappt alles wunderbar:</p>
               <pre class="container">
-<code
-  class="pythonPrompt"
->push(11, push(7, push(5, 0)))</code><code
-  class="terminalOutput"
->90537</code><code
-  class="pythonPrompt"
->head(90537)</code><code
-  class="terminalOutput"
->11</code><code
-  class="pythonPrompt"
->head(tail(90537))</code><code
-  class="terminalOutput"
->7</code><code
-  class="pythonPrompt"
->head(tail(tail(90537)))</code><code
-  class="terminalOutput"
->5</code>
+<code class="pythonPrompt">push(11, push(7, push(5, 0)))</code><code class="terminalOutput">90537</code><code class="pythonPrompt">head(90537)</code><code class="terminalOutput">11</code><code class="pythonPrompt">head(tail(90537))</code><code class="terminalOutput">7</code><code class="pythonPrompt">head(tail(tail(90537)))</code><code class="terminalOutput">5</code>
 </pre>
               <p>
                 <b>Native Implementierung.</b>
@@ -395,11 +329,7 @@ temp = add(temp,i)
                 <code>stockpile.py</code>:
               </p>
               <pre class="listing">
-<code
-  style="counter-set: listing 63;"
->def pair(x,y):</code>
- 
-<code>return int(((x+y+1) * (x+y)) / 2 + x )</code>
+<code style="counter-set: listing 63;">def pair(x,y):</code> <code>return int(((x+y+1) * (x+y)) / 2 + x )</code>
 </pre>
             </div>
           </div>

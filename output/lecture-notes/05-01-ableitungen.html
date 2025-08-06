@@ -125,20 +125,14 @@
               </p>
               <pre class="listing container">
 <code>def treeToLeftDerivation (tree):</code>
- 
-<code>print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)</code>
- 
-<code>for child in tree.children (from left ro right):</code>
- 
-<code>treeToLeftDerivation(child)</code>
+ <code>print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)</code>
+ <code>for child in tree.children (from left ro right):</code>
+ <code>treeToLeftDerivation(child)</code>
 `<code>
 </code>def treeToRightDerivation (tree):`
- 
-<code>for child in tree.children (from left ro right):</code>
- 
-<code>treeToLeftDerivation(child)</code>
- 
-<code>print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)</code>
+ <code>for child in tree.children (from left ro right):</code>
+ <code>treeToLeftDerivation(child)</code>
+ <code>print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)</code>
 </pre>
               <p>
                 Beachten Sie, dass wir in beiden Fällen die Liste Kinder von
