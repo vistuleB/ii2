@@ -1,8 +1,9 @@
 import desugarer_library as dl
 import gleam/option.{None, Some}
-import infrastructure.{type Desugarer}
+import infrastructure.{type Pipe} as infra
+import selector_library as sl
 
-pub fn html_pipeline() -> List(Desugarer) {
+pub fn html_pipeline() -> List(Pipe) {
   [
     dl.identity(),
     dl.find_replace_in_descendants_of([
@@ -59,4 +60,16 @@ pub fn html_pipeline() -> List(Desugarer) {
     dl.surround_elements_by(#(["NumberedTitle"], "go23_xU", "go23_xU")),
     dl.fold_into_text(#("go23_xU", " ")),
   ]
+  |> infra.wrap_desugarers(
+    infra.Off,
+    // sl.tag("marker")
+    // sl.key_val("test", "test")
+    sl.text("ächstes wollen wir zeig")
+      |> infra.extend_selector_up(4)
+      |> infra.extend_selector_down(16)
+      |> infra.extend_selector_to_ancestors(
+        with_elder_siblings: True,
+        with_attributes: False,
+      ),
+  )
 }

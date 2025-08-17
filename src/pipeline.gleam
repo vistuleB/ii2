@@ -1,16 +1,26 @@
 import desugarer_library as dl
 import gleam/list
-import infrastructure.{type Desugarer} as infra
+import infrastructure.{type Pipe} as infra
 import prefabricated_pipelines as pp
+import selector_library as sl
 
-pub fn our_pipeline() -> List(Desugarer) {
+pub fn our_pipeline() -> List(Pipe) {
   [
     [
       dl.find_replace__outside(#("&ensp;", " "), []),
       dl.normalize_begin_end_align(#(infra.DoubleDollar, [infra.DoubleDollar])),
     ],
-    pp.create_math_elements([infra.BackslashParenthesis], infra.SingleDollar),
-    pp.create_math_elements([infra.BackslashSquareBracket], infra.SingleDollar),
+    pp.create_mathblock_elements(
+      [infra.DoubleDollar, infra.BeginEndAlign, infra.BeginEndAlignStar],
+      infra.DoubleDollar,
+    ),
+    pp.splitting_empty_lines_cleanup(),
+    pp.create_math_elements(
+      [infra.BackslashParenthesis, infra.SingleDollar],
+      infra.SingleDollar,
+      infra.BackslashParenthesis,
+    ),
+    pp.splitting_empty_lines_cleanup(),
     pp.create_mathblock_elements([infra.DoubleDollar], infra.DoubleDollar),
     [
       dl.append_attribute__batch([
@@ -19,6 +29,7 @@ pub fn our_pipeline() -> List(Desugarer) {
       dl.associate_counter_by_prepending_incrementing_attribute(#(
         "section",
         "BookLevelSectionCounter",
+        infra.Continue,
       )),
       dl.append_attribute__batch([
         #("section", "path", "/lecture-notes::øøBookLevelSectionCounter"),
@@ -52,4 +63,16 @@ pub fn our_pipeline() -> List(Desugarer) {
     ],
   ]
   |> list.flatten
+  |> infra.wrap_desugarers(
+    infra.Off,
+    // sl.tag("marker")
+    // sl.key_val("test", "test")
+    sl.text("ächstes wollen wir zeig")
+      |> infra.extend_selector_up(4)
+      |> infra.extend_selector_down(16)
+      |> infra.extend_selector_to_ancestors(
+        with_elder_siblings: True,
+        with_attributes: False,
+      ),
+  )
 }

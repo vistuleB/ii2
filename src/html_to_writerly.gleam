@@ -6,7 +6,7 @@ import gleam/option.{type Option}
 import gleam/pair
 import gleam/result
 import gleam/string
-import html_pipeline
+import html_pipeline.{html_pipeline}
 import infrastructure as infra
 import simplifile
 import vxml.{type VXML} as vp
@@ -249,7 +249,7 @@ fn emitter(
   fragment: vr.OutputFragment(Nil, VXML),
   prev_file: Option(String),
   next_file: Option(String),
-) -> Result(vr.OutputFragment(Nil, List(bl.BlamedLine)), String) {
+) -> Result(vr.OutputFragment(Nil, List(bl.OutputLine)), String) {
   let filename = fragment.path
   let vxml = fragment.payload
   let title_en =
@@ -309,7 +309,7 @@ fn emitter(
 
   Ok(vr.OutputFragment(
     chapter_directory <> "/" <> filename,
-    list.map(writerlys, wp.writerly_to_blamed_lines) |> list.flatten,
+    list.map(writerlys, wp.writerly_to_output_lines) |> list.flatten,
     Nil,
   ))
 }
@@ -374,21 +374,17 @@ pub fn html_to_writerly(
         output_dir: ".",
         prettifier_on_by_default: False,
       )
-      |> vr.amend_renderer_paramaters_by_command_line_amendment(amendments)
+      |> vr.amend_renderer_paramaters_by_command_line_amendments(amendments)
 
     io.println("after amend_renderer...")
 
     let renderer =
       vr.Renderer(
-        assembler: fn(path) { bl.path_to_blamed_lines(path, 0) },
+        assembler: vr.default_input_lines_assembler(amendments.spotlight_paths),
         source_parser: vr.default_html_source_parser(
           amendments.spotlight_key_values,
         ),
-        pipeline: infra.wrap_desugarers(
-          html_pipeline.html_pipeline(),
-          infra.Off,
-          fn(x) { [x] },
-        ),
+        pipeline: html_pipeline(),
         splitter: fn(vxml) { splitter(vxml, file) },
         emitter: fn(fragment) { emitter(fragment, prev, next) },
         prettifier: vr.default_prettier_prettifier,
@@ -398,12 +394,7 @@ pub fn html_to_writerly(
 
     let debug_options =
       vr.default_renderer_debug_options()
-      |> vr.amend_renderer_debug_options_by_command_line_amendment(
-        amendments,
-        infra.wrap_desugarers(html_pipeline.html_pipeline(), infra.Off, fn(x) {
-          [x]
-        }),
-      )
+      |> vr.amend_renderer_debug_options_by_command_line_amendments(amendments)
 
     io.println("after debug_options = ...")
 
