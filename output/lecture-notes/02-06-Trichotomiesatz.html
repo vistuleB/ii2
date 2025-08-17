@@ -206,8 +206,8 @@
                   nicht jede Partialordnung hat ein maximales Element! Ein
                   Gegenbeispiel ist $(\N, \leq)$. Es gibt immer größere
                   natürliche Zahlen, aber kein maximales Element. Die Gefahr ist
-                  also, dass es unendliche aufsteigende Folgen $a<i>1 \lt a</i>2
-                  \lt a_3 \t \dots$ geben kann, für die man keine obere Schranke
+                  also, dass es unendliche aufsteigende Folgen $a_1 \lt a_2 \lt
+                  a_3 \t \dots$ geben kann, für die man keine obere Schranke
                   findet.
                 </p>
                 <div class="well container-fluid subtheorem">
@@ -235,11 +235,10 @@
                   Die unendliche aufsteigende Folge $1,2,3,\dots$ hat
                   <i>keine obere Schranke</i>
                   in $\N$. Somit gibt es auch kein maximales Element. Was nun
-                  mit $(\mathcal{M}, \subseteq)$? Wenn $M<i>1 \subseteq M</i>2
-                  \subseteq M<i
-                    >3 \subseteq \dots$ eine unendliche Folge von Matchings ist,
-                    dann können wir die doch alle zusammenwerfen: $M</i
-                  >1 \cup M<i>2 \cup M</i>3 \cup \dots$ und erhalten ein
+                  mit $(\mathcal{M}, \subseteq)$? Wenn $M_1 \subseteq M_2
+                  \subseteq M_3 \subseteq \dots$ eine unendliche Folge von
+                  Matchings ist, dann können wir die doch alle zusammenwerfen:
+                  $M_1 \cup M_2 \cup M_3 \cup \dots$ und erhalten ein
                   (vielleicht) größeres. Dies gilt nicht nur für unendliche
                   Folgen, sondern ganz allgemein für Ketten in dieser
                   Partialordnung (also Mengen paarweise vergleichbarer
@@ -256,25 +255,21 @@
                     >
                     Sei $S \subseteq \mathcal{M}$ eine Kette in $(\mathcal{M},
                     \subseteq)$, also eine Menge von Matchings, so dass für alle
-                    $M<i>1, M</i>2 \in S$ gilt: $M<i>1 \subseteq M</i>2$ oder
-                    $M<i>2 \subseteq M</i>1$. Dann ist
+                    $M_1, M_2 \in S$ gilt: $M_1 \subseteq M_2$ oder $M_2
+                    \subseteq M_1$. Dann ist
                   </p>
                   $$ \begin{align*} \bigcup_{M \in S} M \end{align*} $$
                   <p>selbst ein Matching.</p>
                 </div>
                 <p>
                   Wir gehen nun wie folgt vor: wir starten mit einem beliebigen
-                  $M<i
-                    >0 \in \mathcal{M}$; solange dies nicht maximal ist, finden
-                    wir ein größeres: $M</i
-                  >1 \supsetneq M<i
-                    >0$; und wieder und wieder. Dies ergibt im schlimmsten Fall
-                    eine unendliche Folge $M</i
-                  >0 \subsetneq M<i>1 \subsetneq ...$ Wir bilden nun $M'</i>0 :=
-                  M<i>0 \cup M</i>1 \cup \dots$, was wiederum ein Matching ist.
-                  Nun ist aber eventuell $M'<i
-                    >0$ wieder nicht maximal, und wir finden $M'</i
-                  >1 \supsetneq M'_0$ und so weiter. Wir müssen also diesen
+                  $M_0 \in \mathcal{M}$; solange dies nicht maximal ist, finden
+                  wir ein größeres: $M_1 \supsetneq M_0$; und wieder und wieder.
+                  Dies ergibt im schlimmsten Fall eine unendliche Folge $M_0
+                  \subsetneq M_1 \subsetneq ...$ Wir bilden nun $M'_0 := M_0
+                  \cup M_1 \cup \dots$, was wiederum ein Matching ist. Nun ist
+                  aber eventuell $M'_0$ wieder nicht maximal, und wir finden
+                  $M'_1 \supsetneq M'_0$ und so weiter. Wir müssen also diesen
                   "Schritt zur Unendlichkeit" wiederholen, selbst wiederum
                   unendlich mal. Endet das irgendwann? Die Antwort ist "ja",
                   allerdings brauchen wir dafür ein großes Geschütz:

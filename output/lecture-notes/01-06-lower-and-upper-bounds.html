@@ -55,7 +55,7 @@
               <p>
                 Wir haben zwei Methoden gesehen, zu einer beliebigen Booleschen
                 Funktion $f : \fcube$ einen Booleschen Schaltkreis zu
-                konstruieren: top-down, indem wir $f$ in $f<i>0$ und $f</i>1$
+                konstruieren: top-down, indem wir $f$ in $f_0$ und $f_1$
                 zerlegen und mit Hilfe eines if-then-else-Gates wieder
                 zusammenfügen; und bottom-up als DNF oder CNF. Die so
                 entstandenen Schaltkreise hatten Größe $O(2^n)$ (bzw. $O(n2^n)$
@@ -303,25 +303,24 @@
                   Größe wird auch von $|F|$ abhängen.
                 </p>
                 <p>
-                  *$\F<i
-                    >2$-Polynome.* Polynome in mehreren Variablen kennen Sie
-                    sicherlich: zum Beispiel $xyz + xy + 1 + y$. Der Unterschied
-                    hier ist nur, dass wir alle Werte modulo 2 auswerten, also
-                    in dem endlichen Körper $\F</i
-                  >2$ arbeiten. Wir brauchen daher auch keine höheren Potenzen:
-                  $x^2$ und $x$ ergeben für alle $x \in \{0,1\}$ die gleichen
-                  Werte. Wenn wir in $\F_2$ rechnen, können wir uns also auf
+                  <b>$\F_2$-Polynome.</b>
+                  Polynome in mehreren Variablen kennen Sie sicherlich: zum
+                  Beispiel $xyz + xy + 1 + y$. Der Unterschied hier ist nur,
+                  dass wir alle Werte modulo 2 auswerten, also in dem endlichen
+                  Körper $\F_2$ arbeiten. Wir brauchen daher auch keine höheren
+                  Potenzen: $x^2$ und $x$ ergeben für alle $x \in \{0,1\}$ die
+                  gleichen Werte. Wenn wir in $\F_2$ rechnen, können wir uns
+                  also auf
                   <i>multilineare</i>
                   Polynome beschränken. Führen wir Polynome formal ein: wir
-                  haben eine Menge $x<i>1, \dots, x</i>n$ von Variablen; ein
-                  Monom in diesem Variablen ist ein Produkt aus Variablen, also
-                  $\prod<i>{i \in I} x</i>i$ für eine Menge $I \subseteq [n]$.
-                  Wir schreiben das kurzerhand als $\x^I$. Ein Polynom ist nun
-                  eine Summe von Monomen: $\x^{I<i>1} + \x^{I</i>2} + \dots +
-                  \x^{I_t}$. Beachten Sie, dass wir vor den Monomen keine
-                  Koeffizienten brauchen, da es als Konstanten eh nur 0 und 1
-                  gibt. Ein Polynom $p(\x)$ berechnet eine Boolesche Funktion
-                  $\fcube$.
+                  haben eine Menge $x_1, \dots, x_n$ von Variablen; ein Monom in
+                  diesem Variablen ist ein Produkt aus Variablen, also $\prod_{i
+                  \in I} x_i$ für eine Menge $I \subseteq [n]$. Wir schreiben
+                  das kurzerhand als $\x^I$. Ein Polynom ist nun eine Summe von
+                  Monomen: $\x^{I_1} + \x^{I_2} + \dots + \x^{I_t}$. Beachten
+                  Sie, dass wir vor den Monomen keine Koeffizienten brauchen, da
+                  es als Konstanten eh nur 0 und 1 gibt. Ein Polynom $p(\x)$
+                  berechnet eine Boolesche Funktion $\fcube$.
                 </p>
                 <div class="well well-lg numbered-exercise container-fluid">
                   <p>
@@ -366,19 +365,17 @@
                   </p>
                 </div>
                 <p>
-                  Ein $\F<i
-                    >2$-Polynom können wir natürlich ganz einfach als
-                    Schaltkreis mit AND- und XOR-Gates schreiben. AND für die
-                    Multiplikation und XOR für die Addition in $\F</i
-                  >2$. Dies ist also die erste Kernidee: wir arbeiten mit AND
-                  und XOR und somit mit $\F_2$-Polynomen. Wieviele Gates
-                  brauchen wir dafür?
+                  Ein $\F_2$-Polynom können wir natürlich ganz einfach als
+                  Schaltkreis mit AND- und XOR-Gates schreiben. AND für die
+                  Multiplikation und XOR für die Addition in $\F_2$. Dies ist
+                  also die erste Kernidee: wir arbeiten mit AND und XOR und
+                  somit mit $\F_2$-Polynomen. Wieviele Gates brauchen wir dafür?
                 </p>
                 <p>
-                  Schreiben wir $f = \x^{I<i>1} + \x^{I</i>2} + \dots +
-                  \x^{I_t}$. Ein Monom $\x^{I}$ können wir mit $|I|-1$ AND-Gates
-                  berechnen. Die Summe bilden wir mit $t-1$ weiteren XOR-Gates.
-                  Da $t \leq 2^n$ und $|I| \leq n$ gilt, brauchen wir maximal
+                  Schreiben wir $f = \x^{I_1} + \x^{I_2} + \dots + \x^{I_t}$.
+                  Ein Monom $\x^{I}$ können wir mit $|I|-1$ AND-Gates berechnen.
+                  Die Summe bilden wir mit $t-1$ weiteren XOR-Gates. Da $t \leq
+                  2^n$ und $|I| \leq n$ gilt, brauchen wir maximal
                 </p>
                 $$ \begin{align*} (n-1) 2^n + 2^n - 1 \leq n 2^n \end{align*} $$
                 <p>
@@ -417,9 +414,9 @@
                         >::::ChapterCtr.::::SectionCtr.4</NumberedTitle
                       >
                     </span>
-                    Es gibt einen Schaltkreis $C<i>n$ mit $n$ Input-Gates $x</i
-                    >1, \dots, x_n$ und $2^n$ Output-Gates, eines für jedes
-                    Monom $x^{I}$, der $2^n$ Gates hat.
+                    Es gibt einen Schaltkreis $C_n$ mit $n$ Input-Gates $x_1,
+                    \dots, x_n$ und $2^n$ Output-Gates, eines für jedes Monom
+                    $x^{I}$, der $2^n$ Gates hat.
                   </p>
                   <figure>
                     <img
@@ -431,25 +428,23 @@
                 <div class="well container-fluid">
                   <p>
                     <b>Beweis.</b>
-                    Die Idee ist: wenn wir $x<i>1 x</i>2 x<i>3 x</i>4$ berechnen
-                    wollen, brauchen wir drei AND-Gates. Allerdings müssen wir
-                    $x<i>1 x</i>2 x_3$ eh berechnen, da wir ja
+                    Die Idee ist: wenn wir $x_1 x_2 x_3 x_4$ berechnen wollen,
+                    brauchen wir drei AND-Gates. Allerdings müssen wir $x_1 x_2
+                    x_3$ eh berechnen, da wir ja
                     <i>alle</i>
-                    Monome wollen. Wenn wir also einen Schaltkreis für $x<i
-                      >1 x</i
-                    >2 x_3$ haben, können wir daraus mit
+                    Monome wollen. Wenn wir also einen Schaltkreis für $x_1 x_2
+                    x_3$ haben, können wir daraus mit
                     <i>einem</i>
-                    zusätzlichen AND-Gate $x<i>1x</i>2x<i>3x</i>4$ berechnen.
+                    zusätzlichen AND-Gate $x_1x_2x_3x_4$ berechnen.
                   </p>
                   <p>
                     Formal geht es mit Induktion über $n$. Für $n=0$ haben wir
                     ein einziges Monom, nämlich $1$, und einen Schaltkreis mit
                     einem einzigen Gate: dem Konstant-1-Gate, das gleichzeitig
                     ein Output-Gate ist. Für $n \geq 1$ bauen wir zuerst per
-                    Induktion einen Schaltkreis $C<i
-                      >{n-1}$, der alle $2^{n-1}$ Monome $x^{I}$ für $I
-                      \subseteq [n-1]$ berechnet. Um $C</i
-                    >n$ zu bauen, schaffen wir für jedes $I \subseteq [n-1]$ ein
+                    Induktion einen Schaltkreis $C_{n-1}$, der alle $2^{n-1}$
+                    Monome $x^{I}$ für $I \subseteq [n-1]$ berechnet. Um $C_n$
+                    zu bauen, schaffen wir für jedes $I \subseteq [n-1]$ ein
                     AND-Gate, das $\x^{I} \wedge x_n$ berechnet.
                   </p>
                   <figure class="centered-figure well container-fluid">
@@ -507,13 +502,11 @@
                 </div>
                 <p>
                   Die zweite Kernidee ist, dass Synergien auftreten, dass wir
-                  die Variablen $x<i>1, \dots, x</i>n$ in einen vorderen und in
-                  einen hinteren Teil aufteilen: die erste $k$ Variablen $x<i
-                    >1,\dots, x</i
-                  >k$ benennen wir um in $y<i>1, \dots, y</i>k$; die hinteren
-                  $n-k$ Variablen $x<i>{n-k+1}, \dots, x</i>n$ in $z<i
-                    >1, \dots, z</i
-                  >n$. Wir können $f$ also wie folgt schreiben:
+                  die Variablen $x_1, \dots, x_n$ in einen vorderen und in einen
+                  hinteren Teil aufteilen: die erste $k$ Variablen $x_1,\dots,
+                  x_k$ benennen wir um in $y_1, \dots, y_k$; die hinteren $n-k$
+                  Variablen $x_{n-k+1}, \dots, x_n$ in $z_1, \dots, z_n$. Wir
+                  können $f$ also wie folgt schreiben:
                 </p>
                 $$ \begin{align*} f(\x)&amp;= \sum_{I \subseteq [n]} c_I \x^I
                 \tag{mit Koeffizienten $c_I \in \{0,1\}$} \\ &amp;= \sum_{A
@@ -524,14 +517,12 @@
                 Summe einen Namen geben} \end{align*} $$
                 <p>
                   Die obige Summe beinhaltet also $2^{n-k}$ Terme von der Form
-                  $\y^A g<i
-                    >A(\z)$. Es gibt insgesamt nur $2^{2^k}$ Polynome in den
-                    Variablen $\z$. Wenn nun also $2^{n-k} \gg 2^{2^k}$ ist,
-                    werden gewisse Polynome $g</i
-                  >A$ mehrfach auftreten, und wir können sparen. Dafür berechnen
-                  wir vorsorglich
+                  $\y^A g_A(\z)$. Es gibt insgesamt nur $2^{2^k}$ Polynome in
+                  den Variablen $\z$. Wenn nun also $2^{n-k} \gg 2^{2^k}$ ist,
+                  werden gewisse Polynome $g_A$ mehrfach auftreten, und wir
+                  können sparen. Dafür berechnen wir vorsorglich
                   <i>alle</i>
-                  Funktionen in $z<i>1,\dots,z</i>k$.
+                  Funktionen in $z_1,\dots,z_k$.
                 </p>
                 <div class="well container-fluid subtheorem">
                   <p>
@@ -541,11 +532,11 @@
                         >::::ChapterCtr.::::SectionCtr.5</NumberedTitle
                       >
                     </span>
-                    Es gibt einen Schaltkreis mit Input-Gates
-                    $z<i>1,\dots,z</i>k$ und $2^{2^k}$ Output-Gates, einen für
-                    jede Funktion $g: \{0,1\}^k \rightarrow \{0,1\}$. Der
-                    Schaltkreis hat Fan-in 2 und insgesamt $2^k + 2^{2^k}$ Gates
-                    (AND-Gates und XOR-Gates).
+                    Es gibt einen Schaltkreis mit Input-Gates $z_1,\dots,z_k$
+                    und $2^{2^k}$ Output-Gates, einen für jede Funktion $g:
+                    \{0,1\}^k \rightarrow \{0,1\}$. Der Schaltkreis hat Fan-in 2
+                    und insgesamt $2^k + 2^{2^k}$ Gates (AND-Gates und
+                    XOR-Gates).
                   </p>
                 </div>
                 <div class="well well-lg numbered-exercise container-fluid">
@@ -584,13 +575,11 @@
                 $$ \begin{align*} f(\x)&amp;= \sum_{A \subseteq [n-k]} \y^A
                 g_A(\z) \end{align*} $$
                 <p>
-                  Für jedes $g<i
-                    >A$ haben wir ja bereits ein Gate, das es berechnet. Mit
-                    einem weiteren Schaltkreis von $2^{n-k}$ Gates können wir
-                    alle Monome $\y^A$ berechnen. Schlussendlich müssen wir noch
-                    die Summe $\sum</i
-                  >{A \subseteq [n-k]}$ bilden, wofür wir $2^{n-k}$ XOR-Gates
-                  brauchen. Insgesamt brauchen wir also
+                  Für jedes $g_A$ haben wir ja bereits ein Gate, das es
+                  berechnet. Mit einem weiteren Schaltkreis von $2^{n-k}$ Gates
+                  können wir alle Monome $\y^A$ berechnen. Schlussendlich müssen
+                  wir noch die Summe $\sum_{A \subseteq [n-k]}$ bilden, wofür
+                  wir $2^{n-k}$ XOR-Gates brauchen. Insgesamt brauchen wir also
                 </p>
                 $$ \begin{align} &amp;\underbrace{2^{2^k} +
                 2^k}_{\textnormal{für alle $g: \cube^k \rightarrow \cube$}} +
@@ -617,11 +606,9 @@
                   Ich habe keine explizite Formel, um das für $k$ aufzulösen,
                   also setze ich auf gut Glück $k = \log n$ und wir erhalten
                 </p>
-                <p style="color: red">
-                  $$ \begin{align*} (\ref{size-lupanov})&amp;= 2^{2^k} + 3 \cdot
-                  2^{n-k} + 2^k - 1 \\ &amp;= 2^{2^{\log n}} + \dots
-                  \end{align*} $$
-                </p>
+                $$ \begin{align*} (\ref{size-lupanov})&amp;= 2^{2^k} + 3 \cdot
+                2^{n-k} + 2^k - 1 \\ &amp;= 2^{2^{\log n}} + \dots \end{align*}
+                $$
                 <p>
                   und wir können gleich aufhören, da der erste Term bereits
                   $2^n$ ergibt. Das ist zu groß. Wir müssen $k$ also kleiner

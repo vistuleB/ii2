@@ -219,27 +219,23 @@
                   mit $a \in \Z$ und $b \in \N^+$ und $\gcd(a,b) = 1$. Mit
                   $\gcd(a,b)$ bezeichnen wir den größten gemeinsamen Teiler (<i
                     >greatest common divisor</i
-                  >) von $a$ und $b$. Wir definieren nun also $f<i
-                    >1(q) := (a,b) \in \Z \times \N$. Dies ist injektiv: zwei
-                    verschiedene rationale Zahlen $q$ und $q'$ haben
-                    verschiedene Darstellung als gekürzter Bruch, und somit gilt
-                    auch $f</i
-                  >1(q) \ne f_1(q')$.
+                  >) von $a$ und $b$. Wir definieren nun also $f_1(q) := (a,b)
+                  \in \Z \times \N$. Dies ist injektiv: zwei verschiedene
+                  rationale Zahlen $q$ und $q'$ haben verschiedene Darstellung
+                  als gekürzter Bruch, und somit gilt auch $f_1(q) \ne f_1(q')$.
                 </p>
                 <p>
-                  Wir haben nun also eine Injektion $f<i
-                    >1 : \Q \rightarrow \Z \times \N$. Mit<span
-                      data-ref="exercise-cartesian-product"
-                      class="reference"
-                    ></span
-                    >und
-                    <span data-ref="theorem-N-N^2" class="reference"></span>gilt
-                    $\Z \times \N \approx \N \times \N \approx \N$, und somit
-                    gibt es eine Bijektion $f</i
-                  >2 : \Z \times \N \rightarrow \N$. Die Verknüpfung $f := f<i
-                    >2 \circ f</i
-                  >1 : \Q \rightarrow \N$ ist nun die gewünschte injektive
-                  Funktion $f$ von $\$Q$ nach $\N$.
+                  Wir haben nun also eine Injektion $f_1 : \Q \rightarrow \Z
+                  \times \N$. Mit<span
+                    data-ref="exercise-cartesian-product"
+                    class="reference"
+                  ></span
+                  >und
+                  <span data-ref="theorem-N-N^2" class="reference"></span>gilt
+                  $\Z \times \N \approx \N \times \N \approx \N$, und somit gibt
+                  es eine Bijektion $f_2 : \Z \times \N \rightarrow \N$. Die
+                  Verknüpfung $f := f_2 \circ f_1 : \Q \rightarrow \N$ ist nun
+                  die gewünschte injektive Funktion $f$ von \(\$Q\) nach $\N$.
                 </p>
                 <span class="qed">$\square$</span>
               </div>
@@ -372,9 +368,8 @@
               <div class="well container">
                 <p>
                   <b>Beweis.</b>
-                  Hier ist eine Idee: wir interpretieren den Bitstring $a<i
-                    >1 a</i
-                  >2 \dots a_n$ als $n$-stellige Binärzahl, also
+                  Hier ist eine Idee: wir interpretieren den Bitstring $a_1 a_2
+                  \dots a_n$ als $n$-stellige Binärzahl, also
                 </p>
                 $$ \begin{align*} f(a_1 a_2 \dots a_n) := \sum_{i=1}^n a_i
                 2^{n-i} \ . \end{align*} $$
@@ -428,10 +423,8 @@
                 <p>
                   Weil das "Alphabet" $\{0,1,2,3\}$ die Größe $4 = 2^2$ hat,
                   können Sie sich mit einem kleinen Taschenspielertrick
-                  behelfen. Schwieriger wird es mit $\{0,1,2\}^<b
-                    >$. Zeigen Sie, dass $\{0,1,2\}^</b
-                  >
-                  \approx \N$ gilt.
+                  behelfen. Schwieriger wird es mit $\{0,1,2\}^*$. Zeigen Sie,
+                  dass $\{0,1,2\}^* \approx \N$ gilt.
                 </p>
                 <p>
                   Zeigen Sie ganz allgemein: wenn $\Sigma$ eine endliche Menge

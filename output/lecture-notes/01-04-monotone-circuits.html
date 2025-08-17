@@ -55,12 +55,12 @@
               </h1>
               <p>
                 Für zwei Tupel $\mathbf{x}, \mathbf{y} \in \{0,1\}^n$ schreiben
-                wir $ \mathbf{x} \leq \mathbf{y}$, falls $x_1 \leq y_1, \dots,
+                wir $\mathbf{x} \leq \mathbf{y}$, falls $x_1 \leq y_1, \dots,
                 x_n \leq y_n$, also $\mathbf{x}$
                 <i>in jeder Koordinate</i>
-                kleiner gleich $\mathbf{y}$ ist. Beispielsweise gilt $ (0,0,1)
-                \leq (1,0,1)$. Allerdings gilt weder $ (0,1,0) \leq (1,0,1)$
-                noch umgekehrt; die beiden Tupel sind
+                kleiner gleich $\mathbf{y}$ ist. Beispielsweise gilt $(0,0,1)
+                \leq (1,0,1)$. Allerdings gilt weder $(0,1,0) \leq (1,0,1)$ noch
+                umgekehrt; die beiden Tupel sind
                 <i>unvergleichbar</i>; es handelt sich bei $\leq$ also um eine
                 <i>Partialordnung</i>. Am Besten stellen Sie sich eine solche
                 Partialordnung als gerichteten Graphen vor:
@@ -111,7 +111,7 @@
               <p>
                 Funktionen auf wenigen Variablen können wir graphisch darstellen
                 und somit erkennen, ob sie monoton sind oder nicht. Für eine
-                Funktion $ f: \{0,1\}^2 \rightarrow \{0,1\}$ markieren wir im
+                Funktion $f: \{0,1\}^2 \rightarrow \{0,1\}$ markieren wir im
                 Hasse-Diagramm von $\{0,1\}^2$ diejenigen Elemente blau, auf
                 denen $f(x,y) = 1$ ist, und die anderen rot.
               </p>
@@ -192,8 +192,7 @@
                 <p>
                   Am Besten betrachten Sie das
                   <i>Hasse-Diagramm</i>
-                  der Partialordnungen auf Mengen $ \{0,1\}^2$ bzw. $
-                  \{0,1\}^3$:
+                  der Partialordnungen auf Mengen $\{0,1\}^2$ bzw. $\{0,1\}^3$:
                 </p>
                 <figure>
                   <img
@@ -338,7 +337,7 @@
                     <ol>
                       <li>dass $P(0)$ gilt (<b>Induktionsbasis</b>),</li>
                       <li>
-                        dass, wenn $P(n)$ für eine Zahl $n \in \N $ gilt, dann
+                        dass, wenn $P(n)$ für eine Zahl $n \in \N$ gilt, dann
                         sicherlich auch $P(n+1)$ gilt
                         (<b>Induktionsschritt</b>).
                       </li>
@@ -781,7 +780,7 @@ return false;
                   Beweis getan haben: die NOT-Gates einfach weglassen und die
                   ausgehenden Kabel ersatzlos streichen. Hier hieße das nun, aus
                   dem Term $x_1 \wedge \bar{x}_2 \wedge \bar{x}_3 \wedge x_4
-                  \wedge \bar{x}_5$ den Term $x_1 \wedge x_4 $ zu machen. Wir
+                  \wedge \bar{x}_5$ den Term $x_1 \wedge x_4$ zu machen. Wir
                   definieren also: $$ T'_{\mathbf{a}} := \bigwedge_{i \in
                   I_{\mathbf{a}}} x_i \ . $$ Der Term $T'_{\mathbf{a}}$ ist
                   "kürzer" als $T_{\mathbf{a}}$, stellt also weniger
@@ -857,16 +856,16 @@ return false;
                     <b>Strategie: was haben wir?</b>
                     Es ist immer gut, Dinge konkret "in der Hand zu haben". In
                     diesem Falle? Wir wissen ja, dass $F' = \bigvee_{\mathbf{a}
-                    \in \sat(f)} T'_{\mathbf{a}} $ ist. Wenn nun also die linke
+                    \in \sat(f)} T'_{\mathbf{a}}$ ist. Wenn nun also die linke
                     Seite, $F'$, den Wert 1 annimmt, dann muss es auf der
                     rechten Seite (mindestens) einen Term geben, der auch 1
                     annimmt: $$ T'_{\mathbf{a}^*}(x_1,\dots,x_n) = 1 \ , $$ für
                     ein festes, bestimmtes $\mathbf{a}^*$, also $$ \bigwedge_{i
                     \in I_{\mathbf{a}^*}} x_i = 1 \ . $$ Wir wollen zeigen, dass
                     $F(x_1,\dots,x_n) = 1$ gilt. Da $F = \bigvee_{\mathbf{a} \in
-                    \sat(f)} T_{\mathbf{a}} $ gilt, liegt der Verdacht nahe,
-                    dass der entsprechende Term $ T_{\mathbf{a}^*}$ auch 1
-                    ausgibt. Das Problem ist leider, dass $$ \begin{align*}
+                    \sat(f)} T_{\mathbf{a}}$ gilt, liegt der Verdacht nahe, dass
+                    der entsprechende Term $T_{\mathbf{a}^*}$ auch 1 ausgibt.
+                    Das Problem ist leider, dass $$ \begin{align*}
                     T_{\mathbf{a}^*}(\mathbf{x})&amp;=
                     T'_{\mathbf{a}^*}(\mathbf{x}) \wedge
                     T''_{\mathbf{a}^*}(\mathbf{x}) \\ &amp;= 1 \wedge
@@ -879,8 +878,8 @@ return false;
                     können das aber nicht garantieren.
                   </p>
                   <p>
-                    Wie schaut denn ein Input $\mathbf{y}$ aus, auf dem $
-                    T_{\mathbf{a}^*}$ 1 ausgibt? So ein $\mathbf{y}$ müsste
+                    Wie schaut denn ein Input $\mathbf{y}$ aus, auf dem
+                    $T_{\mathbf{a}^*}$ 1 ausgibt? So ein $\mathbf{y}$ müsste
                     $y_i=1$ für alle $i \in I(\mathbf{a}^*)$ und $y_i=0$ für
                     alle $i \in O(\mathbf{a}^*)$ haben; also 1 sein, wo
                     $\mathbf{a}^*$ auch 1 ist, und 0 sein, wo $\mathbf{a}^*$

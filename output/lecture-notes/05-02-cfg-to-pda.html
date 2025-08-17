@@ -90,7 +90,7 @@
                 <i>kann</i>
                 also diese Transition anwenden.<br />Formaler: Die Zustände des
                 Automaten sind $Q = \{\qstart, q_1, \qend\}$, das Stackalphabet
-                ist $\Gamma = \Sigma \cup N \cup \{\$\}$ und die
+                ist \(\Gamma = \Sigma \cup N \cup \{\$\}\) und die
                 Transitionsregeln sind $$ \begin{align*} (q_1, x)&amp;\step{x}
                 (q_1, \epsilon) \quad \textnormal{für jedes $x \in \Sigma$}\\
                 (q_1, A)&amp;\step{\epsilon} (q_1, \beta) \quad \textnormal{für
@@ -550,19 +550,19 @@
                   </li>
                   <li>
                     Der Automat leert den Stack, bevor er akzeptiert. Dies
-                    können wir z.B. dadurch erreichen, dass wir anfangs ein $\$$
-                    auf den Stack legen und am Ende den Stack poppen, bis wir
-                    $\$$ gepoppt haben.
+                    können wir z.B. dadurch erreichen, dass wir anfangs ein
+                    \(\$\) auf den Stack legen und am Ende den Stack poppen, bis
+                    wir \(\$\) gepoppt haben.
                   </li>
                   <li>
                     Für jede Transition $$ \begin{align*} (p, x) \step{a} (q, y)
                     \end{align*} $$ ist genau eines von $x,y$ leer (und das
                     andere ist genau ein Stacksymbol aus $\Gamma$). Eine
-                    Transition der Form $(p, \epsilon) \step{a} (q, x) $ nennen
+                    Transition der Form $(p, \epsilon) \step{a} (q, x)$ nennen
                     wir eine
                     <i>Push-Operation</i>, eine der Form $(p, y) \step{a} (q,
-                    \epsilon) $ nennen wir eine <i>Pop-Operation</i>. Der
-                    Automat kann in diese Form gebracht werden, indem wir
+                    \epsilon)$ nennen wir eine <i>Pop-Operation</i>. Der Automat
+                    kann in diese Form gebracht werden, indem wir
                     Zwischenzustände einführen: $$ \begin{align*} (p, x)
                     \step{a} (q, y) \textnormal { wird ersetzt durch die zwei
                     Transitionen } (p, x) \step{a} (p', \epsilon) \textnormal {
@@ -588,7 +588,7 @@
                 <ol>
                   <li>
                     Fall 1: in der Konfigurationsfolge von $(p, \epsilon)
-                    \Step{w}^* (q,\epsilon) $ wird der Stack zwischendurch auch
+                    \Step{w}^* (q,\epsilon)$ wird der Stack zwischendurch auch
                     mal leer, und zwar nachdem der Präfix $u$ des Wortes $w =
                     uv$ gelesen ist, und der Automat ist zu diesem Zeitpunkt im
                     Zustand $r$. Also: $$ \begin{align*} (p, \epsilon)
@@ -601,7 +601,7 @@
                   </li>
                   <li>
                     Fall 2: in der Konfigurationsfolge von $(p, \epsilon)
-                    \Step{w}^* (q,\epsilon) $ ist der Stack zwischendurch nie
+                    \Step{w}^* (q,\epsilon)$ ist der Stack zwischendurch nie
                     leer. Das heißt wiederum, dass das im ersten Schritt
                     gepushte Stacksymbol $x$ am Ende gepoppt wird, also $w =
                     avb$ mit $$ \begin{align*} (p, \epsilon) \step{a} (r, x)
@@ -634,7 +634,7 @@
                 Zusammenfassend gesagt besteht unsere Grammatik $G$ aus drei
                 unterschiedlichen Typen von Regeln: $$ \begin{align*}
                 A_{pp}&amp;\rightarrow \epsilon \textnormal{ für jeden Zustand
-                $p \in Q$} \\ A_{pq}&amp;\rightarrow A_{pr}A_{rq} \textnormal{
+                \(p \in Q\)} \\ A_{pq}&amp;\rightarrow A_{pr}A_{rq} \textnormal{
                 für alle Zustände $p,q,r \in Q$} \\ A_{pq}&amp;\rightarrow a
                 A_{rs} b \textnormal{ für alle Pushp-Pop-Paare $(p,\epsilon)
                 \step{a} (r,x)$, $(s,x) \step{b} (q,\epsilon)$ von Transitionen}
@@ -719,7 +719,7 @@
                   verwenden die Indizes 0 für $\qstart$ und 4 für $\qend$. Als
                   zweite Beobachtung sehen wir, dass man mit leerem Stapel
                   beispielsweise gar nicht von $\qstart$ nach $q_3$ kommt: auf
-                  dem Weg dorthin wird ein $\$$ gepusht und nie gepoppt;
+                  dem Weg dorthin wird ein \(\$\) gepusht und nie gepoppt;
                   gleiches gilt für viele weitere Zustandspaare. Das erweiterte
                   Diagramm hier gibt eine Orientierung. Neben jeden Zustand
                   haben wir schematisch den Stack gemalt:

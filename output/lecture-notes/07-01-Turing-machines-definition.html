@@ -410,8 +410,8 @@
               Endkonfiguration landen wird. Daher kann $\hat{\delta}^*$ auch
               <tt>undefined</tt>
               sein: $$ \begin{align*} \hat{\delta}^* (C) := \begin{cases}
-              \hat{\delta}^{(i)} (C)&amp; \textnormal{ wenn es ein $i$ gibt, so
-              dass $\hat{\delta}^{(i)} (C)$ eine Endkonfiguration ist} \\
+              \hat{\delta}^{(i)} (C)&amp; \textnormal{ wenn es ein \(i\) gibt,
+              so dass $\hat{\delta}^{(i)} (C)$ eine Endkonfiguration ist} \\
               \texttt{undefined}&amp;\textnormal{sonst.} \end{cases}
               \end{align*} $$
               <p>
@@ -581,8 +581,8 @@
                 umgekehrter Reihenfolge" läuft, also $$ \begin{align*}
                 \texttt{\$} q_{\rm start} w \texttt{.} \Step{}^* S \end{align*}
                 $$ ableiten kann genau dann, wenn $w \in S$ gilt. Wir brauchen
-                $\texttt{\$}$ und $\texttt{.}$ als Randmarkierungen. Wir lassen
-                hier temporär zu, dass die linke Seite ausschließlich aus
+                \(\texttt{\$}\) und $\texttt{.}$ als Randmarkierungen. Wir
+                lassen hier temporär zu, dass die linke Seite ausschließlich aus
                 Terminalsymbolen bestehen kann.
                 <p>
                   Hierfür definieren wir für jede Regel der Turingmaschine eine
@@ -650,23 +650,23 @@
                 also die Produktionen $$ \begin{align*} S&amp;\step{1}
                 \texttt{\$} \ \texttt{accept} \ \texttt{.} \\
                 \texttt{accept}&amp;\step{2} x \ \texttt{accept} \ | \
-                \texttt{accept} \ x \quad \tag{ für jedes $x \in \Gamma$} \\
+                \texttt{accept} \ x \quad \tag{ für jedes \(x \in \Gamma\)} \\
                 ry&amp;\step{3} qx \quad \tag{ wenn $\delta(q,x) = (r,y,
                 \texttt{S})$}\\ yr&amp;\step{4} qx \quad \tag{ wenn $\delta(q,x)
                 = (r,y, \texttt{R})$}\\ ray&amp;\step{5} aqx \quad \tag{ wenn
-                $\delta(q,x) = (r,y, \texttt{L})$, für jedes $a \in \Gamma$} \\
-                \texttt{\$} \square&amp;\step{6} \texttt{\$} \\
+                $\delta(q,x) = (r,y, \texttt{L})$, für jedes \(a \in \Gamma\)}
+                \\ \texttt{\$} \square&amp;\step{6} \texttt{\$} \\
                 \texttt{.}\square&amp;\step{7} \texttt{.} \\
                 \texttt{\$}&amp;\step{8} \epsilon \\ \texttt{.}&amp;\step{9}
                 \epsilon \\ \texttt{start}&amp;\step{10} \epsilon \end{align*}
                 $$ Um also ein Wort $x \in L(M)$ abzuleiten, müssen wir die
                 akzeptierende Endkonfiguration $C$ von $M(x)$ "erraten" und dann
-                per Produktionen 1 und 2 die Wortform $\texttt{\$}C\texttt{.}$
+                per Produktionen 1 und 2 die Wortform \(\texttt{\$}C\texttt{.}\)
                 ableiten. Von da an verwenden wir die Produktionen 3, 4, 5, 6,
                 7, um die Berechnung der Turingmaschine $M(x)$ von hinten nach
-                vorne zu simulieren, bis wir bei $\texttt{\$} \texttt{start}\ x
-                \texttt{.}$ angelangt sind. Dann lassen wir $\texttt{\$},
-                \texttt{start}, \texttt{.}$ mit den Produktionen 8, 9, 10
+                vorne zu simulieren, bis wir bei \(\texttt{\$} \texttt{start}\ x
+                \texttt{.}\) angelangt sind. Dann lassen wir \(\texttt{\$},
+                \texttt{start}, \texttt{.}\) mit den Produktionen 8, 9, 10
                 verschwinden und haben $x$ abgeleitet.<span class="qed"
                   >$\square$</span
                 >

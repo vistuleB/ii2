@@ -241,7 +241,7 @@
                 <p>
                   <b>Beweis.</b>
                   Wir brauchen eine robuste Definition, was es heißt, dass eine
-                  Funktion $f: \N \rightarrow \N $ schneller wächst als $g: \N^k
+                  Funktion $f: \N \rightarrow \N$ schneller wächst als $g: \N^k
                   \rightarrow \N$.
                 </p>
                 <div class="well subtheorem theorem">
@@ -329,16 +329,17 @@
                   schreiben wir $x := \max(x_1,\dots,x_n)$ und rechnen: $$
                   \begin{align*} f(\vec{x})&amp;= g(h_1(\vec{x}), \dots,
                   h_k(\vec{x})) \\ &amp;\lt A_r (\max (h_1(\vec{x}), \dots,
-                  h_k(\vec{x}))) \tag{weil $A_q \gt g$} \\ &amp;\leq A_r ( \max
-                  (A_{s_1}(x), A_{s_2}(x), \dots, A_{s_k}(x))) \tag{weil $A_r$
-                  monoton und $A_{s_i} \gt h_i$} \end{align*} $$ Wir setzen nun
-                  $q := \max(r, s_1, \dots, s_k)$. Dann ist der obige Wert
-                  höchstens: $$ \begin{align*} \dots&amp;\leq A_q (A_q(x)) \\
-                  &amp;\leq A_{q} (A_{q+1} (x)) = A_{q+1} (x+1) \ . \end{align*}
-                  $$ Schlussendlich behaupte ich, dass $A_{q+1}(x+1) \leq
-                  A_{q+2}(x)$ gilt: $$ \begin{align*} A_{q+2}(x)&amp;= A_{q+1}
-                  (A_{q+2}(x-1)) \geq A_{q+1} (A_2 (x-1)) = A_{q+1} (x+1) \ .
-                  \end{align*} $$ Also: $A_{q+2}$ majorisiert $f$.
+                  h_k(\vec{x}))) \tag{weil \(A_q \gt g\)} \\ &amp;\leq A_r (
+                  \max (A_{s_1}(x), A_{s_2}(x), \dots, A_{s_k}(x))) \tag{weil
+                  \(A_r\) monoton und \(A_{s_i} \gt h_i\)} \end{align*} $$ Wir
+                  setzen nun $q := \max(r, s_1, \dots, s_k)$. Dann ist der obige
+                  Wert höchstens: $$ \begin{align*} \dots&amp;\leq A_q (A_q(x))
+                  \\ &amp;\leq A_{q} (A_{q+1} (x)) = A_{q+1} (x+1) \ .
+                  \end{align*} $$ Schlussendlich behaupte ich, dass
+                  $A_{q+1}(x+1) \leq A_{q+2}(x)$ gilt: $$ \begin{align*}
+                  A_{q+2}(x)&amp;= A_{q+1} (A_{q+2}(x-1)) \geq A_{q+1} (A_2
+                  (x-1)) = A_{q+1} (x+1) \ . \end{align*} $$ Also: $A_{q+2}$
+                  majorisiert $f$.
                 </p>
                 <p>
                   <b>Primitive Rekursion:</b>
@@ -366,13 +367,14 @@
                   A_{q+1} (x) \ . \end{align*} $$ Wenn $t \geq 1$ ist, dann gilt
                   $$ \begin{align*} \hspace{-3cm} f(t, \vec{x})&amp;=
                   h(f(t-1,\vec{x}), t-1, \vec{x}) \\ &amp;\lt A_{q} (\max(f(t-1,
-                  \vec{x}), t-1, x_1, \dots, x_n)) \tag {weil $A_q \gt h$} \\
-                  &amp;\lt A_{q} (\max(f(t-1, \vec{x}), t-1, x)) \tag {für $x :=
-                  \max(x_1,\dots,x_n)$} \\ &amp;\leq A_q (\max(A_{q+1} (t-1+x),
-                  t-1, x)) \tag{ per Induktionshypothese für $t-1$} \\ &amp;=
-                  A_q (A_{q+1}(t-1+x)) % \tag{weil $\max(t-1,x) \leq t-1+x \leq
-                  A_{q+1}(t-1+x)$} \\ &amp;= A_{q+1}(t+x) \ . \end{align*} $$
-                  Somit ist die Behauptung bewiesen.<span class="qed"
+                  \vec{x}), t-1, x_1, \dots, x_n)) \tag {weil \(A_q \gt h\)} \\
+                  &amp;\lt A_{q} (\max(f(t-1, \vec{x}), t-1, x)) \tag {für \(x
+                  := \max(x_1,\dots,x_n)\)} \\ &amp;\leq A_q (\max(A_{q+1}
+                  (t-1+x), t-1, x)) \tag{ per Induktionshypothese für $t-1$} \\
+                  &amp;= A_q (A_{q+1}(t-1+x)) % \tag{weil \(\max(t-1,x) \leq
+                  t-1+x \leq A_{q+1}(t-1+x)\)} \\ &amp;= A_{q+1}(t+x) \ .
+                  \end{align*} $$ Somit ist die Behauptung bewiesen.<span
+                    class="qed"
                     >$\square$</span
                   >
                 </div>

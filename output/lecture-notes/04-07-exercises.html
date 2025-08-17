@@ -62,14 +62,11 @@
                     <NumberedTitle
                       >::::ChapterCtr.::::SectionCtr.1</NumberedTitle
                     > </span
-                  >Sei $\Sigma = \{\sigma<i>1, \sigma</i>2, \dots, \sigma<i
-                    >k\}$ ein endliches Alphabet. Wir können jedes Zeichen
-                    $\sigma</i
-                  >i \in \Sigma$ als natürliche Zahl $i$ codieren. Ein Wort
-                  $\alpha \in \Sigma^<b
-                    >$ wird somit zu einer Folge $(a<i>1, a</i>2, \dots, a_n)
-                    \in \N^</b
-                  >$, was wir wiederum mit den Methoden aus<a
+                  >Sei $\Sigma = \{\sigma_1, \sigma_2, \dots, \sigma_k\}$ ein
+                  endliches Alphabet. Wir können jedes Zeichen $\sigma_i \in
+                  \Sigma$ als natürliche Zahl $i$ codieren. Ein Wort $\alpha \in
+                  \Sigma^*$ wird somit zu einer Folge $(a_1, a_2, \dots, a_n)
+                  \in \N^*$, was wir wiederum mit den Methoden aus<a
                     href="02-02-examples-of-equipotent-sets.html"
                     >Kapitel 2.2</a
                   >als
@@ -89,29 +86,21 @@
               </div>
               <h3>Reguläre Sprachen und Schaltkreise</h3>
               <p>
-                Wir können jedes Zeichen $\sigma \in \Sigma$ als Bitstring $x<i
-                  >{\sigma} \in \cube^k$ codieren, mit $k = \ceil{\log</i
-                >2|\Sigma|}$, und damit jedes $\alpha = (a<i>1, \dots, a</i>n)
-                \in \Sigma^<b
-                  >$ als $x<i
-                    >a \in \cube^<b
-                      >$ mit $nk$ Bits. Smit wird jede Sprache $L \subseteq
-                      \Sigma^</b
-                    >$ zu einer Funktion $f</i
-                  >L : \cube^</b
-                >
-                \rightarrow \cube$ mittels
+                Wir können jedes Zeichen $\sigma \in \Sigma$ als Bitstring
+                $x_{\sigma} \in \cube^k$ codieren, mit $k =
+                \ceil{\log_2|\Sigma|}$, und damit jedes $\alpha = (a_1, \dots,
+                a_n) \in \Sigma^*$ als $x_a \in \cube^*$ mit $nk$ Bits. Smit
+                wird jede Sprache $L \subseteq \Sigma^*$ zu einer Funktion $f_L
+                : \cube^* \rightarrow \cube$ mittels
               </p>
               $$ \begin{align*} f_L : \cube^*&amp;\rightarrow \cube \\
               y&amp;\mapsto \begin{cases} 1&amp;\textnormal{if $\exists \alpha
               \in L: x_\alpha = y$} \\ 0&amp;\textnormal{else.} \end{cases}
               \end{align*} $$
               <p>
-                Für festes $n$ definieren wir $f<i
-                  >L^n : \cube^n \rightarrow \cube$ als die Restriktion von
-                  $f</i
-                >L$ auf $\cube$, also die Funktion, die nur $n$-Bit-Strings als
-                Input akzeptiert.
+                Für festes $n$ definieren wir $f_L^n : \cube^n \rightarrow
+                \cube$ als die Restriktion von $f_L$ auf $\cube$, also die
+                Funktion, die nur $n$-Bit-Strings als Input akzeptiert.
               </p>
               <p>
                 Zeigen Sie: wenn $L \subseteq \Sigma^*$ regulär ist, dann gibt

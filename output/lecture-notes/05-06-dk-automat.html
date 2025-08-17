@@ -151,11 +151,9 @@
               <p>
                 Wir illustrieren obige Vorgehensweise nun anhand der Grammatik
               </p>
-              <p id="the-grammar">
-                $$ \begin{align*} G&amp;: \\ S&amp;\rightarrow aS \\
-                S&amp;\rightarrow B \\ B&amp; \rightarrow aBb \\
-                B&amp;\rightarrow ab \end{align*} $$
-              </p>
+              $$ \begin{align*} G&amp;: \\ S&amp;\rightarrow aS \\
+              S&amp;\rightarrow B \\ B&amp; \rightarrow aBb \\ B&amp;\rightarrow
+              ab \end{align*} $$
               <p>
                 Laut Gebrauchsanweisung aus dem letzten Teilkapitel hat die
                 Grammatik $\dk{G}$ die Terminalsymbole $\Sigma \cup N = \{a, b,
@@ -318,18 +316,16 @@
                     . \beta}$
                   </li>
                   <li>
-                    Für jede Zerlegung $\beta = \beta<i>1 \sigma \beta</i>2$
-                    gibt es den Zustandsübergang $\boxed{X \step{} \beta<i
-                      >1 . \sigma \beta</i
-                    >2} \step{\sigma} \boxed{X \step{} \beta<i
-                      >1 \sigma . \beta</i
-                    >2}$
+                    Für jede Zerlegung $\beta = \beta_1 \sigma \beta_2$ gibt es
+                    den Zustandsübergang $\boxed{X \step{} \beta_1 . \sigma
+                    \beta_2} \step{\sigma} \boxed{X \step{} \beta_1 \sigma .
+                    \beta_2}$
                   </li>
                   <li>
                     Falls $\sigma$ ein Nichtterminal $Y$ ist, also $\beta =
-                    \beta<i>1 Y \beta</i>2$, gibt es zusätzlich noch den
-                    Übergang $\boxed{X \step{} \beta<i>1 . Y \beta</i>2}
-                    \step{\epsilon} \boxed{Y}$
+                    \beta_1 Y \beta_2$, gibt es zusätzlich noch den Übergang
+                    $\boxed{X \step{} \beta_1 . Y \beta_2} \step{\epsilon}
+                    \boxed{Y}$
                   </li>
                 </ol>
                 <p>

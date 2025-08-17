@@ -135,7 +135,7 @@
                   wS\alpha&amp;\Step{1} w \alpha \Step{}^* w x \\ S \Step{}^*
                   wS\alpha&amp;\Step{2} w \texttt{(}S\texttt{)}S \alpha
                   \Step{}^* w y \\ \end{align*} $$ gilt, dann auch $\first_1(x)
-                  \ne \first_2(y)$ gilt. Offensichtlich ist $\first_2(y) = $
+                  \ne \first_2(y)$ gilt. Offensichtlich ist $\first_2(y) =$
                   "$\texttt{(}$". Was kann $\first_k(x)$ sein?
                   <p>
                     <b>Behauptung.</b>
@@ -307,7 +307,7 @@
                 Linksableitung $$ \begin{align*} S \Rightarrow^*{} x \alpha
                 \end{align*} $$ durchgeführt. Die Wortform $\alpha$ ist genau
                 das, was im Moment auf dem Stack des Automaten liegt (um ganz
-                genau zu sein: $\alpha\texttt{\$}$ liegt auf dem Stack). Wenn
+                genau zu sein: \(\alpha\texttt{\$}\) liegt auf dem Stack). Wenn
                 $\alpha$ mit einem Terminalsymbol $c$ beginnt, so ist klar, was
                 wir machen müssen: wir schauen, ob $y$ mit $c$ beginnt. Wenn ja,
                 lesen wir $c$ und poppen es vom Stack. Der schwierige Fall ist,
@@ -315,7 +315,7 @@
               </p>
               <p>
                 Nochmal von vorn: im schwierigen Fall liegt auf dem Stack
-                (oberhalb vom $\$$) eine Wortform, die mit einem Nichtterminal
+                (oberhalb vom \(\$\)) eine Wortform, die mit einem Nichtterminal
                 beginnt, also $A \alpha$. Das bedeutet, dass der Automat per
                 Linksableitung bis jetzt $$ \begin{align*} S \Step{}^* x A
                 \alpha \end{align*} $$ hergeleitet hat. Der Automat muss sich
@@ -353,7 +353,7 @@
                   >
                 </p>
                 <ol class="nested">
-                  <li>Lege $S\texttt{\$}$ auf den Stack.</li>
+                  <li>Lege \(S\texttt{\$}\) auf den Stack.</li>
                   <li>
                     <tt>while</tt>
                     Stack nicht leer
@@ -408,7 +408,7 @@
                       </ol>
                     </li>
                     <li>
-                      Wenn das oberste Symbol $\texttt{\$}$ ist: wenn
+                      Wenn das oberste Symbol \(\texttt{\$}\) ist: wenn
                       Eingabewort zu Ende
                       <tt>Accept</tt>
                       ansonsten
@@ -486,8 +486,7 @@
                     <tt>do:</tt>
                     <ul class="nested">
                       <li>
-                        $K := \First_k(\sigma_i) \circ_k K $<span
-                          class="comment"
+                        $K := \First_k(\sigma_i) \circ_k K$<span class="comment"
                           >// $K$ ist jetzt $\First_k(\sigma_i) \circ_k \dots
                           \circ_k \First_k(\sigma_n)$</span
                         >
@@ -610,7 +609,7 @@
                 \First_k^{(0)}(X)&amp;:= \emptyset \tag{für jedes Nichtterminal}
                 \end{align*} $$ und schließlich $$ \begin{align*}
                 \First_k^{(d)}(a)&amp;:= \{a\} \tag{für jedes Terminalsymbol und
-                jedes $d \in \N$} \end{align*} $$
+                jedes \(d \in \N\)} \end{align*} $$
               </div>
               <p>
                 Die Gleichungen sagen, dass wir, falls wir

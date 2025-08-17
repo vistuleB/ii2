@@ -128,7 +128,7 @@
                   > </span
                 >Bauen Sie einen Schaltkreis
                 <tt>oneBitAdder:</tt>
-                $ \{0,1\}^3 \rightarrow \{0,1\}^2$ für folgende Funktionalität:
+                $\{0,1\}^3 \rightarrow \{0,1\}^2$ für folgende Funktionalität:
                 <figure>
                   <img
                     style="height: 10em"
@@ -204,21 +204,21 @@
                 wird ein Carry ausgegeben, wenn es eine Stelle $i \leq k$ gibt,
                 wo $x_i = y_i=1$ gilt, das Carry also erzeugt wird (carry
                 generate), und dann für alle $j = \{i+1,\dots,k\}$ das Carry
-                zumindest weitergereicht wird, also $ x_j \vee y_j = 1$ gilt
+                zumindest weitergereicht wird, also $x_j \vee y_j = 1$ gilt
                 (carry propagate):
               </p>
               $$ c_{k+1} := g_k \vee (g_{k-1} \wedge p_k) \vee (g_{k-2} \wedge
               p_{k-1} \wedge p_{k}) \vee \dots \vee (g_0 \wedge p_1 \wedge \dots
               \wedge p_k) \ . $$ Und voilà: dies ist ein Schaltkreis für
-              $c_{k+1}$ und hat Tiefe 2 (wenn wir $g<i>i$ und $p</i>i$ als
-              Inputgates betrachten). Wie groß ist er? Er hat $k$ OR-gates und
-              $1 + 2 + \dots + k$ AND-gates, insgesamt also $\Theta(k^2)$ Gates.
-              Wir konstruieren nun für jedes $c_1,\dots, c_n$ einen Schaltkreis
-              und setzen dann einen Schaltkreis für $s_k = x_k \oplus y_k \oplus
+              $c_{k+1}$ und hat Tiefe 2 (wenn wir $g_i$ und $p_i$ als Inputgates
+              betrachten). Wie groß ist er? Er hat $k$ OR-gates und $1 + 2 +
+              \dots + k$ AND-gates, insgesamt also $\Theta(k^2)$ Gates. Wir
+              konstruieren nun für jedes $c_1,\dots, c_n$ einen Schaltkreis und
+              setzen dann einen Schaltkreis für $s_k = x_k \oplus y_k \oplus
               c_k$ oben drauf. Insgesamt haben wir Tiefe $O(1)$, wenn wir
               beliebigen Fan-in zulassen; wenn wir Fan-in 2 wollen, bekommen wir
               Tiefe $O(\log n)$. Die Anzahl der Gates ist in jedem Fall
-              $\Theta(n^3)$, genauer gesagt etwa $ {n \choose 3}$. Dies scheint
+              $\Theta(n^3)$, genauer gesagt etwa ${n \choose 3}$. Dies scheint
               recht verschwenderisch. Für $n=64$ wie bei zeitgenössischen
               Rechnern ergibt dies 41664. Das ist nicht unerträglich groß, aber
               auch nicht besonders handlich.
@@ -256,12 +256,12 @@
                     \{(0,0), (1,1)\} \}$.
                     <ul>
                       <li>
-                        Falls $ (x_{i^*}, y_{i^*}) = (1,1) $, dann sind $p_I =
-                        g_I = 1$.
+                        Falls $(x_{i^*}, y_{i^*}) = (1,1)$, dann sind $p_I = g_I
+                        = 1$.
                       </li>
                       <li>
-                        Falls $ (x_{i^*}, y_{i^*}) = (0,0) $, dann sind $p_I =
-                        g_I = 0$.
+                        Falls $(x_{i^*}, y_{i^*}) = (0,0)$, dann sind $p_I = g_I
+                        = 0$.
                       </li>
                     </ul>
                   </li>
@@ -310,7 +310,7 @@
                   <NumberedTitle
                     >::::ChapterCtr.::::SectionCtr.2</NumberedTitle
                   > </span
-                >Wenn wir $[a,b] = [a,i] \cup [i+1,b] $ schreiben für $a \lt i
+                >Wenn wir $[a,b] = [a,i] \cup [i+1,b]$ schreiben für $a \lt i
                 \lt b$, dann gilt $$ \begin{align*} p_{[a,b]}&amp;= g_{[i+1,b]}
                 \vee (p_{[a,i]} \wedge p_{[i+1,b]}) \ , \\ g_{[a,b]}&amp;=
                 g_{[i+1,b]} \vee (g_{[a,i]} \wedge p_{[i+1,b]}) \ . \\
@@ -396,8 +396,8 @@
                 $p_{c1*^k}, g_{c1*^k}$ zu $p_{c*^{k+1}}, g_{c*^{k+1}}$
                 kombinieren. Wir fangen nun mit Binärintervallen der Größe $1$
                 an und arbeiten uns hoch. Der Übersichtlichkeit halber schreiben
-                wir $pg<i>I$ für das Paar $(p</i>I, g_I)$. Für $n=16$ schaut das
-                so aus:
+                wir $pg_I$ für das Paar $(p_I, g_I)$. Für $n=16$ schaut das so
+                aus:
                 <figure>
                   <img
                     style="height: 18em"
@@ -460,7 +460,7 @@
                   <b>1. Fall.</b>
                   Wenn $k$ die Form $k = 2^d-1$ hat, dann ist $[0,k]$ bereits
                   ein Binärintervall; dies passiert, wenn die Binärdarstellung
-                  von $k$ die Form $k = (1^b)_2 $ hat (wobei $b=0$ sein kann, in
+                  von $k$ die Form $k = (1^b)_2$ hat (wobei $b=0$ sein kann, in
                   welchem Fall $k=0$ ist).
                 </p>
                 <p>
@@ -471,7 +471,7 @@
                   und $(111)_2$ die gleiche natürliche Zahl darstellen, nämlich
                   7). Die Zahl $k$ hat also die Form $k = (\alpha 1 0^a 1^b)_2$
                   für $a \geq 1$ und $b \geq 0$. Definieren wir $l := (\alpha 0
-                  1^a 1^b)_2 $. Dann gilt $l+1 = (\alpha 1 0^a 0^b)_2$. Es gilt
+                  1^a 1^b)_2$. Dann gilt $l+1 = (\alpha 1 0^a 0^b)_2$. Es gilt
                   also $$ \begin{align*} [l+1, k] = [(\alpha 1 0^a 0^b)_2,
                   (\alpha 1 0^a 1^b)_2] = [\alpha 1 0^a *^b] \ , \end{align*} $$
                 </p>
@@ -495,7 +495,7 @@
                   Der Wert $pg_{[l+1,k]}$ ist bereits ein Binärintervall, kann
                   also direkt aus dem vorherigen Schaltkreis abgelesen werden;
                   der andere Input, $pg_{[0,l]}$, muss rekursiv berechnet
-                  werden. Beachten Sie, dass $ l = (\alpha 0 1^a 1^b)_2) $ gilt,
+                  werden. Beachten Sie, dass $l = (\alpha 0 1^a 1^b)_2)$ gilt,
                   die Anzahl der schließenden 1en in der Binärdarstellung also
                   von $b$ auf $a+b \geq b+1$ gewachsen ist. Hier ist ein
                   Beispiel für $n = 32, k = 28$, in Dezimal- und
@@ -507,17 +507,17 @@
                   wir haben gesehen, dass die Anzahl der schließenden 1en von
                   Element zu Element in dieser Folge strikt zunimmt (im
                   Allgemeinen folgt auf Element $k=(\alpha 1 0^a 1^b)_2)$ das
-                  Element $l := (\alpha 0 1^a 1^b)_2 $. Die Anzahl schließender
+                  Element $l := (\alpha 0 1^a 1^b)_2$. Die Anzahl schließender
                   1en ist mindestens 0 (trivialierweise) und höchstens $d$; ein
                   genauerer Blick zeigt, dass sie sogar höchstens $d-1$ ist:
-                  wäre sie genau $d$, dann hätten wir es mit der Zahl $ (1^d)_2
-                  = 2^d-1 \geq n-1 $ zu tun; da aber die Folge der Zahlen
+                  wäre sie genau $d$, dann hätten wir es mit der Zahl $(1^d)_2 =
+                  2^d-1 \geq n-1$ zu tun; da aber die Folge der Zahlen
                   <i>abnimmt</i>, müsste bereits $k = 2^d-1$ gelten, und wir
                   wären in Fall 1, bzw. bereits fertig, weil $[0,k]$ bereits in
                   Binärintervall wäre. Der Wert von $b$, der Anzahl schließender
                   1en, kann also höchstens $d-1$ mal zunehmen, und somit
                   brauchen wir höchstens $d-1$ viele $pg$-Gates. Das Maximum
-                  wird erreicht, wenn $k = (1...10)_2 $:
+                  wird erreicht, wenn $k = (1...10)_2$:
                 </p>
                 <figure>
                   <img
@@ -541,10 +541,10 @@
                   Wir haben bereits gesehen, dass die Berechnung von $g_{[0,k]}$
                   höchstens $d-1$ viele $pg$-Gates braucht. Es scheint also, als
                   bräuchten wir für alle $n$ Werte von $k$ insgesamt $(d-1)n =
-                  \Theta(n \log n) $ viele. Wir könnten vielleicht noch eine
+                  \Theta(n \log n)$ viele. Wir könnten vielleicht noch eine
                   genauere Schranke beweisen, weil nicht jedes $k$ den Wert
                   $d-1$ erreicht, allerdings würde auch eine genauere Rechnung
-                  $\Theta(n \log n) $) ergeben; das ist nicht schlecht,
+                  $\Theta(n \log n)$) ergeben; das ist nicht schlecht,
                   allerdings asymptotisch deutlich schlechter als der
                   Ripple-Through-Addierer, und eben auch nicht das, was wir im
                   Lemma behaupten.
@@ -595,16 +595,15 @@
               </div>
               <p>
                 Wir kombinieren wir nun die beiden Lemmas und erhalten einen
-                Schaltkreis der Tiefe $ 4 \ceil { \log_2 n } - 1$ und Größe $8n
-                - 4$, mit $x_0, y_0, \dots, x_{n-1}, y_{n-1} $ als
-                Inputvariablen und Carrys $c_1, \dots, c_n$ als
-                Output-Variablen. Jetzt können wir schließlich $$ s_i = x_i
-                \oplus y_i \oplus c_i $$ berechnen. Dafür brauchen wir noch
-                einen XOR-Schaltkreis mit 3 Input-Gates. Meine Konstruktion
-                hierfür hat 12 Gates (davon 3 NOT-Gates) und Tiefe 4 (wenn wir
-                die NOT-Gates nicht mitzählen.) Insgesamt gibt das also $$ 12 n
-                + 8n - 4 = 20n - 4 $$ Gates und Tiefe $$ 4 \ceil { \log_2 n } +
-                3\ . $$
+                Schaltkreis der Tiefe $4 \ceil { \log_2 n } - 1$ und Größe $8n -
+                4$, mit $x_0, y_0, \dots, x_{n-1}, y_{n-1}$ als Inputvariablen
+                und Carrys $c_1, \dots, c_n$ als Output-Variablen. Jetzt können
+                wir schließlich $$ s_i = x_i \oplus y_i \oplus c_i $$ berechnen.
+                Dafür brauchen wir noch einen XOR-Schaltkreis mit 3 Input-Gates.
+                Meine Konstruktion hierfür hat 12 Gates (davon 3 NOT-Gates) und
+                Tiefe 4 (wenn wir die NOT-Gates nicht mitzählen.) Insgesamt gibt
+                das also $$ 12 n + 8n - 4 = 20n - 4 $$ Gates und Tiefe $$ 4
+                \ceil { \log_2 n } + 3\ . $$
               </p>
               <div class="well well-lg numbered-exercise container">
                 <span class="numbered-title"

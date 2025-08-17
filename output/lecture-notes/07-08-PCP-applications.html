@@ -116,7 +116,7 @@
                   $\beta^R$ das Wort $\beta$ von rechts nach links gelesen
                   bedeutet, also $(xyz)^R = zyx$. Wir fügen noch eine weitere
                   Regel hinzu: $$ \begin{align*} S&amp;\rightarrow \$ \ ,
-                  \end{align*} $$ wobei $\$$ ein neues Zeichen ist, dass nicht
+                  \end{align*} $$ wobei \(\$\) ein neues Zeichen ist, dass nicht
                   in der Symbolmenge des PCP-Puzzles $P$ enthalten ist.
                 </p>
                 <div class="well subtheorem theorem">
@@ -131,8 +131,8 @@
                 </div>
                 <div class="well subtheorem">
                   <b>Beweis.</b>
-                  Die letzte angewandte Regel muss $S \rightarrow \$$ sein, und
-                  somit hat das abgeleitete Wort die Form $$ \begin{align*}
+                  Die letzte angewandte Regel muss \(S \rightarrow \$\) sein,
+                  und somit hat das abgeleitete Wort die Form $$ \begin{align*}
                   \alpha_1 \alpha_2 \dots \alpha_n \$ \beta_n^R \dots \beta_2^R
                   \beta_1^R \ . \end{align*} $$ Jedes Paar $\alpha_i : \beta_i$
                   ist eine Kachel des PCP-Puzzles. Wenn das Wort ein Palindrom
@@ -156,7 +156,7 @@
                   Sei $$ \begin{align*} (\alpha_1 : \beta_1) (\alpha_2 :
                   \beta_2)\dots (\alpha_n : \beta_n) \end{align*} $$ eine Lösung
                   des Puzzles, also $\alpha_1 \alpha_2 \dots \alpha_n = \beta_1
-                  \beta_2 \dots \beta_n $. Dann ist auch $$ \begin{align*}
+                  \beta_2 \dots \beta_n$. Dann ist auch $$ \begin{align*}
                   \alpha_1 \alpha_2 \dots \alpha_n \$ (\beta_1 \beta_2 \dots
                   \beta_n)^R \end{align*} $$ ein Palindrom und kann von $G$
                   abgeleitet werden: $$ \begin{align*} S \Rightarrow \alpha_1 S
@@ -244,17 +244,17 @@
                 Sei $M_2$ eine Turingmaschine, die $L_2$ entscheidet und sei
                 $M_f$ die Turingmaschine, die $f$ berechnet. Wir bauen nun eine
                 neue Turingmaschine $M_1$. Sie nimmt das Eingabewort $x \in
-                \Sigma_1^* $ und lässt die Turingmaschine $M_f$ auf $x$
-                arbeiten; wenn $M_f$ terminiert, steht $f(x)$ auf ihrem
-                Ausgabeband. Wir rufen nun die Turing-Maschien $M_2$ mit dem
-                Eingabewort $f(x)$ auf. Wenn $M_2$ akzeptiert (oder eben
-                ablehnt), dann lassen wir $M_1$ akzeptieren (oder eben
-                ablehnen). Es gilt nun: $$ \begin{align*} M_1(x) =
-                \texttt{accept}&amp;\Leftrightarrow M_2(f(x)) = \texttt{accept}
-                \\ &amp;\Leftrightarrow f(x) \in L_2 \tag{weil $M_2$ die Sprache
-                $L_2$ entscheidet} \\ &amp;\Leftrightarrow x \in L_1 \tag{weil
-                $f$ eine Reduktion ist} \end{align*} $$ und somit entscheidet
-                $M_1$ die Sprache $L_1$.<span class="qed">$\square$</span>
+                \Sigma_1^*$ und lässt die Turingmaschine $M_f$ auf $x$ arbeiten;
+                wenn $M_f$ terminiert, steht $f(x)$ auf ihrem Ausgabeband. Wir
+                rufen nun die Turing-Maschien $M_2$ mit dem Eingabewort $f(x)$
+                auf. Wenn $M_2$ akzeptiert (oder eben ablehnt), dann lassen wir
+                $M_1$ akzeptieren (oder eben ablehnen). Es gilt nun: $$
+                \begin{align*} M_1(x) = \texttt{accept}&amp;\Leftrightarrow
+                M_2(f(x)) = \texttt{accept} \\ &amp;\Leftrightarrow f(x) \in L_2
+                \tag{weil $M_2$ die Sprache $L_2$ entscheidet} \\
+                &amp;\Leftrightarrow x \in L_1 \tag{weil $f$ eine Reduktion ist}
+                \end{align*} $$ und somit entscheidet $M_1$ die Sprache
+                $L_1$.<span class="qed">$\square$</span>
               </div>
               Stellen Sie sich einfach vor, dass $M_f$ der Code ist, den Sie
               selber schreiben müssen, und $M_2$ die "Bibliotheksfunktion" ist,
@@ -328,9 +328,9 @@
                 das Schnittproblem (neues Problem). Sei $G$ eine Grammatik und
                 $\Sigma$ die Menge der Terminalsymbole. Sei $G'$ die folgende
                 Grammatik: $$ \begin{align*} S'&amp;\rightarrow x S' x \tag{ für
-                alle $x \in \Sigma$ }\\ S'&amp;\rightarrow x \tag{ für alle $x
-                \in \Sigma$ }\\ S'&amp;\rightarrow \epsilon \end{align*} $$ Die
-                Grammatik $G'$ erzeugt genau die Sprache der Palindromwörter
+                alle \(x \in \Sigma\) }\\ S'&amp;\rightarrow x \tag{ für alle
+                \(x \in \Sigma\) }\\ S'&amp;\rightarrow \epsilon \end{align*} $$
+                Die Grammatik $G'$ erzeugt genau die Sprache der Palindromwörter
                 über $\Sigma$. Unsere Reduktion $f$ nimmt nun als Eingabe eine
                 kontextfreie Grammatik $G$ (bzw. deren Codierung) und gibt das
                 Paar $(G,G')$ aus (bzw. deren Codierungen). Wir stellen fest:
@@ -410,8 +410,8 @@
                 Grammatik mehrdeutig und das PCP hat eine Lösung. Also: $$
                 \begin{align*} S&amp;\rightarrow S_1 \\ S&amp;\rightarrow S_2 \\
                 S_1&amp;\rightarrow \alpha_i S_1 i \ | \ \alpha_i i \tag{für
-                alle oberen Teile $\alpha_i$} \\ S_2&amp;\rightarrow \beta_i S_2
-                i \ | \ \beta_i i \tag{für alle unteren Teile $\beta_i$}
+                alle oberen Teile \(\alpha_i\)} \\ S_2&amp;\rightarrow \beta_i
+                S_2 i \ | \ \beta_i i \tag{für alle unteren Teile \(\beta_i\)}
                 \end{align*} $$ wobei $1, 2, \dots, n$ neue Symbole sind. Die
                 Indizes $i$ stellen sicher, dass jede von $S_1$ ausgehende
                 Ableitung eindeutig ist (und genau so von $S_2$); die einzige

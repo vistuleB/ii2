@@ -85,18 +85,17 @@
               </p>
               <p>
                 Als vorbereitenden Schritt schauen wir uns kurz die
-                Codierungsfunktion nochmal genauer an. Wir bezeichnen mit $\tm<i
-                  >{\Sigma}$ die Menge aller Turingmaschinen mit Inputalphabet
-                  $\Sigma$. Wir hatten die Codierungsfunktion $\enc: \tm</i
-                >{\Sigma} \rightarrow \Lambda^<b
-                  >$ definiert, für das Codierungsalphabet $\Lambda :=
-                  \writelambda$. In diesem Teilkapitel wird es nötig sein, die
-                  Turingmaschine über dem Alphabet $\Sigma$ selbst zu codieren.
-                  Dies ist nicht besonders schwierig, solange $\Sigma$
-                  mindestens zwei Zeichen hat. Wenn z.B. $\Sigma$ die Zeichen
-                  $0$ und $1$ enthält, dann können wir alle Zeichen in $\Lambda$
-                  wiederum als Strings in $\Sigma^</b
-                >$ codieren. Wir müssen hier nur vorsichtig sein, dass der Code
+                Codierungsfunktion nochmal genauer an. Wir bezeichnen mit
+                $\tm_{\Sigma}$ die Menge aller Turingmaschinen mit Inputalphabet
+                $\Sigma$. Wir hatten die Codierungsfunktion $\enc: \tm_{\Sigma}
+                \rightarrow \Lambda^*$ definiert, für das Codierungsalphabet
+                $\Lambda := \writelambda$. In diesem Teilkapitel wird es nötig
+                sein, die Turingmaschine über dem Alphabet $\Sigma$ selbst zu
+                codieren. Dies ist nicht besonders schwierig, solange $\Sigma$
+                mindestens zwei Zeichen hat. Wenn z.B. $\Sigma$ die Zeichen $0$
+                und $1$ enthält, dann können wir alle Zeichen in $\Lambda$
+                wiederum als Strings in $\Sigma^*$ codieren. Wir müssen hier nur
+                vorsichtig sein, dass der Code
                 <i>präfixfrei</i>
                 ist. Wenn wir zum Beispiel naiv $1$ als $1$ und $0$ als $0$ und
                 $\texttt{#}$ als $01$ codieren, dann wissen wir nicht mehr, was
@@ -104,12 +103,10 @@
                 einem
                 <i>Blockcode</i>, in dem alle Codewörter die gleiche Länge $k$
                 haben, also $\Lambda \rightarrow \{0,1\}^k$. Mit $k =
-                \ceil{\log<i
-                  >2 |\Lambda|}$ ist das kein Problem. Unsere "neue"
-                  Codierungsfunktion $\enc$ ist nun also $\enc: \tm</i
-                >{\Sigma} \rightarrow \Sigma^<b
-                  >$. Wir definieren nun die Haltesprache $\halt \in \Sigma^</b
-                >$:
+                \ceil{\log_2 |\Lambda|}$ ist das kein Problem. Unsere "neue"
+                Codierungsfunktion $\enc$ ist nun also $\enc: \tm_{\Sigma}
+                \rightarrow \Sigma^*$. Wir definieren nun die Haltesprache
+                $\halt \in \Sigma^*$:
               </p>
               $$ \begin{align*} \halt := \{ \enc(M) w \ | \ M \textnormal{
               akzeptiert } w\} \ . \end{align*} $$
@@ -117,7 +114,7 @@
                 Wir können die universelle Turingmaschine $U$ leicht abwandeln,
                 dass sie $\halt$ akzeptiert; wir müssen nur einen
                 Decodierungsschritt vorausschicken, der die neue Codierung
-                $\enc(M) \in \Sigma^<b>$ in unsere "alte" in $\Lambda^</b>$
+                $\enc(M) \in \Sigma^*$ in unsere "alte" in $\Lambda^*$
                 übersetzt. Beachten Sie, dass das Zeichen $\texttt{;}$, das wir
                 auch blockcodiert haben, uns hilft, die Grenze zwischen
                 $\enc(M)$ und $w$ zu erkennen.

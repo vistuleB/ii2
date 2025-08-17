@@ -341,11 +341,11 @@
               </div>
               Wir interpretieren nun die $n$ Inputs $x_1,\dots,x_n$ von Majoroty
               als einstellige Binärzahlen, sortieren sie in Dreiergruppen und
-              machen per 2-for-3-Addierer daraus $ \ceil{\frac{2n}{3}}$ Zahlen.
+              machen per 2-for-3-Addierer daraus $\ceil{\frac{2n}{3}}$ Zahlen.
               Dann machen wir (mit den mittlerweile 2-stelligen Zahlen) weiter
-              und bekommen circa $ \ceil{\frac{4n}{9}}$ Zahlen. Auf jeder Ebene
+              und bekommen circa $\ceil{\frac{4n}{9}}$ Zahlen. Auf jeder Ebene
               schrumpft die Anzahl der Zahlen um einen Faktor von $\frac{2}{3}$;
-              nach $ \log_{3/2} n $ Ebenen haben wir schließlich noch zwei
+              nach $\log_{3/2} n$ Ebenen haben wir schließlich noch zwei
               mittlerweile ($\log n$)-stellige Zahlen, die wir mit einem
               "normalen" Binäraddierer addieren. Das Ergebnis vergleichen wir
               mit dem $\geq$-Schaltkreis mit $\frac{k+1}{2}$. Was ist die Tiefe
@@ -469,7 +469,7 @@
                   Während des ganzen Beweises müssen Sie sich vor Augen halten,
                   dass wir bei der Konstruktion des Schaltkreises $C$ Zufall
                   verwenden; wir nehmen nicht an, dass die Inputs $x \in
-                  \{0,1\}^n $ in irgendeiner Weise zufällig sind. Wir verwenden
+                  \{0,1\}^n$ in irgendeiner Weise zufällig sind. Wir verwenden
                   also
                   <i>Wahrscheinlichkeitsverteilungen über Schaltkreisen</i>,
                   nicht von über Inputs. Zuerst definieren wir die
@@ -598,17 +598,15 @@
                 <div class="well container-fluid">
                   <p>
                     <b>Beweis.</b>
-                    Wir betrachten ein festes $\x \in \cube^n$ mit $\maj<i
-                      >n(\x) = 1$; der Fall $\maj</i
-                    >n(\x) = 0$ ist analog. Wir definieren nun $U := C<i
-                      >1(\x)$, $V := C</i
-                    >2(\x)$ und $W := C<i>3(\x)$. Da $C</i>1, C<i>2, C</i>3 \sim
-                    \mathcal{C}$ zufällige Schaltkreise sind, sind $U, V, W$
-                    Zufallsvariable über $\cube$, und zwar <i>unabhängig</i>,
-                    weil wir $C<i>1, C</i>2, C-3$ auch unabhängig gesampelt
-                    haben. Wir wissen: $\Pr[U=1] = \Pr[V=1] = \Pr[W=1] \geq
-                    \frac{1+\delta}{2} =: p$. Was ist nun $\Pr[\maj_3(U,V,W) =
-                    1]$?
+                    Wir betrachten ein festes $\x \in \cube^n$ mit $\maj_n(\x) =
+                    1$; der Fall $\maj_n(\x) = 0$ ist analog. Wir definieren nun
+                    $U := C_1(\x)$, $V := C_2(\x)$ und $W := C_3(\x)$. Da $C_1,
+                    C_2, C_3 \sim \mathcal{C}$ zufällige Schaltkreise sind, sind
+                    $U, V, W$ Zufallsvariable über $\cube$, und zwar
+                    <i>unabhängig</i>, weil wir $C_1, C_2, C-3$ auch unabhängig
+                    gesampelt haben. Wir wissen: $\Pr[U=1] = \Pr[V=1] = \Pr[W=1]
+                    \geq \frac{1+\delta}{2} =: p$. Was ist nun
+                    $\Pr[\maj_3(U,V,W) = 1]$?
                   </p>
                   $$ \begin{align*} \Pr[\maj_3(U,V,W)=1]&amp;= \Pr[U=V=W=1] +
                   \Pr[\textnormal{genau zwei von $\{U,V,W\}$ sind 1}] \\ &amp;=
@@ -632,33 +630,26 @@
                 $$ \begin{align*} \mathcal{C}_{i+1} := (\mathcal{C}_i)^{\oplus
                 3} \ . \end{align*} $$
                 <p>
-                  Zur Wiederholung: um $C \sim \mathcal{C}<i
-                    >{i+1}$ zu sampeln, sampeln wir unabhängig drei Schaltkreise
-                    $\sim \mathcal{C}</i
-                  >i$ und verknüpfen deren Output-Gates mit einem $\maj<i
-                    >3$-Gadget. Wenn $\mathcal{C}</i
-                  >i$ die Signalstärke $\delta<i
-                    >i$ hat, dann hat $\mathcal{C}</i
-                  >{i+1}$ Signalstärke $\frac{3}{2} \delta<i
-                    >i - \frac{1}{2} \delta</i
-                  >i^3$. Wenn $\delta<i
-                    >i \leq 1/2$ sein sollte, dann ist das mindestens
-                    $\frac{5}{4} \delta</i
-                  >i$. Daraus folgt, dass nach höchstens $i^* := \log<i
-                    >{5/4} n$ Rekursionsstufen eine Signalstärke von mindestens
-                    $1/2$ erreicht ist: $\mathcal{C}</i
-                  >{i^*}$ hat Signalstärke mindestens $1/2$.
+                  Zur Wiederholung: um $C \sim \mathcal{C}_{i+1}$ zu sampeln,
+                  sampeln wir unabhängig drei Schaltkreise $\sim \mathcal{C}_i$
+                  und verknüpfen deren Output-Gates mit einem $\maj_3$-Gadget.
+                  Wenn $\mathcal{C}_i$ die Signalstärke $\delta_i$ hat, dann hat
+                  $\mathcal{C}_{i+1}$ Signalstärke $\frac{3}{2} \delta_i -
+                  \frac{1}{2} \delta_i^3$. Wenn $\delta_i \leq 1/2$ sein sollte,
+                  dann ist das mindestens $\frac{5}{4} \delta_i$. Daraus folgt,
+                  dass nach höchstens $i^* := \log_{5/4} n$ Rekursionsstufen
+                  eine Signalstärke von mindestens $1/2$ erreicht ist:
+                  $\mathcal{C}_{i^*}$ hat Signalstärke mindestens $1/2$.
                 </p>
                 <p>
                   Wenn wir jetzt die rekursive Konstruktion fortsetzen, steigt
-                  die Signalstärke weiter an und konvergiert gegen $1$: $\lim<i
-                    >{i \rightarrow \infty} \delta</i
-                  >i = 1$. Die Frage ist nur, wie schnell konvergiert es? Da wir
-                  nun nicht mehr an Wahrscheinlichkeiten interessiert sind, die
-                  knapp über $1/2$ liegen, sondern an solchen, die knapp unter
-                  $1$ liegen, führen wir einen Parameterwechsel durch: eine
-                  Verteilung $\mathcal{C}$ von Schaltkreisen mit Inputs
-                  $x<i>1,\dots,x</i>n$ hat
+                  die Signalstärke weiter an und konvergiert gegen $1$: $\lim_{i
+                  \rightarrow \infty} \delta_i = 1$. Die Frage ist nur, wie
+                  schnell konvergiert es? Da wir nun nicht mehr an
+                  Wahrscheinlichkeiten interessiert sind, die knapp über $1/2$
+                  liegen, sondern an solchen, die knapp unter $1$ liegen, führen
+                  wir einen Parameterwechsel durch: eine Verteilung
+                  $\mathcal{C}$ von Schaltkreisen mit Inputs $x_1,\dots,x_n$ hat
                   <i>Fehlerwahrscheinlichkeit $\epsilon$</i>, wenn
                 </p>
                 $$ \begin{align*} \forall \x \in \cube^n: \Pr_{C \sim
@@ -701,27 +692,24 @@
                   </p>
                 </div>
                 <p>
-                  Für $i^* := \log<i>{5/4} n$ hat $\mathcal{C}</i>{i^*}$ eine
+                  Für $i^* := \log_{5/4} n$ hat $\mathcal{C}_{i^*}$ eine
                   Fehlerwahrscheinlichkeit von höchstens $1/4$. Für $i^* + 1$
                   wird das zu $3 \pfrac{1}{4}^2 = \frac{3}{16}$ und für $i^* +
                   2$ zu $3 \pfrac{3}{16}^2 = \frac{27}{256} \leq \frac{1}{9}$.
                   Wenn nun $\epsilon \leq \frac{1}{9}$ ist, dann gilt $3
-                  \epsilon^2 \leq \epsilon^{3/2}$. Wir definieren $\epsilon<i
-                    >i := \frac{1 - \delta</i
-                  >i}{2}$, also die Fehlerwahrscheinlichkeit von $\mathcal{C}<i
-                    >i$. Es gilt also $\epsilon</i
-                  >{i+1} \leq (\epsilon_i)^{3/2}$ für alle $i \geq i^*+2$ und
-                  somit
+                  \epsilon^2 \leq \epsilon^{3/2}$. Wir definieren $\epsilon_i :=
+                  \frac{1 - \delta_i}{2}$, also die Fehlerwahrscheinlichkeit von
+                  $\mathcal{C}_i$. Es gilt also $\epsilon_{i+1} \leq
+                  (\epsilon_i)^{3/2}$ für alle $i \geq i^*+2$ und somit
                 </p>
                 $$ \begin{align*} \epsilon_{i^*+2 + j} \leq
                 \left(\epsilon_{i^*}\right)^{\pfrac{3}{2}^j} \leq
                 \pfrac{1}{4}^{\pfrac{3}{2}^j} \ . \end{align*} $$
                 <p>
-                  Qualitativ sehen wir: solange $\delta<i
-                    >i \leq 1/2$ gilt, wächst die Signalstärke exponentiell an.
-                    Dieses exponentielle Wachstum kann natürlich nicht beliebig
-                    weitergehen. Jenseits $\delta</i
-                  >i \leq 1/2$ hört das auf, dafür
+                  Qualitativ sehen wir: solange $\delta_i \leq 1/2$ gilt, wächst
+                  die Signalstärke exponentiell an. Dieses exponentielle
+                  Wachstum kann natürlich nicht beliebig weitergehen. Jenseits
+                  $\delta_i \leq 1/2$ hört das auf, dafür
                   <i>fällt</i>
                   nun die Fehlerwahrscheinlichkeit
                   <i>doppelt exponentiell</i>. Für $j^* := \log_{3/2} n$ gilt
@@ -757,31 +745,27 @@
                   <hr />
                 </figure>
                 <p>
-                  Wir setzen nun $k := i^* + 2 + j^* = \log<i
-                    >{5/4} n + 2 + \log</i
-                  >{3/2} n = O(\log n)$ und sehen, dass $\mathcal{C}<i
-                    >k$ eine Verteilung über Schaltkreise mit Tiefe $O(\log n)$
-                    und Fehlerwahrscheinlichkeit kleiner als $2^{-n}$ ist. Was
-                    nun kommt, ist ein absolutes Standardargument in
-                    probabilitischen Beweisen: ein Union Bound. Das geht
-                    ungefähr so: wenn für jedes feste $\b \in \cube^n$ ein
-                    Schaltkreis $C \mathcal{C}</i
-                  >k$ mit Wahrscheinlichkeit $\epsilon<i
-                    >k$ irrt, dann ist die Wahrscheinlichkeit, dass $C$ sich für
-                    irgendein $\x \in \cube^n$ irrt, höchstens $2^n \epsilon</i
-                  >k$. Formal: für jedes $\b \in \cube^n$ definieren wir $E<i
-                    >{\b}$ als die Menge der Schaltkreise mit Input-Variablen
-                    $x</i
-                  >1,\dots,x_n$, die sich auf $\b$ irren, also
+                  Wir setzen nun $k := i^* + 2 + j^* = \log_{5/4} n + 2 +
+                  \log_{3/2} n = O(\log n)$ und sehen, dass $\mathcal{C}_k$ eine
+                  Verteilung über Schaltkreise mit Tiefe $O(\log n)$ und
+                  Fehlerwahrscheinlichkeit kleiner als $2^{-n}$ ist. Was nun
+                  kommt, ist ein absolutes Standardargument in probabilitischen
+                  Beweisen: ein Union Bound. Das geht ungefähr so: wenn für
+                  jedes feste $\b \in \cube^n$ ein Schaltkreis $C \mathcal{C}_k$
+                  mit Wahrscheinlichkeit $\epsilon_k$ irrt, dann ist die
+                  Wahrscheinlichkeit, dass $C$ sich für irgendein $\x \in
+                  \cube^n$ irrt, höchstens $2^n \epsilon_k$. Formal: für jedes
+                  $\b \in \cube^n$ definieren wir $E_{\b}$ als die Menge der
+                  Schaltkreise mit Input-Variablen $x_1,\dots,x_n$, die sich auf
+                  $\b$ irren, also
                 </p>
                 $$ \begin{align*} E_{\b} := \{\textnormal{Schaltkreise } C
                 \textnormal{ über } x_1, \dots, x_n \ | \ C(\b) \ne \maj_n(\b)
                 \} \ . \end{align*} $$
                 <p>
-                  Die Verteilung $\mathcal{C}<i
-                    >k$ existiert ja im Wahrscheinlichkeitsraum aller Boolescher
-                    Schaltkreise mit Inputs $x</i
-                  >1,\dots, x<i>n$. Die Menge $E</i>{\b}$ ist somit ein
+                  Die Verteilung $\mathcal{C}_k$ existiert ja im
+                  Wahrscheinlichkeitsraum aller Boolescher Schaltkreise mit
+                  Inputs $x_1,\dots, x_n$. Die Menge $E_{\b}$ ist somit ein
                   <i>Ereignis</i>
                   in diesem Raum. Ein extrem unwahrscheinliches Ereignis:
                 </p>
@@ -789,9 +773,9 @@
                 \mathcal{C}_k} [ C \in E_{\b} ] = \epsilon_k \lt 2^{n-} \ .
                 \end{align*} $$
                 <p>
-                  Oder kompakt ausgedrückt: $\Pr<i>{\mathcal{C}</i>k} [E<i
-                    >{\b}] \lt 2^n$. Wir haben nun ein Ereignis $E</i
-                  >{\b}$ für jedes $\b \in \cube^n$ und definieren
+                  Oder kompakt ausgedrückt: $\Pr_{\mathcal{C}_k} [E_{\b}] \lt
+                  2^n$. Wir haben nun ein Ereignis $E_{\b}$ für jedes $\b \in
+                  \cube^n$ und definieren
                 </p>
                 $$ \begin{align*} E := \bigcup_{\b \in \cube^n} E_{\b} \ .
                 \end{align*} $$
@@ -808,17 +792,14 @@
                 [E_{\b}] \\ &amp;= \sum_{b \in \cube^n} \epsilon_k\\ &amp;\lt
                 \sum_{b \in \cube^n} 2^{-n} = 2^n 2^{-n} = 1 \ . \end{align*} $$
                 <p>
-                  Also $\Pr<i>{\mathcal{C}</i>k}[E] \lt 1$ und somit
-                  $\Pr<i>{\mathcal{C}</i>k}[\bar{E}] \gt 0$. Das bedeutet, dass
-                  ein zufälliger Schaltkreis $C \sim \mathcal{C}<i
-                    >K$ mit positiver Wahrscheinlichkeit die Funktion $\maj</i
-                  >n$ korrekt berechnet. Jeder Schaltkreis, der unter
-                  $\mathcal{C}<i
-                    >k$ gesampelt werden kann, hat Tiefe $O(\log n)$, Fan-in 2
-                    und ist monoton, und somit schließen wir: es gibt einen
-                    monotonen Schaltkreis $C$ mit Fan-in 2 und Tiefe $O(\log
-                    n)$, der $\maj</i
-                  >n$ berechnet.
+                  Also $\Pr_{\mathcal{C}_k}[E] \lt 1$ und somit
+                  $\Pr_{\mathcal{C}_k}[\bar{E}] \gt 0$. Das bedeutet, dass ein
+                  zufälliger Schaltkreis $C \sim \mathcal{C}_K$ mit positiver
+                  Wahrscheinlichkeit die Funktion $\maj_n$ korrekt berechnet.
+                  Jeder Schaltkreis, der unter $\mathcal{C}_k$ gesampelt werden
+                  kann, hat Tiefe $O(\log n)$, Fan-in 2 und ist monoton, und
+                  somit schließen wir: es gibt einen monotonen Schaltkreis $C$
+                  mit Fan-in 2 und Tiefe $O(\log n)$, der $\maj_n$ berechnet.
                 </p>
                 <p>
                   Es bleibt die Frage, wie groß dieser Schaltkreis $C$ ist.

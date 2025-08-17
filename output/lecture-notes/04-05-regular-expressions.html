@@ -172,9 +172,9 @@
                 <i>Punkt</i>
                 vor
                 <i>Strich</i>
-                in der Arithmetik), sodass beispielsweise der Ausdruck $
-                a^*b|c^*$ die Bedeutung von $(((a^*)b)(c^*))$ hat, genauso wie
-                wir in der Arithmetik $a^2 b + c^3$ statt $ (((a^2)b) + c^3) $
+                in der Arithmetik), sodass beispielsweise der Ausdruck
+                $a^*b|c^*$ die Bedeutung von $(((a^*)b)(c^*))$ hat, genauso wie
+                wir in der Arithmetik $a^2 b + c^3$ statt $(((a^2)b) + c^3)$
                 schreiben.
               </p>
               <p>
@@ -340,7 +340,7 @@
                 vielen $z$"; ganz allgemein lassen wir Übergänge der Form $$
                 \begin{align*} q_1 \step{R} q_2 \ , \end{align*} $$ wobei $R$
                 ein regulärer Ausdruck ist. Insbesondere lassen wir Übergänge
-                der Form $q_1 \step{\epsilon} q_2 $ zu. Dies bedeutet, dass der
+                der Form $q_1 \step{\epsilon} q_2$ zu. Dies bedeutet, dass der
                 Automat von $q_1$ nach $q_2$ "springen" kann, ohne ein
                 Eingabesymbol zu lesen. Des weiteren verlangen wir, dass es
                 genau einen akzeptierenden Endzustand $q_{\rm end}$ mit $\qstart
@@ -386,14 +386,14 @@
                   gilt, dann schreiben wir $q_i \step{R} q_j$. Wenn $\beta \in
                   L(R)$ gilt, $\beta$ also ein Wort in der von $R$ beschriebenen
                   Sprache ist, dann schreiben wir auch $q_i \step{\beta \in R}
-                  q_j $.
+                  q_j$.
                   <p>
                     Für $q, q' \in Q$ und $\alpha \in \Sigma^*$ schreiben wir $$
                     \begin{align*} q \Step{\alpha} q' \end{align*} $$ wenn man
                     $\alpha$ zerlegen kann als $\alpha = \beta_1 \beta_2 \dots
                     \beta_k$ gibt (wobei $\beta_i = \epsilon$ zulässig ist) und
                     es eine Zustandsfolge $q = q_0, q_1, \dots, q_k = q'$ gibt,
-                    wobei $ (q_{i-1}, q_i)\in E$ ist und mit einem regulären
+                    wobei $(q_{i-1}, q_i)\in E$ ist und mit einem regulären
                     Ausdruck $R_i$ beschriftet ist und jedes $\beta_i$ in der
                     von $R_i$ beschriebenen Sprache ist. Wenn also $$
                     \begin{align*} q_0 \step{\beta_1 \in R_1} q_1 \step{\beta_2
@@ -406,7 +406,7 @@
                   transformieren, indem wir, soweit nötig, (1) einen neuen
                   Startzustand kreieren (damit dieser keine eingehenden Kanten
                   hat), (2) einen neuen Endzustand kreieren, (3) "parallele"
-                  Übergänge wie $ (q_i, x, q_j), (q_i, y, q_j)$ zu einer Kante
+                  Übergänge wie $(q_i, x, q_j), (q_i, y, q_j)$ zu einer Kante
                   zusammenfassen, der dann mit dem regulären Ausdruck $x | y$
                   beschriftet ist.
                 </p>
@@ -431,7 +431,7 @@
                   Falls die mit $R_2$ beschriftete Selbstschleife an Zustand $B$
                   nicht existieren sollte, dann schreiben wir einfach $R_1R_3$
                   anstatt $R_1 R_2^* R_3$; falls der Übergang $A \step{R_4} B$
-                  nicht existieren sollte , lassen wir das $R_4 | $ im rechten
+                  nicht existieren sollte , lassen wir das $R_4 |$ im rechten
                   Bild einfach weg. (Sipser führt hier den eleganten Formalismus
                   ein, zu verlangen, dass
                   <i>jedes</i>

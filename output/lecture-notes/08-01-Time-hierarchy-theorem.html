@@ -55,47 +55,43 @@
               <p>
                 Das Zeithierarchietheorem besagt, dass es zu jeder
                 "vernünftigen" Komplexitätsfunktion $t: \N \rightarrow \N$ ein
-                Entscheidungsproblem $L \subseteq \Sigma^<b
-                  >$ gibt, dass man in Zeit $t$ entscheiden kann, aber nicht
-                  deutlich schneller. Was "vernünftig" bedeutet, wird weiter
-                  unten klar werden. Wir betrachten noch einmal genauer die
-                  universelle Turingmaschine aus<a
-                    href="07-03-Turing-universal.html"
-                    >Kapitel 7.5.</a
-                  >
-                  Unsere Implementierung hatte insgesamt fünf Bänder verwendet:
-                  (1) ein Band, um die Regeln von $M$ zu speichern (also die
-                  Funktion $\delta$); (2) ein Band, um den Zustand von $M$ zu
-                  speichern; (3) um den akzeptierenden Zustand $\qaccept$ von
-                  $M$ zu speichern; (4) und (5) um das Band von $M$ zu
-                  simulieren. Für letzteres hatten wir
-                  <i>zwei</i>
-                  Bänder verwendet, weil das uns erlaubte, effizient Zeichen
-                  <i>einzufügen</i>
-                  statt einfach zu überschreiben. Wie wir aber gesehen hatten,
-                  können wir (4) und (5) mit einem Band bewältigen, indem wir zu
-                  allererst die Codierung $\enc(M)$ durchgehen und die Länge $l$
-                  des längsten Bandzeichen bestimmen. Wir verwenden dann auf
-                  Band (4) immer Blöcke der Länge $l$ für ein $M$-Zeichen und
-                  separieren diese durch eine Markierung $\texttt{#}$. Auch das
-                  Band (3) können wir uns sparen: den akzeptierenden Zustand von
-                  $M$ können wir gleich am Anfang von (1) schreiben, ohne das
-                  die Simulation dadurch nennenswert teurer würde. Wir kommen
-                  also mit
-                  <i>drei</i>
-                  Bändern aus. Allerdings hatten wir uns nur überlegt, wie man
-                  Einband-Turingmaschinen $M$ simuliert. Es ist aber ziemlich
-                  einfach zu sehen, dass man Codierung und Simulation ganz
-                  analog für $k$-Band-Turingmaschinen durchführen kann. Die
-                  entsprechende Turingmaschine hat dann allerdings $k+2$ Bänder:
-                  $k$ Arbeitsbänder, eins für den Zustand von $M$ und eins für
-                  $\enc(M)$. Darüberhinaus hatten wir in<a
-                    href="07-05-undecidability.html"
-                    >Kapitel 7.7</a
-                  >
-                  gesehen, dass wir als Codierungsalphabet $\Sigma$ selbst
-                  nehmen können, also $\enc(M) \in \Sigma^</b
-                >$, solange $\Sigma$ mindestens zwei Zeichen enthält.
+                Entscheidungsproblem $L \subseteq \Sigma^*$ gibt, dass man in
+                Zeit $t$ entscheiden kann, aber nicht deutlich schneller. Was
+                "vernünftig" bedeutet, wird weiter unten klar werden. Wir
+                betrachten noch einmal genauer die universelle Turingmaschine
+                aus<a href="07-03-Turing-universal.html">Kapitel 7.5.</a>
+                Unsere Implementierung hatte insgesamt fünf Bänder verwendet:
+                (1) ein Band, um die Regeln von $M$ zu speichern (also die
+                Funktion $\delta$); (2) ein Band, um den Zustand von $M$ zu
+                speichern; (3) um den akzeptierenden Zustand $\qaccept$ von $M$
+                zu speichern; (4) und (5) um das Band von $M$ zu simulieren. Für
+                letzteres hatten wir
+                <i>zwei</i>
+                Bänder verwendet, weil das uns erlaubte, effizient Zeichen
+                <i>einzufügen</i>
+                statt einfach zu überschreiben. Wie wir aber gesehen hatten,
+                können wir (4) und (5) mit einem Band bewältigen, indem wir zu
+                allererst die Codierung $\enc(M)$ durchgehen und die Länge $l$
+                des längsten Bandzeichen bestimmen. Wir verwenden dann auf Band
+                (4) immer Blöcke der Länge $l$ für ein $M$-Zeichen und
+                separieren diese durch eine Markierung $\texttt{#}$. Auch das
+                Band (3) können wir uns sparen: den akzeptierenden Zustand von
+                $M$ können wir gleich am Anfang von (1) schreiben, ohne das die
+                Simulation dadurch nennenswert teurer würde. Wir kommen also mit
+                <i>drei</i>
+                Bändern aus. Allerdings hatten wir uns nur überlegt, wie man
+                Einband-Turingmaschinen $M$ simuliert. Es ist aber ziemlich
+                einfach zu sehen, dass man Codierung und Simulation ganz analog
+                für $k$-Band-Turingmaschinen durchführen kann. Die entsprechende
+                Turingmaschine hat dann allerdings $k+2$ Bänder: $k$
+                Arbeitsbänder, eins für den Zustand von $M$ und eins für
+                $\enc(M)$. Darüberhinaus hatten wir in<a
+                  href="07-05-undecidability.html"
+                  >Kapitel 7.7</a
+                >
+                gesehen, dass wir als Codierungsalphabet $\Sigma$ selbst nehmen
+                können, also $\enc(M) \in \Sigma^*$, solange $\Sigma$ mindestens
+                zwei Zeichen enthält.
               </p>
               <div id="theorem-universal" class="well container theorem">
                 <p>
@@ -128,9 +124,9 @@
                 Dass es so ein $U$ gibt, hatten wir ja schon gesehen. Gehen wir
                 aber noch einmal die Zeitschranke durch. In einer vorbereitenden
                 Phase bestimmt $U$ die Länge $l$ des längsten Bandzeichen von
-                $M$. Dann schreibt es das Eingabewort $x<i>1 x</i>2 \dots x_n$
-                als Folge von Blöcken der Länge $l$ auf das Arbeitsband. Zellen
-                in einem Block, die nicht verwendet werden, werden mit einem
+                $M$. Dann schreibt es das Eingabewort $x_1 x_2 \dots x_n$ als
+                Folge von Blöcken der Länge $l$ auf das Arbeitsband. Zellen in
+                einem Block, die nicht verwendet werden, werden mit einem
                 $\texttt{-}$ gefüllt. Hier ein Beispiel für den Fall $l=4$:
               </p>
               $$ \begin{align*} \texttt{#}x_1 \texttt{-} \texttt{-} \texttt{-}
@@ -306,10 +302,9 @@
                     >
                   </span>
                   Sei $s: \N \rightarrow \N$ eine Funktion mit $s(n) \geq n$ und
-                  $s = o(t)$, also $\lim<i
-                    >{n \rightarrow \infty} \frac{s(n)}{t(n)} = 0$. Dann gilt
-                    $\bnegdiag \not \in \TIME</i
-                  >k(s)$.
+                  $s = o(t)$, also $\lim_{n \rightarrow \infty}
+                  \frac{s(n)}{t(n)} = 0$. Dann gilt $\bnegdiag \not \in
+                  \TIME_k(s)$.
                 </p>
               </div>
               <div class="well container">
@@ -411,10 +406,10 @@
                 Bitte beachten Sie, dass wir diese Version nicht vollständig
                 bewiesen habe, da ich die effizientere Simulation einer
                 $k$-Band-Turingmaschine durch eine $2$-Band-Turingmaschine, also
-                $\TIME<i>k(t) \subseteq \TIME</i>2(t \log t)$ nicht erklärt
-                habe. Mit der ineffiziten, also $\TIME<i>k(t) \subseteq \TIME</i
-                >1(t^2)$, erhalten wir einen Zeithierarchiesatz solange $s^2 \in
-                o(t)$ ist.
+                $\TIME_k(t) \subseteq \TIME_2(t \log t)$ nicht erklärt habe. Mit
+                der ineffiziten, also $\TIME_k(t) \subseteq \TIME_1(t^2)$,
+                erhalten wir einen Zeithierarchiesatz solange $s^2 \in o(t)$
+                ist.
               </p>
               <div class="well well-lg numbered-exercise container">
                 <p>

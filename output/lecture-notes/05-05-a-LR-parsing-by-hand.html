@@ -60,14 +60,13 @@
               $$ \begin{align*} S&amp;\rightarrow x \ |\ y\ |\ z \\
               S&amp;\rightarrow (S+S) \\ S&amp;\rightarrow (S*S) \end{align*} $$
               <p>
-                Sie kann also $(x + (y<b
-                  >z))$ ableiten aber eben nicht $(x + y + z)$. Wie können wir
-                  nun einen Parser für $G$ schreiben? Also einen Algorithmus,
-                  der ein Wort $w \in \Sigma^</b
-                >$ nimmt und einen Ableitungsbaum konstruiert (falls $w \in
-                L(G)$)? Wenn wir uns an das LL-Paradigma halten und eine
-                Linksableitung bauen wollen, dann stoßen wir schon ganz am
-                Anfang auf ein Problem: wenn zum Beispiel
+                Sie kann also $(x + (y*z))$ ableiten aber eben nicht $(x + y +
+                z)$. Wie können wir nun einen Parser für $G$ schreiben? Also
+                einen Algorithmus, der ein Wort $w \in \Sigma^*$ nimmt und einen
+                Ableitungsbaum konstruiert (falls $w \in L(G)$)? Wenn wir uns an
+                das LL-Paradigma halten und eine Linksableitung bauen wollen,
+                dann stoßen wir schon ganz am Anfang auf ein Problem: wenn zum
+                Beispiel
               </p>
               $$ \begin{align*} w = ((((\dots \end{align*} $$
               <p>

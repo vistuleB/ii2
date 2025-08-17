@@ -55,7 +55,7 @@
               </h1>
               <p>
                 Im letzten Teilkapitel haben wir gesehen, wie wir jede
-                Turingmaschine $M $mit Eingabealphabet $\Sigma$ codieren können
+                Turingmaschine $M$mit Eingabealphabet $\Sigma$ codieren können
                 als
               </p>
               $$ \begin{align*} \enc(M) \in \Lambda^* \ , \end{align*} $$
@@ -63,7 +63,7 @@
               $$ \begin{align*} \Lambda := \writelambda \end{align*} $$
               <p>
                 Diese Codierungsschema enthält implizit Codierungsfunktionen
-                $\enc<i>Q : Q \rightarrow \{0,1\}^+$ und $\enc</i>\Gamma: \Gamma
+                $\enc_Q : Q \rightarrow \{0,1\}^+$ und $\enc_\Gamma: \Gamma
                 \rightarrow \Sigma \cup \{0,1\}^+$, die wir verwenden, um die
                 Zustände und Arbeitszeichen von $M$ in $\Lambda$-Zeichen zu
                 übersetzen. Für eine Konfiguration
@@ -90,14 +90,12 @@
               </p>
               <p>
                 Eine Turingmaschine simulieren heißt nun, einen String
-                $\enc(M)\texttt{;}w$ mit $w \in \Sigma^<b
-                  >$ zu lesen und daraus den String $\enc(\hat{\delta}^</b
-                >
-                <i>M (w))$ zu berechnen, also das Ergebnis $\hat{\delta}^*</i
-                >M(w)$, passend codiert über dem Alphabet $\Lambda$. Das
-                zentrale Ergebnis dieses Teilkapitels ist, dass wir diese
-                Simulation selbst mit einer Turingmaschine implementieren
-                können.
+                $\enc(M)\texttt{;}w$ mit $w \in \Sigma^*$ zu lesen und daraus
+                den String $\enc(\hat{\delta}^*_M (w))$ zu berechnen, also das
+                Ergebnis $\hat{\delta}^*_M(w)$, passend codiert über dem
+                Alphabet $\Lambda$. Das zentrale Ergebnis dieses Teilkapitels
+                ist, dass wir diese Simulation selbst mit einer Turingmaschine
+                implementieren können.
               </p>
               <div class="well container theorem">
                 <p>
@@ -111,9 +109,9 @@
                   Zu jedem endlichen Eingabealphabet $\Sigma$ sei $\Lambda :=
                   \writelambda$ das Codierungsalphabet. Es gibt es eine
                   Turingmaschine $U = U_{\Sigma}$ mit Eingabealphabet $\Lambda$,
-                  so dass für alle $c \in \Lambda^<b>$ und $w \in \Sigma^</b>$
-                  die Turingmaschine $U$ mit Eingabewort $x \in \Lambda^*$
-                  folgendes tut:
+                  so dass für alle $c \in \Lambda^*$ und $w \in \Sigma^*$ die
+                  Turingmaschine $U$ mit Eingabewort $x \in \Lambda^*$ folgendes
+                  tut:
                 </p>
                 <ul>
                   <li>

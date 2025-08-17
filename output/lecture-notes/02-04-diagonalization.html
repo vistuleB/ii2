@@ -87,20 +87,20 @@
                   surjekiv. Injektiv kann eine solche Funktion natürlich sein,
                   beispielsweise die Funktion $n \mapsto 0^n 111111\dots$. Also
                   ist unsere einzige Chance, zu zeigen, dass $f$ nicht surjektiv
-                  ist. Wir müssen also eine 0/1-Folge $\mathbf{b} = b<i>0 b</i>1
-                  b<i>2 b</i>3 \dots \in \{0,1\}^{\N}$ finden, die nicht im
-                  Wertebereich (Englisch: <i>image</i>) von $f$ liegt:
-                  $\mathbf{b} \not \in {\rm img}(f)$. Was wiederum bedeutet,
-                  dass für jedes $n \in \N$ sich die unendliche 0/1-Folge $f(n)$
-                  von $\mathbf{b}$ unterscheidet, also an mindestens einer
-                  Stelle.
+                  ist. Wir müssen also eine 0/1-Folge $\mathbf{b} = b_0 b_1 b_2
+                  b_3 \dots \in \{0,1\}^{\N}$ finden, die nicht im Wertebereich
+                  (Englisch:
+                  <i>image</i>) von $f$ liegt: $\mathbf{b} \not \in {\rm
+                  img}(f)$. Was wiederum bedeutet, dass für jedes $n \in \N$
+                  sich die unendliche 0/1-Folge $f(n)$ von $\mathbf{b}$
+                  unterscheidet, also an mindestens einer Stelle.
                 </p>
                 <p>
                   Wie können wir die Funktion $f$ darstellen? Jedes $f(n)$ ist
                   eine unendliche $0/1$-Folge. Also können wir uns $f$ als nach
                   rechts und nach unten unendliche Tabelle vorstellen. Hierbei
-                  schreiben wir $f<i>i$ für $f(i)$ und $f</i>{i,j}$ für das
-                  $j$-te Glied der unendlichen Folge $f_i$.
+                  schreiben wir $f_i$ für $f(i)$ und $f_{i,j}$ für das $j$-te
+                  Glied der unendlichen Folge $f_i$.
                 </p>
                 <figure>
                   <img
@@ -120,21 +120,21 @@
                   />
                 </figure>
                 <p>
-                  und erhalten eine Folge: $\mathbf{d} := \overline{f<i
-                    >{0,0}}\ \overline{f</i
-                  >{1,1}}\ \overline{f<i>{2,2}} \ \overline{f</i>{3,3}}\dots$.
-                  Vergleichen wir nun $\mathbf{d}$ mit einer Zeile $f<i
-                    >n$ der obigen Tabelle. Insbesondere, die $n$-ten Stellen
-                    der beiden Folgen. Die $n$-te Stelle von $\mathbf{d}$ ist
-                    $\overline{f</i
-                  >{n,n}}$; die $n$-te Stelle von $f<i>n$ ist $f</i>{n,n}$. Wir
-                  sehen also: $\mathbf{d}$ und $f<i
-                    >n$ unterscheiden sich an der $n$-ten Stelle (und womöglich
-                    auch noch anderswo), und daher gilt: $\mathbf{d} \ne f</i
-                  >n$. Da dies für jedes $n$ gilt, folgern wir: die Folge
-                  $\mathbf{d}$ kommt nicht als Zeile der Tabelle vor, und damit
-                  $\mathbf{d} \not \in {\rm img}(f)$. Die Funktion $f$ ist nicht
-                  surjektiv.<span class="qed">$\square$</span>
+                  und erhalten eine Folge: $\mathbf{d} := \overline{f_{0,0}}\
+                  \overline{f_{1,1}}\ \overline{f_{2,2}} \
+                  \overline{f_{3,3}}\dots$. Vergleichen wir nun $\mathbf{d}$ mit
+                  einer Zeile $f_n$ der obigen Tabelle. Insbesondere, die
+                  $n$-ten Stellen der beiden Folgen. Die $n$-te Stelle von
+                  $\mathbf{d}$ ist $\overline{f_{n,n}}$; die $n$-te Stelle von
+                  $f_n$ ist $f_{n,n}$. Wir sehen also: $\mathbf{d}$ und $f_n$
+                  unterscheiden sich an der $n$-ten Stelle (und womöglich auch
+                  noch anderswo), und daher gilt: $\mathbf{d} \ne f_n$. Da dies
+                  für jedes $n$ gilt, folgern wir: die Folge $\mathbf{d}$ kommt
+                  nicht als Zeile der Tabelle vor, und damit $\mathbf{d} \not
+                  \in {\rm img}(f)$. Die Funktion $f$ ist nicht surjektiv.<span
+                    class="qed"
+                    >$\square$</span
+                  >
                 </p>
               </div>
               <p>
