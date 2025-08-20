@@ -2,7 +2,7 @@ import blamedlines as bl
 import gleam/int
 import gleam/io
 import gleam/list
-import gleam/option.{type Option}
+import gleam/option.{type Option, None}
 import gleam/pair
 import gleam/result
 import gleam/string
@@ -389,6 +389,7 @@ pub fn renderer_html_2_wly(
         input_dir: path,
         output_dir: ".",
         prettifier_on_by_default: False,
+        prettier_dir: None,
       )
       |> vr.amend_renderer_paramaters_by_command_line_amendments(amendments)
 
@@ -403,7 +404,7 @@ pub fn renderer_html_2_wly(
         pipeline: pipeline_html_2_wly(),
         splitter: fn(vxml) { splitter(vxml, file) },
         emitter: fn(fragment) { emitter(fragment, prev, next) },
-        prettifier: vr.default_prettier_prettifier,
+        prettifier: vr.empty_prettifier,
       )
       |> vr.amend_renderer_by_command_line_amendments(amendments)
 

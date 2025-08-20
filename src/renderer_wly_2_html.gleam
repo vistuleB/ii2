@@ -1,7 +1,7 @@
 import blamedlines as bl
 import gleam/io
 import gleam/list
-import gleam/option.{Some}
+import gleam/option.{None, Some}
 import gleam/string
 import infrastructure as infra
 import pipeline_wly_2_html.{pipeline_wly_2_html}
@@ -291,6 +291,7 @@ pub fn renderer_wly_2_html(amendments: vr.CommandLineAmendments) -> Nil {
       input_dir: "./wly_content",
       output_dir: "output",
       prettifier_on_by_default: True,
+      prettier_dir: None,
     )
     |> vr.amend_renderer_paramaters_by_command_line_amendments(amendments)
 
