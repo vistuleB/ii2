@@ -23,10 +23,8 @@ fn html_input_lines_assembler(
       Ok(content) -> Ok(content)
       Error(e) -> Error(wp.FileError(e))
     })
-
     let input_lines = bl.string_to_input_lines(file_content, input_dir, 0)
-
-    io.println("• assembling " <> input_dir)
+    io.println(input_dir)
     Ok(input_lines)
   }
 }
@@ -382,8 +380,6 @@ pub fn renderer_html_2_wly(
       Nil,
     )
 
-    io.println("html_to_writerly converting " <> path <> " to writerly (?)")
-
     let parameters =
       vr.RendererParameters(
         input_dir: path,
@@ -392,8 +388,6 @@ pub fn renderer_html_2_wly(
         prettier_dir: None,
       )
       |> vr.amend_renderer_paramaters_by_command_line_amendments(amendments)
-
-    io.println("after amend_renderer...")
 
     let renderer =
       vr.Renderer(
@@ -408,13 +402,9 @@ pub fn renderer_html_2_wly(
       )
       |> vr.amend_renderer_by_command_line_amendments(amendments)
 
-    io.println("after renderer = ...")
-
     let debug_options =
       vr.default_renderer_debug_options()
       |> vr.amend_renderer_debug_options_by_command_line_amendments(amendments)
-
-    io.println("after debug_options = ...")
 
     case vr.run_renderer(renderer, parameters, debug_options) {
       Ok(Nil) -> Nil
