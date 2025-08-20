@@ -1,5 +1,5 @@
 import argv
-import blamedlines.{type Blame, type OutputLine, Blame, OutputLine}
+import blamedlines.{type Blame, type OutputLine, OutputLine, Src}
 import gleam/io
 import gleam/list
 import gleam/option.{Some}
@@ -33,7 +33,7 @@ type Ti2EmitterError {
 }
 
 fn blame_us(message: String) -> Blame {
-  Blame(message, -1, -1, [])
+  Src([], message, -1, -1)
 }
 
 fn prepend_0(number: String) {
@@ -328,6 +328,7 @@ pub fn main() {
           emitter: ti2_emitter,
           prettifier: vr.default_prettier_prettifier,
         )
+        |> vr.amend_renderer_by_command_line_amendments(amendments)
 
       let parameters =
         vr.RendererParameters(

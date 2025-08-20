@@ -16,7 +16,7 @@ import writerly as wp
 const ins = string.inspect
 
 fn blame_us(message: String) -> bl.Blame {
-  bl.Blame(message, -1, -1, [])
+  bl.Src([], message, -1, -1)
 }
 
 fn each_prev_next(
@@ -389,6 +389,7 @@ pub fn html_to_writerly(
         emitter: fn(fragment) { emitter(fragment, prev, next) },
         prettifier: vr.default_prettier_prettifier,
       )
+      |> vr.amend_renderer_by_command_line_amendments(amendments)
 
     io.println("after renderer = ...")
 
