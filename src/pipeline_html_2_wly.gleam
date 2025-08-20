@@ -3,7 +3,7 @@ import gleam/option.{None, Some}
 import infrastructure.{type Pipe} as infra
 import selector_library as sl
 
-pub fn html_pipeline() -> List(Pipe) {
+pub fn pipeline_html_2_wly() -> List(Pipe) {
   [
     dl.identity(),
     dl.find_replace_in_descendants_of([

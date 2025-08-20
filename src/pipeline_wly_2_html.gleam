@@ -4,7 +4,7 @@ import infrastructure.{type Pipe} as infra
 import prefabricated_pipelines as pp
 import selector_library as sl
 
-pub fn our_pipeline() -> List(Pipe) {
+pub fn pipeline_wly_2_html() -> List(Pipe) {
   [
     [
       dl.find_replace__outside(#("&ensp;", " "), []),

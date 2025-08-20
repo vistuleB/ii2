@@ -6,8 +6,8 @@ import gleam/option.{type Option}
 import gleam/pair
 import gleam/result
 import gleam/string
-import html_pipeline.{html_pipeline}
 import infrastructure as infra
+import pipeline_html_2_wly.{pipeline_html_2_wly}
 import simplifile
 import vxml.{type VXML} as vp
 import vxml_renderer as vr
@@ -346,7 +346,7 @@ fn directory_files_else_file(
   }
 }
 
-pub fn html_to_writerly(
+pub fn renderer_html_2_wly(
   path: String,
   amendments: vr.CommandLineAmendments,
 ) -> Nil {
@@ -384,7 +384,7 @@ pub fn html_to_writerly(
         source_parser: vr.default_html_source_parser(
           amendments.spotlight_key_values,
         ),
-        pipeline: html_pipeline(),
+        pipeline: pipeline_html_2_wly(),
         splitter: fn(vxml) { splitter(vxml, file) },
         emitter: fn(fragment) { emitter(fragment, prev, next) },
         prettifier: vr.default_prettier_prettifier,
