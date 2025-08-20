@@ -15,6 +15,22 @@ import writerly as wp
 
 const ins = string.inspect
 
+fn html_input_lines_assembler(
+  _spotlight_paths: List(String),
+) -> vr.BlamedLinesAssembler(wp.AssemblyError) {
+  fn(input_dir) {
+    use file_content <- result.try(case simplifile.read(input_dir) {
+      Ok(content) -> Ok(content)
+      Error(e) -> Error(wp.FileError(e))
+    })
+
+    let input_lines = bl.string_to_input_lines(file_content, input_dir, 0)
+
+    io.println("• assembling " <> input_dir)
+    Ok(input_lines)
+  }
+}
+
 fn blame_us(message: String) -> bl.Blame {
   bl.Src([], message, -1, -1)
 }
@@ -380,7 +396,7 @@ pub fn renderer_html_2_wly(
 
     let renderer =
       vr.Renderer(
-        assembler: vr.default_input_lines_assembler(amendments.spotlight_paths),
+        assembler: html_input_lines_assembler(amendments.spotlight_paths),
         source_parser: vr.default_html_source_parser(
           amendments.spotlight_key_values,
         ),
