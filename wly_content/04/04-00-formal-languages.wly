@@ -869,28 +869,18 @@
                         class=listing container
                         `find : Bst -&gt; String -&gt; Maybe String`
                         `find tree key =`
-
                         \ `case tree of`
-
                         \ `Empty _ -&gt;`
-
                         \ `Nothing`
                         ``
-
                         \ `Node ( keyHere, valueHere ) leftChild rightChild -&gt;`
-
                         \ `if key == keyHere then`
-
                         \ `Just valueHere`
                         ``
-
                         \ `else if key&lt; keyHere then`
-
                         \ `find leftChild key`
                         ``
-
                         \ `else`
-
                         \ `find rightChild key`
                     |> p
                         Als letztes Beispiel sehen Sie hier eine svg-Datei. Dies ist ein Dateiformat für Vektorgrafiken.
@@ -986,7 +976,6 @@
                             class=LessThanBracket
                             &lt;
                         `
-
                         `
                         |> span
                             class=LineBreak
@@ -1012,7 +1001,6 @@
                             class=WaitingForAttribute
                             \ 
                         `
-
                         `
                         |> span
                             class=LineBreak
@@ -1056,7 +1044,6 @@
                             class=WaitingForAttribute
                             \ 
                         `
-
                         `
                         |> span
                             class=LineBreak
@@ -1082,7 +1069,6 @@
                             class=WaitingForAttribute
                             \ 
                         `
-
                         `
                         |> span
                             class=LineBreak
@@ -1108,7 +1094,6 @@
                             class=WaitingForAttribute
                             \ 
                         `
-
                         `
                         |> span
                             class=LineBreak
@@ -1140,7 +1125,6 @@
                             class=LessThanBracket
                             &lt;
                         `
-
                         `
                         |> span
                             class=LineBreak
@@ -1172,7 +1156,6 @@
                             class=LessThanBracket
                             &lt;
                         `
-
                         `
                         |> span
                             class=LineBreak
@@ -1237,7 +1220,6 @@
                             class=WaitingForAttribute
                             \ 
                         `
-
                         `
                         |> span
                             class=LineBreak
@@ -1266,7 +1248,6 @@
                             class=LessThanBracket
                             &lt;
                         `
-
                         `
                         |> span
                             class=LineBreak
@@ -1298,7 +1279,6 @@
                             class=WaitingForAttribute
                             \ 
                         `
-
                         `
                         |> span
                             class=LineBreak
@@ -1312,7 +1292,6 @@
                             class=LessThanBracket
                             &lt;
                         `
-
                         `
                         |> span
                             class=LineBreak
@@ -1326,7 +1305,6 @@
                             class=LessThanBracket
                             &lt;
                         `
-
                         `
                     |> p
                         Was haben diese vier Beispiele gemeinsam? Es handelt sich in allen Fällen um _Daten_, die
@@ -1465,7 +1443,6 @@
                         `&lt;NameBlock&gt;       *-&gt;* &lt;AlphaNum&gt; *|*&lt;AlphaNum&gt;&lt;NameBlock&gt;`
                         `&lt;Label&gt;           *-&gt;* &lt;AlphaNumOrDash&gt; *|*&lt;AlphaNumOrDash&gt;&lt;Label&gt;`
                         `&lt;AlphaNumOrDash&gt;  *-&gt;* &lt;AlphaNum&gt; *|* -` 
-
                         `&lt;AlphaNum&gt;        *-&gt;* a *|* b *|* c *|* d *|* e *|* f *|* g *|* h *|* i *|* j *|* k *|* l *|* m *|* n *|* o *|* p *|* q *|* r *|* s *|* t *|* u *|* v *|* w *|* x *|* y *|* z`
                         `&lt;AlphaNum&gt;        *-&gt;* A *|* B *|* C *|* D *|* E *|* F *|* G *|* H *|* I *|* J *|* K *|* L *|* M *|* N *|* O *|* P *|* Q *|* R *|* S *|* T *|* U *|* V *|* W *|* X *|* Y *|* Z`
                     |> h2
@@ -1511,37 +1488,21 @@
                     |> pre
                         class=container
                         `&lt;EmailAddress&gt;  *-&gt;*&lt;User&gt;@&lt;Domain&gt;`
-
                         \ `*-&gt;*&lt;NameBlock&gt;.&lt;User&gt;@&lt;Domain&gt;` 
-
                         \ `*-&gt;*&lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Domain&gt;` 
-
                         \ `*-&gt;*&lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Domain&gt;` 
-
                         \ `*-&gt;*&lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;` 
-
                         \ `*-&gt;*&lt;AlphaNum&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;` 
-
                         \ `*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;` 
-
                         \ `*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;Label&gt;.&lt;Label&gt;` 
-
                         \ `*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;Label&gt;` 
-
                         \ `*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;Label&gt;` 
-
                         \ `*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt;` 
-
                         \ `*-&gt;* d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt;` 
-
                         \ `*-&gt;* d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;e`
-
                         \ `*-&gt;* d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de`
-
                         \ `*-&gt;* d.s@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de`
-
                         \ `*-&gt;* d.s@&lt;AlphaNumOrDash&gt;.b.de`
-
                         \ `*-&gt;* d.s@a.b.de` 
                     |> p
                         Nach dem gleichen Schema könnten wir `d.s.@-.-.--` ableiten, was
@@ -1570,11 +1531,9 @@
                         Wenn wir über formale Sprachen reden, so liegt immer eine (endliche) Menge von
                         Symbolen zugrunde, das Alphabet \(\Sigma\). Im Emailadressen-Beispiel war (\Sigma) recht groß:
                         die 52 Buchstaben; 10 Ziffern; die Zeichen `@ . -` 
-
                         . Für Java-Programme oder
                         andere Programmiersprachen kämen
                         noch weitere Zeichen hinzu, zum Beispiel `+ - / \ { }` 
-
                         \ und so weiter;
                         wenn wir alle Unicode-Zeichen miteinschließen, landen wir im Millionenbereich.
                         In den theoretischen Beispielen, die in diesem Kurs folgen werden, ist das Alphabet fast immer

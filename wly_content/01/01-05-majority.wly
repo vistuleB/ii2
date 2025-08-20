@@ -241,13 +241,9 @@
                     |> pre
                         class=listing
                         `def binomial(n,k):`
-
                         \ `if k == 0 or k == n:`
-
                         \ `return 1` 
-
                         \ `else:`
-
                         \ `return binomial(n-1,k-1) + binomial(n-1,k)`
                     der exponentielle Laufzeit aufweist, und der effizienten Implementierung mittels
                     _Dynamic Programming_, bei welchem wir uns die Zwischenergebnisse merken.

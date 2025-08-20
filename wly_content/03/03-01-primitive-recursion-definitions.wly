@@ -137,17 +137,11 @@
                         |> pre
                             class=listing
                             `def PrimRec(g, h):`
-
                             \ `def f(t,*x):`
-
                             \     `temp = g(*x)`
-
                             \     `for i in range(t):`
-
                             \ `temp = h(temp, i, *x)`
-
                             \     `return temp`
-
                             \ `return f` 
                         Die Forderung, dass man nur _eine_ lokale Variable durch die Schleife führen darf, scheint
                         sehr restriktiv; es ist aber wohl die einfachste Form einer Schleife, die wirklich etwas
@@ -210,7 +204,6 @@
                             style=color:red; background-color: yellow;
                             class=listing
                             `def add(x,y):`
-
                             \ `return x + y`
                         |> p
                             schreiben, denn unsere "Programmiersprache" ist Primitive Rekursion, nicht Python! Wir

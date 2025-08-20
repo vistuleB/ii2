@@ -503,20 +503,15 @@
                         class=listing container
                         `name: replace_b_by_c`
                         `init: init` 
-
                         `accept: accept` 
-
                         ``
                         `init, a`
                         `init, a, &gt;` 
-
                         ``
                         `init, b`
                         `init, c, &gt;` 
-
                         ``
                         `init, _` 
-
                         `accept, _, &gt;` 
                     |> p
                         Ungleich schwieriger ist die Aufgabe, jedes \(b\) durch ein \(bc\) zu
@@ -815,21 +810,14 @@
                         ``
                         `subsetSum : List Int -&gt; Int -&gt; Bool`
                         `subsetSum prices amount =`
-
                         \ `case ( prices, amount ) of`
-
                         \ `( [], 0 ) -&gt;`
-
                         \ `True`
                         ``
-
                         \ `( x :: rest, _ ) -&gt;`
-
                         \ `subsetSum rest amount || subsetSum rest (amount - x)`
                         ``
-
                         \ `( [], _ ) -&gt;`
-
                         \ `False`
                     |> p
                         Auf einer deterministischen Turingmaschine wäre das deutlich
