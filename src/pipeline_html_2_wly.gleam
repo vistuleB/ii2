@@ -59,12 +59,14 @@ pub fn pipeline_html_2_wly() -> List(Pipe) {
     )),
     dl.surround_elements_by(#(["NumberedTitle"], "go23_xU", "go23_xU")),
     dl.fold_into_text(#("go23_xU", " ")),
+    dl.insert_text_start_end(#("tt", #("`", "`"))),
+    dl.fold_contents_into_text("tt"),
+    dl.insert_text_start_end(#("code", #("`", "`"))),
+    dl.fold_contents_into_text("code"),
   ]
   |> infra.wrap_desugarers(
     infra.Off,
-    // sl.tag("marker")
-    // sl.key_val("test", "test")
-    sl.text("ächstes wollen wir zeig")
+    sl.verbatim("ächstes wollen wir zeig")
       |> infra.extend_selector_up(4)
       |> infra.extend_selector_down(16)
       |> infra.extend_selector_to_ancestors(

@@ -379,9 +379,7 @@
                             |> li
                                 Lege \(S\texttt{\$}\) auf den Stack.
                             |> li
-                                |> tt
-                                    while
-                                \ Stack nicht leer
+                                `while` Stack nicht leer
                             |> ol
                                 class=nested
                                 |> li
@@ -394,10 +392,7 @@
                                         |> li
                                             Wenn \(c = c'\), poppe \(c\) vom Stack;
                                         |> li
-                                            ansonsten 
-                                            |> tt
-                                                Reject
-                                            .
+                                            ansonsten `Reject`.
                                 |> li
                                     Wenn das oberste Symbol auf dem Stack ein Nichtterminalsymbol
                                     \(A\) ist:
@@ -419,22 +414,14 @@
                                                     \(A \rightarrow \beta_i\) gibt: wende Sie an; es ist die richtige
                                                     Produktion.
                                                 |> li
-                                                    Wenn es keine gibt: 
-                                                    |> tt
-                                                        Reject
-                                                    . Das Wort kann nicht
+                                                    Wenn es keine gibt: `Reject`. Das Wort kann nicht
                                                     abgeleitet werden.
                                                 |> li
                                                     Wenn es mehrere gibt: ende mit einem Laufzeitfehler;
                                                     die Grammatik ist nicht LL\((k)\).
                                 |> li
                                     Wenn das oberste Symbol \(\texttt{\$}\) ist:
-                                    wenn Eingabewort zu Ende 
-                                    |> tt
-                                        Accept
-                                    \ ansonsten 
-                                    |> tt
-                                        Reject
+                                    wenn Eingabewort zu Ende `Accept` ansonsten `Reject`
                     |> p
                         Die rot und fett gedruckte Zeile ist das "Herz" dieses Algorithmus. Um den Algorithmus
                         implementieren zu können, müssen wir es schaffen,
@@ -522,14 +509,7 @@
                             |> li
                                 Initialisiere \(K := \{\epsilon\}\)
                             |> li
-                                |> tt
-                                    for
-                                \ \(i=n\) 
-                                |> tt
-                                    down to
-                                \ 1 
-                                |> tt
-                                    do:
+                                `for` \(i=n\) `down to` 1 `do:`
                                 |> ul
                                     class=nested
                                     |> li
@@ -539,9 +519,7 @@
                                             // \(K\) ist jetzt
                                             \(\First_k(\sigma_i) \circ_k \dots \circ_k \First_k(\sigma_n)\)
                             |> li
-                                |> tt
-                                    return
-                                \ \(K\)
+                                `return` \(K\)
                         |> p
                             Wir müssen nur noch herausfinden, wie wir
                             \(\First_k(\sigma)\) für einzelne Zeichen \(\sigma\) berechnen.

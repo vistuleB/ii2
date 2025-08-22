@@ -145,18 +145,12 @@
                             einfachen und kurzen Phasen:
                         |> ol
                             |> li
-                                |> tt
-                                    copy
-                                : kopiert das \(w\) auf das zweite Band
+                                `copy`: kopiert das \(w\) auf das zweite Band
                             |> li
-                                |> tt
-                                    rewind
-                                : bewegt den Kopf des ersten Bandes zurück zum
+                                `rewind`: bewegt den Kopf des ersten Bandes zurück zum
                                 Anfang
                             |> li
-                                |> tt
-                                    compare
-                                : schaut, ob erstes und zweites Band den gleichen
+                                `compare`: schaut, ob erstes und zweites Band den gleichen
                                 Inhalt haben.
                         Den "Quelltext" für
                         |> a
@@ -176,15 +170,9 @@
                                 ::::ChapterCtr.::::SectionCtr.::++ExoCtr
                             \ 
                         Schreiben Sie eine Mehrband-Turingmaschine, die Binärzahlen addiert.
-                        Wenn also beispielsweise 
-                        |> tt
-                            1010+110
-                        \ auf dem ersten Band
+                        Wenn also beispielsweise `1010+110` auf dem ersten Band
                         (Eingabeband) steht, dann soll nach Abschluss der Berechnung das
-                        Ergebnis auf dem Ausgabeband stehen, also 
-                        |> tt
-                            10000
-                        .
+                        Ergebnis auf dem Ausgabeband stehen, also `10000`.
                         |> p
                             *Tip.* Verwenden Sie drei Bänder. Sei der Bandinhalt
                             \(x+y\). In einer ersten Phase kopieren Sie \(x\) auf das zweite
@@ -199,10 +187,7 @@
                             carry1, 0, 1, 0,&lt;,&lt;,&lt;
                         |> p
                             Ein lästiges Detail ist, dass \(y\) kürzer sein könnte als \(x\) und
-                            Sie daher in das 
-                            |> tt
-                                +
-                            \ reinlaufen könnten; wenn \(x\) kürzer
+                            Sie daher in das `+` reinlaufen könnten; wenn \(x\) kürzer
                             ist als \(y\), dann könnten Sie auf dem zweiten Band in ein
                             \(\square\) reinlaufen. Wie ist dieser Fall zu behandeln?
                     |> p
@@ -477,16 +462,10 @@
                             können alles in einer endlichen Zustandsmenge \(Q'\) speichern.
                         |> p
                             Wenn der \(M\)-Zustand (der natürlich auch im \(M'\)-Zustand
-                            gespeichert ist),
-                            |> tt
-                                accept
-                            erreicht hat, dann macht \(M'\) noch eine Aufräumphase, in welcher
+                            gespeichert ist),`accept`erreicht hat, dann macht \(M'\) noch eine Aufräumphase, in welcher
                             sie alle Symbole, die nicht zum Ausgabeband gehören, durch
                             \(\square\) ersetzt. Dann wechselt sie in ihren eigenen
-                            akzeptierenden Zustand 
-                            |> tt
-                                accept'
-                            .
+                            akzeptierenden Zustand `accept'`.
                         |> span
                             class=qed
                             \(\square\)
@@ -584,10 +563,7 @@
                         |> a
                             href=../code/turing machines/insert-z-before-y.txt
                             insert-z-before-y.txt
-                        ansehen. Geben Sie beispielsweise 
-                        |> tt
-                            xxyxyyxx
-                        \ als Eingabewort
+                        ansehen. Geben Sie beispielsweise `xxyxyyxx` als Eingabewort
                         ein.
                     |> p
                         Wir können von nun an also so tun, als hätten unsere Turingmaschinen
@@ -602,21 +578,7 @@
                         _Dictionaries_, die Key-Value-Paare speichern:
                     |> pre
                         class=container
-                        |> code
-                            class=terminalPrompt
-                            python -i
-                        |> code
-                            class=pythonPrompt
-
-                            dict = {"karl" : 42, "eva" : 35, "werner" : 20}
-                        |> code
-                            class=pythonPrompt
-                            dict["eva"]
-                        |> code
-                            class=terminalOutput
-                            35
-                        |> code
-                            class=pythonPrompt
+                        `python -i``dict = {"karl" : 42, "eva" : 35, "werner" : 20}``dict["eva"]``35```
                     |> p
                         Im Zweifelsfall sind diese als Hashmaps oder Rot-Schwarz-Bäume oder
                         B-Bäume implementiert. Hier interessiert uns nicht so sehr die
@@ -863,10 +825,7 @@
                                 loading=lazy
                         |> p
                             Sollte ein Paar \((q,c)\) weniger als zwei Folgemöglichkeiten geben,
-                            so erfinden wir einfach neue, die jedoch direkt nach
-                            |> tt
-                                reject
-                            \ führen. Es sollte klar sein, dass diese Änderungen
+                            so erfinden wir einfach neue, die jedoch direkt nach`reject` führen. Es sollte klar sein, dass diese Änderungen
                             rein kosmetisch sind und nichts an der Funktionsweise von \(M\)
                             ändern.
                         |> p

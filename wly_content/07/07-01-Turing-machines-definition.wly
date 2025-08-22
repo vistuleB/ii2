@@ -190,16 +190,7 @@
                                 \begin{align*}
                                 \delta : Q \times \Gamma \rightarrow Q \times \Gamma \times \lsr \ ,
                                 \end{align*}
-                                wobei 
-                                |> tt
-                                    L
-                                \ für _gehe eine Zelle nach links_ steht,
-                                |> tt
-                                    R
-                                \ für rechts und 
-                                |> tt
-                                    S
-                                \ für _stay_, also die Anweisung, den Kopf
+                                wobei `L` für _gehe eine Zelle nach links_ steht,`R` für rechts und `S` für _stay_, also die Anweisung, den Kopf
                                 nicht zu bewegen.
                             |> li
                                 Zwei besonderen Zuständen $\qaccept$ und $\qreject$.
@@ -359,10 +350,7 @@
                     Anwendung von $\hat{\delta}$ schlussendlich erreicht wird.
                     Hier taucht ein Problem auf: es ist nicht gesagt, dass die Turingmaschine,
                     von Konfiguration \(C\) beginnend, überhaupt irgendwann in einer Endkonfiguration landen
-                    wird. Daher kann \(\hat{\delta}^*\) auch 
-                    |> tt
-                        undefined
-                    \ sein:
+                    wird. Daher kann \(\hat{\delta}^*\) auch `undefined` sein:
                     \begin{align*}
                     \hat{\delta}^* (C) := \begin{cases}
                     \hat{\delta}^{(i)} (C)&
@@ -385,10 +373,7 @@
                     laufen, bis sie einen Endzustand erreicht. Die erreichte Konfiguration bezeichnen
                     wir mit \(\hat{M}(x)\). Falls nie ein Endzustand erreicht wird (die Turingmaschine also
                     endlos läuft),
-                    ist \(\hat{M}(x)\) 
-                    |> tt
-                        undefined
-                    .
+                    ist \(\hat{M}(x)\) `undefined`.
                     |> h2
                         Sprachen entscheiden
                     |> p
@@ -402,13 +387,7 @@
                         \(P(x) = \texttt{true}\). Wenn wir es mit einem Entscheidungsproblem
                         zu tun haben und dieses mit einer Turingmaschine lösen wollen,
                         so interessiert uns am Endergebnis \(\hat{M}(x)\) (also der erreichten Endkonfiguration)
-                        nicht der Bandinhalt, sondern nur, ob der Zustand 
-                        |> tt
-                            accept
-                        \ oder
-                        |> tt
-                            reject
-                        \ ist. Wir definieren daher
+                        nicht der Bandinhalt, sondern nur, ob der Zustand `accept` oder`reject` ist. Wir definieren daher
                         \begin{align*}
                         f_M(x) = \begin{cases}
                         \texttt{accept}&amp;\textnormal{ falls $\state(\hat{M}(x)) = \qaccept$, wenn also $\hat{M}(x)$

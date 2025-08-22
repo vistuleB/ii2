@@ -45,14 +45,8 @@
                         .
                     |> p
                         Ich möchte nun eine kontextfreie Grammatik für arithmetische Ausdrücke der
-                        Form 
-                        |> tt
-                            ((31+402)*83)
-                        \ entwerfen. Der Einfachheit halber bestehe ich
-                        auf strenger Klammerung, so wäre 
-                        |> tt
-                            (2*(1+2+3))
-                        \ zum Beispiel nicht erlaubt.
+                        Form `((31+402)*83)` entwerfen. Der Einfachheit halber bestehe ich
+                        auf strenger Klammerung, so wäre `(2*(1+2+3))` zum Beispiel nicht erlaubt.
                         Unsere Grammatik soll allgemeine Dezimalzahlen darstellen können.
                         Das Alphabet ist somit
                         $\Sigma = \{\texttt{0},\texttt{1},\texttt{2},\texttt{3},\texttt{4},
@@ -72,10 +66,7 @@
                         Die Nichtterminale sind also $E$ (Expression), $N$ (Number) und $D$ (Digit). Wir haben auch
                         den einzelnen Produktionen Namen gegeben, bis auf die der Form $D \rightarrow i$.
                         Was soll nun unser Parser tun? Er soll, gegeben ein Eingabewort $w \in L$, den
-                        _Ableitungsbaum_ konstruieren, für 
-                        |> tt
-                            ((31+402)*83)
-                        \ also
+                        _Ableitungsbaum_ konstruieren, für `((31+402)*83)` also
                     |> figure
                         |> img
                             style=height:20em
@@ -85,10 +76,7 @@
                         Zuerst aber: wir wollen mit diesem Baum etwas Sinnvolles tun. Zum Beispiel
                         _auswerten_, so dass am Ende eine Zahl rauskommt, im obigen Beispiel
                         also $(31 + 402) \cdot 83 = 35939$. Oder den Ausdruck umformen von
-                        Infix-Notation zu Präfixnotation, also
-                        |> tt
-                            (* (+ 31 402) 83)
-                        . All dies wird sehr einfach sein, sobald wir
+                        Infix-Notation zu Präfixnotation, also`(* (+ 31 402) 83)`. All dies wird sehr einfach sein, sobald wir
                         den Ableitungsbaum als Datenstruktur vorliegen haben.
                     |> h2
                         Eine Datenstruktur für Ableitungsbäume
@@ -99,101 +87,25 @@
                         die das Interface $X$ implementiert und $\alpha$ als Klassenvariable enthält.
                     |> ul
                         |> li
-                            |> tt
-                                interface Expression
-                            \ wird implementiert von
+                            `interface Expression` wird implementiert von
                             |> ul
                                 |> li
-                                    |> tt
-                                        class Sum
-                                    , die als Klassenvariable 
-                                    |> tt
-                                        Exrepssion e1, e2
-                                    \ enthält,
+                                    `class Sum`, die als Klassenvariable `Exrepssion e1, e2` enthält,
                                 |> li
-                                    |> tt
-                                        class Product
-                                    , die als Klassenvariable 
-                                    |> tt
-                                        Exrepssion e1, e2
-                                    \ enthält,
+                                    `class Product`, die als Klassenvariable `Exrepssion e1, e2` enthält,
                                 |> li
-                                    |> tt
-                                        class JustNumber
-                                    , die als Klassenvariable nur eine 
-                                    |> tt
-                                        Number number
-                                    enthält;
+                                    `class JustNumber`, die als Klassenvariable nur eine `Number number`enthält;
                         |> li
-                            |> tt
-                                interface Number
-                            \ wird implementiert von
+                            `interface Number` wird implementiert von
                             |> ul
                                 |> li
-                                    |> tt
-                                        class MultiDigitNumber
-                                    , die als Klassenvariable eine
-                                    |> tt
-                                        Number
-                                    \ und eine 
-                                    |> tt
-                                        Digit
-                                    \ erhält und
+                                    `class MultiDigitNumber`, die als Klassenvariable eine`Number` und eine `Digit` erhält und
                                 |> li
-                                    |> tt
-                                        class SingleDigitNumber
-                                    , die als Klassenvariable ein 
-                                    |> tt
-                                        Digit
-                                    enthält;
+                                    `class SingleDigitNumber`, die als Klassenvariable ein `Digit`enthält;
                         |> li
-                            |> tt
-                                interface Digit
-                            \ wird implementiert von
-                            |> tt
-                                class DigitOne
-                            ,
-                            |> tt
-                                class DigitTwo
-                            ,
-                            |> tt
-                                class DigitThree
-                            ,
-                            |> tt
-                                class DigitFour
-                            ,
-                            |> tt
-                                class DigitFive
-                            ,
-                            |> tt
-                                class DigitSix
-                            ,
-                            |> tt
-                                class DigitSeven
-                            ,
-                            |> tt
-                                class DigitEight
-                            \ und
-                            |> tt
-                                class DigitNine
-                            .
+                            `interface Digit` wird implementiert von`class DigitOne`,`class DigitTwo`,`class DigitThree`,`class DigitFour`,`class DigitFive`,`class DigitSix`,`class DigitSeven`,`class DigitEight` und`class DigitNine`.
                     |> p
-                        In unserem Anwendungsfall hat jedes Interface eine Methode
-                        |> tt
-                            public int toInt()
-                        . Interface 
-                        |> tt
-                            Expression
-                        \ hat zusätzlich noch
-                        die Methode 
-                        |> tt
-                            String toPrefixNotation()
-                        . Ich schreibe auch ein
-                        Über-Interface 
-                        |> tt
-                            ParseObject
-                        , das alle Interfaces zusammenfasst.
-                        Um uns das Debugging zu erleichtern, überschreibe ich in jeder Klasse die Methode
-                        |> tt
-                            public String toString()
-                        .
+                        In unserem Anwendungsfall hat jedes Interface eine Methode`public int toInt()`. Interface `Expression` hat zusätzlich noch
+                        die Methode `String toPrefixNotation()`. Ich schreibe auch ein
+                        Über-Interface `ParseObject`, das alle Interfaces zusammenfasst.
+                        Um uns das Debugging zu erleichtern, überschreibe ich in jeder Klasse die Methode`public String toString()`.
