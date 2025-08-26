@@ -10,10 +10,7 @@ pub fn pipeline_wly_2_html() -> List(Pipe) {
       dl.find_replace__outside(#("&ensp;", " "), []),
       dl.normalize_begin_end_align(#(infra.DoubleDollar, [infra.DoubleDollar])),
     ],
-    pp.create_mathblock_elements(
-      [infra.DoubleDollar, infra.BeginEndAlign, infra.BeginEndAlignStar],
-      infra.DoubleDollar,
-    ),
+    pp.create_mathblock_elements([infra.DoubleDollar, infra.BeginEndAlign, infra.BeginEndAlignStar], infra.DoubleDollar),
     pp.splitting_empty_lines_cleanup(),
     pp.create_math_elements(
       [infra.BackslashParenthesis, infra.SingleDollar],
@@ -23,17 +20,9 @@ pub fn pipeline_wly_2_html() -> List(Pipe) {
     pp.splitting_empty_lines_cleanup(),
     pp.create_mathblock_elements([infra.DoubleDollar], infra.DoubleDollar),
     [
-      dl.append_attribute__batch([
-        #("Book", "counter", "BookLevelSectionCounter"),
-      ]),
-      dl.associate_counter_by_prepending_incrementing_attribute(#(
-        "section",
-        "BookLevelSectionCounter",
-        infra.Continue,
-      )),
-      dl.append_attribute__batch([
-        #("section", "path", "/lecture-notes::øøBookLevelSectionCounter"),
-      ]),
+      dl.append_attribute(#("Book", "counter", "BookLevelSectionCounter")),
+      dl.associate_counter_by_prepending_incrementing_attribute(#("section", "BookLevelSectionCounter", infra.Continue)),
+      dl.append_attribute(#("section", "path", "/lecture-notes::øøBookLevelSectionCounter")),
       dl.unwrap("WriterlyBlankLine"),
       dl.concatenate_text_nodes(),
     ],
@@ -47,11 +36,7 @@ pub fn pipeline_wly_2_html() -> List(Pipe) {
       dl.identity(),
       dl.handles_substitute(#("", "", "", [], [])),
       dl.concatenate_text_nodes(),
-      dl.unwrap_if_no_child_meets_condition(#(
-        "p",
-        infra.is_text_or_is_one_of(_, ["b", "i", "a", "span"]),
-        "",
-      )),
+      dl.unwrap_if_no_child_meets_condition(#("p", infra.is_text_or_is_one_of(_, ["b", "i", "a", "span"]))),
       dl.unwrap_if_child_of([#("p", ["span", "code", "tt", "figcaption", "em"])]),
       dl.free_children(#("pre", "p")),
       dl.free_children(#("ul", "p")),
@@ -68,9 +53,6 @@ pub fn pipeline_wly_2_html() -> List(Pipe) {
     sl.verbatim("ächstes wollen wir zeig")
       |> infra.extend_selector_up(4)
       |> infra.extend_selector_down(16)
-      |> infra.extend_selector_to_ancestors(
-        with_elder_siblings: True,
-        with_attributes: False,
-      ),
+      |> infra.extend_selector_to_ancestors(with_elder_siblings: True, with_attributes: False),
   )
 }

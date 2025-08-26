@@ -1,8 +1,9 @@
-import blamedlines as bl
+import blame as bl
+import io_lines as io_l
 import gleam/int
 import gleam/io
 import gleam/list
-import gleam/option.{type Option, None}
+import gleam/option.{type Option}
 import gleam/pair
 import gleam/result
 import gleam/string
@@ -17,13 +18,13 @@ const ins = string.inspect
 
 fn html_input_lines_assembler(
   _spotlight_paths: List(String),
-) -> vr.BlamedLinesAssembler(wp.AssemblyError) {
+) -> vr.Assembler(wp.AssemblyError) {
   fn(input_dir) {
     use file_content <- result.try(case simplifile.read(input_dir) {
       Ok(content) -> Ok(content)
       Error(e) -> Error(wp.FileError(e))
     })
-    let input_lines = bl.string_to_input_lines(file_content, input_dir, 0)
+    let input_lines = io_l.string_to_input_lines(file_content, input_dir, 0)
     io.println(input_dir)
     Ok(input_lines)
   }
@@ -201,7 +202,7 @@ fn splitter(
   file: String,
 ) -> Result(List(vr.OutputFragment(Nil, VXML)), a) {
   let wly_file = file |> string.drop_end(5) <> ".wly"
-  Ok([vr.OutputFragment(wly_file, vxml, Nil)])
+  Ok([vr.OutputFragment(Nil, wly_file, vxml)])
 }
 
 fn remove_line_break_from_end(res: String) -> String {
@@ -263,7 +264,7 @@ fn emitter(
   fragment: vr.OutputFragment(Nil, VXML),
   prev_file: Option(String),
   next_file: Option(String),
-) -> Result(vr.OutputFragment(Nil, List(bl.OutputLine)), String) {
+) -> Result(vr.OutputFragment(Nil, List(io_l.OutputLine)), String) {
   let filename = fragment.path
   let vxml = fragment.payload
   let title_en =
@@ -322,9 +323,9 @@ fn emitter(
   let writerlys = wp.vxmls_to_writerlys([root])
 
   Ok(vr.OutputFragment(
+    Nil,
     chapter_directory <> "/" <> filename,
     list.map(writerlys, wp.writerly_to_output_lines) |> list.flatten,
-    Nil,
   ))
 }
 
@@ -382,19 +383,17 @@ pub fn renderer_html_2_wly(
 
     let parameters =
       vr.RendererParameters(
+        pipeline_table: False,
         input_dir: path,
         output_dir: ".",
-        prettifier_on_by_default: False,
-        prettier_dir: None,
+        prettifier_behavior: vr.PrettifierOff,
       )
       |> vr.amend_renderer_paramaters_by_command_line_amendments(amendments)
 
     let renderer =
       vr.Renderer(
         assembler: html_input_lines_assembler(amendments.spotlight_paths),
-        source_parser: vr.default_html_source_parser(
-          amendments.spotlight_key_values,
-        ),
+        parser: vr.default_html_parser(amendments.spotlight_key_values),
         pipeline: pipeline_html_2_wly(),
         splitter: fn(vxml) { splitter(vxml, file) },
         emitter: fn(fragment) { emitter(fragment, prev, next) },
