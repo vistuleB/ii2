@@ -326,7 +326,24 @@
                         inkorrekt:
                     |> pre
                         class=container
-                        `pair(5,pair(7,9))``11031``pair(7,9)``143``pair(5,143)``11031`
+                        |> code
+                            class=pythonPrompt
+                            pair(5,pair(7,9))
+                        |> code
+                            class=terminalOutput
+                            11031
+                        |> code
+                            class=pythonPrompt
+                            pair(7,9)
+                        |> code
+                            class=terminalOutput
+                            143
+                        |> code
+                            class=pythonPrompt
+                            pair(5,143)
+                        |> code
+                            class=terminalOutput
+                            11031
                     |> p
                         Das Problem ist, dass wir das Ende der Liste nicht kennen. Wir lösen das Problem, indem
                         wir die leere Liste mit \(0\) codieren und dann aber beim Davorhängen eines Elements
@@ -340,7 +357,30 @@
                         Jetzt klappt alles wunderbar:
                     |> pre
                         class=container
-                        `push(11, push(7, push(5, 0)))``90537``head(90537)``11``head(tail(90537))``7``head(tail(tail(90537)))``5`
+                        |> code
+                            class=pythonPrompt
+                            push(11, push(7, push(5, 0)))
+                        |> code
+                            class=terminalOutput
+                            90537
+                        |> code
+                            class=pythonPrompt
+                            head(90537)
+                        |> code
+                            class=terminalOutput
+                            11
+                        |> code
+                            class=pythonPrompt
+                            head(tail(90537))
+                        |> code
+                            class=terminalOutput
+                            7
+                        |> code
+                            class=pythonPrompt
+                            head(tail(tail(90537)))
+                        |> code
+                            class=terminalOutput
+                            5
                     |> p
                         *Native Implementierung.* Die primitive Rekursion ist
                         ein theoretischer Berechenbarkeitsbegriff für Funktionen
@@ -356,4 +396,7 @@
                         Datei `stockpile.py`:
                     |> pre
                         class=listing
-                        `def pair(x,y):` `return int(((x+y+1) * (x+y)) / 2 + x )`
+                        |> code
+                            style=counter-set: listing 63;
+                            def pair(x,y):
+                        \ `return int(((x+y+1) * (x+y)) / 2 + x )`

@@ -5,8 +5,9 @@ import gleam/list
 import gleam/option.{Some}
 import gleam/string
 import infrastructure as infra
+import on
 import pipeline_wly_2_html.{pipeline_wly_2_html}
-import vxml.{type VXML, BlamedAttribute}
+import vxml.{type VXML, Attribute}
 import vxml_renderer as vr
 
 const ins = string.inspect
@@ -45,9 +46,9 @@ fn prepend_0(number: String) {
 fn ti2_splitter(root: VXML) -> Result(List(TI2Fragment(VXML)), Ti2SplitterError) {
   let chapter_vxmls = infra.descendants_with_tag(root, "section")
 
-  use toc_vxml <- infra.on_error_on_ok(
-    infra.unique_child_with_tag(root, "TOCAuthorSuppliedContent"),
-    with_on_error: fn(error) {
+  use toc_vxml <- on.error_ok(
+    infra.v_unique_child_with_tag(root, "TOCAuthorSuppliedContent"),
+    on_error: fn(error) {
       case error {
         infra.MoreThanOne -> Error(MoreThanOneTOCAuthorSuppliedContent)
         infra.LessThanOne -> Error(NoTOCAuthorSuppliedContent)
@@ -66,9 +67,9 @@ fn ti2_splitter(root: VXML) -> Result(List(TI2Fragment(VXML)), Ti2SplitterError)
       ],
       list.index_map(chapter_vxmls, fn(vxml, index) {
         let assert Some(title_attr) =
-          infra.v_attribute_with_key(vxml, "title_en")
+          infra.v_first_attribute_with_key(vxml, "title_en")
         let assert Some(number_attribute) =
-          infra.v_attribute_with_key(vxml, "number")
+          infra.v_first_attribute_with_key(vxml, "number")
         let section_name =
           number_attribute.value
           |> string.split(".")
@@ -91,11 +92,11 @@ fn ti2_section_emitter(
   number: Int,
 ) -> Result(TI2Fragment(BL), Ti2EmitterError) {
   let number_attribute =
-    BlamedAttribute(blame_us("lbp_fragment_emitterL65"), "count", ins(number))
+    Attribute(blame_us("lbp_fragment_emitterL65"), "count", ins(number))
 
-  use updated_payload <- infra.on_error_on_ok(
-    over: infra.prepend_unique_key_attribute(fragment.payload, number_attribute),
-    with_on_error: fn(_) {
+  use updated_payload <- on.error_ok(
+    infra.v_prepend_unique_key_attribute(fragment.payload, number_attribute),
+    on_error: fn(_) {
       Error(NumberAttributeAlreadyExists(fragment.classifier, number))
     },
   )
@@ -245,7 +246,7 @@ fn toc_emitter(
         ),
       ],
       fragment.payload
-        |> infra.get_children
+        |> infra.v_get_children
         |> list.map(fn(vxml) { vxml.vxml_to_html_output_lines(vxml, 8, 2) })
         |> list.flatten,
       [
@@ -273,8 +274,8 @@ fn ti2_emitter(
 pub fn renderer_wly_2_html(amendments: vr.CommandLineAmendments) -> Nil {
   let renderer =
     vr.Renderer(
-      assembler: vr.default_assembler(amendments.spotlight_paths),
-      parser: vr.default_writerly_parser(amendments.spotlight_key_values),
+      assembler: vr.default_assembler(amendments.only_paths),
+      parser: vr.default_writerly_parser(amendments.only_key_values),
       pipeline: pipeline_wly_2_html(),
       splitter: ti2_splitter,
       emitter: ti2_emitter,
@@ -284,7 +285,7 @@ pub fn renderer_wly_2_html(amendments: vr.CommandLineAmendments) -> Nil {
 
   let parameters =
     vr.RendererParameters(
-      pipeline_table: True,
+      table: True,
       input_dir: "./wly_content",
       output_dir: "output",
       prettifier_behavior: vr.PrettifierOff,

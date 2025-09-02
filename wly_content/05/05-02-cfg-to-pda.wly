@@ -99,15 +99,29 @@
                         B&amp;\rightarrow \texttt{[} C \texttt{]} S \\
                         C&amp;\rightarrow \texttt{(} A \texttt{)} S \ | \ \texttt{()}S \\
                         \end{align*}
-                        Ein Wort in der erzeugten Sprache wäre zum Beispiel`{[()()]()}()`
+                        Ein Wort in der erzeugten Sprache wäre zum Beispiel
+                        |> tt
+                            {[()()]()}()
                         |> p
                             Schreiben wir nun einen Kellerautomaten, der diese Sprache akzeptiert. Die
                             Idee ist, dass wir Terminalsymbole und Nichtterminalsymbole auf den Stack legen.
-                            Ein `[` oben auf dem Stack bedeutet dann _ich will jetzt sofort ein `[`lesen_;
+                            Ein 
+                            |> tt
+                                [
+                            \ oben auf dem Stack bedeutet dann _ich will jetzt sofort ein 
+                            |> tt
+                                [
+                            lesen_;
                             ein Nichtterminal wie \(A\) oben auf dem Stack bedeutet, dass
                             wir als nächstes ein von \(A\) ableitbares Wort, also ein \(A \rightarrow w \in
                             \Sigma^*\) lesen wollen.
-                            Um ein \(w\) mit \(A \rightarrow w\) lesen zu können, müssen wir _sofort_ ein`{` lesen, dann ein Wort \(v\) mit \(B \rightarrow v\), dann ein `}` und
+                            Um ein \(w\) mit \(A \rightarrow w\) lesen zu können, müssen wir _sofort_ ein
+                            |> tt
+                                {
+                            \ lesen, dann ein Wort \(v\) mit \(B \rightarrow v\), dann ein 
+                            |> tt
+                                }
+                            \ und
                             so weiter.
                             Wir können das also im Automaten implementieren, indem wir
                             \(A\) vom Stack löschen und durch \(\texttt{\{} B \texttt{\}} S\) auf den Stack legen,
@@ -143,7 +157,10 @@
                         Wir legen anfangs ein \(S\) auf den leeren Stack. Wenn dieses \(S\) abgearbeitet
                         ist und das Wort zu Ende ist, akzeptieren wir, und nur dann. Um festzustellen,
                         dass wir wirklich den Stack ganz leer gemacht haben, brauchen wir die
-                        Markierung `$`. Also:
+                        Markierung 
+                        |> tt
+                            $
+                        . Also:
                         \begin{align*}
                         (\qstart, \epsilon) \step{\epsilon} (q_1, S \$) \\
                         (q_1, \$) \step{\epsilon} (\qend, \epsilon)

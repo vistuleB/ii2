@@ -214,12 +214,17 @@
                         In dieser Codierung behalten wir zwei Konventionen bei: wenn eine Regel
                         "fehlt", also beispielsweise für \(\delta(10,a)\) die Zelle leer ist, dann
                         soll das in den Zustand $\qreject$ führen; wenn in der Zelle
-                        nur ein Richtungszeichen, also beispielsweise `01,1,R` steht,
+                        nur ein Richtungszeichen, also beispielsweise 
+                        |> tt
+                            01,1,R
+                        \ steht,
                         dann ist das eine Abkürzung für
                         \begin{align*}
                         \delta(01,1) = (01,1,\texttt{R}),
                         \end{align*}
-                        also`#01,1,01,1,R#`
+                        also
+                        |> tt
+                            #01,1,01,1,R#
                     |> p
                         Wir können nun _jede_ Turingmaschine
                         über dem Alphabet

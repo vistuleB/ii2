@@ -1,7 +1,7 @@
 import argv
 import gleam/io
 import gleam/string
-import infrastructure as infra
+import on
 import renderer_html_2_wly
 import renderer_wly_2_html
 import vxml_renderer as vr
@@ -26,13 +26,13 @@ pub fn main() {
 
   case args {
     ["--parse-html", path, ..rest] -> {
-      use amendments <- infra.on_error_on_ok(
+      use amendments <- on.error_ok(
         vr.process_command_line_arguments(rest, []),
         fn(error) {
           io.println("")
           io.println("command line error: " <> ins(error))
           io.println("")
-          vr.cli_usage()
+          vr.basic_cli_usage()
           cli_usage_supplementary()
         },
       )
@@ -49,17 +49,17 @@ pub fn main() {
 
     ["--help"] | ["-h"] -> {
       cli_usage_supplementary()
-      vr.cli_usage()
+      vr.basic_cli_usage()
     }
 
     _ -> {
-      use amendments <- infra.on_error_on_ok(
+      use amendments <- on.error_ok(
         vr.process_command_line_arguments(args, []),
         fn(error) {
           io.println("")
           io.println("command line error: " <> ins(error))
           io.println("")
-          vr.cli_usage()
+          vr.basic_cli_usage()
           cli_usage_supplementary()
         },
       )

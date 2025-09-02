@@ -219,7 +219,24 @@
                         \ herunter,
                         kompilieren und starten Sie es.
                         |> pre
-                            `java TestRegex``Please enter a regular expression:` (a+)(:a+)*`Enter words to be matched, one per line``aaaaa:aa:aaaa:a``true``aaa:aa:``false`
+                            |> code
+                                class=terminalPrompt
+                                java TestRegex
+                            |> code
+                                class=terminalOutput
+                                Please enter a regular expression:
+                            \ (a+)(:a+)*
+                            |> code
+                                class=terminalOutput
+                                Enter words to be matched, one per line
+                            `aaaaa:aa:aaaa:a`
+                            |> code
+                                class=terminalOutput
+                                true
+                            `aaa:aa:`
+                            |> code
+                                class=terminalOutput
+                                false
                         |> p
                             Schreiben Sie nun einen regulären Ausdruck \(R\) für die obige Sprache und testen Sie ihn
                             mit dem Java-Programm.

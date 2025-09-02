@@ -58,7 +58,10 @@
                         Wenn die Maschine kein \(a\) mehr findet und auch kein \(b\) oder \(c\) mehr da ist,
                         akzeptiert die Maschine.
                         Wenn unterwegs ein "Fehler" geschieht, beispielsweise die Maschine ein \(b\) sucht
-                        aber keines findet, wechselt sie in den `reject`-Zustand.
+                        aber keines findet, wechselt sie in den 
+                        |> tt
+                            reject
+                        -Zustand.
                         |> p
                             *Formellere Beschreibung.* Als Bandalphabet verwenden wir
                             \begin{align*}
@@ -73,24 +76,50 @@
                         Die "Bedeutung" dieser Zustände ist:
                         |> ul
                             |> li
-                                `findA`: gehe nach links, bis Du ein \(a\) findest, ersetze es durch \(X\) und
+                                |> tt
+                                    findA
+                                : gehe nach links, bis Du ein \(a\) findest, ersetze es durch \(X\) und
                                 wechsle dann
-                                in `findB`. Wenn Du allerdings in ein
-                                \(\square\) läufst, bist Du am linken Rand und es gibt keine \(a\) mehr; wechsle nach`noA` und gehe ein Feld nach rechts.
+                                in 
+                                |> tt
+                                    findB
+                                . Wenn Du allerdings in ein
+                                \(\square\) läufst, bist Du am linken Rand und es gibt keine \(a\) mehr; wechsle nach
+                                |> tt
+                                    noA
+                                \ und gehe ein Feld nach rechts.
                             |> li
-                                `findB`: gehe nach rechts, bis Du ein \(b\) gefunden hast; ignoriere
+                                |> tt
+                                    findB
+                                : gehe nach rechts, bis Du ein \(b\) gefunden hast; ignoriere
                                 auf dem Weg alle \(a\) und alle \(X\); wenn Du \(b\) liest, ersetze es durch \(X\) und
-                                gehe nach`findC`;jedes andere Zeichen erzeugt einen Fehler.
+                                gehe nach
+                                |> tt
+                                    findC
+                                ;jedes andere Zeichen erzeugt einen Fehler.
                             |> li
-                                `findC`: gehe nach rechts, bis Du ein \(c\) gefunden hast;
+                                |> tt
+                                    findC
+                                : gehe nach rechts, bis Du ein \(c\) gefunden hast;
                                 ignoriere derweil alle \(b\) und \(X\); wenn Du ein \(c\) liest,
-                                ersetze es durch \(X\) und gehe in Zustand `findA`.
+                                ersetze es durch \(X\) und gehe in Zustand 
+                                |> tt
+                                    findA
+                                .
                             |> li
-                                `noA`: wir stehen nun am Anfang des Bandinhalts und wissen,
+                                |> tt
+                                    noA
+                                : wir stehen nun am Anfang des Bandinhalts und wissen,
                                 dass es kein \(a\) mehr gibt. Wir müssen jetzt überprüfen, dass es auch keine
                                 \(b,c\) mehr gibt. Also: gehe nach rechts, ignoriere alle \(X\). Wenn Du ein
-                                \(b\) oder \(c\) triffst, gehe nach `reject`. Wenn Du ein
-                                \(\square\) triffst, dann besteht das Wort nur noch aus \(X\). Wechsel nach`accept`.
+                                \(b\) oder \(c\) triffst, gehe nach 
+                                |> tt
+                                    reject
+                                . Wenn Du ein
+                                \(\square\) triffst, dann besteht das Wort nur noch aus \(X\). Wechsel nach
+                                |> tt
+                                    accept
+                                .
                         |> p
                             Wir können die Beschreibung jetzt formal als Funktion
                             \(\delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \rls\) niederschreiben.
@@ -101,7 +130,10 @@
                                 loading=lazy
                         |> p
                             Beachten Sie: manche Zellen sind leer. Damit meine ich, dass die Turingmaschine dort
-                            in den Zustand `reject` wechselt. Andere Zellen bestehen nur aus einem
+                            in den Zustand 
+                            |> tt
+                                reject
+                            \ wechselt. Andere Zellen bestehen nur aus einem
                             Buchstaben; so steht in der Zelle von \(\delta(\texttt{findA}, b)\) nur
                             ein \(\texttt{R}\). Dies bedeutet, dass die Turingmaschine ihren Zustand nicht
                             wechselt und einfach das gelesene Zeichen in die Zelle wieder reinschreibt. Dies
@@ -125,7 +157,10 @@
                             |> pre
                                 q, a
                                 r, b, D 
-                            angeben, wobei die Richtung \(D\) mit den Symbolen `&lt;, -,&gt;` codiert wird.
+                            angeben, wobei die Richtung \(D\) mit den Symbolen 
+                            |> tt
+                                &lt;, -,&gt;
+                            \ codiert wird.
                     |> div
                         id=example-palindromes
                         class=well container theorem
@@ -145,7 +180,10 @@
                             und "merkt" es sich in ihrem Zustand.
                             Dann geht sie zum rechten Rand und vergleicht es mit dem dortigen.
                             Falls es passt, löscht sie es und geht wieder nach links zurück. Falls es nicht
-                            passt, wechselt sie in `reject`.
+                            passt, wechselt sie in 
+                            |> tt
+                                reject
+                            .
                             Wenn unsere Maschine das erste Zeichen sucht aber keines findet, dann hat
                             sie alle Zeichen erfolgreich gelöscht und es hat sich also um ein
                             Palindrom von gerader Länge gehandelt. Wenn die Maschine allerdings
@@ -161,23 +199,58 @@
                             \end{align*}
                         |> ul
                             |> li
-                                `next`: ist der Anfangszustand. Die Maschine steht am linkesten Zeichen.
+                                |> tt
+                                    next
+                                : ist der Anfangszustand. Die Maschine steht am linkesten Zeichen.
                                 Ist dieses \(\square\), so haben wir das "leere" Palindrom und wir wechseln
-                                nach `accept`. Ist es \(a\), wechseln wir nach `readA` und gehen
+                                nach 
+                                |> tt
+                                    accept
+                                . Ist es \(a\), wechseln wir nach 
+                                |> tt
+                                    readA
+                                \ und gehen
                                 einen Schritt nach rechts; ist es
-                                \(b\), wechseln wir nach `readB` und gehen nach rechts.
+                                \(b\), wechseln wir nach 
+                                |> tt
+                                    readB
+                                \ und gehen nach rechts.
                             |> li
-                                `readA, readB`: wir gehen nach rechts, bis wir ein \(\square\) lesen,
-                                also den rechten Rand erreicht haben, und wechseln dann nach `killA` bzw.`killB` und gehen einen Schritt nach links.
+                                |> tt
+                                    readA, readB
+                                : wir gehen nach rechts, bis wir ein \(\square\) lesen,
+                                also den rechten Rand erreicht haben, und wechseln dann nach 
+                                |> tt
+                                    killA
+                                \ bzw.
+                                |> tt
+                                    killB
+                                \ und gehen einen Schritt nach links.
                             |> li
-                                `killA, killB`: hier weiß die Turingmaschine, was das linkeste Zeichen war,
+                                |> tt
+                                    killA, killB
+                                : hier weiß die Turingmaschine, was das linkeste Zeichen war,
                                 und dass dieses bereits gelöscht worden ist. Sie muss nun überprüfen, was
                                 das rechteste Zeichen ist. Wenn es "passt", löschen wir es und wechseln
-                                nach `return`; wenn es "nicht passt", nach `reject`; wenn es
-                                \(\square\) ist, dann haben wir das ganze Wort abgearbeitet und gehen nach`accept`.
+                                nach 
+                                |> tt
+                                    return
+                                ; wenn es "nicht passt", nach 
+                                |> tt
+                                    reject
+                                ; wenn es
+                                \(\square\) ist, dann haben wir das ganze Wort abgearbeitet und gehen nach
+                                |> tt
+                                    accept
+                                .
                             |> li
-                                `return`: gehe nach links, bis Du ein \(\square\) findest. Wechsle
-                                dann nach `next`.
+                                |> tt
+                                    return
+                                : gehe nach links, bis Du ein \(\square\) findest. Wechsle
+                                dann nach 
+                                |> tt
+                                    next
+                                .
                         |> figure
                             |> img
                                 style=height:15em

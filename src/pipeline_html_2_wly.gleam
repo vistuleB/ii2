@@ -6,7 +6,9 @@ import selector_library as sl
 pub fn pipeline_html_2_wly() -> List(Pipe) {
   [
     dl.identity(),
-    dl.find_replace_in_descendants_of__batch([#("div", [#("<", "&lt;"), #(">", "&gt;")])]),
+    dl.find_replace_in_descendants_of__batch([
+      #("div", [#("<", "&lt;"), #(">", "&gt;")]),
+    ]),
     dl.remove_chapter_number_from_title(),
     dl.trim_spaces_around_newlines__outside([]),
     dl.replace_multiple_spaces_by_one(),
@@ -57,16 +59,15 @@ pub fn pipeline_html_2_wly() -> List(Pipe) {
     )),
     dl.surround_elements_by(#(["NumberedTitle"], "go23_xU", "go23_xU")),
     dl.fold_into_text(#("go23_xU", " ")),
-    dl.insert_text_start_end(#("tt", #("`", "`"))),
-    dl.fold_contents_into_text("tt"),
-    dl.insert_text_start_end(#("code", #("`", "`"))),
-    dl.fold_contents_into_text("code"),
   ]
-  |> infra.wrap_desugarers(
-    infra.Off,
+  |> infra.desugarers_2_pipeline(
     sl.verbatim("ächstes wollen wir zeig")
       |> infra.extend_selector_up(4)
       |> infra.extend_selector_down(16)
-      |> infra.extend_selector_to_ancestors(with_elder_siblings: True, with_attributes: False),
+      |> infra.extend_selector_to_ancestors(
+        with_elder_siblings: True,
+        with_attributes: False,
+      ),
+    infra.TrackingOff,
   )
 }
