@@ -12,14 +12,14 @@ import on
 import pipeline_html_2_wly.{pipeline_html_2_wly}
 import simplifile
 import vxml.{type VXML} as vp
-import vxml_renderer as vr
+import desugaring as ds
 import writerly as wp
 
 const ins = string.inspect
 
 fn html_input_lines_assembler(
   _only_paths: List(String),
-) -> vr.Assembler(wp.AssemblyError) {
+) -> ds.Assembler(wp.AssemblyError) {
   fn(input_dir) {
     use file_content <- result.try(case simplifile.read(input_dir) {
       Ok(content) -> Ok(content)
@@ -201,9 +201,9 @@ fn construct_right_nav(next_file: Option(String)) {
 fn splitter(
   vxml: VXML,
   file: String,
-) -> Result(List(vr.OutputFragment(Nil, VXML)), a) {
+) -> Result(List(ds.OutputFragment(Nil, VXML)), a) {
   let wly_file = file |> string.drop_end(5) <> ".wly"
-  Ok([vr.OutputFragment(Nil, wly_file, vxml)])
+  Ok([ds.OutputFragment(Nil, wly_file, vxml)])
 }
 
 fn remove_line_break_from_end(res: String) -> String {
@@ -262,10 +262,10 @@ fn get_title(vxmls: List(VXML)) -> String {
 }
 
 fn emitter(
-  fragment: vr.OutputFragment(Nil, VXML),
+  fragment: ds.OutputFragment(Nil, VXML),
   prev_file: Option(String),
   next_file: Option(String),
-) -> Result(vr.OutputFragment(Nil, List(io_l.OutputLine)), String) {
+) -> Result(ds.OutputFragment(Nil, List(io_l.OutputLine)), String) {
   let filename = fragment.path
   let vxml = fragment.payload
   let title_en =
@@ -323,7 +323,7 @@ fn emitter(
     )
   let writerlys = wp.vxmls_to_writerlys([root])
 
-  Ok(vr.OutputFragment(
+  Ok(ds.OutputFragment(
     Nil,
     chapter_directory <> "/" <> filename,
     list.map(writerlys, wp.writerly_to_output_lines) |> list.flatten,
@@ -364,7 +364,7 @@ fn directory_files_else_file(
 
 pub fn renderer_html_2_wly(
   path: String,
-  amendments: vr.CommandLineAmendments,
+  amendments: ds.CommandLineAmendments,
 ) -> Nil {
   use #(dir, files) <- on.error_ok(
     directory_files_else_file(path),
@@ -383,30 +383,30 @@ pub fn renderer_html_2_wly(
     )
 
     let parameters =
-      vr.RendererParameters(
+      ds.RendererParameters(
         table: False,
         input_dir: path,
         output_dir: ".",
-        prettifier_behavior: vr.PrettifierOff,
+        prettifier_behavior: ds.PrettifierOff,
       )
-      |> vr.amend_renderer_paramaters_by_command_line_amendments(amendments)
+      |> ds.amend_renderer_paramaters_by_command_line_amendments(amendments)
 
     let renderer =
-      vr.Renderer(
+      ds.Renderer(
         assembler: html_input_lines_assembler(amendments.only_paths),
-        parser: vr.default_html_parser(amendments.only_key_values),
+        parser: ds.default_html_parser(amendments.only_key_values),
         pipeline: pipeline_html_2_wly(),
         splitter: fn(vxml) { splitter(vxml, file) },
         emitter: fn(fragment) { emitter(fragment, prev, next) },
-        prettifier: vr.empty_prettifier,
+        prettifier: ds.empty_prettifier,
       )
-      |> vr.amend_renderer_by_command_line_amendments(amendments)
+      |> ds.amend_renderer_by_command_line_amendments(amendments)
 
     let debug_options =
-      vr.default_renderer_debug_options()
-      |> vr.amend_renderer_debug_options_by_command_line_amendments(amendments)
+      ds.default_renderer_debug_options()
+      |> ds.amend_renderer_debug_options_by_command_line_amendments(amendments)
 
-    case vr.run_renderer(renderer, parameters, debug_options) {
+    case ds.run_renderer(renderer, parameters, debug_options) {
       Ok(Nil) -> Nil
       Error(error) -> {
         io.println("\nrenderer error on path " <> path <> ":")

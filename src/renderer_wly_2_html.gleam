@@ -8,7 +8,7 @@ import infrastructure as infra
 import on
 import pipeline_wly_2_html.{pipeline_wly_2_html}
 import vxml.{type VXML, Attribute}
-import vxml_renderer as vr
+import desugaring as ds
 
 const ins = string.inspect
 
@@ -18,7 +18,7 @@ type FragmentType {
 }
 
 type TI2Fragment(z) =
-  vr.OutputFragment(FragmentType, z)
+  ds.OutputFragment(FragmentType, z)
 
 type BL =
   List(OutputLine)
@@ -59,7 +59,7 @@ fn ti2_splitter(root: VXML) -> Result(List(TI2Fragment(VXML)), Ti2SplitterError)
   Ok(
     list.flatten([
       [
-        vr.OutputFragment(
+        ds.OutputFragment(
           TOCAuthorSuppliedContent,
           "vorlesungsskript.html",
           toc_vxml,
@@ -77,7 +77,7 @@ fn ti2_splitter(root: VXML) -> Result(List(TI2Fragment(VXML)), Ti2SplitterError)
           |> string.join("-")
           <> "-"
           <> title_attr.value |> string.replace(" ", "-")
-        vr.OutputFragment(
+        ds.OutputFragment(
           Chapter(index + 1),
           "lecture-notes/" <> section_name <> ".html",
           vxml,
@@ -136,7 +136,7 @@ fn ti2_section_emitter(
       ],
     ])
 
-  Ok(vr.OutputFragment(..fragment, payload: lines))
+  Ok(ds.OutputFragment(..fragment, payload: lines))
 }
 
 fn toc_emitter(
@@ -259,7 +259,7 @@ fn toc_emitter(
       ],
     ])
 
-  Ok(vr.OutputFragment(..fragment, payload: lines))
+  Ok(ds.OutputFragment(..fragment, payload: lines))
 }
 
 fn ti2_emitter(
@@ -271,32 +271,32 @@ fn ti2_emitter(
   }
 }
 
-pub fn renderer_wly_2_html(amendments: vr.CommandLineAmendments) -> Nil {
+pub fn renderer_wly_2_html(amendments: ds.CommandLineAmendments) -> Nil {
   let renderer =
-    vr.Renderer(
-      assembler: vr.default_assembler(amendments.only_paths),
-      parser: vr.default_writerly_parser(amendments.only_key_values),
+    ds.Renderer(
+      assembler: ds.default_assembler(amendments.only_paths),
+      parser: ds.default_writerly_parser(amendments.only_key_values),
       pipeline: pipeline_wly_2_html(),
       splitter: ti2_splitter,
       emitter: ti2_emitter,
-      prettifier: vr.default_prettier_prettifier,
+      prettifier: ds.default_prettier_prettifier,
     )
-    |> vr.amend_renderer_by_command_line_amendments(amendments)
+    |> ds.amend_renderer_by_command_line_amendments(amendments)
 
   let parameters =
-    vr.RendererParameters(
+    ds.RendererParameters(
       table: True,
       input_dir: "./wly_content",
       output_dir: "output",
-      prettifier_behavior: vr.PrettifierOff,
+      prettifier_behavior: ds.PrettifierOff,
     )
-    |> vr.amend_renderer_paramaters_by_command_line_amendments(amendments)
+    |> ds.amend_renderer_paramaters_by_command_line_amendments(amendments)
 
   let debug_options =
-    vr.default_renderer_debug_options()
-    |> vr.amend_renderer_debug_options_by_command_line_amendments(amendments)
+    ds.default_renderer_debug_options()
+    |> ds.amend_renderer_debug_options_by_command_line_amendments(amendments)
 
-  case vr.run_renderer(renderer, parameters, debug_options) {
+  case ds.run_renderer(renderer, parameters, debug_options) {
     Error(error) -> io.println("\nrenderer error: " <> ins(error) <> "\n")
     _ -> Nil
   }

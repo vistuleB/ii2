@@ -7,7 +7,7 @@ pub fn pipeline_html_2_wly() -> List(Pipe) {
   [
     dl.identity(),
     dl.find_replace_in_descendants_of__batch([
-      #("div", [#("<", "&lt;"), #(">", "&gt;")]),
+      #("div", [#("<", "&lt;"), #(">", "&gt;")])
     ]),
     dl.remove_chapter_number_from_title(),
     dl.trim_spaces_around_newlines__outside([]),

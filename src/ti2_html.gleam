@@ -4,7 +4,7 @@ import gleam/string
 import on
 import renderer_html_2_wly
 import renderer_wly_2_html
-import vxml_renderer as vr
+import desugaring as ds
 
 const ins = string.inspect
 
@@ -27,12 +27,12 @@ pub fn main() {
   case args {
     ["--parse-html", path, ..rest] -> {
       use amendments <- on.error_ok(
-        vr.process_command_line_arguments(rest, []),
+        ds.process_command_line_arguments(rest, []),
         fn(error) {
           io.println("")
           io.println("command line error: " <> ins(error))
           io.println("")
-          vr.basic_cli_usage()
+          ds.basic_cli_usage()
           cli_usage_supplementary()
         },
       )
@@ -49,17 +49,17 @@ pub fn main() {
 
     ["--help"] | ["-h"] -> {
       cli_usage_supplementary()
-      vr.basic_cli_usage()
+      ds.basic_cli_usage()
     }
 
     _ -> {
       use amendments <- on.error_ok(
-        vr.process_command_line_arguments(args, []),
+        ds.process_command_line_arguments(args, []),
         fn(error) {
           io.println("")
           io.println("command line error: " <> ins(error))
           io.println("")
-          vr.basic_cli_usage()
+          ds.basic_cli_usage()
           cli_usage_supplementary()
         },
       )
