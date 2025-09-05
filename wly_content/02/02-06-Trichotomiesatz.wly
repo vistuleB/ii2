@@ -35,10 +35,9 @@
                             class=subChapterTitle
                             ::::ChapterCtr.::++SectionCtr
                             Der Trichotomiesatz
-                    |> p
-                        Rekapitulieren wir: für zwei Mengen $A$ und $B$ schreiben $A \leq B$,
-                        wenn es eine injektive Funktion $f : A \rightarrow B$ gibt. Das $\leq$
-                        schaut wie eine Partialordnung aus.
+                    Rekapitulieren wir: für zwei Mengen $A$ und $B$ schreiben $A \leq B$,
+                    wenn es eine injektive Funktion $f : A \rightarrow B$ gibt. Das $\leq$
+                    schaut wie eine Partialordnung aus.
                     |> ol
                         |> li
                             Es ist reflexiv, weil $A \leq A$ gilt: Die Identität ${\rm id}_A: A
@@ -52,25 +51,17 @@
                             Es ist (so gut wie) antisymmetrisch, weil aus $A \leq B$ und $B \leq
                             A$ zwar nicht $A = B$ folgt, aber laut Schröder-Bernstein-Theorem
                             immerhin $A \approx B$.
-                    |> p
-                        Wenn wir also equipotente Mengen als identifisch betrachten, dann ist
-                        $\leq$ tatsächlich eine Partialordnung. Ist es eine totale Ordnung?
-                        Gilt also immer $A \leq B$ oder $B \leq A$? Dies klingt
-                        offensichtlich, ist es aber nicht. Aber wahr ist es, wenn auch nicht
-                        ganz einfach zu beweisen.
-                    |> div
-                        class=well container theorem
-                        |> p
-                            |> span
-                                class=numbered-title
-                                Theorem 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                \ 
-                            *(Trichotomiesatz der Mengenlehre).* Seien $A$ und
-                            $B$ zwei Mengen. Dann gibt es eine injektive Funktion $f : A
-                            \rightarrow B$ oder eine injektive Funktion $g : A \rightarrow B$.
-                            Es gilt also immer genau einer der drei folgenden Fälle:
+                    Wenn wir also equipotente Mengen als identifisch betrachten, dann ist
+                    $\leq$ tatsächlich eine Partialordnung. Ist es eine totale Ordnung?
+                    Gilt also immer $A \leq B$ oder $B \leq A$? Dies klingt
+                    offensichtlich, ist es aber nicht. Aber wahr ist es, wenn auch nicht
+                    ganz einfach zu beweisen.
+                    |> Statement
+                        title=*Theorem*
+                        *(Trichotomiesatz der Mengenlehre).* Seien $A$ und
+                        $B$ zwei Mengen. Dann gibt es eine injektive Funktion $f : A
+                        \rightarrow B$ oder eine injektive Funktion $g : A \rightarrow B$.
+                        Es gilt also immer genau einer der drei folgenden Fälle:
                         |> ol
                             |> li
                                 $A \lt B$,
@@ -78,31 +69,27 @@
                                 $A \approx B$,
                             |> li
                                 $A \gt B$.
-                    |> div
-                        class=well container
-                        |> p
-                            *(Unvollständiger) Beweis.*
-                            Will man ein Objekt mit gewissen Eigenschaften (hier: Funktion,
-                            injektiv) konstruieren, so lohnt es sich oft, die gestellten
-                            Bedingungen zu relaxieren und sich langsam zu einer "richtigen"
-                            Lösung hinzutasten.
-                        |> p
-                            Wir müssen zuerst uns in Erinnerung rufen, was eine
-                            _Funktion_ formal ist. $A \times B := \{ (a,b) \ | \ a \in A,
-                            b \in B\}$, die Menge aller Paare, heißt das
-                            _cartesische Produkt_. Eine _Relation_ ist eine
-                            Teilmenge $R \subseteq A \times B$.
+                    |> Highlight
+                        *(Unvollständiger) Beweis.*
+                        Will man ein Objekt mit gewissen Eigenschaften (hier: Funktion,
+                        injektiv) konstruieren, so lohnt es sich oft, die gestellten
+                        Bedingungen zu relaxieren und sich langsam zu einer "richtigen"
+                        Lösung hinzutasten.
+                        Wir müssen zuerst uns in Erinnerung rufen, was eine
+                        _Funktion_ formal ist. $A \times B := \{ (a,b) \ | \ a \in A,
+                        b \in B\}$, die Menge aller Paare, heißt das
+                        _cartesische Produkt_. Eine _Relation_ ist eine
+                        Teilmenge $R \subseteq A \times B$.
                         |> div
                             class=well container-fluid subtheorem
-                            |> p
-                                |> span
-                                    class=numbered-title
-                                    Definition 
-                                    |> NumberedTitle
-                                        ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                    \ .
-                                \ Eine Relation $R
-                                \subseteq A \times B$ heißt
+                            |> span
+                                class=numbered-title
+                                Definition 
+                                |> NumberedTitle
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                \ .
+                            \ Eine Relation $R
+                            \subseteq A \times B$ heißt
                             |> ul
                                 |> li
                                     _Funktion_, wenn es für jedes $a \in A$ genau ein $b \in
@@ -118,146 +105,126 @@
                                     $A$, wenn es für _jedes_ $a \in A$ ein $b \in B$ mit
                                     $(a,b) \in R$ gibt; es _sättigt_ $B$, wenn es für
                                     _jedes_ $b \in B$ ein $a \in A$ gibt mit $(a,b) \in R$.
-                        |> p
-                            Wir beobachten: wenn $R$ ein Matching ist und die Menge $A$ sättigt,
-                            dann ist $R$ eine injektive Funktion, und umgekehrt. Wenn $R$ ein
-                            Matching ist und sowohl $A$ als auch $B$ sättigt, dann ist $R$ eine
-                            bijektive Funktion.
-                        |> p
-                            Wir betrachten nun die Menge $\mathcal{M}$ aller Matchings in $A
-                            \times B$:
+                        Wir beobachten: wenn $R$ ein Matching ist und die Menge $A$ sättigt,
+                        dann ist $R$ eine injektive Funktion, und umgekehrt. Wenn $R$ ein
+                        Matching ist und sowohl $A$ als auch $B$ sättigt, dann ist $R$ eine
+                        bijektive Funktion.
+                        Wir betrachten nun die Menge $\mathcal{M}$ aller Matchings in $A
+                        \times B$:
                         \begin{align*} \mathcal{M} := \{ R \subseteq A \times B \ | \ R
                         \textnormal{ ist ein Matching}\} \ . \end{align*}
-                        |> p
-                            $(\mathcal{M}, \subseteq)$ ist eine Partialordnung.
+                        $(\mathcal{M}, \subseteq)$ ist eine Partialordnung.
                         |> div
                             class=well container-fluid subtheorem
-                            |> p
-                                |> span
-                                    class=numbered-title
-                                    Beobachtung 
-                                    |> NumberedTitle
-                                        ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                    \ .
-                                \ Wenn $R \in
-                                \mathcal{M}$ ein maximales Element in der Partialordnung
-                                $(\mathcal{M}, \subseteq)$ ist, dann sättigt es $A$ oder $B$ (oder
-                                beide). Wenn es $A$ sättigt, dann ist es eine injektive Funktion
-                                $A \rightarrow B$ und es gilt somit $A \leq B$. Wenn es $B$
-                                sättigt, dann ist $R^{-1} := \{ (b,a) \ | \ (a,b) \in R\}$ eine
-                                injektive Funktion $B \rightarrow A$ und es gilt $B \leq A$.
-                        |> div
-                            class=well container
-                            |> p
-                                *Beweis.*
-                                Nehmen wir an, dass es weder $A$ noch $B$ sättigt. Dann gibt es
-                                also ein $a \in A$, das mit keinem $b' \in B$ "gepaart" ist, und
-                                auch ein $b \in B$, das mit keinem $a' \in A$ gepaart ist. Also
-                                ist $R \cup \{(a,b)\}$ auch ein Matching, und $R$ ist nicht
-                                maximal.
                             |> span
-                                class=qed
-                                \(\square\)
-                        |> p
-                            Wir bekommen also unsere gewünschte injektive Funktion, solange wir
-                            ein maximales Element in der Partialordnung $(\mathcal{M},
-                            \subseteq)$ vorweisen können. Aber Vorsicht: nicht jede
-                            Partialordnung hat ein maximales Element! Ein Gegenbeispiel ist
-                            $(\N, \leq)$. Es gibt immer größere natürliche Zahlen, aber kein
-                            maximales Element. Die Gefahr ist also, dass es unendliche
-                            aufsteigende Folgen $a_1 \lt a_2 \lt a_3 \t \dots$ geben kann, für
-                            die man keine obere Schranke findet.
+                                class=numbered-title
+                                Beobachtung 
+                                |> NumberedTitle
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                \ .
+                            \ Wenn $R \in
+                            \mathcal{M}$ ein maximales Element in der Partialordnung
+                            $(\mathcal{M}, \subseteq)$ ist, dann sättigt es $A$ oder $B$ (oder
+                            beide). Wenn es $A$ sättigt, dann ist es eine injektive Funktion
+                            $A \rightarrow B$ und es gilt somit $A \leq B$. Wenn es $B$
+                            sättigt, dann ist $R^{-1} := \{ (b,a) \ | \ (a,b) \in R\}$ eine
+                            injektive Funktion $B \rightarrow A$ und es gilt $B \leq A$.
+                        |> Highlight
+                            *Beweis.*
+                            Nehmen wir an, dass es weder $A$ noch $B$ sättigt. Dann gibt es
+                            also ein $a \in A$, das mit keinem $b' \in B$ "gepaart" ist, und
+                            auch ein $b \in B$, das mit keinem $a' \in A$ gepaart ist. Also
+                            ist $R \cup \{(a,b)\}$ auch ein Matching, und $R$ ist nicht
+                            maximal.
+                            |> QED
+                        Wir bekommen also unsere gewünschte injektive Funktion, solange wir
+                        ein maximales Element in der Partialordnung $(\mathcal{M},
+                        \subseteq)$ vorweisen können. Aber Vorsicht: nicht jede
+                        Partialordnung hat ein maximales Element! Ein Gegenbeispiel ist
+                        $(\N, \leq)$. Es gibt immer größere natürliche Zahlen, aber kein
+                        maximales Element. Die Gefahr ist also, dass es unendliche
+                        aufsteigende Folgen $a_1 \lt a_2 \lt a_3 \t \dots$ geben kann, für
+                        die man keine obere Schranke findet.
                         |> div
                             class=well container-fluid subtheorem
-                            |> p
-                                |> span
-                                    class=numbered-title
-                                    Definition 
-                                    |> NumberedTitle
-                                        ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                    \ .
-                                \ Sei $(X, \preceq)$
-                                eine Partialordnung und $S \subseteq X$ eine Menge. Ein Element $x
-                                \in X$ ist eine _obere Schranke für $S$_ wenn
+                            |> span
+                                class=numbered-title
+                                Definition 
+                                |> NumberedTitle
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                \ .
+                            \ Sei $(X, \preceq)$
+                            eine Partialordnung und $S \subseteq X$ eine Menge. Ein Element $x
+                            \in X$ ist eine _obere Schranke für $S$_ wenn
                             \begin{align*} s \leq x \quad \forall s \in S \end{align*}
-                            |> p
-                                gilt. Dabei ist unerheblich, ob die obere Schranke $x$ selbst in
-                                $S$ ist oder nicht.
-                        |> p
-                            Die unendliche aufsteigende Folge $1,2,3,\dots$ hat
-                            _keine obere Schranke_ in $\N$. Somit gibt es auch kein
-                            maximales Element. Was nun mit $(\mathcal{M}, \subseteq)$? Wenn $M_1
-                            \subseteq M_2 \subseteq M_3 \subseteq \dots$ eine unendliche Folge
-                            von Matchings ist, dann können wir die doch alle zusammenwerfen:
-                            $M_1 \cup M_2 \cup M_3 \cup \dots$ und erhalten ein (vielleicht)
-                            größeres. Dies gilt nicht nur für unendliche Folgen, sondern ganz
-                            allgemein für Ketten in dieser Partialordnung (also Mengen paarweise
-                            vergleichbarer Elemente).
+                            gilt. Dabei ist unerheblich, ob die obere Schranke $x$ selbst in
+                            $S$ ist oder nicht.
+                        Die unendliche aufsteigende Folge $1,2,3,\dots$ hat
+                        _keine obere Schranke_ in $\N$. Somit gibt es auch kein
+                        maximales Element. Was nun mit $(\mathcal{M}, \subseteq)$? Wenn $M_1
+                        \subseteq M_2 \subseteq M_3 \subseteq \dots$ eine unendliche Folge
+                        von Matchings ist, dann können wir die doch alle zusammenwerfen:
+                        $M_1 \cup M_2 \cup M_3 \cup \dots$ und erhalten ein (vielleicht)
+                        größeres. Dies gilt nicht nur für unendliche Folgen, sondern ganz
+                        allgemein für Ketten in dieser Partialordnung (also Mengen paarweise
+                        vergleichbarer Elemente).
                         |> div
                             class=well container-fluid subtheorem
-                            |> p
-                                |> span
-                                    class=numbered-title
-                                    Beobachtung 
-                                    |> NumberedTitle
-                                        ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                    \ .
-                                \ Sei $S \subseteq
-                                \mathcal{M}$ eine Kette in $(\mathcal{M}, \subseteq)$, also eine
-                                Menge von Matchings, so dass für alle $M_1, M_2 \in S$ gilt: $M_1
-                                \subseteq M_2$ oder $M_2 \subseteq M_1$. Dann ist
-                            \begin{align*} \bigcup_{M \in S} M \end{align*}
-                            |> p
-                                selbst ein Matching.
-                        |> p
-                            Wir gehen nun wie folgt vor: wir starten mit einem beliebigen $M_0
-                            \in \mathcal{M}$; solange dies nicht maximal ist, finden wir ein
-                            größeres: $M_1 \supsetneq M_0$; und wieder und wieder. Dies ergibt
-                            im schlimmsten Fall eine unendliche Folge $M_0 \subsetneq M_1
-                            \subsetneq ...$ Wir bilden nun $M'_0 := M_0 \cup M_1 \cup \dots$,
-                            was wiederum ein Matching ist. Nun ist aber eventuell $M'_0$ wieder
-                            nicht maximal, und wir finden $M'_1 \supsetneq M'_0$ und so weiter.
-                            Wir müssen also diesen "Schritt zur Unendlichkeit" wiederholen,
-                            selbst wiederum unendlich mal. Endet das irgendwann? Die Antwort ist
-                            "ja", allerdings brauchen wir dafür ein großes Geschütz:
-                        |> div
-                            class=well container-fluid subtheorem
-                            |> p
-                                |> span
-                                    class=numbered-title
-                                    Zornsches Lemma.
-                                \ Sei $(X,
-                                \preceq)$ eine Partialordnung. Wenn jede Kette $S \subseteq X$
-                                eine obere Schranke $x \in X$ hat, dann enthält $X$ mindestens ein
-                                maximales Element.
-                        |> p
-                            Wir sind nun fertig! Wir können das Zornsche Lemma auf
-                            $(\mathcal{M}, \subseteq)$ anwenden und erhalten ein maximales
-                            Matching. Dies sättigt $A$ oder $B$ und gibt uns somit eine
-                            injektive Funktion $A \rightarrow B$ oder $B \rightarrow A$.
                             |> span
-                                class=qed
-                                \(\square\)
-                    |> h3
+                                class=numbered-title
+                                Beobachtung 
+                                |> NumberedTitle
+                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
+                                \ .
+                            \ Sei $S \subseteq
+                            \mathcal{M}$ eine Kette in $(\mathcal{M}, \subseteq)$, also eine
+                            Menge von Matchings, so dass für alle $M_1, M_2 \in S$ gilt: $M_1
+                            \subseteq M_2$ oder $M_2 \subseteq M_1$. Dann ist
+                            \begin{align*} \bigcup_{M \in S} M \end{align*}
+                            selbst ein Matching.
+                        Wir gehen nun wie folgt vor: wir starten mit einem beliebigen $M_0
+                        \in \mathcal{M}$; solange dies nicht maximal ist, finden wir ein
+                        größeres: $M_1 \supsetneq M_0$; und wieder und wieder. Dies ergibt
+                        im schlimmsten Fall eine unendliche Folge $M_0 \subsetneq M_1
+                        \subsetneq ...$ Wir bilden nun $M'_0 := M_0 \cup M_1 \cup \dots$,
+                        was wiederum ein Matching ist. Nun ist aber eventuell $M'_0$ wieder
+                        nicht maximal, und wir finden $M'_1 \supsetneq M'_0$ und so weiter.
+                        Wir müssen also diesen "Schritt zur Unendlichkeit" wiederholen,
+                        selbst wiederum unendlich mal. Endet das irgendwann? Die Antwort ist
+                        "ja", allerdings brauchen wir dafür ein großes Geschütz:
+                        |> div
+                            class=well container-fluid subtheorem
+                            |> span
+                                class=numbered-title
+                                Zornsches Lemma.
+                            \ Sei $(X,
+                            \preceq)$ eine Partialordnung. Wenn jede Kette $S \subseteq X$
+                            eine obere Schranke $x \in X$ hat, dann enthält $X$ mindestens ein
+                            maximales Element.
+                        Wir sind nun fertig! Wir können das Zornsche Lemma auf
+                        $(\mathcal{M}, \subseteq)$ anwenden und erhalten ein maximales
+                        Matching. Dies sättigt $A$ oder $B$ und gibt uns somit eine
+                        injektive Funktion $A \rightarrow B$ oder $B \rightarrow A$.
+                        |> QED
+                    |> SubTopic
                         Zornsches Lemma, Auswahlaxiom und die axiomatische Mengenlehre
-                    |> p
-                        Glauben Sie das, was das Zornsche Lemma besagt? Bei unendlichen Mengen
-                        verlässt und leider schnell die Intuition, oder schlimmer: sie wird
-                        trügerisch. Gegen Ende des 19. Jahrhunderts tauchten in der
-                        Mathematik, insbesondere in der Analysis und Geometrie, mehr und mehr
-                        "paradoxe" Ergebnisse auf, die irgendwie "nicht wahr sein konnten".
-                        Man begann, an der mathematischen Intuition zu zweifeln und wollte ein
-                        genaues Regelwerk definieren, welche Rechen- und Beweisschritte in der
-                        Mathematik erlaubt seien. In moderner Sprache: wann wollte die gesamte
-                        Mathematik _axiomatisieren_. Treibende Kraft hinter diesem
-                        Vorhaben war der deutsche Mathematiker
-                        |> a
-                            href=https://de.wikipedia.org/wiki/David_Hilbert
-                            David Hilbert
-                        , und somit ist es auch als
-                        |> a
-                            href=https://de.wikipedia.org/wiki/Hilbertprogramm
-                            Hilbertprogramm
-                        bekannt. Das Bestreben, mathematisches Beweisen und somit auch Rechnen
-                        zu mechanisieren, trug maßgeblich zur Entwicklung der Informatik und
-                        des Computers bei.
+                    Glauben Sie das, was das Zornsche Lemma besagt? Bei unendlichen Mengen
+                    verlässt und leider schnell die Intuition, oder schlimmer: sie wird
+                    trügerisch. Gegen Ende des 19. Jahrhunderts tauchten in der
+                    Mathematik, insbesondere in der Analysis und Geometrie, mehr und mehr
+                    "paradoxe" Ergebnisse auf, die irgendwie "nicht wahr sein konnten".
+                    Man begann, an der mathematischen Intuition zu zweifeln und wollte ein
+                    genaues Regelwerk definieren, welche Rechen- und Beweisschritte in der
+                    Mathematik erlaubt seien. In moderner Sprache: wann wollte die gesamte
+                    Mathematik _axiomatisieren_. Treibende Kraft hinter diesem
+                    Vorhaben war der deutsche Mathematiker
+                    |> a
+                        href=https://de.wikipedia.org/wiki/David_Hilbert
+                        David Hilbert
+                    , und somit ist es auch als
+                    |> a
+                        href=https://de.wikipedia.org/wiki/Hilbertprogramm
+                        Hilbertprogramm
+                    bekannt. Das Bestreben, mathematisches Beweisen und somit auch Rechnen
+                    zu mechanisieren, trug maßgeblich zur Entwicklung der Informatik und
+                    des Computers bei.

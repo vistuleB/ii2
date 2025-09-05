@@ -37,7 +37,7 @@ pub fn pipeline_wly_2_html() -> List(Pipe) {
       dl.handles_substitute(#("", "", "", [], [])),
       dl.concatenate_text_nodes(),
       dl.unwrap_if_no_child_meets_condition(#("p", infra.is_text_or_is_one_of(_, ["b", "i", "a", "span"]))),
-      dl.unwrap_if_child_of([#("p", ["span", "code", "tt", "figcaption", "em"])]),
+      dl.unwrap_if_child_of__batch([#("p", ["span", "code", "tt", "figcaption", "em"])]),
       dl.free_children(#("pre", "p")),
       dl.free_children(#("ul", "p")),
       dl.free_children(#("ol", "p")),

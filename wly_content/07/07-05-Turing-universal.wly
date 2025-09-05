@@ -19,8 +19,8 @@
             href=/
             zur Kursübersicht
         |> a
-            href=07-06-undecidability.html
-            Kapitel 7.6 &gt;&gt;
+            href=07-05-undecidability.html
+            Kapitel 7.5 &gt;&gt;
     |> div
         id=rightSideWrapper
         |> div
@@ -35,151 +35,132 @@
                             class=subChapterTitle
                             ::::ChapterCtr.::++SectionCtr
                             Turing-Maschinen simulieren Turing-Maschinen: die universelle Turing-Maschine
-                    |> p
-                        Im letzten Teilkapitel haben wir gesehen, wie wir jede Turingmaschine $M
-                        $mit
-                        Eingabealphabet $\Sigma$ codieren können als
+                    Im letzten Teilkapitel haben wir gesehen, wie wir jede Turingmaschine $M
+                    $mit
+                    Eingabealphabet $\Sigma$ codieren können als
                     \begin{align*}
                     \enc(M) \in \Lambda^* \ ,
                     \end{align*}
-                    |> p
-                        also als String über dem Codierungsalphabet
+                    also als String über dem Codierungsalphabet
                     \begin{align*}
                     \Lambda := \writelambda
                     \end{align*}
-                    |> p
-                        Diese Codierungsschema enthält implizit Codierungsfunktionen
-                        $\enc_Q : Q \rightarrow \{0,1\}^+$ und $\enc_\Gamma: \Gamma \rightarrow
-                        \Sigma \cup \{0,1\}^+$,
-                        die wir verwenden, um die Zustände und Arbeitszeichen von $M$ in
-                        $\Lambda$-Zeichen zu
-                        übersetzen.
-                        Für eine Konfiguration
+                    Diese Codierungsschema enthält implizit Codierungsfunktionen
+                    $\enc_Q : Q \rightarrow \{0,1\}^+$ und $\enc_\Gamma: \Gamma \rightarrow
+                    \Sigma \cup \{0,1\}^+$,
+                    die wir verwenden, um die Zustände und Arbeitszeichen von $M$ in
+                    $\Lambda$-Zeichen zu
+                    übersetzen.
+                    Für eine Konfiguration
                     \begin{align*}
                     C = u_1 \dots u_m q v_1 \dots v_n
                     \end{align*}
-                    |> p
-                        der Maschine $M$ definieren wir die Codierung von $C$ als
+                    der Maschine $M$ definieren wir die Codierung von $C$ als
                     \begin{align*}
                     \enc(C) := \enc_\Gamma(u_1) \texttt{#} \enc_\Gamma(u_2) \dots \texttt{#}
                     \enc_\Gamma(u_m)\texttt{#}
                     \enc_Q(q) \texttt{#} \enc_\Gamma(v_1)\texttt{#} \dots \texttt{#}
                     \enc_\Gamma(v_n) \in \Lambda^* \ .
                     \end{align*}
-                    |> p
-                        Das ist alles nicht besonders tiefgründig und dient allein dazu,
-                        sicherzustellen, dass wir
-                        die Konfigurationen von $M$ darstellen können in dem Alphabet $\Lambda$,
-                        das
-                        _unabhängig_ von $M$ ist. Dass wir also _jede_
-                        Turingmaschine
-                        $M$ mit Eingabealphabet $\Sigma$ und _jede_ ihrer Konfigurationen
-                        als Strings über _einem_ festen Alphabet $\Lambda$ darstellen
-                        können.
-                    |> p
-                        Eine Turingmaschine simulieren heißt nun, einen String
-                        $\enc(M)\texttt{;}w$ mit $w \in \Sigma^*$ zu lesen und
-                        daraus den String $\enc(\hat{\delta}^*_M (w))$ zu berechnen, also
-                        das Ergebnis $\hat{\delta}^*_M(w)$, passend codiert über dem Alphabet
-                        $\Lambda$.
-                        Das zentrale Ergebnis dieses Teilkapitels ist, dass wir diese Simulation
-                        selbst mit einer Turingmaschine implementieren können.
-                    |> div
-                        class=well container theorem
-                        |> p
-                            |> span
-                                class=numbered-title
-                                Theorem 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                \ 
-                            \ *(Universelle
-                            Turingmaschine).* Zu
-                            jedem
-                            endlichen Eingabealphabet $\Sigma$ sei
-                            $\Lambda := \writelambda$ das Codierungsalphabet. Es gibt es
-                            eine
-                            Turingmaschine $U = U_{\Sigma}$ mit Eingabealphabet
-                            $\Lambda$,
-                            so dass für alle $c \in \Lambda^*$ und $w \in \Sigma^*$
-                            die Turingmaschine $U$ mit Eingabewort $x \in \Lambda^*$
-                            folgendes tut:
+                    Das ist alles nicht besonders tiefgründig und dient allein dazu,
+                    sicherzustellen, dass wir
+                    die Konfigurationen von $M$ darstellen können in dem Alphabet $\Lambda$,
+                    das
+                    _unabhängig_ von $M$ ist. Dass wir also _jede_
+                    Turingmaschine
+                    $M$ mit Eingabealphabet $\Sigma$ und _jede_ ihrer Konfigurationen
+                    als Strings über _einem_ festen Alphabet $\Lambda$ darstellen
+                    können.
+                    Eine Turingmaschine simulieren heißt nun, einen String
+                    $\enc(M)\texttt{;}w$ mit $w \in \Sigma^*$ zu lesen und
+                    daraus den String $\enc(\hat{\delta}^*_M (w))$ zu berechnen, also
+                    das Ergebnis $\hat{\delta}^*_M(w)$, passend codiert über dem Alphabet
+                    $\Lambda$.
+                    Das zentrale Ergebnis dieses Teilkapitels ist, dass wir diese Simulation
+                    selbst mit einer Turingmaschine implementieren können.
+                    |> Statement
+                        title=*Theorem*
+                        \ *(Universelle
+                        Turingmaschine).* Zu jedem
+                        endlichen Eingabealphabet $\Sigma$ sei
+                        $\Lambda := \writelambda$ das Codierungsalphabet. Es gibt es
+                        eine
+                        Turingmaschine $U = U_{\Sigma}$ mit Eingabealphabet
+                        $\Lambda$,
+                        so dass für alle $c \in \Lambda^*$ und $w \in \Sigma^*$
+                        die Turingmaschine $U$ mit Eingabewort $x \in \Lambda^*$
+                        folgendes tut:
                         |> ul
                             |> li
                                 Falls $x$ nicht die Form
-                                $\enc(M) \texttt{;} w$ mit $w \in \Sigma^*$ hat,
+                                $\enc(M) w$ mit $w \in \Sigma^*$ hat,
                                 lehnt sie ab;
                             |> li
-                                Ansonsten, falls also $c = \enc(M)$ für eine Turingmaschine
-                                $M$ ist:
+                                Ansonsten, falls also $x = \enc(M)w$ für eine Turingmaschine
+                                $M$ und ein Wort $w \in \Sigma^*$ ist:
                                 |> ul
                                     |> li
                                         Falls $M$ mit Eingabewort $w$ nicht
                                         terminiert, dann terminiert $U$ mit
-                                        Eingabewort $c \texttt{;} w$ auch nicht.
+                                        Eingabewort $x$ auch nicht.
                                     |> li
                                         Falls $M$ mit Eingabewort $w$ eine
                                         Endkonfiguration $C = uqv$ erreicht,
                                         dann
                                         erreicht $U$ mit
-                                        Eingabewort $c \texttt{;} w$ die
+                                        Eingabewort $x$ die
                                         Endkonfiguration
                                         $q\ \enc(C)$. Das heißt insbesondere,
                                         dass $U$ genau dann akzeptiert, wenn $M$
                                         akzeptiert, und genau dann ablehnt, wenn
                                         $M$ ablehnt.
-                        |> p
-                            $U$ akzeptiert also die Sprache
+                        $U$ akzeptiert also die Sprache
                         \begin{align*}
                         \{ c w \ | \ w \in \Sigma^* \textnormal{ und } c = \enc(M) \textnormal{
                         und $M$ akzeptiert $w$} \} \ .
                         \end{align*}
                     |> div
                         style=margin-bottom:1em
-                        class=alert-info container
-                        |> p
-                            *Ein technischer aber letztendlich irrelevanter Punkt:
-                            * die Mengen
-                            $Q$ und $\Gamma$ der Turingmaschine $M$ können ja beliebige
-                            (endliche) Mengen sein,
-                            und weder $\Lambda$ noch die Turingmaschine $U$ haben "Kenntnis"
-                            von ihnen.
-                            Wir nehmen aber aus Gründen der Einfachheit an, dass $Q$ immer
-                            die Zustände
-                            $\qaccept$ und $\qreject$ enthält und auch $U$ diese Zustände
-                            verwendet.
-                            Daraus ergibt sich, dass für eine Endkonfiguration $uqv$ von $M$
-                            zwar $q \in \{\qaccept, \qreject\}$ gilt, allerdings $\enc(q)
-                            \in \{0,1\}^+$,
-                            da wir diese $M$-Zustände binär codieren. Somit ist
-                            $q\ \enc(uqv) \in \{\qaccept, \qreject\} \times \Lambda^*$ eine
-                            Endkonfiguration von $U$.
-                        |> p
-                            Des weiteren gehen wir davon aus, dass das Blank-Symbol $\Box$
-                            für alle
-                            Turingmaschinen $M$ mit Eingabealphabet $\Sigma$ das gleiche
-                            ist. Auch
-                            $U$ verwendet es. Wenn wir allerdings $M$ codieren, so wird auch
-                            $\Box$ als $\enc(\Box) \in \{0,1\}^+$ codiert, wie jedes
-                            Arbeitssymbol $z \in \Gamma
-                            \setminus \Sigma$ von $M$
-                            binär codiert wird. Das heißt insbesondere, dass
-                            für eine $M$-Konfiguration $C$ die Codierung $\enc(C)$ kein
-                            $\Box$ enthält (selbst
-                            wenn $C$ als Konfiguration von $M$ dies tut), und in der Tat ist
-                            ja
-                            $\enc(C) \in \Lambda^*$, und $\Lambda$ ist das Eingabealphabet
-                            von $U$ mit
-                            $\Box \not \in \Lambda$.
-                    |> div
-                        class=well container
-                        |> p
-                            *Beweis.*
-                            Den Beweis in allen Details zu führen hieße, die Maschine $U$
-                            konkret als Turingmaschine
-                            zu implementieren. Wir tun dies nicht. Wir beschränken uns auf
-                            eine High-Level-Beschreibung
-                            ihrer Arbeitsweise.
+                        class=alert-info well
+                        *Ein technischer aber letztendlich irrelevanter Punkt:
+                        * die Mengen
+                        $Q$ und $\Gamma$ der Turingmaschine $M$ können ja beliebige
+                        (endliche) Mengen sein,
+                        und weder $\Lambda$ noch die Turingmaschine $U$ haben "Kenntnis"
+                        von ihnen.
+                        Wir nehmen aber aus Gründen der Einfachheit an, dass $Q$ immer
+                        die Zustände
+                        $\qaccept$ und $\qreject$ enthält und auch $U$ diese Zustände
+                        verwendet.
+                        Daraus ergibt sich, dass für eine Endkonfiguration $uqv$ von $M$
+                        zwar $q \in \{\qaccept, \qreject\}$ gilt, allerdings $\enc(q)
+                        \in \{0,1\}^+$,
+                        da wir diese $M$-Zustände binär codieren. Somit ist
+                        $q\ \enc(uqv) \in \{\qaccept, \qreject\} \times \Lambda^*$ eine
+                        Endkonfiguration von $U$.
+                        Des weiteren gehen wir davon aus, dass das Blank-Symbol $\Box$
+                        für alle
+                        Turingmaschinen $M$ mit Eingabealphabet $\Sigma$ das gleiche
+                        ist. Auch
+                        $U$ verwendet es. Wenn wir allerdings $M$ codieren, so wird auch
+                        $\Box$ als $\enc(\Box) \in \{0,1\}^+$ codiert, wie jedes
+                        Arbeitssymbol $z \in \Gamma
+                        \setminus \Sigma$ von $M$
+                        binär codiert wird. Das heißt insbesondere, dass
+                        für eine $M$-Konfiguration $C$ die Codierung $\enc(C)$ kein
+                        $\Box$ enthält (selbst
+                        wenn $C$ als Konfiguration von $M$ dies tut), und in der Tat ist
+                        ja
+                        $\enc(C) \in \Lambda^*$, und $\Lambda$ ist das Eingabealphabet
+                        von $U$ mit
+                        $\Box \not \in \Lambda$.
+                    |> Highlight
+                        *Beweis.*
+                        Den Beweis in allen Details zu führen hieße, die Maschine $U$
+                        konkret als Turingmaschine
+                        zu implementieren. Wir tun dies nicht. Wir beschränken uns auf
+                        eine High-Level-Beschreibung
+                        ihrer Arbeitsweise.
                     |> figure
                         class=centered-figure well container-fluid
                         |> a

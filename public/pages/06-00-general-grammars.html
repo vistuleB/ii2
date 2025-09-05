@@ -6,11 +6,8 @@
 
                 <div class='subChapter'>
                     <h1 class='hidden-title'>
-                        <span class='chapterTitle'>6. Allgemeine Grammatiken</span>
+                        <span class='subChapterTitle'>6. Allgemeine Grammatiken</span>
                     </h1>
-
-
-
                     <p>
                         Wir haben nun ausführlich über kontextfreie Grammatiken gesprochen
                         und auch Sprachen gesehen, die nicht mit kontextfreien Grammatiken
@@ -111,7 +108,8 @@
                     </p>
 
 
-                    <p>Sobald wir eine Wortform erreicht haben, die nur aus Terminalsymbolen
+                    <p>
+                        Sobald wir eine Wortform erreicht haben, die nur aus Terminalsymbolen
                         besteht (also ein <em>Wort</em> geworden ist), muss unsere Ableitung
                         aufhören: wir können keine weitere Produktion anwenden, da jede
                         linke Seite mindestens ein Nichtterminal enthält. Diese Einschränkung
@@ -327,30 +325,15 @@
                             \Step{4} L11D1R \Step{3} L1111R \Step{5} 1111R \Step{6} 1111
                             \end{align*}
                         </p>
-
-                        <!--<pre class='listing'>
-<code>isPowerOfTwo : Int -> Bool</code>
-<code>isPowerOfTwo n =</code>
-<code>    if n <= 0 then</code>
-<code>        False</code>
-<code></code>
-<code>    else if n == 1 then</code>
-<code>        True</code>
-<code></code>
-<code>    else if modBy 2 n /= 0 then</code>
-<code>        False</code>
-<code></code>
-<code>    else</code>
-<code>        isPowerOfTwo (n // 2)</code>            </pre>-->
                     </div class='well container theorem'>
-
-
-                    <p>Wagen wir ein letztes Beispiel: die Sprache aller Wörter,
+                    <p>
+                        Wagen wir ein letztes Beispiel: die Sprache aller Wörter,
                         deren Länge eine Quadratzahl ist. Spätestens dieses Beispiel sollte Sie
                         davon überzeugen, dass allgemeine formale Gramatiken, im Gegensatz zu
                         kontextfreien und regulären, nicht nur <em>Formate</em> syntaktisch
                         beschreiben, sondern komplizierte Rechnungen durchführen können.
-                        Sie stellen somit ein völlig andersartiges Biest dar.</p>
+                        Sie stellen somit ein völlig andersartiges Biest dar.
+                    </p>
 
                     <div class='well container theorem'>
                         <span class='numbered-title'>Beispiel</span>
@@ -415,6 +398,7 @@
                         \tilde{C} R & \rightarrow R
                         \end{align*}
                         Überzeugen wir uns, dass dies den gewünschten Effekt hat.
+
                         <ul>
                             <li>Wir können \(R\) nur loswerden, indem wir es in das
                                 Killersymbol \(K\) umwandeln. Das Killersymbol kann
@@ -447,7 +431,7 @@
 
 
                         </ul>
-                        <p>
+
                         Wenn wir also aus
                         \(L A^m B^n R\) ein Wort ableiten, so
                         muss zum Zeitpunkt der Produktion \(R \rightarrow K\)
@@ -459,7 +443,6 @@
                         anwenden; wenn da allerdings noch \(A\)- oder \(\tilde{C}\)-Symbole
                         enthalten sind, ist es <em>game over</em>: wir könnten die nie
                         mehr in Terminale umwandeln.
-                        </p>
                         <p>
                             In einer leichten Variation können wir auch die Sprache
                             \begin{align*}
@@ -482,10 +465,7 @@
                         an. Dies ist auch ein Paradebeispiel für eine Sprache, die nicht kontextfrei ist.
                     </div>
 
-
-                    <p>
                     Überlegen Sie, wie man "lineare Suche" implementieren könnte:
-                    </p>
                     <div class='well well-lg numbered-exercise container'>
                         <span class='numbered-title'>Übungsaufgabe</span>
                         Sei \(L\) die Sprache über \(\Sigma = \{a,b,:,;\}\)

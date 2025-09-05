@@ -198,14 +198,6 @@ fn construct_right_nav(next_file: Option(String)) {
   )
 }
 
-fn splitter(
-  vxml: VXML,
-  file: String,
-) -> Result(List(ds.OutputFragment(Nil, VXML)), a) {
-  let wly_file = file |> string.drop_end(5) <> ".wly"
-  Ok([ds.OutputFragment(Nil, wly_file, vxml)])
-}
-
 fn remove_line_break_from_end(res: String) -> String {
   case string.ends_with(res, "\n") {
     True -> string.drop_end(res, 2)
@@ -261,13 +253,13 @@ fn get_title(vxmls: List(VXML)) -> String {
   }
 }
 
-fn emitter(
-  fragment: ds.OutputFragment(Nil, VXML),
+fn splitter(
+  vxml: VXML,
+  file: String,
   prev_file: Option(String),
   next_file: Option(String),
-) -> Result(ds.OutputFragment(Nil, List(io_l.OutputLine)), String) {
-  let filename = fragment.path
-  let vxml = fragment.payload
+) -> Result(List(ds.OutputFragment(Nil, VXML)), a) {
+  let filename = file |> string.drop_end(5) <> ".wly"
   let title_en =
     filename
     |> string.drop_end(4)
@@ -294,41 +286,112 @@ fn emitter(
   let assert True = chapter_number >= 1
   let assert True = section_number >= 0
   let chapter_directory = "wly_content/" <> chapter_number_as_string
+  let file_path = chapter_directory <> "/" <> filename
+  let parent_path = chapter_directory <> "/" <> "__parent.wly"
+  let file_vxml = vp.V(
+    bl.Em([], "section"),
+    "section",
+    [
+      vp.Attribute(bl.Em([], "section"), "title_gr", title_german),
+      vp.Attribute(bl.Em([], "section"), "title_en", title_en),
+      vp.Attribute(bl.Em([], "section"), "number", number),
+      vp.Attribute(bl.Em([], "section"), "counter", "DefCtr"),
+      vp.Attribute(bl.Em([], "section"), "counter", "ExoCtr"),
+    ],
+    [
+      construct_left_nav(prev_file),
+      construct_right_nav(next_file),
+      vxml,
+    ],
+  )
+  let parent_vxml = vp.V(
+    bl.Em([], "Chapter"),
+    "Chapter",
+    [
+      vp.Attribute(bl.Em([], "Chapter"), "counter", "SectionCtr"),
+      vp.Attribute(bl.Em([], "Chapter"), "title_gr", title_german),
+      vp.Attribute(bl.Em([], "Chapter"), "title_en", title_en),
+    ],
+    []
+  )
 
-  case section_number == 0 {
-    False -> Nil
-    True -> {
-      let _ = simplifile.create_directory(chapter_directory)
-      let assert Ok(_) =
-        simplifile.write(chapter_directory <> "/" <> "__parent.wly", "|> Chapter
-    counter=SectionCtr
-    title_gr=" <> title_german <> "\n    title_en=" <> title_en)
-      Nil
-    }
-  }
-
-  let root =
-    vp.V(
-      blame_us("Root"),
-      "section",
-      [
-        vp.Attribute(blame_us("section title"), "title_gr", title_german),
-        vp.Attribute(blame_us("section title"), "title_en", title_en),
-        vp.Attribute(blame_us("section title"), "number", number),
-        // Counter attributes
-        vp.Attribute(blame_us("section def counter"), "counter", "DefCtr"),
-        vp.Attribute(blame_us("section exo counter"), "counter", "ExoCtr"),
-      ],
-      [construct_left_nav(prev_file), construct_right_nav(next_file), vxml],
-    )
-  let writerlys = wp.vxmls_to_writerlys([root])
-
-  Ok(ds.OutputFragment(
-    Nil,
-    chapter_directory <> "/" <> filename,
-    list.map(writerlys, wp.writerly_to_output_lines) |> list.flatten,
-  ))
+  [
+    ds.OutputFragment(Nil, parent_path, parent_vxml),
+    ds.OutputFragment(Nil, file_path, file_vxml),
+  ]
+  |> Ok
 }
+
+// fn emitter(
+//   fragment: ds.OutputFragment(Nil, VXML),
+//   prev_file: Option(String),
+//   next_file: Option(String),
+// ) -> Result(ds.OutputFragment(Nil, List(io_l.OutputLine)), String) {
+//   let filename = fragment.path
+//   let vxml = fragment.payload
+//   let title_en =
+//     filename
+//     |> string.drop_end(4)
+//     |> string.split("-")
+//     |> list.drop(2)
+//     |> string.join(" ")
+//   let title_german = get_title_internal(vxml)
+//   let chapter_number_as_string =
+//     filename |> string.split_once("-") |> result.unwrap(#("", "")) |> pair.first
+//   let assert True = chapter_number_as_string != ""
+//   let number =
+//     filename
+//     |> string.split("-")
+//     |> list.take(2)
+//     |> list.map(remove_0_at_start)
+//     |> string.join(".")
+//   let assert [chapter_number, section_number] =
+//     filename
+//     |> string.split("-")
+//     |> list.take(2)
+//     |> list.map(remove_0_at_start)
+//     |> list.map(int.parse)
+//     |> list.map(result.unwrap(_, -1))
+//   let assert True = chapter_number >= 1
+//   let assert True = section_number >= 0
+//   let chapter_directory = "wly_content/" <> chapter_number_as_string
+
+//   case section_number == 0 {
+//     False -> Nil
+//     True -> {
+//       let _ = simplifile.create_directory(chapter_directory)
+//       let assert Ok(_) =
+//         simplifile.write(chapter_directory <> "/" <> "__parent.wly", "|> Chapter
+//     counter=SectionCtr
+//     title_gr=" <> title_german <> "\n    title_en=" <> title_en)
+//       Nil
+//     }
+//   }
+
+//   let root =
+//     vp.V(
+//       blame_us("Root"),
+//       "section",
+//       [
+//         vp.Attribute(blame_us("section title"), "title_gr", title_german),
+//         vp.Attribute(blame_us("section title"), "title_en", title_en),
+//         vp.Attribute(blame_us("section title"), "number", number),
+//         // Counter attributes
+//         vp.Attribute(blame_us("section def counter"), "counter", "DefCtr"),
+//         vp.Attribute(blame_us("section exo counter"), "counter", "ExoCtr"),
+//       ],
+//       [construct_left_nav(prev_file), construct_right_nav(next_file), vxml],
+//     )
+
+    
+//   let assert Ok(writerly) = wp.vxml_to_writerly(root)
+
+//   Ok(ds.OutputFragment(
+//     Nil,
+//     chapter_directory <> "/" <> filename,
+//     writerly |> wp.writerly_to_output_lines,
+//   ))
+// }
 
 fn drop_slash_at_end(path: String) -> String {
   case string.ends_with(path, "/") {
@@ -396,8 +459,9 @@ pub fn renderer_html_2_wly(
         assembler: html_input_lines_assembler(amendments.only_paths),
         parser: ds.default_html_parser(amendments.only_key_values),
         pipeline: pipeline_html_2_wly(),
-        splitter: fn(vxml) { splitter(vxml, file) },
-        emitter: fn(fragment) { emitter(fragment, prev, next) },
+        splitter: fn(vxml) { splitter(vxml, file, prev, next) },
+        emitter: ds.default_writerly_emitter,
+        writer: ds.default_writer,
         prettifier: ds.empty_prettifier,
       )
       |> ds.amend_renderer_by_command_line_amendments(amendments)

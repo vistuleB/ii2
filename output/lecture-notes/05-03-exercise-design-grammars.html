@@ -34,7 +34,7 @@
     id="link-to-overview"
     style="text-align: end"
   >
-    <a href="/">zur Kursübersicht</a><a href="05-04-LL1-grammars.html">Kapitel 5.4 &gt;&gt;</a>
+    <a href="/">zur Kursübersicht</a><a href="05-04-LL1-grammars.html">Kapitel 5.4 &gt;;&gt;;</a>
   </div>
   <div id="rightSideWrapper">
     <div class="content">
@@ -88,9 +88,9 @@
               <NumberedTitle>::::ChapterCtr.::::SectionCtr.1</NumberedTitle>
               </span>Geben Sie folgende Grammatik in die App ein:
 <pre>
-S -&gt; ;
-S -&gt; "("S")"S ;
-S -&gt; "(" S "]" S;
+S -&gt;; ;
+S -&gt;; "("S")"S ;
+S -&gt;; "(" S "]" S;
 </pre>
             <p>
               Was ist die erzeugte Sprache? Können Sie sie in Worten beschreiben?
@@ -161,9 +161,9 @@ S -&gt; "(" S "]" S;
             <b>(Challenge)</b>
             Geben Sie die Grammatik hier ein:
 <pre>
-S -&gt; "("S")"S;
-S -&gt; "["S"("S;
-S -&gt; ;
+S -&gt;; "("S")"S;
+S -&gt;; "["S"("S;
+S -&gt;; ;
 </pre>
             Überlegen Sie, was diese "bedeutet". Sie sehen, die Grammatik ist
             nicht eindeutig. Das Wort `[([()(` hat zwei
@@ -182,8 +182,8 @@ S -&gt; ;
             <a href="https://cstheory.stackexchange.com/questions/22520/example-of-context-free-grammar-that-triggers-exponential-behaviour-without-memo">StackExchange</a>vorgeschlagen als Beispiel für eine eindeutige Grammatik,
             bei der Sie exponentiell große Backtrack-Bäume bekommen können:
 <pre>
-S -&gt;  "a" X "b" | "a" X "c";
-X -&gt; "a" | "a" X | "a" X X;
+S -&gt;;  "a" X "b" | "a" X "c";
+X -&gt;; "a" | "a" X | "a" X X;
 </pre>
             Das ist aber keine Kunst, da die Grammatik uneindeutig ist.
             Können Sie eine

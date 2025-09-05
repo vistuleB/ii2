@@ -33,55 +33,51 @@
                         class=chapterTitle
                         ::++ChapterCtr.
                         Berechenbarkeit und natürliche Zahlen
-                |> p
-                    Mit den Booleschen Schaltkreisen haben wir ein Modell kennengelernt, dass
-                    die Berechnung von Booleschen Funkionen \(f: \{0,1\}^n \rightarrow \{0,1\}\) beschreibt.
-                    Wir haben mehrere Beweisen gesehen, dass es für jede Boolesche Funktion einen
-                    Schaltkreis gibt. Unsere Zielsetzung war durchweg _komplexitätstheoretisch_: wir
-                    wollten möglichst kleine Schaltkreise von möglichst geringer Tiefe entwerfen.
-                    Würden wir tiefer in die Schaltkreiskomplexität einsteigen, so würden wir uns fast
-                    ausschließlich mit _negativen_ Zielen beschäftigen: zu zeigen, dass es zu bestimmten
-                    Funktionen eben nicht Schaltkreise mit \(S\) Gates und in Tiefe \(d\) gibt; wir
-                    würden uns zum Großteil mit _unteren Schranken_ beschäftigen.
-                |> p
-                    Boolesche Funktionen sind immer _endliche_ Objekte. In der Berechenbarkeitstheorie
-                    geht es im Grunde um die Frage: welche _unendlichen_ Funktionen können wir überhaupt
-                    berechnen? Und was gilt denn überhaupt als zulässiges Modell für Berechenbarkeit?
-                |> p
-                    Wenn wir nun also über Funktionen \(f: X \rightarrow Y\) auf unendlichen Mengen sprechen und uns
-                    fragen,
-                    welche durch eine _endliche Rechenvorschrift_ beschrieben werden können, dann
-                    müssen wir erst einmal entscheiden, mit welcher unendlichen Menge wir uns beschäftigen.
-                    Eine Bedingung sollte zum Beispiel sein, dass wir Input und Output vollständig hinschreiben können.
-                    (Denn wenn der Input bereits unendlich groß wäre, wie sollten wir überhaupt über Berechenbarkeit
-                    sprechen?)
-                    Für uns als Informatiker wäre doch folgende Menge am naheliegendsten:
-                    \begin{align*}
-                    \{0,1\}^* \ ,
-                    \end{align*}
-                    also die Menge aller beliebig langen aber endlichen Bit-Strings. Wir können alle möglichen Dinge
-                    (Wörter, Programme, Dateien, natürliche Zahlen, rationale Zahlen) als solche Bit-Strings codieren.
-                    Die ersten Wissenschaftler, die sich mit Berechenbarkeit beschäftigten, kamen allerdings
-                    aus der Mathematik und Logik, und ganz allgemeinen entstand die Berechenbarkeitstheorie
-                    _bevor_
-                    die ersten Rechner gebaut wurden. Daher beschäftigten sich die ersten Forscher auch mit einer
-                    anderen, uns sehr vertrauten Menge:
-                    \begin{align*}
-                    \mathbb{N} \ ,
-                    \end{align*}
-                    den natürlichen Zahlen. Im letzten Kapitel haben wir ja unter anderen bewiesen, dass diese
-                    gleichmächtig sind:
-                    \(\{0,1\}^* \cong \N\) und haben auch eine Bijektion kennengelernt, beispielsweise
-                    \begin{align*}
-                    f : \{0,1\}^*&amp;\rightarrow \N \\
-                    (x_1, \dots, x_n)&amp;\mapsto (1 x_1\dots x_n)_2 - 1\ ,
-                    \end{align*}
-                    wir stellen also dem Bitstring \(x_1,\dots,x_n\) eine 1 voran und interpretieren das Ergebnis als
-                    natürliche Zahl;
-                    dann ziehen wir 1 ab.
-                    Es ist also für die Entwicklung eines Berechenbarkeitsbegriffs mehr oder weniger egal, ob wir mit
-                    \(\N\) oder \(\{0,1\}^*\) arbeiten - sofern die obige Bijektion \(f\) selbst "berechenbar" ist.
-                |> p
-                    Wir werden in diesem Kapitel mehrere Berechenbarkeitsmodelle für Funktionen
-                    \(f: \N \rightarrow \N\) kennenlernen. Die beste Einstellung Ihrerseits ist, diese Modelle
-                    als primitive, sehr reduzierte Programmiersprachen zu betrachten.
+                Mit den Booleschen Schaltkreisen haben wir ein Modell kennengelernt, dass
+                die Berechnung von Booleschen Funkionen \(f: \{0,1\}^n \rightarrow \{0,1\}\) beschreibt.
+                Wir haben mehrere Beweisen gesehen, dass es für jede Boolesche Funktion einen
+                Schaltkreis gibt. Unsere Zielsetzung war durchweg _komplexitätstheoretisch_: wir
+                wollten möglichst kleine Schaltkreise von möglichst geringer Tiefe entwerfen.
+                Würden wir tiefer in die Schaltkreiskomplexität einsteigen, so würden wir uns fast
+                ausschließlich mit _negativen_ Zielen beschäftigen: zu zeigen, dass es zu bestimmten
+                Funktionen eben nicht Schaltkreise mit \(S\) Gates und in Tiefe \(d\) gibt; wir
+                würden uns zum Großteil mit _unteren Schranken_ beschäftigen.
+                Boolesche Funktionen sind immer _endliche_ Objekte. In der Berechenbarkeitstheorie
+                geht es im Grunde um die Frage: welche _unendlichen_ Funktionen können wir überhaupt
+                berechnen? Und was gilt denn überhaupt als zulässiges Modell für Berechenbarkeit?
+                Wenn wir nun also über Funktionen \(f: X \rightarrow Y\) auf unendlichen Mengen sprechen und uns
+                fragen,
+                welche durch eine _endliche Rechenvorschrift_ beschrieben werden können, dann
+                müssen wir erst einmal entscheiden, mit welcher unendlichen Menge wir uns beschäftigen.
+                Eine Bedingung sollte zum Beispiel sein, dass wir Input und Output vollständig hinschreiben können.
+                (Denn wenn der Input bereits unendlich groß wäre, wie sollten wir überhaupt über Berechenbarkeit
+                sprechen?)
+                Für uns als Informatiker wäre doch folgende Menge am naheliegendsten:
+                \begin{align*}
+                \{0,1\}^* \ ,
+                \end{align*}
+                also die Menge aller beliebig langen aber endlichen Bit-Strings. Wir können alle möglichen Dinge
+                (Wörter, Programme, Dateien, natürliche Zahlen, rationale Zahlen) als solche Bit-Strings codieren.
+                Die ersten Wissenschaftler, die sich mit Berechenbarkeit beschäftigten, kamen allerdings
+                aus der Mathematik und Logik, und ganz allgemeinen entstand die Berechenbarkeitstheorie
+                _bevor_
+                die ersten Rechner gebaut wurden. Daher beschäftigten sich die ersten Forscher auch mit einer
+                anderen, uns sehr vertrauten Menge:
+                \begin{align*}
+                \mathbb{N} \ ,
+                \end{align*}
+                den natürlichen Zahlen. Im letzten Kapitel haben wir ja unter anderen bewiesen, dass diese
+                gleichmächtig sind:
+                \(\{0,1\}^* \cong \N\) und haben auch eine Bijektion kennengelernt, beispielsweise
+                \begin{align*}
+                f : \{0,1\}^*&amp;\rightarrow \N \\
+                (x_1, \dots, x_n)&amp;\mapsto (1 x_1\dots x_n)_2 - 1\ ,
+                \end{align*}
+                wir stellen also dem Bitstring \(x_1,\dots,x_n\) eine 1 voran und interpretieren das Ergebnis als
+                natürliche Zahl;
+                dann ziehen wir 1 ab.
+                Es ist also für die Entwicklung eines Berechenbarkeitsbegriffs mehr oder weniger egal, ob wir mit
+                \(\N\) oder \(\{0,1\}^*\) arbeiten - sofern die obige Bijektion \(f\) selbst "berechenbar" ist.
+                Wir werden in diesem Kapitel mehrere Berechenbarkeitsmodelle für Funktionen
+                \(f: \N \rightarrow \N\) kennenlernen. Die beste Einstellung Ihrerseits ist, diese Modelle
+                als primitive, sehr reduzierte Programmiersprachen zu betrachten.

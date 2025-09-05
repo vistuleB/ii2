@@ -47,10 +47,9 @@
                     Der erste Punkt allerdings scheint eine echte Beschränkung zu sein: wir wissen schließlich nicht
                     immer, wie oft wir eine Tätigkeit wiederholen müssen, bis wir fertig sind,
                     und ob wir überhaupt jemals fertig werden. Sie kennen vielleicht die Collatz-Vermutung.
-                    |> h2
+                    |> Topic
                         Die Collatz-Vermutung
-                    |> p
-                        Wir definieren eine Funktion $f: \N_+ \rightarrow \N_+$ wie folgt:
+                    Wir definieren eine Funktion $f: \N_+ \rightarrow \N_+$ wie folgt:
                     \begin{align*}
                     f : \N_+&amp;\rightarrow \N_+ \\
                     n&amp;\mapsto
@@ -59,18 +58,16 @@
                     3n+1&amp;\textnormal{ if $n$ odd.}
                     \end{cases}
                     \end{align*}
-                    |> p
-                        Für eine natürliche Zahl $n$ können wir dann die Collatz-Folge definieren:
-                        $n, f(n), f(f(n)), ...$. Man sieht leicht, dass diese Folge in einer Schleife
-                        landen kann:
+                    Für eine natürliche Zahl $n$ können wir dann die Collatz-Folge definieren:
+                    $n, f(n), f(f(n)), ...$. Man sieht leicht, dass diese Folge in einer Schleife
+                    landen kann:
                     \begin{align*}
                     13 \mapsto 40 \mapsto 20 \mapsto 10 \mapsto 5 \mapsto 16 \mapsto 8 \mapsto 4 \mapsto 2 \mapsto 1
                     \mapsto 4 \mapsto 2 \mapsto 1 \dots
                     \end{align*}
-                    |> p
-                        Wir beenden die Sequenz daher üblicherweise, wenn wir bei 1 (und somit in dieser Dreierschleife)
-                        gelandet sind.
-                        Es kann allerdings etwas länger dauern: 
+                    Wir beenden die Sequenz daher üblicherweise, wenn wir bei 1 (und somit in dieser Dreierschleife)
+                    gelandet sind.
+                    Es kann allerdings etwas länger dauern: 
                     |> figure
                         7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1.
                     Oder noch länger. Wenn wir mit 27 beginnen, dann erhalten wir die Folge
@@ -81,24 +78,22 @@
                         479, 1438, 719, 2158, 1079, 3238, 1619, 4858, 2429, 7288, 3644, 1822, 911, 2734, 1367, 4102,
                         2051, 6154, 3077, 9232, 4616, 2308, 1154, 577, 1732, 866, 433, 1300, 650, 325, 976, 488, 244,
                         122, 61, 184, 92, 46, 23, 70, 35, 106, 53, 160, 80, 40, 20, 10, 5, 16, 8, 4, 2, 1
-                    |> p
-                        Experimentieren Sie! Ich habe dafür die Html-Seite 
-                        |> a
-                            href=../code/primitive-recursion/collatz.html
-                            collatz.html
-                        \ erstellt.
-                        Es scheint: egal, wo Sie anfangen, Sie enden immer bei 1. Allerdings wissen wir nicht
-                        im Voraus, _wie oft_ wir die Funktion $f$ anwenden müssen. Und wir wissen nicht einmal,
-                        ob man immer bei 1 ankommt, ob es andere Zyklen gibt oder ob es Startwerte gibt, für die die
-                        Folge einfach nach Unendlich divergiert. Bis zum heutigen Tage (Stand 30. April 2024) hat sich
-                        die Collatz-Vermutung zahlreichen Lösungsversuchung widersetzt und demonstriert eindrucksvoll,
-                        dass auch mathematische Probleme mit sehr einfacher Formulierung extrem schwierig sein können.
-                    |> h3
+                    Experimentieren Sie! Ich habe dafür die Html-Seite 
+                    |> a
+                        href=../code/primitive-recursion/collatz.html
+                        collatz.html
+                    \ erstellt.
+                    Es scheint: egal, wo Sie anfangen, Sie enden immer bei 1. Allerdings wissen wir nicht
+                    im Voraus, _wie oft_ wir die Funktion $f$ anwenden müssen. Und wir wissen nicht einmal,
+                    ob man immer bei 1 ankommt, ob es andere Zyklen gibt oder ob es Startwerte gibt, für die die
+                    Folge einfach nach Unendlich divergiert. Bis zum heutigen Tage (Stand 30. April 2024) hat sich
+                    die Collatz-Vermutung zahlreichen Lösungsversuchung widersetzt und demonstriert eindrucksvoll,
+                    dass auch mathematische Probleme mit sehr einfacher Formulierung extrem schwierig sein können.
+                    |> SubTopic
                         While-Schleifen
-                    |> p
-                        Eine Einschränkung primitiv-rekursiver Funktionen ist also, dass wir immer vor der Schleife
-                        angeben müssen, wie oft diese durchlaufen werden soll. Es gibt also keine
-                        `while`-Schleifen. Führen wir diese nun ein.
+                    Eine Einschränkung primitiv-rekursiver Funktionen ist also, dass wir immer vor der Schleife
+                    angeben müssen, wie oft diese durchlaufen werden soll. Es gibt also keine
+                    `while`-Schleifen. Führen wir diese nun ein.
                     |> pre
                         class=listing
                         `def While (condition, step):`
@@ -109,17 +104,16 @@
                         \  `return temp` 
                         \ `return f` 
                     |> div
-                        class=well well-lg numbered-exercise container
-                        |> p
-                            |> span
-                                class=numbered-title
-                                Übungsaufgabe 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                \ 
-                            Schreiben Sie mit Hilfe von `While`, `PrimRec` und `Comp`
-                            eine Funktion `collatzList`, die aus einer Zahl
-                            die Collatz-Folge baut, also
+                        class=well well-lg numbered-exercise
+                        |> span
+                            class=numbered-title
+                            Übungsaufgabe 
+                            |> NumberedTitle
+                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
+                            \ 
+                        Schreiben Sie mit Hilfe von `While`, `PrimRec` und `Comp`
+                        eine Funktion `collatzList`, die aus einer Zahl
+                        die Collatz-Folge baut, also
                         |> pre
                             |> code
                                 class=pythonPrompt

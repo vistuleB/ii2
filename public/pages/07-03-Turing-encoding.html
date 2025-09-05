@@ -9,7 +9,7 @@
 
                 <div class='subChapter'>
                     <h1 class='hidden-title'>
-                        <span class='subChapterTitle'>4.4 Die universelle Turingmaschine</span>
+                        <span class='subChapterTitle'>4.4 Turing-Maschinen codieren</span>
                     </h1>
 
                     <p>
@@ -63,7 +63,7 @@
                         bereits getan:
                         eine Turingmaschine mit Alphabet \(\Sigma\) können wir dort als String über dem Alphabet
                         \begin{align*}
-                        \Sigma \cup \{a,\dots,z,A\dots,Z,0,\dots,9\} \cup \{\texttt{&lt;}, \texttt{-}, \texttt{>},
+                        \Sigma \cup \{a,\dots,z,A\dots,Z,0,\dots,9\} \cup \{\texttt{&lt;}, \texttt{-}, \texttt{&gt;},
                             \texttt{,}, \texttt{_}, \texttt{\n}, \dots\}
                             \end{align*}
                             codieren. Codierung ist im Prinzip kein Problem, wir werden aber ein paar Subtilitäten
@@ -93,6 +93,7 @@
                         c\#x
                         \end{align*}
                         entgegennimmt und dann
+                    </p>
                     <ol class="nested">
                         <li>
                             <strong>ablehnt</strong>, falls \(c\) keine gültige Codierung einer Turingmaschine \(M\)
@@ -100,13 +101,13 @@
                         </li>
                         <li>ansonsten, falls also \(c = \enc(M)\), dann
                             <ol class="nested">
-
                                 <li><strong>akzeptiert</strong> falls \(M(x)\) akzeptiert;</li>
                                 <li><strong>ablehnt</strong>, falls \(M(x)\) ablehnt</li>
                                 <li><strong>nicht terminiert</strong>, falls \(M(x)\) nicht terminiert.</li>
                             </ol>
                         </li>
                     </ol>
+                    <p>
                     Falls wir bei \(M\) nicht nur an Akzeptieren / Ablehnen interessiert sind, sondern am Ergebnis der
                     Berechnung,
                     dann hätten wir gerne, dass \(U (\enc(M)\#x)\) am Ende den gleichen Bandinhalt hat wie \(M(x)\) am
@@ -207,6 +208,8 @@
                             \texttt{;}
                             \not \in \Sigma$. Wir können nun jede Turingmaschine $M$ mit Eingabealphabet
                             $\Sigma$ als String $\enc(M) \in \Lambda^*$ codieren.
+                            Per Konvention kommt <tt>;</tt> in $\enc(M)$ genau einmal vor, nämlich
+                            am Schluss.
                         </p>
                     </div class='well container theorem'>
                     <div class="alert-info container">

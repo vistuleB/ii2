@@ -35,14 +35,13 @@
                             class=subChapterTitle
                             ::::ChapterCtr.::++SectionCtr
                             Primitive Rekursion: Konstruktionen und Tricks
-                    |> p
-                        Ich beginne dieses Teilkapitel, manche der primitiv-rekursive Implementierungen in
-                        |> a
-                            href=../code/primitive-recursion/stockpile.py
-                            stockpile.py
-                        \ zu erklären und
-                        werde dann weitere, weniger offensichtliche Konstruktionen diskutieren.
-                    |> h2
+                    Ich beginne dieses Teilkapitel, manche der primitiv-rekursive Implementierungen in
+                    |> a
+                        href=../code/primitive-recursion/stockpile.py
+                        stockpile.py
+                    \ zu erklären und
+                    werde dann weitere, weniger offensichtliche Konstruktionen diskutieren.
+                    |> Topic
                         Arithmetische Operationen
                     Wir haben bereits gesehen, dass wir die Addition per
                     \({\rm add} = \primrec (\pi_0, \comp(\succ, \pi_0)) \) schreiben können. Beachten Sie, dass ich
@@ -97,12 +96,11 @@
                     Wir können nicht einfach \(i+1\) schreiben! Wir müssen dies via \(\comp(\succ,\pi_1)\) konstruieren.
                     Denn: die Funktion \(h\) bekommt \({\rm temp}, i, \vec{x}\) als Input; \(\pi_1\) gibt
                     uns davon das \(i\) zurück und \(\comp(\succ, \pi_1)\) gibt uns \(i+1\).
-                    |> p
-                        Operationen wie \(\pred: t \mapsto t-1\) und \({\rm minus}\)
-                        sind konzeptuell nur ein bisschen anders. Das liegt auch daran,
-                        dass wir keine negativen Zahlen haben. Was ist
-                        \(\pred(0)\)? Wir definieren das als 0. So können wir
-                        pred implementieren:
+                    Operationen wie \(\pred: t \mapsto t-1\) und \({\rm minus}\)
+                    sind konzeptuell nur ein bisschen anders. Das liegt auch daran,
+                    dass wir keine negativen Zahlen haben. Was ist
+                    \(\pred(0)\)? Wir definieren das als 0. So können wir
+                    pred implementieren:
                     |> pre
                         class=container
                         def pred(t):
@@ -123,23 +121,21 @@
                     \begin{align*}
                     \pred = \primrec(\zero, \pi_1)
                     \end{align*}
-                    |> p
-                        Für minus schreiben wir uns erst mal
-                        \({\rm subtractFrom}: (t,x) \mapsto x-t\). Hierfür wenden wir einfach pred
-                        \(t\) mal auf \(x\) an:
-                        \begin{align*}
-                        {\rm subtractFrom}&amp;= \primrec(\pi_0, \comp(\pred, \pi_0)) \\
-                        {\rm minus}&amp;= \comp({\rm subtractFrom}, \pi_1, \pi_0)
-                        \end{align*}
-                    |> h2
+                    Für minus schreiben wir uns erst mal
+                    \({\rm subtractFrom}: (t,x) \mapsto x-t\). Hierfür wenden wir einfach pred
+                    \(t\) mal auf \(x\) an:
+                    \begin{align*}
+                    {\rm subtractFrom}&amp;= \primrec(\pi_0, \comp(\pred, \pi_0)) \\
+                    {\rm minus}&amp;= \comp({\rm subtractFrom}, \pi_1, \pi_0)
+                    \end{align*}
+                    |> Topic
                         Boolesche Werte
-                    |> p
-                        Die primitive Rekursion stellt uns als "Datentyp" nur die natürlichen Zahlen zur
-                        Verfügung. Alles andere müssen wir als natürliche Zahlen nach einem von uns
-                        selbst gewählten Schema codieren. Für Boolesche Werte ist das recht naheliegend.
-                        Wir codieren `True` als 1 und `False` als 0.
-                        Unser erstes Prädikat, also Funktion mit Booleschem Ausgabewert, ist
-                        `isPositive`:
+                    Die primitive Rekursion stellt uns als "Datentyp" nur die natürlichen Zahlen zur
+                    Verfügung. Alles andere müssen wir als natürliche Zahlen nach einem von uns
+                    selbst gewählten Schema codieren. Für Boolesche Werte ist das recht naheliegend.
+                    Wir codieren `True` als 1 und `False` als 0.
+                    Unser erstes Prädikat, also Funktion mit Booleschem Ausgabewert, ist
+                    `isPositive`:
                     |> pre
                         class=container
                         def pred(t):
@@ -157,10 +153,9 @@
                     \begin{align*}
                     {\rm isPositive} = \primrec(\zero, {\rm one})
                     \end{align*}
-                    |> p
-                        Auf ähnliche Weise können wir uns nun lessThan, lessEqual, and, or, not,
-                        ifThenElse konstruieren.
-                    |> h2
+                    Auf ähnliche Weise können wir uns nun lessThan, lessEqual, and, or, not,
+                    ifThenElse konstruieren.
+                    |> Topic
                         Wurzel und Suchen im Allgemeinen
                     Eine größere Herausforderung stellt die ganzzahlige Wurzel
                     \(x \mapsto \floor{\sqrt{x}}\) dar. Hierfür haben wir keine Formel
@@ -170,23 +165,21 @@
                         style=text-align:center
                         \(\floor{\sqrt{x}}\) ist die größte natürliche Zahl \(i\) mit
                         \(i^2 \leq x\).
-                    |> p
-                        Wir können auch den Suchraum begrenzen: da \(\sqrt{x} \leq x\) für alle natürlichen Zahlen, so
-                        gilt: 
+                    Wir können auch den Suchraum begrenzen: da \(\sqrt{x} \leq x\) für alle natürlichen Zahlen, so
+                    gilt: 
                     |> div
                         style=text-align:center
                         \(\floor{\sqrt{x}}\) ist die größte natürliche Zahl \(i \in \{0,1,\dots,x\}\) mit
                         \(i^2 \leq x\).
-                    |> p
-                        Das Prädikat
-                        \begin{align*}
-                        {\rm iSquareLessEqualX } (i,x)&amp;= [ i^2 \leq x ]
-                        \end{align*}
-                        ist primitiv rekursiv:
-                        \begin{align*}
-                        {\rm iSquareLessEqualX } = \comp({\rm lessEqual}, \comp({\rm mult}, \pi_0, \pi_0), \pi_1)
-                        \end{align*}
-                        und damit können wir die ganzzahlige Wurzel schreiben als
+                    Das Prädikat
+                    \begin{align*}
+                    {\rm iSquareLessEqualX } (i,x)&amp;= [ i^2 \leq x ]
+                    \end{align*}
+                    ist primitiv rekursiv:
+                    \begin{align*}
+                    {\rm iSquareLessEqualX } = \comp({\rm lessEqual}, \comp({\rm mult}, \pi_0, \pi_0), \pi_1)
+                    \end{align*}
+                    und damit können wir die ganzzahlige Wurzel schreiben als
                     |> pre
                         class=container
                         def largestIbelowTwithISquareLessEqualX(t,x):
@@ -200,11 +193,10 @@
                             class=comment
                             = Comp(ifThenElse, Comp(iSquareLessEqual, p_1, p_2), p_1, p_0) (temp,i,x)
                         return temp
-                    |> p
-                        Was geht hier vor? Wenn
-                        \({\rm iSquareLessEqualX}(i,x))\) True ist, dann ersetzen wir temp durch \(i\).
-                        Ansonsten belassen wir es beim alten Wert; der endgültige Wert von temp ist
-                        also das letzte \(i\), für das das Prädikat True wahr.
+                    Was geht hier vor? Wenn
+                    \({\rm iSquareLessEqualX}(i,x))\) True ist, dann ersetzen wir temp durch \(i\).
+                    Ansonsten belassen wir es beim alten Wert; der endgültige Wert von temp ist
+                    also das letzte \(i\), für das das Prädikat True wahr.
                     \begin{align*}
                     {\rm largestIbelowTwithISquareLessEqualX = \primrec(zero,
                     \comp(ifThenElse, \comp(iSquareLessEqual, \pi_1, \pi_2), \pi_1, \pi_0))}
@@ -229,12 +221,11 @@
                         temp = i
                         return temp
                         return new_function
-                    |> p
-                        und somit können wir sqrt schreiben als
+                    und somit können wir sqrt schreiben als
                     \begin{align*}
                     {\rm sqrt} = {\rm LargestLessThan} (\pi_0, {\rm iSquareLessEqual})
                     \end{align*}
-                    |> h2
+                    |> Topic
                         Paare und Listen
                     Eine recht stark anmutende Beschränkung primitiv rekursiver Funktionen ist
                     die Tatsache, dass wir in der Schleife nur _eine_ lokale Variable
@@ -265,17 +256,16 @@
                     Dennoch ist es möglich, `fib` primitiv rekursiv zu implementieren.
                     Hauptzutat hierbei ist es, dass wir _Paare_ als neue Datenstruktur
                     verwenden.
-                    |> p
-                        Erinnern Sie sich: die primitive Rekursion stellt uns als Datentyp von Haus aus
-                        nur die natürlichen Zahlen zur Verfügung. Alles andere müssen wir nach einem
-                        selbst gewählten Schema codieren. Bei Booleschen Werten war es einfach.
-                        Wie steht es mit _Paaren_ von natürlichen Zahlen?
-                        In 
-                        |> a
-                            href=02-00-infinite-sets.html
-                            Kapitel 2: Unendliche Mengen
-                        \ haben wir
-                        die bijektive Funktion
+                    Erinnern Sie sich: die primitive Rekursion stellt uns als Datentyp von Haus aus
+                    nur die natürlichen Zahlen zur Verfügung. Alles andere müssen wir nach einem
+                    selbst gewählten Schema codieren. Bei Booleschen Werten war es einfach.
+                    Wie steht es mit _Paaren_ von natürlichen Zahlen?
+                    In 
+                    |> a
+                        href=02-00-infinite-sets.html
+                        Kapitel 2: Unendliche Mengen
+                    \ haben wir
+                    die bijektive Funktion
                     \begin{align*}
                     \pair : \N^2&amp;\rightarrow \N \\
                     (x,y)&amp;\mapsto {x + y + 1 \choose 2} + x
@@ -299,31 +289,29 @@
                     {\rm choose2}&amp;= \primrec(\zero, \comp({\rm add},\pi_0,\pi_1)) \\
                     \pair&amp;= \comp({\rm add}, \comp({\rm choose2}, \comp({\rm add}, \pi_0, \comp(\succ, \pi_1)), \pi_0)
                     \end{align*}
-                    |> p
-                        Um die Umkehrfunktionen \(\first, \second\) zu implementieren, die uns aus
-                        \(\pair(x,y)\) wieder \(x\) und \(y\) berechnen, bestimmen wir erst
-                        den Wert von \(x+y\). Wenn \(\pair(x,y) = n\) gilt und \(x+y=i)\) ist, dann ist
-                        \begin{align*}
-                        n = \pair(x,y) = {i + 1 \choose 2} + x \geq
-                        {i+1 \choose 2} + 0 = \pair(0,i) \ ,
-                        \end{align*}
-                        und somit ist \(x+y\) der größte Wert von \(i\), so dass \(n \geq \pair(0,i)\) ist.
-                        Aus \(x+y\) und \({x+y+1 \choose 2} + x\) können wir dann leicht \(x\) und \(y\) berechnen:
+                    Um die Umkehrfunktionen \(\first, \second\) zu implementieren, die uns aus
+                    \(\pair(x,y)\) wieder \(x\) und \(y\) berechnen, bestimmen wir erst
+                    den Wert von \(x+y\). Wenn \(\pair(x,y) = n\) gilt und \(x+y=i)\) ist, dann ist
+                    \begin{align*}
+                    n = \pair(x,y) = {i + 1 \choose 2} + x \geq
+                    {i+1 \choose 2} + 0 = \pair(0,i) \ ,
+                    \end{align*}
+                    und somit ist \(x+y\) der größte Wert von \(i\), so dass \(n \geq \pair(0,i)\) ist.
+                    Aus \(x+y\) und \({x+y+1 \choose 2} + x\) können wir dann leicht \(x\) und \(y\) berechnen:
                     \begin{align*}
                     {\rm getXplusY}&amp;= {\rm LargestLessThan}(\pi_0, \comp({\rm greaterEqual}, \pi_1, \comp(\pair,
                     \zero, \pi_0)))\\
                     \first&amp;= \comp({\rm minus}, \pi_0, \comp(\pair, \zero, {\rm getXplusY}))\\
                     \second&amp;= \comp({\rm minus}, {\rm getXplusY}, \first)
                     \end{align*}
-                    |> p
-                        Listen können wir implementieren, indem wir Paare verschachtelt zusammenhängen,
-                        z.B. \([5,7,9]\) wird zu 
-                        |> span
-                            style=color:red
-                            \(\pair(5, \pair(7, 9))\)
-                        . Das ist
-                        natürlich
-                        inkorrekt:
+                    Listen können wir implementieren, indem wir Paare verschachtelt zusammenhängen,
+                    z.B. \([5,7,9]\) wird zu 
+                    |> span
+                        style=color:red
+                        \(\pair(5, \pair(7, 9))\)
+                    . Das ist
+                    natürlich
+                    inkorrekt:
                     |> pre
                         class=container
                         |> code
@@ -344,17 +332,15 @@
                         |> code
                             class=terminalOutput
                             11031
-                    |> p
-                        Das Problem ist, dass wir das Ende der Liste nicht kennen. Wir lösen das Problem, indem
-                        wir die leere Liste mit \(0\) codieren und dann aber beim Davorhängen eines Elements
-                        1 draufaddieren müssen, also
+                    Das Problem ist, dass wir das Ende der Liste nicht kennen. Wir lösen das Problem, indem
+                    wir die leere Liste mit \(0\) codieren und dann aber beim Davorhängen eines Elements
+                    1 draufaddieren müssen, also
                     \begin{align*}
                     {\rm push} (x, {\rm restlist})&amp;= 1 + \pair(x, {\rm restlist}) \\
                     {\rm head} ({\rm list})&amp;= \first({\rm list} - 1)\\
                     {\rm second} ({\rm list})&amp;= \second({\rm list} - 1)
                     \end{align*}
-                    |> p
-                        Jetzt klappt alles wunderbar:
+                    Jetzt klappt alles wunderbar:
                     |> pre
                         class=container
                         |> code
@@ -381,19 +367,18 @@
                         |> code
                             class=terminalOutput
                             5
-                    |> p
-                        *Native Implementierung.* Die primitive Rekursion ist
-                        ein theoretischer Berechenbarkeitsbegriff für Funktionen
-                        auf natürlichen Zahlen. Es ist definitiv keine ernstzunehmende Programmiersprache.
-                        Ich finde allerdings, dass es hilfreich ist, sie als Programmiersprache zu begreifen
-                        und zu verwenden, rein experimentell. Leider ist sie extrem ineffizient: selbst
-                        Subtraktion hat quadratische Komplexität. Längere Listen wie die gerade werden Sie in
-                        vertretbarer
-                        Zeit nicht behandeln können. Bei meinen eigenen Experimenten mit meinem
-                        Python-Framework bin ich daher dazu übergegangen, dass ich, sobald
-                        ich gezeigt habe, dass eine Funktion \(f\) primitiv rekursiv ist,
-                        sie _nativ_ in Python zu implementieren, also beispielsweise in meiner
-                        Datei `stockpile.py`:
+                    *Native Implementierung.* Die primitive Rekursion ist
+                    ein theoretischer Berechenbarkeitsbegriff für Funktionen
+                    auf natürlichen Zahlen. Es ist definitiv keine ernstzunehmende Programmiersprache.
+                    Ich finde allerdings, dass es hilfreich ist, sie als Programmiersprache zu begreifen
+                    und zu verwenden, rein experimentell. Leider ist sie extrem ineffizient: selbst
+                    Subtraktion hat quadratische Komplexität. Längere Listen wie die gerade werden Sie in
+                    vertretbarer
+                    Zeit nicht behandeln können. Bei meinen eigenen Experimenten mit meinem
+                    Python-Framework bin ich daher dazu übergegangen, dass ich, sobald
+                    ich gezeigt habe, dass eine Funktion \(f\) primitiv rekursiv ist,
+                    sie _nativ_ in Python zu implementieren, also beispielsweise in meiner
+                    Datei `stockpile.py`:
                     |> pre
                         class=listing
                         |> code

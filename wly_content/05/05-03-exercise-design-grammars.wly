@@ -35,13 +35,12 @@
                             class=subChapterTitle
                             ::::ChapterCtr.::++SectionCtr
                             Rechnerübung: Gute kontextfreie Grammatiken entwerfen
-                    |> p
-                        Benutzen Sie die App 
-                        |> a
-                            href=../../demos/drawManualGrammar.html
-                            drawManualGrammar.html
-                        ,
-                        um mit kontextfreien Grammatik zu experimentieren: 
+                    Benutzen Sie die App 
+                    |> a
+                        href=../../demos/drawManualGrammar.html
+                        drawManualGrammar.html
+                    ,
+                    um mit kontextfreien Grammatik zu experimentieren: 
                     |> figure
                         |> a
                             href=../../demos/drawManualGrammar.html
@@ -49,8 +48,7 @@
                                 style=height:20em
                                 src=../img/cfg-manual-screenshot-2.png
                                 loading=lazy
-                    |> p
-                        Diese besteht aus folgenden Teilen:
+                    Diese besteht aus folgenden Teilen:
                     |> ol
                         |> li
                             Dem Eingabefenster für die Grammatik links oben. Hier können Sie Ihre eigene Grammatik
@@ -69,7 +67,7 @@
                             eine
                             erfolgreiche Ableitung gibt).
                     |> div
-                        class=well well-lg numbered-exercise container
+                        class=well well-lg numbered-exercise
                         |> span
                             class=numbered-title
                             Übungsaufgabe 
@@ -78,23 +76,20 @@
                             \ 
                         Geben Sie folgende Grammatik in die App ein:
                         |> pre
-                            S -&gt; ;
-                            S -&gt; "("S")"S ;
-                            S -&gt; "(" S "]" S;
-                        |> p
-                            Was ist die erzeugte Sprache? Können Sie sie in Worten beschreiben?
-                        |> p
-                            Erzeugen Sie Wörter in dieser Sprache, für die der Backtrack-Baum viele rote
-                            Sackgassen enthält.
-                        |> p
-                            Schreiben Sie eine äquivalente Grammatik (d.h., die die gleiche Sprache erzeugt),
-                            für die es keine oder nur sehr kurze Sackgassen gibt.
-                            Testen Sie die beiden Grammatiken mit "großen" Eingabewörtern
-                            und schauen Sie, ob Sie Laufzeitunterschiede bemerken.
-                            (Hier erweist sich mein ineffizienter Code als Vorteil: eine schlechte Grammatik
-                            wird sofort bestraft).
+                            S -> ;
+                            S -> "("S")"S ;
+                            S -> "(" S "]" S;
+                        Was ist die erzeugte Sprache? Können Sie sie in Worten beschreiben?
+                        Erzeugen Sie Wörter in dieser Sprache, für die der Backtrack-Baum viele rote
+                        Sackgassen enthält.
+                        Schreiben Sie eine äquivalente Grammatik (d.h., die die gleiche Sprache erzeugt),
+                        für die es keine oder nur sehr kurze Sackgassen gibt.
+                        Testen Sie die beiden Grammatiken mit "großen" Eingabewörtern
+                        und schauen Sie, ob Sie Laufzeitunterschiede bemerken.
+                        (Hier erweist sich mein ineffizienter Code als Vorteil: eine schlechte Grammatik
+                        wird sofort bestraft).
                     |> div
-                        class=well well-lg numbered-exercise container
+                        class=well well-lg numbered-exercise
                         |> span
                             class=numbered-title
                             Übungsaufgabe 
@@ -107,13 +102,12 @@
                         ganz links unten in der App reinkopieren, um automatisch Regeln für alphanumerische
                         Zeichen zu bekommen (allerdings verschlechtert das die Laufzeit; ich habe erstmal
                         gar nicht auf Effizienz geachtet).
-                        |> p
-                            Geben Sie das Eingabewort `a.aaaaa.aaaa.aaaa.aaaa.aaaa` ein. Wie
-                            sieht Ihr Backtrack-Baum aus? Hat er viele Sackgassen? Können Sie Ihre Grammatik
-                            so abändern, dass sie zwar noch die gleiche Sprache erzeugt, aber keine / nur wenige
-                            Sackgassen hat?
+                        Geben Sie das Eingabewort `a.aaaaa.aaaa.aaaa.aaaa.aaaa` ein. Wie
+                        sieht Ihr Backtrack-Baum aus? Hat er viele Sackgassen? Können Sie Ihre Grammatik
+                        so abändern, dass sie zwar noch die gleiche Sprache erzeugt, aber keine / nur wenige
+                        Sackgassen hat?
                     |> div
-                        class=well well-lg numbered-exercise container
+                        class=well well-lg numbered-exercise
                         |> span
                             class=numbered-title
                             Übungsaufgabe 
@@ -124,12 +118,11 @@
                         |> pre
                             (* (+ 2 3) (- 4 (* 2 4) 5)
                             (+ 1 2 (* 2))
-                        |> p
-                            Leidet Ihre Grammatik an langen Sackgassen? Wenn ja, können Sie die Grammatik abändern?
-                            Haben Sie mittlerweile ein Schema erkannt, welche Konstrukte lange Sackgassen
-                            begünstigen?
+                        Leidet Ihre Grammatik an langen Sackgassen? Wenn ja, können Sie die Grammatik abändern?
+                        Haben Sie mittlerweile ein Schema erkannt, welche Konstrukte lange Sackgassen
+                        begünstigen?
                     |> div
-                        class=well well-lg numbered-exercise container
+                        class=well well-lg numbered-exercise
                         |> span
                             class=numbered-title
                             Übungsaufgabe 
@@ -143,7 +136,7 @@
                             2+3*(5+4)
                         sollte sich das wiederspiegeln.
                     |> div
-                        class=well well-lg numbered-exercise container
+                        class=well well-lg numbered-exercise
                         |> span
                             class=numbered-title
                             Übungsaufgabe 
@@ -153,15 +146,15 @@
                         *(Challenge)*
                         Geben Sie die Grammatik hier ein:
                         |> pre
-                            S -&gt; "("S")"S;
-                            S -&gt; "["S"("S;
-                            S -&gt; ;
+                            S -> "("S")"S;
+                            S -> "["S"("S;
+                            S -> ;
                         Überlegen Sie, was diese "bedeutet". Sie sehen, die Grammatik ist
                         nicht eindeutig. Das Wort `[([()(` hat zwei
                         verschiedene Ableitungsbäume. Können Sie eine äquivalente
                         _eindeutige_ Grammatik schreiben?
                     |> div
-                        class=well well-lg numbered-exercise container
+                        class=well well-lg numbered-exercise
                         |> span
                             class=numbered-title
                             Übungsaufgabe 
@@ -177,15 +170,15 @@
                         vorgeschlagen als Beispiel für eine eindeutige Grammatik,
                         bei der Sie exponentiell große Backtrack-Bäume bekommen können:
                         |> pre
-                            S -&gt;  "a" X "b" | "a" X "c";
-                            X -&gt; "a" | "a" X | "a" X X;
+                            S ->  "a" X "b" | "a" X "c";
+                            X -> "a" | "a" X | "a" X X;
                         Das ist aber keine Kunst, da die Grammatik uneindeutig ist.
                         Können Sie eine _eindeutige_ Grammatik angebene, die ähnlich
                         exponentielles Verhalten zeigt? Exponentiell heißt: mit jedem
                         zusätlichen Zeichen des Eingabewortes kann die Größe des
                         Backtrack-Baumes um einen Faktor \(R \gt 1\) wachsen.
                     |> div
-                        class=well well-lg numbered-exercise container
+                        class=well well-lg numbered-exercise
                         |> span
                             class=numbered-title
                             Übungsaufgabe 

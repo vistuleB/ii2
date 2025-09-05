@@ -33,44 +33,35 @@
                         class=chapterTitle
                         ::++ChapterCtr.
                         Unendliche Mengen
-                |> p
-                    Mit den Boolesche Schaltkreise haben wir bereits ein Modell für Berechnung kennengelernt.
-                    Es ist abstrakt genug, um mathematisch rigorose Aussagen darüber zu treffen und über obere und
-                    untere Schranken zu sprechen.
-                    Gleichzeitig ist es sehr konkret und nah an seiner physikalischen Realisierung.
-                    Ein entscheidender Nachteil Boolescher Schaltkreise jedoch: Sie müssen von Anfang an wissen, wie
-                    groß
-                    Ihr Input ist; also wie vielen Input-Variablen $x_1, \dots, x_n$ Sie begegnen werden.
-                    Für ein allgemeines Modell der Berechnung ist dies ungeeignet. Wir wollen ja _ein_
-                    Computerprogramm, das beliebig große Eingaben verkraften kann. Ein Computerprogramm
-                    soll also _endlich_ sein, aber für eine _unendliche_ Menge potentieller Eingaben
-                    funktionieren.
-                    In diesem Kapitel werden wir daher unendliche Mengen besser kennenlernen.
+                Mit den Boolesche Schaltkreise haben wir bereits ein Modell für Berechnung kennengelernt.
+                Es ist abstrakt genug, um mathematisch rigorose Aussagen darüber zu treffen und über obere und
+                untere Schranken zu sprechen.
+                Gleichzeitig ist es sehr konkret und nah an seiner physikalischen Realisierung.
+                Ein entscheidender Nachteil Boolescher Schaltkreise jedoch: Sie müssen von Anfang an wissen, wie
+                groß
+                Ihr Input ist; also wie vielen Input-Variablen $x_1, \dots, x_n$ Sie begegnen werden.
+                Für ein allgemeines Modell der Berechnung ist dies ungeeignet. Wir wollen ja _ein_
+                Computerprogramm, das beliebig große Eingaben verkraften kann. Ein Computerprogramm
+                soll also _endlich_ sein, aber für eine _unendliche_ Menge potentieller Eingaben
+                funktionieren.
+                In diesem Kapitel werden wir daher unendliche Mengen besser kennenlernen.
+                |> Statement
+                    title=*Beispiel*
+                    \ Die Mengen $\N, \Z, \Q, \R$ sind unendlich. Die
+                    Mengen
+                    $\{a,e,i,o,u\}$ und $\{0,1,2,3,4,5,6,7,8,9\}$ sind endlich.
                 |> div
-                    class=well container theorem
-                    |> p
-                        |> span
-                            class=numbered-title
-                            Beispiel 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            \ 
-                        \ Die Mengen $\N, \Z, \Q, \R$ sind unendlich. Die
-                        Mengen
-                        $\{a,e,i,o,u\}$ und $\{0,1,2,3,4,5,6,7,8,9\}$ sind endlich.
-                |> div
-                    class=well container theorem
-                    |> p
-                        |> span
-                            class=numbered-title
-                        Die Menge
-                        \begin{align*}
-                        \{0,1\}^* := \{\epsilon\} \cup \{0,1\} \cup \{00, 01, 10, 11\} \cup \dots \cup \{0,1\}^n
-                        \cup
-                        \dots \ ,
-                        \end{align*}
-                        also die Menge aller endlichen Bit-Strings ist unendlich. Mit $\epsilon$ bezeichnen wir hier den
-                        leeren String.
-                        Ganz generell: wenn $\Sigma$ eine
-                        nichtleere
-                        Menge ist, dann ist $\Sigma^*$, die Menge aller endlichen Strings über $\Sigma$, unendlich.
+                    class=well theorem
+                    |> span
+                        class=numbered-title
+                    Die Menge
+                    \begin{align*}
+                    \{0,1\}^* := \{\epsilon\} \cup \{0,1\} \cup \{00, 01, 10, 11\} \cup \dots \cup \{0,1\}^n
+                    \cup
+                    \dots \ ,
+                    \end{align*}
+                    also die Menge aller endlichen Bit-Strings ist unendlich. Mit $\epsilon$ bezeichnen wir hier den
+                    leeren String.
+                    Ganz generell: wenn $\Sigma$ eine
+                    nichtleere
+                    Menge ist, dann ist $\Sigma^*$, die Menge aller endlichen Strings über $\Sigma$, unendlich.

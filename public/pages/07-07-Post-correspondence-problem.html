@@ -1,18 +1,10 @@
 <div id="rightSideWrapper">
-
-
         <div class="content">
-
-
-
             <div class='chapter'>
-
                 <div class='subChapter'>
                     <h1 class='hidden-title'>
-                        <span class='subChapterTitle'>Mehr über Unentscheidbarkeit: Das Postsche Korrespondenzproblem</span>
+                        <span class='subChapterTitle'>8.7 Mehr über Unentscheidbarkeit: Das Postsche Korrespondenzproblem</span>
                     </h1>
-
-
 
                     <p>
                         Die Unentscheidbarkeit des Halteproblems
@@ -204,7 +196,7 @@
                             </li>
                             <li>
                                 Eine Kachelung \(s\) ist eine <em>Lösung</em>
-                                des Puzzles, wenn \(\top(s) = \bottom(s)\) gilt.
+                                des Puzzles, wenn sie nichtleer ist und \(\top(s) = \bottom(s)\) gilt.
                             </li>
                         </ul>
                     </div class='well container theorem'>
@@ -273,6 +265,8 @@
                             nur dass es in \(S\) eine markierte Startkachel gibt
                             und jede Lösung mit dieser Startkachel beginnen muss.
                             Es ist also ein "strengeres" Problem als das PCP.
+                            Das zweite Beispiel oben war eine Instanz von MPCP - dort hatten
+                            wir die türkise Kachel als Startkachel markiert.
                         </p>
                         <div class='well subtheorem theorem'>
                             <span class='numbered-title'>Lemma</span>
@@ -324,10 +318,10 @@
                                 konstruieren, indem wir einfach jede \(S\)-Kachel
                                 durch die entsprechende \(S'\)-Kachel ersetzen (Vorsicht:
                                 sollte die markierte Startkachel in der \(S\)-Lösung mehrfach
-                                vorkommen, so muss in \(S'\) anfangs die "türkise"
+                                vorkommen, so muss in \(S'\) anfangs die türkise
                                 Version der Kachel genommen werden, mit * oben und unten;
                                 jedes weitere Exemplar muss dann in \(S'\) durch die
-                                violette türkise Kachel ersetzt werden). Ganz
+                                violette Kachel ersetzt werden). Ganz
                                 zum Schluss hängen wir noch die Kachel für den
                                 rechten Rand an.
                                 Sollte umgekehrt das PCP-Puzzle \(S'\) eine Lösung
@@ -386,6 +380,7 @@
                         zu legen. Hierfür brauchen wir "Kopierkacheln", die es uns
                         erlauben, Zeichen in die Folgekonfiguration zu kopieren und
                         "Kopf-Kacheln", die die Aktion am Schreib-Lese-Kopf simulieren.
+                        Wenn also
                         \begin{align*}
                         \delta(q_0, x_1) = (q_1, y, \texttt{R})
                         \end{align*}

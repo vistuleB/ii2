@@ -279,6 +279,7 @@ pub fn renderer_wly_2_html(amendments: ds.CommandLineAmendments) -> Nil {
       pipeline: pipeline_wly_2_html(),
       splitter: ti2_splitter,
       emitter: ti2_emitter,
+      writer: ds.default_writer,
       prettifier: ds.default_prettier_prettifier,
     )
     |> ds.amend_renderer_by_command_line_amendments(amendments)

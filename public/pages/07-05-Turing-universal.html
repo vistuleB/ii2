@@ -3,7 +3,7 @@
                         <div class='chapter'>
                                 <div class='subChapter'>
                                         <h1 class='hidden-title'>
-                                                <span class='subChapterTitle'>7.5 Turing-Maschinen simulieren Turing-Maschinen: die universelle Turing-Maschine</span>
+                                                <span class='subChapterTitle'>8.5 Turing-Maschinen simulieren Turing-Maschinen: die universelle Turing-Maschine</span>
                                         </h1>
 
                                         <p>
@@ -67,8 +67,7 @@
 
                                         <div class='well container theorem'>
                                                 <p><span class='numbered-title'>Theorem</span> <strong>(Universelle
-                                                                Turingmaschine).</strong> Zu
-                                                        jedem
+                                                                Turingmaschine).</strong> Zu jedem
                                                         endlichen Eingabealphabet $\Sigma$ sei
                                                         $\Lambda := \writelambda$ das Codierungsalphabet. Es gibt es
                                                         eine
@@ -80,21 +79,21 @@
                                                 </p>
                                                 <ul>
                                                         <li>Falls $x$ nicht die Form
-                                                                $\enc(M) \texttt{;} w$ mit $w \in \Sigma^*$ hat,
+                                                                $\enc(M) w$ mit $w \in \Sigma^*$ hat,
                                                                 lehnt sie ab;
                                                         </li>
-                                                        <li>Ansonsten, falls also $c = \enc(M)$ für eine Turingmaschine
-                                                                $M$ ist:
+                                                        <li>Ansonsten, falls also $x = \enc(M)w$ für eine Turingmaschine
+                                                                $M$ und ein Wort $w \in \Sigma^*$ ist:
                                                                 <ul>
                                                                         <li>Falls $M$ mit Eingabewort $w$ nicht
                                                                                 terminiert, dann terminiert $U$ mit
-                                                                                Eingabewort $c \texttt{;} w$ auch nicht.
+                                                                                Eingabewort $x$ auch nicht.
                                                                         </li>
                                                                         <li>Falls $M$ mit Eingabewort $w$ eine
                                                                                 Endkonfiguration $C = uqv$ erreicht,
                                                                                 dann
                                                                                 erreicht $U$ mit
-                                                                                Eingabewort $c \texttt{;} w$ die
+                                                                                Eingabewort $x$ die
                                                                                 Endkonfiguration
                                                                                 $q\ \enc(C)$. Das heißt insbesondere,
                                                                                 dass $U$ genau dann akzeptiert, wenn $M$

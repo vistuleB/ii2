@@ -1,5 +1,5 @@
 |> section
-    title_gr=universelle Turingmaschine
+    title_gr=codieren
     title_en=Turing encoding
     number=7.3
     counter=DefCtr
@@ -34,43 +34,41 @@
                         |> span
                             class=subChapterTitle
                             ::::ChapterCtr.::++SectionCtr
-                            Die universelle Turingmaschine
-                    |> p
-                        Wir haben mit der Turingmaschine ein einfaches aber doch sehr mächtiges Modell einer
-                        Rechenmaschine kennengelernt.
-                        Sie haben vielleicht mittlerweile - auch durch Ihre Programmiererfahrung - das Gefühl, das man
-                        im Prinzip alles, was
-                        man überhaupt programmieren kann, auch auf einer Turingmaschine hinkriegt.
-                        Versetzen Sie sich nun in die Lage der Menschen vor ungefähr 100 Jahren. Damals gab es durchaus
-                        Rechenmaschinen.
-                        Maschinen zum Addieren und sogar zum Multiplizieren gibt es schon seit
-                        dem 17. Jahrhunder (
-                        |> a
-                            href=https://en.wikipedia.org/wiki/Mechanical_calculator
-                            Wikipedia:
-                            Mechanical calculator
-                        ).
-                        Leider musste man für jede Aufgabe eine neue Maschine erfinden und auch bauen. Zahlen addieren?
-                        Maschine bauen. Multiplizieren?
-                        Neue Maschine bauen. Verschlüsselung brechen? Neue Maschine bauen. Und so weiter.
-                    |> p
-                        Die Idee einer 
-                        |> a
-                            href=https://en.wikipedia.org/wiki/Mechanical_calculator#Programmable_mechanical_calculators
-                            programmierbaren
-                            Maschine
-                        ,
-                        die erstmals circa 1834 mit Charles Babbage aufkam, ist, dass man neben den Eingabedaten (z.B.
-                        die zu multiplizierenden Zahlen) auch
-                        die Rechenvorschrift (das Programm) als Eingabe übergibt. Hätte man so eine Maschine, dann
-                        müsste man nicht für jede neue Aufgabe
-                        eine neue Maschine entwerfen; man könnte _eine_ Maschine bauen und sie für die jeweilige
-                        Aufgabe _programmieren_, indem
-                        ihr auf einem separaten Eingabeband die Rechenvorschrift überreicht. Von heute aus gesehen ist
-                        diese Idee nicht mehr allzu überraschend, weil
-                        diese Maschinen überall anzutreffen sind. Damals aber war es revolutionär. Um dies, zumindest
-                        auf dem Papier, in die Realität zu übersetzen,
-                        müssen wir zwei Fragen beantworten.
+                            Turing-Maschinen codieren
+                    Wir haben mit der Turingmaschine ein einfaches aber doch sehr mächtiges Modell einer
+                    Rechenmaschine kennengelernt.
+                    Sie haben vielleicht mittlerweile - auch durch Ihre Programmiererfahrung - das Gefühl, das man
+                    im Prinzip alles, was
+                    man überhaupt programmieren kann, auch auf einer Turingmaschine hinkriegt.
+                    Versetzen Sie sich nun in die Lage der Menschen vor ungefähr 100 Jahren. Damals gab es durchaus
+                    Rechenmaschinen.
+                    Maschinen zum Addieren und sogar zum Multiplizieren gibt es schon seit
+                    dem 17. Jahrhunder (
+                    |> a
+                        href=https://en.wikipedia.org/wiki/Mechanical_calculator
+                        Wikipedia:
+                        Mechanical calculator
+                    ).
+                    Leider musste man für jede Aufgabe eine neue Maschine erfinden und auch bauen. Zahlen addieren?
+                    Maschine bauen. Multiplizieren?
+                    Neue Maschine bauen. Verschlüsselung brechen? Neue Maschine bauen. Und so weiter.
+                    Die Idee einer 
+                    |> a
+                        href=https://en.wikipedia.org/wiki/Mechanical_calculator#Programmable_mechanical_calculators
+                        programmierbaren
+                        Maschine
+                    ,
+                    die erstmals circa 1834 mit Charles Babbage aufkam, ist, dass man neben den Eingabedaten (z.B.
+                    die zu multiplizierenden Zahlen) auch
+                    die Rechenvorschrift (das Programm) als Eingabe übergibt. Hätte man so eine Maschine, dann
+                    müsste man nicht für jede neue Aufgabe
+                    eine neue Maschine entwerfen; man könnte _eine_ Maschine bauen und sie für die jeweilige
+                    Aufgabe _programmieren_, indem
+                    ihr auf einem separaten Eingabeband die Rechenvorschrift überreicht. Von heute aus gesehen ist
+                    diese Idee nicht mehr allzu überraschend, weil
+                    diese Maschinen überall anzutreffen sind. Damals aber war es revolutionär. Um dies, zumindest
+                    auf dem Papier, in die Realität zu übersetzen,
+                    müssen wir zwei Fragen beantworten.
                     |> ol
                         |> li
                             Wie können wir eine Rechenvorschrift (d.h. ein Programm) so codifizieren, dass wir es im
@@ -79,72 +77,69 @@
                         |> li
                             Welche Maschine könnte so eine Rechenvorschrift lesen und sie an gegebenen Eingabedaten dann
                             auch ausführen?
-                    |> p
-                        Es stellt sich heraus, dass wir beide Antworten (beinahe) schon kennen. Eine beliebige
-                        Rechenvorschrift können wir, da sind wir uns mittlerweile
-                        recht sicher, als Turingmaschine \(M\) implementieren. Diese können wir über einem Alphabet
-                        codieren und erhalten ein Wort
-                        \(\enc(M)\). Wie tun wir das? Nun ja, auf 
-                        |> a
-                            href=https://turingmachinesimulator.com
-                            turingmachinesimulator.com
-                        \ haben wir das
-                        bereits getan:
-                        eine Turingmaschine mit Alphabet \(\Sigma\) können wir dort als String über dem Alphabet
-                        \begin{align*}
-                        \Sigma \cup \{a,\dots,z,A\dots,Z,0,\dots,9\} \cup \{\texttt{&lt;}, \texttt{-}, \texttt{&gt;},
-                        \texttt{,}, \texttt{_}, \texttt{\n}, \dots\}
-                        \end{align*}
-                        codieren. Codierung ist im Prinzip kein Problem, wir werden aber ein paar Subtilitäten
-                        ansprechen.
-                    |> p
-                        Punkt 2 ist schwieriger. Können wir eine Maschine bauen, die als eingabe (1) die Codierung
-                        \(\enc(M)\) einer Turingmaschine und (2) ein Eingabewort
-                        \(w \in \Sigma^*\) entgegennimmt und dann die Berechnung \(M(x)\) simuliert bzw. zu dem Ergebnis
-                        gelangt, zu dem auch \(M(x)\) gelangen würde?
-                        Die Programmierer von 
-                        |> a
-                            href=https://turingmachinesimulator.com
-                            turingmachinesimulator.com
-                        \ haben dies
-                        offensichtlich geschafft:
-                        sie haben eine Maschine "gebaut" (also wohl einen Server gemietet und eine Webseite mit viel
-                        Javascript programmiert), der
-                        eine Turingmaschine in einer spezifischen Codierung und ein Eingabewort einliest und dann diese
-                        simuliert.
-                    |> p
-                        In diesem Teilkapitel werden wir sehen, wie wir eine Turingmaschine $M$ über einem
-                        fixen, nicht von $M$ abhängigen Alphabet codieren können.
-                        Im nächsten Teilkapitel werden wir uns überlegen, wie man einen Turingmaschinen-Simulator selbst
-                        als
-                        Turingmaschine implementieren kann. Also eine Turingmaschine \(U\), die als Input Wörter der
-                        Form
-                        \begin{align*}
-                        c\#x
-                        \end{align*}
-                        entgegennimmt und dann
-                        |> ol
-                            class=nested
-                            |> li
-                                *ablehnt*, falls \(c\) keine gültige Codierung einer Turingmaschine \(M\)
-                                ist,
-                            |> li
-                                ansonsten, falls also \(c = \enc(M)\), dann
-                                |> ol
-                                    class=nested
-                                    |> li
-                                        *akzeptiert* falls \(M(x)\) akzeptiert;
-                                    |> li
-                                        *ablehnt*, falls \(M(x)\) ablehnt
-                                    |> li
-                                        *nicht terminiert*, falls \(M(x)\) nicht terminiert.
-                        Falls wir bei \(M\) nicht nur an Akzeptieren / Ablehnen interessiert sind, sondern am Ergebnis der
-                        Berechnung,
-                        dann hätten wir gerne, dass \(U (\enc(M)\#x)\) am Ende den gleichen Bandinhalt hat wie \(M(x)\) am
-                        Ende;
-                        hierbei gibt es allerdings eine Schwierigkeit mit den Details der Codierung, die wir gleich
-                        ansprechen werden.
-                    |> h3
+                    Es stellt sich heraus, dass wir beide Antworten (beinahe) schon kennen. Eine beliebige
+                    Rechenvorschrift können wir, da sind wir uns mittlerweile
+                    recht sicher, als Turingmaschine \(M\) implementieren. Diese können wir über einem Alphabet
+                    codieren und erhalten ein Wort
+                    \(\enc(M)\). Wie tun wir das? Nun ja, auf 
+                    |> a
+                        href=https://turingmachinesimulator.com
+                        turingmachinesimulator.com
+                    \ haben wir das
+                    bereits getan:
+                    eine Turingmaschine mit Alphabet \(\Sigma\) können wir dort als String über dem Alphabet
+                    \begin{align*}
+                    \Sigma \cup \{a,\dots,z,A\dots,Z,0,\dots,9\} \cup \{\texttt{<}, \texttt{-}, \texttt{>},
+                    \texttt{,}, \texttt{_}, \texttt{\n}, \dots\}
+                    \end{align*}
+                    codieren. Codierung ist im Prinzip kein Problem, wir werden aber ein paar Subtilitäten
+                    ansprechen.
+                    Punkt 2 ist schwieriger. Können wir eine Maschine bauen, die als eingabe (1) die Codierung
+                    \(\enc(M)\) einer Turingmaschine und (2) ein Eingabewort
+                    \(w \in \Sigma^*\) entgegennimmt und dann die Berechnung \(M(x)\) simuliert bzw. zu dem Ergebnis
+                    gelangt, zu dem auch \(M(x)\) gelangen würde?
+                    Die Programmierer von 
+                    |> a
+                        href=https://turingmachinesimulator.com
+                        turingmachinesimulator.com
+                    \ haben dies
+                    offensichtlich geschafft:
+                    sie haben eine Maschine "gebaut" (also wohl einen Server gemietet und eine Webseite mit viel
+                    Javascript programmiert), der
+                    eine Turingmaschine in einer spezifischen Codierung und ein Eingabewort einliest und dann diese
+                    simuliert.
+                    In diesem Teilkapitel werden wir sehen, wie wir eine Turingmaschine $M$ über einem
+                    fixen, nicht von $M$ abhängigen Alphabet codieren können.
+                    Im nächsten Teilkapitel werden wir uns überlegen, wie man einen Turingmaschinen-Simulator selbst
+                    als
+                    Turingmaschine implementieren kann. Also eine Turingmaschine \(U\), die als Input Wörter der
+                    Form
+                    \begin{align*}
+                    c\#x
+                    \end{align*}
+                    entgegennimmt und dann
+                    |> ol
+                        class=nested
+                        |> li
+                            *ablehnt*, falls \(c\) keine gültige Codierung einer Turingmaschine \(M\)
+                            ist,
+                        |> li
+                            ansonsten, falls also \(c = \enc(M)\), dann
+                            |> ol
+                                class=nested
+                                |> li
+                                    *akzeptiert* falls \(M(x)\) akzeptiert;
+                                |> li
+                                    *ablehnt*, falls \(M(x)\) ablehnt
+                                |> li
+                                    *nicht terminiert*, falls \(M(x)\) nicht terminiert.
+                    Falls wir bei \(M\) nicht nur an Akzeptieren / Ablehnen interessiert sind, sondern am Ergebnis der
+                    Berechnung,
+                    dann hätten wir gerne, dass \(U (\enc(M)\#x)\) am Ende den gleichen Bandinhalt hat wie \(M(x)\) am
+                    Ende;
+                    hierbei gibt es allerdings eine Schwierigkeit mit den Details der Codierung, die wir gleich
+                    ansprechen werden.
+                    |> SubTopic
                         Die Codierung
                     Zuerst müssen wir uns auf ein Eingabealphabet \(\Sigma\) einigen. Im Ernstfall genügt immer \(\Sigma
                     = \{0,1\}\), allerdings
@@ -155,32 +150,30 @@
                     \enc(M) \in \Lambda^*
                     \end{align*}
                     für jede Turingmaschine \(M\) mit Eingabealphabet \(\Sigma\) gilt.
-                    |> p
-                        *Erster, zum scheitern verurteilter Versuch.* Sei \(M\) eine Turingmaschine
-                        mit Eingabealphabet \(\Sigma\), Arbeitsalphabet \(\Gamma\), Zustandsmenge \(Q\), Startzustand
-                        \(\qstart\), akzeptierendem Zustand
-                        \(\qaccept\) und Übergangsfunktion \(\delta\).
-                        Wir codieren \(M\) wie folgt: wenn
-                        \begin{align*}
-                        \delta(q,x) = (r,y,\texttt{R}) \\
-                        \delta(q,y) = (s,z,\texttt{L}) \\
-                        \dots
-                        \end{align*}
-                        dann schreiben wir in der Codierung
-                        \begin{align*}
-                        \qstart \# \qaccept \# qxryR \# qyszL \# \dots
-                        \end{align*}
-                        Unser Codierungsalphabet ist also
-                        \begin{align*}
-                        \Lambda := Q \cup \Gamma \cup \{\#, \texttt{L}, \texttt{S}, \texttt{R}\} \ .
-                        \end{align*}
-                        Sehen Sie das Problem? Das Codierungsalphabet ist nicht uniform: wir brauchen, abhängig von der
-                        Zustandsmenge \(Q\) und
-                        dem Bandalphabet \(\Gamma\) jeweils neue Alphabete. Wir wollen aber ein \(\Lambda\), da für
-                        _alle_ Turingmaschinen
-                        mit Eingabealphabet \(\Sigma\) funktioniert.
-                    |> p
-                        *Zweiter, erfolgreicher Versuch.*
+                    *Erster, zum scheitern verurteilter Versuch.* Sei \(M\) eine Turingmaschine
+                    mit Eingabealphabet \(\Sigma\), Arbeitsalphabet \(\Gamma\), Zustandsmenge \(Q\), Startzustand
+                    \(\qstart\), akzeptierendem Zustand
+                    \(\qaccept\) und Übergangsfunktion \(\delta\).
+                    Wir codieren \(M\) wie folgt: wenn
+                    \begin{align*}
+                    \delta(q,x) = (r,y,\texttt{R}) \\
+                    \delta(q,y) = (s,z,\texttt{L}) \\
+                    \dots
+                    \end{align*}
+                    dann schreiben wir in der Codierung
+                    \begin{align*}
+                    \qstart \# \qaccept \# qxryR \# qyszL \# \dots
+                    \end{align*}
+                    Unser Codierungsalphabet ist also
+                    \begin{align*}
+                    \Lambda := Q \cup \Gamma \cup \{\#, \texttt{L}, \texttt{S}, \texttt{R}\} \ .
+                    \end{align*}
+                    Sehen Sie das Problem? Das Codierungsalphabet ist nicht uniform: wir brauchen, abhängig von der
+                    Zustandsmenge \(Q\) und
+                    dem Bandalphabet \(\Gamma\) jeweils neue Alphabete. Wir wollen aber ein \(\Lambda\), da für
+                    _alle_ Turingmaschinen
+                    mit Eingabealphabet \(\Sigma\) funktioniert.
+                    *Zweiter, erfolgreicher Versuch.*
                     Wir müssen also die Zustandsmenge \(Q\) und die Zeichen \(\Gamma \setminus \Sigma\) erst einmal
                     selbst codieren, beispielsweise
                     über dem Alphabet \(\{0,1\}\). Die \(\delta\)-Tabelle der Turingmaschine für \(\{a^nb^nc^n\}\)
@@ -195,61 +188,49 @@
                             style=height:10em
                             src=../img/turing-machines/exampe-2-aabbcc/delta-table-encoded.svg
                             loading=lazy
-                    |> p
-                        Wenn wir dies nun als _ein_ Wort in obigen Schema schreiben, können wir für eine
-                        Tabellenzelle
-                        \(\delta(q,x) = (r,y,R)\) nicht einfach \(qxryR\) schreiben, auch nicht einfach die Codierungen
-                        zusammenschreiben:
-                        in diesem Falle würde nämlich
-                        \(\delta(00,0) = (11,0,\texttt{R})\) zu \(000110\texttt{R}\) und wir würden nicht mehr erkennen,
-                        wo welches
-                        Zeichen beginnt und aufhört. Wir brauchen ein Separatorzeichen, beispielsweise ein Komma.
-                        Aus Gründen, die später klar werden werden, schließen wir die Codierung der Turingmaschine
-                        mit einem $\texttt{;}$ ab.
-                        Die Codierung der obigen Maschine ist dann also
+                    Wenn wir dies nun als _ein_ Wort in obigen Schema schreiben, können wir für eine
+                    Tabellenzelle
+                    \(\delta(q,x) = (r,y,R)\) nicht einfach \(qxryR\) schreiben, auch nicht einfach die Codierungen
+                    zusammenschreiben:
+                    in diesem Falle würde nämlich
+                    \(\delta(00,0) = (11,0,\texttt{R})\) zu \(000110\texttt{R}\) und wir würden nicht mehr erkennen,
+                    wo welches
+                    Zeichen beginnt und aufhört. Wir brauchen ein Separatorzeichen, beispielsweise ein Komma.
+                    Aus Gründen, die später klar werden werden, schließen wir die Codierung der Turingmaschine
+                    mit einem $\texttt{;}$ ab.
+                    Die Codierung der obigen Maschine ist dann also
                     |> pre
                         class=container
                         00#100#00,a,01,1,S#00,b,L#00,c,L#00,1,L#00,0,11,0,R#01,a,R#01,b,10,1,S#01,1,R#10,b,R#10,c,00,1,S#10,1,R#11,1,R#11,0,100#;
-                    |> p
-                        In dieser Codierung behalten wir zwei Konventionen bei: wenn eine Regel
-                        "fehlt", also beispielsweise für \(\delta(10,a)\) die Zelle leer ist, dann
-                        soll das in den Zustand $\qreject$ führen; wenn in der Zelle
-                        nur ein Richtungszeichen, also beispielsweise 
-                        |> tt
-                            01,1,R
-                        \ steht,
-                        dann ist das eine Abkürzung für
-                        \begin{align*}
-                        \delta(01,1) = (01,1,\texttt{R}),
-                        \end{align*}
-                        also
-                        |> tt
-                            #01,1,01,1,R#
-                    |> p
-                        Wir können nun _jede_ Turingmaschine
-                        über dem Alphabet
-                        \(\Sigma\) codieren als Wort über dem Alphabet
-                        \begin{align*}
-                        \Lambda := \writelambda
-                        \end{align*}
+                    In dieser Codierung behalten wir zwei Konventionen bei: wenn eine Regel
+                    "fehlt", also beispielsweise für \(\delta(10,a)\) die Zelle leer ist, dann
+                    soll das in den Zustand $\qreject$ führen; wenn in der Zelle
+                    nur ein Richtungszeichen, also beispielsweise `01,1,R` steht,
+                    dann ist das eine Abkürzung für
+                    \begin{align*}
+                    \delta(01,1) = (01,1,\texttt{R}),
+                    \end{align*}
+                    also
+                    `#01,1,01,1,R#`
+                    Wir können nun _jede_ Turingmaschine
+                    über dem Alphabet
+                    \(\Sigma\) codieren als Wort über dem Alphabet
+                    \begin{align*}
+                    \Lambda := \writelambda
+                    \end{align*}
+                    |> Statement
+                        title=*Definition*
+                        \ Zu einem Eingabealphabet
+                        $\Sigma$ definieren wir das _Codierungsalphabet_
+                        $\Lambda := \writelambda$,
+                        wobei wir annehmen, dass $\texttt{#}, \texttt{,}, \texttt{L}, \texttt{S}, \texttt{R},
+                        \texttt{;}
+                        \not \in \Sigma$. Wir können nun jede Turingmaschine $M$ mit Eingabealphabet
+                        $\Sigma$ als String $\enc(M) \in \Lambda^*$ codieren.
+                        Per Konvention kommt `;` in $\enc(M)$ genau einmal vor, nämlich
+                        am Schluss.
                     |> div
-                        class=well container theorem
-                        |> p
-                            |> span
-                                class=numbered-title
-                                Definition 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                \ /Beobachtung.
-                            \ Zu einem Eingabealphabet
-                            $\Sigma$ definieren wir das _Codierungsalphabet_
-                            $\Lambda := \writelambda$,
-                            wobei wir annehmen, dass $\texttt{#}, \texttt{,}, \texttt{L}, \texttt{S}, \texttt{R},
-                            \texttt{;}
-                            \not \in \Sigma$. Wir können nun jede Turingmaschine $M$ mit Eingabealphabet
-                            $\Sigma$ als String $\enc(M) \in \Lambda^*$ codieren.
-                    |> div
-                        class=alert-info container
+                        class=alert-info well
                         *Anmerkungen:* 
                         \ das Wort _Codierung_ suggeriert, dass wir, gegeben
                         den String $c = \enc(M)$ die

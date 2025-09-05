@@ -6,12 +6,12 @@ import selector_library as sl
 pub fn pipeline_html_2_wly() -> List(Pipe) {
   [
     dl.identity(),
-    dl.find_replace_in_descendants_of__batch([
-      #("div", [#("<", "&lt;"), #(">", "&gt;")])
-    ]),
+    dl.find_replace__outside(#("&lt;", "<"), []),
+    dl.find_replace__outside(#("&gt;", ">"), []),
     dl.remove_chapter_number_from_title(),
     dl.trim_spaces_around_newlines__outside([]),
     dl.replace_multiple_spaces_by_one(),
+    dl.rename(#("tt", "code")),
     dl.extract_starting_and_ending_spaces(["i", "b", "strong", "em", "code"]),
     dl.insert_bookend_text_if_no_attributes([
       #("i", "_", "_"),
@@ -26,7 +26,6 @@ pub fn pipeline_html_2_wly() -> List(Pipe) {
       "go23_xU",
     )),
     dl.unwrap_tags_if_no_attributes(["i", "b", "strong", "em", "code"]),
-    // 10
     dl.fold_into_text(#("go23_xU", "")),
     dl.delete_empty_lines(),
     dl.insert_ti2_counter_commands(#(
@@ -59,6 +58,14 @@ pub fn pipeline_html_2_wly() -> List(Pipe) {
     )),
     dl.surround_elements_by(#(["NumberedTitle"], "go23_xU", "go23_xU")),
     dl.fold_into_text(#("go23_xU", " ")),
+    dl.unwrap("p"),
+    dl.rename(#("h2", "Topic")),
+    dl.rename(#("h3", "SubTopic")),
+    dl.ti2_class_well_container_theorem_2_statement(),
+    dl.substitute_class(#("div", "container", "well")),
+    dl.rename_if_has_singleton_class_attribute(#("div", "well", "Highlight")),
+    dl.rename_and_delete_children_if_has_singleton_class_attribute(#("span", "qed", "QED")),
+    dl.supplement_class(#("div", "alert-info", "well")),
   ]
   |> infra.desugarers_2_pipeline(
     sl.verbatim("ächstes wollen wir zeig")

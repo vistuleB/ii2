@@ -1,7 +1,7 @@
 |> section
-    title_gr=Haltproblem und Unentscheidbarkeit
+    title_gr=
     title_en=undecidability
-    number=7.6
+    number=7.5
     counter=DefCtr
     counter=ExoCtr
     |> div
@@ -10,7 +10,7 @@
             href=../vorlesungsskript.html
             Inhaltsverzeichnis
         |> a
-            href=07-05-undecidability.html
+            href=07-05-Turing-universal.html
             &lt;&lt; Kapitel 7.5
     |> div
         id=link-to-overview
@@ -19,8 +19,8 @@
             href=/
             zur Kursübersicht
         |> a
-            href=07-07-Post-correspondence-problem.html
-            Kapitel 7.7 &gt;&gt;
+            href=07-06-undecidability.html
+            Kapitel 7.6 &gt;&gt;
     |> div
         id=rightSideWrapper
         |> div
@@ -34,7 +34,7 @@
                         |> span
                             class=subChapterTitle
                             ::::ChapterCtr.::++SectionCtr
-                            Turingmaschinen, Haltproblem und Unentscheidbarkeit
+                            Unentscheidbarkeit
                     Im vorherigen Teilkapitel haben wir die _universelle Turingmaschine_ $U$ konstruiert, die
                     eine andere Turingmaschine, deren Codierung und Inputwort sie als Input gegeben hat, simulieren
                     kann.
@@ -69,13 +69,14 @@
                     $\enc$ ist nun also $\enc: \tm_{\Sigma} \rightarrow \Sigma^*$. Wir definieren nun
                     die Haltesprache $\halt \in \Sigma^*$:
                     \begin{align*}
-                    \halt := \{ \enc(M) w \ | \ M \textnormal{ akzeptiert } w\} \ .
+                    \halt := \{ \enc(M) w \ | \ w \in \Sigma^* \textnormal{ und } M \textnormal{ akzeptiert } w\} \ .
                     \end{align*}
+                    Da $\enc$ präfixfrei ist, können wir erkennen, wo $\enc(\texttt{;})$ steht,
+                    wo also $\enc(M)$ aufhört und $w$ beginnt.
                     Wir können die universelle Turingmaschine $U$ leicht abwandeln, dass sie $\halt$ akzeptiert;
                     wir müssen nur einen Decodierungsschritt vorausschicken, der die neue Codierung $\enc(M) \in
                     \Sigma^*$
-                    in unsere "alte" in $\Lambda^*$ übersetzt. Beachten Sie, dass das Zeichen $\texttt{;}$, das wir
-                    auch blockcodiert haben, uns hilft, die Grenze zwischen $\enc(M)$ und $w$ zu erkennen.
+                    in unsere "alte" in $\Lambda^*$ übersetzt.
                     Wir zeigen nun, dass $\halt$ unentscheidbar ist, dass es also keine Möglichkeit gibt,
                     das Nichtterminieren einer Maschine $M$ auf Eingabe $x$ vorauszusehen und abzufangen.
                     |> Statement
