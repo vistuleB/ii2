@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <link rel="icon" href="data:,">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+    <link rel="stylesheet" type="text/css" href="../TI.css" />
+    <link rel="stylesheet" type="text/css" href="../tooltip-3003.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../numbered-title.js"></script>
+    <script type="text/javascript" src="../mathjax_setup.js"></script>
+    <script type="text/javascript" src="../carousel.js"></script>
+    <script type="text/javascript" src="../sendCmdTo3003.js"></script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<section
+  count="54"
+  .="BookLevelSectionCounter 54"
+  title_gr="Zeit"
+  title_en="nondeterministic time"
+  number="8.3"
+  counter="DefCtr"
+  counter="ExoCtr"
+  path="/lecture-notes54"
+>
+  <div id="link-to-toc">
+    <a href="../vorlesungsskript.html">Inhaltsverzeichnis</a><a href="08-02-Turing-machines-and-circuits.html">&lt;&lt; Kapitel 8.2</a>
+  </div>
+  <div
+    id="link-to-overview"
+    style="text-align: end"
+  >
+    <a href="/">zur Kursübersicht</a><a href="08-04-NP-many-examples.html">Kapitel 8.4 &gt;&gt;</a>
+  </div>
+  <div id="rightSideWrapper">
+    <div class="content">
+      <div class="chapter">
+        <div class="subChapter">
+          <h1 class="hidden-title">
+            <span class="subChapterTitle">::::ChapterCtr.4
+              Nichtdeterministische Zeit</span>
+          </h1>
+          In
+          <span
+            data-ref="nondet-tm-to-det"
+            class="reference"
+          ></span>
+          haben wir
+          gesehen, dass jede nichtdeterministische Turing-Maschine durch eine
+          deterministische simuliert werden kann, wobei der Zeit-Overhead exponentiell
+          ist. Hier werden wir formal nicht-deterministische Zeitklassen definieren
+          und eine leicht andere, zugänglichere Definition einführen.
+          <Statement title="*Definition*">
+            Sei $t: \N \rightarrow \N$. Eine
+            nicht-deterministische Turingmaschinen $M$
+            <i>entscheidet</i>
+            eine Sprache $L \subseteq \Sigma^*$ in Zeit $t$ wenn
+            <ul>
+              <li>
+                $x \in L$ genau dann, wenn es eine Folge von Konfigurationen
+                $$
+                \begin{align*}
+                \qstart x \Rightarrow C_1 \Rightarrow \dots \Rightarrow C_m
+                \end{align*}
+                $$
+                gibt, so dass $C_m$ eine akzeptierende Endkonfiguration ist und
+              </li>
+              <li>
+                jede Folge von Konfigurationen, ausgehend mit der Startkonfiguration,
+                nach höchstens $O(t)$ Schritten terminiert. Formal, wenn es Konstanten
+                $a, b \in \N$ gibt, so dass für jede Folge
+                $$
+                \begin{align*}
+                \qstart x = C_0 \Rightarrow C_1 \Rightarrow C_2 \Rightarrow \dots \Rightarrow
+                C_{at(|x|)+b}
+                \end{align*}
+                $$
+                die Konfiguration $C_{at(|x|)+b}$ eine Endkonfiguration ist.
+              </li>
+            </ul>
+            Die Konstanten $a, b$ dürfen von $L$ abhängen, aber natürlich nicht
+            vom Eingabewort $x$. Wir definieren nun
+            $$
+            \begin{align*}
+            \NTIME_k(t) := \{L \subseteq \Sigma^* \ | \
+            \textnormal{es gibt eine nichtdeterministische $k$-Band-TM $M$, die $L$ in Zeit $t$
+            entscheidet}\}
+            \end{align*}
+            $$
+            und schließlich
+            $$
+            \begin{align*}
+            \NTIME(t) := \bigcup_{k \geq 1} \NTIME_k(t) \ .
+            \end{align*}
+            $$
+          </Statement>
+          Analog zur Komplexitätsklasse P (polynomielle Zeit) definieren
+          wir NP (nichtdeterministisch polynomielle Zeit):
+          <Statement title="*Definition*">
+            Wir definieren
+            $$
+            \begin{align*}
+            \textnormal{NP} := \bigcup_{k=1}^{\infty} \NTIME(n^k) \ ,
+            \end{align*}
+            $$
+            also die Klasse aller Probleme (formal: Sprachen), die man in nichtdeterministisch
+            polynomieller Zeit entscheiden kann.
+          </Statement>
+          <SubTopic>
+            Zertifikatmaschinen
+          </SubTopic>
+          <Statement title="*Definition*">
+            <b>(Zertifikatmaschine).</b>
+            Eine Zertifikatmaschine ist eine deterministische Turingmaschine mit $k$ Bändern.
+            Band 1 ist das Eingabeband und Band 2 das
+            <i>Zertifikatband.</i>
+            Seien $x, z \in \Sigma^*$. Mit $f_M(x,z) \in \{\texttt{accept}, \texttt{reject},
+            \texttt{undefined}\}$ bezeichnen wir den Endzustand, den $M$ erreicht, wenn wir sie
+            mit $x$ auf Band 1 und $z$ auf Band 2 starten, bzw. $\texttt{undefined}$ wenn $M$
+            gar nicht terminiert.
+            Die von $M$ akzeptierte Sprache ist
+            $$
+            \begin{align*}
+            L(M) := \{x \in \Sigma^* \ | \ \exists z \in \Sigma^*: M(x,z) = \texttt{accept}\} \ .
+            \end{align*}
+            $$
+            Wenn $L(M) = L$ und $M$ für jede Eingabe $x, z$ terminiert, dann
+            <i>entscheidet</i>
+            $M$ die Sprache $L$. Sei $t: \N \rightarrow \N$.
+            $M$ entscheidet $L$
+            <i>in Zeit $t$</i>
+            wenn
+            für alle $x, z \in \Sigma^*$ die Berechnung $M(x,z)$ in maximal $O(t(|x|))$ Schritten
+            terminiert.
+            Die Konstante in der $O$-Notation darf von $M$ abhängen, aber nicht von $x$ oder $z$.
+          </Statement>
+          Wir zeigen nun, dass Zertifikatmaschinen und nichtdeterministische Turingmaschinen
+          sich gegenseitig effizient simulieren können und somit zwei äquivalente Sichtweisen
+          auf das gleiche Konzept darstellen.
+          <Statement title="*Theorem*">
+            <b>(NDTM simulieren
+              Zertifikatmaschinen).</b>
+            Sei $t: \N \rightarrow \N$ zeitkonstruierbar.
+            Sei $M$ eine Zertifikatmaschine, die
+            die Sprache $L$ in Zeit $t$ entscheidet. Dann gibt es eine
+            nichtdeterministische Turingmaschine $M'$, die $L$ in Zeit $t$ entscheidet.
+          </Statement>
+          <Highlight>
+            <b>Beweis.</b>
+            Die Maschine $M'$ hat so viele Bänder wie $M$, wobei zu Beginn der Berechnung allerdings
+            das zweite Band leer ist. Die Funktionsweise von $M'$ ist nun wie folgt:
+            In Phase 1 berechnet sie in $O(t(|x|))$ Schritten die Zahl $T:= t(|x|)$, das heißt, sie
+            schreibt das Wort $1^{T}$ auf dem zweiten Band. Dann wechselt sie in den Zustand
+            <code>guessCertificate</code>
+            und beginnt Phase 2. Hier ersetzt sie jede $1$ auf dem zweiten
+            Band durch ein beliebiges Zeichen in $\Sigma$. Formal setzen wir für jedes $x \in \Sigma$:
+            $$
+            \begin{align*}
+            \delta_{M'}(\texttt{guessCertificate}, x, 1, \Box, \dots, \Box) =
+            \{(\texttt{guessCertificate}, x, y, \Box, \dots, \Box), (S, R, S, \dots, S) \ | \ y \in \Sigma
+            \} \ .
+            \end{align*}
+            $$
+            Nun geht $M'$ auf dem zweiten Band wieder zum linken Rand und wechselt
+            in wechselt in $\qstart$, den Startzustand von $M$. Nun beginnt Phase 3, in der
+            sie genau so arbeitet wie $M$.
+            Wir müssen nun zeigen, dass für alle Eingabewörter $w \in \Sigma^*$
+            $$
+            \begin{align*}
+            w \in L(M) \Longleftrightarrow w \in L(M') \ .
+            \end{align*}
+            $$
+            Sei $w \in L(M)$. Nach Definition von Zertifikatmaschinen heißt das, dass es ein
+            Zertifikat $z$ gibt, so dass $M(x,z) = \texttt{accept}$ und dass diese
+            Berechnung höchstens $t$ Schritte benötigt. Wir können also annehmen, dass
+            $z \in \Sigma^{t}$, denn mehr wird $M$ eh nicht lesen.
+            Nun gibt es für $M'$ eine Folge von Konfigurationen,
+            in der $M'$ nach Berechnung von $t(|x|)$ auf das zweite Band genau
+            die Zeichenfolge $z$ schreibt. Danach startet sie $M$, die dann nach weiteren
+            $t$ Schritten
+            <code>accept</code>
+            ausgibt. Es gilt also $w \in L(M')$, und somit
+            gilt $w \in L(M) \Longrightarrow w \in L(M')$.
+            Sei nun andererseits $w \in L(M')$. Betrachten wir die Konfigurationsfolge,
+            die zu einem
+            <code>accept</code>
+            führt. Sei $z \in \Sigma^t$ das Wort, dass $M'$ in Phase 2
+            auf das Band schreibt. In Phase 3 wird ja $M$ simuliert, und $M$ gibt offensichtlich
+            <code>accept</code>
+            aus. Also gibt $M$, wenn wir es mit $x$ auf dem ersten Band und
+            $z$ auf dem zweiten Band starten, auch
+            <code>accept</code>
+            aus, und somit gilt
+            $x \in L(M)$.
+            <QED>
+            </QED>
+          </Highlight>
+          <Statement title="*Übungsaufgabe*">
+            Der obige Beweis enthält einige kleine Fehler. So tätigt nach Annahme die Berechnung
+            von $M(x,z)$ ja maximal $O(t(|x|))$ Schritte, formal also maximal $a t(|x|) + b$, nicht
+            maximal
+            $T = t(|x|)$. Es kann also durchaus sein, dass mehr als $T = t(|x|)$ Zeichen von $z$ gelesen
+            werden.
+            Der zweite Fehler ist, dass eventuell das einzige $z$, dass $M(x,z)$ zum akzeptieren bringt,
+            die Länge $|z| = k \lt t(|x|)$ hat, und $M$ wirklich überprüft, ob nach $k+1$ Zeichen
+            auf ein Band ein $\Box$ steht, und andernfalls ablehnt. Dann würde unser $M'$ oben
+            immer ablehnen, weil sie in Phase 2 ja wirklich
+            <i>genau</i>
+            $T$ Zeichen schreibt.
+            Flicken Sie diese beiden Fehler!
+          </Statement>
+          <Statement title="*Theorem*">
+            <b>(Zertifikatmaschinen
+              simulieren NDTM).</b>
+            Sei $t: \N \rightarrow \N$ zeitkonstruierbar.
+            Sei $M$ eine nichtdeterministische Turingmaschine, die
+            die Sprache $L$ in Zeit $t$ entscheidet. Dann gibt es eine
+            Zertifikatmaschine $M'$, die $L$ in Zeit $t$ entscheidet.
+          </Statement>
+          <Highlight>
+            <b>Beweis.</b>
+            Da $M$ nichtdeterministisch ist, ist $\delta \subseteq (Q \times \Gamma^k) \times (Q \times
+            \Gamma^k \times \{L,S,R\}^k)$
+            eine Relation, keine Funktion. Wir können es aber als Funktion in die
+            Potenzmenge betrachten, also
+            $$
+            \begin{align*}
+            \delta: Q \times \Gamma^k \rightarrow \mathcal{P} (Q \times \Gamma^k \times \{L,S,R\}^k)
+            \end{align*}
+            $$
+            Nun bezeichnet $\delta(q, x_1, \dots, x_k)$ also die
+            <i>Menge</i>
+            der Aktionen,
+            die die Turingmaschine nun ausführen könnte.
+            Wie im Beweis von
+            <span
+              data-ref="nondet-tm-to-det"
+              class="reference"
+            ></span>können wir $M$ so umprogrammieren, dass sie die selbe Sprache entscheidet,
+            aber $|\delta(q,x_1,x_2,\dots,x_k)| = 2$ gilt, außer für $q \in \{\texttt{accept},
+            \texttt{reject}\}$. Wir wählen uns zwei beliebige Symbole in $\Sigma$ und
+            geben ihnen in diesem Beweis die Spitznamen $1$ und $2$. Der
+            Zertifikatmaschine $M'$ geben wir zusätzlich zu den Bändern von $M$ ein
+            weiteres Zertifikatband (das wir nun als das
+            <i>zweite</i>
+            Band bezeichnen).
+            Sie verfährt nun wie folgt:
+            $$
+            \begin{align*}
+            \delta(q, x_1, i, x_2, \dots, x_k) =
+            \begin{cases}
+            \textnormal{das $i$-te Element aus $\delta(q, x_1, x_2, \dots x_k)$}&amp;
+            \textnormal{ falls $i \in \{1,2\}$} \\
+            \texttt{reject}&amp;\textnormal{ ansonsten.}
+            \end{cases}
+            \end{align*}
+            $$
+            Falls nun $x \in L(M')$ ist, dann gibt es also einen Bandinhalt $z \in \Sigma^*$ für
+            das zweite Band, so dass $M'(x,z)$ akzeptiert. Wenn wir die Konfigurationsfolge von $M'$
+            betrachten, aber das zweite Band ignorieren, dann ist das genau eine Konfigurationsfolge
+            von $M(x)$, die zu
+            <code>accept</code>
+            führt. Somit gilt auch $x \in L(M)$.
+            Falls umgekehrt $x \in L(M)$ ist, dann gibt es eine Konfigurationsfolge, die
+            zu
+            <code>accept</code>
+            führt. In jedem Schritt wird dabei entweder das
+            erste oder das zweite Element aus $\delta(q,x_1,\dots,x_k)$ genommen.
+            Wir schreiben diese Folge als $z \in \{1,2\}^{T}$ auf. Es gilt
+            $T \in O(|t(x)|)$, da $M$ ja Laufzeit $t$ hat. Wenn wir nun der Maschine $M'$
+            das Wort $z$ auf ihr zweites Band schreiben, dann wird sie genau die Konfigurationsfolge
+            von $M$ reproduzieren und zu
+            <code>accept</code>
+            gelangen. Also $x \in L(M')$.
+            <QED>
+            </QED>
+          </Highlight>
+          Im obigen Beweis nehmen wir stillschweigend ann, dass $\Sigma$ mindestens
+          zwei Zeichen enthält (die wir als $1$ und $2$ verwenden können). Wenn nun $|\Sigma| = 1$
+          wäre, dann müssten wir unserer Zertifikatmaschine erlauben, auf Band 2 ein
+          separates
+          <i>Zertifikatalphabet</i>
+          zu verwenden; ansonsten würde die Simulation
+          nicht funktionieren.
+          <Statement title="*Übungsaufgabe*">
+            Sei $M$ eine Zertifikatmaschine und $\Sigma$ ein unäres Alphabet, also $|\Sigma|=1$.
+            Wir nehmen an, dass $M$
+            <i>kein</i>
+            separates Zertifikatalphabet hat.
+            Zeigen Sie: wenn $M$ die Sprache $L$ in Zeit $t(n)$ entscheidet, dann gibt
+            es eine
+            <i>deterministische</i>
+            Turingmaschine, die $L$ in Zeit $t^2(n)$ entscheidet.
+          </Statement>
+          <SubTopic>
+            NP als Klasse der Probleme mit effizienten Zertifikaten
+          </SubTopic>
+          Nach Definition ist eine Sprache $L$ ist in NP, wenn es eine nichtdeterministische
+          Turingmaschine mit polynomieller Laufzeit $t(n) = n^k$ gibt, die $L$ entscheidet.
+          Nach
+          <span
+            data-ref="theorem-certificate-simulates-nondet"
+            class="reference"
+          ></span>also, wenn es eine Zertifikatmaschine $M$ gibt, die $L$ in Zeit $t$ entscheidet.
+          Wenn also
+          $$
+          \begin{align*}
+          x \in L \Longleftrightarrow \exists z \in \Sigma^*: M(x,z) = \texttt{accept}
+          \end{align*}
+          $$
+          Da $M$ nur $T = |x|^k$ Schritte tätigt, können wir annehmen, dass $|z| \leq T$ ist.
+          Weiterhin können wir $x,z$ als
+          <i>ein</i>
+          Wort mit dem Trennzeichen "," auffassen.
+          $M$ wird somit zu einer handelsüblichen deterministischen Turingmaschine, die
+          die Sprache $\{x,z \ | \ M(x,z) = \texttt{accept}\}$ entscheidet und
+          auch Laufzeit $t$ hat. Somit können wir die Sprache NP wie folgt charakterisieren:
+          <Statement title="*Theorem*">
+            Eine Sprache $L$ ist genau dann in NP,
+            wenn es ein $k \in \N$ und eine Sprache $L' \in \textnormal{P}$ gibt mit
+            $$
+            \begin{align*}
+            x \in L \Longleftrightarrow \exists z \in \Sigma^*: |z| \leq |x|^k \textnormal{ und } (x,z) \in
+            L'
+            \end{align*}
+            $$
+          </Statement>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>

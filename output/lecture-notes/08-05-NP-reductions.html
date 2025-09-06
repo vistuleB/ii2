@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <link rel="icon" href="data:,">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+    <link rel="stylesheet" type="text/css" href="../TI.css" />
+    <link rel="stylesheet" type="text/css" href="../tooltip-3003.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../numbered-title.js"></script>
+    <script type="text/javascript" src="../mathjax_setup.js"></script>
+    <script type="text/javascript" src="../carousel.js"></script>
+    <script type="text/javascript" src="../sendCmdTo3003.js"></script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<section
+  count="56"
+  .="BookLevelSectionCounter 56"
+  title_gr=""
+  title_en="NP reductions"
+  number="8.5"
+  counter="DefCtr"
+  counter="ExoCtr"
+  path="/lecture-notes56"
+>
+  <div id="link-to-toc">
+    <a href="../vorlesungsskript.html">Inhaltsverzeichnis</a><a href="08-04-NP-many-examples.html">&lt;&lt; Kapitel 8.4</a>
+  </div>
+  <div
+    id="link-to-overview"
+    style="text-align: end"
+  >
+    <a href="/">zur Kursübersicht</a><a href="09-00-appendix.html">Kapitel 9.0 &gt;&gt;</a>
+  </div>
+  <div id="rightSideWrapper">
+    <div class="content">
+      <div class="chapter">
+        <div class="subChapter">
+          <h1 class="hidden-title">
+            <span class="subChapterTitle">::::ChapterCtr.6
+              Reduktionen</span>
+          </h1>
+          <span style="font-variant: small-caps;">3-Colorability</span>
+          und<span style="font-variant: small-caps;">CNF-Satisfiability</span>
+          sind in NP:
+          gegeben ein Graph $G$ und eine Färbung $c$, so können wir effizient feststellen,
+          ob $c$ eine gültige 3-Färbung von $G$ darstellt; gegeben eine CNF-Formel $F$ und
+          eine Belegung $\alpha$, so können wir effizient überprüfen, ob $F$ unter $\alpha$ zu
+          <code>True</code>
+          auswertet. Können wir
+          <span style="font-variant: small-caps;">3-Colorability</span>
+          und<span style="font-variant: small-caps;">CNF-Satisfiability</span>
+          auch effizient entscheiden?
+          Sind sie in P? Das ist (Stand: 2025) nicht bekannt. Was wir aber sagen können:
+          entweder sind beide effizient lösbar oder beide nicht. Sie sind gewissermaßen gleich schwer.
+          <Statement title="*Theorem*">
+            Falls
+            <span style="font-variant: small-caps;">CNF-Satisfiability</span>
+            in P ist, dann
+            auch
+            <span style="font-variant: small-caps;">3-Colorability</span>.
+          </Statement>
+          <Highlight>
+            <b>Beweis.</b>
+            Wir nehmen an, wir hätten einen effizienten Algorithmus
+            <code>is_satisfiable($F$)</code>. Wir verwenden diesen, um einen Algorithmus
+            <code>is_3_colorable</code>
+            zu entwerfen.
+            Sei nun $G = (V,E)$ ein Graph und $v_1, \dots, v_n$ seine Knoten. Wir
+            führen $3n$ Boolesche Variable ein:
+            $r_1, \dots, r_n, g_1, \dots, g_n, b_1, \dots, b_n$. Die Intention hierbei ist,
+            dass $r_i$ anzeigt, ob $v_i$ rot ist und so weiter.
+            Wir müssen jetzt Klauseln erschaffen, die die Aussage "das ist eine gültige 3-Färbung"
+            als CNF-Formel codieren. Wir erschaffen folgende Klauseln:
+            $$
+            \begin{align*}
+            &amp;(r_i \vee g_i \vee b_i) \tag{$v_i$ hat mindestens eine Farbe}\\
+            &amp;(\bar{r}_i \vee \bar{g}_i) \wedge (\bar{r}_i \vee \bar{b}_i)
+            \wedge (\bar{g}_i \vee \bar{b}_i) \tag{$v_i$ hat nicht zwei Farben gleichzeitig}
+            \end{align*}
+            $$
+            Dies tun wir für jedes $i$. Wir sehen nun: jede Belegung, die die obigen Klauseln
+            erfüllt, entspricht einer $3$-Färbung $c: V \rightarrow \{1,2,3\}$, und umgekehrt.
+            Nun müssen wir die Aussage
+            <i>Kante $\{v_i,v_j\}$ ist gültig gefärbt</i>
+            formulieren:
+            $$
+            \begin{align*}
+            &amp;(\bar{r}_i \vee \bar{r}_j) \tag{$v_i$ und $v_j$ sind nicht beide rot}\\
+            &amp;(\bar{g}_i \vee \bar{g}_j) \tag{$v_i$ und $v_j$ sind nicht beide grün}\\
+            &amp;(\bar{b}_i \vee \bar{b}_j) \tag{$v_i$ und $v_j$ sind nicht beide blau}\\
+            \end{align*}
+            $$
+            und dann alles zusammenwerfen:
+            $$
+            \begin{align*}
+            F:=&amp;\quad \bigwedge_{i=1}^n \left( (r_i \vee g_i \vee b_i) \wedge(\bar{r}_i \vee \bar{g}_i)
+            \wedge
+            (\bar{r}_i \vee \bar{b}_i)
+            \wedge (\bar{g}_i \vee \bar{b}_i) \right) \wedge \\
+            &amp;\bigwedge_{\{v_i, v_j\} \in E} \left(
+            (\bar{r}_i \vee \bar{r}_j) \wedge
+            (\bar{g}_i \vee \bar{g}_j) \wedge
+            (\bar{b}_i \vee \bar{b}_j)
+            \right)
+            \end{align*}
+            $$
+            Es gilt nun: $G$ ist genau dann $3$-färbbar, wenn $F$ erfüllbar ist. Und hier
+            ist nun unser Code für
+            <code>is_3_colorable:</code>
+            
+<pre class="listing container-fluid">
+<code>def is_3_colorable(graph):</code>
+ <code>F = convert_to_CNF_formula(graph)</code>
+ <span class="comment"># F ist die oben beschriebene Formel mit 3n Variablen</span><code>
+</code>
+ <code>return is_satisfiable(F)</code>
+</pre>
+            Falls Ihnen eine Funktion
+            <code>find_satisying_assignment</code>
+            zur Verfügung steht,
+            so können Sie natürlich die erfüllende Belegung direkt in eine
+            gültige 3-Färbung übersetzen.
+            <QED>
+            </QED>
+          </Highlight>
+          Das ging recht schnell und direkt, weil die Aussagenlogik allgemein genug ist,
+          um Aussagen über endliche Objekte (hier: Graphen) effizient zu codieren.
+          Geht es auch andersrum? Wenn uns eine Funktion
+          <code>is_3_colorable</code>
+          zur Verfügung steht, können wir dann auch eine Funktion
+          <code>is_satisfiable</code>
+          schreiben?
+          Wir machen einen Zwischenschritt und schreiben mithilfe von
+          <code>is_3_colorable</code>
+          einen effizienten Algorithmus
+          für $3$-SAT; dies ist
+          <span style="font-variant: small-caps;">CNF-Satisfiability</span>
+          mit
+          der Einschränkung, dass $F$ eine $3$-CNF-Formel ist, dass also jede Klausel nur drei Literale
+          enthält.
+          Beachten Sie, dass die Formel $F$, die wir im Beweis
+          von
+          <span
+            data-ref="theorem-3-col-to-sat"
+            class="reference"
+          ></span>erstellt haben, eine solche 3-CNF ist.
+          <Statement title="*Theorem*">
+            Falls
+            <span style="font-variant: small-caps;">3-Colorability</span>
+            in P ist, dann
+            auch<span style="font-variant: small-caps;">3-SAT</span>.
+          </Statement>
+          <Highlight>
+            <b>Beweis.</b>
+            Wir gehen konzeptuell ähnlich vor wie oben. Uns ist eine 3-CNF-Formel $F$
+            gegeben. Wir müssen jetzt einen Graphen $G = (V,E)$ bauen,
+            der die Aussage
+            <i>$F$ ist erfüllbar</i>
+            irgendwie in seiner
+            3-Färbbarkeit oder eben Nicht-3-Färbbarkeit codiert. Dies ist schwieriger.
+            Als ersten Schritt legen wir fest, dass die drei Farben nicht $1, 2, 3$ sein sollen,
+            sondern
+            <code>True, False, Neutral</code>.
+            <figure class="centered-figure well container-fluid">
+              <a
+                data-slide="prev"
+                href="#3-sat-to-3-col"
+                class="left carousel-control-prev-icon"
+              >
+                <div class="carousel-nav-icon">
+                  <img src="../img/carousel-prev-icon.svg">
+                </div>
+              </a><a
+                data-slide="next"
+                href="#3-sat-to-3-col"
+                class="right carousel-control-next-icon"
+              >
+                <div class="carousel-nav-icon">
+                  <img src="../img/carousel-next-icon.svg">
+                </div>
+              </a>
+              <div
+                style="display:inline-block;width:100%"
+                data-interval="false"
+                class="carousel"
+                id="3-sat-to-3-col"
+              >
+                <ol class="carousel-indicators">
+                  <li
+                    class="active"
+                    data-slide-to="1"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="2"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="3"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="4"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="5"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="6"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="7"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="8"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="9"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="10"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="11"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="12"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="13"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="14"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="15"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="16"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="17"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="18"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="19"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="20"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="21"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="22"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="23"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="24"
+                    data-target="#3-sat-to-3-col"
+                  >
+                  </li>
+                </ol>
+                <div
+                  style="display:inline-block"
+                  class="carousel-inner"
+                >
+                  <div class="item active">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-01.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-02.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-03.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-04.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-05.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-06.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-07.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-08.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-09.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-10.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-11.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-12.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-13.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-14.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-15.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-16.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-17.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-18.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-19.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-20.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-21.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-22.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-23.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="width:100%"
+                      src="../img/09-complexity-theory/sat-to-col/sat-to-col-01-24.svg"
+                    >
+                  </div>
+                </div>
+              </div>
+            </figure>
+            Wir wiederholen die beschriebene Konstruktion für jede Klausel in $F$.
+            Wir erhalten einen Graphen $G$, der genau dann $3$-färbbar ist, wenn
+            $F$ erfüllbar ist. Auch können wir direkt eine gültige $3$-Färbung in eine
+            erfüllende Belegung übersetzen und umgekehrt. Hier ist also der Code:
+<pre class="listing container-fluid">
+<code>def is_3CNF_satisfiable(the_3_cnf_formula):</code>
+ <code>G = convert_to_graph(the_3_cnf_formula)</code>
+ <span class="comment"># G ist der oben konstruierte Graph</span><code>
+</code>
+ <code>return is_3_colorable(G)</code>
+</pre>
+            <QED>
+            </QED>
+          </Highlight>
+          Wir haben also gezeigt, wie man eine $3$-CNF $F$ in einen Graphen $G$ umwandelt, so dass
+          $$
+          \begin{align*}
+          F \textnormal{ ist erfüllbar } \Longleftrightarrow G \textnormal{ ist $3$-färbbar}
+          \end{align*}
+          $$
+          gilt. Allerdings ging das nur unter der Annahme, dass $F$ eine $3$-CNF ist.
+          Wie verhält es sich, wenn $F$ eine allgemeine CNF-Formel ist?
+          <Statement title="*Theorem*">
+            Es gibt einen effizienten Algorithmus, der als Input eine CNF-Formel $F$ nimmt und eine
+            3-CNF-Formel $F'$ ausgibt, so dass gilt:
+            $$
+            \begin{align*}
+            F \textnormal{ ist erfüllbar } \Longleftrightarrow F' \textnormal{ ist erfüllbar } \ .
+            \end{align*}
+            $$
+            Falls es einen effizienten Algorithmus für $3$-SAT gibt, dann also auch einen
+            für CNF-SAT.
+          </Statement>
+          <Highlight>
+            <b>Beweis.</b>
+            Wir starten mit $F_0 := F$ und definieren eine Folge $F_0, F_1, \dots$ von
+            CNF-Formeln. Sei $F_i$ die derzeit letzte erzeugte CNF-Formel.
+            Falls $F_i$ eine Klausel $C$ mit vier oder mehr Literalen enthält,
+            führen wir eine Operation durch, die $C$ durch zwei neue, kleinere Klauseln ersetzt:
+            sei
+            $$
+            \begin{align*}
+            C = (u_1 \vee u_2 \vee u_3 \vee u_4 \vee \dots \vee u_k)
+            \end{align*}
+            $$
+            mit $k \geq 4$. Wir führen eine neue, bisher nicht verwendete Variable $z$ ein und
+            erschaffen die Klauseln
+            $$
+            \begin{align*}
+            C_1 := (\bar{z} \vee u_1 \vee u_2) \\
+            C_2 := (z \vee u_3 \vee \dots \vee u_k)
+            \end{align*}
+            $$
+            Wir entfernen nun $C$ und fügen $C_1$ und $C_2$ ein und erhalten eine neue CNF-Formel
+            $F_{i+1}$.
+            Wir sehen nun: wenn $\alpha$ die Formel $F_{i+1}$ erfüllt, dann erfüllt sie auch
+            $F_i$; umgekehrt wenn die Belegung $\beta$ die Formel $F_i$ erfüllt, dann erfüllt
+            $\beta$ insbesondere $C$; wir bauen nun eine
+            neue Belegung, die auch $z$ einen Wert zuweist und dann $C_1$ und $C_2$
+            erfüllt: falls (1) $\beta$ die Klausel $(u_1 \vee u_2)$ erfüllt,
+            dann setzen wir $z$ auf $1$, also $\alpha := \beta \cup [z \mapsto 1]$.
+            Die Belegung $\alpha$ erfüllt nun $C_1$, weil $\beta$ das bereits tut,
+            und $C_2$, weil $\alpha(z)=1$ ist;
+            falls jedoch (2) $\beta$ die Klausel $(u_1 \vee u_2)$ nicht erfüllt,
+            dann muss sie, da sie ja $C$ erfüllt, die Klausel $(u_3 \vee \dots \vee u_k)$
+            erfüllen und erfüllt somit $C_2$, auch ohne Verwendung von $z$.
+            Wir setzen nun $z$ auf $0$, also $\alpha := \beta \cup [z \mapsto 0]$ und
+            erfüllen sowohl $C_1$ als auch $C_2$.
+            Alle anderen Klauseln sind sowieso erfüllt,
+            weil $\beta$ sie bereits erfüllt. Wir sehen:
+            $$
+            \begin{align*}
+            F_i \textnormal{ ist erfüllbar } \Longleftrightarrow F_{i+1} \textnormal{ ist erfüllbar } \ .
+            \end{align*}
+            $$
+            Die beiden neuen Klauseln $C_1$ und $C_2$ sind jeweils echt kleiner als $C$. Der Prozess
+            endet irgendwann mit einer Formel $F_t$, in der jede Klausel höchstens drei Literale
+            hat. Dies ist unser $F'$.
+            <QED>
+            </QED>
+          </Highlight>
+          Wir haben nun also eine Kette von Implikationen erschaffen:
+          <ul>
+            <li>
+              Wenn
+              <span style="font-variant: small-caps;">CNF-Satisfiability</span>
+              in P,
+              dann auch
+              <span style="font-variant: small-caps;">3-Colorability</span>(<span
+                data-ref="theorem-3-col-to-sat"
+                class="reference"
+              ></span>).
+            </li>
+            <li>
+              Wenn
+              <span style="font-variant: small-caps;">3-Colorability</span>
+              in P,
+              dann auch
+              <span style="font-variant: small-caps;">3-SAT</span>(<span
+                data-ref="theorem-3-sat-to-3-col"
+                class="reference"
+              ></span>).
+            </li>
+            <li>
+              Wenn
+              <span style="font-variant: small-caps;">3-SAT</span>
+              in P,
+              dann auch<span style="font-variant: small-caps;">CNF-Satisfiability</span>(<span
+                data-ref="theorem-sat-to-3-sat"
+                class="reference"
+              ></span>).
+            </li>
+          </ul>
+          Beachten Sie, dass alle Beweise eine ähnliche Form haben: um die Aussage
+          <i>wenn $L_1 \in P$, dann auch $L_2 \in P$</i>
+          zu zeigen, nehmen wir
+          eine beliebiges $x \in \Sigma_1$ (eine $L_1$-Instanz) und wandeln es
+          um in ein $y \in \Sigma_2$ (eine $L_2$-Instanz), so dass
+          $$
+          \begin{align*}
+          x \in L_1 \Longleftrightarrow y \in L_2
+          \end{align*}
+          $$
+          garantiert ist. Wenn es also einen effizienten Algorithmus
+          <code>is_in_L2</code>
+          gibt, dann
+          können wir mit folgendem Code auch $L_1$ effizient entscheiden:
+<pre class="listing container">
+<code>def is_in_L1(x):</code>
+ <code>y = convert_from_L1_instance_to_L2_instance(x)</code>
+ <code>return is_in_L2(y)</code>
+</pre>
+          Dies ist eine
+          <i>Reduktion</i>, wie wir sie schon
+          in
+          <span
+            data-ref="definition-reduction"
+            class="reference"
+          ></span>
+          kennengelernt haben,
+          nun aber mit einer Aussage über die Laufzeit.
+          <Statement title="*Definition*">
+            <b>(Polynomialzeitreduktion)</b>. Seien
+            $L_1 \subseteq \Sigma_1^*$ und $L_2 \subseteq \Sigma_2^*$ zwei
+            Sprachen. Eine Funktion $f: \Sigma_1^* \rightarrow \Sigma_2^*$ heißt
+            <i>Polynomialzeitreduktion von $L_1$ auf $L_2$</i>
+            wenn
+            $$
+            \begin{align*}
+            \forall x \in \Sigma_1^*: \quad x \in L_1
+            \Longleftrightarrow f(x) \in L_2
+            \end{align*}
+            $$
+            und $f$ in Zeit $\poly(n)$ berechnet werden kann. Wenn es
+            also ein Polynom $p: \N \rightarrow \N$ und eine Turingmaschine
+            $M$ mit Eingabealphabet $\Sigma_1$ und Ausgabealphabet $\Sigma_2$
+            gibt, die Laufzeit $p$ hat und $f$ berechnet.
+            Wir schreiben dann $L_1 \leq_p L_2$.
+          </Statement>
+          Wenn wir eine Reduktion von $L_1$ auf $L_2$ haben und einen
+          effizienten Algorithmus für $L_2$, dann können wir
+          wie in
+          <code>is_in_L1(x)</code>
+          oben skizziert $L_1$ effizient
+          entscheiden. Formal:
+          <Statement title="*Beobachtung*">
+            Wenn
+            $L_1 \leq_p L_2$ ist und $L_2 \in {\rm P}$, dann
+            auch $L_1 \in {\rm P}$.
+          </Statement>
+          Wir haben die folgenden Polynomialzeitreduktionen bereits kennengelernt:
+          <ol>
+            <li>
+              <span style="font-variant: small-caps;">3-Colorability $\leq_p$ CNF-Satisfiability</span>
+            </li>
+            <li>
+              <span style="font-variant: small-caps;">CNF-Satisfiability $\leq_p$ 3-SAT</span>
+            </li>
+            <li>
+              <span style="font-variant: small-caps;">3-SAT $\leq_p$ 3-Colorability</span>
+            </li>
+          </ol>
+          Erinnern Sie sich an
+          <span style="font-variant: small-caps;">Independent Set</span>: gegeben
+          ein Graph $G$ und eine Zahl $k$, gibt es eine unabhängige Menge $X \subseteq V$ mit
+          $|X| \geq k$?
+          <Statement title="*Theorem*">
+            <span style="font-variant: small-caps;">3-SAT $\leq_p$ Independent Set</span>.
+          </Statement>
+          <Highlight>
+            <b>Beweis.</b>
+            Gegeben sei eine 3-CNF-Formel $F$ mit $n$ Variablen und $m$ Klauseln. Wir
+            bauen folgenden Graphen $G$:
+            <figure>
+              <img
+                style="height:20em"
+                src="../img/09-complexity-theory/sat-to-independent-set/3sat-to-IS.svg"
+              >
+            </figure>
+            und setzen $k:=n+m$. Wir müssen nun folgendes zeigen:
+            $$
+            \begin{align*}
+            F \textnormal{ ist erfüllbar} \Longleftrightarrow
+            G \textnormal{ hat eine unabhängige Menge der Größe $k$}
+            \end{align*}
+            $$
+            Falls $\alpha$ eine erfüllende Belegung von $F$ ist,
+            dann gibt es folgende unabhängige Menge der Größe $k$:
+            <ul>
+              <li>
+                Für jede Variable $x$ nehmen wir $x$ in $I$ auf, falls $\alpha(x)=1$ ist,
+                ansonsten $\bar{x}$.
+              </li>
+              <li>
+                Für jede Klausel $C = (u \vee v \vee w)$ gibt es ein erfülltes Literal,
+                sagen wir $u$. Dieser entspricht dem Klauselknoten $u_C$, der mit
+                mit dem Literalknoten $\bar{u}$ verbunden.
+                Da $\alpha(u) = 1$ und $\alpha(\bar{u}) = 0$ ist, ist $u \not \in I$ und
+                wir können $u_C$ in $I$ aufnehmen.
+              </li>
+              <li>
+                Unsere Menge $I$ enthält $n$ Literalknoten und $m$ Klauselknoten,
+                also insgesamt $k$ Knoten.
+              </li>
+            </ul>
+            Für die Gegenrichtung nehmen wir an, dass $I$ eine unabhängige Menge von $G$ ist und $|I| =
+            n+m$ gilt. Da $I$ pro Literalpaar und pro Klauseldreieck höchstens
+            einen Knoten enthalten kann, enthält $I$
+            <i>genau</i>
+            einen
+            pro Literalpaar und Klauseldreieck. Wir definieren nun eine
+            Belegung $\alpha$ wie folgt: wenn für eine Variable $x$ der
+            Literalknoten $x$ in $I$ ist, setzen wir $\alpha(x)=1$; falls
+            $\bar{x}$ in $I$ ist, setzen wir $\alpha(x)=0$.
+            Wir behaupten nun, dass $\alpha$ die Formel $F$ erfüllt. Sei
+            $C= (u \vee v \vee w)$ eine beliebige Klausel von $F$.
+            Nach obiger Überlegung enthält $I$ genau einen Klauselknoten von $C$,
+            sagen wir $u_C$. Das heißt somit, dass der Literalknoten
+            $\bar{u}$ nicht in $I$ ist - sonst wäre $I$ ja nicht unabhängig.
+            Somit muss $u \in I$ gelten und $\alpha(u) = 1$, und $\alpha$ erfüllt $C$.
+            <QED>
+            </QED>
+          </Highlight>
+          <Statement title="*Übungsaufgabe*">
+            Zeigen Sie
+            <span style="font-variant: small-caps;">Independent Set $\leq_p$ SAT</span>.
+            Also: Gegeben einen Graphen $G$ und eine Zahl $k \in \N$, zeigen Sie, wie man die Aussage
+            <i>$G$ hat eine unabhängige Menge der Größe $k$</i>
+            als aussagenlogische Formel
+            in CNF darstellen kann.
+            <b>Hinweis:</b>
+            Die Aussage
+            <i>"$I$ ist eine unabhängige Menge von $G$</i>
+            ist
+            leicht darzustellen als CNF-Formeln. Die Aussage
+            <i>"$I$ hat Größe $k$"</i>
+            ist
+            schwieriger. Sie müssen quasi
+            <i>zählen</i>.
+          </Statement>
+          <SubTopic>
+            <span style="font-variant: small-caps;">Hamilton Path</span>und
+            <span style="font-variant: small-caps;">Hamilton Cycle</span>
+          </SubTopic>
+          Sei $G = (V,E)$ ein Graph. Ein
+          <i>Hamiltonscher Kreis</i>
+          ist ein
+          Kreis, der durch alle Knoten geht. Es muss ein
+          <i>Kreis</i>
+          sein; Kantenzüge, die einen Knoten mehrmals durchlaufen, sind also
+          nicht erlaubt. Hier sehen Sie einen Graphen mit Hamiltonschem Kreis:
+          <figure class="centered-figure well container">
+            <a
+              data-slide="prev"
+              href="#isosahedron-has-HC"
+              class="left carousel-control-prev-icon"
+            >
+              <div class="carousel-nav-icon">
+                <img src="../img/carousel-prev-icon.svg">
+              </div>
+            </a><a
+              data-slide="next"
+              href="#isosahedron-has-HC"
+              class="right carousel-control-next-icon"
+            >
+              <div class="carousel-nav-icon">
+                <img src="../img/carousel-next-icon.svg">
+              </div>
+            </a>
+            <div
+              style="display:inline-block"
+              data-interval="false"
+              class="carousel"
+              id="isosahedron-has-HC"
+            >
+              <ol class="carousel-indicators">
+                <li
+                  class="active"
+                  data-slide-to="1"
+                  data-target="#isosahedron-has-HC"
+                >
+                </li>
+                <li
+                  data-slide-to="2"
+                  data-target="#isosahedron-has-HC"
+                >
+                </li>
+              </ol>
+              <div
+                style="display:inline-block"
+                class="carousel-inner"
+              >
+                <div class="item active">
+                  <img
+                    style="height:20em"
+                    src="../img/09-complexity-theory/hamilton-path-and-cycle/hamilton-01-01.svg"
+                  >
+                </div>
+                <div class="item">
+                  <img
+                    style="height:20em"
+                    src="../img/09-complexity-theory/hamilton-path-and-cycle/hamilton-01-02.svg"
+                  >
+                </div>
+              </div>
+            </div>
+          </figure>
+          Ein
+          <i>Hamiltonscher Pfad</i>
+          ist ein Pfad mit $|V|$ Knoten.
+          Auch hier gilt: kein Knoten darf mehrfach besucht werden.
+          Der untere Graph, der
+          <i>Petersen-Graph</i>, hat keinen
+          Hamiltonschen Kreis, dafür aber einen Hamiltonschen Pfad:
+          <figure>
+            <img
+              style="height:20em"
+              src="../img/09-complexity-theory/hamilton-path-and-cycle/hamilton-02-01.svg"
+            >
+          </figure>
+          Wir definieren nun die zwei entsprechenden Entscheidungsprobleme:
+          <Statement title="*Problem*">
+            <span style="font-variant: small-caps;">(Hamilton Cycle).</span>
+            Gegeben
+            ein Graph $G=(V,E)$, gibt es in $G$ einen Kreis der Länge $|V|$, der
+            also durch alle Knoten geht?
+          </Statement>
+          <Statement title="*Problem*">
+            <span style="font-variant: small-caps;">(Hamilton Path).</span>
+            Gegeben
+            ein Graph $G=(V,E)$, gibt es in $G$ einen Pfad der Länge $|V|-1$, der
+            also alle $|V|$ Knoten enthält?
+          </Statement>
+          <Statement title="*Theorem*">
+            <span style="font-variant: small-caps;">Hamilton Cycle $\leq_p$ Hamilton Path</span>
+          </Statement>
+          <Highlight>
+            <b>(Falscher) Beweis.</b>
+            Tasten wir uns langsam heran. Wir stellen uns vor, eine
+            Bibliotheksfunktion
+            <code>has_hamilton_path(G)</code>
+            zu haben und
+            wollen mithilfe dieser eine neue Funktion
+            <code>has_hamilton_cycle(G)</code>
+            schreiben.
+            Sei $u$ ein beliebiger Knoten. Wir wissen: wenn $G$ einen Hamiltonschen
+            Kreis hat, dann besucht dieser auch $u$ und im Anschluss einen Nachbarnknoten
+            $v$, also mit $\{u,v\} \in E$. Der Graph $G' := G - \{u,v\}$, in welchem
+            wir diese Kante löschen, besitzt somit einen Hamiltonschen Pfad.
+            Allerdings kann es sein, dass $G'$ sowieso einen Hamiltonschen Pfad
+            besitzt, der allerdings nicht $u$ und $v$ als Endknoten hat, so dass
+            er sich mit $\{u,v\}$ nicht zu einem Hamiltonschen Kreis schließt.
+            Wir müssen irgendwie die Frage beantworten können: besitzt
+            $G'$ einen Hamiltonschen Pfad, der $u$ und $v$ als Start- bzw. Endknoten hat?
+            Dies ist einfach: wir können neue Knoten $s$ und $t$
+            und die Kanten $\{s,u\}$ und $\{t,v\}$ einführen. Da $s$ und $t$ nun
+            Grad $1$ haben, muss ein Hamiltonscher Pfad, wenn er denn existiert,
+            $u$ und $v$ als Endknoten haben. Sei also $G'' := G' + \{s,u\} + \{t,v\}$.
+            <div class="well container-fluid subtheorem">
+              <b>Beobachtung:</b>
+              $G$ hat genau dann einen Hamiltonschen Kreis durch
+              die Kante $\{u,v\}$, wenn
+              $G''$ einen Hamiltonschen Pfad hat.
+            </div>
+            <figure class="centered-figure well container-fluid">
+              <a
+                data-slide="prev"
+                href="#ham-cycle-to-path"
+                class="left carousel-control-prev-icon"
+              >
+                <div class="carousel-nav-icon">
+                  <img src="../img/carousel-prev-icon.svg">
+                </div>
+              </a><a
+                data-slide="next"
+                href="#ham-cycle-to-path"
+                class="right carousel-control-next-icon"
+              >
+                <div class="carousel-nav-icon">
+                  <img src="../img/carousel-next-icon.svg">
+                </div>
+              </a>
+              <div
+                style="display:inline-block"
+                data-interval="false"
+                class="carousel"
+                id="ham-cycle-to-path"
+              >
+                <ol class="carousel-indicators">
+                  <li
+                    class="active"
+                    data-slide-to="1"
+                    data-target="#ham-cycle-to-path"
+                  >
+                  </li>
+                  <li
+                    data-slide-to="2"
+                    data-target="#ham-cycle-to-path"
+                  >
+                  </li>
+                </ol>
+                <div
+                  style="display:inline-block"
+                  class="carousel-inner"
+                >
+                  <div class="item active">
+                    <img
+                      style="height:20em"
+                      src="../img/09-complexity-theory/hamilton-path-and-cycle/hamilton-03-01.svg"
+                    >
+                  </div>
+                  <div class="item">
+                    <img
+                      style="height:20em"
+                      src="../img/09-complexity-theory/hamilton-path-and-cycle/hamilton-03-02.svg"
+                    >
+                  </div>
+                </div>
+              </div>
+            </figure>
+            Woher wollen wir allerdings wissen, ob der Kreis in $G$ (wenn es ihn denn
+            gibt) überhaupt durch $\{u,v\}$ geht? Vielleicht gibt es ja einen,
+            aber keinen durch $\{u,v\}$, so dass dann
+            <code>has_hamilton_path($G''$)</code>
+            mit
+            <code>False</code>
+            antwortet, obwohl wir gerne ein
+            <code>True</code>
+            hätten.
+            Um das zu verhindern, können wir ja
+            <i>alle</i>
+            Nachbarn von $u$
+            durchprobieren. Wenn einer klappt, dann haben wir unseren Kreis;
+            wenn es überhaupt einen Kreis gibt, dann klappt es auch mit einem Nachbarn
+            (in der Tat: sogar mit zweien).
+<pre class="listing container-fluid">
+<code>def has_hamilton_cycle(G):</code>
+ <code>u = ein beliebiger Knoten</code>
+ <code>for v in neighbors[u]:</code>
+ <code>H = G - {u,v} + {s,u} + {t,v}</code>
+ <code>if has_hamilton_path(H):</code>
+ <code>return True</code>
+ <code>return False</code>
+</pre>
+            Falls nun
+            <code>has_hamilton_path</code>
+            polynomielle Laufzeit $O(n^k)$ hat,
+            so hat
+            <code>has_hamilton_cycle</code>
+            eine Laufzeit von $O(n^{k+1})$, auch
+            polynomiell.
+            <QED>
+            </QED>
+          </Highlight>
+          Was ist nun an diesem Beweis falsch? Nun, der Begriff der Reduktion,
+          dem wir uns ja mit der Notation $\leq_p$ verpflichten, verlangt, dass wir
+          auf Eingabe $G$
+          <i>einen</i>
+          Graphen $G'$ bauen, mit der Eigenschaft,
+          dass $G$ genau dann einen Hamiltonschen Kreis hat, wenn $G'$ einen
+          Hamiltonschen Pfad hat. Uns steht also genau
+          <i>ein</i>
+          Aufruf von
+          <code>has_hamilton_path</code>
+          zu. Aber ganz wertlos ist der obige
+          Beweis dennoch nicht, zeigt er doch, dass,
+          falls
+          <span style="font-variant: small-caps;">Hamilton Path $\in$ P</span>
+          ist, dann
+          auch
+          <span style="font-variant: small-caps;">Hamilton Cycle $\in$ P</span>.
+          Der Fachbegriff für das, was unsere obige Funktion
+          <code>has_hamilton_cycle</code>
+          tut, nennt sich
+          <i>Cook-Reduktion</i>, nach
+          Stephen Cook, einem der Väter der Klasse NP.
+          Eine Reduktion, die dem strengen Reduktionsbegriff folgt,
+          also
+          <span
+            data-ref="definition-polynomial-reduction"
+            class="reference"
+          ></span>,
+          nennt man in Abgrenzung dazu
+          <i>Karp-Reduktion</i>
+          nach Richard Karp,
+          ein weiterer NP-Vater.
+          <Statement title="*Übungsaufgabe*">
+            Geben Sie einen "richtigen" Beweis für<span
+              data-ref="theorem-ham-cycle-to-path"
+              class="reference"
+            ></span>, also
+            eine Karp-Reduktion.
+          </Statement>
+          <Statement title="*Übungsaufgabe*">
+            Zeigen Sie
+            <span style="font-variant: small-caps;">Hamilton Path $\leq_p$ Hamilton
+              Cycle</span>. Wenn es Ihnen einfacher scheint, geben Sie erst einmal
+            eine Cook-Reduktion.
+          </Statement>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>

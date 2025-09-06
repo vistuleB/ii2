@@ -18,17 +18,17 @@
 </head>
 <body>
 <section
-  count="47"
-  .="BookLevelSectionCounter 47"
+  count="48"
+  .="BookLevelSectionCounter 48"
   title_gr="Haltproblem und Unentscheidbarkeit"
   title_en="undecidability"
   number="7.6"
   counter="DefCtr"
   counter="ExoCtr"
-  path="/lecture-notes47"
+  path="/lecture-notes48"
 >
   <div id="link-to-toc">
-    <a href="../vorlesungsskript.html">Inhaltsverzeichnis</a><a href="07-05-Turing-universal.html">&lt;&lt; Kapitel 7.5</a>
+    <a href="../vorlesungsskript.html">Inhaltsverzeichnis</a><a href="07-05-undecidability.html">&lt;&lt; Kapitel 7.5</a>
   </div>
   <div
     id="link-to-overview"
@@ -41,127 +41,104 @@
       <div class="chapter">
         <div class="subChapter">
           <h1 class="hidden-title">
-            <span class="subChapterTitle">::::ChapterCtr.6
+            <span class="subChapterTitle">::::ChapterCtr.7
               Turingmaschinen, Haltproblem und Unentscheidbarkeit</span>
           </h1>
-          <p>
-            Im vorherigen Teilkapitel haben wir die
-            <i>universelle Turingmaschine</i>
-            $U$ konstruiert, die
-            eine andere Turingmaschine, deren Codierung und Inputwort sie als Input gegeben hat, simulieren
-            kann.
-            Technisch gesprochen: $U$ akzeptiert die Sprache
-          </p>
+          Im vorherigen Teilkapitel haben wir die
+          <i>universelle Turingmaschine</i>
+          $U$ konstruiert, die
+          eine andere Turingmaschine, deren Codierung und Inputwort sie als Input gegeben hat, simulieren
+          kann.
+          Technisch gesprochen: $U$ akzeptiert die Sprache
           $$
           \begin{align}
           \{ c w \ | \ c = \enc(M) \textnormal{ und $M$ akzeptiert $w$} \} \ .
           \label{halting-language-old-encoding}
           \end{align}
           $$
-          <p>
-            Allerdings: wenn $M$ auf $x$ nicht terminiert, dann terminiert $U$ auf $\enc(M)x$ auch
-            nicht. $U$
-            <i>akzeptiert</i>
-            die Sprache also,
-            <i>entscheidet</i>
-            sie aber nicht. Wäre es
-            nicht schön, eine Turingmaschine zu haben, die diese Sprache entscheidet? Dann könnten wir jede
-            Turingmaschine simulieren und gleichzeitig Endlosschleifen und eventuell ganz allgemein
-            "Programmierfehler" vorhersagen und abfangen. Wir werden zeigen, dass dies leider
-            <i>nicht</i>
-            möglich ist. In der Literatur ist dies als die
-            <i>Unentscheidbarkeit des Halteproblems</i>
-            (englisch
-            <i>undecidability of the Halting problem</i>
-            bekannt).
-          </p>
-          <p>
-            Als vorbereitenden Schritt schauen wir uns kurz die Codierungsfunktion nochmal genauer an. Wir
-            bezeichnen
-            mit $\tm_{\Sigma}$ die Menge aller Turingmaschinen mit Inputalphabet $\Sigma$. Wir hatten
-            die Codierungsfunktion $\enc: \tm_{\Sigma} \rightarrow \Lambda^*$ definiert, für das
-            Codierungsalphabet $\Lambda := \writelambda$. In diesem Teilkapitel wird es nötig sein, die
-            Turingmaschine
-            über dem Alphabet $\Sigma$ selbst zu codieren. Dies ist nicht besonders schwierig, solange
-            $\Sigma$ mindestens zwei Zeichen hat. Wenn z.B. $\Sigma$ die Zeichen $0$ und $1$ enthält,
-            dann können wir alle Zeichen in
-            $\Lambda$ wiederum als Strings in $\Sigma^*$ codieren. Wir müssen hier
-            nur vorsichtig sein, dass der Code
-            <i>präfixfrei</i>
-            ist. Wenn wir zum Beispiel naiv
-            $1$ als $1$ und $0$ als $0$ und $\texttt{#}$ als $01$ codieren, dann wissen wir nicht mehr, was
-            mit dem Codewort $01$ gemeint ist. Am einfachsten geht das mit einem
-            <i>Blockcode</i>, in dem
-            alle Codewörter die gleiche Länge $k$ haben, also
-            $\Lambda \rightarrow \{0,1\}^k$. Mit
-            $k = \ceil{\log_2 |\Lambda|}$ ist das kein Problem. Unsere "neue" Codierungsfunktion
-            $\enc$ ist nun also $\enc: \tm_{\Sigma} \rightarrow \Sigma^*$. Wir definieren nun
-            die Haltesprache $\halt \in \Sigma^*$:
-          </p>
+          Allerdings: wenn $M$ auf $x$ nicht terminiert, dann terminiert $U$ auf $\enc(M)x$ auch
+          nicht. $U$
+          <i>akzeptiert</i>
+          die Sprache also,
+          <i>entscheidet</i>
+          sie aber nicht. Wäre es
+          nicht schön, eine Turingmaschine zu haben, die diese Sprache entscheidet? Dann könnten wir jede
+          Turingmaschine simulieren und gleichzeitig Endlosschleifen und eventuell ganz allgemein
+          "Programmierfehler" vorhersagen und abfangen. Wir werden zeigen, dass dies leider
+          <i>nicht</i>
+          möglich ist. In der Literatur ist dies als die
+          <i>Unentscheidbarkeit des Halteproblems</i>
+          (englisch
+          <i>undecidability of the Halting problem</i>
+          bekannt).
+          Als vorbereitenden Schritt schauen wir uns kurz die Codierungsfunktion nochmal genauer an. Wir
+          bezeichnen
+          mit $\tm_{\Sigma}$ die Menge aller Turingmaschinen mit Inputalphabet $\Sigma$. Wir hatten
+          die Codierungsfunktion $\enc: \tm_{\Sigma} \rightarrow \Lambda^*$ definiert, für das
+          Codierungsalphabet $\Lambda := \writelambda$. In diesem Teilkapitel wird es nötig sein, die
+          Turingmaschine
+          über dem Alphabet $\Sigma$ selbst zu codieren. Dies ist nicht besonders schwierig, solange
+          $\Sigma$ mindestens zwei Zeichen hat. Wenn z.B. $\Sigma$ die Zeichen $0$ und $1$ enthält,
+          dann können wir alle Zeichen in
+          $\Lambda$ wiederum als Strings in $\Sigma^*$ codieren. Wir müssen hier
+          nur vorsichtig sein, dass der Code
+          <i>präfixfrei</i>
+          ist. Wenn wir zum Beispiel naiv
+          $1$ als $1$ und $0$ als $0$ und $\texttt{#}$ als $01$ codieren, dann wissen wir nicht mehr, was
+          mit dem Codewort $01$ gemeint ist. Am einfachsten geht das mit einem
+          <i>Blockcode</i>, in dem
+          alle Codewörter die gleiche Länge $k$ haben, also
+          $\Lambda \rightarrow \{0,1\}^k$. Mit
+          $k = \ceil{\log_2 |\Lambda|}$ ist das kein Problem. Unsere "neue" Codierungsfunktion
+          $\enc$ ist nun also $\enc: \tm_{\Sigma} \rightarrow \Sigma^*$. Wir definieren nun
+          die Haltesprache $\halt \in \Sigma^*$:
           $$
           \begin{align*}
           \halt := \{ \enc(M) w \ | \ M \textnormal{ akzeptiert } w\} \ .
           \end{align*}
           $$
-          <p>
-            Wir können die universelle Turingmaschine $U$ leicht abwandeln, dass sie $\halt$ akzeptiert;
-            wir müssen nur einen Decodierungsschritt vorausschicken, der die neue Codierung $\enc(M) \in
-            \Sigma^*$
-            in unsere "alte" in $\Lambda^*$ übersetzt. Beachten Sie, dass das Zeichen $\texttt{;}$, das wir
-            auch blockcodiert haben, uns hilft, die Grenze zwischen $\enc(M)$ und $w$ zu erkennen.
-          </p>
-          <p>
-            Wir zeigen nun, dass $\halt$ unentscheidbar ist, dass es also keine Möglichkeit gibt,
-            das Nichtterminieren einer Maschine $M$ auf Eingabe $x$ vorauszusehen und abzufangen.
-          </p>
-          <div class="well container theorem">
-            <span class="numbered-title">Theorem
-              <NumberedTitle>::::ChapterCtr.::::SectionCtr.1</NumberedTitle>
-              </span>
+          Wir können die universelle Turingmaschine $U$ leicht abwandeln, dass sie $\halt$ akzeptiert;
+          wir müssen nur einen Decodierungsschritt vorausschicken, der die neue Codierung $\enc(M) \in
+          \Sigma^*$
+          in unsere "alte" in $\Lambda^*$ übersetzt. Beachten Sie, dass das Zeichen $\texttt{;}$, das wir
+          auch blockcodiert haben, uns hilft, die Grenze zwischen $\enc(M)$ und $w$ zu erkennen.
+          Wir zeigen nun, dass $\halt$ unentscheidbar ist, dass es also keine Möglichkeit gibt,
+          das Nichtterminieren einer Maschine $M$ auf Eingabe $x$ vorauszusehen und abzufangen.
+          <Statement title="*Theorem*">
             <b>(Unentscheidbarkeit des Halteproblems).</b>
             Die Sprache $\halt$ ist unentscheidbar.
-          </div>
-          <p>
-            Ich gebe erst einmal einen kurzen und knappen Widerspruchsbeweis. Falls das ihnen zu schnell
-            ging,
-            lesen Sie den zweiten Beweis, in dem ich mir mehr Zeit nehme.
-          </p>
-          <div class="well container">
-            <p>
-              <b>Kurzer Beweis per Wiederspruch.</b>
-              Nehmen wir an, es gäbe eine Maschine $H$,
-              die $\halt$ entscheidet. Dann wäre auch die Sprache
-            </p>
+          </Statement>
+          Ich gebe erst einmal einen kurzen und knappen Widerspruchsbeweis. Falls das ihnen zu schnell
+          ging,
+          lesen Sie den zweiten Beweis, in dem ich mir mehr Zeit nehme.
+          <Highlight>
+            <b>Kurzer Beweis per Wiederspruch.</b>
+            Nehmen wir an, es gäbe eine Maschine $H$,
+            die $\halt$ entscheidet. Dann wäre auch die Sprache
             $$
             \begin{align*}
             \diag := \{\enc(M) \ | \ \textnormal{$M$ akzeptiert $\enc(M)$} \}
             \end{align*}
             $$
-            <p>
-              entscheidbar. Warum? Wir können einfach schauen, ob das Eingabewort $c$ die Form $\enc(M)$
-              hat
-              und in diesem Fall das Wort $\enc(M) \enc(M)$ der Maschine $H$ übergeben.
-              Die Sprache $\diag$ ist, salopp ausgedrückt, die Menge aller Turingmaschinen, die ihre
-              eigene
-              Codierung als Inputwort akzeptieren. Ebenso wäre auch
-            </p>
+            entscheidbar. Warum? Wir können einfach schauen, ob das Eingabewort $c$ die Form $\enc(M)$
+            hat
+            und in diesem Fall das Wort $\enc(M) \enc(M)$ der Maschine $H$ übergeben.
+            Die Sprache $\diag$ ist, salopp ausgedrückt, die Menge aller Turingmaschinen, die ihre
+            eigene
+            Codierung als Inputwort akzeptieren. Ebenso wäre auch
             $$
             \begin{align*}
             \negdiag := \{\enc(M) \ | \ \textnormal{$M$ akzeptiert $\enc(M)$ nicht}\}
             \end{align*}
             $$
-            <p>
-              entscheidbar; wir müssen ja nur $\diag$ entscheiden und dann das Ergebnis negieren.
-              $\negdiag$
-              ist sozusagen die Menge aller Turingmaschinen, die
-              <i>nicht</i>
-              ihre eigene Codierung als
-              Inputwort akzeptieren. Da $\negdiag$ nach Annahme entscheidbar ist, gibt es eine Maschine
-              $D$, die $\negdiag$ entscheidet.
-            </p>
-            <p>
-              Wir fragen uns jetzt: gehört $\enc(D)$ selbst zu $\negdiag$?
-            </p>
+            entscheidbar; wir müssen ja nur $\diag$ entscheiden und dann das Ergebnis negieren.
+            $\negdiag$
+            ist sozusagen die Menge aller Turingmaschinen, die
+            <i>nicht</i>
+            ihre eigene Codierung als
+            Inputwort akzeptieren. Da $\negdiag$ nach Annahme entscheidbar ist, gibt es eine Maschine
+            $D$, die $\negdiag$ entscheidet.
+            Wir fragen uns jetzt: gehört $\enc(D)$ selbst zu $\negdiag$?
             $$
             \begin{align*}
             \enc(D) \in \negdiag&amp;\Longleftrightarrow \textnormal{$D$ akzeptiert $\enc(D)$ nicht}
@@ -171,13 +148,13 @@
             &amp;\Longleftrightarrow \enc(D) \not \in \negdiag \tag{nach Annahme $L(D) = \negdiag$}
             \end{align*}
             $$
-            <p>
-              Also $\enc(D) \in \negdiag \Longleftrightarrow \enc(M) \not \in \negdiag$, ein Widerspruch.
-              Unsere
-              Annahme, dass $\halt$ entscheidbar sei, ist also falsch.<span class="qed">$\square$</span>
-            </p>
-          </div>
-          <div class="well container">
+            Also $\enc(D) \in \negdiag \Longleftrightarrow \enc(M) \not \in \negdiag$, ein Widerspruch.
+            Unsere
+            Annahme, dass $\halt$ entscheidbar sei, ist also falsch.
+            <QED>
+            </QED>
+          </Highlight>
+          <Highlight>
             <b>Ausführlicher Beweis.</b>
             Ich finde Beweise durch Widerspruch immer
             etwas unintuitiv, weil man die ganze Zeit im Konjunktiv argumentieren muss.
@@ -226,14 +203,12 @@
  <code>else</code> 
  <code>accept</code>
 </pre>
-            <p>
-              Zur Erinnerung: $y := \enc(D)$. Wir unterscheiden drei Fälle.
-            </p>
+            Zur Erinnerung: $y := \enc(D)$. Wir unterscheiden drei Fälle.
             <ul>
               <li>
                 $H(yy) = \texttt{reject}$. Dann geht der Aufruf von
                 $D(y)$ also in den
-                <tt>else</tt>-Teil
+                <code>else</code>-Teil
                 in den Zeilen 4-5 und
                 $D(y) = \texttt{accept}$, somit
                 $yy = \enc(D)y \in \halt$ Wir befinden uns
@@ -257,39 +232,35 @@
                 auf jedem Eingabewort zu terminieren.
               </li>
             </ul>
-            <p>
-            </p>
             In jedem Fall sehen wir, dass $H$ auf dem Eingabewort
             $yy$ einen Fehler macht und somit $\halt$ nicht
             entscheidet. Da das für
             <i>jede</i>
             Turingmaschine
             geht, schließen wir: keine Turingmaschine kann
-            die Sprache $\halt$ entscheiden; sie ist unentscheidbar.<span class="qed">$\square$</span>
-          </div>
-          <p>
-            Ein Student hat am 26. Juni 2024 angemerkt, dass die Sprache
-          </p>
+            die Sprache $\halt$ entscheiden; sie ist unentscheidbar.
+            <QED>
+            </QED>
+          </Highlight>
+          Ein Student hat am 26. Juni 2024 angemerkt, dass die Sprache
           $$
           \begin{align*}
           \negdiag = \{\enc(M) \ | \ \textnormal{$M$ akzeptiert $\enc(M)$ nicht}\}
           \end{align*}
           $$
-          <p>
-            ja eine extrem konstruierte, nicht wirklich relevante Sprache sei (da hatte er Recht). Insofern
-            sei es auch nicht relevant, dass $\negdiag$ unentscheidbar ist. Das ist allerdings auch nicht,
-            was uns interessiert: unser Ziel war, zu zeigen, dass $\halt$ unentscheidbar ist, und
-            die Unentscheidbarkeit von $\negdiag$ war ein Schritt auf diesem Weg. Dass $\halt$
-            unentscheidbar ist,
-            ist in der Tat relevant, denn daraus folgt (nicht direkt, aber mit ein paar technischen Tricks),
-            dass im Prinzip
-            <i>jede</i>
-            nichttriviale Frage über das Verhalten eines Programmcodes unentscheidbar ist.
-            Also sind
-            auch Fragen wie "Kann das Programm abstürzen?" oder "Kann ein unautorisierter Nutzer Zugang zu
-            XYZ erhalten?" unentscheidbar.
-          </p>
-          <div class="alert-info">
+          ja eine extrem konstruierte, nicht wirklich relevante Sprache sei (da hatte er Recht). Insofern
+          sei es auch nicht relevant, dass $\negdiag$ unentscheidbar ist. Das ist allerdings auch nicht,
+          was uns interessiert: unser Ziel war, zu zeigen, dass $\halt$ unentscheidbar ist, und
+          die Unentscheidbarkeit von $\negdiag$ war ein Schritt auf diesem Weg. Dass $\halt$
+          unentscheidbar ist,
+          ist in der Tat relevant, denn daraus folgt (nicht direkt, aber mit ein paar technischen Tricks),
+          dass im Prinzip
+          <i>jede</i>
+          nichttriviale Frage über das Verhalten eines Programmcodes unentscheidbar ist.
+          Also sind
+          auch Fragen wie "Kann das Programm abstürzen?" oder "Kann ein unautorisierter Nutzer Zugang zu
+          XYZ erhalten?" unentscheidbar.
+          <div class="alert-info well">
             Das Wort
             <i>Unentscheidbarkeit</i>
             verwenden wir hier in seiner

@@ -44,16 +44,14 @@
             <span class="subChapterTitle">::::ChapterCtr.1
               Primitive Rekursion: Motivation und Definitionen</span>
           </h1>
-          <p>
-            Primitive Rekursion ist ein Versuch, Berechbarkeit von Funktionen $f: \N^k \rightarrow \N$
-            anhand
-            eines "Baukastenprinzips" zu modellieren. Man stellt gewisse Basisfunktionen als "offensichtlich
-            berechenbar" zur Verfügung und beschreibt
-            <i>Kombinatoren</i>, die aus bereits konstruierten
-            Funktionen neue bauen können. Die primitiv-rekursiven Funktionen sind dann all jene, die
-            mittels der Kombinatoren von den Basisfunktionen ausgehend konstruiert werden können.
-            Die Basisfunktionen sind:
-          </p>
+          Primitive Rekursion ist ein Versuch, Berechbarkeit von Funktionen $f: \N^k \rightarrow \N$
+          anhand
+          eines "Baukastenprinzips" zu modellieren. Man stellt gewisse Basisfunktionen als "offensichtlich
+          berechenbar" zur Verfügung und beschreibt
+          <i>Kombinatoren</i>, die aus bereits konstruierten
+          Funktionen neue bauen können. Die primitiv-rekursiven Funktionen sind dann all jene, die
+          mittels der Kombinatoren von den Basisfunktionen ausgehend konstruiert werden können.
+          Die Basisfunktionen sind:
           $$
           \begin{align*}
           \zero:&amp;\N^* \rightarrow \N \\
@@ -67,50 +65,46 @@
           \end{align*}
           $$
           $$
-          <p>
-            Sind diese Funktionen "offensichtlich berechenbar"? Ich würde sagen, die fundamentale Eigenschaft
-            der natürlichen Zahlen ist, dass jede Zahl einen Nachfolger (successor) hat; daher ist irgendwie
-            klar, dass $\succ$ berechen bar ist. Aber seien wir vorsichtig: wenn wir für natürliche Zahlen
-            die Dezimaldarstellung (oder Binärdarstellung, spielt keine Rolle) verwenden, dann ist
-            die Operation $x \mapsto x+1$ bereits eine nicht ganz triviale Operation, sie erfordert
-            beispielsweise Schleifen (von rechts nach links durchgehen), if-then-else-Ausdrücke (gibt es ein
-            Carry?)
-            etc. Daher sollten Sie so tun, also würden wir natürliche Zahlen in
-            <i>unärer Schreibweise</i>
-            (auhc Steinzeitnotation genannt)
-            darstellen, also vier $= 1111$, sieben = $= 1111111$. Jezt
-            brauchen wir für succ kein if-then-else und keine Schleifen, denn
-            $\succ(x) = 1x$.
-          </p>
-          <p>
-            Eine weitere Klasse von "offensichtlich" berechenbaren Funktionen sind die sogenannten
-            Projektionen
-            $\pi^n_k$, definiert als
-            $$
-            \begin{align*}
-            \pi^n_k : \N^n&amp;\rightarrow \N \\
-            \vec{x}&amp;\mapsto x_k \ .
-            \end{align*}
-            $$
-            Irgendwie sollte auch hier klar sein, dass die Vorschrift "gib von den 3 Argumenten, die Du
-            erhältst, das erste zurück" ohne Zweifel "berechenbar" ist.
-            Weil wir bald alles in einem Python-Framework implementieren werden, sei angemerkt,
-            dass ich die Zählung der Indizes bei 0 beginnen lasse, also zum Beispiel
-            $$
-            \begin{align*}
-            \pi^3_0: (x,y,z) \mapsto x \\
-            \pi^3_1: (x,y,z) \mapsto y \ .
-            \end{align*}
-            $$
-            Auch die Stelligkeit $n$ lasse ich oft weg und schreibe einfach $\pi_k$ statt $\pi^n_k$.
-          </p>
+          Sind diese Funktionen "offensichtlich berechenbar"? Ich würde sagen, die fundamentale Eigenschaft
+          der natürlichen Zahlen ist, dass jede Zahl einen Nachfolger (successor) hat; daher ist irgendwie
+          klar, dass \(\succ\) berechen bar ist. Aber seien wir vorsichtig: wenn wir für natürliche Zahlen
+          die Dezimaldarstellung (oder Binärdarstellung, spielt keine Rolle) verwenden, dann ist
+          die Operation \(x \mapsto x+1\) bereits eine nicht ganz triviale Operation, sie erfordert
+          beispielsweise Schleifen (von rechts nach links durchgehen), if-then-else-Ausdrücke (gibt es ein
+          Carry?)
+          etc. Daher sollten Sie so tun, also würden wir natürliche Zahlen in _unärer Schreibweise_
+          (auhc Steinzeitnotation genannt)
+          darstellen, also vier \( = 1111\), sieben = \(= 1111111\). Jezt
+          brauchen wir für succ kein if-then-else und keine Schleifen, denn
+          \(\succ(x) = 1x\).
+          Eine weitere Klasse von "offensichtlich" berechenbaren Funktionen sind die sogenannten
+          Projektionen
+          \(\pi^n_k\), definiert als
+          $$
+          $$
+          \begin{align*}
+          \pi^n_k : \N^n&amp;\rightarrow \N \\
+          \vec{x}&amp;\mapsto x_k \ .
+          \end{align*}
+          $$
+          $$
+          Irgendwie sollte auch hier klar sein, dass die Vorschrift "gib von den 3 Argumenten, die Du
+          erhältst, das erste zurück" ohne Zweifel "berechenbar" ist.
+          Weil wir bald alles in einem Python-Framework implementieren werden, sei angemerkt,
+          dass ich die Zählung der Indizes bei 0 beginnen lasse, also zum Beispiel
+          $$
+          $$
+          \begin{align*}
+          \pi^3_0: (x,y,z) \mapsto x \\
+          \pi^3_1: (x,y,z) \mapsto y \ .
+          \end{align*}
+          $$
+          $$
+          Auch die Stelligkeit $n$ lasse ich oft weg und schreibe einfach $\pi_k$ statt $\pi^n_k$.
           <b>Kombinatoren.</b>
           Die primitive Rekursion stellt zwei Kombinatoren zur Verfügung: Komposition (Verknüpfung) und
           primitive Rekursion.
-          <div class="well container theorem">
-            <span class="numbered-title">Definition
-              <NumberedTitle>::::ChapterCtr.::::SectionCtr.1</NumberedTitle>
-              </span>
+          <Statement title="*Definition*">
             <b>(Komposition)</b>
             Sei $f: \N^k \rightarrow \N$ und
             $g_1, \dots, g_k: \N^l \rightarrow \N$. Dann ist
@@ -129,16 +123,11 @@
                 loading="lazy"
               >
             </figure>
-          </div>
-          <p>
-            Um aber komplexere Operationen implementieren zu können, brauchen wir eine Art von Schleife.
-            Was ist die einfachste Art von Schleife oder Rekursion. Wir dürfen nur eine sehr beschränkte
-            Form der Rekursion verwenden:
-          </p>
-          <div class="well container theorem">
-            <span class="numbered-title">Definition
-              <NumberedTitle>::::ChapterCtr.::::SectionCtr.2</NumberedTitle>
-              </span>
+          </Statement>
+          Um aber komplexere Operationen implementieren zu können, brauchen wir eine Art von Schleife.
+          Was ist die einfachste Art von Schleife oder Rekursion. Wir dürfen nur eine sehr beschränkte
+          Form der Rekursion verwenden:
+          <Statement title="*Definition*">
             <b>Primitive Rekursion</b>
             Seien $g: \N^k \rightarrow \N$ und $h: \N^{k+2} \rightarrow \N$. Wir
             definieren eine neue Funktion $f: \N^{k+1} \rightarrow \N$ wie folgt:
@@ -153,12 +142,10 @@
             $$
             Für diese Konstruktion schreiben wir kompakt
             $f := \primrec(g,h)$.
-          </div>
-          <p>
-            Wenn Sie Rekursionshasser sind, dann können Sie sich es als Funktion mit einer
-            <code>for</code>-Schleife
-            vorstellen, in der nur eine lokale Variable erlaubt ist:
-          </p>
+          </Statement>
+          Wenn Sie Rekursionshasser sind, dann können Sie sich es als Funktion mit einer
+          <code>for</code>-Schleife
+          vorstellen, in der nur eine lokale Variable erlaubt ist:
 <pre class="listing">
 <code>def PrimRec(g, h):</code>
  <code>def f(t,*x):</code>
@@ -168,15 +155,13 @@
      <code>return temp</code>
  <code>return f</code> 
 </pre>
-          <p>
-            Die Forderung, dass man nur
-            <i>eine</i>
-            lokale Variable durch die Schleife führen darf, scheint
-            sehr restriktiv; es ist aber wohl die einfachste Form einer Schleife, die wirklich etwas
-            "schleifenhaftes" tut.
-          </p>
-          <div class="well container theorem">
-            <span class="numbered-title">Demo.</span>Speichern Sie die Datei
+          Die Forderung, dass man nur
+          <i>eine</i>
+          lokale Variable durch die Schleife führen darf, scheint
+          sehr restriktiv; es ist aber wohl die einfachste Form einer Schleife, die wirklich etwas
+          "schleifenhaftes" tut.
+          <Statement title="*Demo.*">
+            Speichern Sie die Datei
             <a href="../code/primitive-recursion/primrec.py">primrec.py</a>
             auf
             Ihrem Rechner.
@@ -225,20 +210,16 @@
                 $$
               </li>
             </ul>
-            <p>
-              Wenn wir die primitive Rekursion als "Programmiersprache" betrachten, dann heißt das, dass
-              wir
-              neue Funktionen bauen dürfen, indem wir
-              <code>zero,succ,Proj,Comp,PrimRec</code>
-              verwenden,
-              aber nicht selbst Python-Funktionen schreiben. Wir dürfen also nie selbst Integers in die
-              Hand nehmen.
-            </p>
-            <p>
-              Lassen Sie mich das am Beispiel der Addition erklären. Ich will eine Funktion
-              ${\rm add}: \N^2 \rightarrow \N$ schreiben, die ihre beiden Argumente addiert.
-              Ich darf also nicht einfach python programmieren und
-            </p>
+            Wenn wir die primitive Rekursion als "Programmiersprache" betrachten, dann heißt das, dass
+            wir
+            neue Funktionen bauen dürfen, indem wir
+            <code>zero,succ,Proj,Comp,PrimRec</code>
+            verwenden,
+            aber nicht selbst Python-Funktionen schreiben. Wir dürfen also nie selbst Integers in die
+            Hand nehmen.
+            Lassen Sie mich das am Beispiel der Addition erklären. Ich will eine Funktion
+            ${\rm add}: \N^2 \rightarrow \N$ schreiben, die ihre beiden Argumente addiert.
+            Ich darf also nicht einfach python programmieren und
 <pre
   style="color:red; background-color: yellow;"
   class="listing"
@@ -246,14 +227,12 @@
 <code>def add(x,y):</code>
  <code>return x + y</code>
 </pre>
-            <p>
-              schreiben, denn unsere "Programmiersprache" ist Primitive Rekursion, nicht Python! Wir
-              müssen uns
-              <code>add</code>
-              aus den Kombinatoren zusammenbasteln. Ich schreibe
-              nun ${\rm add}(t,x)$ statt ${\rm add}(x,y)$, um den Rekursionsparameter $t$ deutlich
-              zu machen.
-            </p>
+            schreiben, denn unsere "Programmiersprache" ist Primitive Rekursion, nicht Python! Wir
+            müssen uns
+            <code>add</code>
+            aus den Kombinatoren zusammenbasteln. Ich schreibe
+            nun ${\rm add}(t,x)$ statt ${\rm add}(x,y)$, um den Rekursionsparameter $t$ deutlich
+            zu machen.
             $$
             \begin{align*}
             {\rm add}(t,x)&amp;= \begin{cases}
@@ -266,19 +245,15 @@
             \end{cases} \\
             \end{align*}
             $$
-            <p>
-              Wir sehen also, dass dies eine Anwendung der primitiven Rekursion ist mit
-              $g = \pi_0$ und $h = {\comp}(\succ, \pi_0)$, also
-            </p>
+            Wir sehen also, dass dies eine Anwendung der primitiven Rekursion ist mit
+            $g = \pi_0$ und $h = {\comp}(\succ, \pi_0)$, also
 <pre class="listing">
 <code>p0 = Proj(0)</code>
 <code>add = PrimRec (p0, Comp(succ,p0))</code>
 </pre>
-          </div>
-          <div class="well well-lg numbered-exercise container">
-            <span class="numbered-title">Übungsaufgabe
-              <NumberedTitle>::::ChapterCtr.::::SectionCtr.1</NumberedTitle>
-              </span>Zeigen Sie, dass die folgenden Funktionen primitiv-rekursiv sind, und implementieren Sie sie
+          </Statement>
+          <Statement title="*Übungsaufgabe*">
+            Zeigen Sie, dass die folgenden Funktionen primitiv-rekursiv sind, und implementieren Sie sie
             in meinem Python-Framework, so wie ich Addition mit
             <code>add = PrimRec (p0, Comp(succ,p0))</code>
             implementiert habe:
@@ -296,24 +271,18 @@
                 ${\rm minus}: (x,y) \mapsto x-y$
               </li>
             </ol>
-            <p>
-              <b>Tip:</b>
-              Für exp und minus ist es einfacher, die Argumente "umgedreht" zu
-              betrachten,
-              also $(a,b) \mapsto b^a$ und $(x,y) \mapsto y-x$.
-            </p>
-          </div>
-          <div class="well well-lg numbered-exercise container">
-            <span class="numbered-title">Übungsaufgabe
-              <NumberedTitle>::::ChapterCtr.::::SectionCtr.2</NumberedTitle>
-              </span>Wenn Sie die vorherige Übungsaufgabe gelöst (oder darüber aufgegeben) haben,
+            <b>Tip:</b>
+            Für exp und minus ist es einfacher, die Argumente "umgedreht" zu
+            betrachten,
+            also $(a,b) \mapsto b^a$ und $(x,y) \mapsto y-x$.
+          </Statement>
+          <Statement title="*Übungsaufgabe*">
+            Wenn Sie die vorherige Übungsaufgabe gelöst (oder darüber aufgegeben) haben,
             sehen Sie sich die Datei<a href="../code/primitive-recursion/stockpile.py">stockpile.py</a>
             an,
             in der ich diese Funktionen zum Großteil implementiert habe (basierend auf
             den Übungen, die wir direkt in der Vorlesung gemacht haben).
-            <p>
-              Experimentieren Sie weiter und implementieren Sie "Boolesche" Prädikate und Funktionen wie
-            </p>
+            Experimentieren Sie weiter und implementieren Sie "Boolesche" Prädikate und Funktionen wie
             <ul>
               <li>
                 <code>isPositive</code>
@@ -333,7 +302,7 @@
                 <code>false</code>) ist, und $y$ sonst.
               </li>
             </ul>
-          </div>
+          </Statement>
         </div>
       </div>
     </div>

@@ -64,14 +64,8 @@
                         $$
                         In anderen Worten: wenn wir ein Input-Bit von 0 auf 1 ändern, kann das Output-Bit
                         nicht von 1 auf 0 umkippen.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Welche der Booleschen Funktionen \(\wedge, \vee, \neg, \oplus, \maj\) sind monoton?
                     Funktionen auf wenigen Variablen können wir graphisch darstellen und somit
                     erkennen, ob sie monoton sind oder nicht. Für eine Funktion
@@ -108,25 +102,13 @@
                         title=*Theorem*
                         Zu jeder monotonen Funktion \(f: \{0,1\}^n \rightarrow \{0,1\}\) gibt es einen monotonen
                         Schaltkreis (also ohne NOT-Gates), der \(f\) berechnet.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Beweisen Sie das Theorem. *Tip.* Gehen Sie meine oben skizzierten drei
                         Konstruktionen durch (Rekursiv, DNF, CNF) und versuchen Sie, sie so zu modifizieren,
                         dass Sie alle NOT-Gates loswerden.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Finden Sie alle monotonen Funktionen in zwei Variablen.
                         Wie sieht es mit allen monotonen Funktionen in _drei_ Variablen aus?
                         Am Besten betrachten Sie das _Hasse-Diagramm_ der
@@ -138,14 +120,8 @@
                                 loading=lazy
                         und überlegen sich, wie Sie die vier bzw. acht Knoten auf monotone Weise in einen
                         1-Bereich und einen 0-Bereich aufteilen können.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         \ *(Challenge).*
                         Bauen Sie einen Schaltkreis mit drei Input-Variablen \(x,y,z\), der drei
                         Output-Gates hat, die \(\bar{x}, \bar{y}, \bar{z}\) berechnen.
@@ -208,14 +184,8 @@
                             Top-Down-Methode
                         , wie wir
                         aus einer Wahrheitstabelle einen Schaltkreis bauen:
-                        |> div
-                            class=well theorem subtheorem
-                            |> span
-                                class=numbered-title
-                                Theorem 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                \ 
+                        |> Statement
+                            title=*Theorem*
                             Zu jeder Booleschen Funktion \(f: \{0,1\}^n \rightarrow \{0,1\}\) gibt es
                             einen Schaltkreis \(C\), der \(f\) berechnet.
                         Wir haben diese Konstruktion in der Vorlesung an einem Beispiel durchexerziert und auch
@@ -258,14 +228,8 @@
                             so formulieren, dass sie die Form _\(P(n)\) für alle \(n \in \N\)_ annimmt.
                             Dies ist einfach, da die Zahl \(n\) bereits im Theorem vorkommt. Wir formulieren sie
                             also nun so um:
-                            |> div
-                                class=well theorem subtheorem
-                                |> span
-                                    class=numbered-title
-                                    Theorem 
-                                    |> NumberedTitle
-                                        ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                    \  1.4.4, alternative Formulierung
+                            |> Statement
+                                title=*Theorem*
                                 Für jede natürliche Zahl \(n\) gilt: zu jeder Booleschen Funktion
                                 \(f: \{0,1\}^n \rightarrow \{0,1\}\) gibt es einen Schaltkreis \(C\), der
                                 \(f\) berechnet.
@@ -346,14 +310,12 @@
                             kommt aufs Gleiche raus und unterscheidet sich nur in der Notation; in diesem
                             Falle ist es mir angenehmer, \(P(n-1) \Rightarrow P(n)\) zu zeigen. Wir dürfen
                             also die _Induktionshypothese_ \(P(n-1)\) als gegeben annehmen:
-                            |> div
-                                class=well subtheorem
+                            |> Remark
                                 *Induktionshypothese.*
                                 Zu jeder Booleschen Funktion in \(n-1\) Variablen
                                 gibt es einen äquivalenten Schaltkreis.
                             und wollen den Induktionsschritt vollziehen, also \(P(n)\) zeigen:
-                            |> div
-                                class=well subtheorem
+                            |> Remark
                                 *Ziel des Induktionsschritts.*
                                 Zu jeder Booleschen Funktion in \(n\) Variablen
                                 gibt es einen äquivalenten Schaltkreis.
@@ -489,20 +451,13 @@
                         (x_1 \wedge f_1) \vee f_0 \ .
                         $$
                         Wir müssen nun zeigen, dass dies wirklich \(f\) berechnet, also
-                        |> div
-                            class=well subtheorem theorem
-                            |> span
-                                class=numbered-title
-                                Behauptung 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                \ .
+                        |> Statement
+                            title=*Behauptung*
                             Für alle \(x_1,\dots,x_n\) gilt
                             $$
                             f(x_1,\dots,x_n) = (x_1 \wedge f_1(x_2,\dots,x_n)) \vee f_0(x_2,\dots,x_n) \ .
                             $$
-                        |> div
-                            class=well subtheorem
+                        |> Remark
                             *Beweis.*
                             Wir machen eine Fallunterscheidung nach dem Wert von \(x_1\).
                             |> ul
@@ -630,18 +585,11 @@
                         $$
                         Der Term \(T'_{\mathbf{a}}\) ist "kürzer" als \(T_{\mathbf{a}}\), stellt
                         also weniger "Bedingungen". Formal gesprochen:
-                        |> div
-                            class=well subtheorem theorem
-                            |> span
-                                class=numbered-title
-                                Behauptung 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                \ .
+                        |> Statement
+                            title=*Behauptung*
                             Für alle \(x_1,\dots,x_n\) gilt
                             \(T_{\mathbf{a}} \leq T'_{\mathbf{a}}\).
-                        |> div
-                            class=well subtheorem
+                        |> Remark
                             *Beweis.*
                             Definieren wir zusätzlich noch \(T''_{\mathbf{a}} := \bigwedge_{i \in O_{\mathbf{a}}}
                             \bar{x}_i\),
@@ -657,17 +605,10 @@
                         Sie können sich vorstellen, dass wir \(F\) nehmen und alle negativen Literale
                         ersatzlos streichen. Wir behaupten nun, dass \(F'\) und \(F\) dieselbe
                         Funktion darstellen:
-                        |> div
-                            class=well subtheorem theorem
-                            |> span
-                                class=numbered-title
-                                Behauptung 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                \ 
+                        |> Statement
+                            title=*Behauptung*
                             \(F \equiv F'\), d.h. sie berechnen beide dieselbe Funktion, nämlich \(f\).
-                        |> div
-                            class=well subtheorem
+                        |> Remark
                             *Beweis.*
                             Um zu zeigen, dass beide dieselbe Funktion berechnen, müssen
                             wir zeigen, dass

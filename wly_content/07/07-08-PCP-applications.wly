@@ -90,18 +90,11 @@
                         \end{align*}
                         wobei \(\$\) ein neues Zeichen ist, dass nicht in der Symbolmenge des PCP-Puzzles \(P\)
                         enthalten ist.
-                        |> div
-                            class=well subtheorem theorem
-                            |> span
-                                class=numbered-title
-                                Behauptung 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                \ 
+                        |> Statement
+                            title=*Behauptung*
                             \ Wenn die Grammatik \(G\) ein Palindromwort
                             ableiten kann, dann hat das PCP-Puzzle \(P\) eine Lösung.
-                        |> div
-                            class=well subtheorem
+                        |> Remark
                             *Beweis.*
                             Die letzte angewandte Regel muss \(S \rightarrow \$\) sein, und somit hat
                             das abgeleitete Wort die Form
@@ -116,19 +109,12 @@
                             \end{align*}
                             eine Lösung des PCP-Puzzles.
                             |> QED
-                        |> div
-                            class=well subtheorem theorem
-                            |> span
-                                class=numbered-title
-                                Behauptung 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                \ 
+                        |> Statement
+                            title=*Behauptung*
                             \ Wenn
                             das PCP-Puzzle \(P\) eine Lösung hat, dann kann die Grammatik \(G\) ein Palindromwort
                             ableiten.
-                        |> div
-                            class=well subtheorem
+                        |> Remark
                             *Beweis.*
                             Sei
                             \begin{align*}
@@ -179,6 +165,7 @@
                     formalisieren:
                     |> Statement
                         title=*Definition*
+                        *(Reduktion).* 
                         Seien \(L_1 \subseteq \Sigma_1\) und \(L_2 \subseteq \Sigma_2\) zwei Sprachen.
                         Eine _Reduktion von \(L_1\) nach \(L_2\)_ ist eine Turing-berechenbare Funktion
                         \begin{align*}

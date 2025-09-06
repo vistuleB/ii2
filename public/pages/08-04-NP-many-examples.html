@@ -1,0 +1,254 @@
+<div id="rightSideWrapper">
+    <div class="content">
+        <div class='chapter'>
+            <div class='subChapter'>
+                <h1 class='hidden-title'>
+                    <span class='subChapterTitle'>9.4 Viele Beispiele aus NP</span>
+                </h1>
+                <div class='well well-lg numbered-exercise container'>
+                    <p>
+                        <span class='numbered-title' id='problem-3-colorability'
+                            data-label-title='Problem'>Problem</span>
+                        (<span style="font-variant: small-caps;">3-Colorability</span>).
+                        Gegeben ein Graph $G= (V,E)$, gibt es eine Färbung
+                        $c : V \rightarrow \{1,2,3\}$ mit
+                    </p>
+                    \begin{align*}
+                    \forall\ \{u,v\} \in E: \ c(u) \ne c(v) \ ?
+                    \end{align*}
+                </div class='numbered-exercise'>
+
+                <figure>
+                    <div style="display: inline-block; width:45%; justify-content: center;">
+                        <img src='../img/09-complexity-theory/np-examples/peterson-3-colorable.svg'
+                            style='width:80%'>
+                        <p style="text-align: center;">
+                            Der Peterson-Graph ist 3-färbbar.
+                        </p>
+                    </div>
+                    <div style="display: inline-block; width:45%">
+                        <img src='../img/09-complexity-theory/np-examples/not-3-colorable.svg' style='width:80%'>
+                        <p style="text-align: center;">
+                            Dieser Graph ist nicht 3-färbbar
+                        </p>
+                    </div>
+                </figure>
+                <div class='well container theorem'>
+                    <p>
+                        <span class='numbered-title' id='prop-3-col-in-NP'
+                            data-label-title='Beobachtung'>Beobachtung</span>
+                        <span style="font-variant: small-caps;">3-Colorability</span> ist in NP.
+                    </p>
+                </div>
+                </div class='well container theorem'>
+                    <p>
+                        <strong>Beweis.</strong>
+                        Wir müssen nun eine Zertifikatmaschine mit polynomieller Laufzeit angeben. Um uns
+                        nicht in technischen Details zu verlieren, werden wir einfach einen Algorithmus angeben,
+                        der zwei Inputs entgegennimmt: den Graphen $G$ (im Turingmaschinenkontext also das
+                        Eingabewort $x$) und ein <em>Zertifikat</em>. Hier ist unser Code:
+                    </p>
+                    <pre class='listing'>
+<code>def is_3_coloring(graph, c):</code>
+<code>    (V,E) = graph </code>
+<code>    for (u,v) in E:</code>
+<code>        if c[u] == c[v]:</code>
+<code>            return False </code>
+<code>        if c[u] not in [1,2,3] or c[v] not in [1,2,3]:</code>
+<code>            return False </code>
+<code>    return True</code></pre>
+                    <p>
+                        Falls nun $G$ $3$-färbbar ist, wenn es also eine solche Färbung $c: V \rightarrow \{1,2,3\}$
+                        gibt,
+                        dann wird obiger Algorithmus <tt>is_3_coloring(graph,c)</tt> auch <tt>True</tt> ausgeben.
+                        Falls er für ein $c$ <tt>True</tt> ausgibt, dann ist $c$ tatsächlich eine
+                        gültige 3-Färbung und $G$ ist $3$-färbbar.<span class='qed'>\(\square\)</span>
+                    </p>
+                    </div class='proof'>
+                        <p>
+                            Das obige Beispiel verdeutlicht die Essenz der Klasse NP: es ist nicht klar, wie wir
+                            einen effizienten Algorithmus für <span style="font-variant: small-caps;">3-Colorability</span>
+                            schreiben können; aber <em>überprüfen</em>, ob eine gegebene Färbung eine 3-Färbung
+                            von $G$ ist, das ist einfach.
+                        </p>
+                    </div>
+
+
+                    <div class='well well-lg numbered-exercise container'>
+                        <p>
+                            <span class='numbered-title' id='problem-CNF-SAT' data-label-title='Problem'>Problem</span>
+                            (<span style="font-variant: small-caps;">CNF-Satisfiability</span>).
+                            Gegeben eine Formel $F$ in konjunktiver Normalform. Gibt es eine
+                            Belegung der Variablen, so dass $F$ zu <tt>True</tt> wird?
+                        </p>
+                    </div class='numbered-exercise'>
+
+                    <p>
+                        Auch hier können wir eine einfache Prüf-Funktion schreiben, die eine Formel $F$ und
+                        eine Belegung $\alpha$ entgegennimmt, dann jede Klausel auswertet und schaut,
+                        ob immer <tt>True</tt> rauskommt. Somit gilt: auch
+                        <span style="font-variant: small-caps;">CNF-Satisfiability</span> ist in NP.
+                    </p>
+
+
+                    <div class='well well-lg numbered-exercise container'>
+                        <p>
+                            <span class='numbered-title' id='problem-subset-sum'
+                                data-label-title='Problem'>Problem</span>
+                            (<span style="font-variant: small-caps;">Subset Sum</span>).
+                            Gegeben eine Liste $p_1, \dots, p_n \in \N$ von "Preisen" und ein
+                            "Guthaben" $g \in \N$, gibt es eine Menge $I \subseteq [n]$ mit
+                        </p>
+                        \begin{align*}
+                        \sum_{i \in I} p_i = g \ ?
+                        \end{align*}
+                    </div class='numbered-exercise'>
+
+                    <p>
+                        Dies ist ebenfalls in NP.
+                    </p>
+
+                    <h2>
+                        Finden versus Entscheiden
+                    </h2>
+
+                    <p>
+                        Sei $G = (V,E)$ ein Graph. Eine Menge $I \subseteq V$ heißt <em>unabhängig</em>, wenn
+                        es keine Kante $\{u,v\} \in E$ gibt mit $u,v \in I$.
+                    </p>
+
+                    <div class='well well-lg numbered-exercise container'>
+                        <p>
+                            <span class='numbered-title' id='blabla' data-label-title='Problem'>Problem</span>
+                            Gegeben ein Graph $G=(V,E)$ und eine Zahl $k$.
+                            Finde eine unabhängige Menge in $I$ in $G$ mit $|I| \geq k$, falls es eine solche gibt.
+                        </p>
+                    </div class='numbered-exercise'>
+
+                    <p>
+                        Ist dies in NP?
+                        Schon syntaktisch nicht! Es ist ja gar kein Entscheidungsproblem.
+                        Wir können aber eine Entscheidungsvariante definieren:
+                    </p>
+                    <div class='well well-lg numbered-exercise container'>
+                        <p>
+                            <span class='numbered-title' id='problem-max-independent-set'
+                                data-label-title='Problem'>Problem</span>
+                            (<span style="font-variant: small-caps;">Independent Set</span>)
+                            Gegeben ein Graph $G=(V,E)$ und eine Zahl $k$.
+                            Gibt es eine unabhängige Menge in $I$ in $G$ mit $|I| \geq k$?
+                        </p>
+                    </div class='numbered-exercise'>
+
+                    <p>
+                        Das Entscheidungsproblem <span style="font-variant: small-caps;">Independent Set</span>
+                        ist offensichtlich in NP. Als Zertifikat kommt z.B. einfach die Menge $I$ in Frage.
+                        Für alle Entscheidungsprobleme, die wir oben als Beispiele aufgelistet haben, kann man
+                        ganz natürlich das zugehörige Suchproblem definieren: gegeben ein
+                        Graph, finde eine 3-Färbung (falls es sie gibt); gegeben
+                        eine CNF-Formel, finde eine erfüllende Belegung (falls es sie gibt); gegeben
+                        ein Instanz von <span style="font-variant: small-caps;">Subset Sum</span>, finde
+                        eine Menge $I$ mit $\sum_{i \in I} p_i = g$.
+                    </p>
+
+                    <div class='well well-lg numbered-exercise container'>
+                        <p>
+                            <span class='numbered-title' id='put-unique-name-here'
+                                data-label-title='Übungsaufgabe'>Übungsaufgabe</span>
+                            Zeigen Sie für folgende Probleme, dass wir, falls wir einen effizienten Algorithmus
+                            dafür haben, dann auch einen effizienten Algorithmus schreiben können,
+                            der das entsprechende Objekt findet, falls es denn existiert!
+                        </p>
+                        <ul>
+                            <li>
+                                <span style="font-variant: small-caps;">Subset Sum</span> (das ist einfach),
+                            </li>
+                            <li>
+                                <span style="font-variant: small-caps;">Independent Set</span> (das ist auch recht
+                                einfach),
+                            </li>
+                            <li>
+                                <span style="font-variant: small-caps;">CNF-Satisfiability</span> (auch),
+                            </li>
+                            <li>
+                                <span style="font-variant: small-caps;">3-Colorability</span> (das ist trickreicher).
+                            </li>
+                        </ul>
+
+                    </div class='numbered-exercise'>
+
+                    <p>
+                        Dies geht nicht immer! Erinnern Sie sich an <span
+                            style="font-variant: small-caps;">Primes</span>.
+                        Der Agrawal–Kayal–Saxena-Algorithmus lässt uns entscheiden, ob eine gegebene Zahl $n$
+                        prim ist; also auch, ob $n$ zusammengesetzt ist; allerdings geht daraus kein
+                        Algorithmus hervor, der einen Faktor auch findet.
+                    </p>
+
+                    <p>
+                        Wo wir gerade beim Faktorisieren sind: das Problem <em>gegeben eine Zahl $X \in \N$, zerlege
+                            sie in ihre Primfaktoren</em> ist ja kein Entscheidungsproblem. Können wir
+                        ein "entsprechendes" Entscheidungsproblem formulieren? Es sollte gelten:
+                        wenn wir das Entscheidungsproblem lösen können, dann auch das Suchproblem. Wie wir
+                        gesehen haben, ist <span style="font-variant: small-caps;">Primes</span> bzw.
+                        <span style="font-variant: small-caps;">NonPrimes</span>
+                        nicht das
+                        entsprechende Entscheidungsproblem, weil es uns nicht erlaubt, den Faktor auch zu finden.
+                    </p>
+
+
+                    <div class='well well-lg numbered-exercise container'>
+                        <p>
+                            <span class='numbered-title' id='problem-small-factor'
+                                data-label-title='Problem'>Problem</span>
+                            (<span style="font-variant: small-caps;">Small Factor</span>)
+                            Gegeben eine Zahl $X \in \N$, binär codiert als $x \in \{0,1\}^n$, und eine
+                            Zahl $K \in \N$: gibt es einen echten Teiler $Z$ von $\N$ mit $Z \leq K$?
+                        </p>
+                    </div class='numbered-exercise'>
+
+                    <div class='well well-lg numbered-exercise container'>
+                        <p>
+                            <span class='numbered-title' id='put-unique-name-here'
+                                data-label-title='Übungsaufgabe'>Übungsaufgabe</span>
+                            Zeigen Sie: wenn man <span style="font-variant: small-caps;">Small Factor</span> effizient
+                            lösen kann, dann kann man auch die Primzahlfaktorisierung von $X$ effizient finden.
+                        </p>
+                        <p>
+                            <strong>Hinweis:</strong> <em>Effizient</em> heißt in diesem Zusammenhang
+                            <em>polynomiell in der Anzahl der Bits.</em> Der Algorithmus <em>probiere alle kleineren
+                                Zahlen aus</em>, ob sie $X$ teilen, ist <em>nicht</em> effizient!
+                        </p>
+                    </div class='numbered-exercise'>
+                    <p>
+                        Das Entscheidungsproblem <span style="font-variant: small-caps;">Small Factor</span>
+                        ist offensichtlich in NP: das Zertifikat $z$ ist jener Faktor (so er denn existiert), und
+                        die Zertifikatmaschine $M$ muss nun $z$ mit $K$ multiplizieren und schauen, ob auch
+                        $X$ herauskommt. Nicht so offensichtlich jedoch ist folgendes:
+                    </p>
+                    <div class='well well-lg numbered-exercise container'>
+                        <p>
+                            <span class='numbered-title' id='put-unique-name-here'
+                                data-label-title='Übungsaufgabe'>Übungsaufgabe</span>
+                            Sei <span style="font-variant: small-caps;">No Small Factor</span>
+                            das Komplement von <span style="font-variant: small-caps;">Small Factor</span>, also
+                        </p>
+                        \begin{align*}
+                        \{ x\texttt{;}k \ | \ x, k \in \{0,1\}^*
+                        \textnormal{ und $(x)_2$ hat keinen echten Teiler $Z \leq (k)_2$} \} \ ,
+                        \end{align*}
+                        <p>
+                            wobei $(x)_2$ und $(k)_2$ die von $x$ und $k$ codierten natürlichen Zahlen sind.
+                        </p>
+                    </div class='numbered-exercise'>
+
+                    <p>
+                        Diese Übungsaufgabe ist quasi eine Warnung: was denn eine
+                        Zertifikatmaschine auf ihrem zweiten Band erwartet, das geht nicht
+                        immer aus der Problemstellung hervor!
+                    </p>
+                </div>
+            </div class='subChapter'>
+        </div class='chapter'>
+    </div class="content">
+</div class="rightSideWrapper">

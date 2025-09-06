@@ -1,10 +1,16 @@
 <div id="rightSideWrapper">
-    <div class="content">
-        <div class='chapter'>
-            <div class='subChapter'>
-                <h1 class='hidden-title'>
-                    <span class='subChapterTitle'>Anwendungen des Postschen Korrespondenzproblems</span>
-                </h1>
+
+
+        <div class="content">
+
+
+
+            <div class='chapter'>
+
+                <div class='subChapter'>
+                    <h1 class='hidden-title'>
+                        <span class='subChapterTitle'>8.8 Anwendungen des Postschen Korrespondenzproblems</span>
+                    </h1>
 
 
                     <p>
@@ -132,7 +138,6 @@
                         Es lohnt sich, an dieser Stelle zu pausieren. Was Sie gerade gesehen haben,
                         ist eine <em>Reduktion</em>. Im "echten" Leben verwenden wir Reduktionen,
                         um bereits gefundene Lösungen zu "recyceln". Beispielsweise:
-                    </p>
                     <ul>
                         <li><strong>Aufgabe:</strong> Zeigen Sie, dass die Funktion
                             \(n \mapsto n!\) im \(\lambda\)-Kalkül berechenbar ist.</li>
@@ -148,12 +153,14 @@
                             und ersparen uns die Details.
                         </li>
                     </ul>
-                    <p>
-                        Im Kontext der Turing-Berechenbarkeit können wir dieses Prinzip wie folgt
-                        formalisieren:
+                    Im Kontext der Turing-Berechenbarkeit können wir dieses Prinzip wie folgt
+                    formalisieren:
                     </p>
                     <div class='well container theorem'>
-                        <span class='numbered-title'>Definition</span>
+                        <p><span class='numbered-title' id='definition-reduction'
+                                data-label-title='Definition'>Definition</span>
+                            <strong>(Reduktion). </strong>
+                        </p>
                         Seien \(L_1 \subseteq \Sigma_1\) und \(L_2 \subseteq \Sigma_2\) zwei Sprachen.
                         Eine <em>Reduktion von \(L_1\) nach \(L_2\)</em> ist eine Turing-berechenbare Funktion
                         \begin{align*}

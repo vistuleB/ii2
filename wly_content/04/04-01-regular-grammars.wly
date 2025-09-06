@@ -86,76 +86,39 @@
                     Sie sollen nun an einer Reihe von Übungsaufgaben arbeiten, um ein
                     Gefühl dafür zu bekommen, was reguläre Grammatiken tun können und was
                     nicht.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Betrachten Sie die Gramatik über \(\Sigma = \{0,1\}\): \begin{align*}
                         S&amp;\rightarrow 1 S \ | \ 0 S \ | \ 0 \end{align*} Leiten Sie das Wort
                         \(11010\) ab. Beschreiben Sie in eigenen Worten die erzeugte Sprache.
-                    |> div
-                        id=example-xxx1yyy
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Betrachten Sie die Grammatik über \(\Sigma = \{0,1\}\): \begin{align*}
                         A&amp;\rightarrow 0 A \ | 1 A \ | 1 B \\ B&amp;\rightarrow 0 C \ | 1 C \\
                         C&amp;\rightarrow 0 D \ | 1 D \\ D&amp;\rightarrow 0 E \ | 1 E \\ E&
                         \rightarrow \epsilon \ \end{align*} mit Startsymbol \(A\). Leiten Sie
                         das Wort \(01101001\) ab und beschreiben Sie die erzeugte Sprache in
                         eigenen Worten.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Betrachten Sie das Alphabet \(\Sigma = \{1\}\) und die Sprache $$ L :=
                         \{1^n \ | \ \textnormal{ $n$ ist durch 3 teilbar} \} \ . $$ Schreiben
                         Sie eine reguläre Grammatik für \(L\).
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Betrachten Sie die Sprache \begin{align*} L := \{x \in \{a,b\}^* \ | \
                         \textnormal{in $x$ kommt $b$ mindestens 4 mal vor }\} \ \end{align*}
                         und entwerfen Sie eine reguläre Grammatik für \(L\).
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Sei \(\Sigma = \{a,b,.\}\) und \(L \subseteq \Sigma^*\) die Sprache
                         aller Strings der Form $$ x_1 . x_2 . x_3 . \cdots . x_n $$ wobei \(n
                         \geq 2\) und jedes \(x_i \in \{a,b\}^+\), also zum Beispiel
                         `a.bba.aba` aber nicht `aba` und auch nicht
                         `a.b..a`
                         Entwerfen Sie eine reguläre Grammatik für diese Sprache.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Unsere
                         |> a
                             href=./04-00-formal-languages.html#email-context-free-grammar
@@ -286,15 +249,8 @@
                         ableiten kann, dann auch in maximal \(|N|\) Schritten, denn
                         ansonsten kämen ja in der Ableitung ein Nichtterminal doppelt vor
                         und man könnte abkürzen.
-                        |> div
-                            id=exercise-no-a-or-no-b
-                            class=well well-lg numbered-exercise
-                            |> span
-                                class=numbered-title
-                                Übungsaufgabe 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                \ 
+                        |> Statement
+                            title=*Übungsaufgabe*
                             Sei \(\Sigma = \{a,b,c\}\). Die Grammatik mit den Regeln \(A
                             \rightarrow \epsilon \ | \ b A \ | \ c A\) erzeugt die Sprache aller
                             Wörter, die kein \(a\) enthalten. Die Grammatik \(B \rightarrow
@@ -310,14 +266,8 @@
                             \(X \rightarrow bY\) und \(X \rightarrow \epsilon\) enthält.
                         Wir können zwar auf Produktionen vom Typ 2 und 3 verzichten. Dies
                         hat allerdings seinen Preis, wie die folgende Übungsaufgabe zeigt:
-                        |> div
-                            class=well well-lg numbered-exercise
-                            |> span
-                                class=numbered-title
-                                Übungsaufgabe 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                \ 
+                        |> Statement
+                            title=*Übungsaufgabe*
                             Betrachten Sie die folgende Grammatik über \(\Sigma =
                             \{a_1,a_2,\dots,a_n\}\) mit den Nichtterminalsymbolen \(\{S, A_1,
                             A_2, \dots, A_n\}\) und den insgesamt \(3n-1\) Produktionen
@@ -450,14 +400,8 @@
                             Ableitung beenden zu können, fügen wir \(S \rightarrow \epsilon\)
                             noch als Regel hinzu.
                             |> QED
-                        |> div
-                            class=well well-lg numbered-exercise
-                            |> span
-                                class=numbered-title
-                                Übungsaufgabe 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                \ 
+                        |> Statement
+                            title=*Übungsaufgabe*
                             Hier sehen Sie einen URL mit Query-String:
                             `https://web1.hszg.de/modulkatalog/index.php?activTopic=3&activNav=2&stid=566&frei=1&kennz=suche&activCont=1`
                             Der URL besteht aus mehreren Teilen:

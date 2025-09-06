@@ -57,14 +57,8 @@
                         Reguläre Grammatiken können ja immer nur ein Wort von links nach rechts erzeugen; für \(L\)
                         scheint
                         das irgendwie nicht zu reichen.
-                        |> div
-                            class=well well-lg numbered-exercise
-                            |> span
-                                class=numbered-title
-                                Übungsaufgabe 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                \ 
+                        |> Statement
+                            title=*Übungsaufgabe*
                             Versuchen Sie ein paar Minuten, eine reguläre Grammatik für \(L\) zu schreiben oder
                             versuchen Sie,
                             zu argumentieren, dass das nicht möglich ist.
@@ -275,14 +269,8 @@
                         \end{align*}
                         Sie ist nicht regulär: die Wörter \(a, aa, aaa, aaaa, ...\) sind alle nicht \(L\)-äquivalent, da
                         \(a^i b a^i \in L\) aber \(a^j b a^i \not \in L\) ist.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Betrachten Sie die Sprache aller \(\alpha\in \{a,b\}^*\), die gleich viele \(a\)'s wie \(b\)'s
                         haben:
                         \begin{align*}
@@ -361,17 +349,10 @@
                         ist.
                         Unsere Konstruktion, ihn deterministisch zu machen, würde 16 Zustände erzeugen. Ist dies
                         optimal? Ja, ist es:
-                        |> div
-                            class=well subtheorem theorem
-                            |> span
-                                class=numbered-title
-                                Behauptung 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                \ 
+                        |> Statement
+                            title=*Behauptung*
                             Die Sprache \(L\) hat Index 16. Alle Wörter in \(\{0,1\}^4\) sind nicht \(L\)-äquivalent.
-                        |> div
-                            class=well subtheorem
+                        |> Remark
                             *Beweis.*
                             Seien \(\alpha:= a_1 a_2 a_3 a_4, \beta := b_1 b_2 b_3 b_4 \in \{0,1\}^4\) zwei verschiedene
                             Wörter. Dann gibt es ein

@@ -202,14 +202,8 @@
                         Wir brauchen eine robuste Definition, was es heißt, dass eine Funktion \(f: \N \rightarrow \N \)
                         schneller wächst als
                         \(g: \N^k \rightarrow \N\).
-                        |> div
-                            class=well subtheorem theorem
-                            |> span
-                                class=numbered-title
-                                Definition 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                \ .
+                        |> Statement
+                            title=*Definition*
                             Sei \(f: \N \rightarrow \N\) und \(g: \N^k \rightarrow \N\). Die Funktion
                             \(f\) _majorisiert_ \(g\), wenn
                             \begin{align*}
@@ -227,14 +221,8 @@
                         von einem \(A_r\) majorisiert wird; hierbei ist wichtig, dass der Index \(r\)
                         als Konstante betrachtet wird, also von der "Bauweise" von \(g\) abhängen darf, nicht
                         aber von den Eingabewerten, die \(g\) bekommt.
-                        |> div
-                            class=well subtheorem theorem
-                            |> span
-                                class=numbered-title
-                                Lemma 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                \ 
+                        |> Statement
+                            title=*Lemma*
                             Für jede primitiv rekursive Funktion \(f: \N^k \rightarrow \N\) gibt
                             es ein \(r \in \N\), so dass \(f\) von \(A_r\) majorisiert wird.
                         Aus diesem Lemma folgt dann, dass \(A(m,n)\) selbst nicht
@@ -303,18 +291,11 @@
                         \end{align*}
                         wobei \(g, h\) bereits mit weniger Kombinatoren konstruierte primitiv rekursive Funktionen
                         sind. Daher gibt es ein \(q \in \N\) mit \(A_q \gt g\) und \(A_q \gt h\).
-                        |> div
-                            class=well subtheorem theorem
-                            |> span
-                                class=numbered-title
-                                Behauptung 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                \ 
+                        |> Statement
+                            title=*Behauptung*
                             \(f(t, \vec{x}) \leq A_{q+1} (t+x)\), wobei
                             \(x = \max(\vec{x}) = \max(x_1,\dots,x_n)\).
-                        |> div
-                            class=well subtheorem
+                        |> Remark
                             *Beweis.*
                             Wir verwenden Induktion über \(t\). Wenn \(t=0\) ist,
                             dann gilt

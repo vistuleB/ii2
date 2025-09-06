@@ -18,17 +18,17 @@
 </head>
 <body>
 <section
-  count="52"
-  .="BookLevelSectionCounter 52"
+  count="57"
+  .="BookLevelSectionCounter 57"
   title_gr="- Manual für das Schreiben dieses Skripts"
   title_en="appendix"
   number="9.0"
   counter="DefCtr"
   counter="ExoCtr"
-  path="/lecture-notes52"
+  path="/lecture-notes57"
 >
   <div id="link-to-toc">
-    <a href="../vorlesungsskript.html">Inhaltsverzeichnis</a><a href="08-01-Time-hierarchy-theorem.html">&lt;&lt; Kapitel 8.1</a>
+    <a href="../vorlesungsskript.html">Inhaltsverzeichnis</a><a href="08-05-NP-reductions.html">&lt;&lt; Kapitel 8.5</a>
   </div>
   <div
     id="link-to-overview"
@@ -41,21 +41,19 @@
       <div class="chapter">
         <div class="subChapter">
           <h1 class="hidden-title">
-            <span class="chapterTitle">9.
+            <span class="chapterTitle">7.
               Appendix - Manual für das Schreiben dieses Skripts</span>
           </h1>
-          <div class="alert-info">
+          <div class="alert-info well">
             Dieses Kapitel sind ausschließlich persönliche Notizen für mich dazu,
             wie man "korrekt" dieses Skript schreibt, insbesondere wie man die
             automatische Numerierung verwendet. Es ist also natürlich nicht Stoff
             der Vorlesung.
           </div>
-          <p>
-            Parts of these lecture notes are generated automatically with
-            javascript. This includes chapter and subchapter numbering, links to
-            next and previous chapters, the table of content, and theorem
-            numbering.
-          </p>
+          Parts of these lecture notes are generated automatically with
+          javascript. This includes chapter and subchapter numbering, links to
+          next and previous chapters, the table of content, and theorem
+          numbering.
           <ol>
             <li>
               If you want to add a new chapter, you have to do two things: add an
@@ -74,22 +72,17 @@
             <li>
               Theorem environments (theorems, lemmas, conjectures) can be created
               as follows:
-              <div class="well container theorem">
-                <p>
-                  <span
-                    id="sauer-shelah-lemma"
-                    class="numbered-title"
-                  >Sauer-Shelah lemma</span>Let $A \subseteq \{0,1\}^n$. If $|A| \gt {\rm vol}(n,r-1)$ then
-                  there exists some set $I \subseteq [n]$ of indices with $|I|
-                  \geq r$ such that
-                </p>
+              <Statement title="*Sauer-Shelah lemma*">
+                Let $A \subseteq \{0,1\}^n$. If $|A| \gt {\rm vol}(n,r-1)$ then
+                there exists some set $I \subseteq [n]$ of indices with $|I|
+                \geq r$ such that
                 $$
                 \begin{align*} \{ \mathbf{x}_I \ | \ \mathbf{x} \in A\} =
                 \{0,1\}^r \ , \end{align*}
                 $$
                 in other words, the set $I$ of
                 coordinates is shattered.
-              </div>
+              </Statement>
               and here is the source code:
 <pre>
 &lt;div class='well container theorem'&gt;
@@ -113,15 +106,13 @@ in other words, the set $I$ of coordinates is shattered.
               the class
               <code>nunbered-title</code>, otherwise the automatic numbering will
               not work.
-              <p>
-                The attributes
-                <code>id="sauer-shelah-lemma"</code>
-                and
-                <code>data-label-title="Lemma"</code>
-                are necessarily for
-                automatic referencing. Here is how you create a reference:
-              </p>
-              <div class="well container">
+              The attributes
+              <code>id="sauer-shelah-lemma"</code>
+              and
+              <code>data-label-title="Lemma"</code>
+              are necessarily for
+              automatic referencing. Here is how you create a reference:
+              <Highlight>
                 This follows easily from the<span
                   data-ref="sauer-shelah-lemma"
                   class="reference"
@@ -131,51 +122,45 @@ in other words, the set $I$ of coordinates is shattered.
                   data-ref="theorem-N-N^2"
                   class="reference"
                 ></span>.
-              </div>
+              </Highlight>
               and here is the source code:
 <pre>
 Remember that&lt;span class="reference" data-ref="theorem-N-N^2"&gt;&lt;/span&gt; shows that $\N$ and $\N^2$ are equipotent.
 </pre>
             </li>
-            <p>
-              To work, the
-              <code>id</code>
-              of a theorem (or a general environment)
-              has to be unique
-              <i>across all files of the lecture notes</i>.
-              Also, since we have to correctly compute the numbering of theorems
-              like
-              <span
-                data-ref="theorem-N-N^2"
-                class="reference"
-              ></span>, we
-              would have to read the file containing it. So we'd have to write
-              code that, while loading Chapter 9, loads all chapters of referenced
-              environments. Potentially, this forces the browser to load
-              <i>the entire lecture notes</i>
-              each time a single file is loaded.
-              This would take too much time, so we use a precompilation step:
-            </p>
-            <p>
-              I wrote an html page<a href="../javascript/put-all-in-one-page.html">put-all-in-one-page.html</a>that loads the table of content and all chapters (which takes quite
-              a substantial amount of time, like 20 seconds or so) and extracts
-              all environments with class
-              <code>theorem</code>
-              or
-              <code>exercise</code>
-              that have also class
-              <code>numbered-title</code>
-              and numbers them. If the environment has
-              the attribute
-              <code>data-label-title</code>, then it adds an entry
-              to a global dictionary. At the end, when all has been loaded, the
-              web page will show this dictionary as a json object.
-            </p>
-            <p>
-              You should then copy this table and paste it in the beginning of the
-              file<a href="../javascript/number-my-theorems.js">nunmber-my-theorems.js</a>. The point is that creating the table is expensive (must read all
-              chapters) but using it is cheap.
-            </p>
+            To work, the
+            <code>id</code>
+            of a theorem (or a general environment)
+            has to be unique
+            <i>across all files of the lecture notes</i>.
+            Also, since we have to correctly compute the numbering of theorems
+            like
+            <span
+              data-ref="theorem-N-N^2"
+              class="reference"
+            ></span>, we
+            would have to read the file containing it. So we'd have to write
+            code that, while loading Chapter 9, loads all chapters of referenced
+            environments. Potentially, this forces the browser to load
+            <i>the entire lecture notes</i>
+            each time a single file is loaded.
+            This would take too much time, so we use a precompilation step:
+            I wrote an html page<a href="../javascript/put-all-in-one-page.html">put-all-in-one-page.html</a>that loads the table of content and all chapters (which takes quite
+            a substantial amount of time, like 20 seconds or so) and extracts
+            all environments with class
+            <code>theorem</code>
+            or
+            <code>exercise</code>
+            that have also class
+            <code>numbered-title</code>
+            and numbers them. If the environment has
+            the attribute
+            <code>data-label-title</code>, then it adds an entry
+            to a global dictionary. At the end, when all has been loaded, the
+            web page will show this dictionary as a json object.
+            You should then copy this table and paste it in the beginning of the
+            file<a href="../javascript/number-my-theorems.js">nunmber-my-theorems.js</a>. The point is that creating the table is expensive (must read all
+            chapters) but using it is cheap.
             <div class="alert-warning">
               <b>Important:</b>
               The page<a href="../javascript/put-all-in-one-page.html">put-all-in-one-page.html</a>does not work if you just open it by double-clicking in your file

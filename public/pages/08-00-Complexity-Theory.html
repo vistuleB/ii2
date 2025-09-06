@@ -8,7 +8,7 @@
             <div class='chapter'>
                 <div class='subChapter'>
                     <h1 class='hidden-title'>
-                        <span class='chapterTitle'>8. Komplexitätstheorie</span>
+                        <span class='subChapterTitle'>Complexity Theory</span>
                     </h1>
 
                     <p>
@@ -106,11 +106,231 @@
                         exakt) und die Konstruktion ist deutlich komplizierter. Daher vorerst ohne Beweis:
                     </p>
 
-                    <div class='well container theorem' id="k-tape-to-2-tape">
-                        <p><span class='numbered-title'>Theorem</span> <strong>($k$-Band zu $2$-Band; ohne
+                    <div class='well container theorem'>
+                        <p><span class='numbered-title' id='k-tape-to-2-tape' data-label-title='Theorem'>Theorem</span>
+                            <strong>($k$-Band zu $2$-Band; ohne
                                 Beweis).</strong> Sei
-                            $t: \N \rightarrow \N$. Dann gilt $\TIME_k(t) \subseteq \TIME_2(t \log t)$.</p>
+                            $t: \N \rightarrow \N$. Dann gilt $\TIME_k(t) \subseteq \TIME_2(t \log t)$.
+                        </p>
                     </div class='well container theorem'>
+
+
+                    <h3>Die Klasse P und der Begriff der Effizienz</h3>
+
+                    <div class='well container theorem'>
+                        <p><span class='numbered-title' id='definition-class-P'
+                                data-label-title='Definition'>Definition</span>
+                            <strong>(Die Komplexitätsklasse P).</strong> Wir definieren
+                        </p>
+                        \begin{align*}
+                        \textnormal{P} := \bigcup_{k=1}^{\infty} \TIME(n^k) \ ,
+                        \end{align*}
+                        <p>
+                            also die Klasse aller Probleme (formal: Sprachen), die man
+                            in <em>polynomieller Zeit</em> entscheiden kann.
+                        </p>
+                    </div class='well container theorem'>
+
+                    <p>
+                        Wenn wir in der Komplexitätstheorie davon sprechen, dass ein Algorithmus
+                        effizient ist, dann meinen wir: seine Laufzeit ist polynomiell, also
+                        $O(|x|^k)$ für ein beliebiges aber fixes $k$.
+                    </p>
+
+                    <p>
+                        Wenn wir zeigen wollen, dass ein Problem (bzw. eine Sprache) in P ist,
+                        dann bauen wir üblicherweise keine Turingmaschine, sondern beschreiben
+                        (oder implementieren) einen <em>Algorithmus</em>, denn wir wissen ja mittlerweile
+                        (bzw. vertrauen darauf), dass man diesen Algorithmus dann effizient auf einer
+                        Mehrband-Turingmaschine implementieren kann. Wir sind also bildlich gesprochen
+                        wieder in <a href="../../TI-1/index.html">TI-1</a> und können sagen:
+                        ein Problem ist in $P$, wenn es dafür einen effizienten Algorithmus gibt.
+                        Hier ist eine kleine Liste von Problemen in P:
+                    </p>
+
+                    <oL>
+                        <li>
+                            <span style="font-variant: small-caps;">Undirected Graph Reachability</span>:
+                            Gegeben ein Graph $(V,E)$ und zwei Knoten $s$ und $t$. Gibt es
+                            einen Pfad von $s$ nach $t$?
+                            <p>
+                                Algorithmus: Tiefensuche oder Breitensuche. Beachten Sie: um das
+                                als "Sprache" zu betrachten, müssen wir eine Codierung für Graphen
+                                festlegen. Das ist wohl kein Problem: wir brauchen Klammern, Kommas
+                                und ein Alphabet, um unsere Knoten bezeichnen zu können.
+                            </p>
+                        </li>
+                        <li>
+                            <span style="font-variant: small-caps;">Acyclicity</span>: Gegeben
+                            ein gerichteter Graph $(V,E)$, ist er azyklisch?
+                        </li>
+                        <li>
+                            <span style="font-variant: small-caps;">Perfect Square</span>:
+                            Gegeben ein Binärzahl $x \in \{0,1\}^*$; ist sie eine Quadratzahl?
+                            <p>
+                                Algorithmus: sei $X$ die von $x$ beschriebene natürliche Zahl. Es gilt
+                                $0 \leq X \leq 2^{|x|} - 1$. Mit binärer Suche finden wir das größte $k$ mit
+                                $k^2 \leq X$. Die Berechnung von $k^2$ hat quadratische Laufzeit in
+                                der Anzahl der Bits von $k$; diese ist höchstens $|x|$; die binäre Suche
+                                tätigt $\log N \leq |x|$ Durchläufe. Die Gesamtlaufzeit ist also
+                                $O(|x|^3)$.
+                            </p>
+                        </li>
+                        <li>
+                            <span style="font-variant: small-caps;">Unary Primes</span>: Gegeben
+                            eine natürliche Zahl in unärer Codierung, also $1^{n}$ mit Eingabealphabet
+                            $\Sigma = \{1\}$; ist $n$ eine Primzahl?
+                            <p>
+                                Algorithmus: wir prüfen für jedes $2 \leq k \leq n-1$, ob es $n$ teilt.
+                                (Wie programmiert man Teilbarkeit auf einer Turingmaschine? Sie könnten
+                                zum Beispiel $1^k$ auf das zweite Band schreiben und dann beide
+                                Bänder durchgehen, das zweite mehrmals, und schauen, ob es "aufgeht";
+                                das geht in Zeit $n$). Die Gesamtlaufzeit ist also $n^2$.
+                            </p>
+                        </li>
+                        <li>
+                            <span style="font-variant: small-caps;">Primes</span>: Gegeben
+                            eine binär codierte Zahl $x \in \{0,1\}^n$, ist sie eine Primzahl?
+                            <p>
+                                Algorithmus: der obige Algorithmus, alle potenziellen Teiler auszuprobieren,
+                                benötigt $X^2$ Schritte, wobei $X \in \N$ die von $x$ codierte Zahl ist.
+                                Da $X \leq 2^n - 1$ ist dies nicht mehr polynomiell in der Eingabelänge
+                                $n$. Wir brauchen also einen Algorithmus, der polynomiell in der Bitgröße von $X$ ist,
+                                also in $n = |x|$. <em>Randomisierte</em> Algorithmen dieser
+                                Art kennt man schon seit den 1970er Jahren, z.B. den
+                                <a href="https://de.wikipedia.org/wiki/Miller-Rabin-Test">Miller-Rabin-Test</a>.
+                                Ein deterministischer polynomieller Algorithmus ist
+                                zum Beispiel der 2002 veröffentlichte
+                                <a href="https://en.wikipedia.org/wiki/AKS_primality_test">Agrawal–Kayal–Saxena
+                                    primality test</a>; die Laufzeit dieses Algorithmus ist
+                                polynomiell, allerdings ist $O(n^6)$ die beste derzeit bekannte Schranke.
+                            </p>
+                        </li>
+                    </oL>
+
+
+                    <p>
+                        In vielen Kontexten wollen wir keine Ja/Nein-Antwort, sondern ein konkretes Objekt
+                        als Antwort. Wir nennen diese Probleme <em>Funktionsprobleme</em>
+                        im Gegensatz zu den <em>Entscheidungsproblemen</em>.
+                        Hier müssen wir auf die Definition zurückgreifen, was es heißt, dass
+                        eine Turingmaschine eine Funktion $f: \Sigma_1^* \rightarrow \Sigma_2^*$ berechnet.
+                        Die entsprechende Komplexitätsklasse aller Funktionen, die man in polynomieller Zeit
+                        berechnen kann, nennt man FP. Folgende Probleme sind in FP:
+                    </p>
+
+                    <ol>
+                        <li>
+                            <span style="font-variant: small-caps;">Multiplication</span>: gegeben
+                            zwei Zahlen $x, y \in \{0,1\}^n$ in binärer Codierung, berechne ihr Produkt.
+                            <p>
+                                Algorithmus: sowohl die Schulmethode als auch
+                                Karatsubas Algorithmus haben polynomielle Laufzeit.
+                            </p>
+                        </li>
+                        <li>
+                            <span style="font-variant: small-caps;">Maximum Flow</span>: gegeben
+                            ein Flussnetzwerk (vgl. <a href="../../TI-1/lecture-notes/08-00-max-flow.html">Kapitel 8 aus
+                                TI-1</a>), berechne einen MaxFluss.
+                        </li>
+                        <li>
+                            <span style="font-variant: small-caps;">Linear Equations</span>: gegeben
+                            ein lineares Gleichungssystem, also eine Matrix $A \in \Q^{m \times n}$ und
+                            einen Vektor $b \in \Q^{m}$, finde ein $x \in \Q^n$ mit $Ax = b$.
+                            <p>
+                                Algorithmus: Gaußsche Eliminierung; obwohl Sie hier aufpassen müssen, dass die
+                                Bit-Darstellung Ihrer Zwischenergebnisse nicht zu groß wird.
+                            </p>
+                        </li>
+                        <li>
+                            <span style="font-variant: small-caps;">Linear Programming</span>:
+                            gegeben
+                            ein lineares Ungleichungssystem, also eine Matrix $A \in \Q^{m \times n}$ und
+                            einen Vektor $b \in \Q^{m}$, finde ein $x \in \Q^n$ mit $Ax \leq b$
+                            (für $y,b \in \Q^m$ bedeutet die Schreibweise $y \leq b$, dass $y_i \leq b_i$ für alle $i
+                            \in [m]$ gilt).
+                            <p>
+                                Algorithmus: der bekannteste Algorithmus für <span
+                                    style="font-variant: small-caps;">Linear
+                                    Programming</span> ist der
+                                <a href="https://de.wikipedia.org/wiki/Simplex-Verfahren">Simplex-Algorithmus</a>.
+                                Allerdings ist seine Worst-Case-Laufzeit nicht polynomiell. Erst 1979
+                                wurde mit Leonid Khachiyans <a
+                                    href="https://de.wikipedia.org/wiki/Ellipsoidmethode">Ellipsoid-Algorithmus</a>
+                                ein Algorithmus mit polynomieller Worst-Case-Laufzeit gefunden.
+                            </p>
+                        </li>
+                    </ol>
+                    <!--
+                    <p>
+                        Der Fall von <span style="font-variant: small-caps;">Linear Programming</span> ist kurios.
+                        Simplex ist in der Theorie ineffizient, in der Praxis meistens gut; der Ellipsoid-Algorithmus
+                        ist polynomiell, gilt also in der Theorie als effizient, ist aber in der Praxis
+                        so langsam, dass er praktisch nicht verwendet wird. Man kann nun als Kritik einwenden, dass
+                        unsere Terminologie <em>polynomiell = effizient</em> mangelhaft ist. Auf der anderen Seite
+                        ist <span style="font-variant: small-caps;">Linear Programming</span> in P <em>und</em>
+                        es gibt praktisch effiziente Algorithmen dafür (auch wenn dies nicht die theoretisch
+                        effizienten sind). Somit ist es doch wieder irgendwie gerechtfertigt, die Klasse P als
+                        die der effizient lösbaren Probleme zu bezeichnen. 
+                    </p>-->
+
+
+                    <p>
+                        Und zum Schluss eine Liste von Problemen (Funktions- und Entscheidungsprobleme), von
+                        denen nicht bekannt ist (Stand Juni 2025), ob sie in P sind oder nicht.
+                    </p>
+
+                    <ol>
+                        <li>
+                            <span style="font-variant: small-caps;">Graph 3-Colorability</span>:
+                            Gegeben ein Graph $G = (V,E)$. Gibt es eine "Färbung" $c: V \rightarrow \{1,2,3\}$
+                            mit $c(u) \ne c(v)$ für alle $\{u,v\} \in E$?
+                        </li>
+                        <li>
+                            <span style="font-variant: small-caps;">CNF-Satisfiability</span>:
+                            Gegeben eine Boolesche Formel in konjunktiver Normalform, also beispielsweise
+                            $(x \vee \bar{y}) \wedge (\bar{x} \vee y \vee z) \wedge (x \vee \bar{z})$, gibt
+                            es eine Belegung ihrer Variablen, so dass die Formel zu <tt>True</tt> auswertet?
+                        </li>
+                        <li>
+                            <span style="font-variant: small-caps;">Hamilton Cycle</span>: Gegeben
+                            ein Graph $G=(V,E)$, gibt es einen Kreis der Länge $n$? Gibt es also
+                            einen geschlossenen Kantenzug, der jeden Knoten genau einmal besucht (wobei
+                            der Endknoten gleich der Startknoten ist)?
+                        </li>
+                        <li>
+                            <span style="font-variant: small-caps;">Graph Isomorphism</span>: Gegeben
+                            zwei Graphen $G_1 = (V_1, E_1)$ und $G_2 = (V_2, E_2)$, sind sie isomorph?
+                            Das heißt, gibt es eine bijektive Funktion $f: V_1 \rightarrow V_2$ mit
+                            \begin{align*}
+                            \{u,v\} \in E_1 \Longleftrightarrow \{f(u), f(v)\} \in E_2 \ ?
+                            \end{align*}
+                            <p>
+                                In Worten: kann ich von $G_1$ zu $G_2$ gelangen, indem ich die Knoten
+                                einfach umbenenne?
+                            </p>
+                        </li>
+                        <li>
+                            <span style="font-variant: small-caps;">Factoring</span>: Gegeben
+                            eine natürliche Zahl in Binärcodierung $x \in \{0,1\}^n$, finde ihre
+                            Primfaktorzerlegung.
+                            <p>
+                                Beachten Sie, dass die oben erwähnten Algorithmen für
+                                <span style="font-variant: small-caps;">Primes</span>, also
+                                Miller-Rabin-Test und Agrawal–Kayal–Saxena-Test, im Falle einer
+                                Antwort <em>Nein, ist keine Primzahl</em> uns nicht eine Faktorisierung
+                                der Zahl ausgeben, sondern eben nur ein <em>Nein</em>.
+                            </p>
+                        </li>
+                        <li>
+                            <span style="font-variant: small-caps;">Go</span>: gegeben eine Spielposition
+                            auf einem $n \times n$-Gobrett (siehe <a
+                                href="https://de.wikipedia.org/wiki/Go_(Spiel)">Go</a>), kann Weiß einen
+                            Sieg erzwingen?
+                        </li>
+                    </ol>
+
+
 
                 </div class='subChapter'>
             </div class='chapter'>

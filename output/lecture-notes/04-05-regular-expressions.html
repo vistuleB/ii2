@@ -44,19 +44,17 @@
             <span class="subChapterTitle">::::ChapterCtr.5
               Reguläre Ausdrücke</span>
           </h1>
-          <p>
-            Wir werden nun eine weitere Weise finden, reguläre Sprachen zu beschreiben: neben regulären
-            Grammatik (ob normal, erweitert, eingeschränkt),
-            endlichen Automaten und nichtdeterministischen endlichen Automaten
-            gibt es noch die
-            <i>regulären Ausdrücke</i>. Dies wird wahrscheinlich von allen
-            Beschreibungsweise die sein, mit der Sie in der Praxis
-            am ehesten in Berührung kommen.
-            Wir haben bereits in
-            <a href="./04-01-regular-grammars.html#baukasten">Kapitel 4.1</a>
-            das
-            Baukastenprinzip kennengelernt:
-          </p>
+          Wir werden nun eine weitere Weise finden, reguläre Sprachen zu beschreiben: neben regulären
+          Grammatik (ob normal, erweitert, eingeschränkt),
+          endlichen Automaten und nichtdeterministischen endlichen Automaten
+          gibt es noch die
+          <i>regulären Ausdrücke</i>. Dies wird wahrscheinlich von allen
+          Beschreibungsweise die sein, mit der Sie in der Praxis
+          am ehesten in Berührung kommen.
+          Wir haben bereits in
+          <a href="./04-01-regular-grammars.html#baukasten">Kapitel 4.1</a>
+          das
+          Baukastenprinzip kennengelernt:
           <ol>
             <li>
               Wenn $L_1$ und $L_2$ reguläre Sprachen sind, dann ist $L_1 \cup L_2$ auch regulär;
@@ -80,23 +78,19 @@
               regulär.
             </li>
           </ol>
-          <p>
-            Darüberhinaus haben wir Techniken kennengelernt, um aus den gegebenen regulären Grammatiken
-            eine neue Grammatik für $L_1 \cup L_2$, $L_1 \circ L_2$ und $L$ konstruieren zu können.
-            Sie sollten sich jetzt folgende Frage stellen:
-          </p>
+          Darüberhinaus haben wir Techniken kennengelernt, um aus den gegebenen regulären Grammatiken
+          eine neue Grammatik für $L_1 \cup L_2$, $L_1 \circ L_2$ und $L$ konstruieren zu können.
+          Sie sollten sich jetzt folgende Frage stellen:
           <div style="text-align:center">
             <b>Frage:</b>
             Können
             <i>alle</i>
             regulären Sprachen nach diesem Baukastenprinzip erstellt werden?
           </div>
-          <p>
-            Damit diese Frage überhaupt die Chance hat, mit
-            <i>ja</i>
-            beantwortet zu werden, müssen wir
-            "Atome" zur Verfügung stellen, mit denen wir beginnen können. Daher:
-          </p>
+          Damit diese Frage überhaupt die Chance hat, mit
+          <i>ja</i>
+          beantwortet zu werden, müssen wir
+          "Atome" zur Verfügung stellen, mit denen wir beginnen können. Daher:
           <ul>
             <li>
               Die Sprachen $\emptyset$, $\{\epsilon\}$ und $\{x\}$ für jedes $x \in \Sigma$
@@ -108,10 +102,8 @@
           Sie jede reguläre Sprache zusammenbauen. Dieses Baukastenprinzip hat auch einen Namen: reguläre
           Ausdrücke.
           Definieren wir diese nun formal.
-          <div class="well container theorem">
-            <span class="numbered-title">Definition
-              <NumberedTitle>::::ChapterCtr.::::SectionCtr.1</NumberedTitle>
-              </span>Sei $\Sigma$ einendliches Alphabet. Die regulären Audrücke über $\Sigma$ sind induktiv
+          <Statement title="*Definition*">
+            Sei $\Sigma$ einendliches Alphabet. Die regulären Audrücke über $\Sigma$ sind induktiv
             definiert wie folgt und beschreiben folgende Sprachen:
             <ul>
               <li>
@@ -144,53 +136,38 @@
                 dann ist $(R^*)$ ein regulärer Ausdruck und beschreibt die Sprache $L^*$.
               </li>
             </ul>
-            <p>
-              Weil in der Praxis neben $L^*$, also beliebig langen, möglicherweise leeren Folgen von
-              $L$-Wörtern wir
-              oft
-              <i>nichtleere</i>
-              Folgen wollen,
-              führen wir die Abkürzung $R^+$ für $R (R^*)$ ein und bezeichnen die beschriebene Sprache
-              $L \circ L^*$ kurzerhand als $L^+$.
-            </p>
-          </div>
-          <p>
-            In konkreten fällen lassen gerne die Klammerung weg, wenn keine Verwechslungsgefahr besteht.
-            Auch
-            gehen wir davon aus, dass die Operatoren die Präzedenz $^*$ vor $\circ$ vor $|$ haben (wie
-            <i>hoch</i>
-            vor
-            <i>Punkt</i>
-            vor
-            <i>Strich</i>
-            in der Arithmetik), sodass beispielsweise
-            der Ausdruck $a^*b|c^*$ die Bedeutung von $(((a^*)b)(c^*))$ hat, genauso wie wir
-            in der Arithmetik $a^2 b + c^3$ statt $(((a^2)b) + c^3)$ schreiben.
-          </p>
-          <p>
-            Die von den atomaren Ausdrücken beschriebenen Sprachen sind alle regulär, da sie alle
-            <i>endliche Sprachen</i>
-            sind.
-            Dank unserer Vorarbeit aus
-            <a href="./04-01-regular-grammars.html#baukasten">Kapitel 4.1</a>wissen wir,
-            dass Alterantive, Konkatenation und Kleenesche Hülle wiederum reguläre Sprachen erzeugen.
-            Wir erhalten das folgende Ergebnis:
-          </p>
-          <div
-            id="regex-to-grammar"
-            class="well container theorem"
-          >
-            <span class="numbered-title">Lemma
-              <NumberedTitle>::::ChapterCtr.::::SectionCtr.2</NumberedTitle>
-              </span>Die von einem regulären Ausdruck $R$ beschriebene Sprache $L(R)$ ist regulär.
-          </div>
-          <p>
-            Es ist Zeit für ein paar Beispiele.
-          </p>
-          <div class="well container theorem">
-            <span class="numbered-title">Beispiel
-              <NumberedTitle>::::ChapterCtr.::::SectionCtr.3</NumberedTitle>
-              </span>Nehmen wir die Sprache der Wörter der Form
+            Weil in der Praxis neben $L^*$, also beliebig langen, möglicherweise leeren Folgen von
+            $L$-Wörtern wir
+            oft
+            <i>nichtleere</i>
+            Folgen wollen,
+            führen wir die Abkürzung $R^+$ für $R (R^*)$ ein und bezeichnen die beschriebene Sprache
+            $L \circ L^*$ kurzerhand als $L^+$.
+          </Statement>
+          In konkreten fällen lassen gerne die Klammerung weg, wenn keine Verwechslungsgefahr besteht.
+          Auch
+          gehen wir davon aus, dass die Operatoren die Präzedenz $^*$ vor $\circ$ vor $|$ haben (wie
+          <i>hoch</i>
+          vor
+          <i>Punkt</i>
+          vor
+          <i>Strich</i>
+          in der Arithmetik), sodass beispielsweise
+          der Ausdruck $a^*b|c^*$ die Bedeutung von $(((a^*)b)(c^*))$ hat, genauso wie wir
+          in der Arithmetik $a^2 b + c^3$ statt $(((a^2)b) + c^3)$ schreiben.
+          Die von den atomaren Ausdrücken beschriebenen Sprachen sind alle regulär, da sie alle
+          <i>endliche Sprachen</i>
+          sind.
+          Dank unserer Vorarbeit aus
+          <a href="./04-01-regular-grammars.html#baukasten">Kapitel 4.1</a>wissen wir,
+          dass Alterantive, Konkatenation und Kleenesche Hülle wiederum reguläre Sprachen erzeugen.
+          Wir erhalten das folgende Ergebnis:
+          <Statement title="*Lemma*">
+            Die von einem regulären Ausdruck $R$ beschriebene Sprache $L(R)$ ist regulär.
+          </Statement>
+          Es ist Zeit für ein paar Beispiele.
+          <Statement title="*Beispiel*">
+            Nehmen wir die Sprache der Wörter der Form
             <code>bla:bla:blu.xyz-12-ab.b:x</code>
             aus dem
             letzten Kapitel. Sie erinnern sich:
@@ -208,78 +185,70 @@
             Baukastenprinzip gebraucht macht.
             Wenn wir nun einen regulären Ausdruck für $L$ erstellen wollen, so können wir bequem Stück für
             Stück vorgehen.
-            <p>
-              Ein Block ist eine nichtleere Folge von $a$'s. Der entsprechende reguläre Ausdruck $B$
-              für Blöcke ist also
-              $$
-              \begin{align*}
-              B : = a^+
-              \end{align*}
-              $$
-              Für ein Label müssen wir uns entscheiden, ob wir die Blöcke mit
-              <code>:</code>
-              oder
-              <code>-</code>
-              separieren; wir
-              erhalten den regulären Ausdruck $T$ für Labels ist also
-              $$
-              \begin{align*}
-              T := B ({:}B)^* | B (\text{-}B)^*
-              \end{align*}
-              $$
-              Sehen Sie, dass wir in $T$ das erste $B$ "ausfaktorisieren" können und statt dem obigen
-              folgenden Ausdruck schreiben können:
-              $$
-              \begin{align*}
-              T' := B ( ({:}B)^* | (\text{-}B)^* )
-              \end{align*}
-              $$
-              Beide Varianten sind äquivalent, d.h., sie beschreiben die gleiche Sprache; die erste
-              Variante, also $T$, ähnelt mehr dem,
-              was wir in unserer Grammatik bzw. dem nichtdeterministischen Automaten für $L$ getan
-              haben, während $T'$ eher
-              die Arbeitsweise des determinisitschen Automaten reflektiert (wir lesen erst einmal einen
-              Block und erst, wenn wir zum ersten mal auf
-              <code>:</code>
-              oder
-              <code>-</code>
-              stoßen, entscheiden wir uns für den "Typ" des Labels).
-              Schlussendlich ist ein Wort in der Sprache eine mit
-              <code>.</code>
-              separierte Folge von
-              Labels, also:
-              $$
-              \begin{align*}
-              R := T ({.}T)^*
-              \end{align*}
-              $$
-              Somit können wir nun den regulären Ausdruck für $L$ in seiner ganzen Pracht zeigen:
-              $$
-              \begin{align*}
-              R := (a^+ ({:}a^+)^* | a^+ (\text{-}a^+)^*) ({.}(a^+ ({:}a^+)^* | a^+ (\text{-}a^+)^*))^*
-              \end{align*}
-              $$
-            </p>
-          </div>
-          <div class="well well-lg numbered-exercise container">
-            <span class="numbered-title">Übungsaufgabe
-              <NumberedTitle>::::ChapterCtr.::::SectionCtr.1</NumberedTitle>
-              </span>Laden Sie sich
+            Ein Block ist eine nichtleere Folge von $a$'s. Der entsprechende reguläre Ausdruck $B$
+            für Blöcke ist also
+            $$
+            \begin{align*}
+            B : = a^+
+            \end{align*}
+            $$
+            Für ein Label müssen wir uns entscheiden, ob wir die Blöcke mit
+            <code>:</code>
+            oder
+            <code>-</code>
+            separieren; wir
+            erhalten den regulären Ausdruck $T$ für Labels ist also
+            $$
+            \begin{align*}
+            T := B ({:}B)^* | B (\text{-}B)^*
+            \end{align*}
+            $$
+            Sehen Sie, dass wir in $T$ das erste $B$ "ausfaktorisieren" können und statt dem obigen
+            folgenden Ausdruck schreiben können:
+            $$
+            \begin{align*}
+            T' := B ( ({:}B)^* | (\text{-}B)^* )
+            \end{align*}
+            $$
+            Beide Varianten sind äquivalent, d.h., sie beschreiben die gleiche Sprache; die erste
+            Variante, also $T$, ähnelt mehr dem,
+            was wir in unserer Grammatik bzw. dem nichtdeterministischen Automaten für $L$ getan
+            haben, während $T'$ eher
+            die Arbeitsweise des determinisitschen Automaten reflektiert (wir lesen erst einmal einen
+            Block und erst, wenn wir zum ersten mal auf
+            <code>:</code>
+            oder
+            <code>-</code>
+            stoßen, entscheiden wir uns für den "Typ" des Labels).
+            Schlussendlich ist ein Wort in der Sprache eine mit
+            <code>.</code>
+            separierte Folge von
+            Labels, also:
+            $$
+            \begin{align*}
+            R := T ({.}T)^*
+            \end{align*}
+            $$
+            Somit können wir nun den regulären Ausdruck für $L$ in seiner ganzen Pracht zeigen:
+            $$
+            \begin{align*}
+            R := (a^+ ({:}a^+)^* | a^+ (\text{-}a^+)^*) ({.}(a^+ ({:}a^+)^* | a^+ (\text{-}a^+)^*))^*
+            \end{align*}
+            $$
+          </Statement>
+          <Statement title="*Übungsaufgabe*">
+            Laden Sie sich
             <a href="../code/regular-expressions/TestRegex.java">TestRegex.java</a>
             herunter,
             kompilieren und starten Sie es.
 <pre>
 <code class="terminalPrompt">java TestRegex</code><code class="terminalOutput">Please enter a regular expression:</code> (a+)(:a+)*<code class="terminalOutput">Enter words to be matched, one per line</code><code>aaaaa:aa:aaaa:a</code><code class="terminalOutput">true</code><code>aaa:aa:</code><code class="terminalOutput">false</code>
 </pre>
-            <p>
-              Schreiben Sie nun einen regulären Ausdruck $R$ für die obige Sprache und testen Sie ihn
-              mit dem Java-Programm.
-            </p>
-          </div>
-          <div class="well well-lg numbered-exercise container">
-            <span class="numbered-title">Übungsaufgabe
-              <NumberedTitle>::::ChapterCtr.::::SectionCtr.2</NumberedTitle>
-              </span>In der Praxis gibt es bei reguläre Ausdrücken viele Abkürzung, so beschreibt
+            Schreiben Sie nun einen regulären Ausdruck $R$ für die obige Sprache und testen Sie ihn
+            mit dem Java-Programm.
+          </Statement>
+          <Statement title="*Übungsaufgabe*">
+            In der Praxis gibt es bei reguläre Ausdrücken viele Abkürzung, so beschreibt
             <code>[a-z]</code>
             beispielsweise die Menge aller Kleinbuchstaben,
             <code>[aoeiuy]</code>
@@ -298,31 +267,25 @@
                 auf der Java-API</a>,
             </div>
             lassen sich aber bitte nicht von der Menge an Details erschlagen.
-            <p>
-              Schreiben Sie nun in der Java-Regex-Syntax einen regulären Ausdruck für unsere obige Sprache
-              $L$, wo Sie aber
-              neben $a$ alle alphanumerischen Zeichen zulassen.
-            </p>
-          </div>
-          <h2>
+            Schreiben Sie nun in der Java-Regex-Syntax einen regulären Ausdruck für unsere obige Sprache
+            $L$, wo Sie aber
+            neben $a$ alle alphanumerischen Zeichen zulassen.
+          </Statement>
+          <Topic>
             Einen regulären Ausdruck für jede reguläre Sprache
-          </h2>
+          </Topic>
           Wir beweisen nun das Gegenstück zu
           <a href="#regex-to-grammar">Lemma 4.5.2</a>:
-          <div class="well container theorem">
-            <span class="numbered-title">Theorem
-              <NumberedTitle>::::ChapterCtr.::::SectionCtr.4</NumberedTitle>
-              </span>Sei $L$ eine reguläre Sprache. Dann gibt es einen regulären Ausdruck $R$, der $L$
+          <Statement title="*Theorem*">
+            Sei $L$ eine reguläre Sprache. Dann gibt es einen regulären Ausdruck $R$, der $L$
             beschreibt,
             also
             $L(R) = R$.
-          </div>
-          <p>
-            Wir paraphrasieren hier den Beweis aus Michael Sipsers
-            <i>Introduction to the Theory of
-              Computation</i>.
-          </p>
-          <div class="well container">
+          </Statement>
+          Wir paraphrasieren hier den Beweis aus Michael Sipsers
+          <i>Introduction to the Theory of
+            Computation</i>.
+          <Highlight>
             <b>Beweis.</b>
             Zunächst skizzieren wir die Beweisidee. Da $L$ regulär ist, gibt es einen
             nichtdeterministischen endlichen
@@ -371,13 +334,8 @@
                 loading="lazy"
               >
             </figure>
-            <p>
-              Definieren wir nun formal, was VNEAs sind und welche Sprache sie akzeptieren:
-            </p>
-            <div class="well subtheorem theorem">
-              <span class="numbered-title">Definition
-                <NumberedTitle>::::ChapterCtr.::::SectionCtr.5</NumberedTitle>
-                </span>
+            Definieren wir nun formal, was VNEAs sind und welche Sprache sie akzeptieren:
+            <Statement title="*Definition*">
               <b>(Verallgemeinerter nichtdeterministischer endlicher Automat, VNEA).</b>
               Ein VNEA besteht aus einem Alphabet $\Sigma$, einer Zustandsmenge $Q$, einen
               Startzustand $\qstart \in Q$, einem
@@ -394,51 +352,45 @@
               Wenn $\beta \in L(R)$ gilt, $\beta$ also ein Wort in der von $R$ beschriebenen Sprache
               ist, dann schreiben wir auch
               $q_i \step{\beta \in R} q_j$.
-              <p>
-                Für $q, q' \in Q$ und $\alpha \in \Sigma^*$ schreiben wir
-                $$
-                \begin{align*}
-                q \Step{\alpha} q'
-                \end{align*}
-                $$
-                wenn man $\alpha$ zerlegen kann als $\alpha = \beta_1 \beta_2 \dots \beta_k$ gibt
-                (wobei $\beta_i = \epsilon$ zulässig ist)
-                und es eine Zustandsfolge
-                $q = q_0, q_1, \dots, q_k = q'$ gibt, wobei $(q_{i-1}, q_i)\in E$ ist und mit einem
-                regulären Ausdruck
-                $R_i$ beschriftet ist und
-                jedes $\beta_i$ in der von $R_i$ beschriebenen Sprache ist. Wenn also
-                $$
-                \begin{align*}
-                q_0 \step{\beta_1 \in R_1} q_1 \step{\beta_2 \in R_2} q_2 \dots q_{k-1} \step{\beta_k
-                \in R_k} p_k
-                \end{align*}
-                $$
-                gilt.
-              </p>
-            </div>
-            <p>
-              Einen gegebenen NEA können wir leicht in einen VNEA transformieren, indem wir, soweit nötig,
-              (1) einen neuen Startzustand kreieren (damit dieser keine eingehenden Kanten hat),
-              (2) einen neuen Endzustand kreieren,
-              (3) "parallele" Übergänge wie $(q_i, x, q_j), (q_i, y, q_j)$ zu einer Kante
-              zusammenfassen,
-              der dann mit dem regulären Ausdruck $x | y$ beschriftet ist.
-            </p>
-            <p>
-              Wir haben den ganzen Aufwand betrieben, weil wir für einen VNEA sehr leicht
-              Zustände eliminieren können. Wenn wir zum Beispiel
+              Für $q, q' \in Q$ und $\alpha \in \Sigma^*$ schreiben wir
               $$
               \begin{align*}
-              q_0 \step{R_1} q_1 \step{R_2} q_2
+              q \Step{\alpha} q'
               \end{align*}
               $$
-              haben, dann können wir ja ein Wort in $R_1 R_2$ lesen und direkt von $q_0$ nach $q_2$
-              übergehen;
-              wir brauchen also $q_1$ gar nicht. Wir müssen nur aufpassen, das neue $R_1 R_2$ mit
-              einem eventuell bereits bestehenden Übergang von $q_0$ nach $q_2$ zu kombinieren. Im
-              allgemeinen:
-            </p>
+              wenn man $\alpha$ zerlegen kann als $\alpha = \beta_1 \beta_2 \dots \beta_k$ gibt
+              (wobei $\beta_i = \epsilon$ zulässig ist)
+              und es eine Zustandsfolge
+              $q = q_0, q_1, \dots, q_k = q'$ gibt, wobei $(q_{i-1}, q_i)\in E$ ist und mit einem
+              regulären Ausdruck
+              $R_i$ beschriftet ist und
+              jedes $\beta_i$ in der von $R_i$ beschriebenen Sprache ist. Wenn also
+              $$
+              \begin{align*}
+              q_0 \step{\beta_1 \in R_1} q_1 \step{\beta_2 \in R_2} q_2 \dots q_{k-1} \step{\beta_k
+              \in R_k} p_k
+              \end{align*}
+              $$
+              gilt.
+            </Statement>
+            Einen gegebenen NEA können wir leicht in einen VNEA transformieren, indem wir, soweit nötig,
+            (1) einen neuen Startzustand kreieren (damit dieser keine eingehenden Kanten hat),
+            (2) einen neuen Endzustand kreieren,
+            (3) "parallele" Übergänge wie $(q_i, x, q_j), (q_i, y, q_j)$ zu einer Kante
+            zusammenfassen,
+            der dann mit dem regulären Ausdruck $x | y$ beschriftet ist.
+            Wir haben den ganzen Aufwand betrieben, weil wir für einen VNEA sehr leicht
+            Zustände eliminieren können. Wenn wir zum Beispiel
+            $$
+            \begin{align*}
+            q_0 \step{R_1} q_1 \step{R_2} q_2
+            \end{align*}
+            $$
+            haben, dann können wir ja ein Wort in $R_1 R_2$ lesen und direkt von $q_0$ nach $q_2$
+            übergehen;
+            wir brauchen also $q_1$ gar nicht. Wir müssen nur aufpassen, das neue $R_1 R_2$ mit
+            einem eventuell bereits bestehenden Übergang von $q_0$ nach $q_2$ zu kombinieren. Im
+            allgemeinen:
             <figure>
               <img
                 style="height:10em"
@@ -446,29 +398,25 @@
                 loading="lazy"
               >
             </figure>
-            <p>
-              Falls die mit $R_2$ beschriftete Selbstschleife an Zustand $B$ nicht existieren sollte,
-              dann
-              schreiben wir einfach $R_1R_3$ anstatt $R_1 R_2^* R_3$; falls der Übergang $A
-              \step{R_4} B$ nicht
-              existieren sollte , lassen wir das $R_4 |$ im rechten Bild einfach weg.
-              (Sipser führt hier den eleganten Formalismus ein, zu verlangen, dass
-              <i>jedes</i>
-              Paar
-              durch
-              eine Kante verbunden ist und würde fehlende Kanten einfach mit dem regulären Ausdruck
-              $\emptyset$ beschriften.)
-            </p>
-            <p>
-              Wir suchen uns also einen Zustand $B \in Q \setminus \{\qstart, \qend\}$, den wir
-              eliminieren wollen, und führen die oben beschriebene
-              $B$-Umfahrung parallel für alle Paare $A,C$ aus, für die es $A \step{} B \step{} C$
-              gibt.
-              Wir erhalten einen VNEA mit einem Zustand weniger, der zu dem vorherigen VNEA äquivalent
-              ist, also
-              die gleiche Sprache akzeptiert. Wiederholen wir diesen Schritt, so erhalten
-              wir am Ende einen Automat mit nur zwei Zuständen, nämlich
-            </p>
+            Falls die mit $R_2$ beschriftete Selbstschleife an Zustand $B$ nicht existieren sollte,
+            dann
+            schreiben wir einfach $R_1R_3$ anstatt $R_1 R_2^* R_3$; falls der Übergang $A
+            \step{R_4} B$ nicht
+            existieren sollte , lassen wir das $R_4 |$ im rechten Bild einfach weg.
+            (Sipser führt hier den eleganten Formalismus ein, zu verlangen, dass
+            <i>jedes</i>
+            Paar
+            durch
+            eine Kante verbunden ist und würde fehlende Kanten einfach mit dem regulären Ausdruck
+            $\emptyset$ beschriften.)
+            Wir suchen uns also einen Zustand $B \in Q \setminus \{\qstart, \qend\}$, den wir
+            eliminieren wollen, und führen die oben beschriebene
+            $B$-Umfahrung parallel für alle Paare $A,C$ aus, für die es $A \step{} B \step{} C$
+            gibt.
+            Wir erhalten einen VNEA mit einem Zustand weniger, der zu dem vorherigen VNEA äquivalent
+            ist, also
+            die gleiche Sprache akzeptiert. Wiederholen wir diesen Schritt, so erhalten
+            wir am Ende einen Automat mit nur zwei Zuständen, nämlich
             <figure>
               <img
                 style="height:2.5em"
@@ -476,27 +424,25 @@
                 loading="lazy"
               >
             </figure>
-            <p>
-              Dieser VNEA akzeptiert immer noch die gleiche Sprache $L$ wie der ursprüngliche NEA, mit
-              dem wir
-              begonnen haben. Welche Sprache ist das? Es ist die Sprache aller $\alpha \in \Sigma$ mit
-              $$
-              \begin{align*}
-              \qstart \Step{\alpha} \qend
-              \end{align*}
-              $$
-              Da der Pfad von $\qstart$ nach $\qend$ nur eine Kante hat, muss $\alpha$ in der von
-              $R$ beschriebenen Sprache liegen. $R$ ist der gesuchte reguläre Ausdruck: er beschreibt
-              die Sprache $L$.<span class="qed">$\square$</span>
-            </p>
-          </div>
-          <p>
-            Hier sehen Sie den ganzen Ablauf an unserer
-            <code>aaaa:a:aaa.aa-aa</code>-Sprache:
-          </p>
+            Dieser VNEA akzeptiert immer noch die gleiche Sprache $L$ wie der ursprüngliche NEA, mit
+            dem wir
+            begonnen haben. Welche Sprache ist das? Es ist die Sprache aller $\alpha \in \Sigma$ mit
+            $$
+            \begin{align*}
+            \qstart \Step{\alpha} \qend
+            \end{align*}
+            $$
+            Da der Pfad von $\qstart$ nach $\qend$ nur eine Kante hat, muss $\alpha$ in der von
+            $R$ beschriebenen Sprache liegen. $R$ ist der gesuchte reguläre Ausdruck: er beschreibt
+            die Sprache $L$.
+            <QED>
+            </QED>
+          </Highlight>
+          Hier sehen Sie den ganzen Ablauf an unserer
+          <code>aaaa:a:aaa.aa-aa</code>-Sprache:
           <div
             id="carousel-nfsm-to-regex"
-            class="container"
+            class="well"
           >
             <div style="overflow-x: auto; margin: 1em;">
               <figure>
@@ -508,10 +454,8 @@
               </figure>
             </div>
           </div>
-          <div class="well well-lg numbered-exercise container">
-            <span class="numbered-title">Übungsaufgabe
-              <NumberedTitle>::::ChapterCtr.::::SectionCtr.3</NumberedTitle>
-              </span>Wandeln Sie nach dem eben beschriebenen Schema den Automaten
+          <Statement title="*Übungsaufgabe*">
+            Wandeln Sie nach dem eben beschriebenen Schema den Automaten
             <figure>
               <img
                 style="height:10em"
@@ -520,7 +464,7 @@
               >
             </figure>
             in einen regulären Ausdruck um.
-          </div>
+          </Statement>
         </div>
       </div>
     </div>

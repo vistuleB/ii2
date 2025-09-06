@@ -1,0 +1,94 @@
+<body>
+
+  <div id="mathjax-definitions" style="display:none">
+    \(
+    \newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+    \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+
+    \newcommand{\R}{\mathbb{R}}
+    \newcommand{\Z}{\mathbb{Z}}
+    \newcommand{\N}{\mathbb{N}}
+    \newcommand{\Q}{\mathbb{Q}}
+    \newcommand{\cin}{c_{\rm in}}
+    \newcommand{\cout}{c_{\rm out}}
+    \newcommand{\maj}{\textnormal{Maj}}
+    \newcommand{\xor}{\oplus}
+    \newcommand{\depth}{\textnormal{depth}}
+    \newcommand{\poly}{\textnormal{poly}}
+    \newcommand{\zero}{\textnormal{zero}}
+    \newcommand{\succ}{\textnormal{succ}}
+    \newcommand{\comp}{\textnormal{Comp}}
+    \newcommand{\primrec}{\textnormal{PrimRec}}
+    \newcommand{\pair}{\textnormal{Pair}}
+    \newcommand{\first}{\textnormal{First}}
+    \newcommand{\second}{\textnormal{Second}}
+    \newcommand{\enc}{\textnormal{enc}}
+    \newcommand{\halt}{{\rm H{\small ALT}}}
+    \newcommand{\bhalt}{{\rm T{\small IMED}H{\small ALT}}}
+    \newcommand{\tm}{\textnormal{TM}}
+    \newcommand{\diag}{\textnormal{Diag}}
+    \newcommand{\qaccept}{q_{\rm yes}}
+    \newcommand{\qreject}{q_{\rm no}}
+    \newcommand{\qstart}{q_{\rm start}}
+    \newcommand{\negdiag}{\textnormal{NegDiag}}
+    \newcommand{\bnegdiag}{\textnormal{TimedNegDiag}}
+    \newcommand{\writelambda}{\Sigma \cup \{0, 1, \texttt{#}, \texttt{,}, \texttt{L}, \texttt{S},
+    \texttt{R},\texttt{;}\}}
+    \newcommand{\TIME}{\textnormal{TIME}}
+    \newcommand{\NTIME}{\textnormal{NTIME}}
+    \newcommand{\SPACE}{\textnormal{SPACE}}
+    \newcommand{\NSPACE}{\textnormal{NSPACE}}
+
+  </div>
+
+  <div>
+    <p><a href="index.html">zur Kursübersicht</a></p>
+  </div>
+  <div class="container" style="text-align: center;">
+
+    <div style="text-align: center; margin-bottom: 4em;">
+      <h1><span class="coursename"></span>Theoretische Informatik 2 - Vorlesungsskript</h1>
+      <h3>Bachelor-Studium Informatik</h3>
+      <h3>Dominik Scheder, TU Chemnitz</h3>
+    </div>
+    <div class="row content">
+      <div class="col-sm-3 sidenav" id="course-list">
+        <!--
+          content will be added by javascript
+        -->
+      </div>
+
+      <div class="col-sm-9 text-left">
+
+
+
+
+
+
+        <div id="table-of-content-div">
+
+        <ol class="nested"><li><a href="lecture-notes/00-00-Introduction.html">Einleitung</a><ol class="nested"></ol></li><li><a href="lecture-notes/01-00-Boolean-circuits.html">Boolesche Schaltkreise (nicht im Sommersemester 2025)</a><ol class="nested"><li><a href="lecture-notes/01-01-Fanin-Size-Depth.html">Fanin, Tiefe, Größe</a></li><li><a href="lecture-notes/01-02-truth-tables-cnf-dnf.html">Wahrheitstabellen, CNF, DNF</a></li><li><a href="lecture-notes/01-03-binary-adder.html">Binär-Addierer</a></li><li><a href="lecture-notes/01-04-monotone-circuits.html">Monotone Schaltkreise</a></li><li><a href="lecture-notes/01-05-majority.html">Majority</a></li><li><a href="lecture-notes/01-06-lower-and-upper-bounds.html">Untere und obere Schranken</a></li></ol></li><li><a href="lecture-notes/02-00-infinite-sets.html">Unendliche Mengen</a><ol class="nested"><li><a href="lecture-notes/02-01-comparing-sizes.html">Wer ist größer?</a></li><li><a href="lecture-notes/02-02-examples-of-equipotent-sets.html">Beispiele abzählbar unendlicher Mengen</a></li><li><a href="lecture-notes/02-03-sets-like-R.html">Mengen, die so groß wie <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="0" style="font-size: 101.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mtext class="mjx-n" style="color: red;"><mjx-c class="mjx-c5C"></mjx-c><mjx-c class="mjx-c52"></mjx-c></mjx-mtext></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mtext mathcolor="red">\R</mtext></math></mjx-assistive-mml></mjx-container> sind</a></li><li><a href="lecture-notes/02-04-diagonalization.html">Die Cantorsche Diagonalisation: <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="1" style="font-size: 101.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mtext class="mjx-n" style="color: red;"><mjx-c class="mjx-c5C"></mjx-c><mjx-c class="mjx-c4E"></mjx-c></mjx-mtext><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2249"></mjx-c></mjx-mo><mjx-mtext class="mjx-n" space="4" style="color: red;"><mjx-c class="mjx-c5C"></mjx-c><mjx-c class="mjx-c52"></mjx-c></mjx-mtext></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mtext mathcolor="red">\N</mtext><mo>≉</mo><mtext mathcolor="red">\R</mtext></math></mjx-assistive-mml></mjx-container></a></li><li><a href="lecture-notes/02-05-Schroeder-Bernstein.html">Das Schröder-Bernstein-Theorem</a></li><li><a href="lecture-notes/02-06-Trichotomiesatz.html">Der Trichotomiesatz</a></li></ol></li><li><a href="lecture-notes/03-00-Computability-NaturalNumbers.html">Berechenbarkeit und natürliche Zahlen</a><ol class="nested"><li><a href="lecture-notes/03-01-primitive-recursion-definitions.html">Primitive Rekursion. Motivation und Definition</a></li><li><a href="lecture-notes/03-02-primitive-recursion-constructions.html">Primitive Rekursion: Konstruktionen, Tricks</a></li><li><a href="lecture-notes/03-03-ackermann.html">Primitive Rekursion kann nicht alles: die Ackermann-Funktion</a></li><li><a href="lecture-notes/03-04-mu-recursion.html">Ein Schritt weiter: while-Schleifen und <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="2" style="font-size: 101.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D707 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>μ</mi></math></mjx-assistive-mml></mjx-container>-Rekursion</a></li></ol></li><li><a href="lecture-notes/04-00-formal-languages.html">Reguläre Sprachen</a><ol class="nested"><li><a href="lecture-notes/04-01-regular-grammars.html">Reguläre Grammatiken</a></li><li><a href="lecture-notes/04-02-finite-state-machines.html">Endliche Automaten</a></li><li><a href="lecture-notes/04-03-nfsm.html">Nichtdeterministische endliche Automaten</a></li><li><a href="lecture-notes/04-04-regular-grammar-to-fsm.html">Von einer reguläre Grammatik zu einem endlichen Automaten an einem Beispiel</a></li><li><a href="lecture-notes/04-05-regular-expressions.html">Reguläre Ausdrücke</a></li><li><a href="lecture-notes/04-06-limitations-of-regular-grammars.html">Die Grenzen regulärer Sprachen</a></li><li><a href="lecture-notes/04-07-exercises.html">Übungsaufgaben</a></li></ol></li><li><a href="lecture-notes/05-00-context-free-languages.html">Kontextfreie Sprachen</a><ol class="nested"><li><a href="lecture-notes/05-01-ableitungen.html">Ableitungen und Ableitungsbäume</a></li><li><a href="lecture-notes/05-02-cfg-to-pda.html">Pushdown-Automaten  (nicht im Sommersemester 2025)</a></li><li><a href="lecture-notes/05-03-exercise-design-grammars.html">Rechnerübung: gute kontextfreie Grammatik designen  (nicht im Sommersemester 2025)</a></li><li><a href="lecture-notes/05-04-LL1-grammars.html">LL(<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="3" style="font-size: 101.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>k</mi></math></mjx-assistive-mml></mjx-container>)-Grammatiken  (nicht im Sommersemester 2025)</a></li><li><a href="lecture-notes/05-05-a-LR-parsing-by-hand.html">LR-Parser per Hand entwerfen</a></li><li><a href="lecture-notes/05-05-b-Parser-in-Java.html">Einen Parser in Java implementieren</a></li><li><a href="lecture-notes/05-05-c-LR-grammars.html">LR-Grammatiken</a></li><li><a href="lecture-notes/05-05-d-linker-Rand-und-Bluete.html">Linker Rand, Blüten und die DK-Grammatik</a></li><li><a href="lecture-notes/05-06-dk-automat.html">Der DK-Automat</a></li><li><a href="lecture-notes/05-09-general-parsing.html">Allgemeines Parsing</a></li><li><a href="lecture-notes/05-10-not-context-free.html">Die Grenzen kontextfreier Sprachen</a></li></ol></li><li><a href="lecture-notes/06-00-general-grammars.html">Allgemeine Grammatiken  (nicht im Sommersemester 2025)</a><ol class="nested"></ol></li><li><a href="lecture-notes/07-00-Turing-machines.html">Turingmaschinen</a><ol class="nested"><li><a href="lecture-notes/07-01-Turing-machines-definition.html">Formale Definition</a></li><li><a href="lecture-notes/07-01-Turing-machines-examples.html">Beispiele</a></li><li><a href="lecture-notes/07-02-Turing-variants.html">Varianten: Mehrband, Halbband, Oblivious, nichtdeterministisch</a></li><li><a href="lecture-notes/07-03-Turing-encoding.html">Turing-Maschinen codieren</a></li><li><a href="lecture-notes/07-03-Turing-universal.html">Turing-Maschinen simulieren Turing-Maschinen: die universelle Turing-Maschine</a></li><li><a href="lecture-notes/07-05-undecidability.html">Unentscheidbarkeit</a></li><li><a href="lecture-notes/07-06-Post-correspondence-problem.html">Mehr über Unentscheidbarkeit: Das Postsche Korrespondenzproblem</a></li><li><a href="lecture-notes/07-07-PCP-applications.html">Anwendungen des Postschen Korrespondenzproblems</a></li></ol></li><li><a href="lecture-notes/08-00-Complexity-Theory.html">Komplexitätstheorie</a><ol class="nested"><li><a href="lecture-notes/08-01-Time-hierarchy-theorem.html">Das Zeithierarchietheorem</a></li><li><a href="lecture-notes/08-02-Turing-machines-and-circuits.html">Turing-Maschinen zu Schaltkreisen!</a></li><li><a href="lecture-notes/08-03-nondeterministic-time.html">Nichtdeterministische Zeit</a></li><li><a href="lecture-notes/08-04-NP-many-examples.html">Viele Beispiele aus NP</a></li><li><a href="lecture-notes/08-05-NP-reductions.html">Reduktionen</a></li><li><a href="lecture-notes/08-06-Cook-Levin.html">Ganz NP reduziert auf SAT: das Cook-Levin-Theorem</a></li><li><a href="lecture-notes/08-07-Space.html">Beschränkter Speicherplatz</a></li><li><a href="lecture-notes/08-08-Savitch.html">Savitchs Theorem: Reachability <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="4" style="font-size: 101.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-mtext class="mjx-n" space="4"><mjx-c class="mjx-c53"></mjx-c><mjx-c class="mjx-c70"></mjx-c><mjx-c class="mjx-c61"></mjx-c><mjx-c class="mjx-c63"></mjx-c><mjx-c class="mjx-c65"></mjx-c></mjx-mtext><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-n"><mjx-c class="mjx-c6C"></mjx-c><mjx-c class="mjx-c6F"></mjx-c><mjx-c class="mjx-c67"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>∈</mo><mtext>Space</mtext><mo stretchy="false">(</mo><mi>log</mi><mo data-mjx-texclass="NONE">⁡</mo><mi>n</mi><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container> </a></li></ol></li><li><a href="lecture-notes/09-appendix.html">Appendix - Manual für das Schreiben dieses Skripts</a><ol class="nested"></ol></li></ol></div>
+
+      </div>
+      <div class="col-sm-2 sidenav">
+        <!--
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      -->
+      </div>
+    </div>
+  </div>
+
+
+
+<script type="text/javascript" src="javascript/table-of-contents.js"></script>
+<script type="text/javascript" src="javascript/create-table-of-contents.js"></script>
+<script>
+  document.getElementById("table-of-content-div").appendChild(createTableOfContents("lecture-notes", tableOfContents));
+</script>
+
+</body>

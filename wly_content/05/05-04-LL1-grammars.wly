@@ -86,14 +86,8 @@
                     Intuitiv gesprochen: wenn wir bereits eine ersten Teil \(w\) unseres Zielwortes
                     abgeleitet haben, dann können wir die nächste anzuwendende Produktion
                     eindeutig bestimmen, indem wir die nächsten \(k\) Zeichen des Zielwortes lesen.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Negieren Sie die Definition, d.h., schreiben Sie eine Aussage der Form
                         _Wenn \(G\) nicht LL(\(k\)) ist, dann gibt es..._
                     |> Statement
@@ -104,8 +98,7 @@
                         S&amp;\step{2} (S)S
                         \end{align*}
                         ist LL(1).
-                        |> div
-                            class=well subtheorem
+                        |> Remark
                             *Beweis.*
                             Folgen wir der Definition von LL(1): für jedes Paar verschiedener Regeln muss etwas
                             gelten. Wir haben hier keine Auswahl, denn es gibt ja nur ein Paar. Also
@@ -155,14 +148,8 @@
                     mindestens so lange weiterverfolgen, bis der
                     Terminalpräfix \(k\) weitere Zeichen dazugewonnen hat. Der Baum bekommt also dementsprechend
                     lange Sackgassen.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         (Beispiel 5.3 aus _The Theory of Parsing, Translation, and Compiling_ von Alfred V. Aho
                         und Jeffrey D. Ullman).
                         Betrachten wir die Grammatik
@@ -178,25 +165,12 @@
                         eine "normalsprachliche" Beschreibung
                         dieser Sprache. Beschreiben Sie dann alle möglichen Wortformen
                         \(\alpha\) mit \(S \Step{}^* \alpha\).
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Schreiben Sie eine äquivalente Grammatik zu der vorherigen Sprache, die LL(1) ist.
                         (Warnung: Ich weiß nicht, ob das überhaupt geht).
-                    |> div
-                        id=grammar-aaaaabb
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Betrachten wir die Grammatik \(G\):
                         \begin{align*}
                         S&amp;\step{1} a S b \\
@@ -216,14 +190,8 @@
                         ein und finden Wörter mit langen Sackgassen.
                         Zeigen Sie, dass diese Grammatik nicht LL\((k)\) ist, für kein
                         \(k \in \N\).
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Sei \(t \in \N\) eine feste, im Voraus bekannte Zahl.
                         Betrachten wir die Sprache
                         \begin{align*}

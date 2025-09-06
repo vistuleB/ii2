@@ -419,35 +419,17 @@
                                 loading=lazy
                         akzeptiert die Sprache aller \(\alpha \in \{x,y,z\}\), die auf \(x\) enden und nicht die
                         Buchstabenfolge \(xy\) enthalten.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Ändern Sie den Automaten aus dem letzten Beispiel so ab, dass die Bedingung _"die auf \(x\)
                         enden"_ entfällt, er also
                         alle Wörter akzeptiert, die die Folge \(xy\) nicht enthalten.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Zeichnen Sie einen Automaten für die Sprache aller Wörter über \(\{a,b,c,d\}\), die
                         die Folge \(a,b,c,d\) enthalten.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Zeichnen Sie einen Automaten für die Sprache aller Wörter über \(\{a,b,c,d\}\), die
                         genau vier \(a\) enthalten.
                     |> Topic
@@ -492,14 +474,8 @@
                         q \rightarrow \epsilon
                         \end{align*}
                         einführen. Wir zeigen nun per Induktion:
-                        |> div
-                            class=well subtheorem theorem
-                            |> span
-                                class=numbered-title
-                                Behauptung 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                \ 
+                        |> Statement
+                            title=*Behauptung*
                             Sei \(\alpha \in \Sigma^*\) und \(q, q' \in Q\). Dann gilt
                             \(q \stackrel{\alpha}{\rightarrow} q'\) genau dann,
                             wenn \(q \Rightarrow^* \alpha q'\) in Grammatik \(G'\) gilt.
@@ -515,8 +491,7 @@
                         Der Pfeil \(\rightarrow\) "lebt" also im Automaten \(M\), der Pfeil \(\Rightarrow^*\) lebt
                         in
                         der Grammatik \(G'\).
-                        |> div
-                            class=well subtheorem
+                        |> Remark
                             *Beweis.*
                             Wir verwenden Induktion über die Länge des Wortes \(\alpha\).
                             *Induktionsbasis.* Wenn \(\alpha = \epsilon\) gilt, also \(\alpha\) die
@@ -638,14 +613,8 @@
                     ihn absichtlich sehr formal und ausführlich geschrieben, um Ihnen das Prinzip des
                     Induktionsbeweises ins
                     Gedächtnis zu rufen.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Schreiben Sie zu folgendem Automaten über dem Alphabet \(\Sigma = \{0,1,2,3,4,5,6,7,8,9\}\) eine
                         äquivalente reguläre Grammatik:
                         |> figure

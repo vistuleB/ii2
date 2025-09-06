@@ -214,14 +214,8 @@
                             handelt. Da beide gültig sind, können ja auch
                             beide in einer Linksreduktion auftreten.
                             Korrektheit hängt also davon ab, was weiter rechtskommt.
-                    |> div
-                        class=well subtheorem theorem
-                        |> span
-                            class=numbered-title
-                            Beispiel 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                            \ 
+                    |> Statement
+                        title=*Beispiel*
                         Erinnern Sie sich: unsere obige Grammatik
                         \begin{align*}
                         S&amp;\step{1} aS \\
@@ -413,14 +407,8 @@
                         Wir haben nun beide Richtungen gezeigt und somit
                         das Lemma bewiesen.
                         |> QED
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Zeigen Sie, dass die folgende Grammatik \(LR(0)\) ist:
                         \begin{align*}
                         S&amp;\rightarrow aS \\
@@ -430,14 +418,8 @@
                         \end{align*}
                         Als ersten Schritt sollten Sie sich überlegen, wie gültige
                         Wortformen überhaupt aussehen können.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Wir ändern die Grammatik etwas ab:
                         \begin{align*}
                         S&amp;\rightarrow aS \\
@@ -447,14 +429,8 @@
                         \end{align*}
                         Die erzeugte Sprache ist \(\{ a^* a^m b^m \ | \ m \geq 1\}\).
                         Zeigen Sie, dass die Grammatik nicht \(LR(0)\) ist.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Zeigen Sie, dass die folgende Grammatik \(LR(0)\) ist:
                         \begin{align*}
                         S&amp;\rightarrow aS \\

@@ -189,15 +189,8 @@
                                 style=height: 10em
                                 src=../img/finite-state-automata/nfsm-example-02.svg
                                 loading=lazy
-                    |> div
-                        id=exercise-divisibility
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Sei \(\Sigma = \{1\}\) und \(L_k := \{1^n \ | \textnormal{ $n$ ist
                         durch $k$ teilbar} \}\). Schreiben Sie für \(L_k\) einen
                         deterministischen endlichen Automaten.

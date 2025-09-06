@@ -66,14 +66,8 @@
                             Linksableitung in einen Ableitungsbaum umgewandelt und angezeigt (wenn es denn überhaupt
                             eine
                             erfolgreiche Ableitung gibt).
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Geben Sie folgende Grammatik in die App ein:
                         |> pre
                             S -> ;
@@ -88,14 +82,8 @@
                         und schauen Sie, ob Sie Laufzeitunterschiede bemerken.
                         (Hier erweist sich mein ineffizienter Code als Vorteil: eine schlechte Grammatik
                         wird sofort bestraft).
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Schreiben Sie eine kontextfreie Grammatik für die Sprache aller
                         "korrekten" URLs; also Folgen von mindestens zwei _Labels_, die
                         durch `.` separiert sind. Sie können den "Regelvorschlag"
@@ -106,14 +94,8 @@
                         sieht Ihr Backtrack-Baum aus? Hat er viele Sackgassen? Können Sie Ihre Grammatik
                         so abändern, dass sie zwar noch die gleiche Sprache erzeugt, aber keine / nur wenige
                         Sackgassen hat?
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Entwerfen Sie eine Grammatik für arithmetische Ausdrücke im Racket-Stil, also
                         |> pre
                             (* (+ 2 3) (- 4 (* 2 4) 5)
@@ -121,28 +103,16 @@
                         Leidet Ihre Grammatik an langen Sackgassen? Wenn ja, können Sie die Grammatik abändern?
                         Haben Sie mittlerweile ein Schema erkannt, welche Konstrukte lange Sackgassen
                         begünstigen?
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Wiederholen Sie die vorherige Übung für arithmetische Ausdrücke in der uns
                         geläufigen Infix-Notation. Hierbei sollten die Konventionen Punkt-vor-Strich
                         beachtet werden. Im Ableitungsbaum von
                         |> pre
                             2+3*(5+4)
                         sollte sich das wiederspiegeln.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         *(Challenge)*
                         Geben Sie die Grammatik hier ein:
                         |> pre
@@ -153,14 +123,8 @@
                         nicht eindeutig. Das Wort `[([()(` hat zwei
                         verschiedene Ableitungsbäume. Können Sie eine äquivalente
                         _eindeutige_ Grammatik schreiben?
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         *(Challenge)*
                         Die folgende Grammatik hat User _babou_
                         auf 
@@ -177,14 +141,8 @@
                         exponentielles Verhalten zeigt? Exponentiell heißt: mit jedem
                         zusätlichen Zeichen des Eingabewortes kann die Größe des
                         Backtrack-Baumes um einen Faktor \(R \gt 1\) wachsen.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         *(Super-Challenge; ich hab selbst keine Lösung)*.
                         Finden Sie eine kontextfreie Sprache \(L\), für die _jede_ Grammatik,
                         die \(L\) erzeugt, unter exponentiell großen Backtrack-Bäumen leidet.

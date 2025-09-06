@@ -112,14 +112,8 @@
                     Anstatt hier einen formalen Beweis anzugeben (den Sie sich, wenn Sie wollen, im Lehrbuch oder auf
                     Wikipedia anschauen können),
                     lasse ich Sie lieber anhand einer Übungsaufgabe die Konstruktion von selbst verstehen:
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Finden Sie zu der folgenden kontextfreien Grammatik
                         \begin{align*}
                         S&amp;\rightarrow A \ | \ Bb \ | \ C \\
@@ -294,11 +288,8 @@
                     Sie sich, wie viel Laufzeit diese verursachen kann und überzeugen Sie sich, dass dies in den
                     meisten
                     Fällen gegenüber dem Term \(g \cdot n^3\) wohl nicht ins Gewicht fallen wird.
-                    |> div
-                        class=well theorem subtheorem
-                        |> span
-                            class=numbered-title
-                            Demo
+                    |> Statement
+                        title=*Demo*
                         Betrachten wir die Grammatik
                         \begin{align*}
                         S&amp;\rightarrow AB \ | \ BC \ | \ AC \\

@@ -44,113 +44,99 @@
             <span class="subChapterTitle">::::ChapterCtr.9
               Der DK-Automat</span>
           </h1>
-          <h2>
+          <Topic>
             Von der Grammatik $\hat{G}$ zu einem nichtdeterministischen
             endlichen Automaten
-          </h2>
-          <p>
-            Um den $LR(0)$-Parser gemäß<a href="./05-05-d-linker-Rand-und-Bluete.html#algorithm-LR-parser">Algorithmus 5.8.7</a>zu implementieren, müssen wir den Test $\gamma \stackrel{?}\in
-            \Front(G)$ durchführen und, falls die Antwort
-            <i>ja</i>
-            ist, die
-            Blüte finden. Dies gelingt uns, indem wir die Grammatik $\hat{G}$ in
-            einen endlichen Automaten umwandeln.<a href="./04-03-nfsm.html#regular-grammar-to-fsm">Theorem 4.3.8</a>und die ihm vorhergehende Konstruktion zeigen, wie man das macht.
-            Anstatt allerdings das Theorem als "black box" zu verwenden, gehen wir
-            die Konstruktion anhand zweier fiktiver Produktion $X \rightarrow
-            aBcDe$ und $X \rightarrow uVw$ Schritt für Schritt durch. Wir erkennen
-            die Terminale $\Sigma = \{a,c,e,u,w\}$ und die Nichtterminale $N =
-            \{X,B,D,V\}$. In $\dk{G}$ sind \{a,c,e,u,w,A,B,D,V\} alles Terminale,
-            und die Nichtterminale sind $\dk{N} = \{\dk{X}, \dk{B}, \dk{D},
-            \dk{V}\}.$ Die Produktionen von $\hat{G}$ sind
-            $$
-            \begin{align*} \dk{X}&amp;
-            \rightarrow a\dk{B} \\ \dk{X}&amp;\rightarrow a\dkt{B}c\dk{D} \\ \dk{X}
-            &amp;\rightarrow a\dkt{B}c\dkt{D}e \\&amp;\\ \dk{X}&amp;\rightarrow u\dk{V}
-            \ \dk{X}&amp;\rightarrow u\dkt{V}w \end{align*}
-            $$
-          </p>
-          <p>
-            Diese übersetzen wir in einen verallgemeinert nichtdeterministischen
-            Automaten, bei dem jede Kante mit einem Wort $\beta \in (\Sigma \cup
-            N)^*$, also aus
-            <i>Terminalen</i>
-            der Grammatik $\dk{G}$ beschriftet ist:
-          </p>
+          </Topic>
+          Um den $LR(0)$-Parser gemäß<a href="./05-05-d-linker-Rand-und-Bluete.html#algorithm-LR-parser">Algorithmus 5.8.7</a>zu implementieren, müssen wir den Test $\gamma \stackrel{?}\in
+          \Front(G)$ durchführen und, falls die Antwort
+          <i>ja</i>
+          ist, die
+          Blüte finden. Dies gelingt uns, indem wir die Grammatik $\hat{G}$ in
+          einen endlichen Automaten umwandeln.<a href="./04-03-nfsm.html#regular-grammar-to-fsm">Theorem 4.3.8</a>und die ihm vorhergehende Konstruktion zeigen, wie man das macht.
+          Anstatt allerdings das Theorem als "black box" zu verwenden, gehen wir
+          die Konstruktion anhand zweier fiktiver Produktion $X \rightarrow
+          aBcDe$ und $X \rightarrow uVw$ Schritt für Schritt durch. Wir erkennen
+          die Terminale $\Sigma = \{a,c,e,u,w\}$ und die Nichtterminale $N =
+          \{X,B,D,V\}$. In $\dk{G}$ sind \{a,c,e,u,w,A,B,D,V\} alles Terminale,
+          und die Nichtterminale sind $\dk{N} = \{\dk{X}, \dk{B}, \dk{D},
+          \dk{V}\}.$ Die Produktionen von $\hat{G}$ sind
+          $$
+          \begin{align*} \dk{X}&amp;
+          \rightarrow a\dk{B} \\ \dk{X}&amp;\rightarrow a\dkt{B}c\dk{D} \\ \dk{X}
+          &amp;\rightarrow a\dkt{B}c\dkt{D}e \\&amp;\\ \dk{X}&amp;\rightarrow u\dk{V}
+          \ \dk{X}&amp;\rightarrow u\dkt{V}w \end{align*}
+          $$
+          Diese übersetzen wir in einen verallgemeinert nichtdeterministischen
+          Automaten, bei dem jede Kante mit einem Wort $\beta \in (\Sigma \cup
+          N)^*$, also aus
+          <i>Terminalen</i>
+          der Grammatik $\dk{G}$ beschriftet ist:
           <figure>
             <img
               style="height: 9em"
               src="../img/context-free/LR/hat-G-to-generalized-automaton.svg"
             >
           </figure>
-          <p>
-            Wir brechen die Kanten in Stücke, so dass jede mit genau einem Zeichen
-            beschriftet ist:
-          </p>
+          Wir brechen die Kanten in Stücke, so dass jede mit genau einem Zeichen
+          beschriftet ist:
           <figure>
             <img
               style="height: 11em"
               src="../img/context-free/LR/hat-G-to-generalized-automaton-break-edges.svg"
             >
           </figure>
-          <p>
-            Nochmal: jede Kante ist mit einem
-            <i>Terminalsymbol</i>
-            beschriftet.
-            Die Symbole $B, D, V$ sind
-            <i>Terminale</i>
-            in der Grammatik
-            $\dk{G}$. Wenn wir $\epsilon$-Übergänge zulassen, können wir den
-            Automaten übersichtlicher gestalten und mehrere Zustände
-            zusammenfassen:
-          </p>
+          Nochmal: jede Kante ist mit einem
+          <i>Terminalsymbol</i>
+          beschriftet.
+          Die Symbole $B, D, V$ sind
+          <i>Terminale</i>
+          in der Grammatik
+          $\dk{G}$. Wenn wir $\epsilon$-Übergänge zulassen, können wir den
+          Automaten übersichtlicher gestalten und mehrere Zustände
+          zusammenfassen:
           <figure>
             <img
               style="height: 6em"
               src="../img/context-free/LR/hat-G-to-generalized-automaton-numbered-names.svg"
             >
           </figure>
-          <p>
-            Wir werden uns noch bessere Namen für die Zwischenzustände ausdenken.
-            Wenn wir uns an die Rechtsableitungsbäume mit Stamm, linkem Rand,
-            Blüte und rechtem Rest erinnern, dann haben die Zwischenzustände eine
-            klare Bedeutung: der Zustand $4$ oben zum Beispiel bedeutet, dass der
-            Knoten $X$ im Stamm mit $a, B, c, D, e$ beschriftete Kinder hat und
-            wir uns bereits entschieden haben, dass $a$, $B$ und $c$
-            <i>Blätter</i>
-            sein sollen, also zum linken Rand gehören. Der
-            Übergang $\boxed{4} \step{D} \boxed{5}$ entspricht dann der
-            Entscheidung, auch $D$ zu einem Blatt zu machen, während $\boxed{4}
-            \step{\epsilon} \dk{D}$ der Entscheidung entspricht, $D$ zu einem
-            Knoten im Stamm zu machen und eine $D$-Produktion anzuwenden. Die
-            beiden $\epsilon$-Übergänge von $\dk{X}$ nach $\boxed{1}$ bzw.
-            $\boxed{7}$ stellen einfach sicher, dass wir uns erst entscheiden, mit
-            welcher Produktion wir den Stammknoten $X$ expandieren, bevor wir
-            weitermachen. Daher nennen wir Zustand $\boxed{4}$ um in $\boxed{X
-            \rightarrow aBc.De}$, wobei der Punkt $.$ markiert, welchen Teil der
-            rechten Seite wir bereits gelesen haben. Wir erhalten folgendes Bild:
-          </p>
+          Wir werden uns noch bessere Namen für die Zwischenzustände ausdenken.
+          Wenn wir uns an die Rechtsableitungsbäume mit Stamm, linkem Rand,
+          Blüte und rechtem Rest erinnern, dann haben die Zwischenzustände eine
+          klare Bedeutung: der Zustand $4$ oben zum Beispiel bedeutet, dass der
+          Knoten $X$ im Stamm mit $a, B, c, D, e$ beschriftete Kinder hat und
+          wir uns bereits entschieden haben, dass $a$, $B$ und $c$
+          <i>Blätter</i>
+          sein sollen, also zum linken Rand gehören. Der
+          Übergang $\boxed{4} \step{D} \boxed{5}$ entspricht dann der
+          Entscheidung, auch $D$ zu einem Blatt zu machen, während $\boxed{4}
+          \step{\epsilon} \dk{D}$ der Entscheidung entspricht, $D$ zu einem
+          Knoten im Stamm zu machen und eine $D$-Produktion anzuwenden. Die
+          beiden $\epsilon$-Übergänge von $\dk{X}$ nach $\boxed{1}$ bzw.
+          $\boxed{7}$ stellen einfach sicher, dass wir uns erst entscheiden, mit
+          welcher Produktion wir den Stammknoten $X$ expandieren, bevor wir
+          weitermachen. Daher nennen wir Zustand $\boxed{4}$ um in $\boxed{X
+          \rightarrow aBc.De}$, wobei der Punkt $.$ markiert, welchen Teil der
+          rechten Seite wir bereits gelesen haben. Wir erhalten folgendes Bild:
           <figure>
             <img
               style="width: 100%"
               src="../img/context-free/LR/hat-G-to-DK.svg"
             >
           </figure>
-          <h2>
+          <Topic>
             Die $a^{m+k}b^m$-Grammatik
-          </h2>
-          <p>
-            Wir illustrieren obige Vorgehensweise nun anhand der Grammatik
-          </p>
+          </Topic>
+          Wir illustrieren obige Vorgehensweise nun anhand der Grammatik
           $$
           \begin{align*} G&amp;: \\ S&amp;\rightarrow aS \\ S&amp;\rightarrow B \\ B&amp;
           \rightarrow aBb \\ B&amp;\rightarrow ab \end{align*}
           $$
-          <p>
-            Laut Gebrauchsanweisung aus dem letzten Teilkapitel hat die Grammatik
-            $\dk{G}$ die Terminalsymbole $\Sigma \cup N = \{a, b, S, B\}$ und die
-            Nichtterminale $\dk{N} = \{\dk{S}, \dk{B}\}$. Die Produktionen von
-            $\dk{G}$ ergeben sich wie folgt:
-          </p>
+          Laut Gebrauchsanweisung aus dem letzten Teilkapitel hat die Grammatik
+          $\dk{G}$ die Terminalsymbole $\Sigma \cup N = \{a, b, S, B\}$ und die
+          Nichtterminale $\dk{N} = \{\dk{S}, \dk{B}\}$. Die Produktionen von
+          $\dk{G}$ ergeben sich wie folgt:
           $$
           \begin{align*} \begin{array}{l|l} \textnormal{Produktion in $G$}&amp;
           \textnormal{Produktion in $\hat{G}$} \\ \hline % % S \rightarrow aS&amp;
@@ -161,25 +147,19 @@
           \dkt{a}\dkt{B}\dkt{b}\\ \hline % B \rightarrow ab&amp;{\dk{B}} \rightarrow
           \dkt{ab} \end{array} \end{align*}
           $$
-          <p>
-            In dieser Grammatik betrachten wir die Rechtsableitung
-          </p>
+          In dieser Grammatik betrachten wir die Rechtsableitung
           $$
           \begin{align*} S \Step{} aS \Step{} aaS \Step{} aaB \Step{} aaaBb
           \Step{} aaaaBbb \Step{} aaaaaBbbb \end{align*}
           $$
-          <p>
-            Es gilt $\front(aaaaaBbbb) = aaaaaBb$. In $\hat{G}$ entspricht die
-            obige Rechtsableitung der Ableitung
-          </p>
+          Es gilt $\front(aaaaaBbbb) = aaaaaBb$. In $\hat{G}$ entspricht die
+          obige Rechtsableitung der Ableitung
           $$
           \begin{align*} \hat{S} \Step{} a\hat{S} \Step{} aa\hat{S} \Step{}
           aa\hat{B} \Step{} aaa\hat{B} \Step{} aaaaBb \end{align*}
           $$
-          <p>
-            Den nichtdeterministischen DK-Automaten (mit $\epsilon$-Übergängen)
-            können wir nun Schritt für Schritt zeichnen:
-          </p>
+          Den nichtdeterministischen DK-Automaten (mit $\epsilon$-Übergängen)
+          können wir nun Schritt für Schritt zeichnen:
           <figure class="centered-figure well container">
             <a
               data-slide="prev"
@@ -335,19 +315,14 @@
               </div>
             </div>
           </figure>
-          <h2>
+          <Topic>
             Der nichtdeterministische DK-Automat
-          </h2>
-          <div class="well container theorem">
-            <p>
-              <span class="numbered-title">Definition
-                <NumberedTitle>::::ChapterCtr.::::SectionCtr.1</NumberedTitle>
-                </span>
-              Für eine kontextfreie
-              Grammatik ist der nichtdeterministische DK-Automat (NDK-Automat) ein
-              nichtdeterministischer endlicher Automat mit $\epsilon$-Übergängen,
-              den wir wie folgt konstruieren:
-            </p>
+          </Topic>
+          <Statement title="*Definition*">
+            Für eine kontextfreie
+            Grammatik ist der nichtdeterministische DK-Automat (NDK-Automat) ein
+            nichtdeterministischer endlicher Automat mit $\epsilon$-Übergängen,
+            den wir wie folgt konstruieren:
             <ol>
               <li>
                 Für jede Produktion $X \rightarrow \beta$ gibt es einen
@@ -365,43 +340,37 @@
                 \beta_1 . Y \beta_2} \step{\epsilon} \boxed{Y}$
               </li>
             </ol>
-            <p>
-              Die Interpretation dieser Übergänge in
-              Rechtsableitungsbaum-Begriffen ist: (1) heißt, dass $\boxed{X}$ ein
-              Stammknoten ist und wir ihn anhand der Regel $X \rightarrow \beta$
-              expandieren; wir erschaffen also Kinder, die mit den Symbolen von
-              $\beta$ beschriftet sind. (2) heißt, dass wir uns bereits
-              entschieden haben, die Kinder $\beta_1$ von $\boxed{X}$ nicht zu
-              expandieren, sie also zum linken Rand werden zu lassen, und diese
-              Entscheidung nun auch für das Symbol $\sigma$ treffen; (3) bedeutet,
-              dass wir uns entschließen $\sigma$ (das hier ein Nichtterminal $Y$
-              ist) weiter zu expandieren, es also nicht dem linken Rand zuordnen,
-              sondern zu einem Stammknoten werden lassen, uns aber noch nicht
-              entschlossen haben, welche Produktion $Y \rightarrow ?$ wir anwenden
-              wollen.
-            </p>
-            <p>
-              Der Startzustand ist $\boxed{S}$. Jeder Zustand der Form $\boxed{X
-              \step{} \beta .}$ ist ein akzeptierender Zustand.
-            </p>
-          </div>
-          <h2>
+            Die Interpretation dieser Übergänge in
+            Rechtsableitungsbaum-Begriffen ist: (1) heißt, dass $\boxed{X}$ ein
+            Stammknoten ist und wir ihn anhand der Regel $X \rightarrow \beta$
+            expandieren; wir erschaffen also Kinder, die mit den Symbolen von
+            $\beta$ beschriftet sind. (2) heißt, dass wir uns bereits
+            entschieden haben, die Kinder $\beta_1$ von $\boxed{X}$ nicht zu
+            expandieren, sie also zum linken Rand werden zu lassen, und diese
+            Entscheidung nun auch für das Symbol $\sigma$ treffen; (3) bedeutet,
+            dass wir uns entschließen $\sigma$ (das hier ein Nichtterminal $Y$
+            ist) weiter zu expandieren, es also nicht dem linken Rand zuordnen,
+            sondern zu einem Stammknoten werden lassen, uns aber noch nicht
+            entschlossen haben, welche Produktion $Y \rightarrow ?$ wir anwenden
+            wollen.
+            Der Startzustand ist $\boxed{S}$. Jeder Zustand der Form $\boxed{X
+            \step{} \beta .}$ ist ein akzeptierender Zustand.
+          </Statement>
+          <Topic>
             Den NDK-Automaten deterministisch machen
-          </h2>
-          <p>
-            Wir wissen ja bereits, wie man einen nichtdeterministischen Automaten
-            deterministisch macht: die<a href="./04-03-nfsm.html#nfsm-to-fsm">Potenzmengenkonstruktion aus Kapitel 4.3</a>. Hier können wir diese leider nicht direkt anwenden, da der obige
-            Automat $\epsilon$-Übergänge hat. Wie geht das also nun? Im
-            deterministischen Automaten ist wie bei der Potenzmengenkonstruktion
-            jeder Zustand eine
-            <i>Menge</i>
-            $R$ von Zuständen des
-            nichtdeterministischen Automaten. Wenn wir nun in eine solche Menge
-            $R$ einen Zustand $q$ einfügen, dann fügen wir auch alle Zustände
-            $q'$ hinzu, zu denen es einen $\epsilon$-Übergang $q
-            \step{\epsilon} q'$ gibt. Für den obigen nichtdeterministischen
-            Automaten sieht das dann so aus:
-          </p>
+          </Topic>
+          Wir wissen ja bereits, wie man einen nichtdeterministischen Automaten
+          deterministisch macht: die<a href="./04-03-nfsm.html#nfsm-to-fsm">Potenzmengenkonstruktion aus Kapitel 4.3</a>. Hier können wir diese leider nicht direkt anwenden, da der obige
+          Automat $\epsilon$-Übergänge hat. Wie geht das also nun? Im
+          deterministischen Automaten ist wie bei der Potenzmengenkonstruktion
+          jeder Zustand eine
+          <i>Menge</i>
+          $R$ von Zuständen des
+          nichtdeterministischen Automaten. Wenn wir nun in eine solche Menge
+          $R$ einen Zustand $q$ einfügen, dann fügen wir auch alle Zustände
+          $q'$ hinzu, zu denen es einen $\epsilon$-Übergang $q
+          \step{\epsilon} q'$ gibt. Für den obigen nichtdeterministischen
+          Automaten sieht das dann so aus:
           <figure class="centered-figure well container">
             <a
               data-slide="prev"
@@ -536,18 +505,15 @@
               </ol>
             </div>
           </figure>
-          <h2>
+          <Topic>
             Den DK-Automaten verwenden
-          </h2>
-          <div class="well container theorem">
-            <p>
-              <span class="numbered-title">Theroem</span>
-              <b>(DK-Test).</b>
-              Sei $G$ eine kontextfreie Grammatik ohne
-              nutzlose Nichtterminale und ei $M$ der DK-Automat für die Grammatik
-              $G$. Die Grammatik $G$ ist LR(0) genau dann, wenn folgende zwei
-              Bedingungen gelten:
-            </p>
+          </Topic>
+          <Statement title="*Theroem*">
+            <b>(DK-Test).</b>
+            Sei $G$ eine kontextfreie Grammatik ohne
+            nutzlose Nichtterminale und ei $M$ der DK-Automat für die Grammatik
+            $G$. Die Grammatik $G$ ist LR(0) genau dann, wenn folgende zwei
+            Bedingungen gelten:
             <ul>
               <li>
                 (DK.1) Ein akzeptierender Zustand von $M$ (der ja eine Menge von
@@ -560,31 +526,25 @@
                 \step{\sigma} q'$, dann ist $\sigma$ ein Nichtterminal.
               </li>
             </ul>
-            <p>
-              Wenn diese beiden Bedingungen gelten, sagen wir, dass $G$ den
-              DK-Test bestanden hat. Das Theorem sagt also: $G$ ist LR(0) genau
-              dann, wenn es den DK-Test besteht.
-            </p>
-          </div>
-          <div class="well container">
-            <p>
-              <b>Beweisskizze.</b>
-              Wir erinnern den Leser noch einmal an die alternative
-              Charakterisierung von LR(0)-Sprachen, nämlich :
-            </p>
+            Wenn diese beiden Bedingungen gelten, sagen wir, dass $G$ den
+            DK-Test bestanden hat. Das Theorem sagt also: $G$ ist LR(0) genau
+            dann, wenn es den DK-Test besteht.
+          </Statement>
+          <Highlight>
+            <b>Beweisskizze.</b>
+            Wir erinnern den Leser noch einmal an die alternative
+            Charakterisierung von LR(0)-Sprachen, nämlich :
             <div
               id="lemma-characterization-LR0"
-              class="well container subtheorem"
+              class="well subtheorem"
             >
-              <p>
-                <a href="./05-05-c-LR-grammars.html#lemma-characterization-LR0">Lemma 5.7.5, noch einmal</a>
-                <b>
-                  </b>
-                <b>(LR(0), äquivalente Formulierung).</b>
-                Eine Grammatik $G$ ist LR(0) genau dann, wenn für alle korrekten
-                Linksreduktionsschritte $\alpha \beta w \rstep{} \alpha Xw$ und
-                $\alpha' \beta' w' \rstep{} \alpha' X'w'$ gilt:
-              </p>
+              <a href="./05-05-c-LR-grammars.html#lemma-characterization-LR0">Lemma 5.7.5, noch einmal</a>
+              <b>
+                </b>
+              <b>(LR(0), äquivalente Formulierung).</b>
+              Eine Grammatik $G$ ist LR(0) genau dann, wenn für alle korrekten
+              Linksreduktionsschritte $\alpha \beta w \rstep{} \alpha Xw$ und
+              $\alpha' \beta' w' \rstep{} \alpha' X'w'$ gilt:
               <ol>
                 <li>
                   Falls $\alpha \beta = \alpha' \beta'$ dann auch $\beta = \beta'$
@@ -600,54 +560,42 @@
                 </li>
               </ol>
             </div>
-            <p>
-              Es ist nicht schwer zu sehen, dass (DK.1) äquivalent zu Punkt 1 des
-              Lemmas ist. Wenden wir uns (DK.2) und Punkt 2 zu. Wenn Punkt 2
-              <i>nicht</i>
-              gilt, dann gibt es korrekte Reduktionsschritte
-            </p>
+            Es ist nicht schwer zu sehen, dass (DK.1) äquivalent zu Punkt 1 des
+            Lemmas ist. Wenden wir uns (DK.2) und Punkt 2 zu. Wenn Punkt 2
+            <i>nicht</i>
+            gilt, dann gibt es korrekte Reduktionsschritte
             $$
             \begin{align*} \alpha \beta w \rstep{} \alpha X w \\ \alpha \beta
             \sigma w' = \alpha' \beta' w' \rstep{} \alpha' X' w' \end{align*}
             $$
-            <p>
-              Wenn wir dem Automaten den Präfix $\alpha \beta$ füttern, bringt er
-              uns in einen Zustand, der die $\boxed{X \rightarrow \beta.}$
-              enthält, da $\alpha \beta$ ja eine Front ist. Dieser Zustand muss
-              allerdings einen Übergang haben, der mit $\sigma$ gelabelt ist, dem
-              ersten Zeichen von $\varphi$, da ja $\alpha \beta \sigma$ ein Präfix
-              der Front $\alpha' \beta'$ ist. Somit gilt (DK.2) nicht.
-            </p>
-            <p>
-              Wenn umgekehrt (DK.2) nicht gilt, dann gibt es einen akzeptierenden
-              Zustand $q$ (der also $\boxed{X\rightarrow \beta.}$ enthält) und
-              eine ausgehende Kante $q \step{\sigma} q'$ mit einem Terminal
-              $\sigma$.
-            </p>
-            <div class="well well-lg numbered-exercise container-fluid">
-              <p>
-                <span class="numbered-title">Übungsaufgabe
-                  <NumberedTitle>::::ChapterCtr.::::SectionCtr.1</NumberedTitle>
-                  </span>Zeigen Sie: wenn $G$ keine nutzlosen Nichtterminale hat, dann gibt
-                es im NDK-Automaten für jeden Zustand $q$ eine Übergangsfolge $q
-                \steps{v} q'$ zu einem akzeptierenden Zustand $q'$, wobei $v$
-                ausschließlich aus $G$-Terminalen besteht, also $v \in \Sigma^*$.
-              </p>
-              <p>
-                Zeigen Sie das selbe für den DK-Automaten.
-              </p>
-            </div>
-            <p>
-              Es gibt also einen Weg $q \step{\sigma} q' \steps{v} q''$ für $v \in
-              \Sigma^*$ und einen akzeptierenden Zustand $q''$. Es sind also
-              sowohl $\alpha \beta$ als auch $\alpha \beta \sigma v$ Fronten von
-              $G$, und $\sigma v$ besteht nur aus Terminalen. Das heißt, dass
-              Punkt 2 der Schlussfolgerung nicht gilt.<span class="qed">$\square$</span>
-            </p>
-          </div>
-          <h3>
+            Wenn wir dem Automaten den Präfix $\alpha \beta$ füttern, bringt er
+            uns in einen Zustand, der die $\boxed{X \rightarrow \beta.}$
+            enthält, da $\alpha \beta$ ja eine Front ist. Dieser Zustand muss
+            allerdings einen Übergang haben, der mit $\sigma$ gelabelt ist, dem
+            ersten Zeichen von $\varphi$, da ja $\alpha \beta \sigma$ ein Präfix
+            der Front $\alpha' \beta'$ ist. Somit gilt (DK.2) nicht.
+            Wenn umgekehrt (DK.2) nicht gilt, dann gibt es einen akzeptierenden
+            Zustand $q$ (der also $\boxed{X\rightarrow \beta.}$ enthält) und
+            eine ausgehende Kante $q \step{\sigma} q'$ mit einem Terminal
+            $\sigma$.
+            <Statement title="*Übungsaufgabe*">
+              Zeigen Sie: wenn $G$ keine nutzlosen Nichtterminale hat, dann gibt
+              es im NDK-Automaten für jeden Zustand $q$ eine Übergangsfolge $q
+              \steps{v} q'$ zu einem akzeptierenden Zustand $q'$, wobei $v$
+              ausschließlich aus $G$-Terminalen besteht, also $v \in \Sigma^*$.
+              Zeigen Sie das selbe für den DK-Automaten.
+            </Statement>
+            Es gibt also einen Weg $q \step{\sigma} q' \steps{v} q''$ für $v \in
+            \Sigma^*$ und einen akzeptierenden Zustand $q''$. Es sind also
+            sowohl $\alpha \beta$ als auch $\alpha \beta \sigma v$ Fronten von
+            $G$, und $\sigma v$ besteht nur aus Terminalen. Das heißt, dass
+            Punkt 2 der Schlussfolgerung nicht gilt.
+            <QED>
+            </QED>
+          </Highlight>
+          <SubTopic>
             LR(1)-Grammatiken
-          </h3>
+          </SubTopic>
           Hier ist der nichtdeterministische Automat für $G$ mit Lookahead 1.
           <figure>
             <img

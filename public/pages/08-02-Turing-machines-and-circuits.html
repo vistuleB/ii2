@@ -1,0 +1,215 @@
+<div id="rightSideWrapper">
+
+
+        <div class="content">
+
+
+
+            <div class='chapter'>
+                <div class='subChapter'>
+                    <h1 class='hidden-title'>
+                        <span class='subChapterTitle'>9.2 Turing-Maschinen zu Schaltkreisen!</span>
+                    </h1>
+
+
+                    <p>
+                        Sei $L \subseteq \{0,1\}^*$ eine Sprache und $M$ eine
+                        Turing-Maschine, die $L$ in Zeit $t(n)$ entscheidet.
+                        Das heißt, für jedes $x \in \{0,1\}^*$ erreicht $M$ nach maximal
+                        $t(|x|)$ Schritten einen Endzustand, und $M(x) = \texttt{accept}$
+                        genau dann, wenn $x \in L$ ist. Für jedes $n \in \N$ sei
+                        $f_{L,n}$ die Boolesche Funktion
+                    </p>
+                    \begin{align*}
+                    f_{L,n} : \{0,1\}^n & \rightarrow \{0,1\} \\
+                    x & \mapsto [M(x) = \texttt{accept}]
+                    \end{align*}
+                    <p>
+                        Also $f(x)=1$ falls $M$ die Eingabe $x$ akzeptiert und $f(x)=0$
+                        falls $M$ die Eingabe ablehnt (falls $L$ und $n$ aus dem Kontext
+                        hervorgehen, schreiben wir einfach $f$).
+                    </p>
+                    <div class='well container theorem'>
+                        <p><span class='numbered-title' id='theorem-tms-to-circuits'
+                                data-label-title='Theorem'>Theorem</span>
+                            Wenn $L$ in Zeit $t(n)$ entscheidbar ist und $t(n) \geq n$ gilt, dann gibt es einen
+                            Booleschen Schaltkreis $C$ mit $O(t(n)^2)$ Gates, der $f_{L,n}$ berechnet.
+                        </p>
+                    </div class='well container theorem'>
+                    <div class='well container'>
+                        <p><strong>Beweisidee.</strong>
+                            Die $k$-Band-Turingmaschine $M$, die $L$ entscheidet, macht
+                            auf Eingabe $x$ höchstens $T = t(|x|)$ Schritte. Es gibt
+                            also einen Bereich von insgesamt $2Tk$ Zellen ($2t$ pro Band),
+                            den sie nie verlässt. Das heißt, jede Konfiguration besteht aus $O(t)$
+                            Zeichen.
+                        </p>
+                        <p>
+                            Die Funktion $\hat{\delta}_M$, die für jede Konfiguration $C$ die
+                            Nachfolgekonfiguration $C' := \hat{\delta}_M(C)$ berechnet,
+                            ist sehr lokal und sehr einfach;
+                            die $i$-te Stelle von Konfiguration $C$ hat nur auf die Stellen
+                            $i-2$, $i-1$, $i$ und $i+1$ von $C'$ Einfluss. Somit können wir bei
+                            geeigneter binärer Codierung einen effizienten Schaltkreis bauen,
+                            der $\hat{\delta}_{M}$ berechnet.
+                        </p>
+                        <p>
+                            Da wir wissen, dass $M$ höchstens $T$ Schritte macht,
+                            wissen wir, dass $\hat{\delta}^*(x) = \hat{\delta}^{(T)}(x)$ gilt;
+                            wir können nun einfach $T$ Schaltkreise hintereinanderschalten,
+                            um $\hat{\delta}^*(x)$ und somit die Endkonfiguration zu berechnen;
+                            mit einem weiteren einfachen Schaltkreis können wir nun
+                            den erreichten Endzustand auslesen und entsprechen 0 oder 1 ausgeben.
+                            <span class='qed'>\(\square\)</span>
+                        </p>
+
+                    </div class='proof'>
+                    <div class='well container'>
+                        <p><strong>Beweis.</strong>
+                            Wir zeigen den Beweis schematisch anhand von $1$-Band-Turingmaschinen.
+                            Für $k$-Bandmaschinen geht es fast genau so.
+                            Erinnern Sie sich an die Definition der <em>Konfiguration</em>
+                            einer Turing-Maschine (<span class='reference' data-ref='def-TM-configuration'></span>).
+                            Formal war das ein Wort $C \in \Gamma^* \times Q \times \Gamma^*$.
+                            Ich zeige hier schematisch, wie aus einer Konfiguration per $\hat{\delta}$
+                            die Folgekonfiguration wird:
+                        </p>
+                        <figure>
+                            <img src='../img/09-complexity-theory/to-circuits/to-circuits-01-01.svg'
+                                style='height:10em'>
+                        </figure>
+                        <p>
+                            Wenn also das Kopfsymbol an Stelle $i$ der Konfiguration steht, dann können sich
+                            in der Folgekonfiguration nur die Stellen $i-1$, $i$ und $i+1$ ändern.
+                            Allerdings hat bei einer Linksbewegung das gelesene Zeichen (an Stelle $i+1$)
+                            auch Einfluss auf den zukünftigen Inhalt von Zelle $i-1$;
+                            Zelle $j$ kann also Zellen $j-2, j-1, j, j+1$ im nächsten Schritt beeinflussen.
+                            Lege wir zuerst eine globale Indizierung der Stellen der Konfiguration fest.
+                            Der Schreib-Lese-Kopf startet an Zelle $0$ des Bandes; das Eingabewort belegt also
+                            die Zellen $0, 1, \dots, n-1$. Da die Turingmaschine maximal $T$ Schritte
+                            läuft, ist der Kopf immer auf einer Zelle in $\{-T, \dots, T\}$. Wir können
+                            also jede Konfiguration mit $2T+1$ Zeichen darstellen - nein, mit $S := 2T+2$
+                            Zeichen, da der Kopf selbst ja auch eine Stelle der Konfiguration belegt.
+                            Somit ist also $C \in (Q \cup \Gamma)^{s}$. Unbenutzte Zellen links und rechts
+                            füllen wir mit $\Box$ auf, so dass immer eine Länge von $s$ benutzt wird.
+                        </p>
+                        <p>
+                            Sei $C^{(t)} = \hat{\delta}^{(t)}(\qstart, x)$ die Konfiguration nach $t$
+                            Schritten. Sei $C^{(t)}_i$ das $i$-te Zeichen darin.
+                            Den Wert von $C^{(t+1)}_i$ können wir bestimmen allein mit Kenntnis
+                            von $C^{(t)}_{i-1}$, $C^{(t)}_{i}$, $C^{(t)}_{i+1}$ und $C^{(t)}_{i+2}$. Es gibt also
+                            eine Funktion
+                        </p>
+                        \begin{align*}
+                        \tilde{\delta} : (Q \cup \Gamma)^4 \rightarrow (Q \cup \Gamma)
+                        \end{align*}
+                        <p>
+                            die dies beschreibt, also mit
+                        </p>
+                        \begin{align*}
+                        C^{(t+1)}_i & = \tilde{\delta}
+                        \left(C^{(t)}_{i-1}, C^{(t)}_{i}, C^{(t)}_{i+1},C^{(t)}_{i+2}\right) \ .
+                        \end{align*}
+                        <p>
+                            Im Detail ist die Arbeitsweise von $\tilde{\delta}$ wie folgt:
+                        </p>
+                        \begin{align*}
+                        \tilde{\delta}(a,x,y,*) & =
+                        x \quad \textnormal{falls $a, x, y \in \Gamma$}\\
+                        \tilde{\delta}(a,x,q,y) & = \begin{cases}
+                        r & \textnormal{falls $\delta(q,y) = (r,*,L)$} \\
+                        x & \textnormal{sonst.}
+                        \end{cases}\\
+                        \tilde{\delta}(x,q,y,*) & =
+                        \begin{cases}
+                        x & \textnormal{ falls $\delta(q,y) = (*, *, L)$ } \\
+                        r & \textnormal{ falls $\delta(q,y) = (r, *, S)$ } \\
+                        z & \textnormal{ falls $\delta(q,y) = (*, z, R)$ } \
+                        \end{cases}\\
+                        \tilde{\delta}(q,y,*,*) & =
+                        \begin{cases}
+                        r & \textnormal{ falls $\delta(q,y) = (r, *, R)$} \\
+                        z & \textnormal{ falls $\delta(q,y) = (*, z, S)$} \\
+                        z & \textnormal{ falls $\delta(q,y) = (*, z, L)$} \\
+                        \end{cases}
+                        \end{align*}
+                        <p>
+                            Wenn wir $Q \cup \Gamma$ binär codieren mit
+                            $l := \ceil{\log_2 |Q \cup \Gamma|}$ Bits, so wird
+                            $\tilde{\delta}$ zu einer Booleschen Funktion
+                            $\tilde{\delta} : \{0,1\}^{4l} \rightarrow \{0,1\}^l$.
+                            Wir können dafür einen Schaltkreis der
+                            Größe $O(2^l) = O(|\Gamma \cup Q|^4)$ bauen:
+                            per Wahrheitstabelle wird er etwas größer; mit
+                            der Lupanov-Schranke
+                            (<span class='reference' data-ref='theorem-lupanov'></span>)
+                            kriegen Sie $O(2^l)$.
+                        </p>
+                        <p>
+                            Wir haben nun also einen Schaltkreis $\Delta$, der
+                            $\tilde{\delta}$ berechnet. Seine Größe ist
+                            $O(|\Gamma \cup Q|^4)$. Da wir $|Q|$ und $|\Gamma|$ als
+                            konstant betrachten, da es nicht von der Eingabegröße $n=|x|$
+                            abhängt, können wir sogar behaupten: die Größe von $\Delta$ ist
+                            $O(1)$. Wir schalten jetzt $S$ Kopien von $\Delta$ parallel,
+                            um
+                            $\hat{\delta}: \mathcal{C} \rightarrow \mathcal{C}$ zu berechnen,
+                            also aus einer gegebenen Konfiguration die Folgekonfiguration:
+                        </p>
+                        <figure>
+                            <img src='../img/09-complexity-theory/to-circuits/to-circuits-02-01.svg'
+                                style='height:10em'>
+                        </figure>
+                        <p>
+                            Jeder Pfeil steht hierbei für $l$ Boolesche Kabel. Dies ergibt
+                            <em>einen</em> Schaltkreis $\Delta^S$,
+                            der $\hat{\delta}: \mathcal{C} \rightarrow \mathcal{C}$ berechnet
+                            (bzw. die Boolesche Codierung dieser Funktion) und
+                            Größe $O(S) = O(t(n))$ hat:
+                        </p>
+                        <figure>
+                            <img src='../img/09-complexity-theory/to-circuits/to-circuits-03-01.svg'
+                                style='height:10em'>
+                        </figure>
+                        <p>
+                            Die Inputs, die Zellen außerhalb des Bereichs lesen, setzen wir
+                            einfach auf $\Box$ (Blank) bzw. dessen binäre Codierung,
+                            weil wir ja wissen, dass der Schreib-Lese-Kopf niemals dorthin gelangen wird.
+                            Jetzt schalten wir $T$ Kopien von $\Delta^{S}$ hintereinander,
+                            um aus der Startkonfiguration $C^{(0)}$ die Endkonfiguration
+                            $C^{(T)}$ zu berechnen:
+                        </p>
+                        <figure>
+                            <img src='../img/09-complexity-theory/to-circuits/to-circuits-04-01.svg'
+                                style='height:30em'>
+                        </figure>
+                        <p>
+                            Ganz zum Schluss bauen wir uns noch einen Schaltkreis,
+                            der an jede Stelle von $C{^(T)}$ schaut und, falls dort
+                            der Endzustand steht, liest, ob das <tt>accept</tt> oder <tt>reject</tt> ist
+                            und je nachdem $1$ oder $0$ ausgibt.
+                        </p>
+                        <figure>
+                            <img src='../img/09-complexity-theory/to-circuits/to-circuits-05-01.svg'
+                                style='height:13em'>
+                        </figure>
+                        <p>
+                            Dieser endgültige Schaltkreis besteht im Wesentlichen
+                            aus $T$ Kopien von $\Delta^S$ und hat somit Größe
+                            $O(t(n)^2)$.
+                            <span class='qed'>\(\square\)</span>
+                        </p>
+
+                    </div class='proof'>
+
+
+                </div class='subChapter'>
+
+
+            </div class='chapter'>
+
+
+
+
+        </div class="content">
+    </div class="rightSideWrapper">

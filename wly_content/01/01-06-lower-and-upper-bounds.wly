@@ -128,14 +128,8 @@
                         mit $\frac{2^n}{2n}$ Gates gibt. Somit benötigen manche Boolesche Funktionen
                         mehr als $\frac{2^n}{2n}$ Gates.
                         |> QED
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         In Theorem und Beweis sprechen wir die ganze Zeit nur von Schaltkreisen
                         mit Fan-in 2. Was geschieht, wenn wir beliebigen Fan-in erlauben?
                         Wie ändern sich Aussage und Beweis?
@@ -149,8 +143,7 @@
                     multiplizieren,
                     bauen Brücken, Häuser, Flugzeuge, Computer, weil wir es _können_, weil also die dafür
                     benötigten Berechnungen effizient durchführbar sind.
-                    |> div
-                        class=well subtheorem
+                    |> Remark
                         |> span
                             class=numbered-title
                             Forschungsprojekt.
@@ -161,8 +154,7 @@
                     Kandidaten für solche Funktionen gibt es viele. Im Prinzip gibt uns jedes
                     Entscheidungsproblem, dass für eine "schwierige" Komplexitätsklasse vollständig
                     ist, einen Kandidaten. Also zum Beispiel Graphenfärbbarkeit.
-                    |> div
-                        class=well subtheorem
+                    |> Remark
                         |> span
                             class=numbered-title
                             Entscheidungsproblem 3-Färbbarkeit.
@@ -178,14 +170,8 @@
                     Dies ist das berühmte Problem P vs NP, von dem Sie sicher schon gehört haben und das als
                     eines der großen offenen Probleme der Mathematik insgesamt gilt. Die
                     Frage, ob NP-Probleme polynomiell große Schaltkreise haben, ist noch offener.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Formal gesehen ist Graphenfärbbarkeit eine Sprache
                         $L \subseteq \Sigma^*$ über einem Alphabet $\Sigma$, dass uns
                         erlaubt, Graphen zu codieren. Wie können wir $L$ als Boolesche Funktion darstellen?
@@ -226,14 +212,8 @@
                         Beachten Sie, dass wir vor den Monomen keine Koeffizienten brauchen, da es
                         als Konstanten eh nur 0 und 1 gibt.
                         Ein Polynom $p(\x)$ berechnet eine Boolesche Funktion $\fcube$.
-                        |> div
-                            class=well well-lg numbered-exercise container-fluid
-                            |> span
-                                class=numbered-title
-                                Übungsaufgabe 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                \ 
+                        |> Statement
+                            title=*Übungsaufgabe*
                             Zeigen Sie, dass sich jede Boolesche Funktion $f$
                             als $\F_2$-Polynom schreiben lässt.
                             *Tipp:* beschränken Sie sich zuerst auf Funktionen $f$,
@@ -246,14 +226,8 @@
                         Dagegen wären $x^2yz + x$ und $xyz+x$ _verschiedene_ Polynome.
                         Da wir über $\F_2$ arbeiten, beschränken wir uns aber eh auf multilineare Polynome,
                         wo also alle Exponenten 1 sind.
-                        |> div
-                            class=well well-lg numbered-exercise
-                            |> span
-                                class=numbered-title
-                                Übungsaufgabe 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                \ 
+                        |> Statement
+                            title=*Übungsaufgabe*
                             Zeigen Sie, dass sich jede Funktion $f :\fcube$ _eindeutig_
                             als multilineares $\F_2$-Polynom schreiben lässt. In anderen Worten:
                             wenn $p$ und $q$ zwei verschiedene multilineare Polynome sind, dann
@@ -272,14 +246,8 @@
                         \end{align*}
                         Gates. Allerdings ist das eine ungenaue Rechnung: Selbst wenn _alle_
                         $2^n$ Monome vertreten sind, bestehen nicht alle Monome aus $n$ Variablen.
-                        |> div
-                            class=well well-lg numbered-exercise
-                            |> span
-                                class=numbered-title
-                                Übungsaufgabe 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                \ 
+                        |> Statement
+                            title=*Übungsaufgabe*
                             Rechnen Sie genauer! Wenn Sie alle Monome berechnen wollen,
                             brauchen Sie
                             \begin{align*}
@@ -289,14 +257,8 @@
                         Als nächstes wollen wir zeigen, wie man $f$ mit höchstens $2^n$
                         AND-Gates und $2^n-1$ XOR-Gates berechnet. Wir zeigen in der Tat
                         etwas mehr:
-                        |> div
-                            class=well container-fluid theorem
-                            |> span
-                                class=numbered-title
-                                Lemma 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                \ 
+                        |> Statement
+                            title=*Lemma*
                             \ Es gibt einen
                             Schaltkreis $C_n$ mit $n$ Input-Gates $x_1, \dots, x_n$ und
                             $2^n$ Output-Gates, eines für jedes Monom $x^{I}$, der
@@ -400,25 +362,13 @@
                             Schaltkreis mit Input-Gates $z_1,\dots,z_k$ und $2^{2^k}$ Output-Gates, einen
                             für jede Funktion $g: \{0,1\}^k \rightarrow \{0,1\}$. Der Schaltkreis hat
                             Fan-in 2 und insgesamt $2^k + 2^{2^k}$ Gates (AND-Gates und XOR-Gates).
-                        |> div
-                            class=well well-lg numbered-exercise container-fluid
-                            |> span
-                                class=numbered-title
-                                Übungsaufgabe 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                \ 
+                        |> Statement
+                            title=*Übungsaufgabe*
                             Beweisen Sie das Lemma. Konstrukieren Sie zuerst wie
                             im vorherigen Lemma einen Schaltkreis, der Ihnen alle
                             Monome berechnet.
-                        |> div
-                            class=well well-lg numbered-exercise container-fluid
-                            |> span
-                                class=numbered-title
-                                Übungsaufgabe 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                \ 
+                        |> Statement
+                            title=*Übungsaufgabe*
                             Zeigen Sie, dass die obige Konstruktion verbessert werden kann, indem
                             Sie einen Schaltkreis mit nur $2^{2^k}$ Gates bauen.
                             *Tip.* Jedes Gate muss also gleichzeitig

@@ -37,14 +37,8 @@
                             Übungsaufgaben
                     |> SubTopic
                         Reguläre Sprachen und primitive Rekursion
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Sei $\Sigma = \{\sigma_1, \sigma_2, \dots, \sigma_k\}$ ein endliches Alphabet. Wir
                         können jedes Zeichen $\sigma_i \in \Sigma$ als
                         natürliche Zahl $i$ codieren. Ein Wort $\alpha \in \Sigma^*$
@@ -85,24 +79,12 @@
                     als Input akzeptiert.
                     Zeigen Sie: wenn $L \subseteq \Sigma^*$ regulär ist, dann gibt es für
                     jedes $n$ einen Schaltkreis $C$ mit $O(n)$ Gates, der $f_L$ berechnet.
-                |> div
-                    class=well well-lg numbered-exercise
-                    |> span
-                        class=numbered-title
-                        Übungsaufgabe 
-                        |> NumberedTitle
-                            ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                        \ 
+                |> Statement
+                    title=*Übungsaufgabe*
                     Verbessern Sie die obige Konstruktion: Ihr Schaltkreis $C$ sollte nun
                     Tiefe $O(\log(n))$ haben und vorzugsweise immer noch $O(n)$ Gates.
-                |> div
-                    class=well well-lg numbered-exercise
-                    |> span
-                        class=numbered-title
-                        Übungsaufgabe 
-                        |> NumberedTitle
-                            ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                        \ 
+                |> Statement
+                    title=*Übungsaufgabe*
                     \ *(Challenge).*
                     Betrachten wir eine Variante des endlichen Automaten, bei der
                     der Automat _zurückspulen_ kann. Der Automat hat also
@@ -126,37 +108,19 @@
                     geraten kann. In diesem Falle ist $\alpha$ _kein_ Wort in $L(M)$.
                     Zeigen Sie, dass $L(M)$ eine reguläre Sprache ist. Dass man also aus $M$
                     einen neuen Automaten $M'$ bauen kann, der nur nach rechts laufen kann.
-                |> div
-                    class=well well-lg numbered-exercise
-                    |> span
-                        class=numbered-title
-                        Übungsaufgabe 
-                        |> NumberedTitle
-                            ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                        \ 
+                |> Statement
+                    title=*Übungsaufgabe*
                     Sei $\Sigma = \{1,2, \dots, k\}$ und $L$ die Sprache aller
                     Wörter, in denen mindestens ein Zeichen fehlt, also
                     \begin{align*}
                     L = \bigcup_{i=1}^k (\Sigma \setminus \{i\})^*
                     \end{align*}
                     Zeigen Sie, dass ein endlicher Automat für $L$ mindestens $2^k$ Zustände braucht.
-                |> div
-                    class=well well-lg numbered-exercise
-                    |> span
-                        class=numbered-title
-                        Übungsaufgabe 
-                        |> NumberedTitle
-                            ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                        \ 
+                |> Statement
+                    title=*Übungsaufgabe*
                     Schreiben Sie eine reguläre Grammatik für $L$ mit höchstens $k+1$ Nichtterminalen.
-                |> div
-                    class=well well-lg numbered-exercise
-                    |> span
-                        class=numbered-title
-                        Übungsaufgabe 
-                        |> NumberedTitle
-                            ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                        \ 
+                |> Statement
+                    title=*Übungsaufgabe*
                     \ *(Challange.)*
                     Sei $L$ die Sprache aus der vorherigen Aufgabe und
                     $\bar{L} = \Sigma^* \setminus L$ ihr Komplement. $\bar{L}$ ist also

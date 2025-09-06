@@ -8,7 +8,7 @@
             <div class='chapter'>
                 <div class='subChapter'>
                     <h1 class='hidden-title'>
-                        <span class='subChapterTitle'>8.1 Das Zeithierarchietheorem</span>
+                        <span class='subChapterTitle'>9.1 Das Zeithierarchietheorem</span>
                     </h1>
 
 
@@ -89,7 +89,7 @@
                         dort $\enc(q)\texttt{,}\enc(z)$ steht. Das braucht $l+1$ Schritte.
                         Als nächstes müssen wir $\delta_M(q,z)$ bestimmen, müssen
                         wir $\enc(M)$ durchgehen und den Eintrag für $\enc(q)\texttt{,}\enc(z)$ suchen, was
-                        maximal $2 \cdot \enc(M)$ Schritte benötigt. Dann müssen wir den Schritt ausführen, also
+                        maximal $2 \cdot |\enc(M)|$ Schritte benötigt. Dann müssen wir den Schritt ausführen, also
                         den neuen Zustand auf Band 2 schreiben, das neue Zeichen in den Block auf dem Arbeitsband
                         eintragen und den Kopf bewegen. All das benötigt maximal $C \cdot |\enc(M)|$ Schritte.
                     </p>
@@ -168,7 +168,7 @@
                         Wir definieren eine Zeitbudgetierte Version der Diagonalisierungssprache:
                     </p>
                     \begin{align*}
-                    \bnegdiag := \{ \enc(M)1^m \ | \ \enc(M)1^{b} 0 \enc(M) 1^n \not \in \bhalt, \ b = t(|\enc(M)|+m) \}
+                    \bnegdiag := \{ \enc(M)1^m \ | \ \enc(M)1^{b} 0 \enc(M) 1^m \not \in \bhalt, \ b = t(|\enc(M)|+m) \}
                     \end{align*}
                     <div class='well container theorem' style="background-color: rgba(255,0,0,0.1);">
                         <p><span class='numbered-title'>Behauptung</span> <strong>(nicht ganz
@@ -200,9 +200,9 @@
                         </p>
                     </div class='well container theorem'>
 
-                    <p>So weit, so gut. Wonach wir allerdings aus sind, ist ein Beweis, dass $\bnegdiag$ nicht
+                    <P>So weit, so gut. Wonach wir allerdings aus sind, ist ein Beweis, dass $\bnegdiag$ nicht
                         signifikant schneller zu berechnen ist.
-                    </p>
+                    </P>
                     <div class='well container theorem'>
                         <p><span class='numbered-title'>Lemma</span> Sei $s: \N \rightarrow \N$ eine Funktion mit
                             $s(n) \geq n$ und
@@ -218,7 +218,7 @@
                         </p>
                         \begin{align*}
                         x1^m \in \bnegdiag & \Longleftrightarrow \enc(M) 1^b 0 x1^m \not \in \bhalt \\
-                        &\Longleftrightarrow U \textnormal{ lehnt $\enc(M)x1^m$ innerhalb von $b$ Schritten ab}
+                        &\Longleftrightarrow U \textnormal{ akzeptiert $\enc(M)x1^m$ nicht innerhalb von $b$ Schritten}
                         \end{align*}
                         <p>
                             Langsam nun. Sei $n := |\enc(M)|+m$ die Länge des Wortes $x1^m$.
@@ -247,7 +247,10 @@
                         </p>
                         \begin{align*}
                         x1^m \in \bnegdiag & \Longleftrightarrow \enc(M) 1^b 0 x1^m \not \in \bhalt \\
-                        &\Longleftrightarrow U \textnormal{ lehnt $\enc(M)x1^m$ innerhalb von $b$ Schritten ab} \\
+                        &\Longleftrightarrow U \textnormal{ akzeptiert $\enc(M)x1^m$ nicht innerhalb von $b$ Schritten}
+                        \\
+                        &\Longleftrightarrow U \textnormal{ lehnt $\enc(M)x1^m$ innerhalb von $b$ Schritten ab}
+                        \tag{weil $b$ groß genug}\\
                         &\Longleftrightarrow U \textnormal{ lehnt $\enc(M)x1^m$ ab} \\
                         & \Longleftrightarrow M \textnormal{ lehnt $x1^m$ ab} \\
                         \end{align*}
@@ -273,7 +276,8 @@
                         <p>für alle $k \geq 1$.</p>
                     </div class='well container theorem'>
                     <p>
-                        Zusammen mit der Simulation von $k$-Band-TMs durch $2$-Band-TMs folgt nun
+                        Zusammen mit der Simulation von $k$-Band-TMs durch $2$-Band-TMs,
+                        also <span class='reference' data-ref='k-tape-to-2-tape'></span> folgt nun
                     </p>
                     \begin{align*}
                     \TIME(s) \subsetneq \TIME_2(s \log s) \subsetneq \TIME_5(t \log t)

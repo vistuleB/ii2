@@ -85,14 +85,8 @@
                         f = `if` \(x\) `then` \(\bar{y} \vee z\)
                         `else` \(y \vee z\).
                     Jetzt können wir das mit unserem if-then-else-Schaltkreis kombinieren.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Führen Sie die Konstruktion zu Ende, indem Sie \(\bar{y} \vee z\) und
                         \(y \vee z\) mit dem if-then-else-Schaltkreis kombinieren.
                     Können wir das mit beliebigen Funktionen machen? Ja klar! Wir gehen
@@ -128,14 +122,8 @@
                         erhalten eine Funktion in den restlichen \(n-1\) Variablen.
                     Das Ergebnis ist im Allgemeinen sehr groß, aber was erwarten Sie bei
                     einer Tabelle mit \(2^n\) Zeilen?
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Führen Sie das rekursive Verfahren durch, um für die folgende Funktion
                         auf 4 Variablen einen Schaltkreis zu bauen: $$ \begin{array}{cccc|c} u
                         &amp;x&amp;y&amp;z&amp;f \\\hline 0&amp;0&amp;0&amp;0&amp;1 \\ 0&amp;0&amp;0&amp;1&amp;1 \\ 0&
@@ -188,14 +176,8 @@
                         Termen.
                         Alternativ: eine DNF ist ein Schaltkreis der Tiefe 2 (wobei
                         NOT-Gates nicht mitzählen), dessen Output-Gate ein OR-Gate ist.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Was, wenn einige der "mittleren" Gates (auf Tiefe 1) keine AND-Gates
                         sind, sondern auch OR-Gates? Dann wäre dies nach der ersten Definition
                         _keine_ DNF-Formel, nach der zweiten aber schon. Zeigen Sie,
@@ -244,35 +226,17 @@
                     z.B. :
                     $$ (\bar{x} \wedge y \wedge \bar{z}) \vee (\bar{x} \wedge y \wedge z)
                     \equiv \bar{x} \wedge y \ . $$
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Minimieren Sie die obige DNF (die mit den 6 Termen), indem Sie gewisse
                         Paare von Termen zu einem kürzeren zusammenfassen.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Zeigen Sie, dass es zu jeder Booleschen Funktion \(f: \{0,1\}^n
                         \rightarrow \{0,1\}\) eine äquivalente DNF-Formel mit höchstens
                         \(2^{n-1}\) Termen gibt.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Zeigen Sie, dass jede DNF-Formel für die Boolesche Funktion \(x_1
                         \oplus \dots \oplus x_n\) genau \(2^{n-1}\) Terme besitzen muss.
                     Sie haben eventuell von Methoden zur Minimierung von DNFs bzw. CNFs

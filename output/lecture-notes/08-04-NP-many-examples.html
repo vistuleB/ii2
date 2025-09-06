@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <link rel="icon" href="data:,">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+    <link rel="stylesheet" type="text/css" href="../TI.css" />
+    <link rel="stylesheet" type="text/css" href="../tooltip-3003.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../numbered-title.js"></script>
+    <script type="text/javascript" src="../mathjax_setup.js"></script>
+    <script type="text/javascript" src="../carousel.js"></script>
+    <script type="text/javascript" src="../sendCmdTo3003.js"></script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<section
+  count="55"
+  .="BookLevelSectionCounter 55"
+  title_gr="Beispiele aus NP"
+  title_en="NP many examples"
+  number="8.4"
+  counter="DefCtr"
+  counter="ExoCtr"
+  path="/lecture-notes55"
+>
+  <div id="link-to-toc">
+    <a href="../vorlesungsskript.html">Inhaltsverzeichnis</a><a href="08-03-nondeterministic-time.html">&lt;&lt; Kapitel 8.3</a>
+  </div>
+  <div
+    id="link-to-overview"
+    style="text-align: end"
+  >
+    <a href="/">zur Kursübersicht</a><a href="08-05-NP-reductions.html">Kapitel 8.5 &gt;&gt;</a>
+  </div>
+  <div id="rightSideWrapper">
+    <div class="content">
+      <div class="chapter">
+        <div class="subChapter">
+          <h1 class="hidden-title">
+            <span class="subChapterTitle">::::ChapterCtr.5
+              Viele Beispiele aus NP</span>
+          </h1>
+          <Statement title="*Problem*">
+            (<span style="font-variant: small-caps;">3-Colorability</span>).
+            Gegeben ein Graph $G= (V,E)$, gibt es eine Färbung
+            $c : V \rightarrow \{1,2,3\}$ mit
+            $$
+            \begin{align*}
+            \forall\ \{u,v\} \in E: \ c(u) \ne c(v) \ ?
+            \end{align*}
+            $$
+          </Statement>
+          <figure>
+            <div style="display: inline-block; width:45%; justify-content: center;">
+              <img
+                style="width:80%"
+                src="../img/09-complexity-theory/np-examples/peterson-3-colorable.svg"
+              >Der Peterson-Graph ist 3-färbbar.
+            </div>
+            <div style="display: inline-block; width:45%">
+              <img
+                style="width:80%"
+                src="../img/09-complexity-theory/np-examples/not-3-colorable.svg"
+              >Dieser Graph ist nicht 3-färbbar
+            </div>
+          </figure>
+          <Statement title="*Beobachtung*">
+            <span style="font-variant: small-caps;">3-Colorability</span>
+            ist in NP.
+          </Statement>
+        </div>
+        <b>Beweis.</b>
+        Wir müssen nun eine Zertifikatmaschine mit polynomieller Laufzeit angeben. Um uns
+        nicht in technischen Details zu verlieren, werden wir einfach einen Algorithmus angeben,
+        der zwei Inputs entgegennimmt: den Graphen $G$ (im Turingmaschinenkontext also das
+        Eingabewort $x$) und ein
+        <i>Zertifikat</i>. Hier ist unser Code:
+<pre class="listing">
+<code>def is_3_coloring(graph, c):</code>
+ <code>(V,E) = graph</code> 
+ <code>for (u,v) in E:</code>
+ <code>if c[u] == c[v]:</code>
+ <code>return False</code> 
+ <code>if c[u] not in [1,2,3] or c[v] not in [1,2,3]:</code>
+ <code>return False</code> 
+ <code>return True</code>
+</pre>
+        Falls nun $G$ $3$-färbbar ist, wenn es also eine solche Färbung $c: V \rightarrow \{1,2,3\}$
+        gibt,
+        dann wird obiger Algorithmus
+        <code>is_3_coloring(graph,c)</code>
+        auch
+        <code>True</code>
+        ausgeben.
+        Falls er für ein $c$
+        <code>True</code>
+        ausgibt, dann ist $c$ tatsächlich eine
+        gültige 3-Färbung und $G$ ist $3$-färbbar.
+        <QED>
+        </QED>
+      </div>
+      Das obige Beispiel verdeutlicht die Essenz der Klasse NP: es ist nicht klar, wie wir
+      einen effizienten Algorithmus für
+      <span style="font-variant: small-caps;">3-Colorability</span>schreiben können; aber
+      <i>überprüfen</i>, ob eine gegebene Färbung eine 3-Färbung
+      von $G$ ist, das ist einfach.
+    </div>
+    <Statement title="*Problem*">
+      (<span style="font-variant: small-caps;">CNF-Satisfiability</span>).
+      Gegeben eine Formel $F$ in konjunktiver Normalform. Gibt es eine
+      Belegung der Variablen, so dass $F$ zu
+      <code>True</code>
+      wird?
+    </Statement>
+    Auch hier können wir eine einfache Prüf-Funktion schreiben, die eine Formel $F$ und
+    eine Belegung $\alpha$ entgegennimmt, dann jede Klausel auswertet und schaut,
+    ob immer
+    <code>True</code>
+    rauskommt. Somit gilt: auch<span style="font-variant: small-caps;">CNF-Satisfiability</span>
+    ist in NP.
+    <Statement title="*Problem*">
+      (<span style="font-variant: small-caps;">Subset Sum</span>).
+      Gegeben eine Liste $p_1, \dots, p_n \in \N$ von "Preisen" und ein
+      "Guthaben" $g \in \N$, gibt es eine Menge $I \subseteq [n]$ mit
+      $$
+      \begin{align*}
+      \sum_{i \in I} p_i = g \ ?
+      \end{align*}
+      $$
+    </Statement>
+    Dies ist ebenfalls in NP.
+    <Topic>
+      Finden versus Entscheiden
+    </Topic>
+    Sei $G = (V,E)$ ein Graph. Eine Menge $I \subseteq V$ heißt
+    <i>unabhängig</i>, wenn
+    es keine Kante $\{u,v\} \in E$ gibt mit $u,v \in I$.
+    <Statement title="*Problem*">
+      Gegeben ein Graph $G=(V,E)$ und eine Zahl $k$.
+      Finde eine unabhängige Menge in $I$ in $G$ mit $|I| \geq k$, falls es eine solche gibt.
+    </Statement>
+    Ist dies in NP?
+    Schon syntaktisch nicht! Es ist ja gar kein Entscheidungsproblem.
+    Wir können aber eine Entscheidungsvariante definieren:
+    <Statement title="*Problem*">
+      (<span style="font-variant: small-caps;">Independent Set</span>)
+      Gegeben ein Graph $G=(V,E)$ und eine Zahl $k$.
+      Gibt es eine unabhängige Menge in $I$ in $G$ mit $|I| \geq k$?
+    </Statement>
+    Das Entscheidungsproblem
+    <span style="font-variant: small-caps;">Independent Set</span>ist offensichtlich in NP. Als Zertifikat kommt z.B. einfach die Menge $I$ in Frage.
+    Für alle Entscheidungsprobleme, die wir oben als Beispiele aufgelistet haben, kann man
+    ganz natürlich das zugehörige Suchproblem definieren: gegeben ein
+    Graph, finde eine 3-Färbung (falls es sie gibt); gegeben
+    eine CNF-Formel, finde eine erfüllende Belegung (falls es sie gibt); gegeben
+    ein Instanz von
+    <span style="font-variant: small-caps;">Subset Sum</span>, finde
+    eine Menge $I$ mit $\sum_{i \in I} p_i = g$.
+    <Statement title="*Übungsaufgabe*">
+      Zeigen Sie für folgende Probleme, dass wir, falls wir einen effizienten Algorithmus
+      dafür haben, dann auch einen effizienten Algorithmus schreiben können,
+      der das entsprechende Objekt findet, falls es denn existiert!
+      <ul>
+        <li>
+          <span style="font-variant: small-caps;">Subset Sum</span>
+          (das ist einfach),
+        </li>
+        <li>
+          <span style="font-variant: small-caps;">Independent Set</span>
+          (das ist auch recht
+          einfach),
+        </li>
+        <li>
+          <span style="font-variant: small-caps;">CNF-Satisfiability</span>
+          (auch),
+        </li>
+        <li>
+          <span style="font-variant: small-caps;">3-Colorability</span>
+          (das ist trickreicher).
+        </li>
+      </ul>
+    </Statement>
+    Dies geht nicht immer! Erinnern Sie sich an
+    <span style="font-variant: small-caps;">Primes</span>.
+    Der Agrawal–Kayal–Saxena-Algorithmus lässt uns entscheiden, ob eine gegebene Zahl $n$
+    prim ist; also auch, ob $n$ zusammengesetzt ist; allerdings geht daraus kein
+    Algorithmus hervor, der einen Faktor auch findet.
+    Wo wir gerade beim Faktorisieren sind: das Problem
+    <i>gegeben eine Zahl $X \in \N$, zerlege
+      sie in ihre Primfaktoren</i>
+    ist ja kein Entscheidungsproblem. Können wir
+    ein "entsprechendes" Entscheidungsproblem formulieren? Es sollte gelten:
+    wenn wir das Entscheidungsproblem lösen können, dann auch das Suchproblem. Wie wir
+    gesehen haben, ist
+    <span style="font-variant: small-caps;">Primes</span>
+    bzw.<span style="font-variant: small-caps;">NonPrimes</span>nicht das
+    entsprechende Entscheidungsproblem, weil es uns nicht erlaubt, den Faktor auch zu finden.
+    <Statement title="*Problem*">
+      (<span style="font-variant: small-caps;">Small Factor</span>)
+      Gegeben eine Zahl $X \in \N$, binär codiert als $x \in \{0,1\}^n$, und eine
+      Zahl $K \in \N$: gibt es einen echten Teiler $Z$ von $\N$ mit $Z \leq K$?
+    </Statement>
+    <Statement title="*Übungsaufgabe*">
+      Zeigen Sie: wenn man
+      <span style="font-variant: small-caps;">Small Factor</span>
+      effizient
+      lösen kann, dann kann man auch die Primzahlfaktorisierung von $X$ effizient finden.
+      <b>Hinweis:</b>
+      <i>Effizient</i>
+      heißt in diesem Zusammenhang
+      <i>polynomiell in der Anzahl der Bits.</i>
+      Der Algorithmus
+      <i>probiere alle kleineren
+        Zahlen aus</i>, ob sie $X$ teilen, ist
+      <i>nicht</i>
+      effizient!
+    </Statement>
+    Das Entscheidungsproblem
+    <span style="font-variant: small-caps;">Small Factor</span>ist offensichtlich in NP: das Zertifikat $z$ ist jener Faktor (so er denn existiert), und
+    die Zertifikatmaschine $M$ muss nun $z$ mit $K$ multiplizieren und schauen, ob auch
+    $X$ herauskommt. Nicht so offensichtlich jedoch ist folgendes:
+    <Statement title="*Übungsaufgabe*">
+      Sei
+      <span style="font-variant: small-caps;">No Small Factor</span>das Komplement von
+      <span style="font-variant: small-caps;">Small Factor</span>, also
+      $$
+      \begin{align*}
+      \{ x\texttt{;}k \ | \ x, k \in \{0,1\}^*
+      \textnormal{ und $(x)_2$ hat keinen echten Teiler $Z \leq (k)_2$} \} \ ,
+      \end{align*}
+      $$
+      wobei $(x)_2$ und $(k)_2$ die von $x$ und $k$ codierten natürlichen Zahlen sind.
+    </Statement>
+    Diese Übungsaufgabe ist quasi eine Warnung: was denn eine
+    Zertifikatmaschine auf ihrem zweiten Band erwartet, das geht nicht
+    immer aus der Problemstellung hervor!
+  </div>
+</section>
+</body>

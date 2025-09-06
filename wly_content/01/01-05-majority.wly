@@ -57,14 +57,8 @@
                     Was geschieht, wenn wir einfach die Wahrheitstabellen-Methode anwenden?
                     Falls \(n\) ungerade ist, dann sieht man leicht, dass die Wahrheitstabelle
                     in genau \(2^{n-1}\) vielen Zeilen eine 1 stehen hat und in ebenso vielen eine 0.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Sei \(n\) eine ungerade Zahl. Zeigen Sie, dass \(\maj_n\) für genau
                         die Hälfte aller \(2^n\) möglichen Eingaben eine 1 ausgibt (und für die
                         andere Hälfte eine 0).
@@ -258,14 +252,8 @@
                             style=height:12em
                             src=../img/circuits/majority-by-adding.svg
                             loading=lazy
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Bestimmen Sie asymptotisch die Größe und die Tiefe dieses Schaltkreises.
                         Achten Sie besonders bei der Berechnung der Größe darauf, dass die untersten Add-Gadgets
                         ja 1-stellige oder dann 2-stellige Zahlen addieren müssen und erst die weniger obersten Gadgets
@@ -340,14 +328,8 @@
                         Die Konstruktion mit 2-for-3-Addierern gibt uns einen Schaltkreis
                         für Majority mit Fan-in 2, Tiefe \(O(\log n)\) und
                         Größe \(O (n \log n)\)
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Führen Sie eine genauere Abschätzung der Größe durch. Untersuchen Sie insbesondere:
                         |> ol
                             |> li
@@ -394,14 +376,8 @@
                     aus normalen \(\vee\)-Gates von Fan-in 2 ersetzen. Dies gibt uns zusätzlich
                     Tiefe \(O(\log n)\) _pro \(\bigvee\)-Gate_; wir erhalten also insgesamt
                     eine Tiefe von \(O(\log^2 n)\).
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         dass polynomiell viele (in diesem Falle: \(O(n^2)\) viele) Gates ausreichen.
                         Zeigen Sie, wie die gerade skizzierte Konstruktion so ausgeführt werden kann,
                     |> SubTopic
@@ -429,14 +405,8 @@
                         _Wahrscheinlichkeitsverteilungen über Schaltkreisen_, nicht
                         von über Inputs. Zuerst definieren wir
                         die _Signalstärke_ von Verteilungen über Schaltkreise.
-                        |> div
-                            class=well subtheorem theorem
-                            |> span
-                                class=numbered-title
-                                Definition 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                \  (Signalstärke)
+                        |> Statement
+                            title=*Definition*
                             Sei \(\mathcal{C}\) eine Verteilung über Schaltkreise mit Input-Variablen
                             \(x_1,\dots,x_n\). Wir sagen, dass \(\mathcal{C}\) _Signalstärke mindestens $\delta$_
                             hat, wenn
@@ -449,14 +419,8 @@
                         \(\maj_n(x)\) besser als ein Münzwurf vorhersagt, und zwar um \(\delta/2\) besser.
                         Wir können einen ganz einfachen (zufälligen Schaltkreis)
                         bauen, der ein schwache aber positive Signalstärke hat.
-                        |> div
-                            class=well subtheorem theorem
-                            |> span
-                                class=numbered-title
-                                Lemma 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                \ .
+                        |> Statement
+                            title=*Lemma*
                             Es gibt eine Wahrscheinlichkeitsverteilung \(\mathcal{C}_0\) über monotone Schaltkreise der
                             Größe 1,
                             die Signalstärke \(\frac{1}{n}\) hat.
@@ -469,8 +433,7 @@
                             \forall \x \in \cube^n: \quad
                             \Pr_{C \sim \mathcal{C}_0} [C(\x) = \maj_n(\x)] = \frac{1}{2} + \frac{1}{2n} \ .
                             $$
-                        |> div
-                            class=well subtheorem
+                        |> Remark
                             *Beweis.*
                             Der Schaltkreis bzw. die Wahrscheinlichkeitsverteilung ist extrem einfach.
                             Wir wählen zufällig einen Index \(I \in \{1,\dots,n\}\) und
@@ -517,14 +480,8 @@
                         einen neuen Schaltkreis bauen: \(C'(\x) := \maj_3 (C_1(\x), C_2(\x), C_3(\x))\). Dies gibt
                         uns wiederum eine Verteilung über Schaltkreise, die wir
                         \(\mathcal{C}^{\otimes 3}\) nennen. Diese hat eine höhere Signalstärke:
-                        |> div
-                            class=well subtheorem theorem
-                            |> span
-                                class=numbered-title
-                                Lemma 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                \ 
+                        |> Statement
+                            title=*Lemma*
                             Falls \(\mathcal{C}\) eine Verteilung über Schaltkreise der Tiefe
                             \(d\) und Größe \(s\) ist und \(\mathcal{C}\) Signalstärke \(\delta\) hat, dann gilt:
                             |> ol
@@ -709,14 +666,8 @@
                         Gates. Ein Schaltkreis mit Fan-in 2 und Tiefe $c \log_2 n$ hat also
                         insgesamt höchstens $2^{c \log n + 1 } - 1 = O(n^c) = O(\poly(n))$ Gates.
                         |> QED
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Präzisieren Sie die Größe von Valiants Schaltkreis und bestimmen ein $c \in \R$, so dass
                         er die Größe $\Theta(n^c)$ hat.
                     Wir könnten nun noch ehrgeiziger sein und einen monotonen Schaltkreis mit Fan-in 2,

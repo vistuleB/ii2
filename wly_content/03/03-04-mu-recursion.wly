@@ -103,14 +103,8 @@
                         \   `temp = step(temp)`
                         \  `return temp` 
                         \ `return f` 
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Schreiben Sie mit Hilfe von `While`, `PrimRec` und `Comp`
                         eine Funktion `collatzList`, die aus einer Zahl
                         die Collatz-Folge baut, also

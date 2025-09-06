@@ -487,20 +487,13 @@
                         Es ist also ein "strengeres" Problem als das PCP.
                         Das zweite Beispiel oben war eine Instanz von MPCP - dort hatten
                         wir die türkise Kachel als Startkachel markiert.
-                        |> div
-                            class=well subtheorem theorem
-                            |> span
-                                class=numbered-title
-                                Lemma 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                                \ 
+                        |> Statement
+                            title=*Lemma*
                             Gegeben ein MPCP-Puzzle \(S\), so können wir ein
                             (normales) PCP-Puzzle \(S'\) erstellen,
                             mit der Eigenschaft, dass \(S\) eine Lösung
                             hat genau dann, wenn \(S'\) eine Lösung hat.
-                        |> div
-                            class=well subtheorem
+                        |> Remark
                             *Beweis.*
                             Im MPCP zwingen uns bereits die Spielregeln, mit der
                             markierten Startkachel zu beginnen. Wir müssen

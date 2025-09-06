@@ -450,14 +450,8 @@
                         Zustand $q$ (der also $\boxed{X\rightarrow \beta.}$ enthält) und
                         eine ausgehende Kante $q \step{\sigma} q'$ mit einem Terminal
                         $\sigma$.
-                        |> div
-                            class=well well-lg numbered-exercise container-fluid
-                            |> span
-                                class=numbered-title
-                                Übungsaufgabe 
-                                |> NumberedTitle
-                                    ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                                \ 
+                        |> Statement
+                            title=*Übungsaufgabe*
                             Zeigen Sie: wenn $G$ keine nutzlosen Nichtterminale hat, dann gibt
                             es im NDK-Automaten für jeden Zustand $q$ eine Übergangsfolge $q
                             \steps{v} q'$ zu einem akzeptierenden Zustand $q'$, wobei $v$

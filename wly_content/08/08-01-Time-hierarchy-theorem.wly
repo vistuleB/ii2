@@ -19,8 +19,8 @@
             href=/
             zur Kursübersicht
         |> a
-            href=09-00-appendix.html
-            Kapitel 9.0 &gt;&gt;
+            href=08-02-Turing-machines-and-circuits.html
+            Kapitel 8.2 &gt;&gt;
     |> div
         id=rightSideWrapper
         |> div
@@ -107,7 +107,7 @@
                     dort $\enc(q)\texttt{,}\enc(z)$ steht. Das braucht $l+1$ Schritte.
                     Als nächstes müssen wir $\delta_M(q,z)$ bestimmen, müssen
                     wir $\enc(M)$ durchgehen und den Eintrag für $\enc(q)\texttt{,}\enc(z)$ suchen, was
-                    maximal $2 \cdot \enc(M)$ Schritte benötigt. Dann müssen wir den Schritt ausführen, also
+                    maximal $2 \cdot |\enc(M)|$ Schritte benötigt. Dann müssen wir den Schritt ausführen, also
                     den neuen Zustand auf Band 2 schreiben, das neue Zeichen in den Block auf dem Arbeitsband
                     eintragen und den Kopf bewegen. All das benötigt maximal $C \cdot |\enc(M)|$ Schritte.
                     |> Topic
@@ -169,7 +169,7 @@
                     Sei nun $t: \N \rightarrow \N$ eine monoton steigende Funktion mit $t(n) \geq n$.
                     Wir definieren eine Zeitbudgetierte Version der Diagonalisierungssprache:
                     \begin{align*}
-                    \bnegdiag := \{ \enc(M)1^m \ | \ \enc(M)1^{b} 0 \enc(M) 1^n \not \in \bhalt, \ b = t(|\enc(M)|+m) \}
+                    \bnegdiag := \{ \enc(M)1^m \ | \ \enc(M)1^{b} 0 \enc(M) 1^m \not \in \bhalt, \ b = t(|\enc(M)|+m) \}
                     \end{align*}
                     |> Statement
                         title=*Behauptung*
@@ -195,8 +195,9 @@
                         \ *(jetzt korrekt).* Sei
                         $t: \N \rightarrow \N$ zeitkonstruierbar, monoton steigend und $t(n) \geq n$. Dann gilt
                         $\bnegdiag \in \TIME_{k+3}(t)$.
-                    So weit, so gut. Wonach wir allerdings aus sind, ist ein Beweis, dass $\bnegdiag$ nicht
-                    signifikant schneller zu berechnen ist.
+                    |> P
+                        So weit, so gut. Wonach wir allerdings aus sind, ist ein Beweis, dass $\bnegdiag$ nicht
+                        signifikant schneller zu berechnen ist.
                     |> Statement
                         title=*Lemma*
                         \ Sei $s: \N \rightarrow \N$ eine Funktion mit
@@ -211,7 +212,7 @@
                         nun: ist $x1^m \in \bnegdiag$?
                         \begin{align*}
                         x1^m \in \bnegdiag&amp;\Longleftrightarrow \enc(M) 1^b 0 x1^m \not \in \bhalt \\
-                        &\Longleftrightarrow U \textnormal{ lehnt $\enc(M)x1^m$ innerhalb von $b$ Schritten ab}
+                        &\Longleftrightarrow U \textnormal{ akzeptiert $\enc(M)x1^m$ nicht innerhalb von $b$ Schritten}
                         \end{align*}
                         Langsam nun. Sei $n := |\enc(M)|+m$ die Länge des Wortes $x1^m$.
                         Nach Annahme terminiert $M$ auf dem Eingabewort $x1^m$ innerhalb von
@@ -239,7 +240,10 @@
                         wenn sie es überhaupt irgendwann ablehnt. Also schließen wir weiter:
                         \begin{align*}
                         x1^m \in \bnegdiag&amp;\Longleftrightarrow \enc(M) 1^b 0 x1^m \not \in \bhalt \\
-                        &\Longleftrightarrow U \textnormal{ lehnt $\enc(M)x1^m$ innerhalb von $b$ Schritten ab} \\
+                        &\Longleftrightarrow U \textnormal{ akzeptiert $\enc(M)x1^m$ nicht innerhalb von $b$ Schritten}
+                        \\
+                        &\Longleftrightarrow U \textnormal{ lehnt $\enc(M)x1^m$ innerhalb von $b$ Schritten ab}
+                        \tag{weil $b$ groß genug}\\
                         &\Longleftrightarrow U \textnormal{ lehnt $\enc(M)x1^m$ ab} \\
                         &amp;\Longleftrightarrow M \textnormal{ lehnt $x1^m$ ab} \\
                         \end{align*}
@@ -258,7 +262,12 @@
                         \TIME_k(s) \subsetneq \TIME_{k+3}(t)
                         \end{align*}
                         für alle $k \geq 1$.
-                    Zusammen mit der Simulation von $k$-Band-TMs durch $2$-Band-TMs folgt nun
+                    Zusammen mit der Simulation von $k$-Band-TMs durch $2$-Band-TMs,
+                    also 
+                    |> span
+                        data-ref=k-tape-to-2-tape
+                        class=reference
+                    \ folgt nun
                     \begin{align*}
                     \TIME(s) \subsetneq \TIME_2(s \log s) \subsetneq \TIME_5(t \log t)
                     \end{align*}
@@ -273,12 +282,6 @@
                     also $\TIME_k(t) \subseteq \TIME_2(t \log t)$ nicht erklärt habe. Mit der ineffiziten, also
                     $\TIME_k(t) \subseteq \TIME_1(t^2)$, erhalten wir
                     einen Zeithierarchiesatz solange $s^2 \in o(t)$ ist.
-                    |> div
-                        class=well well-lg numbered-exercise
-                        |> span
-                            class=numbered-title
-                            Übungsaufgabe 
-                            |> NumberedTitle
-                                ::::ChapterCtr.::::SectionCtr.::++ExoCtr
-                            \ 
+                    |> Statement
+                        title=*Übungsaufgabe*
                         Zeigen Sie, dass $n \mapsto n^2$ und $n \mapsto 2^n$ zeitkonstruierbar sind.
