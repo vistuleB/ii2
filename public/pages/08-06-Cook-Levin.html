@@ -1,0 +1,252 @@
+<div id="rightSideWrapper">
+        <div class="content">
+            <div class='chapter'>
+                <div class='subChapter'>
+                    <h1 class='hidden-title'>
+                        <span class='subChapterTitle'>9.6 Ganz NP reduziert auf SAT: das Cook-Levin-Theorem</span>
+                    </h1>
+                    <p>
+                        Hier eine kurze Übersicht über die Reduktionen, die Sie im
+                        vorherigen Kapitel kennengelernt haben.
+                    </p>
+                    <ol>
+                        <li><span style="font-variant: small-caps;">3-Colorability $\leq_p$ CNF-Satisfiability</span>
+                        </li>
+                        <li><span style="font-variant: small-caps;">CNF-Satisfiability $\leq_p$ 3-SAT</span></li>
+                        <li><span style="font-variant: small-caps;">3-SAT $\leq_p$ 3-Colorability</span></li>
+                        <li><span style="font-variant: small-caps;">3-SAT $\leq_p$ Independent Set</span></li>
+                        <li><span style="font-variant: small-caps;">Hamilton Path $\leq_p$ Hamilton Cycle</span>
+                        </li>
+                        <li><span style="font-variant: small-caps;">Hamilton Cycle $\leq_p$ Hamilton Path</span>
+                        </li>
+                    </ol>
+                    <p>
+                        Mit etwas Anstrengung würden wir auch
+                        <span style="font-variant: small-caps;">Hamilton Path $\leq_p$ CNF-Satisfiability</span>
+                        hinkriegen. Alle erwähnten Probleme Mitglieder von NP: wir können
+                        Ja-Instanzen effizient verifizieren. Gibt es in NP "Allzweckwaffen", also
+                        Probleme, mit deren Hilfe wir <em>alle anderen</em> NP-Probleme lösen könnten?
+                    </p>
+
+                    <div class='well container theorem'>
+                        <p><span class='numbered-title' id='definition-np-completeness'
+                                data-label-title='Definition'>Definition</span>
+                            Ein Entscheidungsproblem $L \subseteq \Sigma^*$ heißt
+                            <em>NP-schwer</em>, wenn für jedes Problem $K \in {\rm NP}$ gilt:
+                            $K \leq_p L$. Wenn sich also jedes NP-Problem auf $K$ in polynomieller
+                            Zeit reduzieren lässt.
+                        </p>
+                        <p>
+                            $L$ ist
+                            NP-<em>vollständig</em>, wenn zusätzlich $L$ selbst in NP ist.
+                        </p>
+                    </div class='well container theorem'>
+
+                    <div class='well container theorem'>
+                        <p><span class='numbered-title' id='theorem-cook-levin'
+                                data-label-title='Theorem'>Theorem</span>
+                            <strong>(Cook-Levin-Theorem).</strong> 3-SAT ist NP-vollständig. In anderen Worten:
+                            Sei $L$ ein beliebiges Entscheidgungsproblem aus NP. Dann
+                            gilt <span style="font-variant: small-caps;">$L \leq_p$ 3-SAT</span>.
+                        </p>
+                    </div class='well container theorem'>
+                    <p>
+                        Wir führen das Zwischenproblem
+                        <span style="font-variant: small-caps;">Circuit-SAT</span> ein und zeigen
+                        (1) dass $L \leq_p$ <span style="font-variant: small-caps;">Circuit-SAT</span>
+                        und (2)
+                        <span style="font-variant: small-caps;">Circuit-SAT $\leq_p$ 3-SAT</span> gilt.
+                    </p>
+                    <div class='well well-lg numbered-exercise container'>
+                        <p><span class='numbered-title' id='problem-circuit-sat'
+                                data-label-title='Problem'>Problem</span>
+                            (<span style="font-variant: small-caps;">Circuit-SAT</span>). Gegeben
+                            ein Boolescher Schaltkreis $C$ mit $n$ Eingabevariablen. Gibt
+                            es ein $x \in \{0,1\}^n$ mit $C(x) = 1$?
+                        </p>
+                    </div class='numbered-exercise'>
+                    <p>
+                        Offensichtlich gilt
+                        <span style="font-variant: small-caps;">CNF-Satisfiability $\leq_p$ Circuit-SAT</span>
+                        und
+                        <span style="font-variant: small-caps;">3-SAT $\leq_p$ Circuit-SAT</span>, da
+                        CNF-Formeln (und somit auch $3$-CNF-Formeln) Spezialfälle Boolescher Schaltkreise sind.
+                    </p>
+                    <div class='well container theorem'>
+                        <p><span class='numbered-title' id='lemma-circuit-sat-np-complete'
+                                data-label-title='Lemma'>Lemma</span> Sei $L \in {\rm NP}$. Dann
+                            gilt <span style="font-variant: small-caps;">$L \leq_p$ Circuit-SAT</span>.</p>
+                    </div class='well container theorem'>
+                    <div class='well container'>
+                        <p><strong>Beweis.</strong> Wir können annehmen, dass $L \subset \{0,1\}^*$, da wir
+                            andernfalls eine geeignete Codierung $\Sigma \rightarrow \{0,1\}^*$ wählen können.
+                            Da $L \in {\rm NP}$ ist, gibt es ein $k \in \N$ und eine Zertifikatmaschine $M$ mit Laufzeit
+                            $t(n) = n^k$, so dass
+                        </p>
+                        \begin{align*}
+                        x \in L \Longleftrightarrow \exists z \in \{0,1\}^{t(|x|)}: M(x,z) = \texttt{accept}
+                        \end{align*}
+                        <p>
+                            <span class='reference' data-ref='theorem-tms-to-circuits'></span> besagt,
+                            dass wir eine Turingmaschine von Laufzeit $t(n)$ in einen Schaltkreis
+                            $C$ der Größe $O(t(n)^2)$ umformen können, so dass
+                        </p>
+                        \begin{align*}
+                        \forall x \in \{0,1\}^n: \quad x \in L \Longleftrightarrow C(x) = 1 \ .
+                        \end{align*}
+                        <p>
+                            Diese Konstruktion funktioniert für jede Inputgröße $n$, aber wir müssen $n$
+                            natürlich zum Zeitpunkt der Umformung kennen.
+                            Der gleiche Beweis lässt uns die Zertifikatmaschine $M$, die zwei Inputs $x$ und $z$
+                            nimmt, in einen Schaltkreis $C$ von Größe $O(t(n)^2)$ mit $n + t(n)$ Eingabevariablen
+                            umformen,
+                            so dass
+                        </p>
+                        \begin{align*}
+                        \forall x \in \{0,1\}^n, z \in \{0,1\}^{t(n)}: \quad
+                        M(x,z) = \texttt{accept} \Longleftrightarrow C(x,z) = 1
+                        \end{align*}
+                        <p>
+                            Somit gilt für jedes $x \in \{0,1\}^n$ mit $t := t(n)$:
+                        </p>
+                        \begin{align*}
+                        x \in L \quad & \Longleftrightarrow \exists z \in \{0,1\}^t: M(x,z) = \texttt{accept} \\
+                        &
+                        \Longleftrightarrow \exists z \in \{0,1\}^t: C(x,z) = 1 \ . \\
+                        \end{align*}
+                        <p>
+                            Unsere Reduktion von $L$ auf <span style="font-variant: small-caps;">Ciruit-SAT</span>
+                            geht nun wie folgt: Bei Eingabewort $x \in \{0,1\}^*$ setzen wir
+                            $n := |x|$ und $t := t(n)$. Wir führen die Umformung von $M$ in einen Schaltkreis
+                            $C$ durch. Dieser $C$ hat $n + t$ Eingabevariablen, $n$ viele für das Eingabeband von
+                            $M$ und $t$ viele für das Zertifikatband. Da wir $x$ bereits kennen,
+                            verkabeln wir es fest in $C$, d.h. wir ersetzen die $i$-te Eingabevariable von $C$
+                            durch den Booleschen Wert $x_i$ (dies ist eine Konstante, keine Variable, da wir
+                            ein konkretes Eingabewort $x \in \{0,1\}^n$ gegebenen haben) und erhalten einen
+                            Schaltkreis
+                        </p>
+                        \begin{align*}
+                        D := C(x, \cdot)
+                        \end{align*}
+                        <p>
+                            mit $t$ Eingabe-Gates. Nach Konstruktion gilt
+                        </p>
+                        \begin{align*}
+                        x \in L & \Longleftrightarrow \exists z \in \{0,1\}^t : D(z) = 1
+                        \end{align*}
+                        <p>
+                            also genau dann, wenn <span style="font-variant: small-caps;">$D \in $ Circuit-SAT</span>.
+                            <span class='qed'>\(\square\)</span>
+                        </p>
+                    </div class='proof'>
+
+                    <div class='well container theorem'>
+                        <p><span class='numbered-title' id='lemma-circuit-to-3-sat'
+                                data-label-title='Lemma'>Lemma</span>
+                            <span style="font-variant: small-caps;"> Circuit-SAT $\leq_p$ 3-SAT </span>.
+                        </p>
+                    </div class='well container theorem'>
+                    <div class='well container'>
+                        <p><strong>Beweis.</strong>
+                            Wir haben also einen Schaltkreis $C$ mit $n$ Eingabe-Variablen und $m$ Gates
+                            gegeben.
+                            Unsere Aufgabe ist es, eine $3$-CNF-Formel $F$ zu bauen, so dass
+                            $F$ genau dann erfüllbar ist, wenn $C$ erfüllbar ist. Wir demonstrieren
+                            die Umformung an einem Beispiel:
+                        </p>
+                        <figure>
+                            <img src='../img/09-complexity-theory/circuit-to-3-cnf/circuit-to-3-cnf-01-01.svg'
+                                style='height:16em'>
+                        </figure>
+                        <p>
+                            Ich will zuerst diskutieren, was <em>nicht</em> geht. Der obige Schaltkreis
+                            (so wie jeder) berechnet eine Funktion $f_C: \{0,1\}^n \rightarrow \{0,1\}$.
+                            Das Problem <span style="font-variant: small-caps;">Circuit-SAT</span>
+                            fragt nun, ob $f_C$ nicht die konstante Nullfunktion ist. Wir können im Allgemeinen
+                            $f_C$ <em>nicht</em> als $3$-CNF-Formel schreiben. Obigen Schaltkreis zum Beispiel
+                            nicht. Wir können $f_C$ allgemein als CNF-Formel schreiben mit der
+                            Wahrheitstabellenmethode. Hierfür brauchen wir aber $2^n$ Schritte, und unsere
+                            Reduktion wäre nicht mehr polynomiell. Allerdings muss die $3$-CNF-Formel $F$,
+                            also das Ergebnis der Reduktion, auch nicht äquivalent zu $C$ sein, sondern
+                            nur <em>SAT-äquivalent</em>: $F$ muss genau dann erfüllbar sein, wenn $C$ erfüllbar ist.
+                        </p>
+                        <p>
+                            Wenden wir uns obigem Schaltkreis zu. Wir führen für jedes Gate eine Variable
+                            ein, die seinen Output darstellen soll. Hier sind das $g_1, g_2, \dots, g_{11}$:
+                        </p>
+                        <figure>
+                            <img src='../img/09-complexity-theory/circuit-to-3-cnf/circuit-to-3-cnf-01-02.svg'
+                                style='height:16em'>
+                        </figure>
+                        <p>
+                            Die Aussage <em>$g_4$ ist der Output des zweiten OR-Gates von links</em> können wir
+                            nun schreiben als $g_4 \leftrightarrow (x \vee y)$. Das $\leftrightarrow$ ist hierbei
+                            der Boolesche Operator, der Gleichheit testet. Wir tun dies für jedes Gate
+                            und erhalten folgende Formel:
+                        </p>
+                        \begin{align*}
+                        & (g_1 \leftrightarrow (\neg x)) \quad \wedge \\
+                        & (g_2 \leftrightarrow (\neg y)) \quad \wedge \\
+                        & (g_3 \leftrightarrow (g_1 \vee g_2)) \quad \wedge \\
+                        & (g_4 \leftrightarrow (x \vee y)) \quad \wedge \\
+                        & (g_5 \leftrightarrow (g_3 \wedge g_4)) \quad \wedge \\
+                        & (g_6 \leftrightarrow (\neg z)) \quad \wedge \\
+                        & (g_7 \leftrightarrow (\neg w)) \quad \wedge \\
+                        & (g_8 \leftrightarrow (g_6 \vee g_7)) \quad \wedge \\
+                        & (g_9 \leftrightarrow (z \vee w)) \quad \wedge \\
+                        & (g_{10} \leftrightarrow (g_8 \wedge g_9)) \quad \wedge \\
+                        & (g_{11} \leftrightarrow (g_{5} \vee g_{10}))\\
+                        & (g_{11})
+                        \end{align*}
+                        <p>
+                            Die ersten 11 Teilausdrücke stellen sicher, dass jedes $g_i$ den "richtigen" Wert
+                            annimmt. Mit dem letzten Teilausdruck $(g_{11})$ drücken wir aus, dass wir
+                            wollen, dass der Schaltkreis $1$ ausgibt. Es gilt nun:
+
+                        </p>
+                        <ol>
+                            <li>
+                                Wenn eine Belegung der Variablen $(x, y, z, w, g_1, \dots, g_{11})$ die Formel
+                                $F$ erfüllt, dann haben alle Variablen $g_i$ den Wert, den das entsprechende
+                                Gate ausgibt, und somit gilt $C(x,y,z,w) = 1$.
+                            </li>
+                            <li>
+                                Falls $C(x,y,z,w) = 1$ gilt, dann können wir $g_i$ auf den Output-Wert des
+                                $i$-ten Gates setzen und erhalten eine Belegung
+                                der Variablen $(x, y, z, w, g_1, \dots, g_{11})$, die $F$ erfüllt.
+                            </li>
+                        </ol>
+                        <p>
+                            Im allgemeinen gilt also für jedes $x \in \{0,1\}^n$:
+                        </p>
+                        \begin{align*}
+                        C(x) = 1 \Longleftrightarrow \exists g \in \{0,1\}^m: F(x,g) = 1 .
+                        \end{align*}
+                        <P>
+                            Die obige Formel ist nicht in konjunktiver Normalform, da jeder
+                            Teilausdruck Operatoren wie $\leftrightarrow$ etc. enthält. Jeder
+                            Teilausdruck ist aber in sich eine Formel mit drei Variablen; somit
+                            können wir eine Wahrheitstabelle mit $8$ Zeilen anlegen und ihn in
+                            eine äquivalente 3-CNF-Formel mit maximal $8$ Klauseln umformen.
+                            Die schlussendliche $3$-CNF-Formel hat somit $n + m$ Variable (die Eingabevariablen
+                            von $C$ plus eine für jedes Gate) und maximal $8m + 1$ Klauseln, von denen
+                            jede höchstens drei Variable enthält.<span class='qed'>\(\square\)</span>
+                        </P>
+
+                    </div class='proof'>
+
+
+
+
+                </div class='subChapter'>
+
+
+
+
+            </div class='chapter'>
+
+
+
+
+        </div class="content">
+    </div class="rightSideWrapper">

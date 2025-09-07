@@ -1,0 +1,204 @@
+<div id="rightSideWrapper">
+    <div class="content">
+        <div class='chapter'>
+            <div class='subChapter'>
+                <h1 class='hidden-title'>
+                    <span class='subChapterTitle'>9.7 Beschränkter Speicherplatz</span>
+                </h1>
+
+                <p>
+                    In den vergangen Kapiteln haben wir die Laufzeit einer Turingmaschine beschränkt und
+                    die Komplexitätsklassen studiert, die sich daraus ergeben, allen voran P und NP.
+                    Die neben Zeit wohl wichtigste Resource beim Rechnen ist der Platz. Turingmaschinen
+                    erlauben uns auch, präzise über den benötigten Speicherplatz zu sprechen.
+                    Der <em>Platz</em> einer Konfiguration $C = uqv \in \Gamma^* \times Q \times \Gamma^*$
+                    ist die Anzahl der belegten Speicherzellen, also beispielsweise $|uv|$. Bei
+                    $k$-Band-Maschinen müssen wir das über alle Bänder aufsummieren.
+                    Wir können eine Konfiguration also als Tupel in 
+                </p>
+                \begin{align*}
+                \mathcal{C} : Q \times (\Gamma^* \times \Gamma^*)^k
+                \end{align*}
+                <p>
+                    darstellen. Eine Konfiguration
+                    $C = (q, (u_1, v_1), \dots, (u_k, v_k))$ besagt dann beispielsweise, dass
+                    auf Band $i$ das Wort $u_iv_i$ steht, wobei der Kopf auf dem ersten
+                    Zeichen von $v_i$ steht. Die Größe von $C$ ist dann
+                    $|C| := |u_1| + |v_1| + \cdots + |u_k| + |v_k|$.
+                    Eine Turingmaschine läuft in Platz $s(n)$, wenn für alle
+                    $x \in \Sigma^*$ alle erreichten Konfigurationen höchstens die Größe
+                    $s(|x|)$ haben.
+                </p>
+                <p>
+                    Diese Definition hat den Nachteil, dass der Platzbedarf immer mindestens $n$ ist: bereits
+                    die Startkonfiguration $\qstart x_1 x_2 \dots x_n$ besteht ja aus $n$ Zeichen. Das ist aber
+                    irgendwie unfair. Wir wollen nur den Platz zählen, der über das Eingabewort hinausgeht.
+                    Wenn wir über Platzbedarf sprechen, dann gehen wir von einer Turingmaschine aus, die
+                </p>
+                <ol>
+                    <li>ein Eingabeband hat, auf dem sie nur lesen darf;</li>
+                    <li>beliebig viele <em>Arbeitsbänder</em>, auf denen sie lesen und schreiben darf;</li>
+                    <li>ein Ausgabeband, auf dem sie schreiben darf, aber nur nach rechts laufen darf.</li>
+                </ol>
+                <p>
+                    Wenn wir eine Sprache $L \subseteq \Sigma^*$
+                    entscheiden wollen, dann brauchen das Ausgabeband nicht wirklich. Wenn wir
+                    eine Funktion $f: \Sigma_1^* \rightarrow \Sigma_2^*$ berechnen wollen,
+                    dann sehr wohl.
+                </p>
+                <div class="subtheorem well container">
+                    <p><strong>Eingabe und Ausgabe:</strong> wenn Sie ein C-Programm schreiben und
+                        auf <tt>stdout</tt> schreiben,
+                        dann entspricht diese Operation in gewisser Weise der Turingmaschine,
+                        die auf das Ausgabeband schreibt; sie können ja sich den
+                        Output auch nicht irgendwie zurückholen.</p>
+
+                    <p>
+                        Das lesen von <tt>stdin</tt> entspricht allerdings nicht ganz
+                        dem Eingabeband der Turingmaschine. Ein bedeutender Unterschied ist,
+                        dass die Turingmaschine auf dem Eingabeband zwar nicht schreiben
+                        darf, aber dennoch beliebig nach rechts und links gehen darf.
+                        Das können Sie auf <tt>stdin</tt> in der Regel nicht.
+                    </p>
+
+                    <p><strong>Streaming-Modell:</strong> wenn wir der Turingmaschine
+                        verbieten, auf dem Eingabe-Band nach links zu laufen, wenn sie also
+                        jedes Eingabezeichen nur einmal lesen darf, dann erhalten
+                        wir das sogenannte Streaming-Modell, das in den letzten Jahren
+                        an Popularität gewonnen hat, weil wir es heutzutage in vielen Anwendungen
+                        mit Datenmengen zu tun haben, die nicht in den Speicher des Rechners passen
+                        und auch nur einmal gelesen werden können (z.B. Sensordaten). Im
+                        Kurs <em>Effiziente Algorithmen</em> gibt es
+                        ein <a href="../../EffizienteAlgorithmen/lecture-notes/04-00-big-data.html">Kapitel zu
+                            Streaming-Algorithmen</a>.</p>
+                </div>
+
+                <div class='well container theorem'>
+                    <p><span class='numbered-title' id='definition-space-bounded'
+                            data-label-title='Theorem'>Definition</span>
+                        <strong>($\SPACE(s)$).</strong> Sei $M$ eine Turingmaschine
+                        mit dezidiertem Eingabeband 1 und Ausgabeband $k$.
+                        Die <em>Größe einer Konfiguration</em> ist die Größe der Bandinhalte der
+                        Arbeitsbänder. Die Konfiguration $C = (q, (u_1, v_1), \dots, (u_k, v_k))$
+                        hat Größe $|u_2| + |v_2| + \cdots + |u_{k-1}| + |v_{k-1}|$.
+                    </p>
+
+                    <p>
+                        Sei $s : \N \rightarrow \N$.
+                        Die Turingmaschine $M$ läuft in Platz $s$, falls
+                    </p>
+                    <ol>
+                        <li>sie für jedes $x \in \Sigma^*$ terminiert und </li>
+                        <li>jede erreichte Konfiguration höchstens Größe $O(s(|x|))$ hat.</li>
+                    </ol>
+                    <p>
+                        Eine Sprache ist in $\SPACE(s)$, wenn es eine Turingmaschine gibt, die in
+                        Platz $s$ läuft und sie entscheidet.
+                    </p>
+                </div class='well container theorem'>
+
+                <div class='well container theorem'>
+                    <p><span class='numbered-title' id='prop-space-bounds-time'
+                            data-label-title='Beobachtung'>Beobachtung</span> Wenn $M$ in Platz $s(n)$ läuft,
+                        dann hat $M$ Laufzeit $2^{O(s(n))}$.</p>
+                </div class='well container theorem'>
+                <div class='well container'>
+                    <p><strong>Beweis.</strong>
+                        Für gegebenes $n$ sei $S \in O(s(n))$ der maximale Platzbedarf der Turingmaschine.
+                        Es gibt maximal $T := |Q| \cdot \left(|\Gamma|+1\right)^{kS}$ Konfigurationen (warum?).
+                        Da $M$ terminiert, kann die Berechnung nicht mehr $T$ Schritte dauern.
+                    </p>
+                    <span class='qed'>\(\square\)</span>
+                </div class='proof'>
+
+                <div class='well well-lg numbered-exercise container'>
+                    <p><span class='numbered-title' id='put-unique-name-here'
+                            data-label-title='Übungsaufgabe'>Übungsaufgabe</span>
+                        Zeigen Sie, dass wir die Bedingung 1 aus
+                        <span class='reference' data-ref='definition-space-bounded'></span> weglassen können,
+                        zumindest wenn $s(n)$ zeitkonstruierbar ist.
+                    </p>
+                </div class='numbered-exercise'>
+
+
+
+                <h3>Die wichtigsten Platzklassen: L und PSPACE</h3>
+
+                <p>
+                    Wir definieren
+                </p>
+                \begin{align*}
+                \textnormal{PSPACE} := \bigcup_{k \geq 1} \SPACE(n^k)
+                \end{align*}
+                <p>also die Menge aller Probleme, die man mit polynomiellem Speicherplatz entscheiden kann,
+                    und</p>
+                \begin{align*}
+                \textnormal{L} := \SPACE(\log n) \ .
+                \end{align*}
+                <p>
+                    die Menge aller Probleme, die man mit <em>logarithmischem Speicherplatz</em> entscheiden kann.
+                    Man nennt $L$ auch LogSpace.
+                </p>
+
+                <div class='well well-lg numbered-exercise container'>
+                    <p><span class='numbered-title' id='put-unique-name-here'
+                            data-label-title='Übungsaufgabe'>Übungsaufgabe</span>
+                        Zeigen Sie, dass ${\rm NP} \subseteq {\rm PSPACE}$ gilt. Fangen Sie zum Beispiel an,
+                        <span style="font-variant: small-caps;">3-Colorability $\in$ PSPACE</span> zu zeigen.
+                    </p>
+                </div class='numbered-exercise'>
+
+
+                <div class='well well-lg numbered-exercise container'>
+                    <p><span class='numbered-title' id='put-unique-name-here'
+                            data-label-title='Übungsaufgabe'>Übungsaufgabe</span>
+                        Sei <span style="font-variant: small-caps;">Palindrome</span> die Sprache
+                        aller Palindromwörter mit Trennungszeichen in der Mitte, also
+                    </p>
+                    \begin{align*}
+                    \{ucu^{R} \ | \ u \in \{a,b\}^* \} \ .
+                    \end{align*}
+                    <p>
+                        Zeigen Sie, dass <span style="font-variant: small-caps;">Palindrome $\in$ L</span>
+                    </p>
+                </div class='numbered-exercise'>
+
+                <div class='well well-lg numbered-exercise container'>
+                    <p><span class='numbered-title' id='put-unique-name-here'
+                            data-label-title='Übungsaufgabe'>Übungsaufgabe</span>
+                        Zeigen Sie, dass die Sprache aller wohlgeformten Klammerausdrücke in L ist, also die
+                        Sprache über $\{a,b\}$ mit
+                    </p>
+                    \begin{align*}
+                    S & \rightarrow \epsilon \ | \ aSbS \ .
+                    \end{align*}
+                </div class='numbered-exercise'>
+
+
+                <div class='well well-lg numbered-exercise container'>
+                    <p><span class='numbered-title' id='put-unique-name-here'
+                            data-label-title='Übungsaufgabe'>Übungsaufgabe</span>
+                        Seien $f: \Sigma_1 \rightarrow \Sigma_2$ und $g: \Sigma_2 \rightarrow \Sigma_3$ zwei
+                        Funktionen.
+                        Zeigen Sie, dass, falls $f$ und $g$ in logarithmischem Platz berechnet werden können,
+                        dann auch $g \circ f: \Sigma_1 \rightarrow \Sigma_3$.
+                    </p>
+                    <p><strong>Hinweis:</strong> der "offensichtliche" Ansatz funktioniert nicht. Warum nicht?</p>
+                </div class='numbered-exercise'>
+
+
+
+
+
+            </div class='subChapter'>
+
+
+
+
+        </div class='chapter'>
+
+
+
+
+    </div class="content">
+</div class="rightSideWrapper">

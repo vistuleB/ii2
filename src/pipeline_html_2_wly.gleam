@@ -8,7 +8,7 @@ pub fn pipeline_html_2_wly() -> List(Pipe) {
     dl.identity(),
     dl.find_replace__outside(#("&lt;", "<"), []),
     dl.find_replace__outside(#("&gt;", ">"), []),
-    dl.remove_chapter_number_from_title(),
+    dl.ti2_remove_chapter_number_from_title(),
     dl.trim_spaces_around_newlines__outside([]),
     dl.replace_multiple_spaces_by_one(),
     dl.rename(#("tt", "code")),
