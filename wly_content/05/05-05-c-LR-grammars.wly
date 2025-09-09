@@ -104,9 +104,9 @@
                     dass nicht jeder Linksreduktionsschritt automatisch auch korrekt ist.
                     Ein einfaches Beispiel war die "Zahlengrammatik"
                     \begin{align*}
-                    N&amp;\rightarrow D \\
-                    N&amp;\rightarrow ND \\
-                    D&amp;\rightarrow 0 \ | \ 1 \ | \ 2\ | \ 3\ | \ 4\ | \ 5\ | \ 6\ | \ 7\ | \ 8\ | \ 9
+                    N & \rightarrow D \\
+                    N & \rightarrow ND \\
+                    D & \rightarrow 0 \ | \ 1 \ | \ 2\ | \ 3\ | \ 4\ | \ 5\ | \ 6\ | \ 7\ | \ 8\ | \ 9
                     \end{align*}
                     So ist folgende Linksreduktion korrekt:
                     \begin{align*}
@@ -218,10 +218,10 @@
                         title=*Beispiel*
                         Erinnern Sie sich: unsere obige Grammatik
                         \begin{align*}
-                        S&amp;\step{1} aS \\
-                        S&amp;\step{2} X \\
-                        X&amp;\step{3} a X b \\
-                        X&amp;\step{4} ab \ .
+                        S & \step{1} aS \\
+                        S & \step{2} X \\
+                        X & \step{3} a X b \\
+                        X & \step{4} ab \ .
                         \end{align*}
                         ist eindeutig (das ist leicht zu sehen), allerdings tritt
                         Schlechte Fall 2 ein: der Reduktionsschritt
@@ -351,8 +351,8 @@
                             Dafür nehmen wir dann, dass es von $\gamma$ aus
                             die Linksreduktionsschritte
                             \begin{align*}
-                            \gamma = \alpha \beta w&amp;\rstep{} \alpha X w \textnormal{ und} \\
-                            \gamma = \alpha' \beta' w'&amp;\rstep{} \alpha' X' w' \textnormal{ und} \\
+                            \gamma = \alpha \beta w & \rstep{} \alpha X w \textnormal{ und} \\
+                            \gamma = \alpha' \beta' w' & \rstep{} \alpha' X' w' \textnormal{ und} \\
                             \end{align*}
                             gibt und müssen zeigen, dass es sich in der Tat um denselben
                             Schritt handelt. Ohne Beschränkung der Allgemeinheit
@@ -411,10 +411,10 @@
                         title=*Übungsaufgabe*
                         Zeigen Sie, dass die folgende Grammatik \(LR(0)\) ist:
                         \begin{align*}
-                        S&amp;\rightarrow aS \\
-                        S&amp;\rightarrow Bc \\
-                        B&amp;\rightarrow aBb \\
-                        B&amp;\rightarrow ab
+                        S & \rightarrow aS \\
+                        S & \rightarrow Bc \\
+                        B & \rightarrow aBb \\
+                        B & \rightarrow ab
                         \end{align*}
                         Als ersten Schritt sollten Sie sich überlegen, wie gültige
                         Wortformen überhaupt aussehen können.
@@ -422,10 +422,10 @@
                         title=*Übungsaufgabe*
                         Wir ändern die Grammatik etwas ab:
                         \begin{align*}
-                        S&amp;\rightarrow aS \\
-                        S&amp;\rightarrow B \\
-                        B&amp;\rightarrow aBb \\
-                        B&amp;\rightarrow ab
+                        S & \rightarrow aS \\
+                        S & \rightarrow B \\
+                        B & \rightarrow aBb \\
+                        B & \rightarrow ab
                         \end{align*}
                         Die erzeugte Sprache ist \(\{ a^* a^m b^m \ | \ m \geq 1\}\).
                         Zeigen Sie, dass die Grammatik nicht \(LR(0)\) ist.
@@ -433,14 +433,14 @@
                         title=*Übungsaufgabe*
                         Zeigen Sie, dass die folgende Grammatik \(LR(0)\) ist:
                         \begin{align*}
-                        S&amp;\rightarrow aS \\
-                        S&amp;\rightarrow BC \\
-                        B&amp;\rightarrow aBb \\
-                        B&amp;\rightarrow ab \\
-                        C&amp;\rightarrow cC \\
-                        C&amp;\rightarrow cT \\
-                        T&amp;\rightarrow abC \\
-                        T&amp;\rightarrow ab
+                        S & \rightarrow aS \\
+                        S & \rightarrow BC \\
+                        B & \rightarrow aBb \\
+                        B & \rightarrow ab \\
+                        C & \rightarrow cC \\
+                        C & \rightarrow cT \\
+                        T & \rightarrow abC \\
+                        T & \rightarrow ab
                         \end{align*}
                         Als ersten Schritt sollten Sie sich überlegen, wie gültige
                         Wortformen überhaupt aussehen können.

@@ -43,12 +43,12 @@
                     mittels der Kombinatoren von den Basisfunktionen ausgehend konstruiert werden können.
                     Die Basisfunktionen sind:
                     \begin{align*}
-                    \zero:&\N^* \rightarrow \N \\
-                    \vec{x}&amp;\mapsto 0
+                    \zero:& \N^* \rightarrow \N \\
+                    \vec{x} & \mapsto 0
                     \end{align*}
                     \begin{align*}
-                    \succ: \N&amp;\rightarrow \N \\
-                    x&amp;\mapsto x+1
+                    \succ: \N & \rightarrow \N \\
+                    x & \mapsto x+1
                     \end{align*}
                     Sind diese Funktionen "offensichtlich berechenbar"? Ich würde sagen, die fundamentale Eigenschaft
                     der natürlichen Zahlen ist, dass jede Zahl einen Nachfolger (successor) hat; daher ist irgendwie
@@ -66,8 +66,8 @@
                     Projektionen
                     \(\pi^n_k\), definiert als
                     \begin{align*}
-                    \pi^n_k : \N^n&amp;\rightarrow \N \\
-                    \vec{x}&amp;\mapsto x_k \ .
+                    \pi^n_k : \N^n & \rightarrow \N \\
+                    \vec{x} & \mapsto x_k \ .
                     \end{align*}
                     Irgendwie sollte auch hier klar sein, dass die Vorschrift "gib von den 3 Argumenten, die Du
                     erhältst, das erste zurück" ohne Zweifel "berechenbar" ist.
@@ -88,15 +88,15 @@
                         \(g_1, \dots, g_k: \N^l \rightarrow \N\). Dann ist
                         \(\comp(f, g_1, \dots, g_k)\) die Funktion
                         \begin{align*}
-                        \N^l&amp;\rightarrow \N \\
-                        \vec{x}&amp;\mapsto f(g_1(\vec{x}), \dots, g_k(\vec{x}))
+                        \N^l & \rightarrow \N \\
+                        \vec{x} & \mapsto f(g_1(\vec{x}), \dots, g_k(\vec{x}))
                         \end{align*}
                         Graphisch können Sie sich Komposition so vorstellen:
                         |> figure
                             |> img
-                                style=height:15em
-                                src=../img/primitive-rekursion/composition.svg
                                 loading=lazy
+                                src=../img/primitive-rekursion/composition.svg
+                                style=height:15em
                     Um aber komplexere Operationen implementieren zu können, brauchen wir eine Art von Schleife.
                     Was ist die einfachste Art von Schleife oder Rekursion. Wir dürfen nur eine sehr beschränkte
                     Form der Rekursion verwenden:
@@ -106,10 +106,10 @@
                         Seien \(g: \N^k \rightarrow \N\) und \(h: \N^{k+2} \rightarrow \N\). Wir
                         definieren eine neue Funktion $f: \N^{k+1} \rightarrow \N$ wie folgt:
                         \begin{align*}
-                        f : \N^{k+1}&amp;\rightarrow \N \\
-                        (t, \vec{x})&amp;\rightarrow \begin{cases}
-                        g(\vec{x})&amp;\textnormal{ if $t=0$} \\
-                        h(f(t-1, \vec{x}), t-1, \vec{x})&amp;\textnormal{ if $t \geq 1$}.
+                        f : \N^{k+1} & \rightarrow \N \\
+                        (t, \vec{x}) & \rightarrow \begin{cases}
+                        g(\vec{x}) & \textnormal{ if $t=0$} \\
+                        h(f(t-1, \vec{x}), t-1, \vec{x}) & \textnormal{ if $t \geq 1$}.
                         \end{cases}
                         \end{align*}
                         Für diese Konstruktion schreiben wir kompakt
@@ -141,8 +141,8 @@
                         Verfügung.
                         Insbesondere implementiert sie die folgenden Funktion \(\N^k \rightarrow \N\):
                         \begin{align*}
-                        {\rm zero}:&amp;\vec{x} \mapsto 0 \\
-                        {\rm succ}:&amp;x \mapsto x+1
+                        {\rm zero}: & \vec{x} \mapsto 0 \\
+                        {\rm succ}: & x \mapsto x+1
                         \end{align*}
                         als "übliche" Python-Funktionen. Darüberhinaus implementiert sie die folgenden
                         Kombinatoren, welche Ihnen nach den
@@ -151,8 +151,8 @@
                             |> li
                                 `Proj(k)`: erzeugt die Funktion
                                 \begin{align*}
-                                \pi_k : \N^*&amp;\rightarrow \N \\
-                                \vec{x}&amp;\mapsto x_k \ .
+                                \pi_k : \N^* & \rightarrow \N \\
+                                \vec{x} & \mapsto x_k \ .
                                 \end{align*}
                             |> li
                                 `Comp(f, g0, g1, ...)`: erzeugt die Funktion
@@ -166,8 +166,8 @@
                                 `PrimRec(g,h)`: erzeugt die Funktion
                                 \begin{align*}
                                 (t, \vec{x}) \mapsto \begin{cases}
-                                g(\vec{x})&amp;\textnormal{ if $t=0$,} \\
-                                h(f(t-1, \vec{x}), t-1, \vec{x})&amp;\textnormal{ if $t \geq 1$.}
+                                g(\vec{x}) & \textnormal{ if $t=0$,} \\
+                                h(f(t-1, \vec{x}), t-1, \vec{x}) & \textnormal{ if $t \geq 1$.}
                                 \end{cases}
                                 \end{align*}
                         Wenn wir die primitive Rekursion als "Programmiersprache" betrachten, dann heißt das, dass
@@ -179,8 +179,8 @@
                         \({\rm add}: \N^2 \rightarrow \N\) schreiben, die ihre beiden Argumente addiert.
                         Ich darf also nicht einfach python programmieren und
                         |> pre
-                            style=color:red; background-color: yellow;
                             class=listing
+                            style=color:red; background-color: yellow;
                             `def add(x,y):`
                             \ `return x + y`
                         schreiben, denn unsere "Programmiersprache" ist Primitive Rekursion, nicht Python! Wir
@@ -188,13 +188,13 @@
                         nun \({\rm add}(t,x)\) statt \({\rm add}(x,y)\), um den Rekursionsparameter \(t\) deutlich
                         zu machen.
                         \begin{align*}
-                        {\rm add}(t,x)&amp;= \begin{cases}
-                        x&amp;\textnormal{ if $t=0$} \\
-                        {\rm succ}({\rm add}(t-1,x))&amp;\textnormal{ if $t \geq 1$.}
+                        {\rm add}(t,x) & = \begin{cases}
+                        x & \textnormal{ if $t=0$} \\
+                        {\rm succ}({\rm add}(t-1,x)) & \textnormal{ if $t \geq 1$.}
                         \end{cases} \\
-                        &amp;= \begin{cases}
-                        \pi_0(x)&amp;\textnormal{ if $t=0$} \\
-                        {\rm succ}(\pi_0({\rm add}(t-1,x), t-1, x))&amp;\textnormal{ if $t \geq 1$.}
+                        & = \begin{cases}
+                        \pi_0(x) & \textnormal{ if $t=0$} \\
+                        {\rm succ}(\pi_0({\rm add}(t-1,x), t-1, x)) & \textnormal{ if $t \geq 1$.}
                         \end{cases} \\
                         \end{align*}
                         Wir sehen also, dass dies eine Anwendung der primitiven Rekursion ist mit

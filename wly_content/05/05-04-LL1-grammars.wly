@@ -59,8 +59,8 @@
                         sei \(\first_k(w)\) wie folgt definiert:
                         \begin{align*}
                         \first_k(w) := \begin{cases}
-                        w&amp;\textnormal{ wenn $|w| \lt k$} \\
-                        u&amp;\textnormal{ wenn $w = uv$ und $|u| = k$}
+                        w & \textnormal{ wenn $|w| \lt k$} \\
+                        u & \textnormal{ wenn $w = uv$ und $|u| = k$}
                         \end{cases}
                         \end{align*}
                         In Worten: \(\first_{k}(w)\) besteht aus den ersten \(k\) Zeichen
@@ -71,13 +71,13 @@
                         Eine kontextfreie Grammatik \(G = (\Sigma, N, S, P)\) ist eine
                         LL(\(k\))-Grammatik, wenn für jede Grenzform \(A \alpha\) und für jedes Paar
                         \begin{align*}
-                        A&amp;\step{1} \beta \\
-                        A&amp;\step{2} \gamma
+                        A & \step{1} \beta \\
+                        A & \step{2} \gamma
                         \end{align*}
                         verschiedener Produktionen (also \(\beta \ne \gamma\)) folgendes gilt: wenn
                         \begin{align*}
-                        A\alpha&amp;\Step{1} \beta \alpha \Step{}^* x \\
-                        A\alpha&amp;\Step{2} \gamma \alpha \Step{}^* y \\
+                        A\alpha & \Step{1} \beta \alpha \Step{}^* x \\
+                        A\alpha & \Step{2} \gamma \alpha \Step{}^* y \\
                         \end{align*}
                         dann müssen sich \(x\) und \(y\) in den ersten \(k\) Zeichen unterscheiden, also
                         \begin{align*}
@@ -94,8 +94,8 @@
                         title=*Beispiel*
                         Die Klammern-Grammatik
                         \begin{align*}
-                        S&amp;\step{1} \epsilon \\
-                        S&amp;\step{2} (S)S
+                        S & \step{1} \epsilon \\
+                        S & \step{2} (S)S
                         \end{align*}
                         ist LL(1).
                         |> Remark
@@ -104,8 +104,8 @@
                             gelten. Wir haben hier keine Auswahl, denn es gibt ja nur ein Paar. Also
                             müssen wir zeigen, dass, falls
                             \begin{align*}
-                            S \Step{}^* wS\alpha&amp;\Step{1} w \alpha \Step{}^* w x \\
-                            S \Step{}^* wS\alpha&amp;\Step{2} w \texttt{(}S\texttt{)}S \alpha \Step{}^* w y \\
+                            S \Step{}^* wS\alpha & \Step{1} w \alpha \Step{}^* w x \\
+                            S \Step{}^* wS\alpha & \Step{2} w \texttt{(}S\texttt{)}S \alpha \Step{}^* w y \\
                             \end{align*}
                             gilt, dann auch \(\first_1(x) \ne \first_2(y)\) gilt.
                             Offensichtlich ist \(\first_2(y) = \) "\(\texttt{(}\)".
@@ -124,8 +124,8 @@
                             Keines davon ist ein Nichtterminal, und so muss auch
                             \(\first_k(\alpha) = \first_k(x)\) gelten. Zusammenfassend gesagt:
                             \begin{align*}
-                            \first_k(x)&amp;\in \{\epsilon, \texttt{)}\} \\
-                            \first_y(y)&amp;= \texttt{(} \ ,
+                            \first_k(x) & \in \{\epsilon, \texttt{)}\} \\
+                            \first_y(y) & = \texttt{(} \ ,
                             \end{align*}
                             und somit sind sie verschieden.
                             Wir folgern, dass \(G\) eine LL(1)-Grammatik ist.
@@ -142,8 +142,8 @@
                     Wenn umgekehrt eine Grammatik _nicht_ LL(\(k\)) ist, dann muss der Backtrack-Baum
                     beiden Ableitungen
                     \begin{align*}
-                    w A \alpha&amp;\Rightarrow w \beta \alpha \\
-                    w A \alpha&amp;\Rightarrow w \gamma \alpha \\
+                    w A \alpha & \Rightarrow w \beta \alpha \\
+                    w A \alpha & \Rightarrow w \gamma \alpha \\
                     \end{align*}
                     mindestens so lange weiterverfolgen, bis der
                     Terminalpräfix \(k\) weitere Zeichen dazugewonnen hat. Der Baum bekommt also dementsprechend
@@ -154,10 +154,10 @@
                         und Jeffrey D. Ullman).
                         Betrachten wir die Grammatik
                         \begin{align*}
-                        S&amp;\step{1} \epsilon \\
-                        S&amp;\step{2} ab A \\
-                        A&amp;\step{3} Saa \\
-                        A&amp;\step{4} b
+                        S & \step{1} \epsilon \\
+                        S & \step{2} ab A \\
+                        A & \step{3} Saa \\
+                        A & \step{4} b
                         \end{align*}
                         Zeigen Sie, dass diese Grammatik LL(2) ist, aber nicht LL(1).
                         *Tip.* Leiten Sie erst einmal
@@ -173,9 +173,9 @@
                         title=*Übungsaufgabe*
                         Betrachten wir die Grammatik \(G\):
                         \begin{align*}
-                        S&amp;\step{1} a S b \\
-                        S&amp;\step{2} a S \\
-                        S&amp;\step{3} \epsilon
+                        S & \step{1} a S b \\
+                        S & \step{2} a S \\
+                        S & \step{3} \epsilon
                         \end{align*}
                         Sie erzeugt die Sprache
                         \begin{align*}
@@ -233,10 +233,10 @@
                         für alle Grenzformen \(A \alpha\) und alle
                         Produktionen mit \(A\) auf der linken Seite, also
                         \begin{align*}
-                        A&amp;\rightarrow \beta_1 \\
-                        A&amp;\rightarrow \beta_2 \\
-                        &amp;\vdots\\
-                        A&amp;\rightarrow \beta_l
+                        A & \rightarrow \beta_1 \\
+                        A & \rightarrow \beta_2 \\
+                        & \vdots\\
+                        A & \rightarrow \beta_l
                         \end{align*}
                         die Mengen \(\First(\beta_i \alpha)\) paarweise disjunkt sind (wenn also keine
                         zwei dieser Mengen ein gemeinsames Element enthalten).
@@ -261,10 +261,10 @@
                     \end{align*}
                     hergeleitet hat. Der Automat muss sich nun zwischen allen Regeln für \(A\) entscheiden:
                     \begin{align*}
-                    A&amp;\rightarrow \beta_1 \\
-                    A&amp;\rightarrow \beta_2 \\
-                    &amp;\vdots\\
-                    A&amp;\rightarrow \beta_l \ .
+                    A & \rightarrow \beta_1 \\
+                    A & \rightarrow \beta_2 \\
+                    & \vdots\\
+                    A & \rightarrow \beta_l \ .
                     \end{align*}
                     Der Automat betrachtet nun die nächsten \(k\) Eingabesymbole, also
                     \(\first_k(y)\) (wir gehen
@@ -359,8 +359,8 @@
                         Weiterhin bezeichnen wir mit
                         \(K \circ_k L\) die Menge
                         \begin{align*}
-                        K \circ_k L&amp;:= \First(K \circ L) \\
-                        &amp;= \{\first_k(xy) \ | \ x \in K, y \in L\} \ .
+                        K \circ_k L & := \First(K \circ L) \\
+                        & = \{\first_k(xy) \ | \ x \in K, y \in L\} \ .
                         \end{align*}
                     Im Allgemeinen gilt
                     \(\First_k(S_1 \circ \dots \circ S_l) = S_1 \circ_k S_2 \circ_k \dots \circ_k S_l\).
@@ -370,8 +370,8 @@
                         title=*Beispiel*
                         Sei
                         \begin{align*}
-                        K&amp;:= \{\epsilon, a, ab, aba\} \\
-                        L&amp;:= \{c, bb, b\}
+                        K & := \{\epsilon, a, ab, aba\} \\
+                        L & := \{c, bb, b\}
                         \end{align*}
                         Dann ist
                         \begin{align*}
@@ -379,8 +379,8 @@
                         \end{align*}
                         und somit
                         \begin{align*}
-                        K \circ_2 L&amp;= \{c, bb, b, ac, ab, ab, ab, ab, ab, ab, ab, ab\} \\
-                        &amp;=\{c, bb, b, ac, ab\}
+                        K \circ_2 L & = \{c, bb, b, ac, ab, ab, ab, ab, ab, ab, ab, ab\} \\
+                        & =\{c, bb, b, ac, ab\}
                         \end{align*}
                     |> Statement
                         title=*Beobachtung*
@@ -426,10 +426,10 @@
                         title=*Beobachtung*
                         Sei \(X\) ein Nichtterminal und
                         \begin{align*}
-                        X&amp;\rightarrow \alpha_1 \\
-                        X&amp;\rightarrow \alpha_2 \\
-                        &amp;\vdots \\
-                        X&amp;\rightarrow \alpha_k
+                        X & \rightarrow \alpha_1 \\
+                        X & \rightarrow \alpha_2 \\
+                        & \vdots \\
+                        X & \rightarrow \alpha_k
                         \end{align*}
                         die Produktionen der Grammatik mit \(X\) auf der linken Seite. Dann gilt
                         \begin{align}
@@ -466,15 +466,15 @@
                         title=*Beispiel*
                         Sei unsere Grammatik
                         \begin{align*}
-                        S&amp;\rightarrow Xa \\
-                        X&amp;\rightarrow Sb \ | c
+                        S & \rightarrow Xa \\
+                        X & \rightarrow Sb \ | c
                         \end{align*}
                         Dann ist beispielsweise
                         |> figure
                             |> img
-                                style=height:8em
-                                src=../img/context-free/LL/tree-depth-2.svg
                                 loading=lazy
+                                src=../img/context-free/LL/tree-depth-2.svg
+                                style=height:8em
                         ein Ableitungsbaum der Höhe 2 von \(S \Step{}^* ca\), und somit gilt
                         \begin{align*}
                         c \in \First_1^{(d)} (S) \ .
@@ -501,17 +501,17 @@
                         title=*Lemma*
                         Für \(d \geq 1\) gilt
                         \begin{align*}
-                        \First_k^{(d)}(X)&amp;= \bigcup_{i=1}^k \First_k^{(d-1)} (\alpha_i) \\
-                        \First_k^{(d)}(\alpha)&amp;= \First_k^{(d)}(\sigma_1) \circ_k \First_k^{(d)}(\sigma_2) \circ_k
+                        \First_k^{(d)}(X) & = \bigcup_{i=1}^k \First_k^{(d-1)} (\alpha_i) \\
+                        \First_k^{(d)}(\alpha) & = \First_k^{(d)}(\sigma_1) \circ_k \First_k^{(d)}(\sigma_2) \circ_k
                         \dots \circ_k \First_k^{(d)}
                         \end{align*}
                         Für \(d = 0\) gilt
                         \begin{align*}
-                        \First_k^{(0)}(X)&amp;:= \emptyset \tag{für jedes Nichtterminal}
+                        \First_k^{(0)}(X) & := \emptyset \tag{für jedes Nichtterminal}
                         \end{align*}
                         und schließlich
                         \begin{align*}
-                        \First_k^{(d)}(a)&amp;:= \{a\} \tag{für jedes Terminalsymbol und jedes \(d \in \N\)}
+                        \First_k^{(d)}(a) & := \{a\} \tag{für jedes Terminalsymbol und jedes \(d \in \N\)}
                         \end{align*}
                     Die Gleichungen sagen, dass wir, falls wir \(\First_{k}^{(d-1)}(X)\) für alle Nichtterminale
                     kennen,
@@ -532,293 +532,293 @@
                         *- Berechnung der Menge \(\First_k(A)\) für die Nichtterminale einer Sprache.*
                         Wir betrachten die Grammatik
                         \begin{align*}
-                        S&amp;\rightarrow Xa \ | \ \epsilon \\
-                        X&amp;\rightarrow b \ | \ Sc \ | \ SX
+                        S & \rightarrow Xa \ | \ \epsilon \\
+                        X & \rightarrow b \ | \ Sc \ | \ SX
                         \end{align*}
                     |> figure
                         class=centered-figure well container
                         |> a
-                            data-slide-to=0
-                            href=#compute-first-2
                             class=left carousel-control-prev-icon
+                            href=#compute-first-2
+                            data-slide-to=0
                             |> div
                                 class=carousel-nav-icon
                                 |> img
                                     src=../img/carousel-jump-to-start.svg
                         |> a
-                            data-slide=prev
-                            href=#compute-first-2
                             class=left carousel-control-prev-icon
+                            href=#compute-first-2
+                            data-slide=prev
                             |> div
                                 class=carousel-nav-icon
                                 |> img
                                     src=../img/carousel-prev-icon.svg
                         |> a
-                            data-slide=next
-                            href=#compute-first-2
                             class=right carousel-control-next-icon
+                            href=#compute-first-2
+                            data-slide=next
                             |> div
                                 class=carousel-nav-icon
                                 |> img
                                     src=../img/carousel-next-icon.svg
                         |> a
-                            data-slide-to=48
-                            href=#compute-first-2
                             class=right carousel-control-next-icon
+                            href=#compute-first-2
+                            data-slide-to=48
                             |> div
                                 class=carousel-nav-icon
                                 |> img
                                     src=../img/carousel-jump-to-end.svg
                         |> div
-                            style=display:inline-block
-                            data-interval=false
-                            class=carousel
                             id=compute-first-2
+                            class=carousel
+                            data-interval=false
+                            style=display:inline-block
                             |> div
-                                style=display:inline-block
                                 class=carousel-inner
+                                style=display:inline-block
                                 |> div
                                     class=item active
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/01.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/02.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/03.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/04.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/05.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/06.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/07.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/08.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/09.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/10.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/11.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/12.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/13.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/14.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/15.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/16.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/17.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/18.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/19.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/20.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/21.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/22.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/23.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/24.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/25.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/26.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/27.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/28.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/29.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/30.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/31.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/32.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/33.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/34.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/35.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/36.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/37.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/38.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/39.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/40.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/41.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/42.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/43.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/44.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/45.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/46.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/47.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/48.svg
+                                        style=height:24em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:24em
                                         src=../img/context-free/LL/compute-first-2/49.svg
+                                        style=height:24em

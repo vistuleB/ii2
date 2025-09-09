@@ -20,9 +20,9 @@ pub fn pipeline_wly_2_html() -> List(Pipe) {
     pp.splitting_empty_lines_cleanup(),
     pp.create_mathblock_elements([infra.DoubleDollar], infra.DoubleDollar),
     [
-      dl.append_attribute(#("Book", "counter", "BookLevelSectionCounter")),
-      dl.associate_counter_by_prepending_incrementing_attribute(#("section", "BookLevelSectionCounter", infra.Continue)),
-      dl.append_attribute(#("section", "path", "/lecture-notes::øøBookLevelSectionCounter")),
+      dl.append_attribute(#("Book", "counter", "BookLevelSectionCounter", infra.GoBack)),
+      dl.prepend_counter_incrementing_attribute(#("section", "BookLevelSectionCounter", infra.GoBack)),
+      dl.append_attribute(#("section", "path", "/lecture-notes::øøBookLevelSectionCounter", infra.GoBack)),
       dl.unwrap("WriterlyBlankLine"),
       dl.concatenate_text_nodes(),
     ],

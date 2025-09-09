@@ -81,25 +81,25 @@
                         Wir müssen jetzt Klauseln erschaffen, die die Aussage "das ist eine gültige 3-Färbung"
                         als CNF-Formel codieren. Wir erschaffen folgende Klauseln:
                         \begin{align*}
-                        &amp;(r_i \vee g_i \vee b_i) \tag{$v_i$ hat mindestens eine Farbe}\\
-                        &amp;(\bar{r}_i \vee \bar{g}_i) \wedge (\bar{r}_i \vee \bar{b}_i)
+                        & (r_i \vee g_i \vee b_i) \tag{$v_i$ hat mindestens eine Farbe}\\
+                        & (\bar{r}_i \vee \bar{g}_i) \wedge (\bar{r}_i \vee \bar{b}_i)
                         \wedge (\bar{g}_i \vee \bar{b}_i) \tag{$v_i$ hat nicht zwei Farben gleichzeitig}
                         \end{align*}
                         Dies tun wir für jedes $i$. Wir sehen nun: jede Belegung, die die obigen Klauseln
                         erfüllt, entspricht einer $3$-Färbung $c: V \rightarrow \{1,2,3\}$, und umgekehrt.
                         Nun müssen wir die Aussage _Kante $\{v_i,v_j\}$ ist gültig gefärbt_ formulieren:
                         \begin{align*}
-                        &amp;(\bar{r}_i \vee \bar{r}_j) \tag{$v_i$ und $v_j$ sind nicht beide rot}\\
-                        &amp;(\bar{g}_i \vee \bar{g}_j) \tag{$v_i$ und $v_j$ sind nicht beide grün}\\
-                        &amp;(\bar{b}_i \vee \bar{b}_j) \tag{$v_i$ und $v_j$ sind nicht beide blau}\\
+                        & (\bar{r}_i \vee \bar{r}_j) \tag{$v_i$ und $v_j$ sind nicht beide rot}\\
+                        & (\bar{g}_i \vee \bar{g}_j) \tag{$v_i$ und $v_j$ sind nicht beide grün}\\
+                        & (\bar{b}_i \vee \bar{b}_j) \tag{$v_i$ und $v_j$ sind nicht beide blau}\\
                         \end{align*}
                         und dann alles zusammenwerfen:
                         \begin{align*}
-                        F:=&amp;\quad \bigwedge_{i=1}^n \left( (r_i \vee g_i \vee b_i) \wedge(\bar{r}_i \vee \bar{g}_i)
+                        F:= & \quad \bigwedge_{i=1}^n \left( (r_i \vee g_i \vee b_i) \wedge(\bar{r}_i \vee \bar{g}_i)
                         \wedge
                         (\bar{r}_i \vee \bar{b}_i)
                         \wedge (\bar{g}_i \vee \bar{b}_i) \right) \wedge \\
-                        &amp;\bigwedge_{\{v_i, v_j\} \in E} \left(
+                        & \bigwedge_{\{v_i, v_j\} \in E} \left(
                         (\bar{r}_i \vee \bar{r}_j) \wedge
                         (\bar{g}_i \vee \bar{g}_j) \wedge
                         (\bar{b}_i \vee \bar{b}_j)
@@ -139,8 +139,8 @@
                     Beachten Sie, dass die Formel $F$, die wir im Beweis
                     von 
                     |> span
-                        data-ref=theorem-3-col-to-sat
                         class=reference
+                        data-ref=theorem-3-col-to-sat
                     erstellt haben, eine solche 3-CNF ist.
                     |> Statement
                         title=*Theorem*
@@ -165,224 +165,224 @@
                         |> figure
                             class=centered-figure well container-fluid
                             |> a
-                                data-slide=prev
-                                href=#3-sat-to-3-col
                                 class=left carousel-control-prev-icon
+                                href=#3-sat-to-3-col
+                                data-slide=prev
                                 |> div
                                     class=carousel-nav-icon
                                     |> img
                                         src=../img/carousel-prev-icon.svg
                             |> a
-                                data-slide=next
-                                href=#3-sat-to-3-col
                                 class=right carousel-control-next-icon
+                                href=#3-sat-to-3-col
+                                data-slide=next
                                 |> div
                                     class=carousel-nav-icon
                                     |> img
                                         src=../img/carousel-next-icon.svg
                             |> div
-                                style=display:inline-block;width:100%
-                                data-interval=false
-                                class=carousel
                                 id=3-sat-to-3-col
+                                class=carousel
+                                data-interval=false
+                                style=display:inline-block;width:100%
                                 |> ol
                                     class=carousel-indicators
                                     |> li
-                                        class=active
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=1
-                                        data-target=#3-sat-to-3-col
+                                        class=active
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=2
-                                        data-target=#3-sat-to-3-col
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=3
-                                        data-target=#3-sat-to-3-col
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=4
-                                        data-target=#3-sat-to-3-col
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=5
-                                        data-target=#3-sat-to-3-col
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=6
-                                        data-target=#3-sat-to-3-col
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=7
-                                        data-target=#3-sat-to-3-col
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=8
-                                        data-target=#3-sat-to-3-col
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=9
-                                        data-target=#3-sat-to-3-col
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=10
-                                        data-target=#3-sat-to-3-col
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=11
-                                        data-target=#3-sat-to-3-col
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=12
-                                        data-target=#3-sat-to-3-col
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=13
-                                        data-target=#3-sat-to-3-col
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=14
-                                        data-target=#3-sat-to-3-col
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=15
-                                        data-target=#3-sat-to-3-col
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=16
-                                        data-target=#3-sat-to-3-col
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=17
-                                        data-target=#3-sat-to-3-col
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=18
-                                        data-target=#3-sat-to-3-col
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=19
-                                        data-target=#3-sat-to-3-col
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=20
-                                        data-target=#3-sat-to-3-col
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=21
-                                        data-target=#3-sat-to-3-col
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=22
-                                        data-target=#3-sat-to-3-col
                                     |> li
+                                        data-target=#3-sat-to-3-col
                                         data-slide-to=23
-                                        data-target=#3-sat-to-3-col
                                     |> li
-                                        data-slide-to=24
                                         data-target=#3-sat-to-3-col
+                                        data-slide-to=24
                                 |> div
-                                    style=display:inline-block
                                     class=carousel-inner
+                                    style=display:inline-block
                                     |> div
                                         class=item active
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-01.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-02.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-03.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-04.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-05.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-06.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-07.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-08.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-09.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-10.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-11.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-12.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-13.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-14.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-15.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-16.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-17.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-18.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-19.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-20.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-21.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-22.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-23.svg
+                                            style=width:100%
                                     |> div
                                         class=item
                                         |> img
-                                            style=width:100%
                                             src=../img/09-complexity-theory/sat-to-col/sat-to-col-01-24.svg
+                                            style=width:100%
                         Wir wiederholen die beschriebene Konstruktion für jede Klausel in $F$.
                         Wir erhalten einen Graphen $G$, der genau dann $3$-färbbar ist, wenn
                         $F$ erfüllbar ist. Auch können wir direkt eine gültige $3$-Färbung in eine
@@ -468,8 +468,8 @@
                                 3-Colorability
                             (
                             |> span
-                                data-ref=theorem-3-col-to-sat
                                 class=reference
+                                data-ref=theorem-3-col-to-sat
                             ).
                         |> li
                             Wenn 
@@ -483,8 +483,8 @@
                                 3-SAT
                             (
                             |> span
-                                data-ref=theorem-3-sat-to-3-col
                                 class=reference
+                                data-ref=theorem-3-sat-to-3-col
                             ).
                         |> li
                             Wenn 
@@ -498,8 +498,8 @@
                                 CNF-Satisfiability
                             (
                             |> span
-                                data-ref=theorem-sat-to-3-sat
                                 class=reference
+                                data-ref=theorem-sat-to-3-sat
                             ).
                     Beachten Sie, dass alle Beweise eine ähnliche Form haben: um die Aussage
                     _wenn $L_1 \in P$, dann auch $L_2 \in P$_ zu zeigen, nehmen wir
@@ -518,8 +518,8 @@
                     Dies ist eine _Reduktion_, wie wir sie schon
                     in 
                     |> span
-                        data-ref=definition-reduction
                         class=reference
+                        data-ref=definition-reduction
                     \ kennengelernt haben,
                     nun aber mit einer Aussage über die Laufzeit.
                     |> Statement
@@ -579,8 +579,8 @@
                         bauen folgenden Graphen $G$:
                         |> figure
                             |> img
-                                style=height:20em
                                 src=../img/09-complexity-theory/sat-to-independent-set/3sat-to-IS.svg
+                                style=height:20em
                         und setzen $k:=n+m$. Wir müssen nun folgendes zeigen:
                         \begin{align*}
                         F \textnormal{ ist erfüllbar} \Longleftrightarrow
@@ -643,56 +643,56 @@
                     |> figure
                         class=centered-figure well container
                         |> a
-                            data-slide=prev
-                            href=#isosahedron-has-HC
                             class=left carousel-control-prev-icon
+                            href=#isosahedron-has-HC
+                            data-slide=prev
                             |> div
                                 class=carousel-nav-icon
                                 |> img
                                     src=../img/carousel-prev-icon.svg
                         |> a
-                            data-slide=next
-                            href=#isosahedron-has-HC
                             class=right carousel-control-next-icon
+                            href=#isosahedron-has-HC
+                            data-slide=next
                             |> div
                                 class=carousel-nav-icon
                                 |> img
                                     src=../img/carousel-next-icon.svg
                         |> div
-                            style=display:inline-block
-                            data-interval=false
-                            class=carousel
                             id=isosahedron-has-HC
+                            class=carousel
+                            data-interval=false
+                            style=display:inline-block
                             |> ol
                                 class=carousel-indicators
                                 |> li
-                                    class=active
+                                    data-target=#isosahedron-has-HC
                                     data-slide-to=1
-                                    data-target=#isosahedron-has-HC
+                                    class=active
                                 |> li
-                                    data-slide-to=2
                                     data-target=#isosahedron-has-HC
+                                    data-slide-to=2
                             |> div
-                                style=display:inline-block
                                 class=carousel-inner
+                                style=display:inline-block
                                 |> div
                                     class=item active
                                     |> img
-                                        style=height:20em
                                         src=../img/09-complexity-theory/hamilton-path-and-cycle/hamilton-01-01.svg
+                                        style=height:20em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:20em
                                         src=../img/09-complexity-theory/hamilton-path-and-cycle/hamilton-01-02.svg
+                                        style=height:20em
                     Ein _Hamiltonscher Pfad_ ist ein Pfad mit $|V|$ Knoten.
                     Auch hier gilt: kein Knoten darf mehrfach besucht werden.
                     Der untere Graph, der _Petersen-Graph_, hat keinen
                     Hamiltonschen Kreis, dafür aber einen Hamiltonschen Pfad:
                     |> figure
                         |> img
-                            style=height:20em
                             src=../img/09-complexity-theory/hamilton-path-and-cycle/hamilton-02-01.svg
+                            style=height:20em
                     Wir definieren nun die zwei entsprechenden Entscheidungsprobleme:
                     |> Statement
                         title=*Problem*
@@ -742,48 +742,48 @@
                         |> figure
                             class=centered-figure well container-fluid
                             |> a
-                                data-slide=prev
-                                href=#ham-cycle-to-path
                                 class=left carousel-control-prev-icon
+                                href=#ham-cycle-to-path
+                                data-slide=prev
                                 |> div
                                     class=carousel-nav-icon
                                     |> img
                                         src=../img/carousel-prev-icon.svg
                             |> a
-                                data-slide=next
-                                href=#ham-cycle-to-path
                                 class=right carousel-control-next-icon
+                                href=#ham-cycle-to-path
+                                data-slide=next
                                 |> div
                                     class=carousel-nav-icon
                                     |> img
                                         src=../img/carousel-next-icon.svg
                             |> div
-                                style=display:inline-block
-                                data-interval=false
-                                class=carousel
                                 id=ham-cycle-to-path
+                                class=carousel
+                                data-interval=false
+                                style=display:inline-block
                                 |> ol
                                     class=carousel-indicators
                                     |> li
-                                        class=active
+                                        data-target=#ham-cycle-to-path
                                         data-slide-to=1
-                                        data-target=#ham-cycle-to-path
+                                        class=active
                                     |> li
-                                        data-slide-to=2
                                         data-target=#ham-cycle-to-path
+                                        data-slide-to=2
                                 |> div
-                                    style=display:inline-block
                                     class=carousel-inner
+                                    style=display:inline-block
                                     |> div
                                         class=item active
                                         |> img
-                                            style=height:20em
                                             src=../img/09-complexity-theory/hamilton-path-and-cycle/hamilton-03-01.svg
+                                            style=height:20em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:20em
                                             src=../img/09-complexity-theory/hamilton-path-and-cycle/hamilton-03-02.svg
+                                            style=height:20em
                         Woher wollen wir allerdings wissen, ob der Kreis in $G$ (wenn es ihn denn
                         gibt) überhaupt durch $\{u,v\}$ geht? Vielleicht gibt es ja einen,
                         aber keinen durch $\{u,v\}$, so dass dann `has_hamilton_path($G''$)`
@@ -828,8 +828,8 @@
                     Eine Reduktion, die dem strengen Reduktionsbegriff folgt,
                     also 
                     |> span
-                        data-ref=definition-polynomial-reduction
                         class=reference
+                        data-ref=definition-polynomial-reduction
                     ,
                     nennt man in Abgrenzung dazu _Karp-Reduktion_ nach Richard Karp,
                     ein weiterer NP-Vater.
@@ -837,8 +837,8 @@
                         title=*Übungsaufgabe*
                         Geben Sie einen "richtigen" Beweis für
                         |> span
-                            data-ref=theorem-ham-cycle-to-path
                             class=reference
+                            data-ref=theorem-ham-cycle-to-path
                         , also
                         eine Karp-Reduktion.
                     |> Statement

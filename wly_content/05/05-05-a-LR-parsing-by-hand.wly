@@ -39,9 +39,9 @@
                     Variablen $x, y, z$ und strenger Klammerung über dem Alphabet
                     $\Sigma = \{x, y, z, (, ), +, *\}$:
                     \begin{align*}
-                    S&amp;\rightarrow x \ |\ y\ |\ z \\
-                    S&amp;\rightarrow (S+S) \\
-                    S&amp;\rightarrow (S*S)
+                    S & \rightarrow x \ |\ y\ |\ z \\
+                    S & \rightarrow (S+S) \\
+                    S & \rightarrow (S*S)
                     \end{align*}
                     Sie kann also $(x + (y*z))$ ableiten aber eben nicht $(x + y + z)$. Wie können wir nun einen
                     Parser für $G$ schreiben? Also einen Algorithmus, der ein Wort $w \in \Sigma^*$ nimmt und einen
@@ -56,9 +56,9 @@
                     der $(((\dots$-Präfix ja länger als $k$ sein kann. Nein, wir müssen anders vorgehen.
                     Wir könnten beispielsweise die Grammatik ändern:
                     \begin{align*}
-                    S&amp;\rightarrow x \ | \ y \ | \ z \\
-                    S&amp;\rightarrow (SOS) \\
-                    O&amp;\rightarrow + \ | \ *
+                    S & \rightarrow x \ | \ y \ | \ z \\
+                    S & \rightarrow (SOS) \\
+                    O & \rightarrow + \ | \ *
                     \end{align*}
                     Das geht aber nicht immer:
                     |> Statement
@@ -73,10 +73,10 @@
                         _. Eine
                         Grammatik ist schnell geschrieben:
                         \begin{align}
-                        S&amp;\rightarrow aS \\
-                        S&amp;\rightarrow Xc \\
-                        X&amp;\rightarrow aXb \\
-                        X&amp;\rightarrow ab
+                        S & \rightarrow aS \\
+                        S & \rightarrow Xc \\
+                        X & \rightarrow aXb \\
+                        X & \rightarrow ab
                         \end{align}
                         Wenn wir jetzt die ersten $k$ Zeichen lesen: $aaaa \dots$, dann
                         gibt es keinen Weg, zu entscheiden, ob danach gleich viele oder weniger
@@ -104,423 +104,423 @@
                     |> figure
                         class=centered-figure well container
                         |> a
-                            data-slide=prev
-                            href=#aaabbc-sprache
                             class=left carousel-control-prev-icon
+                            href=#aaabbc-sprache
+                            data-slide=prev
                             |> div
                                 class=carousel-nav-icon
                                 |> img
                                     src=../img/carousel-prev-icon.svg
                         |> a
-                            data-slide=next
-                            href=#aaabbc-sprache
                             class=right carousel-control-next-icon
+                            href=#aaabbc-sprache
+                            data-slide=next
                             |> div
                                 class=carousel-nav-icon
                                 |> img
                                     src=../img/carousel-next-icon.svg
                         |> div
-                            style=display:inline-block
-                            data-interval=false
-                            class=carousel
                             id=aaabbc-sprache
+                            class=carousel
+                            data-interval=false
+                            style=display:inline-block
                             |> ol
                                 class=carousel-indicators
                                 |> li
-                                    class=active
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=1
-                                    data-target=#aaabbc-sprache
+                                    class=active
                                 |> li
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=2
-                                    data-target=#aaabbc-sprache
                                 |> li
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=3
-                                    data-target=#aaabbc-sprache
                                 |> li
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=4
-                                    data-target=#aaabbc-sprache
                                 |> li
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=5
-                                    data-target=#aaabbc-sprache
                                 |> li
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=6
-                                    data-target=#aaabbc-sprache
                                 |> li
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=7
-                                    data-target=#aaabbc-sprache
                                 |> li
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=8
-                                    data-target=#aaabbc-sprache
                                 |> li
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=9
-                                    data-target=#aaabbc-sprache
                                 |> li
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=10
-                                    data-target=#aaabbc-sprache
                                 |> li
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=11
-                                    data-target=#aaabbc-sprache
                                 |> li
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=12
-                                    data-target=#aaabbc-sprache
                                 |> li
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=13
-                                    data-target=#aaabbc-sprache
                                 |> li
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=14
-                                    data-target=#aaabbc-sprache
                                 |> li
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=15
-                                    data-target=#aaabbc-sprache
                                 |> li
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=16
-                                    data-target=#aaabbc-sprache
                                 |> li
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=17
-                                    data-target=#aaabbc-sprache
                                 |> li
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=18
-                                    data-target=#aaabbc-sprache
                                 |> li
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=19
-                                    data-target=#aaabbc-sprache
                                 |> li
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=20
-                                    data-target=#aaabbc-sprache
                                 |> li
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=21
-                                    data-target=#aaabbc-sprache
                                 |> li
+                                    data-target=#aaabbc-sprache
                                     data-slide-to=22
-                                    data-target=#aaabbc-sprache
                                 |> li
-                                    data-slide-to=23
                                     data-target=#aaabbc-sprache
+                                    data-slide-to=23
                             |> div
-                                style=display:inline-block
                                 class=carousel-inner
+                                style=display:inline-block
                                 |> div
                                     class=item active
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-01.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-02.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-03.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-04.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-05.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-06.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-07.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-08.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-09.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-10.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-11.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-12.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-13.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-14.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-15.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-16.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-17.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-18.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-19.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-20.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-21.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-22.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-first-example/aaaabbbc-example-01-23.svg
+                                        style=height:18em
                     Betrachten wir noch ein Beispiel, nun für die etwas nützlichere Grammatik
                     der streng geklammerten arithmetischen Ausdrücke.
                     |> figure
                         class=centered-figure well container
                         |> a
-                            data-slide=prev
-                            href=#arithm
                             class=left carousel-control-prev-icon
+                            href=#arithm
+                            data-slide=prev
                             |> div
                                 class=carousel-nav-icon
                                 |> img
                                     src=../img/carousel-prev-icon.svg
                         |> a
-                            data-slide=next
-                            href=#arithm
                             class=right carousel-control-next-icon
+                            href=#arithm
+                            data-slide=next
                             |> div
                                 class=carousel-nav-icon
                                 |> img
                                     src=../img/carousel-next-icon.svg
                         |> div
-                            style=display:inline-block
-                            data-interval=false
-                            class=carousel
                             id=arithm
+                            class=carousel
+                            data-interval=false
+                            style=display:inline-block
                             |> ol
                                 class=carousel-indicators
                                 |> li
-                                    class=active
+                                    data-target=#arithm
                                     data-slide-to=1
-                                    data-target=#arithm
+                                    class=active
                                 |> li
+                                    data-target=#arithm
                                     data-slide-to=2
-                                    data-target=#arithm
                                 |> li
+                                    data-target=#arithm
                                     data-slide-to=3
-                                    data-target=#arithm
                                 |> li
+                                    data-target=#arithm
                                     data-slide-to=4
-                                    data-target=#arithm
                                 |> li
+                                    data-target=#arithm
                                     data-slide-to=5
-                                    data-target=#arithm
                                 |> li
+                                    data-target=#arithm
                                     data-slide-to=6
-                                    data-target=#arithm
                                 |> li
+                                    data-target=#arithm
                                     data-slide-to=7
-                                    data-target=#arithm
                                 |> li
+                                    data-target=#arithm
                                     data-slide-to=8
-                                    data-target=#arithm
                                 |> li
+                                    data-target=#arithm
                                     data-slide-to=9
-                                    data-target=#arithm
                                 |> li
+                                    data-target=#arithm
                                     data-slide-to=10
-                                    data-target=#arithm
                                 |> li
+                                    data-target=#arithm
                                     data-slide-to=11
-                                    data-target=#arithm
                                 |> li
+                                    data-target=#arithm
                                     data-slide-to=12
-                                    data-target=#arithm
                                 |> li
+                                    data-target=#arithm
                                     data-slide-to=13
-                                    data-target=#arithm
                                 |> li
+                                    data-target=#arithm
                                     data-slide-to=14
-                                    data-target=#arithm
                                 |> li
+                                    data-target=#arithm
                                     data-slide-to=15
-                                    data-target=#arithm
                                 |> li
+                                    data-target=#arithm
                                     data-slide-to=16
-                                    data-target=#arithm
                                 |> li
+                                    data-target=#arithm
                                     data-slide-to=17
-                                    data-target=#arithm
                                 |> li
+                                    data-target=#arithm
                                     data-slide-to=18
-                                    data-target=#arithm
                                 |> li
+                                    data-target=#arithm
                                     data-slide-to=19
-                                    data-target=#arithm
                                 |> li
+                                    data-target=#arithm
                                     data-slide-to=20
-                                    data-target=#arithm
                                 |> li
+                                    data-target=#arithm
                                     data-slide-to=21
-                                    data-target=#arithm
                                 |> li
-                                    data-slide-to=22
                                     data-target=#arithm
+                                    data-slide-to=22
                             |> div
-                                style=display:inline-block
                                 class=carousel-inner
+                                style=display:inline-block
                                 |> div
                                     class=item active
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-01.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-02.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-03.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-04.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-05.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-06.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-07.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-08.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-09.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-10.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-11.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-12.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-13.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-14.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-15.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-16.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-17.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-18.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-19.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-20.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-21.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-22.svg
+                                        style=height:18em
                     Wenn wir uns nun die Ableitung ansehen, die wir gefunden haben:
                     \begin{align*}
                     \texttt{S} \Step{}
@@ -538,9 +538,9 @@
                     Allerdings ist das nicht immer so einfach: manchmal ist nicht auf den ersten Blick erkennbar,
                     welche Produktionsregel wir (rückwärts) anwenden sollen. Hier ein etwas konstruiertes Beispiel:
                     \begin{align*}
-                    S&amp;\rightarrow XYz \\
-                    X&amp;\rightarrow aXa \ | \ bXb \ | \ c \\
-                    Y&amp;\rightarrow Ya \ | \ Yb \ | \ a \ | \ b
+                    S & \rightarrow XYz \\
+                    X & \rightarrow aXa \ | \ bXb \ | \ c \\
+                    Y & \rightarrow Ya \ | \ Yb \ | \ a \ | \ b
                     \end{align*}
                     Die erzeugte Sprache ist 
                     \begin{align*}
@@ -554,18 +554,18 @@
                     Regel anwenden.
                     |> Highlight
                         \begin{align*}
-                        &amp;\textcolor{darkgray}{acabaz} \tag{lesen} \\
-                        &amp;a\textcolor{darkgray}{cabaz} \tag{lesen} \\
-                        &amp;ac\textcolor{darkgray}{abaz} \tag{reduzieren per $X \rightarrow c$} \\
-                        &amp;aX\textcolor{darkgray}{abaz} \tag{lesen} \\
-                        &amp;aXa\textcolor{darkgray}{baz} \tag{reduzieren per $X \rightarrow aXa$} \\
-                        &amp;X\textcolor{darkgray}{baz} \tag{lesen} \\
-                        &amp;Xb\textcolor{darkgray}{baz} \tag{reduzieren per $Y \rightarrow b$} \\
-                        &amp;XY\textcolor{darkgray}{az} \tag{lesen} \\
-                        &amp;XYa\textcolor{darkgray}{z} \tag{reduzieren per $Y \rightarrow Ya$} \\
-                        &amp;XY\textcolor{darkgray}{z} \tag{lesen} \\
-                        &amp;XYz \tag{reduzieren per $S \rightarrow XYz$} \\
-                        &amp;S \tag{fertig}
+                        & \textcolor{darkgray}{acabaz} \tag{lesen} \\
+                        & a\textcolor{darkgray}{cabaz} \tag{lesen} \\
+                        & ac\textcolor{darkgray}{abaz} \tag{reduzieren per $X \rightarrow c$} \\
+                        & aX\textcolor{darkgray}{abaz} \tag{lesen} \\
+                        & aXa\textcolor{darkgray}{baz} \tag{reduzieren per $X \rightarrow aXa$} \\
+                        & X\textcolor{darkgray}{baz} \tag{lesen} \\
+                        & Xb\textcolor{darkgray}{baz} \tag{reduzieren per $Y \rightarrow b$} \\
+                        & XY\textcolor{darkgray}{az} \tag{lesen} \\
+                        & XYa\textcolor{darkgray}{z} \tag{reduzieren per $Y \rightarrow Ya$} \\
+                        & XY\textcolor{darkgray}{z} \tag{lesen} \\
+                        & XYz \tag{reduzieren per $S \rightarrow XYz$} \\
+                        & S \tag{fertig}
                         \end{align*}
                     Es stellen sich einige Fragen: woher wissen wir zum Beispiel bei
                     $XYa\textcolor{darkgray}{z}$, dass wir per $Y \rightarrow Ya$ reduzieren müssen
@@ -592,9 +592,9 @@
                     plausible Reduktionsschritte geben kann. Ein Beispiel wäre die obere Grammatik, leicht
                     abgewandelt:
                     \begin{align*}
-                    S&amp;\rightarrow XY \tag{beachten Sie: oben hatten wir $S \rightarrow XYz$}\\
-                    X&amp;\rightarrow aXa \ | \ bXb \ | \ c \\
-                    Y&amp;\rightarrow Ya \ | \ Yb \ | \ a \ | \ b
+                    S & \rightarrow XY \tag{beachten Sie: oben hatten wir $S \rightarrow XYz$}\\
+                    X & \rightarrow aXa \ | \ bXb \ | \ c \\
+                    Y & \rightarrow Ya \ | \ Yb \ | \ a \ | \ b
                     \end{align*}
                     Wenn wir jetzt als einfaches Beispiel $cab$ ableiten wollen:
                     \begin{align*}

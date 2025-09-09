@@ -53,12 +53,12 @@
                     \texttt{+},\texttt{*},\texttt{(},\texttt{)}\}$.
                     Die Produktionsregeln sind:
                     \begin{align*}
-                    E&amp;\rightarrow N \tag{JustNumber} \\
-                    E&amp;\rightarrow \texttt{(}E \texttt{+} E\texttt{)} \tag{Sum} \\
-                    E&amp;\rightarrow \texttt{(}E \texttt{*} E\texttt{)} \tag{Product}\\
-                    N&amp;\rightarrow D \tag{SingleDigit} \\
-                    N&amp;\rightarrow ND \tag{NumberDigit} \\
-                    D&amp;\rightarrow \texttt{0}\ | \ \texttt{1}\ | \ \texttt{2}\ | \ \texttt{3}\ | \ \texttt{4}\ | \
+                    E & \rightarrow N \tag{JustNumber} \\
+                    E & \rightarrow \texttt{(}E \texttt{+} E\texttt{)} \tag{Sum} \\
+                    E & \rightarrow \texttt{(}E \texttt{*} E\texttt{)} \tag{Product}\\
+                    N & \rightarrow D \tag{SingleDigit} \\
+                    N & \rightarrow ND \tag{NumberDigit} \\
+                    D & \rightarrow \texttt{0}\ | \ \texttt{1}\ | \ \texttt{2}\ | \ \texttt{3}\ | \ \texttt{4}\ | \
                     \texttt{5}\ | \ \texttt{6}\ | \ \texttt{7}\ | \ \texttt{8}\ | \ \texttt{9}
                     \end{align*}
                     Die Nichtterminale sind also $E$ (Expression), $N$ (Number) und $D$ (Digit). Wir haben auch
@@ -67,8 +67,8 @@
                     _Ableitungsbaum_ konstruieren, für `((31+402)*83)` also
                     |> figure
                         |> img
-                            style=height:20em
                             src=../img/context-free/arithmetic-syntax-tree.svg
+                            style=height:20em
                     Wie wir diesen Baum in Java repräsentieren, darüber sprechen wir in einer Minute.
                     Zuerst aber: wir wollen mit diesem Baum etwas Sinnvolles tun. Zum Beispiel
                     _auswerten_, so dass am Ende eine Zahl rauskommt, im obigen Beispiel

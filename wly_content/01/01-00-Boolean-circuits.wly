@@ -37,37 +37,37 @@
                 wahr/falsch bzw. 1/0 bzw. `true/false`. Hier sehen Sie die drei üblichsten Gatter:
                 |> figure
                     |> img
-                        style=height:10em
-                        src=../img/circuits/and-or-not-gates.svg
                         loading=lazy
+                        src=../img/circuits/and-or-not-gates.svg
+                        style=height:10em
                 Von links nach rechts sind dies: das Und-Gatter (_and-gate_), Oder-Gatter (_or-gate_) und
                 das
                 Nicht-Gatter (_not-gate_). In C, C++ und Java kennen Sie diese Booleschen Operatoren als
-                `&&`, `||` und `!`. Was diese Operatoren
+                `&amp;&amp;`, `||` und `!`. Was diese Operatoren
                 _tun_, können wir als _Wahrheitstabelle_ darstellen.
                 Wir listen alle Kombinationen für \(x,y\) auf und schreiben in jede Zeile
                 auch den Wert, den der Operator ausgibt.
                 $$
                 \begin{array}{ll|l}
-                x&amp;y&amp;x \wedge y \\ \hline
-                0&amp;0&amp;0 \\
-                0&amp;1&amp;0 \\
-                1&amp;0&amp;0 \\
-                1&amp;1&amp;1
+                x & y & x \wedge y \\ \hline
+                0 & 0 & 0 \\
+                0 & 1 & 0 \\
+                1 & 0 & 0 \\
+                1 & 1 & 1
                 \end{array}
                 \qquad \qquad
                 \begin{array}{ll|l}
-                x&amp;y&amp;x \vee y \\ \hline
-                0&amp;0&amp;0 \\
-                0&amp;1&amp;1 \\
-                1&amp;0&amp;1 \\
-                1&amp;1&amp;1
+                x & y & x \vee y \\ \hline
+                0 & 0 & 0 \\
+                0 & 1 & 1 \\
+                1 & 0 & 1 \\
+                1 & 1 & 1
                 \end{array}
                 \qquad \qquad
                 \begin{array}{l|l}
-                x&amp;\neg x \\ \hline
-                0&amp;1 \\
-                1&amp;0 \\
+                x & \neg x \\ \hline
+                0 & 1 \\
+                1 & 0 \\
                 \end{array}
                 $$
                 Die dritte Zeile der mittleren Tabelle sagt beispielsweise aus, dass
@@ -78,9 +78,9 @@
                 So ein Gate können Sie sich einfach aus And, Or, Not bauen:
                 |> figure
                     |> img
-                        style=height:13em
-                        src=../img/circuits/if-then-else-gate.svg
                         loading=lazy
+                        src=../img/circuits/if-then-else-gate.svg
+                        style=height:13em
                     |> figcaption
                         `if` \(x\) `then` \(y\) `else` \(z\)
                 Jeder Schaltkreis _berechnet_ eine Funktion (formale Definition weiter unten).
@@ -89,9 +89,9 @@
                 ihrer Funktion kombiniert und werden schließlich an den Output-Gates ausgegeben:
                 |> figure
                     |> img
-                        style=height:13em
-                        src=../img/circuits/if-then-else-gate-with-values.svg
                         loading=lazy
+                        src=../img/circuits/if-then-else-gate-with-values.svg
+                        style=height:13em
                     |> figcaption
                         Das if-then-else-Gate mit einer konkreten Belegung und einem Ausgabewert
                 |> Statement
@@ -108,9 +108,9 @@
                             Ein \(n\)-faches XOR-Gate
                             |> figure
                                 |> img
-                                    style=height:5em
-                                    src=../img/circuits/n-fold-xor.svg
                                     loading=lazy
+                                    src=../img/circuits/n-fold-xor.svg
+                                    style=height:5em
                                 \ ,
                             welches 1 ausgibt, wenn eine _ungerade_ Anzahl seiner Inputs
                             auf 1 stehen.
@@ -126,9 +126,9 @@
                 \(x_1 \wedge x_2 \wedge \dots \wedge x_n\) als _ein_ Gate darzustellen:
                 |> figure
                     |> img
-                        style=height:10em
-                        src=../img/circuits/and-fan-in-n.svg
                         loading=lazy
+                        src=../img/circuits/and-fan-in-n.svg
+                        style=height:10em
                 Man bezeichnet dies als AND-Gate mit einem _Fan-in_ von \(n\). Das "normale" AND-Gate
                 hat einen Fan-in von 2.
                 Mit \(\vee\)- und \(\oplus\)-Gates geht das ganz analog. Für andere Gates (wie zum Beispiel
@@ -136,24 +136,24 @@
                 neues unter der Sonne: Sie können jederzeit großen Fan-in durch kleinen simulieren:
                 |> figure
                     |> img
-                        style=height:10em
-                        src=../img/circuits/and-n-fold-linear-depth.svg
                         loading=lazy
+                        src=../img/circuits/and-n-fold-linear-depth.svg
+                        style=height:10em
                 Also als geschachteltes AND, oder aber in Form eines Binärbaums:
                 |> figure
                     |> img
-                        style=height:10em
-                        src=../img/circuits/and-n-fold-log-depth.svg
                         loading=lazy
+                        src=../img/circuits/and-n-fold-log-depth.svg
+                        style=height:10em
                 Schaltkreise, wie wir sie in diesem Kapitel betrachten, sind immer azyklisch. Das heißt
                 insbesondere,
                 das Dinge mit "Feedback-Schleifen" wie Flipflops eben _keine_ Schaltkreis in unserem Sinn
                 sind:
                 |> figure
                     |> img
-                        style=height:10em
-                        src=../img/circuits/flipflop.svg
                         loading=lazy
+                        src=../img/circuits/flipflop.svg
+                        style=height:10em
                 Das Flipflop zeigt ein interessantes Verhalten: wenn \({\rm Reset} = 0, {\rm Set} = 1\) ist,
                 so ist der Ausgabe-Wert des unteren OR-Gates auf jeden Fall 1, und somit
                 ist \(\bar{Q} = 0\); somit sind wiederum beide Input-Werte des oberen OR-Gates 0 und

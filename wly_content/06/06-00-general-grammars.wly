@@ -83,8 +83,8 @@
                         Grammtik und \(\gamma_1, \gamma_2 \in (\Sigma\cup N)^* \) zwei Wortformen.
                         Wir schreiben \(\gamma_1 \Step{} \gamma_2\), wenn wir
                         \begin{align*}
-                        \gamma_1&amp;= u \alpha v \\
-                        \gamma_2&amp;= u \beta v
+                        \gamma_1 & = u \alpha v \\
+                        \gamma_2 & = u \beta v
                         \end{align*}
                         schreiben können für Wortformen \(u,v\), sodass \(\alpha \rightarrow \beta\) eine
                         Produktion von \(G\) ist.
@@ -94,16 +94,16 @@
                         Terminalalphabet \(\Sigma = \{a,b,c\}\), Nichtterminalsymbolen
                         \(N = \{S, A, B, C\}\), Startsymbol \(S\) und den Produktionen
                         \begin{align*}
-                        S&amp;\step{1} ABCS \ | \ \epsilon \\
-                        AB&amp;\step{2} BA \\
-                        BA&amp;\step{3} AB \\
-                        AC&amp;\step{4} CA \\
-                        CA&amp;\step{5} AC \\
-                        BC&amp;\step{6} CB \\
-                        CB&amp;\step{7} BC \\
-                        A&amp;\step{8} a \\
-                        B&amp;\step{9} b \\
-                        C&amp;\step{10} c
+                        S & \step{1} ABCS \ | \ \epsilon \\
+                        AB & \step{2} BA \\
+                        BA & \step{3} AB \\
+                        AC & \step{4} CA \\
+                        CA & \step{5} AC \\
+                        BC & \step{6} CB \\
+                        CB & \step{7} BC \\
+                        A & \step{8} a \\
+                        B & \step{9} b \\
+                        C & \step{10} c
                         \end{align*}
                         Nun schauen wir uns eine Beispielableitung an:
                         \begin{align*}
@@ -139,13 +139,13 @@
                         die obige Grammatik, allerdings lassen wir nur die Vertauschungsregeln zu, die
                         die Buchstaben in die richtige Reihenfolge bringen:
                         \begin{align*}
-                        S&amp;\step{} ABCS \ | \ \epsilon \\
-                        BA&amp;\step{} AB \\
-                        CA&amp;\step{} AC \\
-                        CB&amp;\step{} BC \\
-                        A&amp;\step{} a \\
-                        B&amp;\step{} b \\
-                        C&amp;\step{} c
+                        S & \step{} ABCS \ | \ \epsilon \\
+                        BA & \step{} AB \\
+                        CA & \step{} AC \\
+                        CB & \step{} BC \\
+                        A & \step{} a \\
+                        B & \step{} b \\
+                        C & \step{} c
                         \end{align*}
                         Offensichtlich kann jedes Wort in \(L\) erzeugt werden, allerdings
                         auch Wörter wie \(abcabc\), die nicht in \(L\) sind. Können wir
@@ -153,8 +153,8 @@
                         aller \(abc\)-Wörter \(w\) mit
                         gilt
                         \begin{align*}
-                        &amp;\#_a(w) \geq \#_b(w) \geq \#_c(w) \quad \textnormal{und} \\
-                        &amp;\#_a(v) \geq \#_b(v) \geq \#_c(v) \quad \textnormal{für alle Präfixe $v$ von $w$}
+                        & \#_a(w) \geq \#_b(w) \geq \#_c(w) \quad \textnormal{und} \\
+                        & \#_a(v) \geq \#_b(v) \geq \#_c(v) \quad \textnormal{für alle Präfixe $v$ von $w$}
                         \end{align*}
                         wobei \(\#_b(v)\) die Anzahl der in \(v\) enthaltenen \(b\) ist.
                         Nachdem also unser erster Versuch gescheitert ist, unternehmen wir einen
@@ -171,48 +171,48 @@
                         Wir brauchen nun sieben Nichtterminale
                         \(N = \{S,A,B,C,X,Y,Z\}\). Für \(S\) haben wir die Produktionen
                         \begin{align*}
-                        S&amp;\step{1} SABC \\
-                        S&amp;\step{2} X
+                        S & \step{1} SABC \\
+                        S & \step{2} X
                         \end{align*}
                         so dass \(S \Step{}^* X (ABC)^n\) gilt. Als nächstes brauchen wir
                         die Vertauschregeln, um alles in die richtige Reihenfolge zu bringen:
                         \begin{align*}
-                        BA&amp;\step{3} AB \\
-                        CA&amp;\step{4} AC \\
-                        CB&amp;\step{5} BC
+                        BA & \step{3} AB \\
+                        CA & \step{4} AC \\
+                        CB & \step{5} BC
                         \end{align*}
                         Die Nichtterminale \(X,Y,Z\) stehen für folgendes:
                         |> ul
                             |> li
                                 \(X\): will \(A\) in \(a\) umwandeln:
                                 \begin{align*}
-                                XA&amp;\step{6} aX
+                                XA & \step{6} aX
                                 \end{align*}
                                 Zu jedem Zeitpunkt können wir beschließen, nun keine
                                 \(A\) in \(a\) mehr umzuwandeln, sondern nun \(B\)-Symbole zu erwarten:
                                 \begin{align*}
-                                X&amp;\step{7} Y
+                                X & \step{7} Y
                                 \end{align*}
                             |> li
                                 \(Y\): will \(B\) in \(b\) umwandeln oder mit \(C\) fortfahren:
                                 \begin{align*}
-                                YB&amp;\step{8} bY \\
-                                Y&amp;\step{9} Z
+                                YB & \step{8} bY \\
+                                Y & \step{9} Z
                                 \end{align*}
                             |> li
                                 \(Z\): will \(C\) in \(c\) umwandeln. Wir
                                 können aber auch einfach aufhören, zum Beispiel
                                 wenn wir den rechten Rand erreicht haben:
                                 \begin{align*}
-                                ZC&amp;\step{10} cZ \\
-                                Z&amp;\step{11} \epsilon
+                                ZC & \step{10} cZ \\
+                                Z & \step{11} \epsilon
                                 \end{align*}
                         Nun müssen wir zeigen, dass die Grammatik die Sprache \(L\) erzeugt. Für
                         jedes Wort \(a^n b^n c^n \in L \) müssen wir zeigen, dass wir es ableiten können:
                         \begin{align*}
-                        &amp;S \Step{1}^* S(ABC)^n \Step{2} X(ABC)^n
+                        & S \Step{1}^* S(ABC)^n \Step{2} X(ABC)^n
                         \Step{3,4,5}^* X A^n B^n C^n\\
-                        &amp;\Step{6}^* a^n X B^n C^n
+                        & \Step{6}^* a^n X B^n C^n
                         \Step{7} a^n Y B^n C^n
                         \Step{8}^* a^n b^n Y C^n
                         \Step{9} a^n b^n Z C^n
@@ -291,22 +291,22 @@
                         Dies geht sogar nohc einfacher als die obigen Sprachen. Wir
                         schaffen eine Startregel:
                         \begin{align*}
-                        S&amp;\step{1} L1R
+                        S & \step{1} L1R
                         \end{align*}
                         Die Nichtterminale \(L\) und \(R\) zeigen den linken und rechten Rand an.
                         Wir können am linken Rand einen "Verdopplungssymbol" \(D\) erzeugen. Dies
                         kann nur nach rechts durchwandern und bei \(R\) verschwinden und verdoppelt dabei
                         jede \(1\), die es trifft:
                         \begin{align*}
-                        L&amp;\step{2} LD \\
-                        D1&amp;\step{3} 11D \\
-                        DR&amp;\step{4} R
+                        L & \step{2} LD \\
+                        D1 & \step{3} 11D \\
+                        DR & \step{4} R
                         \end{align*}
                         Schlussendlich definieren wir End-Produktionen, die die Randmarkierungen
                         löschen:
                         \begin{align*}
-                        L&amp;\step{5} \epsilon \\
-                        R&amp;\step{6} \epsilon
+                        L & \step{5} \epsilon \\
+                        R & \step{6} \epsilon
                         \end{align*}
                         Hier sehen Sie nun ein Beispiel für eine Ableitung:
                         \begin{align*}
@@ -331,8 +331,8 @@
                         \end{align*}
                         ermöglicht. Wenn wir dies geschafft haben, sind wir fertig. Mittels
                         \begin{align*}
-                        S&amp;\rightarrow L S' R \\
-                        S'&amp;\rightarrow A S' B \ | \ \epsilon
+                        S & \rightarrow L S' R \\
+                        S' & \rightarrow A S' B \ | \ \epsilon
                         \end{align*}
                         können wir alle \(S \Step{}^* L A^m B^m R\) ableiten.
                         Die Multiplikationsgrammatik wandelt uns dies in
@@ -341,11 +341,11 @@
                         nach links durcharbeitet, dabei die \(C\) in \(1)\ umwandelt
                         und die \(\tilde{A},B\) durch \(\epsilon\) ersetzt:
                         \begin{align*}
-                        R&amp;\rightarrow K \\
-                        CK&amp;\rightarrow K1 \\
-                        BK&amp;\rightarrow K \\
-                        \tilde{A}K&amp;\rightarrow K \\
-                        LK&amp;\rightarrow \epsilon
+                        R & \rightarrow K \\
+                        CK & \rightarrow K1 \\
+                        BK & \rightarrow K \\
+                        \tilde{A}K & \rightarrow K \\
+                        LK & \rightarrow \epsilon
                         \end{align*}
                         Es bleibt also, die Multiplikationsgrammatik zu entwerfen, die,
                         um es zu wiederholen,
@@ -354,7 +354,7 @@
                         \end{align*}
                         ermöglicht, aber nicht wirklich viel mehr. Wir erschaffen die Produktion
                         \begin{align*}
-                        A&amp;\rightarrow \tilde{A} X
+                        A & \rightarrow \tilde{A} X
                         \end{align*}
                         Das neue Nichtterminal \(\tilde{A}\) bedeutet soviel wie "ein \(A\), das bereits
                         abgearbeitet worden ist." Das Nichtterminal \(X\) bedeutet:
@@ -368,19 +368,19 @@
                         \(X\) nach rechts durchrutschen zu lassen und dabei
                         jedes \(B\) durch ein \(B \tilde{C}\) ersetzen zu lassen:
                         \begin{align*}
-                        XA&amp;\rightarrow AX \\
-                        XB&amp;\rightarrow B \tilde{C}X\\
-                        XR&amp;\rightarrow R\\
-                        X\tilde{C}&amp;\rightarrow \tilde{C}X
+                        XA & \rightarrow AX \\
+                        XB & \rightarrow B \tilde{C}X\\
+                        XR & \rightarrow R\\
+                        X\tilde{C} & \rightarrow \tilde{C}X
                         \end{align*}
                         Das \(X\) erzeugt also von seinem Entstehen bis zu seinem Verschwinden bei \(R\)
                         genau \(n\) viele \(\tilde{C}\)-Symbole. Wir erstellen nun Regeln,
                         die uns zwingen, jedes \(\tilde{C}\) nach rechts laufen zu lassen,
                         wo sie in ein \(C\) umgewandelt werden können:
                         \begin{align*}
-                        \tilde{C} B&amp;\rightarrow B \tilde{C} \\
-                        \tilde{C} C&amp;\rightarrow C \tilde{C} \\
-                        \tilde{C} R&amp;\rightarrow R
+                        \tilde{C} B & \rightarrow B \tilde{C} \\
+                        \tilde{C} C & \rightarrow C \tilde{C} \\
+                        \tilde{C} R & \rightarrow R
                         \end{align*}
                         Überzeugen wir uns, dass dies den gewünschten Effekt hat.
                         |> ul

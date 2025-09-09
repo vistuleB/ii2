@@ -38,9 +38,9 @@
                     Unser Ziel in diesem Teilkapitel ist es, Schaltkreise für die Majority-Funktion zu bauen:
                     |> figure
                         |> img
-                            style=height:10em
-                            src=../img/circuits/majority.svg
                             loading=lazy
+                            src=../img/circuits/majority.svg
+                            style=height:10em
                     Diese nimmt \(n\) Bits als Input und gibt 1 aus, wenn mehr als \(n/2\) davon 1 sind.
                     Für \(n=3\) heißt dass, das mindestens zwei Input-Bits 1 sein müssen. Als Formel
                     kann man das so schreiben:
@@ -50,9 +50,9 @@
                     und als Schaltkreis so:
                     |> figure
                         |> img
-                            style=height:8em
-                            src=../img/circuits/maj3.svg
                             loading=lazy
+                            src=../img/circuits/maj3.svg
+                            style=height:8em
                     Wie können wir das sinnvoll verallgemeinern für größere \(n\)?
                     Was geschieht, wenn wir einfach die Wahrheitstabellen-Methode anwenden?
                     Falls \(n\) ungerade ist, dann sieht man leicht, dass die Wahrheitstabelle
@@ -111,16 +111,16 @@
                         *Beweis.*
                         Sei \(k \in \{1,\dots,n\}\). Vergleichen wir \({n \choose k}\) mit \({n \choose k-1}\):
                         \begin{align*}
-                        \frac{{n \choose k}}{{n \choose k-1}}&amp;=
+                        \frac{{n \choose k}}{{n \choose k-1}} & =
                         \frac{ \frac{n!}{k! (n-k)!}}{\frac{n!}{ (k-1)! (n-k+1)!}} = \frac{n-k+1}{k}
                         \end{align*}
                         und somit
                         \begin{align*}
-                        {n \choose k}&amp;\geq {n \choose k-1} \quad \Longleftrightarrow \\
-                        n-k+1&amp;\geq k \quad \Longleftrightarrow \\
-                        2k&amp;\leq n+1 \quad \Longleftrightarrow \\
-                        k&amp;\leq \frac{n+1}{2} \quad \Longleftrightarrow \\
-                        k&amp;\leq \floor{ \frac{n+1}{2}} = \ceil{\frac{n}{2}} \ .
+                        {n \choose k} & \geq {n \choose k-1} \quad \Longleftrightarrow \\
+                        n-k+1 & \geq k \quad \Longleftrightarrow \\
+                        2k & \leq n+1 \quad \Longleftrightarrow \\
+                        k & \leq \frac{n+1}{2} \quad \Longleftrightarrow \\
+                        k & \leq \floor{ \frac{n+1}{2}} = \ceil{\frac{n}{2}} \ .
                         \end{align*}
                         Aus der letzten Zeile folgt nun, dass \({n \choose k}\) durch \(k := \ceil{\frac{n}{2}}\)
                         maximiert wird, also
@@ -166,10 +166,10 @@
                     \ dargestellt.
                     Insbesondere definieren wir Verallgemeinerungen von \(\maj_n\) wie folgt:
                     \begin{align*}
-                    \theta^n_k (x_1,\dots,x_n)&amp;:=
+                    \theta^n_k (x_1,\dots,x_n) & :=
                     \begin{cases}
-                    1&amp;\textnormal{ falls $x_1 + \dots + x_n \geq k$} \\
-                    0&amp;\textnormal{ sonst.}
+                    1 & \textnormal{ falls $x_1 + \dots + x_n \geq k$} \\
+                    0 & \textnormal{ sonst.}
                     \end{cases}
                     \end{align*}
                     Die Funktion \(\maj_n\) ist also ein Speziallfall \(\theta^n_k\) für
@@ -184,18 +184,18 @@
                     \(\theta^{n-1}_k\) berechnen. Rekursiv fortgefühtr sieht das dann so aus:
                     |> figure
                         |> img
-                            style=height:15em
-                            src=../img/circuits/majority-theta-recursive.svg
                             loading=lazy
+                            src=../img/circuits/majority-theta-recursive.svg
+                            style=height:15em
                     Die Konstruktion endet mit \(\theta^m_0\), was immer \(1\) ausgibt, und
                     mit \(\theta^m_{m}\), was \(x_1 \wedge \dots \wedge x_m\) ist. Die
                     Konstruktion ist leider auch nicht effizient; wenn man
                     mit \(C^n_k\) die Anzahl der \(\theta^m_m\) und \(\theta^m_0\) in diesem
                     Baum zählt, dann sieht man, dass
                     \begin{align*}
-                    C^n_k&amp;= C^{n-1}_{k-1} + C^{n-1}_k \\
-                    C^n_n&amp;= 1 \\
-                    C^n_0&amp;= 1
+                    C^n_k & = C^{n-1}_{k-1} + C^{n-1}_k \\
+                    C^n_n & = 1 \\
+                    C^n_0 & = 1
                     \end{align*}
                     gilt; sie erfüllt also die gleiche Rekursionsgleichung wie der Binomialkoeffizient
                     \({n \choose k}\), also gilt \(C^n_k = {n \choose k}\). Die Konstruktion ist
@@ -207,9 +207,9 @@
                     Baum einen Schaltkreis nach folgendem Pyramidenschema bauen:
                     |> figure
                         |> img
-                            style=height:18em
-                            src=../img/circuits/majority-theta-dp.svg
                             loading=lazy
+                            src=../img/circuits/majority-theta-dp.svg
+                            style=height:18em
                     Um eine Analogie mit der Programmierpraxis zu bemühen: der Unterschied
                     zwischen den beiden Konstruktionen für \(\theta^n_k\) per Baum versus
                     per Pyramidenschema entspricht dem Unterschied zwischen dem
@@ -249,9 +249,9 @@
                     \(000\dots 0\), also 0, und addieren die dann auf:
                     |> figure
                         |> img
-                            style=height:12em
-                            src=../img/circuits/majority-by-adding.svg
                             loading=lazy
+                            src=../img/circuits/majority-by-adding.svg
+                            style=height:12em
                     |> Statement
                         title=*Übungsaufgabe*
                         Bestimmen Sie asymptotisch die Größe und die Tiefe dieses Schaltkreises.
@@ -280,9 +280,9 @@
                         Ich demonstriere das Beweisprinzip erst einmal mit drei Zahlen in Basis 10:
                         |> figure
                             |> img
-                                style=height:10em
-                                src=../img/circuits/2-for-3-adder-example.svg
                                 loading=lazy
+                                src=../img/circuits/2-for-3-adder-example.svg
+                                style=height:10em
                         Wir addieren also pro Stelle drei (einstellige) Zahlen,
                         führen den Übertrag (das Carry) aber nicht der weiter links stehenden Stelle
                         zu, sondern sammeln alle Überträge und bilden daraus die \(n+1\)-stellige
@@ -290,9 +290,9 @@
                         Für Binärzahlen ist das natürlich noch einfacher:
                         |> figure
                             |> img
-                                style=height:15em
-                                src=../img/circuits/2-for-3-adder-binary.svg
                                 loading=lazy
+                                src=../img/circuits/2-for-3-adder-binary.svg
+                                style=height:15em
                         Dieser Schaltkreis hat insgesamt \(O(n)\) Gates und Tiefe 2 (wobei wir
                         die NOT-Gates im $\oplus$-Gate nicht mitzählen).
                         |> QED
@@ -311,12 +311,12 @@
                     wir mit dem \(\geq\)-Schaltkreis mit \(\frac{k+1}{2}\). Was ist die
                     Tiefe des Gesamtschaltkreises? Es ist
                     \begin{align*}
-                    &amp;\log_{3/2} n \times \depth(\textnormal{2-for-3 adder}) \\
-                    +&
+                    & \log_{3/2} n \times \depth(\textnormal{2-for-3 adder}) \\
+                    + &
                     \depth(\textnormal{Binäraddierer für ($\log n$)-stellige Zahlen}) \\
-                    +&
+                    + &
                     \depth(\textnormal{$\geq$-Schaltkreis für ($\log n$)-stellige Zahlen} \\
-                    =&
+                    = &
                     O(\log n) + O(\log \log n) + O(\log \log n) = O(\log n) \ .
                     \end{align*}
                     Die Größe des Schaltkreises wird dominiert von den 2-for-3-Addierern. Wir
@@ -358,13 +358,13 @@
                     \(\mathbf{y} = (x_1, \dots, x_{n/2})\) und
                     \(\mathbf{z} = (x_{n/2+1}, \dots, x_n)\) und sehen, dass
                     \begin{align*}
-                    \sum_i x_i&amp;\geq k \quad \Longleftrightarrow \\
-                    \sum_i y_i&amp;\geq a \wedge \sum_j z_j \geq b
+                    \sum_i x_i & \geq k \quad \Longleftrightarrow \\
+                    \sum_i y_i & \geq a \wedge \sum_j z_j \geq b
                     \textnormal{ für Werte $a,b \geq 0$ mit $a + b = k$}
                     \end{align*}
                     und somit
                     \begin{align*}
-                    \theta^n_k(\mathbf{x})&amp;= \bigvee_{a=0}^k
+                    \theta^n_k(\mathbf{x}) & = \bigvee_{a=0}^k
                     ( \theta^{n/2}_a (\mathbf{y}) \wedge
                     \theta^{n/2}_{k-a} (\mathbf{z}) )
                     \end{align*}
@@ -445,19 +445,19 @@
                             Sei nun ein festes \(\x \in \{0,1\}\) gegeben. Mit welcher Wahrscheinlichkeit
                             ist unser (recht primitiver) Schaltkreis korrekt?
                             \begin{align*}
-                            C(\x)&amp;= \maj_n (\x) \quad \Longleftrightarrow \\
-                            x_I&amp;= \maj_n (\x) \ .
+                            C(\x) & = \maj_n (\x) \quad \Longleftrightarrow \\
+                            x_I & = \maj_n (\x) \ .
                             \end{align*}
                             Wir unterscheiden nun zwei Fälle. Wenn \(\maj_n(\x) = 1\) ist, dann
                             gibt es mindestens \(k+1\) Indizes \(i\) mit \(x_i = 1\). Wenn wir
                             mit \(I\) einen solchen ausgewählt haben, dann sind wir erfolgreich. Die
                             Wahrscheinlichkeit hierfür ist
                             \begin{align*}
-                            \Pr_{C \sim \mathcal{C}_0} [C(\x) = 1] = \Pr_{I \in [n]} [x_I = 1]&amp;= \frac{| \{i \in [n]\
+                            \Pr_{C \sim \mathcal{C}_0} [C(\x) = 1] = \Pr_{I \in [n]} [x_I = 1] & = \frac{| \{i \in [n]\
                             |
                             \ x_i = 1\}}{n} \geq \frac{k+1}{n} \\
-                            &amp;= \frac{k+1}{2k+1} = \frac{k + \frac{1}{2} + \frac{1}{2}}{2k+1} \\
-                            &amp;= \frac{1}{2} + \frac{1}{2n} \ .
+                            & = \frac{k+1}{2k+1} = \frac{k + \frac{1}{2} + \frac{1}{2}}{2k+1} \\
+                            & = \frac{1}{2} + \frac{1}{2n} \ .
                             \end{align*}
                             Wenn nun \(\maj_n(\x) = 0\) ist, dann gibt es mindestens \(k+1\) Stellen \(i\) mit
                             \(x_i = 0\), und somit ist \(C(\x)\) auch wieder mit Wahrscheinlichkeit mindestens
@@ -507,12 +507,12 @@
                             p$.
                             Was ist nun $\Pr[\maj_3(U,V,W) = 1]$?
                             \begin{align*}
-                            \Pr[\maj_3(U,V,W)=1]&amp;= \Pr[U=V=W=1] + \Pr[\textnormal{genau zwei von $\{U,V,W\}$ sind 1}]
+                            \Pr[\maj_3(U,V,W)=1] & = \Pr[U=V=W=1] + \Pr[\textnormal{genau zwei von $\{U,V,W\}$ sind 1}]
                             \\
-                            &amp;= p^3 + 3p^2 (1-p) = \pfrac{1 + \delta}{2}^3 + 3 \pfrac{1 + \delta}{2}^2 \frac{1 -
+                            & = p^3 + 3p^2 (1-p) = \pfrac{1 + \delta}{2}^3 + 3 \pfrac{1 + \delta}{2}^2 \frac{1 -
                             \delta}{2} \\
-                            &amp;= \frac{1}{8} (4 + 6 \delta - 2 \delta^3) \\
-                            &amp;= \frac{1}{2} \left( 1 + \frac{3}{2} \delta - \frac{1}{2}\delta^3 \right) \ .
+                            & = \frac{1}{8} (4 + 6 \delta - 2 \delta^3) \\
+                            & = \frac{1}{2} \left( 1 + \frac{3}{2} \delta - \frac{1}{2}\delta^3 \right) \ .
                             \end{align*}
                             Die Signalstärke von $\mathcal{C}^{\otimes 3}$ ist also mindestens
                             $\frac{3}{2} \delta - \frac{1}{2} \delta^3$.
@@ -565,7 +565,7 @@
                             *Beweis.* Wie im Beweis vom Lemma setzen wir
                             $p := \frac{1+p}{2} = 1-\epsilon$ und erhalten
                             \begin{align*}
-                            \Pr[\maj_3(U,V,W) = 1]&amp;= p^3 + 3 p^2 (1-p) =
+                            \Pr[\maj_3(U,V,W) = 1] & = p^3 + 3 p^2 (1-p) =
                             (1 - \epsilon^3) + 3 (1- \epsilon)^2 \epsilon = 1 - 3 \epsilon^2 \ .
                             \end{align*}
                             Somit hat $\mathcal{C}^{\otimes 3}$ Fehlerwahrscheinlichkeit $3 \epsilon^2$.
@@ -592,22 +592,22 @@
                         In Bildern:
                         |> figure
                             |> img
-                                style=height:18em
                                 src=../img/circuits/majority-probability-labeled.svg
+                                style=height:18em
                             |> br
                             Graph der Funktion $p \mapsto p^3 + 3 p^2 (1-p)$
                             |> hr
                         |> figure
                             |> img
-                                style=height:18em
                                 src=../img/circuits/majority-probability-close-to-half-labeled.svg
+                                style=height:18em
                             |> br
                             Signalstärke $\delta$ wächst für $p \in [1/2, 3/4]$ exponentiell.
                             |> hr
                         |> figure
                             |> img
-                                style=height:18em
                                 src=../img/circuits/majority-probability-close-to-one-labeled.svg
+                                style=height:18em
                             |> br
                             Fehlerwahrscheinlichkeit $\epsilon$ fällt für $p \in [3/4, 1/2]$ doppelt
                             exponentiell.
@@ -644,10 +644,10 @@
                         auf keinem $\b \in \cube^n$ irren, also die Menge der Schaltkreise, die $\maj_n$ korrekt
                         berechnen. Es gilt nun
                         \begin{align*}
-                        \Pr_{\mathcal{C}_k}[E]&amp;= \Pr_{\mathcal{C}_k} \left[\bigcup_{\b \in \cube^n} E_{\b} \right] \\
-                        &amp;\leq \sum_{\b \in \cube^n} \Pr_{\mathcal{C}_k} [E_{\b}] \\
-                        &amp;= \sum_{b \in \cube^n} \epsilon_k\\
-                        &amp;\lt \sum_{b \in \cube^n} 2^{-n} = 2^n 2^{-n} = 1 \ .
+                        \Pr_{\mathcal{C}_k}[E] & = \Pr_{\mathcal{C}_k} \left[\bigcup_{\b \in \cube^n} E_{\b} \right] \\
+                        & \leq \sum_{\b \in \cube^n} \Pr_{\mathcal{C}_k} [E_{\b}] \\
+                        & = \sum_{b \in \cube^n} \epsilon_k\\
+                        & \lt \sum_{b \in \cube^n} 2^{-n} = 2^n 2^{-n} = 1 \ .
                         \end{align*}
                         Also $\Pr_{\mathcal{C}_k}[E] \lt 1$ und somit $\Pr_{\mathcal{C}_k}[\bar{E}] \gt 0$. Das
                         bedeutet,

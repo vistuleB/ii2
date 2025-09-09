@@ -42,8 +42,8 @@
                     genau dann, wenn $x \in L$ ist. Für jedes $n \in \N$ sei
                     $f_{L,n}$ die Boolesche Funktion
                     \begin{align*}
-                    f_{L,n} : \{0,1\}^n&amp;\rightarrow \{0,1\} \\
-                    x&amp;\mapsto [M(x) = \texttt{accept}]
+                    f_{L,n} : \{0,1\}^n & \rightarrow \{0,1\} \\
+                    x & \mapsto [M(x) = \texttt{accept}]
                     \end{align*}
                     Also $f(x)=1$ falls $M$ die Eingabe $x$ akzeptiert und $f(x)=0$
                     falls $M$ die Eingabe ablehnt (falls $L$ und $n$ aus dem Kontext
@@ -80,16 +80,16 @@
                         Erinnern Sie sich an die Definition der _Konfiguration_
                         einer Turing-Maschine (
                         |> span
-                            data-ref=def-TM-configuration
                             class=reference
+                            data-ref=def-TM-configuration
                         ).
                         Formal war das ein Wort $C \in \Gamma^* \times Q \times \Gamma^*$.
                         Ich zeige hier schematisch, wie aus einer Konfiguration per $\hat{\delta}$
                         die Folgekonfiguration wird:
                         |> figure
                             |> img
-                                style=height:10em
                                 src=../img/09-complexity-theory/to-circuits/to-circuits-01-01.svg
+                                style=height:10em
                         Wenn also das Kopfsymbol an Stelle $i$ der Konfiguration steht, dann können sich
                         in der Folgekonfiguration nur die Stellen $i-1$, $i$ und $i+1$ ändern.
                         Allerdings hat bei einer Linksbewegung das gelesene Zeichen (an Stelle $i+1$)
@@ -113,28 +113,28 @@
                         \end{align*}
                         die dies beschreibt, also mit
                         \begin{align*}
-                        C^{(t+1)}_i&amp;= \tilde{\delta}
+                        C^{(t+1)}_i & = \tilde{\delta}
                         \left(C^{(t)}_{i-1}, C^{(t)}_{i}, C^{(t)}_{i+1},C^{(t)}_{i+2}\right) \ .
                         \end{align*}
                         Im Detail ist die Arbeitsweise von $\tilde{\delta}$ wie folgt:
                         \begin{align*}
-                        \tilde{\delta}(a,x,y,*)&amp;=
+                        \tilde{\delta}(a,x,y,*) & =
                         x \quad \textnormal{falls $a, x, y \in \Gamma$}\\
-                        \tilde{\delta}(a,x,q,y)&amp;= \begin{cases}
-                        r&amp;\textnormal{falls $\delta(q,y) = (r,*,L)$} \\
-                        x&amp;\textnormal{sonst.}
+                        \tilde{\delta}(a,x,q,y) & = \begin{cases}
+                        r & \textnormal{falls $\delta(q,y) = (r,*,L)$} \\
+                        x & \textnormal{sonst.}
                         \end{cases}\\
-                        \tilde{\delta}(x,q,y,*)&amp;=
+                        \tilde{\delta}(x,q,y,*) & =
                         \begin{cases}
-                        x&amp;\textnormal{ falls $\delta(q,y) = (*, *, L)$ } \\
-                        r&amp;\textnormal{ falls $\delta(q,y) = (r, *, S)$ } \\
-                        z&amp;\textnormal{ falls $\delta(q,y) = (*, z, R)$ } \
+                        x & \textnormal{ falls $\delta(q,y) = (*, *, L)$ } \\
+                        r & \textnormal{ falls $\delta(q,y) = (r, *, S)$ } \\
+                        z & \textnormal{ falls $\delta(q,y) = (*, z, R)$ } \
                         \end{cases}\\
-                        \tilde{\delta}(q,y,*,*)&amp;=
+                        \tilde{\delta}(q,y,*,*) & =
                         \begin{cases}
-                        r&amp;\textnormal{ falls $\delta(q,y) = (r, *, R)$} \\
-                        z&amp;\textnormal{ falls $\delta(q,y) = (*, z, S)$} \\
-                        z&amp;\textnormal{ falls $\delta(q,y) = (*, z, L)$} \\
+                        r & \textnormal{ falls $\delta(q,y) = (r, *, R)$} \\
+                        z & \textnormal{ falls $\delta(q,y) = (*, z, S)$} \\
+                        z & \textnormal{ falls $\delta(q,y) = (*, z, L)$} \\
                         \end{cases}
                         \end{align*}
                         Wenn wir $Q \cup \Gamma$ binär codieren mit
@@ -147,8 +147,8 @@
                         der Lupanov-Schranke
                         (
                         |> span
-                            data-ref=theorem-lupanov
                             class=reference
+                            data-ref=theorem-lupanov
                         )
                         kriegen Sie $O(2^l)$.
                         Wir haben nun also einen Schaltkreis $\Delta$, der
@@ -162,8 +162,8 @@
                         also aus einer gegebenen Konfiguration die Folgekonfiguration:
                         |> figure
                             |> img
-                                style=height:10em
                                 src=../img/09-complexity-theory/to-circuits/to-circuits-02-01.svg
+                                style=height:10em
                         Jeder Pfeil steht hierbei für $l$ Boolesche Kabel. Dies ergibt
                         _einen_ Schaltkreis $\Delta^S$,
                         der $\hat{\delta}: \mathcal{C} \rightarrow \mathcal{C}$ berechnet
@@ -171,8 +171,8 @@
                         Größe $O(S) = O(t(n))$ hat:
                         |> figure
                             |> img
-                                style=height:10em
                                 src=../img/09-complexity-theory/to-circuits/to-circuits-03-01.svg
+                                style=height:10em
                         Die Inputs, die Zellen außerhalb des Bereichs lesen, setzen wir
                         einfach auf $\Box$ (Blank) bzw. dessen binäre Codierung,
                         weil wir ja wissen, dass der Schreib-Lese-Kopf niemals dorthin gelangen wird.
@@ -181,16 +181,16 @@
                         $C^{(T)}$ zu berechnen:
                         |> figure
                             |> img
-                                style=height:30em
                                 src=../img/09-complexity-theory/to-circuits/to-circuits-04-01.svg
+                                style=height:30em
                         Ganz zum Schluss bauen wir uns noch einen Schaltkreis,
                         der an jede Stelle von $C{^(T)}$ schaut und, falls dort
                         der Endzustand steht, liest, ob das `accept` oder `reject` ist
                         und je nachdem $1$ oder $0$ ausgibt.
                         |> figure
                             |> img
-                                style=height:13em
                                 src=../img/09-complexity-theory/to-circuits/to-circuits-05-01.svg
+                                style=height:13em
                         Dieser endgültige Schaltkreis besteht im Wesentlichen
                         aus $T$ Kopien von $\Delta^S$ und hat somit Größe
                         $O(t(n)^2)$.

@@ -874,7 +874,7 @@
                         \ `if key == keyHere then`
                         \ `Just valueHere`
                         ``
-                        \ `else if key< keyHere then`
+                        \ `else if key < keyHere then`
                         \ `find leftChild key`
                         ``
                         \ `else`
@@ -884,8 +884,8 @@
                     diesem
                     Falle ein Kreis mit einer Geraden: 
                     |> img
-                        style=height:4em
                         src=../img/svg-example.svg
+                        style=height:4em
                     |> pre
                         class=listing container
                         `
@@ -1352,7 +1352,7 @@
                     können wir als _Ableitungsregel_ darstellen:
                     |> pre
                         class=container
-                        <EmailAdress> *->*<User> @<Domain>
+                        <EmailAdress> *->* <User> @ <Domain>
                     Wie können wir nun beispielsweise eine ähnliche Ableitungsregeln für `<Domain>`
                     erstellen? Eine `<Domain>` soll
                     eine Folge aus mindestens zwei `<Label>` sein, jeweils durch einen
@@ -1365,8 +1365,8 @@
                     also wiederum etwas, das wie ein Domainname aussieht. Daher:
                     |> pre
                         class=container
-                        <Domain> *->*<Label> .<Label>
-                        <Domain> *->*<Label> .<Domain>
+                        <Domain> *->* <Label> . <Label>
+                        <Domain> *->* <Label> . <Domain>
                     Wir geben also _zwei_ Möglichkeiten an, wie mit einem `<Domain>` zu
                     verfahren ist.
                     Was ist nun `<Label>`? Dies ist eine nichtleere Folge von in Domainnamen
@@ -1388,9 +1388,9 @@
                     Wieder mit dem Rekursionstrick:
                     |> pre
                         class=container
-                        <Label> *->*<AlphaNumOrDash>
-                        <Label> *->*<AlphaNumOrDash><Label>
-                        <AlphaNumOrDash> *->*<AlphaNum>
+                        <Label> *->* <AlphaNumOrDash>
+                        <Label> *->* <AlphaNumOrDash> <Label>
+                        <AlphaNumOrDash> *->* <AlphaNum>
                         <AlphaNumOrDash> *->* - 
                     Nun müssen wir noch Regeln für `<AlphaNum>` angeben. Hier führen wir eine
                     weitere
@@ -1414,19 +1414,19 @@
                     wobei ein Namensblock eine nichtleere Folge alphanumerischer Zeichen ist.
                     |> pre
                         class=container
-                        <User> *->*<NameBlock> *|*<NameBlock> .<User>
-                        <NameBlock> *->*<AlphaNum> *|*<AlphaNum><NameBlock>
+                        <User> *->* <NameBlock> *|* <NameBlock> . <User>
+                        <NameBlock> *->* <AlphaNum> *|* <AlphaNum> <NameBlock>
                     Nun haben wir unser Emailformat vollständig beschrieben. Das gesamte Regelwerk sehen Sie hier
                     noch
                     einmal im Ganzen:
                     |> pre
-                        id=email-context-free-grammar
                         class=container listing
-                        `<EmailAddress>    *->* <User> @<Domain>`
-                        `<Domain>          *->* <Label> .<Label> *|*<Label> .<Domain>`
-                        `<User>            *->* <NameBlock> *|*<NameBlock> .<User>`
-                        `<NameBlock>       *->* <AlphaNum> *|*<AlphaNum><NameBlock>`
-                        `<Label>           *->* <AlphaNumOrDash> *|*<AlphaNumOrDash><Label>`
+                        id=email-context-free-grammar
+                        `<EmailAddress>    *->* <User> @ <Domain>`
+                        `<Domain>          *->* <Label> . <Label> *|* <Label> . <Domain>`
+                        `<User>            *->* <NameBlock> *|* <NameBlock> . <User>`
+                        `<NameBlock>       *->* <AlphaNum> *|* <AlphaNum> <NameBlock>`
+                        `<Label>           *->* <AlphaNumOrDash> *|* <AlphaNumOrDash> <Label>`
                         `<AlphaNumOrDash>  *->* <AlphaNum> *|* -` 
                         `<AlphaNum>        *->* a *|* b *|* c *|* d *|* e *|* f *|* g *|* h *|* i *|* j *|* k *|* l *|* m *|* n *|* o *|* p *|* q *|* r *|* s *|* t *|* u *|* v *|* w *|* x *|* y *|* z`
                         `<AlphaNum>        *->* A *|* B *|* C *|* D *|* E *|* F *|* G *|* H *|* I *|* J *|* K *|* L *|* M *|* N *|* O *|* P *|* Q *|* R *|* S *|* T *|* U *|* V *|* W *|* X *|* Y *|* Z`
@@ -1441,7 +1441,7 @@
                         |> li
                             Eine Menge \(N\) abstrakter Symbole, hier
                             $$
-                            N = \{\texttt{<EmailAddress>,<Domain>,
+                            N = \{\texttt{<EmailAddress>, <Domain>,
                             <User>,<NameBlock>,<Label>,<AlphaNumOrDash>,<AlphaNum>}
                             \} \ .
                             $$
@@ -1470,17 +1470,17 @@
                     Grammatik:
                     |> pre
                         class=container
-                        `<EmailAddress>  *->*<User>@<Domain>`
-                        \ `*->*<NameBlock>.<User>@<Domain>` 
-                        \ `*->*<NameBlock>.<NameBlock>@<Domain>` 
-                        \ `*->*<NameBlock>.<NameBlock>@<Label>.<Domain>` 
-                        \ `*->*<NameBlock>.<NameBlock>@<Label>.<Label>.<Label>` 
-                        \ `*->*<AlphaNum>.<NameBlock>@<Label>.<Label>.<Label>` 
-                        \ `*->*<AlphaNum>.<AlphaNum>@<Label>.<Label>.<Label>` 
-                        \ `*->*<AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<Label>.<Label>` 
-                        \ `*->*<AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<Label>` 
-                        \ `*->*<AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash><Label>` 
-                        \ `*->*<AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash><AlphaNumOrDash>` 
+                        `<EmailAddress>  *->* <User>@<Domain>`
+                        \ `*->* <NameBlock>.<User>@<Domain>` 
+                        \ `*->* <NameBlock>.<NameBlock>@<Domain>` 
+                        \ `*->* <NameBlock>.<NameBlock>@<Label>.<Domain>` 
+                        \ `*->* <NameBlock>.<NameBlock>@<Label>.<Label>.<Label>` 
+                        \ `*->* <AlphaNum>.<NameBlock>@<Label>.<Label>.<Label>` 
+                        \ `*->* <AlphaNum>.<AlphaNum>@<Label>.<Label>.<Label>` 
+                        \ `*->* <AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<Label>.<Label>` 
+                        \ `*->* <AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<Label>` 
+                        \ `*->* <AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash><Label>` 
+                        \ `*->* <AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash><AlphaNumOrDash>` 
                         \ `*->* d.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash><AlphaNumOrDash>` 
                         \ `*->* d.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash>e`
                         \ `*->* d.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.de`
@@ -1591,9 +1591,9 @@
                         title=*Beispiel*
                         Wir betrachten die Grammatik \(G = (\{a,b\}, \{S, A, B\}, P, S)\) mit den Produktionsregeln
                         \begin{align*}
-                        S&amp;\rightarrow A B \\
-                        A&amp;\rightarrow \epsilon \ | \ a A \\
-                        B&amp;\rightarrow \epsilon \ | \ b B \ . \\
+                        S & \rightarrow A B \\
+                        A & \rightarrow \epsilon \ | \ a A \\
+                        B & \rightarrow \epsilon \ | \ b B \ . \\
                         \end{align*}
                         Formal sind die Produktionsregeln \(P\) eine Teilmenge von \( N \times (\Sigma \cup \N)^*\),
                         also
@@ -1644,15 +1644,15 @@
                     sein muss, dass jedoch \(\Rightarrow\) im Allgemeinen unendlich ist. Bereits
                     für unsere einfache Grammatik mit den Produktionsregeln
                     \begin{align*}
-                    S&amp;\rightarrow A B \\
-                    A&amp;\rightarrow \epsilon \ | \ a A \\
-                    B&amp;\rightarrow \epsilon \ | \ b B \ . \\
+                    S & \rightarrow A B \\
+                    A & \rightarrow \epsilon \ | \ a A \\
+                    B & \rightarrow \epsilon \ | \ b B \ . \\
                     \end{align*}
                     haben wir beispielsweise
                     \begin{align*}
-                    A&amp;\rightarrow aA \\
-                    aA&amp;\rightarrow aaA \\
-                    aaA&amp;\rightarrow aaaA \\
+                    A & \rightarrow aA \\
+                    aA & \rightarrow aaA \\
+                    aaA & \rightarrow aaaA \\
                     \dots
                     \end{align*}
                     und sehen, dass die Menge aller Paare \(\alpha \Rightarrow \beta\) unendlich ist.
@@ -1670,90 +1670,90 @@
                     \(aaAB\) zwar aus \(S\) abgeleitet werden kann, allerdings kein _Wort_ ist,
                     da es noch nichtterminale Symbole enthält. Es gilt also \(aaAB \not \in L(G)\).
                     Oft können wir \(L(G)\) kompakt mit natürlicher Sprache beschreiben:
-                |> Statement
-                    title=*Beispiel*
-                    Sei \(G\) die zuletzt betrachtete Grammatik. Dann ist \(L(G)\) die
-                    Menge aller Wörter der Form \(a^* b^*\), also Wörter, in denen auf beliebig viele
-                    \(a\)'s beliebig viele \(b\)'s folgen.
-                Wir betrachten nun einige weitere Beispiele
-                |> Statement
-                    title=*Beispiel*
-                    Wir betrachten die Grammatik \(G_2 = (\{a,b\}, \{S\}, P, S)\) mit den Produktionsregeln
-                    \begin{align}
-                    S&amp;\rightarrow aSbS \\
-                    S&amp;\rightarrow bSaS \\
-                    S&amp;\rightarrow \epsilon \ .
-                    \end{align}
-                    Hier sind mögliche Ableitungen des Wortes \(abab\). Zur Verdeutlichung
-                    schreiben wir über den Pfeil \(\Rightarrow\) die Nummer der Regel, die
-                    wir angewendet haben:
-                    \begin{align*}
-                    S&amp;\stackrel{(1)}{\Rightarrow} aSbS
-                    \stackrel{(1)}{\Rightarrow} aSbaSbS
-                    \stackrel{(3)}{\Rightarrow} aSbaSb
-                    \stackrel{(3)}{\Rightarrow} abaSb
-                    \stackrel{(3)}{\Rightarrow} abab \\
-                    S&amp;\stackrel{(1)}{\Rightarrow} aSbS
-                    \stackrel{(3)}{\Rightarrow} abS
-                    \stackrel{(1)}{\Rightarrow} abaSbS
-                    \stackrel{(3)}{\Rightarrow} ababS
-                    \stackrel{(3)}{\Rightarrow} abab \ .
-                    \end{align*}
-                    Wir sehen also: das gleiche Wort kann mehrere Ableitungen haben.
-                    Da die Ersetzungsregeln _kontextfrei_ sind, spielt es keine Rolle, in welcher
-                    Reihenfolge wir nichtterminale Symbole ersetzen. Wenn Sie scharf hinschauen,
-                    werden Sie erkennen, dass die beiden Ableitungen "irgendwie gleich" sind, dass nur
-                    die Ableitungen in anderer Reihenfolge durchgeführt worden sind. Ich werde
-                    das in einem späteren Kapitel formal definieren, was ich mit damit meine.
-                    Um Ordnung in das Chaos zu bringen, könnten wir uns zum Beispiel einigen,
-                    dass man immer das am weitesten links stehende Nichtterminal ersetzen muss.
-                    Das nennt man eine _Linksableitung_. Dies ist nicht wirklich eine
-                    Einschränkung, da die Ersetzungsreihenfolge keine Rolle spielt.
-                    Wir sehen, dass die zweite Ableitung des Wortes \(abab\) oben eine
-                    Linksableitung ist; zusammen mit der Beschriftung
-                    \(\stackrel{(i)}{\Rightarrow}\), die die Nummer der angewendeten Regel
-                    angibt, ist eindeutig, wie wir von \(S\) zum abgeleiteten Wort gekommen sind.
-                    Betrachten Sie nun eine weitere Linksableitung \(S \Rightarrow^* abab\):
-                    \begin{align*}
-                    S&amp;\stackrel{(1)}{\Rightarrow} aSbS
-                    \stackrel{(2)}{\Rightarrow} abSaSbS
-                    \stackrel{(3)}{\Rightarrow} abaSbS
-                    \stackrel{(3)}{\Rightarrow} ababS
-                    \stackrel{(3)}{\Rightarrow} abab
-                    \end{align*}
-                    Sehen Sie, dass diese Ableitung _qualitativ_ anders ist, da
-                    wir hier auch die Regel \(S \rightarrow bSaS\) angewendet haben? Um die
-                    Struktur der Ableitung zu verdeutlichen, könnten wir
-                    die ersten beiden Ableitungen mit
-                    Wort \(S \Rightarrow^* (ab)(ab)\) bezeichnen und die dritte mit Wort \(S \Rightarrow^* a(ba)b\).
-                |> Topic
-                    Ziele der Theorie der formalen Sprachen
-                Ganz allgemein gesagt wollen wir lernen, wie wir Sprachen formal beschreiben können;
-                wie wir, gegeben eine Grammatik \(G\) und ein Zielwort \(x\), eine Ableitung
-                \(G \Rightarrow^* x\) finden können. Anhand der Ableitungssequenz können wir
-                dann oft auf die logische Struktur von \(x\) schließen. Handelt es sich bei
-                \(G\) zum Beispiel um eine Grammatik für die Programmiersprache Java,
-                so wäre ein Ziel, aus der Ableitungssequenz \(G \Rightarrow^* x\) die Struktur
-                des Programms \(x\), also Klassenstruktur, Methoden, etc., ablesen zu können und schlussendlich
-                das Programm in ausführbaren Maschinencode kompilieren zu können.
-                |> Statement
-                    title=*Algorithmisches Problem: Parsing*
-                    Gegeben eine (kontextfreie) Grammatik \(G\) und ein Zielwort \(x\),
-                    finde eine Ableitung \(G \Rightarrow^* x\), falls es so eine gibt.
-                    Für einen String \(x\) eine Ableitung zu finden bezeichnen wir als _parsen_,
-                    das zugehörige Hauptwort als _Parsing_.
-                *Die gute Nachricht:*
-                Die gute Nachricht: wir kennen Algorithmen, die dieses
-                Problem im effizient lösen, wenn wir den "theoretischen" Effizienzbegriff
-                zugrund legen. 
-                *Die schlechte Nachricht:* wir kennen keinen Algorithmus,
-                der das Parsing kontextfreier Sprachen in seiner ganzen Allgemeinheit
-                in _linearer Zeit_ erledigt, dessen Laufzeit also proportional zur Länge des Zielwortes
-                \(x\) ist. Dies ist aber, was wir in der Praxis, zum Beispiel bei Compilern, erwarten.
-                *Die gute Nachricht:* in fast allen praktisch relevanten Fällen haben
-                wir es mit Grammatiken zu tun, die Parsing in linearer Zeit ermöglichen.
-                Und wenn wir Programmiersprachen, Datenformate etc. entwerfen, haben wir es ja in der Hand,
-                Sprache und Grammatik so anzulegen, dass effizientes Parsen möglich ist. 
-                Im nächsten Kapitel lernen wir eine stark eingeschränkte, aber dennoch sehr wichtige Klasse
-                kontextfreier Grammatik kennen, die allesamt ein sehr effizientes Parsing
-                erlauben: die sogenannten _regulären_ Grammatiken. 
+                    |> Statement
+                        title=*Beispiel*
+                        Sei \(G\) die zuletzt betrachtete Grammatik. Dann ist \(L(G)\) die
+                        Menge aller Wörter der Form \(a^* b^*\), also Wörter, in denen auf beliebig viele
+                        \(a\)'s beliebig viele \(b\)'s folgen.
+                    Wir betrachten nun einige weitere Beispiele
+                    |> Statement
+                        title=*Beispiel*
+                        Wir betrachten die Grammatik \(G_2 = (\{a,b\}, \{S\}, P, S)\) mit den Produktionsregeln
+                        \begin{align}
+                        S & \rightarrow aSbS \\
+                        S & \rightarrow bSaS \\
+                        S & \rightarrow \epsilon \ .
+                        \end{align}
+                        Hier sind mögliche Ableitungen des Wortes \(abab\). Zur Verdeutlichung
+                        schreiben wir über den Pfeil \(\Rightarrow\) die Nummer der Regel, die
+                        wir angewendet haben:
+                        \begin{align*}
+                        S & \stackrel{(1)}{\Rightarrow} aSbS
+                        \stackrel{(1)}{\Rightarrow} aSbaSbS
+                        \stackrel{(3)}{\Rightarrow} aSbaSb
+                        \stackrel{(3)}{\Rightarrow} abaSb
+                        \stackrel{(3)}{\Rightarrow} abab \\
+                        S & \stackrel{(1)}{\Rightarrow} aSbS
+                        \stackrel{(3)}{\Rightarrow} abS
+                        \stackrel{(1)}{\Rightarrow} abaSbS
+                        \stackrel{(3)}{\Rightarrow} ababS
+                        \stackrel{(3)}{\Rightarrow} abab \ .
+                        \end{align*}
+                        Wir sehen also: das gleiche Wort kann mehrere Ableitungen haben.
+                        Da die Ersetzungsregeln _kontextfrei_ sind, spielt es keine Rolle, in welcher
+                        Reihenfolge wir nichtterminale Symbole ersetzen. Wenn Sie scharf hinschauen,
+                        werden Sie erkennen, dass die beiden Ableitungen "irgendwie gleich" sind, dass nur
+                        die Ableitungen in anderer Reihenfolge durchgeführt worden sind. Ich werde
+                        das in einem späteren Kapitel formal definieren, was ich mit damit meine.
+                        Um Ordnung in das Chaos zu bringen, könnten wir uns zum Beispiel einigen,
+                        dass man immer das am weitesten links stehende Nichtterminal ersetzen muss.
+                        Das nennt man eine _Linksableitung_. Dies ist nicht wirklich eine
+                        Einschränkung, da die Ersetzungsreihenfolge keine Rolle spielt.
+                        Wir sehen, dass die zweite Ableitung des Wortes \(abab\) oben eine
+                        Linksableitung ist; zusammen mit der Beschriftung
+                        \(\stackrel{(i)}{\Rightarrow}\), die die Nummer der angewendeten Regel
+                        angibt, ist eindeutig, wie wir von \(S\) zum abgeleiteten Wort gekommen sind.
+                        Betrachten Sie nun eine weitere Linksableitung \(S \Rightarrow^* abab\):
+                        \begin{align*}
+                        S & \stackrel{(1)}{\Rightarrow} aSbS
+                        \stackrel{(2)}{\Rightarrow} abSaSbS
+                        \stackrel{(3)}{\Rightarrow} abaSbS
+                        \stackrel{(3)}{\Rightarrow} ababS
+                        \stackrel{(3)}{\Rightarrow} abab
+                        \end{align*}
+                        Sehen Sie, dass diese Ableitung _qualitativ_ anders ist, da
+                        wir hier auch die Regel \(S \rightarrow bSaS\) angewendet haben? Um die
+                        Struktur der Ableitung zu verdeutlichen, könnten wir
+                        die ersten beiden Ableitungen mit
+                        Wort \(S \Rightarrow^* (ab)(ab)\) bezeichnen und die dritte mit Wort \(S \Rightarrow^* a(ba)b\).
+                    |> Topic
+                        Ziele der Theorie der formalen Sprachen
+                    Ganz allgemein gesagt wollen wir lernen, wie wir Sprachen formal beschreiben können;
+                    wie wir, gegeben eine Grammatik \(G\) und ein Zielwort \(x\), eine Ableitung
+                    \(G \Rightarrow^* x\) finden können. Anhand der Ableitungssequenz können wir
+                    dann oft auf die logische Struktur von \(x\) schließen. Handelt es sich bei
+                    \(G\) zum Beispiel um eine Grammatik für die Programmiersprache Java,
+                    so wäre ein Ziel, aus der Ableitungssequenz \(G \Rightarrow^* x\) die Struktur
+                    des Programms \(x\), also Klassenstruktur, Methoden, etc., ablesen zu können und schlussendlich
+                    das Programm in ausführbaren Maschinencode kompilieren zu können.
+                    |> Statement
+                        title=*Algorithmisches Problem: Parsing*
+                        Gegeben eine (kontextfreie) Grammatik \(G\) und ein Zielwort \(x\),
+                        finde eine Ableitung \(G \Rightarrow^* x\), falls es so eine gibt.
+                        Für einen String \(x\) eine Ableitung zu finden bezeichnen wir als _parsen_,
+                        das zugehörige Hauptwort als _Parsing_.
+                    *Die gute Nachricht:*
+                    Die gute Nachricht: wir kennen Algorithmen, die dieses
+                    Problem im effizient lösen, wenn wir den "theoretischen" Effizienzbegriff
+                    zugrund legen.
+                    *Die schlechte Nachricht:* wir kennen keinen Algorithmus,
+                    der das Parsing kontextfreier Sprachen in seiner ganzen Allgemeinheit
+                    in _linearer Zeit_ erledigt, dessen Laufzeit also proportional zur Länge des Zielwortes
+                    \(x\) ist. Dies ist aber, was wir in der Praxis, zum Beispiel bei Compilern, erwarten.
+                    *Die gute Nachricht:* in fast allen praktisch relevanten Fällen haben
+                    wir es mit Grammatiken zu tun, die Parsing in linearer Zeit ermöglichen.
+                    Und wenn wir Programmiersprachen, Datenformate etc. entwerfen, haben wir es ja in der Hand,
+                    Sprache und Grammatik so anzulegen, dass effizientes Parsen möglich ist.
+                    Im nächsten Kapitel lernen wir eine stark eingeschränkte, aber dennoch sehr wichtige Klasse
+                    kontextfreier Grammatik kennen, die allesamt ein sehr effizientes Parsing
+                    erlauben: die sogenannten _regulären_ Grammatiken.

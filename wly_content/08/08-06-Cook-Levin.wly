@@ -19,8 +19,8 @@
             href=/
             zur Kursübersicht
         |> a
-            href=09-00-appendix.html
-            Kapitel 9.0 &gt;&gt;
+            href=08-07-Space.html
+            Kapitel 8.7 &gt;&gt;
     |> div
         id=rightSideWrapper
         |> div
@@ -136,8 +136,8 @@
                         x \in L \Longleftrightarrow \exists z \in \{0,1\}^{t(|x|)}: M(x,z) = \texttt{accept}
                         \end{align*}
                         |> span
-                            data-ref=theorem-tms-to-circuits
                             class=reference
+                            data-ref=theorem-tms-to-circuits
                         \ besagt,
                         dass wir eine Turingmaschine von Laufzeit $t(n)$ in einen Schaltkreis
                         $C$ der Größe $O(t(n)^2)$ umformen können, so dass
@@ -156,8 +156,8 @@
                         \end{align*}
                         Somit gilt für jedes $x \in \{0,1\}^n$ mit $t := t(n)$:
                         \begin{align*}
-                        x \in L \quad&amp;\Longleftrightarrow \exists z \in \{0,1\}^t: M(x,z) = \texttt{accept} \\
-                        &amp;
+                        x \in L \quad & \Longleftrightarrow \exists z \in \{0,1\}^t: M(x,z) = \texttt{accept} \\
+                        &
                         \Longleftrightarrow \exists z \in \{0,1\}^t: C(x,z) = 1 \ . \\
                         \end{align*}
                         Unsere Reduktion von $L$ auf 
@@ -177,7 +177,7 @@
                         \end{align*}
                         mit $t$ Eingabe-Gates. Nach Konstruktion gilt
                         \begin{align*}
-                        x \in L&amp;\Longleftrightarrow \exists z \in \{0,1\}^t : D(z) = 1
+                        x \in L & \Longleftrightarrow \exists z \in \{0,1\}^t : D(z) = 1
                         \end{align*}
                         also genau dann, wenn 
                         |> span
@@ -200,8 +200,8 @@
                         die Umformung an einem Beispiel:
                         |> figure
                             |> img
-                                style=height:16em
                                 src=../img/09-complexity-theory/circuit-to-3-cnf/circuit-to-3-cnf-01-01.svg
+                                style=height:16em
                         Ich will zuerst diskutieren, was _nicht_ geht. Der obige Schaltkreis
                         (so wie jeder) berechnet eine Funktion $f_C: \{0,1\}^n \rightarrow \{0,1\}$.
                         Das Problem 
@@ -219,25 +219,25 @@
                         ein, die seinen Output darstellen soll. Hier sind das $g_1, g_2, \dots, g_{11}$:
                         |> figure
                             |> img
-                                style=height:16em
                                 src=../img/09-complexity-theory/circuit-to-3-cnf/circuit-to-3-cnf-01-02.svg
+                                style=height:16em
                         Die Aussage _$g_4$ ist der Output des zweiten OR-Gates von links_ können wir
                         nun schreiben als $g_4 \leftrightarrow (x \vee y)$. Das $\leftrightarrow$ ist hierbei
                         der Boolesche Operator, der Gleichheit testet. Wir tun dies für jedes Gate
                         und erhalten folgende Formel:
                         \begin{align*}
-                        &amp;(g_1 \leftrightarrow (\neg x)) \quad \wedge \\
-                        &amp;(g_2 \leftrightarrow (\neg y)) \quad \wedge \\
-                        &amp;(g_3 \leftrightarrow (g_1 \vee g_2)) \quad \wedge \\
-                        &amp;(g_4 \leftrightarrow (x \vee y)) \quad \wedge \\
-                        &amp;(g_5 \leftrightarrow (g_3 \wedge g_4)) \quad \wedge \\
-                        &amp;(g_6 \leftrightarrow (\neg z)) \quad \wedge \\
-                        &amp;(g_7 \leftrightarrow (\neg w)) \quad \wedge \\
-                        &amp;(g_8 \leftrightarrow (g_6 \vee g_7)) \quad \wedge \\
-                        &amp;(g_9 \leftrightarrow (z \vee w)) \quad \wedge \\
-                        &amp;(g_{10} \leftrightarrow (g_8 \wedge g_9)) \quad \wedge \\
-                        &amp;(g_{11} \leftrightarrow (g_{5} \vee g_{10}))\\
-                        &amp;(g_{11})
+                        & (g_1 \leftrightarrow (\neg x)) \quad \wedge \\
+                        & (g_2 \leftrightarrow (\neg y)) \quad \wedge \\
+                        & (g_3 \leftrightarrow (g_1 \vee g_2)) \quad \wedge \\
+                        & (g_4 \leftrightarrow (x \vee y)) \quad \wedge \\
+                        & (g_5 \leftrightarrow (g_3 \wedge g_4)) \quad \wedge \\
+                        & (g_6 \leftrightarrow (\neg z)) \quad \wedge \\
+                        & (g_7 \leftrightarrow (\neg w)) \quad \wedge \\
+                        & (g_8 \leftrightarrow (g_6 \vee g_7)) \quad \wedge \\
+                        & (g_9 \leftrightarrow (z \vee w)) \quad \wedge \\
+                        & (g_{10} \leftrightarrow (g_8 \wedge g_9)) \quad \wedge \\
+                        & (g_{11} \leftrightarrow (g_{5} \vee g_{10}))\\
+                        & (g_{11})
                         \end{align*}
                         Die ersten 11 Teilausdrücke stellen sicher, dass jedes $g_i$ den "richtigen" Wert
                         annimmt. Mit dem letzten Teilausdruck $(g_{11})$ drücken wir aus, dass wir

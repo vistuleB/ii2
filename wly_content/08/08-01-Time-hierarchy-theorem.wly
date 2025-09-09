@@ -211,7 +211,7 @@
                         deren genauen Wert wir weiter unten diskutieren und setzen $b := t(|x| + m)$. Wir fragen uns
                         nun: ist $x1^m \in \bnegdiag$?
                         \begin{align*}
-                        x1^m \in \bnegdiag&amp;\Longleftrightarrow \enc(M) 1^b 0 x1^m \not \in \bhalt \\
+                        x1^m \in \bnegdiag & \Longleftrightarrow \enc(M) 1^b 0 x1^m \not \in \bhalt \\
                         &\Longleftrightarrow U \textnormal{ akzeptiert $\enc(M)x1^m$ nicht innerhalb von $b$ Schritten}
                         \end{align*}
                         Langsam nun. Sei $n := |\enc(M)|+m$ die Länge des Wortes $x1^m$.
@@ -239,13 +239,13 @@
                         Schritten ablehnt,
                         wenn sie es überhaupt irgendwann ablehnt. Also schließen wir weiter:
                         \begin{align*}
-                        x1^m \in \bnegdiag&amp;\Longleftrightarrow \enc(M) 1^b 0 x1^m \not \in \bhalt \\
+                        x1^m \in \bnegdiag & \Longleftrightarrow \enc(M) 1^b 0 x1^m \not \in \bhalt \\
                         &\Longleftrightarrow U \textnormal{ akzeptiert $\enc(M)x1^m$ nicht innerhalb von $b$ Schritten}
                         \\
                         &\Longleftrightarrow U \textnormal{ lehnt $\enc(M)x1^m$ innerhalb von $b$ Schritten ab}
                         \tag{weil $b$ groß genug}\\
                         &\Longleftrightarrow U \textnormal{ lehnt $\enc(M)x1^m$ ab} \\
-                        &amp;\Longleftrightarrow M \textnormal{ lehnt $x1^m$ ab} \\
+                        & \Longleftrightarrow M \textnormal{ lehnt $x1^m$ ab} \\
                         \end{align*}
                         und da ist er, der Widerspruch: $x1^m \in \bnegdiag \Longleftrightarrow f_M(x1^m) =
                         \texttt{reject}$, entgegen unserer Annahme, dass $M$ die Sprache $\bnegdiag$ entscheidet.
@@ -265,8 +265,8 @@
                     Zusammen mit der Simulation von $k$-Band-TMs durch $2$-Band-TMs,
                     also 
                     |> span
-                        data-ref=k-tape-to-2-tape
                         class=reference
+                        data-ref=k-tape-to-2-tape
                     \ folgt nun
                     \begin{align*}
                     \TIME(s) \subsetneq \TIME_2(s \log s) \subsetneq \TIME_5(t \log t)

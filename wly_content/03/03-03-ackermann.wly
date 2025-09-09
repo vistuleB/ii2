@@ -70,46 +70,46 @@
                         title=*Definition*
                         *(Péter-Ackermann-Funktion).*
                         \begin{align*}
-                        A(m,n)&amp;:= \begin{cases}
-                        n+1&amp;\textnormal{ if $m=0$,} \\
-                        A(m-1,1)&amp;\textnormal{ if $m \geq 1, n=0$} \\
-                        A(m-1, A(m,n-1))&amp;\textnormal{ if $m,n \geq 1$} \ .
+                        A(m,n) & := \begin{cases}
+                        n+1 & \textnormal{ if $m=0$,} \\
+                        A(m-1,1) & \textnormal{ if $m \geq 1, n=0$} \\
+                        A(m-1, A(m,n-1)) & \textnormal{ if $m,n \geq 1$} \ .
                         \end{cases}
                         \end{align*}
                         Manchmal sehen Sie in der Literatur auch die äquivalente, vielleicht lesbarere Definition:
                         \begin{align*}
-                        A(0,n)&amp;:= n+1 \\
-                        A(m+1, 0)&amp;:= A(m,1) \\
-                        A(m+1, n+1)&amp;:= A(m, A(m+1,n))
+                        A(0,n) & := n+1 \\
+                        A(m+1, 0) & := A(m,1) \\
+                        A(m+1, n+1) & := A(m, A(m+1,n))
                         \end{align*}
                         Für festes \(m\in \N\) schreiben wir auch \(A_m\) für die ein-parametrige
                         Funktion
                         \begin{align*}
-                        A_m :&amp;\N \rightarrow \N \\
-                        n&amp;\mapsto A(m,n) \ .
+                        A_m : & \N \rightarrow \N \\
+                        n & \mapsto A(m,n) \ .
                         \end{align*}
                     Es lohnt sich, diese Funktion für kleine Werte von \(m\) zu untersuchen.
                     Aus der Definition geht unmittelbar hervor, dass
                     \(A_0(n) = n+1\) ist.
                     Für \(A_1 (n)\) rechnen wir
                     \begin{align*}
-                    A_1 (n)&amp;= A_0 ( A_1 (n-1)) =
+                    A_1 (n) & = A_0 ( A_1 (n-1)) =
                     A_0 (A_0(A_1(n-2))) = \dots =
                     \underbrace{A_0 (A_0 (...(A_0}_{i \textnormal{ mal}}(A_1(n-i)))...)) \\
-                    &amp;=
+                    & =
                     \underbrace{A_0 (A_0 (...(A_0}_{n \textnormal{ mal}}(A_1(0)))...)) \\
-                    &amp;= \underbrace{A_0 (A_0 (...(A_0}_{n+1 \textnormal{ mal}}(1))...)) \\
-                    &amp;= n+2 \ .
+                    & = \underbrace{A_0 (A_0 (...(A_0}_{n+1 \textnormal{ mal}}(1))...)) \\
+                    & = n+2 \ .
                     \end{align*}
                     Soweit schaut die Funktion nicht besonders beindruckend aus. \(A_2\) bekommen iwr
                     nach dem gleichen Schema:
                     \begin{align*}
-                    A_2 (n)&amp;= \underbrace{A_1 (A_1 (...(A_1}_{n+1 \textnormal{ mal}}(1))...)) \ , \\
+                    A_2 (n) & = \underbrace{A_1 (A_1 (...(A_1}_{n+1 \textnormal{ mal}}(1))...)) \ , \\
                     \end{align*}
                     wir fangen also mit \(1\) an und zählen \(n+1\) mal eine 2 drauf. Wir erhalten
                     \(2n + 3\), also
                     \begin{align*}
-                    A_2 (n)&amp;= 2n + 3 \ .
+                    A_2 (n) & = 2n + 3 \ .
                     \end{align*}
                     \(A_3\) wird etwas unangenehmer, weil wir keine gute Intuition haben, was
                     "\(n+1\) mal verdoppeln und jedes Mal 3 draufzählen" ergibt. Mit 1 beginnend erhalten wir also
@@ -138,9 +138,9 @@
                         der primitiven Rekursion anzunähern. Wir wissen bereits, dass
                         \(A_{m-1}\) primitiv rekursiv ist. Wir können \(A_m(t)\) also schreiben als
                         \begin{align*}
-                        A_m(t)&amp;= \begin{cases}
-                        A_{m-1} (1)&amp;\textnormal{ if $t=0$} \\
-                        A_{m-1} (A_m(t-1))&amp;\textnormal{ if $t \geq 1$.}
+                        A_m(t) & = \begin{cases}
+                        A_{m-1} (1) & \textnormal{ if $t=0$} \\
+                        A_{m-1} (A_m(t-1)) & \textnormal{ if $t \geq 1$.}
                         \end{cases}
                         \end{align*}
                         Wir können also \(h = \comp (A_{m-1}, \pi^3_1)\) wählen. Was ist \(g\)?
@@ -152,7 +152,7 @@
                         einfach \(A_{m-1}(1)\) mal hintereinander; diesen Wert also _hard-coden_.
                         Allerdings ist die erste Variante einfacher, und somit
                         \begin{align*}
-                        A_m&amp;= \primrec(\comp (A_{m-1}, {\rm one}), \comp (A_{m-1}, \pi^3_1)) \ .
+                        A_m & = \primrec(\comp (A_{m-1}, {\rm one}), \comp (A_{m-1}, \pi^3_1)) \ .
                         \end{align*}
                         Wir sehen also: jedes \(A_m\), betrachtet als Funktion mit einem
                         Eingabeparameter, ist primitiv rekursiv.
@@ -249,9 +249,9 @@
                         Leider majorisiert \(A_0\) also \(\succ\) nicht. Wie steht es mit
                         \(A_1\)? Es gilt \(A_1(n) = n+2\), und somit ist
                         \begin{align*}
-                        \zero(\vec{x})&amp;= 0 \lt 1 \lt A_1(x) \\
-                        \succ(x)&amp;= x+1 \lt x+2 = A_1(x) \\
-                        \pi^n_k (\vec{x})&amp;= x_k \leq x \lt x + 2 = A_1(x) \ ,
+                        \zero(\vec{x}) & = 0 \lt 1 \lt A_1(x) \\
+                        \succ(x) & = x+1 \lt x+2 = A_1(x) \\
+                        \pi^n_k (\vec{x}) & = x_k \leq x \lt x + 2 = A_1(x) \ ,
                         \end{align*}
                         wobei wir die Schreibweise \(x = \max(\vec{x}) = \max(x_1,\dots,x_n)\) verwenden.
                         Wir schlussfolgern: \(A_2\) majorisiert jede Basisfunktion.
@@ -266,27 +266,27 @@
                         \(A_r \gt g, A_{s_1} \gt h_1, \dots, A_{s_k} \gt h_k\). Für einen Eingabevektor \(\vec{x}\)
                         schreiben wir \(x := \max(x_1,\dots,x_n)\) und rechnen:
                         \begin{align*}
-                        f(\vec{x})&amp;= g(h_1(\vec{x}), \dots, h_k(\vec{x})) \\
-                        &amp;\lt A_r (\max (h_1(\vec{x}), \dots, h_k(\vec{x}))) \tag{weil \(A_q \gt g\)} \\
-                        &amp;\leq A_r ( \max (A_{s_1}(x), A_{s_2}(x), \dots, A_{s_k}(x))) \tag{weil \(A_r\) monoton und
+                        f(\vec{x}) & = g(h_1(\vec{x}), \dots, h_k(\vec{x})) \\
+                        & \lt A_r (\max (h_1(\vec{x}), \dots, h_k(\vec{x}))) \tag{weil \(A_q \gt g\)} \\
+                        & \leq A_r ( \max (A_{s_1}(x), A_{s_2}(x), \dots, A_{s_k}(x))) \tag{weil \(A_r\) monoton und
                         \(A_{s_i} \gt h_i\)}
                         \end{align*}
                         Wir setzen nun \(q := \max(r, s_1, \dots, s_k)\). Dann ist der obige Wert höchstens:
                         \begin{align*}
-                        \dots&amp;\leq A_q (A_q(x)) \\
-                        &amp;\leq A_{q} (A_{q+1} (x)) = A_{q+1} (x+1) \ .
+                        \dots & \leq A_q (A_q(x)) \\
+                        & \leq A_{q} (A_{q+1} (x)) = A_{q+1} (x+1) \ .
                         \end{align*}
                         Schlussendlich behaupte ich, dass \(A_{q+1}(x+1) \leq A_{q+2}(x)\) gilt:
                         \begin{align*}
-                        A_{q+2}(x)&amp;= A_{q+1} (A_{q+2}(x-1)) \geq A_{q+1} (A_2 (x-1)) = A_{q+1} (x+1) \ .
+                        A_{q+2}(x) & = A_{q+1} (A_{q+2}(x-1)) \geq A_{q+1} (A_2 (x-1)) = A_{q+1} (x+1) \ .
                         \end{align*}
                         Also: \(A_{q+2}\) majorisiert \(f\).
                         *Primitive Rekursion:* \(f = \primrec (g,h)\), also
                         \begin{align*}
-                        f(t, \vec{x})&amp;=
+                        f(t, \vec{x}) & =
                         \begin{cases}
-                        g(\vec{x})&amp;\textnormal{ if $t=0$} \\
-                        h(f(t-1,\vec{x}), t-1, \vec{x})&amp;\textnormal{ if $t \geq 1$}
+                        g(\vec{x}) & \textnormal{ if $t=0$} \\
+                        h(f(t-1,\vec{x}), t-1, \vec{x}) & \textnormal{ if $t \geq 1$}
                         \end{cases} \ ,
                         \end{align*}
                         wobei \(g, h\) bereits mit weniger Kombinatoren konstruierte primitiv rekursive Funktionen
@@ -300,20 +300,20 @@
                             Wir verwenden Induktion über \(t\). Wenn \(t=0\) ist,
                             dann gilt
                             \begin{align*}
-                            f(0,\vec{x})&amp;= g(\vec{x}) \lt A_q (x) \leq A_{q+1} (x) \ .
+                            f(0,\vec{x}) & = g(\vec{x}) \lt A_q (x) \leq A_{q+1} (x) \ .
                             \end{align*}
                             Wenn \(t \geq 1\) ist, dann gilt
                             \begin{align*}
                             \hspace{-3cm}
-                            f(t, \vec{x})&= h(f(t-1,\vec{x}), t-1, \vec{x}) \\
-                            &amp;\lt A_{q} (\max(f(t-1, \vec{x}), t-1, x_1, \dots, x_n)) \tag {weil \(A_q \gt h\)}
+                            f(t, \vec{x}) &= h(f(t-1,\vec{x}), t-1, \vec{x}) \\
+                            & \lt A_{q} (\max(f(t-1, \vec{x}), t-1, x_1, \dots, x_n)) \tag {weil \(A_q \gt h\)}
                             \\
-                            &amp;\lt A_{q} (\max(f(t-1, \vec{x}), t-1, x)) \tag {für \(x := \max(x_1,\dots,x_n)\)}
+                            & \lt A_{q} (\max(f(t-1, \vec{x}), t-1, x)) \tag {für \(x := \max(x_1,\dots,x_n)\)}
                             \\
-                            &amp;\leq A_q (\max(A_{q+1} (t-1+x), t-1, x)) \tag{ per Induktionshypothese für $t-1$} \\
-                            &amp;= A_q (A_{q+1}(t-1+x)) % \tag{weil \(\max(t-1,x) \leq t-1+x \leq A_{q+1}(t-1+x)\)}
+                            & \leq A_q (\max(A_{q+1} (t-1+x), t-1, x)) \tag{ per Induktionshypothese für $t-1$} \\
+                            & = A_q (A_{q+1}(t-1+x)) % \tag{weil \(\max(t-1,x) \leq t-1+x \leq A_{q+1}(t-1+x)\)}
                             \\
-                            &amp;= A_{q+1}(t+x) \ .
+                            & = A_{q+1}(t+x) \ .
                             \end{align*}
                             Somit ist die Behauptung bewiesen.
                             |> QED
@@ -324,10 +324,10 @@
                         eine Funktion in einem Parameter brauchen, nämlich \(\max(t, \vec{x})\).
                         Sei also \(z := \max(t,x) = \max(t, x_1,\dots,x_n)\). Dann gilt
                         \begin{align*}
-                        A_{q+1} (x+t)&amp;\leq A_{q+1} (2z) \leq A_{q+1} (2(z-1) + 3) \\
-                        &amp;= A_{q+1} (A_2(z-1)) \tag{da $A_2(n) = 2n+3$}\\
-                        &amp;\leq A_{q+1} (A_{q+2}(z-1)) \\
-                        &amp;= A_{q+2}(z) \ .
+                        A_{q+1} (x+t) & \leq A_{q+1} (2z) \leq A_{q+1} (2(z-1) + 3) \\
+                        & = A_{q+1} (A_2(z-1)) \tag{da $A_2(n) = 2n+3$}\\
+                        & \leq A_{q+1} (A_{q+2}(z-1)) \\
+                        & = A_{q+2}(z) \ .
                         \end{align*}
                         Es gilt also \(A_{q+2} \gt f\) und das Lemma ist bewiesen.
                         |> QED
@@ -343,5 +343,5 @@
                     dann können wir das auf Baum darstellen:
                     |> figure
                         |> img
-                            style=height:25em
                             src=../img/primitive-rekursion/primitive-recursive-tree.svg
+                            style=height:25em

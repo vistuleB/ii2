@@ -61,6 +61,7 @@ pub fn pipeline_html_2_wly() -> List(Pipe) {
     dl.unwrap("p"),
     dl.rename(#("h2", "Topic")),
     dl.rename(#("h3", "SubTopic")),
+    // this guy will have fucked up our old wly -> html pipeline, but of course we don't care anymore:
     dl.ti2_class_well_container_theorem_2_statement(),
     dl.substitute_class(#("div", "container", "well")),
     dl.rename_if_has_singleton_class_attribute(#("div", "well", "Highlight")),

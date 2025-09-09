@@ -37,8 +37,8 @@
                             Nichtdeterministische Zeit
                     In 
                     |> span
-                        data-ref=nondet-tm-to-det
                         class=reference
+                        data-ref=nondet-tm-to-det
                     \ haben wir
                     gesehen, dass jede nichtdeterministische Turing-Maschine durch eine
                     deterministische simuliert werden kann, wobei der Zeit-Overhead exponentiell
@@ -187,8 +187,8 @@
                         die die Turingmaschine nun ausführen könnte.
                         Wie im Beweis von 
                         |> span
-                            data-ref=nondet-tm-to-det
                             class=reference
+                            data-ref=nondet-tm-to-det
                         können wir $M$ so umprogrammieren, dass sie die selbe Sprache entscheidet,
                         aber $|\delta(q,x_1,x_2,\dots,x_k)| = 2$ gilt, außer für $q \in \{\texttt{accept},
                         \texttt{reject}\}$. Wir wählen uns zwei beliebige Symbole in $\Sigma$ und
@@ -199,9 +199,9 @@
                         \begin{align*}
                         \delta(q, x_1, i, x_2, \dots, x_k) =
                         \begin{cases}
-                        \textnormal{das $i$-te Element aus $\delta(q, x_1, x_2, \dots x_k)$}&amp;
+                        \textnormal{das $i$-te Element aus $\delta(q, x_1, x_2, \dots x_k)$} &
                         \textnormal{ falls $i \in \{1,2\}$} \\
-                        \texttt{reject}&amp;\textnormal{ ansonsten.}
+                        \texttt{reject} & \textnormal{ ansonsten.}
                         \end{cases}
                         \end{align*}
                         Falls nun $x \in L(M')$ ist, dann gibt es also einen Bandinhalt $z \in \Sigma^*$ für
@@ -233,8 +233,8 @@
                     Turingmaschine mit polynomieller Laufzeit $t(n) = n^k$ gibt, die $L$ entscheidet.
                     Nach 
                     |> span
-                        data-ref=theorem-certificate-simulates-nondet
                         class=reference
+                        data-ref=theorem-certificate-simulates-nondet
                     also, wenn es eine Zertifikatmaschine $M$ gibt, die $L$ in Zeit $t$ entscheidet.
                     Wenn also
                     \begin{align*}

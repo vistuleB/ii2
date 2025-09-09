@@ -120,9 +120,9 @@
                         Wählen wir nun $s := 2^{n} / (2n)$. Wieviele Schaltkreise mit $n$ Variablen, Fan-in 2 und
                         $s$ Gates gibt es? Die Schranke in der obigen Behauptung sagt, dies seien höchstens
                         \begin{align*}
-                        \pfrac{2^n}{2n}^{\frac{2^{n}}{n} + 1}&amp;= \left(2^{n - \log (2n)}\right)^{\frac{2^n}{n} + 1} \\
-                        &amp;= 2^{2^{n} + n - \log(2n) \frac{2^{n}}{n} - \log (2n)} \\
-                        &amp;\lt 2^{2^n} \ .
+                        \pfrac{2^n}{2n}^{\frac{2^{n}}{n} + 1} & = \left(2^{n - \log (2n)}\right)^{\frac{2^n}{n} + 1} \\
+                        & = 2^{2^{n} + n - \log(2n) \frac{2^{n}}{n} - \log (2n)} \\
+                        & \lt 2^{2^n} \ .
                         \end{align*}
                         Also: es gibt mehr Boolesche Funktionen in $n$ Variablen, als es Boolesche Schaltkreise
                         mit $\frac{2^n}{2n}$ Gates gibt. Somit benötigen manche Boolesche Funktionen
@@ -265,8 +265,8 @@
                             $2^n$ Gates hat.
                             |> figure
                                 |> img
-                                    style=height:10em
                                     src=../img/circuits/all-monomials.svg
+                                    style=height:10em
                         |> div
                             class=well container-fluid
                             *Beweis.*
@@ -286,48 +286,48 @@
                             |> figure
                                 class=centered-figure well container-fluid
                                 |> a
-                                    data-slide=prev
-                                    href=#all-monomials
                                     class=left carousel-control-prev-icon
+                                    href=#all-monomials
+                                    data-slide=prev
                                     |> div
                                         class=carousel-nav-icon
                                         |> img
                                             src=../img/carousel-prev-icon.svg
                                 |> a
-                                    data-slide=next
-                                    href=#all-monomials
                                     class=right carousel-control-next-icon
+                                    href=#all-monomials
+                                    data-slide=next
                                     |> div
                                         class=carousel-nav-icon
                                         |> img
                                             src=../img/carousel-next-icon.svg
                                 |> div
-                                    style=display:inline-block
-                                    data-interval=false
-                                    class=carousel
                                     id=all-monomials
+                                    class=carousel
+                                    data-interval=false
+                                    style=display:inline-block
                                     |> ol
                                         class=carousel-indicators
                                         |> li
-                                            class=active
+                                            data-target=#all-monomials
                                             data-slide-to=1
-                                            data-target=#all-monomials
+                                            class=active
                                         |> li
-                                            data-slide-to=2
                                             data-target=#all-monomials
+                                            data-slide-to=2
                                     |> div
-                                        style=display:inline-block
                                         class=carousel-inner
+                                        style=display:inline-block
                                         |> div
                                             class=item active
                                             |> img
-                                                style=width:100%
                                                 src=../img/circuits/all-monomials-1.svg
+                                                style=width:100%
                                         |> div
                                             class=item
                                             |> img
-                                                style=width:100%
                                                 src=../img/circuits/all-monomials-2.svg
+                                                style=width:100%
                             Insgesamt erhalten wir $2^n$ Gates, von denen jedes gleichzeitig ein
                             Ouptut-Gate ist.
                             |> QED
@@ -339,11 +339,11 @@
                         $x_{n-k+1}, \dots, x_n$ in $z_1, \dots, z_n$. Wir können $f$ also
                         wie folgt schreiben:
                         \begin{align*}
-                        f(\x)&amp;= \sum_{I \subseteq [n]} c_I \x^I \tag{mit Koeffizienten $c_I \in \{0,1\}$} \\
-                        &amp;= \sum_{A \subseteq [n-k]} \sum_{B \subseteq [k]} c_{A,B} \y^A \z^B \\
-                        &amp;= \sum_{A \subseteq [n-k]} \y^A \left( \sum_{B \subseteq [k]} c_{A,B} \z^B\right)
+                        f(\x) & = \sum_{I \subseteq [n]} c_I \x^I \tag{mit Koeffizienten $c_I \in \{0,1\}$} \\
+                        & = \sum_{A \subseteq [n-k]} \sum_{B \subseteq [k]} c_{A,B} \y^A \z^B \\
+                        & = \sum_{A \subseteq [n-k]} \y^A \left( \sum_{B \subseteq [k]} c_{A,B} \z^B\right)
                         \tag{den Faktor $\y^A$ ausklammern} \\
-                        &amp;=: \sum_{A \subseteq [n-k]} \y^A g_A(\z) \tag{der inneren Summe einen Namen geben}
+                        & =: \sum_{A \subseteq [n-k]} \y^A g_A(\z) \tag{der inneren Summe einen Namen geben}
                         \end{align*}
                         Die obige Summe beinhaltet also $2^{n-k}$ Terme von der Form
                         $\y^A g_A(\z)$. Es gibt insgesamt nur $2^{2^k}$ Polynome in den Variablen $\z$.
@@ -377,7 +377,7 @@
                         $g : \{0,1\}^k \rightarrow \cube$ berechnet, schauen wir uns
                         wieder $f(\x)$ an.
                         \begin{align*}
-                        f(\x)&amp;=
+                        f(\x) & =
                         \sum_{A \subseteq [n-k]} \y^A g_A(\z)
                         \end{align*}
                         Für jedes $g_A$ haben wir ja bereits ein Gate, das es berechnet.
@@ -386,7 +386,7 @@
                         $\sum_{A \subseteq [n-k]}$ bilden, wofür wir $2^{n-k}$ XOR-Gates brauchen.
                         Insgesamt brauchen wir also
                         \begin{align}
-                        &amp;\underbrace{2^{2^k} + 2^k}_{\textnormal{für alle $g: \cube^k \rightarrow \cube$}}
+                        & \underbrace{2^{2^k} + 2^k}_{\textnormal{für alle $g: \cube^k \rightarrow \cube$}}
                         +
                         \underbrace{2^{n-k}}_{\textnormal{für alle Monome $\y^A$}}
                         +
@@ -394,7 +394,7 @@
                         +
                         \underbrace{2^{n-k}-1}_{\textnormal{für die Summe $\sum_{A \subseteq [n-k]}$}}
                         \nonumber \\
-                        =&
+                        = &
                         2^{2^k} + 3 \cdot 2^{n-k} + 2^k - 1 \ .
                         \label{size-lupanov}
                         \end{align}
@@ -406,26 +406,26 @@
                         präzise Minimum, aber sicherlich eine gültige Konstruktion und somit eine
                         obere Schranke.
                         \begin{align*}
-                        2^{2^k}&amp;= 2^{n-k} \qquad \Leftrightarrow \\
-                        2^k&amp;= n-k \qquad \Leftrightarrow \\
-                        2^k +k&amp;= n
+                        2^{2^k} & = 2^{n-k} \qquad \Leftrightarrow \\
+                        2^k & = n-k \qquad \Leftrightarrow \\
+                        2^k +k & = n
                         \end{align*}
                         Ich habe keine explizite Formel, um das für $k$ aufzulösen, also
                         setze ich auf gut Glück $k = \log n$ und wir erhalten
                         \begin{align*}
-                        (\ref{size-lupanov})&amp;= 2^{2^k} + 3 \cdot 2^{n-k} + 2^k - 1 \\
-                        &amp;= 2^{2^{\log n}} + \dots
+                        (\ref{size-lupanov}) & = 2^{2^k} + 3 \cdot 2^{n-k} + 2^k - 1 \\
+                        & = 2^{2^{\log n}} + \dots
                         \end{align*}
                         und wir können gleich aufhören, da der erste Term bereits $2^n$ ergibt.
                         Das ist zu groß.
                         Wir müssen $k$ also kleiner wählen. Nächster Versuch: $k := \log n - 1$.
                         \begin{align*}
-                        (\ref{size-lupanov})&amp;= 2^{2^k} + 3 \cdot 2^{n-k} + 2^k - 1 \\
-                        &amp;=
+                        (\ref{size-lupanov}) & = 2^{2^k} + 3 \cdot 2^{n-k} + 2^k - 1 \\
+                        & =
                         2^{2^{\log n - 1}} + 3 \cdot 2^{n - \log n + 1} + 2^{\log n - 1} - 1 \\
-                        &amp;=
+                        & =
                         2^{n/2} + \frac{6 \cdot 2^n}{n} + n/2 - 1 \\
-                        &amp;=
+                        & =
                         O\pfrac{2^n}{n} \ .
                         \end{align*}
                         Das ist die behauptete Schranke.

@@ -125,8 +125,8 @@
                     \({\rm subtractFrom}: (t,x) \mapsto x-t\). Hierfür wenden wir einfach pred
                     \(t\) mal auf \(x\) an:
                     \begin{align*}
-                    {\rm subtractFrom}&amp;= \primrec(\pi_0, \comp(\pred, \pi_0)) \\
-                    {\rm minus}&amp;= \comp({\rm subtractFrom}, \pi_1, \pi_0)
+                    {\rm subtractFrom} & = \primrec(\pi_0, \comp(\pred, \pi_0)) \\
+                    {\rm minus} & = \comp({\rm subtractFrom}, \pi_1, \pi_0)
                     \end{align*}
                     |> Topic
                         Boolesche Werte
@@ -173,7 +173,7 @@
                         \(i^2 \leq x\).
                     Das Prädikat
                     \begin{align*}
-                    {\rm iSquareLessEqualX } (i,x)&amp;= [ i^2 \leq x ]
+                    {\rm iSquareLessEqualX } (i,x) & = [ i^2 \leq x ]
                     \end{align*}
                     ist primitiv rekursiv:
                     \begin{align*}
@@ -267,8 +267,8 @@
                     \ haben wir
                     die bijektive Funktion
                     \begin{align*}
-                    \pair : \N^2&amp;\rightarrow \N \\
-                    (x,y)&amp;\mapsto {x + y + 1 \choose 2} + x
+                    \pair : \N^2 & \rightarrow \N \\
+                    (x,y) & \mapsto {x + y + 1 \choose 2} + x
                     \end{align*}
                     kennengelernt. Diese Funktion ist primitiv rekursiv: es gilt
                     \({n \choose 2} = 1 + 2 + \cdots + (n-1)\) und somit
@@ -286,8 +286,8 @@
                             = Comp(add, p0, p1)
                     und somit
                     \begin{align*}
-                    {\rm choose2}&amp;= \primrec(\zero, \comp({\rm add},\pi_0,\pi_1)) \\
-                    \pair&amp;= \comp({\rm add}, \comp({\rm choose2}, \comp({\rm add}, \pi_0, \comp(\succ, \pi_1)), \pi_0)
+                    {\rm choose2} & = \primrec(\zero, \comp({\rm add},\pi_0,\pi_1)) \\
+                    \pair & = \comp({\rm add}, \comp({\rm choose2}, \comp({\rm add}, \pi_0, \comp(\succ, \pi_1)), \pi_0)
                     \end{align*}
                     Um die Umkehrfunktionen \(\first, \second\) zu implementieren, die uns aus
                     \(\pair(x,y)\) wieder \(x\) und \(y\) berechnen, bestimmen wir erst
@@ -299,10 +299,10 @@
                     und somit ist \(x+y\) der größte Wert von \(i\), so dass \(n \geq \pair(0,i)\) ist.
                     Aus \(x+y\) und \({x+y+1 \choose 2} + x\) können wir dann leicht \(x\) und \(y\) berechnen:
                     \begin{align*}
-                    {\rm getXplusY}&amp;= {\rm LargestLessThan}(\pi_0, \comp({\rm greaterEqual}, \pi_1, \comp(\pair,
+                    {\rm getXplusY} & = {\rm LargestLessThan}(\pi_0, \comp({\rm greaterEqual}, \pi_1, \comp(\pair,
                     \zero, \pi_0)))\\
-                    \first&amp;= \comp({\rm minus}, \pi_0, \comp(\pair, \zero, {\rm getXplusY}))\\
-                    \second&amp;= \comp({\rm minus}, {\rm getXplusY}, \first)
+                    \first & = \comp({\rm minus}, \pi_0, \comp(\pair, \zero, {\rm getXplusY}))\\
+                    \second & = \comp({\rm minus}, {\rm getXplusY}, \first)
                     \end{align*}
                     Listen können wir implementieren, indem wir Paare verschachtelt zusammenhängen,
                     z.B. \([5,7,9]\) wird zu 
@@ -336,9 +336,9 @@
                     wir die leere Liste mit \(0\) codieren und dann aber beim Davorhängen eines Elements
                     1 draufaddieren müssen, also
                     \begin{align*}
-                    {\rm push} (x, {\rm restlist})&amp;= 1 + \pair(x, {\rm restlist}) \\
-                    {\rm head} ({\rm list})&amp;= \first({\rm list} - 1)\\
-                    {\rm second} ({\rm list})&amp;= \second({\rm list} - 1)
+                    {\rm push} (x, {\rm restlist}) & = 1 + \pair(x, {\rm restlist}) \\
+                    {\rm head} ({\rm list}) & = \first({\rm list} - 1)\\
+                    {\rm second} ({\rm list}) & = \second({\rm list} - 1)
                     \end{align*}
                     Jetzt klappt alles wunderbar:
                     |> pre

@@ -37,9 +37,9 @@
                             Anwendungen des Postschen Korrespondenzproblems
                     Erinnerin Sie sich an kontextfreie Grammatiken? Das waren formale Grammatiken wie zum Beispiel
                     \begin{align*}
-                    S&amp;\rightarrow Tc \\
-                    T&amp;\rightarrow TaTb \\
-                    T&amp;\rightarrow \epsilon
+                    S & \rightarrow Tc \\
+                    T & \rightarrow TaTb \\
+                    T & \rightarrow \epsilon
                     \end{align*}
                     Diese Grammatiken erlauben uns, gewisse Sprachen zu beschreiben, indem Sie Regeln festlegen -
                     hier
@@ -81,12 +81,12 @@
                         für unsere Grammatik und erstellen zu jeder Kachel \(\alpha : \beta\) die
                         Grammatikregel
                         \begin{align*}
-                        S&amp;\rightarrow \alpha S \beta^R \ ,
+                        S & \rightarrow \alpha S \beta^R \ ,
                         \end{align*}
                         wobei \(\beta^R\) das Wort \(\beta\) von rechts nach links gelesen bedeutet, also
                         \((xyz)^R = zyx\). Wir fügen noch eine weitere Regel hinzu:
                         \begin{align*}
-                        S&amp;\rightarrow \$ \ ,
+                        S & \rightarrow \$ \ ,
                         \end{align*}
                         wobei \(\$\) ein neues Zeichen ist, dass nicht in der Symbolmenge des PCP-Puzzles \(P\)
                         enthalten ist.
@@ -196,9 +196,9 @@
                         Wenn \(M_2\) akzeptiert (oder eben ablehnt), dann lassen wir \(M_1\) akzeptieren (oder eben
                         ablehnen). Es gilt nun:
                         \begin{align*}
-                        M_1(x) = \texttt{accept}&amp;\Leftrightarrow M_2(f(x)) = \texttt{accept} \\
-                        &amp;\Leftrightarrow f(x) \in L_2 \tag{weil $M_2$ die Sprache $L_2$ entscheidet} \\
-                        &amp;\Leftrightarrow x \in L_1 \tag{weil $f$ eine Reduktion ist}
+                        M_1(x) = \texttt{accept} & \Leftrightarrow M_2(f(x)) = \texttt{accept} \\
+                        & \Leftrightarrow f(x) \in L_2 \tag{weil $M_2$ die Sprache $L_2$ entscheidet} \\
+                        & \Leftrightarrow x \in L_1 \tag{weil $f$ eine Reduktion ist}
                         \end{align*}
                         und somit entscheidet \(M_1\) die Sprache \(L_1\).
                         |> QED
@@ -229,9 +229,9 @@
                     statt umgekehrt.
                     |> figure
                         |> img
-                            style=height:15em
-                            src=../img/pcp/reduction.svg
                             loading=lazy
+                            src=../img/pcp/reduction.svg
+                            style=height:15em
                     Üben wir also Reduktionen:
                     |> Statement
                         title=*Theorem*
@@ -248,9 +248,9 @@
                         Sei \(G\) eine Grammatik und \(\Sigma\) die Menge der Terminalsymbole. Sei \(G'\) die
                         folgende Grammatik:
                         \begin{align*}
-                        S'&amp;\rightarrow x S' x \tag{ für alle \(x \in \Sigma\) }\\
-                        S'&amp;\rightarrow x \tag{ für alle \(x \in \Sigma\) }\\
-                        S'&amp;\rightarrow \epsilon
+                        S' & \rightarrow x S' x \tag{ für alle \(x \in \Sigma\) }\\
+                        S' & \rightarrow x \tag{ für alle \(x \in \Sigma\) }\\
+                        S' & \rightarrow \epsilon
                         \end{align*}
                         Die Grammatik \(G'\) erzeugt genau die Sprache der Palindromwörter über \(\Sigma\).
                         Unsere Reduktion \(f\) nimmt nun als Eingabe eine kontextfreie Grammatik \(G\) (bzw. deren
@@ -267,8 +267,8 @@
                         ob \(G\) mehrdeutig ist, d.h., ob es ein Wort \(x \in \Sigma^*\) gibt,
                         für das zwei verschiedene Ableitungsbäume existieren.
                     |> div
-                        style=background-color: rgba(255,0,0,0.1);
                         class=well
+                        style=background-color: rgba(255,0,0,0.1);
                         *Falscher Beweis.*
                         Wir reduzieren das uns bereits bekannte Schnittproblem auf das Mehrdeutigkeitsproblem.
                         Gegeben seien zwei kontextfreie Grammatiken \(G_1, G_2\) mit Startsymbolen \(S_1, S_2\) und
@@ -277,16 +277,16 @@
                         in
                         \(X'\) umbenennen). Dann führen wir ein Super-Startsymbol \(S\) ein und zwei Produktionen:
                         \begin{align*}
-                        S&amp;\rightarrow S_1 \\
-                        S&amp;\rightarrow S_2
+                        S & \rightarrow S_1 \\
+                        S & \rightarrow S_2
                         \end{align*}
                         und übernehmen alle Produktionen von \(G_1\) und \(G_2\). Dies ist unsere neue Grammatik \(G\).
                         Sie sehen nun:
                         wenn es ein \(x \in L(G_1) \cap L(G_2)\) gibt, dann kann man \(x\) auf zwei verschiedene
                         Weisen in \(G\) ableiten, nämlich
                         \begin{align*}
-                        S&amp;\Rightarrow S_1 \Rightarrow^* x \tag{Ableitung wie in $G_1$} \\
-                        S&amp;\Rightarrow S_2 \Rightarrow^* x \tag{Ableitung wie in $G_2$} \ ,
+                        S & \Rightarrow S_1 \Rightarrow^* x \tag{Ableitung wie in $G_1$} \\
+                        S & \Rightarrow S_2 \Rightarrow^* x \tag{Ableitung wie in $G_2$} \ ,
                         \end{align*}
                         und das sind wirklich zwei verschiedene Ableitungen, weil ja bereits \(S_1 \ne S_2\).
                         Wenn nun umgekehrt ein Wort \(y\) via \(S_1\) und via \(S_2\) ableitbar sein sollte
@@ -306,8 +306,8 @@
                     Problematisch ist, dass ein PCP-Puzzle selbst mehrere Lösungen haben kann und auch für
                     ein Lösungswort \(\gamma\) es mehrere Möglichkeiten geben kann, es zu "legen", also
                     \begin{align*}
-                    \top(s)&amp;= \bottom(s) = \gamma \\
-                    \top(s')&amp;= \bottom(s') = \gamma \ .
+                    \top(s) & = \bottom(s) = \gamma \\
+                    \top(s') & = \bottom(s') = \gamma \ .
                     \end{align*}
                     Wenn dem so wäre, dann würde bereits unsere Reduktion auf das Palindromwortproblem eine
                     mehrdeutige Grammatik erzeugen. Wir gehen einen anderen Weg.
@@ -321,10 +321,10 @@
                         wenn es auf beide Weisen geht, dann ist die Grammatik mehrdeutig und das PCP hat eine Lösung.
                         Also:
                         \begin{align*}
-                        S&amp;\rightarrow S_1 \\
-                        S&amp;\rightarrow S_2 \\
-                        S_1&amp;\rightarrow \alpha_i S_1 i \ | \ \alpha_i i \tag{für alle oberen Teile \(\alpha_i\)} \\
-                        S_2&amp;\rightarrow \beta_i S_2 i \ | \ \beta_i i \tag{für alle unteren Teile \(\beta_i\)}
+                        S & \rightarrow S_1 \\
+                        S & \rightarrow S_2 \\
+                        S_1 & \rightarrow \alpha_i S_1 i \ | \ \alpha_i i \tag{für alle oberen Teile \(\alpha_i\)} \\
+                        S_2 & \rightarrow \beta_i S_2 i \ | \ \beta_i i \tag{für alle unteren Teile \(\beta_i\)}
                         \end{align*}
                         wobei \(1, 2, \dots, n\) neue Symbole sind. Die Indizes \(i\) stellen sicher,
                         dass jede von \(S_1\) ausgehende Ableitung eindeutig ist (und genau so von \(S_2\));

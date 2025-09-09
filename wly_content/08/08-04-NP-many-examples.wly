@@ -51,14 +51,14 @@
                         |> div
                             style=display: inline-block; width:45%; justify-content: center;
                             |> img
-                                style=width:80%
                                 src=../img/09-complexity-theory/np-examples/peterson-3-colorable.svg
+                                style=width:80%
                             Der Peterson-Graph ist 3-färbbar.
                         |> div
                             style=display: inline-block; width:45%
                             |> img
-                                style=width:80%
                                 src=../img/09-complexity-theory/np-examples/not-3-colorable.svg
+                                style=width:80%
                             Dieser Graph ist nicht 3-färbbar
                     |> Statement
                         title=*Beobachtung*
@@ -66,190 +66,194 @@
                             style=font-variant: small-caps;
                             3-Colorability
                         \ ist in NP.
-                *Beweis.*
-                Wir müssen nun eine Zertifikatmaschine mit polynomieller Laufzeit angeben. Um uns
-                nicht in technischen Details zu verlieren, werden wir einfach einen Algorithmus angeben,
-                der zwei Inputs entgegennimmt: den Graphen $G$ (im Turingmaschinenkontext also das
-                Eingabewort $x$) und ein _Zertifikat_. Hier ist unser Code:
-                |> pre
-                    class=listing
-                    `def is_3_coloring(graph, c):`
-                    \ `(V,E) = graph` 
-                    \ `for (u,v) in E:`
-                    \ `if c[u] == c[v]:`
-                    \ `return False` 
-                    \ `if c[u] not in [1,2,3] or c[v] not in [1,2,3]:`
-                    \ `return False` 
-                    \ `return True`
-                Falls nun $G$ $3$-färbbar ist, wenn es also eine solche Färbung $c: V \rightarrow \{1,2,3\}$
-                gibt,
-                dann wird obiger Algorithmus `is_3_coloring(graph,c)` auch `True` ausgeben.
-                Falls er für ein $c$ `True` ausgibt, dann ist $c$ tatsächlich eine
-                gültige 3-Färbung und $G$ ist $3$-färbbar.
-                |> QED
-            Das obige Beispiel verdeutlicht die Essenz der Klasse NP: es ist nicht klar, wie wir
-            einen effizienten Algorithmus für 
-            |> span
-                style=font-variant: small-caps;
-                3-Colorability
-            schreiben können; aber _überprüfen_, ob eine gegebene Färbung eine 3-Färbung
-            von $G$ ist, das ist einfach.
-        |> Statement
-            title=*Problem*
-            (
-            |> span
-                style=font-variant: small-caps;
-                CNF-Satisfiability
-            ).
-            Gegeben eine Formel $F$ in konjunktiver Normalform. Gibt es eine
-            Belegung der Variablen, so dass $F$ zu `True` wird?
-        Auch hier können wir eine einfache Prüf-Funktion schreiben, die eine Formel $F$ und
-        eine Belegung $\alpha$ entgegennimmt, dann jede Klausel auswertet und schaut,
-        ob immer `True` rauskommt. Somit gilt: auch
-        |> span
-            style=font-variant: small-caps;
-            CNF-Satisfiability
-        \ ist in NP.
-        |> Statement
-            title=*Problem*
-            (
-            |> span
-                style=font-variant: small-caps;
-                Subset Sum
-            ).
-            Gegeben eine Liste $p_1, \dots, p_n \in \N$ von "Preisen" und ein
-            "Guthaben" $g \in \N$, gibt es eine Menge $I \subseteq [n]$ mit
-            \begin{align*}
-            \sum_{i \in I} p_i = g \ ?
-            \end{align*}
-        Dies ist ebenfalls in NP.
-        |> Topic
-            Finden versus Entscheiden
-        Sei $G = (V,E)$ ein Graph. Eine Menge $I \subseteq V$ heißt _unabhängig_, wenn
-        es keine Kante $\{u,v\} \in E$ gibt mit $u,v \in I$.
-        |> Statement
-            title=*Problem*
-            Gegeben ein Graph $G=(V,E)$ und eine Zahl $k$.
-            Finde eine unabhängige Menge in $I$ in $G$ mit $|I| \geq k$, falls es eine solche gibt.
-        Ist dies in NP?
-        Schon syntaktisch nicht! Es ist ja gar kein Entscheidungsproblem.
-        Wir können aber eine Entscheidungsvariante definieren:
-        |> Statement
-            title=*Problem*
-            (
-            |> span
-                style=font-variant: small-caps;
-                Independent Set
-            )
-            Gegeben ein Graph $G=(V,E)$ und eine Zahl $k$.
-            Gibt es eine unabhängige Menge in $I$ in $G$ mit $|I| \geq k$?
-        Das Entscheidungsproblem 
-        |> span
-            style=font-variant: small-caps;
-            Independent Set
-        ist offensichtlich in NP. Als Zertifikat kommt z.B. einfach die Menge $I$ in Frage.
-        Für alle Entscheidungsprobleme, die wir oben als Beispiele aufgelistet haben, kann man
-        ganz natürlich das zugehörige Suchproblem definieren: gegeben ein
-        Graph, finde eine 3-Färbung (falls es sie gibt); gegeben
-        eine CNF-Formel, finde eine erfüllende Belegung (falls es sie gibt); gegeben
-        ein Instanz von 
-        |> span
-            style=font-variant: small-caps;
-            Subset Sum
-        , finde
-        eine Menge $I$ mit $\sum_{i \in I} p_i = g$.
-        |> Statement
-            title=*Übungsaufgabe*
-            Zeigen Sie für folgende Probleme, dass wir, falls wir einen effizienten Algorithmus
-            dafür haben, dann auch einen effizienten Algorithmus schreiben können,
-            der das entsprechende Objekt findet, falls es denn existiert!
-            |> ul
-                |> li
-                    |> span
-                        style=font-variant: small-caps;
-                        Subset Sum
-                    \ (das ist einfach),
-                |> li
-                    |> span
-                        style=font-variant: small-caps;
-                        Independent Set
-                    \ (das ist auch recht
-                    einfach),
-                |> li
-                    |> span
-                        style=font-variant: small-caps;
-                        CNF-Satisfiability
-                    \ (auch),
-                |> li
-                    |> span
-                        style=font-variant: small-caps;
-                        3-Colorability
-                    \ (das ist trickreicher).
-        Dies geht nicht immer! Erinnern Sie sich an 
-        |> span
-            style=font-variant: small-caps;
-            Primes
-        .
-        Der Agrawal–Kayal–Saxena-Algorithmus lässt uns entscheiden, ob eine gegebene Zahl $n$
-        prim ist; also auch, ob $n$ zusammengesetzt ist; allerdings geht daraus kein
-        Algorithmus hervor, der einen Faktor auch findet.
-        Wo wir gerade beim Faktorisieren sind: das Problem _gegeben eine Zahl $X \in \N$, zerlege
-        sie in ihre Primfaktoren_ ist ja kein Entscheidungsproblem. Können wir
-        ein "entsprechendes" Entscheidungsproblem formulieren? Es sollte gelten:
-        wenn wir das Entscheidungsproblem lösen können, dann auch das Suchproblem. Wie wir
-        gesehen haben, ist 
-        |> span
-            style=font-variant: small-caps;
-            Primes
-        \ bzw.
-        |> span
-            style=font-variant: small-caps;
-            NonPrimes
-        nicht das
-        entsprechende Entscheidungsproblem, weil es uns nicht erlaubt, den Faktor auch zu finden.
-        |> Statement
-            title=*Problem*
-            (
-            |> span
-                style=font-variant: small-caps;
-                Small Factor
-            )
-            Gegeben eine Zahl $X \in \N$, binär codiert als $x \in \{0,1\}^n$, und eine
-            Zahl $K \in \N$: gibt es einen echten Teiler $Z$ von $\N$ mit $Z \leq K$?
-        |> Statement
-            title=*Übungsaufgabe*
-            Zeigen Sie: wenn man 
-            |> span
-                style=font-variant: small-caps;
-                Small Factor
-            \ effizient
-            lösen kann, dann kann man auch die Primzahlfaktorisierung von $X$ effizient finden.
-            *Hinweis:* _Effizient_ heißt in diesem Zusammenhang
-            _polynomiell in der Anzahl der Bits._ Der Algorithmus _probiere alle kleineren
-            Zahlen aus_, ob sie $X$ teilen, ist _nicht_ effizient!
-        Das Entscheidungsproblem 
-        |> span
-            style=font-variant: small-caps;
-            Small Factor
-        ist offensichtlich in NP: das Zertifikat $z$ ist jener Faktor (so er denn existiert), und
-        die Zertifikatmaschine $M$ muss nun $z$ mit $K$ multiplizieren und schauen, ob auch
-        $X$ herauskommt. Nicht so offensichtlich jedoch ist folgendes:
-        |> Statement
-            title=*Übungsaufgabe*
-            Sei 
-            |> span
-                style=font-variant: small-caps;
-                No Small Factor
-            das Komplement von 
-            |> span
-                style=font-variant: small-caps;
-                Small Factor
-            , also
-            \begin{align*}
-            \{ x\texttt{;}k \ | \ x, k \in \{0,1\}^*
-            \textnormal{ und $(x)_2$ hat keinen echten Teiler $Z \leq (k)_2$} \} \ ,
-            \end{align*}
-            wobei $(x)_2$ und $(k)_2$ die von $x$ und $k$ codierten natürlichen Zahlen sind.
-        Diese Übungsaufgabe ist quasi eine Warnung: was denn eine
-        Zertifikatmaschine auf ihrem zweiten Band erwartet, das geht nicht
-        immer aus der Problemstellung hervor!
+                    |> div
+                        class=well theorem
+                        *Beweis.*
+                        Wir müssen nun eine Zertifikatmaschine mit polynomieller Laufzeit angeben. Um uns
+                        nicht in technischen Details zu verlieren, werden wir einfach einen Algorithmus angeben,
+                        der zwei Inputs entgegennimmt: den Graphen $G$ (im Turingmaschinenkontext also das
+                        Eingabewort $x$) und ein _Zertifikat_. Hier ist unser Code:
+                        |> pre
+                            class=listing
+                            `def is_3_coloring(graph, c):`
+                            \ `(V,E) = graph` 
+                            \ `for (u,v) in E:`
+                            \ `if c[u] == c[v]:`
+                            \ `return False` 
+                            \ `if c[u] not in [1,2,3] or c[v] not in [1,2,3]:`
+                            \ `return False` 
+                            \ `return True`
+                        Falls nun $G$ $3$-färbbar ist, wenn es also eine solche Färbung $c: V \rightarrow \{1,2,3\}$
+                        gibt,
+                        dann wird obiger Algorithmus `is_3_coloring(graph,c)` auch `True` ausgeben.
+                        Falls er für ein $c$ `True` ausgibt, dann ist $c$ tatsächlich eine
+                        gültige 3-Färbung und $G$ ist $3$-färbbar.
+                        |> QED
+                        |> div
+                            class=proof
+                            Das obige Beispiel verdeutlicht die Essenz der Klasse NP: es ist nicht klar, wie wir
+                            einen effizienten Algorithmus für 
+                            |> span
+                                style=font-variant: small-caps;
+                                3-Colorability
+                            schreiben können; aber _überprüfen_, ob eine gegebene Färbung eine 3-Färbung
+                            von $G$ ist, das ist einfach.
+                        |> Statement
+                            title=*Problem*
+                            (
+                            |> span
+                                style=font-variant: small-caps;
+                                CNF-Satisfiability
+                            ).
+                            Gegeben eine Formel $F$ in konjunktiver Normalform. Gibt es eine
+                            Belegung der Variablen, so dass $F$ zu `True` wird?
+                        Auch hier können wir eine einfache Prüf-Funktion schreiben, die eine Formel $F$ und
+                        eine Belegung $\alpha$ entgegennimmt, dann jede Klausel auswertet und schaut,
+                        ob immer `True` rauskommt. Somit gilt: auch
+                        |> span
+                            style=font-variant: small-caps;
+                            CNF-Satisfiability
+                        \ ist in NP.
+                        |> Statement
+                            title=*Problem*
+                            (
+                            |> span
+                                style=font-variant: small-caps;
+                                Subset Sum
+                            ).
+                            Gegeben eine Liste $p_1, \dots, p_n \in \N$ von "Preisen" und ein
+                            "Guthaben" $g \in \N$, gibt es eine Menge $I \subseteq [n]$ mit
+                            \begin{align*}
+                            \sum_{i \in I} p_i = g \ ?
+                            \end{align*}
+                        Dies ist ebenfalls in NP.
+                        |> Topic
+                            Finden versus Entscheiden
+                        Sei $G = (V,E)$ ein Graph. Eine Menge $I \subseteq V$ heißt _unabhängig_, wenn
+                        es keine Kante $\{u,v\} \in E$ gibt mit $u,v \in I$.
+                        |> Statement
+                            title=*Problem*
+                            Gegeben ein Graph $G=(V,E)$ und eine Zahl $k$.
+                            Finde eine unabhängige Menge in $I$ in $G$ mit $|I| \geq k$, falls es eine solche gibt.
+                        Ist dies in NP?
+                        Schon syntaktisch nicht! Es ist ja gar kein Entscheidungsproblem.
+                        Wir können aber eine Entscheidungsvariante definieren:
+                        |> Statement
+                            title=*Problem*
+                            (
+                            |> span
+                                style=font-variant: small-caps;
+                                Independent Set
+                            )
+                            Gegeben ein Graph $G=(V,E)$ und eine Zahl $k$.
+                            Gibt es eine unabhängige Menge in $I$ in $G$ mit $|I| \geq k$?
+                        Das Entscheidungsproblem 
+                        |> span
+                            style=font-variant: small-caps;
+                            Independent Set
+                        ist offensichtlich in NP. Als Zertifikat kommt z.B. einfach die Menge $I$ in Frage.
+                        Für alle Entscheidungsprobleme, die wir oben als Beispiele aufgelistet haben, kann man
+                        ganz natürlich das zugehörige Suchproblem definieren: gegeben ein
+                        Graph, finde eine 3-Färbung (falls es sie gibt); gegeben
+                        eine CNF-Formel, finde eine erfüllende Belegung (falls es sie gibt); gegeben
+                        ein Instanz von 
+                        |> span
+                            style=font-variant: small-caps;
+                            Subset Sum
+                        , finde
+                        eine Menge $I$ mit $\sum_{i \in I} p_i = g$.
+                        |> Statement
+                            title=*Übungsaufgabe*
+                            Zeigen Sie für folgende Probleme, dass wir, falls wir einen effizienten Algorithmus
+                            dafür haben, dann auch einen effizienten Algorithmus schreiben können,
+                            der das entsprechende Objekt findet, falls es denn existiert!
+                            |> ul
+                                |> li
+                                    |> span
+                                        style=font-variant: small-caps;
+                                        Subset Sum
+                                    \ (das ist einfach),
+                                |> li
+                                    |> span
+                                        style=font-variant: small-caps;
+                                        Independent Set
+                                    \ (das ist auch recht
+                                    einfach),
+                                |> li
+                                    |> span
+                                        style=font-variant: small-caps;
+                                        CNF-Satisfiability
+                                    \ (auch),
+                                |> li
+                                    |> span
+                                        style=font-variant: small-caps;
+                                        3-Colorability
+                                    \ (das ist trickreicher).
+                        Dies geht nicht immer! Erinnern Sie sich an 
+                        |> span
+                            style=font-variant: small-caps;
+                            Primes
+                        .
+                        Der Agrawal–Kayal–Saxena-Algorithmus lässt uns entscheiden, ob eine gegebene Zahl $n$
+                        prim ist; also auch, ob $n$ zusammengesetzt ist; allerdings geht daraus kein
+                        Algorithmus hervor, der einen Faktor auch findet.
+                        Wo wir gerade beim Faktorisieren sind: das Problem _gegeben eine Zahl $X \in \N$, zerlege
+                        sie in ihre Primfaktoren_ ist ja kein Entscheidungsproblem. Können wir
+                        ein "entsprechendes" Entscheidungsproblem formulieren? Es sollte gelten:
+                        wenn wir das Entscheidungsproblem lösen können, dann auch das Suchproblem. Wie wir
+                        gesehen haben, ist 
+                        |> span
+                            style=font-variant: small-caps;
+                            Primes
+                        \ bzw.
+                        |> span
+                            style=font-variant: small-caps;
+                            NonPrimes
+                        nicht das
+                        entsprechende Entscheidungsproblem, weil es uns nicht erlaubt, den Faktor auch zu finden.
+                        |> Statement
+                            title=*Problem*
+                            (
+                            |> span
+                                style=font-variant: small-caps;
+                                Small Factor
+                            )
+                            Gegeben eine Zahl $X \in \N$, binär codiert als $x \in \{0,1\}^n$, und eine
+                            Zahl $K \in \N$: gibt es einen echten Teiler $Z$ von $\N$ mit $Z \leq K$?
+                        |> Statement
+                            title=*Übungsaufgabe*
+                            Zeigen Sie: wenn man 
+                            |> span
+                                style=font-variant: small-caps;
+                                Small Factor
+                            \ effizient
+                            lösen kann, dann kann man auch die Primzahlfaktorisierung von $X$ effizient finden.
+                            *Hinweis:* _Effizient_ heißt in diesem Zusammenhang
+                            _polynomiell in der Anzahl der Bits._ Der Algorithmus _probiere alle kleineren
+                            Zahlen aus_, ob sie $X$ teilen, ist _nicht_ effizient!
+                        Das Entscheidungsproblem 
+                        |> span
+                            style=font-variant: small-caps;
+                            Small Factor
+                        ist offensichtlich in NP: das Zertifikat $z$ ist jener Faktor (so er denn existiert), und
+                        die Zertifikatmaschine $M$ muss nun $z$ mit $K$ multiplizieren und schauen, ob auch
+                        $X$ herauskommt. Nicht so offensichtlich jedoch ist folgendes:
+                        |> Statement
+                            title=*Übungsaufgabe*
+                            Sei 
+                            |> span
+                                style=font-variant: small-caps;
+                                No Small Factor
+                            das Komplement von 
+                            |> span
+                                style=font-variant: small-caps;
+                                Small Factor
+                            , also
+                            \begin{align*}
+                            \{ x\texttt{;}k \ | \ x, k \in \{0,1\}^*
+                            \textnormal{ und $(x)_2$ hat keinen echten Teiler $Z \leq (k)_2$} \} \ ,
+                            \end{align*}
+                            wobei $(x)_2$ und $(k)_2$ die von $x$ und $k$ codierten natürlichen Zahlen sind.
+                        Diese Übungsaufgabe ist quasi eine Warnung: was denn eine
+                        Zertifikatmaschine auf ihrem zweiten Band erwartet, das geht nicht
+                        immer aus der Problemstellung hervor!

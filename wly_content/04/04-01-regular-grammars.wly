@@ -45,28 +45,28 @@
                         title=*Definition*
                         Eine kontextfreie Sprache \(G = (\Sigma, N, P, S)\) heißt
                         _regulär_, wenn jede Produktion eine der folgenden vier Formen
-                        hat: \begin{align*} X&amp;\rightarrow aY \\ X&amp;\rightarrow a \\ X&
-                        \rightarrow Y \\ X&amp;\rightarrow \epsilon \end{align*} Eine Sprache
+                        hat: \begin{align*} X & \rightarrow aY \\ X & \rightarrow a \\ X &
+                        \rightarrow Y \\ X & \rightarrow \epsilon \end{align*} Eine Sprache
                         \(L \subseteq \Sigma^*\) heißt _regulär_, wenn es eine reguläre
                         Grammatik \(G\) gibt, die sie erzeugt, also \(L(G) = L\).
                     |> Statement
                         title=*Beispiel*
                         Die folgende Grammatik über dem Alphabet \(\Sigma = \{1\}\), den
-                        nichtterminalen Symbolen \(\{E,O\}\) und den Regeln \begin{align*} E&
-                        \rightarrow 1O \ | \ \epsilon \\ O&amp;\rightarrow 1E \end{align*}
+                        nichtterminalen Symbolen \(\{E,O\}\) und den Regeln \begin{align*} E &
+                        \rightarrow 1O \ | \ \epsilon \\ O & \rightarrow 1E \end{align*}
                         erzeugt die Sprache \(\{\epsilon, 11, 1111, 111111, \dots \}= \{1^n \
                         | \ n \textnormal{ ist gerade}\}\).
                     |> Statement
                         title=*Beispiel*
                         Die folgende Grammatik haben wir bereits im letzten Abschnitt
-                        kennengelernt. Sie ist nicht regulär: \begin{align*} S&amp;\rightarrow A
-                        B \\ A&amp;\rightarrow \epsilon \ | \ a A \\ B&amp;\rightarrow \epsilon \
+                        kennengelernt. Sie ist nicht regulär: \begin{align*} S & \rightarrow A
+                        B \\ A & \rightarrow \epsilon \ | \ a A \\ B & \rightarrow \epsilon \
                         | \ b B \ . \\ \end{align*}
                         Sie ist nicht regulär, weil die erste Regel \(S \rightarrow AB\)
                         gegen die Definition regulärer Grammatiken verstößt. Allerdings
                         können wir leicht eine reguläre Grammatik \(G'\) angeben, die die
                         gleiche Sprache erzeugt:
-                        \begin{align*} S&amp;\rightarrow \epsilon \ |\ a S \ | \ b T \\ T&
+                        \begin{align*} S & \rightarrow \epsilon \ |\ a S \ | \ b T \\ T &
                         \rightarrow \epsilon \ | \ b T \ . \end{align*} Hier ist
                         beispielsweise eine Ableitung des Wortes \(aabbb\): \begin{align*} S
                         \Rightarrow aS \Rightarrow aaS \Rightarrow aabT \Rightarrow aabbT
@@ -89,13 +89,13 @@
                     |> Statement
                         title=*Übungsaufgabe*
                         Betrachten Sie die Gramatik über \(\Sigma = \{0,1\}\): \begin{align*}
-                        S&amp;\rightarrow 1 S \ | \ 0 S \ | \ 0 \end{align*} Leiten Sie das Wort
+                        S & \rightarrow 1 S \ | \ 0 S \ | \ 0 \end{align*} Leiten Sie das Wort
                         \(11010\) ab. Beschreiben Sie in eigenen Worten die erzeugte Sprache.
                     |> Statement
                         title=*Übungsaufgabe*
                         Betrachten Sie die Grammatik über \(\Sigma = \{0,1\}\): \begin{align*}
-                        A&amp;\rightarrow 0 A \ | 1 A \ | 1 B \\ B&amp;\rightarrow 0 C \ | 1 C \\
-                        C&amp;\rightarrow 0 D \ | 1 D \\ D&amp;\rightarrow 0 E \ | 1 E \\ E&
+                        A & \rightarrow 0 A \ | 1 A \ | 1 B \\ B & \rightarrow 0 C \ | 1 C \\
+                        C & \rightarrow 0 D \ | 1 D \\ D & \rightarrow 0 E \ | 1 E \\ E &
                         \rightarrow \epsilon \ \end{align*} mit Startsymbol \(A\). Leiten Sie
                         das Wort \(01101001\) ab und beschreiben Sie die erzeugte Sprache in
                         eigenen Worten.
@@ -143,7 +143,7 @@
                         title=*Definition*
                         Eine Grammatik \(G = (\Sigma, N, P, S)\) heißt
                         _erweitert regulär_, wenn jede Produktion eine der folgenden
-                        Formen hat: \begin{align*} X&amp;\rightarrow \alpha Y \\ X&amp;\rightarrow
+                        Formen hat: \begin{align*} X & \rightarrow \alpha Y \\ X & \rightarrow
                         \alpha \\ \end{align*} hat, wobei \(X \in N\) und \(\alpha \in
                         \Sigma^*\) ist. Im Unterschied zu den eigentlich regulären Grammatiken
                         erlauben wir also mehrere terminale Symbole auf der rechten Seite,
@@ -156,8 +156,8 @@
                     |> Highlight
                         *Beweis.*
                         Wir ersetzen einfach jede Regel der Form $$ X \rightarrow a_1 a_2
-                        \dots a_k Y $$ durch \(k\) reguläre Regeln: \begin{align*} X&
-                        \rightarrow a_1 X_2 \\ X_2&amp;\rightarrow a_2 X_3 \\ \dots \\ X_k&
+                        \dots a_k Y $$ durch \(k\) reguläre Regeln: \begin{align*} X &
+                        \rightarrow a_1 X_2 \\ X_2 & \rightarrow a_2 X_3 \\ \dots \\ X_k &
                         \rightarrow a_k Y \end{align*} wobei wir darauf achten, dass \(X_2,
                         \dots, X_k\) "frische" Nichtterminalsymbole sind. Falls \(\alpha =
                         \epsilon\) ist, so ist die Regel bereits in einer in regulären
@@ -183,8 +183,8 @@
                             Definition 4.1
                         \ hat jede Produktion in einer
                         regulären Grammatik eine der folgenden vier Formen: \begin{align*} 1.
-                        \quad X&amp;\rightarrow aY \\ 2. \quad X&amp;\rightarrow a \\ 3. \quad X&
-                        \rightarrow Y \\ 4. \quad X&amp;\rightarrow \epsilon \end{align*}
+                        \quad X & \rightarrow aY \\ 2. \quad X & \rightarrow a \\ 3. \quad X &
+                        \rightarrow Y \\ 4. \quad X & \rightarrow \epsilon \end{align*}
                         Wir zeigen nun, dass man auf Produktionen der Form 2 und 3
                         verzichten kann.
                         |> Statement
@@ -227,8 +227,8 @@
                         \textnormal{ und } l \leq k \} \end{align*} definieren, also die
                         Menge derjenigen Nichtterminalsymbole, die sich in bis zu \(k\)
                         Schritten von \(X\) aus ableiten lassen. Wir berechnen die \(N_k\)
-                        iterativ wie folgt: \begin{align*} N_0 (X)&amp;:= \{X\} \ , \\ N_{k+1}
-                        (X)&amp;:= N_k \cup \{Z \in N \ | \ \textnormal{ es gibt } Y \in
+                        iterativ wie folgt: \begin{align*} N_0 (X) & := \{X\} \ , \\ N_{k+1}
+                        (X) & := N_k \cup \{Z \in N \ | \ \textnormal{ es gibt } Y \in
                         N_k(X) \textnormal{ mit } Y \rightarrow Z \} \ . \end{align*} Die
                         Menge \(N_{k+1}(X)\) lässt sich also mit zwei geschachtelten
                         `for`-Schleifen berechnen: eine über die \(Y \in N_k\)
@@ -256,8 +256,8 @@
                             Wörter, die kein \(a\) enthalten. Die Grammatik \(B \rightarrow
                             \epsilon \ | \ a B \ | \ c B\) erzeugt die Wörter, die kein \(b\)
                             enthalten. Die Grammatik \(G\) mit Startsymbol \(S\) und den
-                            Produktionen \begin{align*} S&amp;\rightarrow A \ | \ B \\ A&
-                            \rightarrow \epsilon \ | \ b A \ | \ c A \\ B&amp;\rightarrow \epsilon
+                            Produktionen \begin{align*} S & \rightarrow A \ | \ B \\ A &
+                            \rightarrow \epsilon \ | \ b A \ | \ c A \\ B & \rightarrow \epsilon
                             \ | \ a B \ | \ c B \end{align*} erzeugt die Sprache aller Wörter,
                             die kein \(a\) oder kein \(b\) enthalten.
                             Die Grammatik \(G\) ist regulär, enthält aber Produktionen vom Typ
@@ -271,10 +271,10 @@
                             Betrachten Sie die folgende Grammatik über \(\Sigma =
                             \{a_1,a_2,\dots,a_n\}\) mit den Nichtterminalsymbolen \(\{S, A_1,
                             A_2, \dots, A_n\}\) und den insgesamt \(3n-1\) Produktionen
-                            \begin{align*} S&amp;\rightarrow a_1 A_1 | a_2 A_2 | a_3 A_3 | \dots |
-                            a_n A_n \\ A_1&amp;\rightarrow a_1 | A_2 \\ \dots \\ A_i&amp;\rightarrow
-                            a_{i} | A_{i+1}\\ \dots \\ A_{n-1}&amp;\rightarrow a_{n-1} | A_n \\
-                            A_n&amp;\rightarrow a_n \end{align*}
+                            \begin{align*} S & \rightarrow a_1 A_1 | a_2 A_2 | a_3 A_3 | \dots |
+                            a_n A_n \\ A_1 & \rightarrow a_1 | A_2 \\ \dots \\ A_i & \rightarrow
+                            a_{i} | A_{i+1}\\ \dots \\ A_{n-1} & \rightarrow a_{n-1} | A_n \\
+                            A_n & \rightarrow a_n \end{align*}
                             Schreiben Sie eine äquivalente Grammatik ohne Produktionen der
                             Form \(X \rightarrow Y\). Wieviele Produktion hat Ihre neue
                             Grammatik?
@@ -315,7 +315,7 @@
                             können wir zum Beispiel die Symbole in \(N_2\) einfach umbenennen.
                             Wir erschaffen nun ein neues Startsymbol \(S \not \in N_1 \cup
                             N_2\) und bauen uns eine neue Grammatik, in dem wir die zwei neuen
-                            Regeln \begin{align*} S&amp;\rightarrow S_1 \\ S&amp;\rightarrow S_2
+                            Regeln \begin{align*} S & \rightarrow S_1 \\ S & \rightarrow S_2
                             \end{align*} hinzufügen. Formal also $$ G := (\Sigma_1 \cup
                             \Sigma_2, N_1 \cup N_2 \cup \{S\}, P_1 \cup P_2 \cup \{S
                             \rightarrow S_1, S \rightarrow S_2\}, S) \ . $$ In einer Ableitung
@@ -358,10 +358,10 @@
                             Wir müssen anders vorgehen. Wir ändern die Regeln von \(G_1\) so
                             ab, dass immer, wenn in einer \(G_1\)-Regle die Ableitung endet,
                             wir das Zeichen \(S_2\) anhängen:
-                            \begin{align*} \begin{array}{l|l} \textnormal{Regel in $G_1$}&
-                            \textnormal{wird zu} \\ \hline X \rightarrow aY&amp;X \rightarrow aY
-                            \\ X \rightarrow a&amp;X \rightarrow aS_2 \\ X \rightarrow Y&amp;X
-                            \rightarrow Y \\ X \rightarrow \epsilon&amp;Y \rightarrow S_2 \ .
+                            \begin{align*} \begin{array}{l|l} \textnormal{Regel in $G_1$} &
+                            \textnormal{wird zu} \\ \hline X \rightarrow aY & X \rightarrow aY
+                            \\ X \rightarrow a & X \rightarrow aS_2 \\ X \rightarrow Y & X
+                            \rightarrow Y \\ X \rightarrow \epsilon & Y \rightarrow S_2 \ .
                             \end{array} \end{align*}
                             Die Menge an Produktionen der Grammatik \(G\) besteht dann aus den
                             nach dieser Tabelle modifizierten Produktionen \(P_1\) von
@@ -388,14 +388,14 @@
                             *Beweis.*
                             Sei \(G = (\Sigma, N, P, S)\) eine reguläre Grammatik für \(L\). Wir
                             könnten ein neues Startsymbol \(S'\) einführen und \begin{align*} S'
-                            &amp;\rightarrow \epsilon \\ S'&amp;\rightarrow SS' \end{align*} als zwei
+                            & \rightarrow \epsilon \\ S' & \rightarrow SS' \end{align*} als zwei
                             neue Regeln einführen. Natürlich geht das nicht, denn \(S'
                             \rightarrow SS'\) ist nicht erlaubt in regulären Grammatiken.
                             Ähnlich wie im vorherigen Beweis fangen wir das Ende einer
                             \(G\)-Ableitung ab: \begin{align*} \begin{array}{l|l}
-                            \textnormal{Regel in $G$}&amp;\textnormal{wird zu} \\ \hline X
-                            \rightarrow aY&amp;X \rightarrow aY \\ X \rightarrow a&amp;X \rightarrow
-                            aS \\ X \rightarrow Y&amp;X \rightarrow Y \\ X \rightarrow \epsilon&
+                            \textnormal{Regel in $G$} & \textnormal{wird zu} \\ \hline X
+                            \rightarrow aY & X \rightarrow aY \\ X \rightarrow a & X \rightarrow
+                            aS \\ X \rightarrow Y & X \rightarrow Y \\ X \rightarrow \epsilon &
                             Y \rightarrow S \ . \end{array} \end{align*} Um überhaupt eine
                             Ableitung beenden zu können, fügen wir \(S \rightarrow \epsilon\)
                             noch als Regel hinzu.
@@ -403,7 +403,7 @@
                         |> Statement
                             title=*Übungsaufgabe*
                             Hier sehen Sie einen URL mit Query-String:
-                            `https://web1.hszg.de/modulkatalog/index.php?activTopic=3&activNav=2&stid=566&frei=1&kennz=suche&activCont=1`
+                            `https://web1.hszg.de/modulkatalog/index.php?activTopic&#61;3&amp;activNav&#61;2&amp;stid&#61;566&amp;frei&#61;1&amp;kennz&#61;suche&amp;activCont&#61;1`
                             Der URL besteht aus mehreren Teilen:
                             |> ol
                                 |> li
@@ -420,7 +420,7 @@
                                     Falls ein Pfad enthalten ist, dann optional ein `?`,
                                     gefolgt von einem Query-String; dieser besteht aus beliebig
                                     vielen, aber mindestens einem Paar der Form Key=Value, wobei die
-                                    Paare mit einem `&` separiert sind.
+                                    Paare mit einem `&amp;` separiert sind.
                             Zeigen Sie, dass die Sprache der syntaktisch korrekten URLs (in
                             dem gerade beschriebenen Format) regulär ist. Sie können entweder
                             direkt eine reguläre Grammatik angeben oder mit dem

@@ -49,11 +49,11 @@
                     merken muss.
                     $$
                     \begin{array}{cc|cc}
-                    x&amp;y&amp;{\rm result}&amp;{\rm carry} \\ \hline
-                    0&amp;0&amp;0&amp;0 \\
-                    0&amp;1&amp;1&amp;0 \\
-                    1&amp;0&amp;1&amp;0 \\
-                    1&amp;1&amp;0&amp;1
+                    x & y & {\rm result} & {\rm carry} \\ \hline
+                    0 & 0 & 0 & 0 \\
+                    0 & 1 & 1 & 0 \\
+                    1 & 0 & 1 & 0 \\
+                    1 & 1 & 0 & 1
                     \end{array}
                     $$
                     Das Carry wird dann der eins weiter links stehenden Stelle zur Addition weitergegeben.
@@ -65,30 +65,30 @@
                     Unsere Tabelle ist also etwas größer:
                     $$
                     \begin{array}{ccc|cc}
-                    x&amp;y&amp;\cin&amp;s&amp;\cout \\ \hline
-                    0&amp;0&amp;0&amp;0&amp;0 \\
-                    0&amp;0&amp;1&amp;1&amp;0 \\
-                    0&amp;1&amp;0&amp;1&amp;0 \\
-                    0&amp;1&amp;1&amp;0&amp;1 \\
-                    1&amp;0&amp;0&amp;1&amp;0 \\
-                    1&amp;0&amp;1&amp;0&amp;1 \\
-                    1&amp;1&amp;0&amp;0&amp;1 \\
-                    1&amp;1&amp;1&amp;1&amp;1 \\
+                    x & y & \cin & s & \cout \\ \hline
+                    0 & 0 & 0 & 0 & 0 \\
+                    0 & 0 & 1 & 1 & 0 \\
+                    0 & 1 & 0 & 1 & 0 \\
+                    0 & 1 & 1 & 0 & 1 \\
+                    1 & 0 & 0 & 1 & 0 \\
+                    1 & 0 & 1 & 0 & 1 \\
+                    1 & 1 & 0 & 0 & 1 \\
+                    1 & 1 & 1 & 1 & 1 \\
                     \end{array}
                     $$
                     Glücklicherweise muss man sich diese Tabelle nicht merken, es gilt nämlich
                     \begin{align*}
-                    s&amp;= x \oplus y \oplus \cin \\
-                    \cout&amp;= {\rm Maj} (x, y, \cin) \ .
+                    s & = x \oplus y \oplus \cin \\
+                    \cout & = {\rm Maj} (x, y, \cin) \ .
                     \end{align*}
                     Die Funktion Maj haben wir schon oben kennengelernt; sie gibt 1 aus, wenn mindestens zwei
                     ihrer drei Input-Bits 1 sind. Wir kürzen Sie im folgenden mit \(M\) ab. Hier ist nun
                     unser \(n\)-Bit-Addierer:
                     |> figure
                         |> img
-                            style=height:10em
-                            src=../img/circuits/adder-ripple.svg
                             loading=lazy
+                            src=../img/circuits/adder-ripple.svg
+                            style=height:10em
                     Wir numerieren unsere Variablen von \(0, \dots,n-1\), damit wir die
                     repräsentierte natürliche Zahl bequem als
                     \(\sum_{i=0}^n x_i 2^i\) schreiben können. Beachten Sie auch die
@@ -108,9 +108,9 @@
                         folgende Funktionalität:
                         |> figure
                             |> img
-                                style=height:10em
-                                src=../img/circuits/onebitadder.svg
                                 loading=lazy
+                                src=../img/circuits/onebitadder.svg
+                                style=height:10em
                         Versuchen Sie, so wenig Gates wie möglich zu verwenden. Entscheiden Sie sich
                         im Voraus, ob Sie beliebigen Fan-in erlauben wollen oder auf Fan-in 2 bestehen.
                     Eine Größe von \(O(n)\) ist gut; besseres können wir nicht wirklich erwarten, schließlich
@@ -136,8 +136,8 @@
                     \(s_i\) ist das \(i\)-te Bit der Summe (von rechts nach links zählend, bei 0 beginnend).
                     Es gilt also \(c_0 = 0\) und
                     \begin{align*}
-                    s_i&amp;= x_i \oplus y_i \oplus c_i \\
-                    c_{i+1}&amp;= M(x_i, y_i, c_i) \ ,
+                    s_i & = x_i \oplus y_i \oplus c_i \\
+                    c_{i+1} & = M(x_i, y_i, c_i) \ ,
                     \end{align*}
                     und das Ergebnis ist dann \(c_{n} s_{n-1} s_{n-2} \dots, s_2 s_1 s_0\).
                     Bauen wir uns doch mal einen Schaltkreis, der \(c_{k+1}\) berechnet; wir können
@@ -145,9 +145,9 @@
                     zur Berechnung von \(c_{k+1}\) beiträgt:
                     |> figure
                         |> img
-                            style=height:6em
-                            src=../img/circuits/adder-ripple-only-carry.svg
                             loading=lazy
+                            src=../img/circuits/adder-ripple-only-carry.svg
+                            style=height:6em
                     Betrachten Sie \((x_i,y_i)\). Wenn dies \((1,1)\) ist, so ist
                     \(c_{i+1}=1\);
                     wenn \((x_i,y_i) = (0,0)\), so ist \(c_{i+1}=0\). In beiden Fällen spielt
@@ -155,8 +155,8 @@
                     \(x_i \ne y_i\) ist, dann schaltet das \(M\)-Gate einfach \(c_i\) unverändert durch.
                     Dies motiviert die folgenden Definitionen:
                     \begin{align*}
-                    g_i&amp;:= x_i \wedge y_i \tag{carry-generate} \\
-                    p_i&amp;:= x_i \vee y_i \tag{carry-propagate}
+                    g_i & := x_i \wedge y_i \tag{carry-generate} \\
+                    p_i & := x_i \vee y_i \tag{carry-propagate}
                     \end{align*}
                     Jetzt können wir \(c_{k+1}\) wie folgt berechnen: an Stelle \(k\) wird ein Carry
                     ausgegeben, wenn es eine Stelle \(i \leq k\) gibt, wo \(x_i = y_i=1\) gilt, das
@@ -214,23 +214,23 @@
                         \(p_{[a]} = p_a = x_a \vee y_a\) und \(g_{[a]} = g_a = x_a \wedge y_a\).
                     Hier sind Boolesche Formeln (in DNF) für \(p_{[a,b]}\) und \(g_{[a,b]}\):
                     \begin{align*}
-                    g_{[a,b]}&amp;:= g_b \vee (g_{b-1} \wedge p_b) \vee (g_{b-2} \wedge p_{b-1} \wedge p_b)
+                    g_{[a,b]} & := g_b \vee (g_{b-1} \wedge p_b) \vee (g_{b-2} \wedge p_{b-1} \wedge p_b)
                     \vee \dots \vee (g_a \wedge p_{a+1} \wedge \dots \wedge p_b) \ , \\
-                    p_{[a,b]}&amp;:= g_b \vee (g_{b-1} \wedge p_b) \vee (g_{b-2} \wedge p_{b-1} \wedge p_b)
+                    p_{[a,b]} & := g_b \vee (g_{b-1} \wedge p_b) \vee (g_{b-2} \wedge p_{b-1} \wedge p_b)
                     \vee \dots \vee (g_{a+1} \wedge p_{a+2} \wedge \dots \wedge p_b)
                     \vee (p_a \wedge p_{a+1} \wedge \dots \wedge p_b) \ ,
                     \end{align*}
                     und hier ein Bild zur Illustration:
                     |> figure
                         |> img
-                            style=height:11em
-                            src=../img/circuits/carry-generate-interval.svg
                             loading=lazy
+                            src=../img/circuits/carry-generate-interval.svg
+                            style=height:11em
                         |> br
                         |> img
-                            style=height:11em
-                            src=../img/circuits/carry-propagate-interval.svg
                             loading=lazy
+                            src=../img/circuits/carry-propagate-interval.svg
+                            style=height:11em
                     Im Extremfall \(a=b\) gilt \(g_{[a,a]} = g_a, p_{[a,a]} = p_a\), also wie
                     die "alten" individuellen \(p_a, g_a\).
                     Diese Definition \(g_{[a,b]}\) ist nützlich, da erstens
@@ -243,8 +243,8 @@
                         title=*Beobachtung*
                         Wenn wir \([a,b] = [a,i] \cup [i+1,b] \) schreiben für \(a \lt i \lt b\), dann gilt
                         \begin{align*}
-                        p_{[a,b]}&amp;= g_{[i+1,b]} \vee (p_{[a,i]} \wedge p_{[i+1,b]}) \ , \\
-                        g_{[a,b]}&amp;= g_{[i+1,b]} \vee (g_{[a,i]} \wedge p_{[i+1,b]}) \ . \\
+                        p_{[a,b]} & = g_{[i+1,b]} \vee (p_{[a,i]} \wedge p_{[i+1,b]}) \ , \\
+                        g_{[a,b]} & = g_{[i+1,b]} \vee (g_{[a,i]} \wedge p_{[i+1,b]}) \ . \\
                         \end{align*}
                     Überzeugen Sie sich von der Richtigkeit entweder durch Nachdenken (z.B. "damit im Interval
                     \([a,b]\) ein
@@ -297,15 +297,15 @@
                         Ganz allgemein gilt \([c*^{k+1}] = [c0*^k] \cup [c1*^k]\) und somit,
                         mit Hilfe von Beobachtung 1.10:
                         \begin{align*}
-                        p_{[c*^{k+1}]}&amp;= g_{[c1*^k]} \vee (p_{c0*^k} \wedge p_{c1*^k})\\
-                        g_{[c*^{k+1}]}&amp;= g_{[c1*^k]} \vee (g_{c0*^k} \wedge p_{c1*^k}) \ .
+                        p_{[c*^{k+1}]} & = g_{[c1*^k]} \vee (p_{c0*^k} \wedge p_{c1*^k})\\
+                        g_{[c*^{k+1}]} & = g_{[c1*^k]} \vee (g_{c0*^k} \wedge p_{c1*^k}) \ .
                         \end{align*}
                         Wir basteln uns also am Besten ein "\(pg\)-Gate" mit vier Inputs und zwei Outputs:
                         |> figure
                             |> img
-                                style=height:10em
-                                src=../img/circuits/pg-gate.svg
                                 loading=lazy
+                                src=../img/circuits/pg-gate.svg
+                                style=height:10em
                         Mit Hilfe dieses Gates können wir
                         \(p_{c0*^k}, g_{c0*^k}\) und \(p_{c1*^k}, g_{c1*^k}\)
                         zu \(p_{c*^{k+1}}, g_{c*^{k+1}}\) kombinieren. Wir fangen
@@ -314,9 +314,9 @@
                         $(p_I, g_I)$. Für \(n=16\) schaut das so aus:
                         |> figure
                             |> img
-                                style=height:18em
-                                src=../img/circuits/pg-all-gates.svg
                                 loading=lazy
+                                src=../img/circuits/pg-all-gates.svg
+                                style=height:18em
                         Jede Kante steht hier für zwei gebündelte Kanten, nämlich
                         \(p_I\) und \(g_I\).
                         Und dies ist unser Schaltkreis. Beachten Sie, dass
@@ -363,8 +363,8 @@
                         Die Idee ist, dass wir jedes \([0,k]\) als Vereinigung
                         von wenigen Binärintervallen schreiben können, zum Beispiel
                         \begin{align*}
-                        [0,9]&amp;= [0,7] \cup [8,9] \ , \\
-                        [0,12]&amp;= [0,7] \cup [8,11] \cup [12] \ .
+                        [0,9] & = [0,7] \cup [8,9] \ , \\
+                        [0,12] & = [0,7] \cup [8,11] \cup [12] \ .
                         \end{align*}
                         Wie kann man das formalisieren?
                         *1. Fall.* Wenn \(k\) die Form \(k = 2^d-1\) hat, dann ist
@@ -394,9 +394,9 @@
                                 $[0,k] = [0,l] \cup [k+1,l]$ und berechnen \(pg_{[0,k]}\) so:
                             |> figure
                                 |> img
-                                    style=height:5em
-                                    src=../img/circuits/pg0k.svg
                                     loading=lazy
+                                    src=../img/circuits/pg0k.svg
+                                    style=height:5em
                             Der Wert \(pg_{[l+1,k]}\) ist bereits ein Binärintervall, kann also
                             direkt aus dem vorherigen Schaltkreis abgelesen werden; der andere
                             Input, \(pg_{[0,l]}\), muss rekursiv berechnet werden. Beachten Sie,
@@ -405,8 +405,8 @@
                             also von \(b\) auf \(a+b \geq b+1\) gewachsen ist. Hier ist ein Beispiel
                             für \(n = 32, k = 28\), in Dezimal- und Binärdarstellung:
                             \begin{align*}
-                            [0,28]&amp;= [0,15] \cup [16,23] \cup [24,27] \cup [28] \\
-                            [00000, 11100]&amp;= [00000,01111] \cup [10000,10111] \cup [11000, 11011] \cup [11100] \ .
+                            [0,28] & = [0,15] \cup [16,23] \cup [24,27] \cup [28] \\
+                            [00000, 11100] & = [00000,01111] \cup [10000,10111] \cup [11000, 11011] \cup [11100] \ .
                             \end{align*}
                             Beachten wir die Folge \(28, 27, 23, 15\), also immer die Endpunkte der betreffenden
                             Intervalle; wir haben gesehen, dass die Anzahl der schließenden 1en von Element zu Element
@@ -422,9 +422,9 @@
                             \(d-1\) viele \(pg\)-Gates. Das Maximum wird erreicht, wenn \(k = (1...10)_2 \):
                             |> figure
                                 |> img
-                                    style=height:18em
-                                    src=../img/circuits/pg-0-30.svg
                                     loading=lazy
+                                    src=../img/circuits/pg-0-30.svg
+                                    style=height:18em
                         |> p
                             *Tiefe.* Jedes \(pg\)-Gate hat Tiefe 2,
                             und somit erreichen \(d-1\) solche Gates hintereinander
@@ -456,9 +456,9 @@
                         Hier ist die Konstruktion für \(n=16\):
                         |> figure
                             |> img
-                                style=height:20em
-                                src=../img/circuits/pg-prefices-16.svg
                                 loading=lazy
+                                src=../img/circuits/pg-prefices-16.svg
+                                style=height:20em
                         Wir benötigen also (weniger als) \(n\) viele \(pg\)-Gates; jedes davon
                         besteht wiederum aus 4 Basis-Gates \(\wedge, \vee\), und somit
                         brauchen wir maximal \(4n\) Gates. Wenn wir ganz genau hinsehen,
@@ -468,9 +468,9 @@
                         brauchen wir \(p_{[0,l]}\) nicht:
                         |> figure
                             |> img
-                                style=height:15em
-                                src=../img/circuits/pg-gadget-no-need-p.svg
                                 loading=lazy
+                                src=../img/circuits/pg-gadget-no-need-p.svg
+                                style=height:15em
                         Es reichen also in der Tat \(2n\) Basis-Gates aus. 
                         |> QED
                     Wir kombinieren wir nun die beiden Lemmas und erhalten einen Schaltkreis der Tiefe \( 4
@@ -502,8 +502,8 @@
                         LT : \{0,1\}^{n} \times \{0,1\}^n \rightarrow \{0,1\} \\
                         LT(\mathbf{x}, \mathbf{y}) =
                         \begin{cases}
-                        1&amp;\textnormal{ wenn $(\mathbf{x})_2 \lt (\mathbf{y})_2$, } \\
-                        0&amp;\textnormal{ sonst.}
+                        1 & \textnormal{ wenn $(\mathbf{x})_2 \lt (\mathbf{y})_2$, } \\
+                        0 & \textnormal{ sonst.}
                         \end{cases}
                         \end{align*}
                         der also \(\mathbf{x}, \mathbf{y}\) als \(n\)-stellige

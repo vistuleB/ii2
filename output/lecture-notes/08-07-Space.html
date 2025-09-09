@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <link rel="icon" href="data:,">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../lecture-notes.css" />
+    <link rel="stylesheet" type="text/css" href="../TI.css" />
+    <link rel="stylesheet" type="text/css" href="../tooltip-3003.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../numbered-title.js"></script>
+    <script type="text/javascript" src="../mathjax_setup.js"></script>
+    <script type="text/javascript" src="../carousel.js"></script>
+    <script type="text/javascript" src="../sendCmdTo3003.js"></script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<section
+  count="58"
+  .="BookLevelSectionCounter 58"
+  title_gr="Speicherplatz"
+  title_en="Space"
+  number="8.7"
+  counter="DefCtr"
+  counter="ExoCtr"
+  path="/lecture-notes58"
+>
+  <div id="link-to-toc">
+    <a href="../vorlesungsskript.html">Inhaltsverzeichnis</a><a href="08-06-Cook-Levin.html">&lt;&lt; Kapitel 8.6</a>
+  </div>
+  <div
+    id="link-to-overview"
+    style="text-align: end"
+  >
+    <a href="/">zur Kursübersicht</a><a href="09-00-appendix.html">Kapitel 9.0 &gt;&gt;</a>
+  </div>
+  <div id="rightSideWrapper">
+    <div class="content">
+      <div class="chapter">
+        <div class="subChapter">
+          <h1 class="hidden-title">
+            <span class="subChapterTitle">::::ChapterCtr.8
+              Beschränkter Speicherplatz</span>
+          </h1>
+          In den vergangen Kapiteln haben wir die Laufzeit einer Turingmaschine beschränkt und
+          die Komplexitätsklassen studiert, die sich daraus ergeben, allen voran P und NP.
+          Die neben Zeit wohl wichtigste Resource beim Rechnen ist der Platz. Turingmaschinen
+          erlauben uns auch, präzise über den benötigten Speicherplatz zu sprechen.
+          Der
+          <i>Platz</i>
+          einer Konfiguration $C = uqv \in \Gamma^* \times Q \times \Gamma^*$
+          ist die Anzahl der belegten Speicherzellen, also beispielsweise $|uv|$. Bei
+          $k$-Band-Maschinen müssen wir das über alle Bänder aufsummieren.
+          Wir können eine Konfiguration also als Tupel in
+          $$
+          \begin{align*}
+          \mathcal{C} : Q \times (\Gamma^* \times \Gamma^*)^k
+          \end{align*}
+          $$
+          darstellen. Eine Konfiguration
+          $C = (q, (u_1, v_1), \dots, (u_k, v_k))$ besagt dann beispielsweise, dass
+          auf Band $i$ das Wort $u_iv_i$ steht, wobei der Kopf auf dem ersten
+          Zeichen von $v_i$ steht. Die Größe von $C$ ist dann
+          $|C| := |u_1| + |v_1| + \cdots + |u_k| + |v_k|$.
+          Eine Turingmaschine läuft in Platz $s(n)$, wenn für alle
+          $x \in \Sigma^*$ alle erreichten Konfigurationen höchstens die Größe
+          $s(|x|)$ haben.
+          Diese Definition hat den Nachteil, dass der Platzbedarf immer mindestens $n$ ist: bereits
+          die Startkonfiguration $\qstart x_1 x_2 \dots x_n$ besteht ja aus $n$ Zeichen. Das ist aber
+          irgendwie unfair. Wir wollen nur den Platz zählen, der über das Eingabewort hinausgeht.
+          Wenn wir über Platzbedarf sprechen, dann gehen wir von einer Turingmaschine aus, die
+          <ol>
+            <li>
+              ein Eingabeband hat, auf dem sie nur lesen darf;
+            </li>
+            <li>
+              beliebig viele
+              <i>Arbeitsbänder</i>, auf denen sie lesen und schreiben darf;
+            </li>
+            <li>
+              ein Ausgabeband, auf dem sie schreiben darf, aber nur nach rechts laufen darf.
+            </li>
+          </ol>
+          Wenn wir eine Sprache $L \subseteq \Sigma^*$
+          entscheiden wollen, dann brauchen das Ausgabeband nicht wirklich. Wenn wir
+          eine Funktion $f: \Sigma_1^* \rightarrow \Sigma_2^*$ berechnen wollen,
+          dann sehr wohl.
+          <div class="subtheorem well">
+            <b>Eingabe und Ausgabe:</b>
+            wenn Sie ein C-Programm schreiben und
+            auf
+            <code>stdout</code>
+            schreiben,
+            dann entspricht diese Operation in gewisser Weise der Turingmaschine,
+            die auf das Ausgabeband schreibt; sie können ja sich den
+            Output auch nicht irgendwie zurückholen.
+            Das lesen von
+            <code>stdin</code>
+            entspricht allerdings nicht ganz
+            dem Eingabeband der Turingmaschine. Ein bedeutender Unterschied ist,
+            dass die Turingmaschine auf dem Eingabeband zwar nicht schreiben
+            darf, aber dennoch beliebig nach rechts und links gehen darf.
+            Das können Sie auf
+            <code>stdin</code>
+            in der Regel nicht.
+            <b>Streaming-Modell:</b>
+            wenn wir der Turingmaschine
+            verbieten, auf dem Eingabe-Band nach links zu laufen, wenn sie also
+            jedes Eingabezeichen nur einmal lesen darf, dann erhalten
+            wir das sogenannte Streaming-Modell, das in den letzten Jahren
+            an Popularität gewonnen hat, weil wir es heutzutage in vielen Anwendungen
+            mit Datenmengen zu tun haben, die nicht in den Speicher des Rechners passen
+            und auch nur einmal gelesen werden können (z.B. Sensordaten). Im
+            Kurs
+            <i>Effiziente Algorithmen</i>
+            gibt es
+            ein
+            <a href="../../EffizienteAlgorithmen/lecture-notes/04-00-big-data.html">Kapitel zu
+              Streaming-Algorithmen</a>.
+          </div>
+          <Statement title="*Definition*">
+            <b>($\SPACE(s)$).</b>
+            Sei $M$ eine Turingmaschine
+            mit dezidiertem Eingabeband 1 und Ausgabeband $k$.
+            Die
+            <i>Größe einer Konfiguration</i>
+            ist die Größe der Bandinhalte der
+            Arbeitsbänder. Die Konfiguration $C = (q, (u_1, v_1), \dots, (u_k, v_k))$
+            hat Größe $|u_2| + |v_2| + \cdots + |u_{k-1}| + |v_{k-1}|$.
+            Sei $s : \N \rightarrow \N$.
+            Die Turingmaschine $M$ läuft in Platz $s$, falls
+            <ol>
+              <li>
+                sie für jedes $x \in \Sigma^*$ terminiert und
+              </li>
+              <li>
+                jede erreichte Konfiguration höchstens Größe $O(s(|x|))$ hat.
+              </li>
+            </ol>
+            Eine Sprache ist in $\SPACE(s)$, wenn es eine Turingmaschine gibt, die in
+            Platz $s$ läuft und sie entscheidet.
+          </Statement>
+          <Statement title="*Beobachtung*">
+            Wenn $M$ in Platz $s(n)$ läuft,
+            dann hat $M$ Laufzeit $2^{O(s(n))}$.
+          </Statement>
+          <Highlight>
+            <b>Beweis.</b>
+            Für gegebenes $n$ sei $S \in O(s(n))$ der maximale Platzbedarf der Turingmaschine.
+            Es gibt maximal $T := |Q| \cdot \left(|\Gamma|+1\right)^{kS}$ Konfigurationen (warum?).
+            Da $M$ terminiert, kann die Berechnung nicht mehr $T$ Schritte dauern.
+            <QED>
+            </QED>
+          </Highlight>
+          <Statement title="*Übungsaufgabe*">
+            Zeigen Sie, dass wir die Bedingung 1 aus<span
+              data-ref="definition-space-bounded"
+              class="reference"
+            ></span>
+            weglassen können,
+            zumindest wenn $s(n)$ zeitkonstruierbar ist.
+          </Statement>
+          <SubTopic>
+            Die wichtigsten Platzklassen: L und PSPACE
+          </SubTopic>
+          Wir definieren
+          $$
+          \begin{align*}
+          \textnormal{PSPACE} := \bigcup_{k \geq 1} \SPACE(n^k)
+          \end{align*}
+          $$
+          also die Menge aller Probleme, die man mit polynomiellem Speicherplatz entscheiden kann,
+          und
+          $$
+          \begin{align*}
+          \textnormal{L} := \SPACE(\log n) \ .
+          \end{align*}
+          $$
+          die Menge aller Probleme, die man mit
+          <i>logarithmischem Speicherplatz</i>
+          entscheiden kann.
+          Man nennt $L$ auch LogSpace.
+          <Statement title="*Übungsaufgabe*">
+            Zeigen Sie, dass ${\rm NP} \subseteq {\rm PSPACE}$ gilt. Fangen Sie zum Beispiel an,<span style="font-variant: small-caps;">3-Colorability $\in$ PSPACE</span>
+            zu zeigen.
+          </Statement>
+          <Statement title="*Übungsaufgabe*">
+            Sei
+            <span style="font-variant: small-caps;">Palindrome</span>
+            die Sprache
+            aller Palindromwörter mit Trennungszeichen in der Mitte, also
+            $$
+            \begin{align*}
+            \{ucu^{R} \ | \ u \in \{a,b\}^* \} \ .
+            \end{align*}
+            $$
+            Zeigen Sie, dass
+            <span style="font-variant: small-caps;">Palindrome $\in$ L</span>
+          </Statement>
+          <Statement title="*Übungsaufgabe*">
+            Zeigen Sie, dass die Sprache aller wohlgeformten Klammerausdrücke in L ist, also die
+            Sprache über $\{a,b\}$ mit
+            $$
+            \begin{align*}
+            S&amp;\rightarrow \epsilon \ | \ aSbS \ .
+            \end{align*}
+            $$
+          </Statement>
+          <Statement title="*Übungsaufgabe*">
+            Seien $f: \Sigma_1 \rightarrow \Sigma_2$ und $g: \Sigma_2 \rightarrow \Sigma_3$ zwei
+            Funktionen.
+            Zeigen Sie, dass, falls $f$ und $g$ in logarithmischem Platz berechnet werden können,
+            dann auch $g \circ f: \Sigma_1 \rightarrow \Sigma_3$.
+            <b>Hinweis:</b>
+            der "offensichtliche" Ansatz funktioniert nicht. Warum nicht?
+          </Statement>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>

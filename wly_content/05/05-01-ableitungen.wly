@@ -43,19 +43,19 @@
                         w_i\).
                     Das folgende Beispiel ist Beispiel 3.22 aus dem Buch von Aho und Ullman.
                     Wir betrachten die klassische kontextfreie Grammatik für arithmetische
-                    Ausdrücke mit Klammerung: \begin{align*} (1)\ E \rightarrow&amp;E + T \\
-                    (2)\ E \rightarrow&amp;T \\ (3)\ T \rightarrow&amp;T * F \\ (4)\ T
-                    \rightarrow&amp;F \\ (5)\ F \rightarrow&amp;(E) \\ (6)\ F \rightarrow&amp;a \\
+                    Ausdrücke mit Klammerung: \begin{align*} (1)\ E \rightarrow & E + T \\
+                    (2)\ E \rightarrow & T \\ (3)\ T \rightarrow & T * F \\ (4)\ T
+                    \rightarrow & F \\ (5)\ F \rightarrow & (E) \\ (6)\ F \rightarrow & a \\
                     \end{align*} wobei \(E\) das Startsymbol ist. Hier ist ein Beispiel
                     einer Ableitung von \(a * (a+a)\) von der obigen Grammatik.
-                    \begin{align*} E&amp;\stackrel{2}{\Longrightarrow} T
+                    \begin{align*} E & \stackrel{2}{\Longrightarrow} T
                     \stackrel{3}{\Longrightarrow} T * F \stackrel{4}{\Longrightarrow} F * F
-                    \stackrel{6}{\Longrightarrow} a * F&amp;\\&amp;\stackrel{5}{\Longrightarrow}
+                    \stackrel{6}{\Longrightarrow} a * F & \\ & \stackrel{5}{\Longrightarrow}
                     a * (E) \stackrel{1}{\Longrightarrow} a * (E + T)
-                    \stackrel{2}{\Longrightarrow} a * (T + T)&amp;\\&
+                    \stackrel{2}{\Longrightarrow} a * (T + T) & \\ &
                     \stackrel{4}{\Longrightarrow} a * (F + T) \stackrel{6}{\Longrightarrow}
                     a * (a + T) \stackrel{4}{\Longrightarrow} a * (a + F)
-                    \stackrel{6}{\Longrightarrow} a * (a + a)&amp;\end{align*} Insbesondere
+                    \stackrel{6}{\Longrightarrow} a * (a + a) & \end{align*} Insbesondere
                     ist es eine _Linksableitung_, das heißt, in jedem Schritt wird
                     das am weitesten links stehende Nichtterminal expandiert. In der Tat
                     reicht es, nur die Nummer der angewandten Regel anzugeben (da ja klar
@@ -65,14 +65,14 @@
                     Betrachten wir im Folgenden ein weiteres Beispiel einer Ableitung, in
                     diesem Falle eine _Rechtsableitung_, in der in jedem Schritt
                     das am weitesten rechts stehende Nichtterminal expandiert wird:
-                    \begin{align*} E&amp;\stackrel{2}{\Longrightarrow} T
+                    \begin{align*} E & \stackrel{2}{\Longrightarrow} T
                     \stackrel{3}{\Longrightarrow} T * F \stackrel{5}{\Longrightarrow} T *
                     (E) \stackrel{1}{\Longrightarrow} T * (E+T)
-                    \stackrel{4}{\Longrightarrow} T * (E+F)&amp;\\&
+                    \stackrel{4}{\Longrightarrow} T * (E+F) & \\ &
                     \stackrel{6}{\Longrightarrow} T * (E+a) \stackrel{2}{\Longrightarrow} T
-                    * (T + a) \stackrel{4}{\Longrightarrow} T * (F + a)&amp;\\&
+                    * (T + a) \stackrel{4}{\Longrightarrow} T * (F + a) & \\ &
                     \stackrel{6}{\Longrightarrow} T * (a + a) \stackrel{4}{\Longrightarrow}
-                    F * (a + a) \stackrel{6}{\Longrightarrow} a * (a + a)&amp;\end{align*}
+                    F * (a + a) \stackrel{6}{\Longrightarrow} a * (a + a) & \end{align*}
                     Rechtsableitungen können auch kompakt als Zahlenfolge repräsentiert
                     werden. Allerdings geben wir Rechtsableitungen immer in umgekehrter
                     Reihenfolge an, also von hinten nach vorne, in diesem Falle also nicht
@@ -81,9 +81,9 @@
                     haben, es also nur einen Syntaxbaum gibt:
                     |> figure
                         |> img
-                            style=height: 15em
-                            src=../img/cfg/syntax-tree-a*(a+a).svg
                             loading=lazy
+                            src=../img/cfg/syntax-tree-a*(a+a).svg
+                            style=height: 15em
                     Rechtsableitung und Linksableitung sowie deren Codierung als
                     Zahlenfolge spiegeln also nur zwei verschiedene Weisen wieder, den
                     Baum auszugeben.

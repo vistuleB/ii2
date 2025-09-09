@@ -53,7 +53,7 @@
                     |> Highlight
                         *Beweis.*
                         Wir können eine Bijektion explizit hinschreiben:
-                        \begin{align*} f : \R&amp;\rightarrow (0,1) \\ x&amp;\mapsto
+                        \begin{align*} f : \R & \rightarrow (0,1) \\ x & \mapsto
                         \frac{e^x}{e^x + 1} \end{align*}
                         Mit etwas reeller Analysis kann man nun zeigen:
                         |> ul
@@ -95,8 +95,8 @@
                         Die Beweisidee ist einfach, allerdings gehen erst einmal ein paar
                         Dinge schief, die man wieder flicken muss. Da laut
                         |> span
-                            data-ref=exercise-open-closed-half-open
                             class=reference
+                            data-ref=exercise-open-closed-half-open
                         $\R \approx [0,1)$ gilt, reicht es, eine Bijektion $f : [0,1)
                         \rightarrow \{0,1\}^{\N}$ zu konstruieren. So geht's:
                         Jede Zahl $0 \leq x \lt 1$ lässt sich als (unendliche) Binärzahl
@@ -137,8 +137,8 @@
                             konstruieren. Vielleicht hilft Ihnen folgendes Bild:
                             |> figure
                                 |> img
-                                    style=width: 80%
                                     src=../img/infinite-sets/interval-sequences-fill-the-gaps.svg
+                                    style=width: 80%
                         |> QED
                     Als nächstes zeigen wir, dass $\R \approx \R^2$ gilt. Dies ist schon
                     erstaunlich: der Zahlenstrahl und die zweidimensionale Ebene sollen
@@ -149,8 +149,8 @@
                     |> Highlight
                         *Beweis.* Mithilfe von
                         |> span
-                            data-ref=theorem-R-bitstrings
                             class=reference
+                            data-ref=theorem-R-bitstrings
                         \ geht
                         das ganz einfach. Da $\R \approx \{0,1\}^\N$ gilt, reicht es
                         nämlich, eine Bijektion $\{0,1\}^\N \times \{0,1\}^\N \rightarrow
@@ -167,8 +167,8 @@
                     Aus der Funktion $f: \{0,1\}^{\N} \times \{0,1\}^{\N} \mapsto
                     \{0,1\}^{\N}$ aus
                     |> span
-                        data-ref=theorem-square-interval
                         class=reference
+                        data-ref=theorem-square-interval
                     können wir eine (fast) bijektive Funktion $[0,1) \times [0,1)
                     \rightarrow [0,1)$ bauen. Wir nehmen zwei Zahlen $0 \leq x,y \lt 1$,
                     schreiben sie in Binärdarstellung und vereinigen sie dann per
@@ -185,8 +185,8 @@
                     versuchen, sie zu plotten:
                     |> figure
                         |> img
-                            style=height: 20em
                             src=../img/infinite-sets/bijection-square-interval.png
+                            style=height: 20em
                         |> br
                         |> div
                             Plot der (Fast-) Bijektion $f : [0,1) \times [0,1) \rightarrow
@@ -236,8 +236,8 @@
                     folgt (und etwas unbeholfen) dar:
                     |> figure
                         |> img
-                            style=height: 10em
                             src=../img/infinite-sets/interval-to-square.svg
+                            style=height: 10em
                     Beachten Sie, dass die Verbindungslinien zwischen den Kreisen Sprünge
                     sind, also Unstetigkeitsstellen von $f^{-1}$. Innerhalb der
                     Viertelintervalle (also z.B. innerhalb von $\left[\frac{1}{4},
@@ -246,64 +246,64 @@
                     |> figure
                         class=centered-figure well container
                         |> a
-                            data-slide=prev
-                            href=#interval-to-square
                             class=left carousel-control-prev-icon
+                            href=#interval-to-square
+                            data-slide=prev
                             |> div
                                 class=carousel-nav-icon
                                 |> img
                                     src=../img/carousel-prev-icon.svg
                         |> a
-                            data-slide=next
-                            href=#interval-to-square
                             class=right carousel-control-next-icon
+                            href=#interval-to-square
+                            data-slide=next
                             |> div
                                 class=carousel-nav-icon
                                 |> img
                                     src=../img/carousel-next-icon.svg
                         |> div
-                            style=display: inline-block
-                            data-interval=false
-                            class=carousel
                             id=interval-to-square
+                            class=carousel
+                            data-interval=false
+                            style=display: inline-block
                             |> ol
                                 class=carousel-indicators
                                 |> li
-                                    class=active
+                                    data-target=#interval-to-square
                                     data-slide-to=1
-                                    data-target=#interval-to-square
+                                    class=active
                                 |> li
+                                    data-target=#interval-to-square
                                     data-slide-to=2
-                                    data-target=#interval-to-square
                                 |> li
+                                    data-target=#interval-to-square
                                     data-slide-to=3
-                                    data-target=#interval-to-square
                                 |> li
-                                    data-slide-to=4
                                     data-target=#interval-to-square
+                                    data-slide-to=4
                             |> div
-                                style=display: inline-block
                                 class=carousel-inner
+                                style=display: inline-block
                                 |> div
                                     class=item active
                                     |> img
-                                        style=height: 15em
                                         src=../img/infinite-sets/interval-to-square-animation/figures-01-01.svg
+                                        style=height: 15em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 15em
                                         src=../img/infinite-sets/interval-to-square-animation/figures-01-02.svg
+                                        style=height: 15em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 15em
                                         src=../img/infinite-sets/interval-to-square-animation/figures-01-03.svg
+                                        style=height: 15em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 15em
                                         src=../img/infinite-sets/interval-to-square-animation/figures-01-04.svg
+                                        style=height: 15em
                     Wir wissen nun, dass $\R \approx \R^2$ gilt. Ebenso können wir $\R
                     \approx \R^{k}$ für jedes $k \in \N^+$ zeigen. Wie sieht es aber mit
                     $\R^{\N}$ aus? Das ist die Menge aller Funktionen $\phi: \N
@@ -325,22 +325,22 @@
                         Tabelle so aus:
                         |> figure
                             |> img
-                                style=width: 40%
                                 src=../img/infinite-sets/table-infinite-sequences.svg
+                                style=width: 40%
                         Wir wollen jetzt eine Bijektion $f : \cuben \times \cuben
                         \rightarrow \cuben$ definieren. Dafür wenden wir den gleichen Trick
                         an wie in dem Beweis, dass $\N \approx \N \times \N$ ist: wir
                         zerlegen die Tabelle in Diagonalen und arbeiten jede separat ab:
                         |> figure
                             |> img
-                                style=width: 40%
                                 src=../img/infinite-sets/table-infinite-sequences-with-blue.svg
+                                style=width: 40%
                         Schließlich definieren wir unsere Folge $s_1 s_2 s_3 \dots \in
                         \cuben$:
                         |> figure
                             |> img
-                                style=width: 40%
                                 src=../img/infinite-sets/table-infinite-sequences-with-s.svg
+                                style=width: 40%
                         |> QED
                     Wir haben also die Beweisidee von $\N \times \N \approx \N$ recycelt.
                     Diese Beobachtung motiviert den folgenden, etwas kurz angebundenen
@@ -348,8 +348,8 @@
                     |> Highlight
                         *Zweiter Beweis.*
                         Um zu zeigen, dass $\R^\N \approx \R$ gilt, rechnen wir:
-                        \begin{align} \R^\N&amp;\approx \left(\cuben\right)^{\N} \\&amp;\approx
-                        \cube^{\N \times \N} \\&amp;\approx \cube^{\N} \\&amp;\approx \R \ .
+                        \begin{align} \R^\N & \approx \left(\cuben\right)^{\N} \\ & \approx
+                        \cube^{\N \times \N} \\ & \approx \cube^{\N} \\ & \approx \R \ .
                         \end{align}
                         |> QED
                     Dürfen wir das? Dürfen wir Rechenregeln wie $\left(x^{b}\right)^c =
@@ -413,12 +413,12 @@
                         \ Beweisen Sie so
                         viele Punkte von
                         |> span
-                            data-ref=calculating-with-cardinals
                             class=reference
+                            data-ref=calculating-with-cardinals
                         und
                         |> span
-                            data-ref=replacing-equipotent-cardinals
                             class=reference
+                            data-ref=replacing-equipotent-cardinals
                         , wie Sie wollen.
                         *Hinweis.* Die Beweise sind alle nicht wirklich
                         schwierig. Sie müssen nur aufpassen, dass Sie sich nicht in der

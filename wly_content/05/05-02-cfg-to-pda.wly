@@ -65,11 +65,11 @@
                         sind \(Q = \{\qstart, q_1, \qend\}\), das Stackalphabet ist
                         \(\Gamma = \Sigma \cup N \cup \{\$\}\) und die Transitionsregeln sind
                         \begin{align*}
-                        (q_1, x)&amp;\step{x} (q_1, \epsilon) \quad \textnormal{für jedes $x \in \Sigma$}\\
-                        (q_1, A)&amp;\step{\epsilon} (q_1, \beta) \quad \textnormal{für jede Produktion $A \rightarrow
+                        (q_1, x) & \step{x} (q_1, \epsilon) \quad \textnormal{für jedes $x \in \Sigma$}\\
+                        (q_1, A) & \step{\epsilon} (q_1, \beta) \quad \textnormal{für jede Produktion $A \rightarrow
                         \beta$}\\ \hline
-                        (\qstart, \epsilon)&amp;\step{\epsilon} (q_1, S \$) \\
-                        (q_1, \$)&amp;\step{\epsilon} (\qend, \epsilon)
+                        (\qstart, \epsilon) & \step{\epsilon} (q_1, S \$) \\
+                        (q_1, \$) & \step{\epsilon} (\qend, \epsilon)
                         \end{align*}
                         Auf einen formalen Beweis, dass \(L(M) = L(G)\) ist, verzichte ich an dieser Stelle.
                         Besser als Sipser in seinem Lehrbuch _Introduction to the Theory of Computing_ könnte
@@ -79,10 +79,10 @@
                         title=*Beispiel*
                         Betrachten wir die Grammatik
                         \begin{align*}
-                        S&amp;\rightarrow A \ | \ B \ | \ C \ | \ \epsilon \\
-                        A&amp;\rightarrow \texttt{\{} B \texttt{\}} S \\
-                        B&amp;\rightarrow \texttt{[} C \texttt{]} S \\
-                        C&amp;\rightarrow \texttt{(} A \texttt{)} S \ | \ \texttt{()}S \\
+                        S & \rightarrow A \ | \ B \ | \ C \ | \ \epsilon \\
+                        A & \rightarrow \texttt{\{} B \texttt{\}} S \\
+                        B & \rightarrow \texttt{[} C \texttt{]} S \\
+                        C & \rightarrow \texttt{(} A \texttt{)} S \ | \ \texttt{()}S \\
                         \end{align*}
                         Ein Wort in der erzeugten Sprache wäre zum Beispiel
                         `{[()()]()}()`
@@ -107,24 +107,24 @@
                         nächste Zeichen ist; es wird im Automaten also ein \(\step{\epsilon}\)-Übergang sein.
                         Konkret also bauen wir für obige Grammatik die folgenden Automatentransitionen:
                         \begin{align*}
-                        (q_1, S)&amp;\step{\epsilon} (q_1, A) \\
-                        (q_1, S)&amp;\step{\epsilon} (q_1, B) \\
-                        (q_1, S)&amp;\step{\epsilon} (q_1, C) \\
-                        (q_1, S)&amp;\step{\epsilon} (q_1, \epsilon) \\
+                        (q_1, S) & \step{\epsilon} (q_1, A) \\
+                        (q_1, S) & \step{\epsilon} (q_1, B) \\
+                        (q_1, S) & \step{\epsilon} (q_1, C) \\
+                        (q_1, S) & \step{\epsilon} (q_1, \epsilon) \\
                         \hline
-                        (q_1,A)&amp;\step{\epsilon} (q_1, \texttt{\{} B \texttt{\}} S) \\
+                        (q_1,A) & \step{\epsilon} (q_1, \texttt{\{} B \texttt{\}} S) \\
                         \hline
-                        (q_1,B)&amp;\step{\epsilon} (q_1, \texttt{[} C \texttt{]} S) \\
+                        (q_1,B) & \step{\epsilon} (q_1, \texttt{[} C \texttt{]} S) \\
                         \hline
-                        (q_1,C)&amp;\step{\epsilon} (q_1, \texttt{(} A \texttt{)} S) \\
-                        (q_1,C)&amp;\step{\epsilon} (q_1, \texttt{(} \texttt{)} S) \\
+                        (q_1,C) & \step{\epsilon} (q_1, \texttt{(} A \texttt{)} S) \\
+                        (q_1,C) & \step{\epsilon} (q_1, \texttt{(} \texttt{)} S) \\
                         \hline
-                        (q_1,\texttt{\{})&amp;\step{\texttt{\{}} (q_1, \epsilon) \\
-                        (q_1,\texttt{\}})&amp;\step{\texttt{\}}} (q_1, \epsilon) \\
-                        (q_1,\texttt{[})&amp;\step{\texttt{[}} (q_1, \epsilon) \\
-                        (q_1,\texttt{]})&amp;\step{\texttt{]}} (q_1, \epsilon) \\
-                        (q_1,\texttt{(})&amp;\step{\texttt{(}} (q_1, \epsilon) \\
-                        (q_1,\texttt{)})&amp;\step{\texttt{)}} (q_1, \epsilon) \\
+                        (q_1,\texttt{\{}) & \step{\texttt{\{}} (q_1, \epsilon) \\
+                        (q_1,\texttt{\}}) & \step{\texttt{\}}} (q_1, \epsilon) \\
+                        (q_1,\texttt{[}) & \step{\texttt{[}} (q_1, \epsilon) \\
+                        (q_1,\texttt{]}) & \step{\texttt{]}} (q_1, \epsilon) \\
+                        (q_1,\texttt{(}) & \step{\texttt{(}} (q_1, \epsilon) \\
+                        (q_1,\texttt{)}) & \step{\texttt{)}} (q_1, \epsilon) \\
                         \end{align*}
                         Dies ist völlig mechanisch und benötigt kein Nachdenken. Wie fangen wir an?
                         Wir legen anfangs ein \(S\) auf den leeren Stack. Wenn dieses \(S\) abgearbeitet
@@ -145,294 +145,294 @@
                         |> figure
                             class=centered-figure well
                             |> a
-                                data-slide=prev
-                                href=#cfg-to-pda
                                 class=left carousel-control-prev-icon
+                                href=#cfg-to-pda
+                                data-slide=prev
                                 |> div
                                     class=carousel-nav-icon
                                     |> img
                                         src=../img/carousel-prev-icon.svg
                             |> a
-                                data-slide=next
-                                href=#cfg-to-pda
                                 class=right carousel-control-next-icon
+                                href=#cfg-to-pda
+                                data-slide=next
                                 |> div
                                     class=carousel-nav-icon
                                     |> img
                                         src=../img/carousel-next-icon.svg
                             |> div
-                                style=display:inline-block
-                                data-interval=false
-                                class=carousel
                                 id=cfg-to-pda
+                                class=carousel
+                                data-interval=false
+                                style=display:inline-block
                                 |> div
-                                    style=display:inline-block
                                     class=carousel-inner
+                                    style=display:inline-block
                                     |> div
                                         class=item active
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/01.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/02.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/03.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/04.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/05.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/06.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/07.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/08.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/09.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/10.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/11.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/12.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/13.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/14.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/15.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/16.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/17.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/18.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/19.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/20.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/21.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/22.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/23.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/24.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/25.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/26.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/27.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/28.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/29.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/30.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/31.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/32.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/33.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/34.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/35.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/36.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/37.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/38.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/39.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/40.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/41.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/42.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/43.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/44.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/45.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/46.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/47.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/48.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/49.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/50.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/51.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/52.svg
+                                            style=height:22em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:22em
                                             src=../img/context-free/cfg-to-pda/53.svg
+                                            style=height:22em
                     Die Gegenrichtung ist schwieriger.
                     |> Statement
                         title=*Theorem*
@@ -534,9 +534,9 @@
                         Zusammenfassend gesagt besteht unsere Grammatik \(G\) aus drei unterschiedlichen Typen von
                         Regeln:
                         \begin{align*}
-                        A_{pp}&amp;\rightarrow \epsilon \textnormal{ für jeden Zustand \(p \in Q\)} \\
-                        A_{pq}&amp;\rightarrow A_{pr}A_{rq} \textnormal{ für alle Zustände $p,q,r \in Q$} \\
-                        A_{pq}&amp;\rightarrow a A_{rs} b \textnormal{ für alle Pushp-Pop-Paare
+                        A_{pp} & \rightarrow \epsilon \textnormal{ für jeden Zustand \(p \in Q\)} \\
+                        A_{pq} & \rightarrow A_{pr}A_{rq} \textnormal{ für alle Zustände $p,q,r \in Q$} \\
+                        A_{pq} & \rightarrow a A_{rs} b \textnormal{ für alle Pushp-Pop-Paare
                         $(p,\epsilon) \step{a} (r,x)$, $(s,x) \step{b} (q,\epsilon)$ von Transitionen}
                         \end{align*}
                         Das Startsymbol der Grammatik ist natürlich \(A_{\qstart, \qend}\).
@@ -562,22 +562,22 @@
                         Der Automat muss nichtdeterministisch sein, da er "erraten" muss, welches
                         \(b\) das letzte ist, weil er dann mit dem Stack-Poppen beginnen muss.
                         \begin{align*}
-                        (\qstart, \epsilon)&amp;\step{\epsilon} (q_1, \$) \\ \hline
-                        (q_1, \epsilon)&amp;\step{a} (q_1, a) \\
-                        (q_1, \epsilon)&\step{b} (q_2, b) \\
-                        \textcolor{red}{(q_2, \epsilon)}&\textcolor{red}{ \step{a} (q_2, \epsilon)} \\
-                        \textcolor{red}{(q_2, \epsilon)}&\textcolor{red}{ \step{b} (q_2, \epsilon)} \\
-                        (q_2, b)&amp;\step{b} (q_3, \epsilon) \\
-                        (q_3, a)&amp;\step{a} (q_3, \epsilon) \\ \hline
-                        (q_3, \$)&amp;\step{\epsilon} (\qend, \epsilon)
+                        (\qstart, \epsilon) & \step{\epsilon} (q_1, \$) \\ \hline
+                        (q_1, \epsilon) & \step{a} (q_1, a) \\
+                        (q_1, \epsilon)& \step{b} (q_2, b) \\
+                        \textcolor{red}{(q_2, \epsilon)} &\textcolor{red}{ \step{a} (q_2, \epsilon)} \\
+                        \textcolor{red}{(q_2, \epsilon)}& \textcolor{red}{ \step{b} (q_2, \epsilon)} \\
+                        (q_2, b) & \step{b} (q_3, \epsilon) \\
+                        (q_3, a) & \step{a} (q_3, \epsilon) \\ \hline
+                        (q_3, \$) & \step{\epsilon} (\qend, \epsilon)
                         \end{align*}
                         Die beiden rot gefärbten Transitionen benötigen eine Schönheitsoperation:
                         |> span
                             style=color:purple
                             \begin{align*}
-                            (q_2, \epsilon)&amp;\step{a} (q'_2, x) \\
-                            (q_2, \epsilon)&amp;\step{b} (q'_2, x) \\
-                            (q'_2, x)&amp;\step{\epsilon} (q_2, \epsilon) \\
+                            (q_2, \epsilon) & \step{a} (q'_2, x) \\
+                            (q_2, \epsilon) & \step{b} (q'_2, x) \\
+                            (q'_2, x) & \step{\epsilon} (q_2, \epsilon) \\
                             \end{align*}
                         Unsere Zustandsmenge ist also \(Q = \{\qstart, q_1, q_2, q'_2, q_3, \qend\}\).
                         Rein theoretisch müssten wir nun für alle Tripel \(p,r,q\) von Zuständen
@@ -589,9 +589,9 @@
                         kommen können, sondern nur "vorwärts", also wie in diesem Diagramm:
                         |> figure
                             |> img
-                                style=height:10em
-                                src=../img/context-free/pda-to-cfg-diagram.svg
                                 loading=lazy
+                                src=../img/context-free/pda-to-cfg-diagram.svg
+                                style=height:10em
                         Nichtterminale wie \(A_{31}\) führen wir also gar nicht erst ein. Auch schreiben
                         wir \(A_{13}\) statt \(A_{q_1q_3}\) und verwenden die Indizes 0 für \(\qstart\) und
                         4 für \(\qend\). Als zweite Beobachtung sehen wir, dass man mit leerem
@@ -601,9 +601,9 @@
                         eine Orientierung. Neben jeden Zustand haben wir schematisch den Stack gemalt:
                         |> figure
                             |> img
-                                style=height:10em
-                                src=../img/context-free/pda-to-cfg-diagram-stack.svg
                                 loading=lazy
+                                src=../img/context-free/pda-to-cfg-diagram-stack.svg
+                                style=height:10em
                         Die einzigen Nichtterminale sind also die "trivialen" der Form \(A_{qq}\) und darüberhinaus
                         \begin{align*}
                         A_{04}, A_{13}
@@ -613,11 +613,11 @@
                         \(\epsilon\).
                         Als Produktionen der Form \(A_{pq} \rightarrow A_{pr} A_{rq}\) erhalten wir also:
                         \begin{align*}
-                        A_{11}&amp;\rightarrow A_{11} A_{11} \\
-                        A_{13}&amp;\rightarrow A_{11} A_{13} \\
-                        A_{13}&amp;\rightarrow A_{13} A_{33} \\
-                        A_{22}&amp;\rightarrow A_{22} A_{22} \\
-                        A_{33}&amp;\rightarrow A_{33} A_{33}
+                        A_{11} & \rightarrow A_{11} A_{11} \\
+                        A_{13} & \rightarrow A_{11} A_{13} \\
+                        A_{13} & \rightarrow A_{13} A_{33} \\
+                        A_{22} & \rightarrow A_{22} A_{22} \\
+                        A_{33} & \rightarrow A_{33} A_{33}
                         \end{align*}
                         Schon deutlich besser als die 125 Produktionen, die wir bekämen, wenn wir stur an der
                         Methode im Beweis festhalten würden. Wir brauchen noch Produktionen der
@@ -656,22 +656,22 @@
                         \end{align*}
                         Sammeln wir nun alle Produktionen:
                         \begin{align*}
-                        \textcolor{red}{A_{11}}&amp;\textcolor{red}{\rightarrow A_{11} A_{11}} \\
-                        A_{13}&amp;\rightarrow \textcolor{red}{A_{11}} A_{13} \\
-                        A_{13}&amp;\rightarrow A_{13} \textcolor{red}{A_{33}} \\
-                        A_{22}&amp;\rightarrow A_{22} A_{22} \\
-                        \textcolor{red}{A_{33}}&amp;\textcolor{red}{\rightarrow A_{33} A_{33}} \\ \hline
-                        A_{13}&amp;\rightarrow a A_{13} a \\
-                        A_{13}&amp;\rightarrow b A_{22} b \\
-                        A_{22}&amp;\rightarrow a \textcolor{red}{A_{2'2'}} \\
-                        A_{22}&amp;\rightarrow b \textcolor{red}{A_{2'2'}} \\
-                        A_{04}&amp;\rightarrow A_{13}\\ \hline
-                        \textcolor{red}{A_{00}}&amp;\textcolor{red}{\rightarrow \epsilon} \\
-                        \textcolor{red}{A_{11}}&amp;\textcolor{red}{\rightarrow \epsilon} \\
-                        A_{22}&amp;\rightarrow \epsilon \\
-                        \textcolor{red}{A_{2'2'}}&amp;\textcolor{red}{\rightarrow \epsilon} \\
-                        \textcolor{red}{A_{33}}&amp;\textcolor{red}{\rightarrow \epsilon} \\
-                        \textcolor{red}{A_{44}}&amp;\textcolor{red}{\rightarrow \epsilon} \\
+                        \textcolor{red}{A_{11}} & \textcolor{red}{\rightarrow A_{11} A_{11}} \\
+                        A_{13} & \rightarrow \textcolor{red}{A_{11}} A_{13} \\
+                        A_{13} & \rightarrow A_{13} \textcolor{red}{A_{33}} \\
+                        A_{22} & \rightarrow A_{22} A_{22} \\
+                        \textcolor{red}{A_{33}} & \textcolor{red}{\rightarrow A_{33} A_{33}} \\ \hline
+                        A_{13} & \rightarrow a A_{13} a \\
+                        A_{13} & \rightarrow b A_{22} b \\
+                        A_{22} & \rightarrow a \textcolor{red}{A_{2'2'}} \\
+                        A_{22} & \rightarrow b \textcolor{red}{A_{2'2'}} \\
+                        A_{04} & \rightarrow A_{13}\\ \hline
+                        \textcolor{red}{A_{00}} & \textcolor{red}{\rightarrow \epsilon} \\
+                        \textcolor{red}{A_{11}} & \textcolor{red}{\rightarrow \epsilon} \\
+                        A_{22} & \rightarrow \epsilon \\
+                        \textcolor{red}{A_{2'2'}} & \textcolor{red}{\rightarrow \epsilon} \\
+                        \textcolor{red}{A_{33}} & \textcolor{red}{\rightarrow \epsilon} \\
+                        \textcolor{red}{A_{44}} & \textcolor{red}{\rightarrow \epsilon} \\
                         \end{align*}
                         wobei \(A_{04}\) das Startsymbol ist.
                         Wir haben diejenigen Nichtterminale und Produktionen rot markiert, aus denen nur
@@ -679,12 +679,12 @@
                         Zusätzlich
                         löschen wir \(A_{04}\) und ernennen \(A_{13}\) zu unserem Startsymbol:
                         \begin{align*}
-                        A_{22}&amp;\rightarrow A_{22} A_{22} \\
-                        A_{13}&amp;\rightarrow a A_{13} a \\
-                        A_{13}&amp;\rightarrow b A_{22} b \\
-                        A_{22}&amp;\rightarrow a \\
-                        A_{22}&amp;\rightarrow b \\ \hline
-                        A_{22}&amp;\rightarrow \epsilon \\
+                        A_{22} & \rightarrow A_{22} A_{22} \\
+                        A_{13} & \rightarrow a A_{13} a \\
+                        A_{13} & \rightarrow b A_{22} b \\
+                        A_{22} & \rightarrow a \\
+                        A_{22} & \rightarrow b \\ \hline
+                        A_{22} & \rightarrow \epsilon \\
                         \end{align*}
                         Überlegen wir nun, ausgehend von dieser Grammatik, was wir aus dem Startsymbol \(A_{13}\)
                         ableiten

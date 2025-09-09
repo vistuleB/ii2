@@ -42,9 +42,9 @@
                     abgewandelt:
                     |> figure
                         |> img
-                            style=height: 10em
-                            src=../img/finite-state-automata/nfsm-example-01.svg
                             loading=lazy
+                            src=../img/finite-state-automata/nfsm-example-01.svg
+                            style=height: 10em
                     Ein Pfeil beschreibt also nicht unbedingt einen Zustandsübergang, der
                     _geschieht_, sondern einen, der _möglich_ ist. Formal
                     gesprochen ist \(\delta\) nun keine Funktion mehr, sondern eine
@@ -140,15 +140,15 @@
                         |> a
                             href=./04-01-regular-grammars.html#example-aaabb
                             reguläre Grammatik aus dem vorherigen Kapitel 4.1
-                        : \begin{align*} S&amp;\rightarrow \epsilon \ |\ a S \ | \ b T \\ T&
+                        : \begin{align*} S & \rightarrow \epsilon \ |\ a S \ | \ b T \\ T &
                         \rightarrow \epsilon \ | \ b T \ \end{align*} und auch den
                         (falschen) endlichen Automaten, den wir im letzten Kapitel dafür
                         gebaut haben:
                         |> figure
                             |> img
-                                style=height: 10em
-                                src=../img/finite-state-automata/finite-state-machine-example-03.svg
                                 loading=lazy
+                                src=../img/finite-state-automata/finite-state-machine-example-03.svg
+                                style=height: 10em
                         Wir sehen nun, dass dies genau der nichtdeterministische Automat
                         ist, den wir nach 
                         |> a
@@ -168,27 +168,27 @@
                             href=./04-01-regular-grammars.html#exercise-no-a-or-no-b
                             reguläre Grammatik aus Übungsaufgabe 4.1.7
                         :
-                        \begin{align*} S&amp;\rightarrow A \ | \ B \\ A&amp;\rightarrow \epsilon \
-                        | \ b A \ | \ c A \\ B&amp;\rightarrow \epsilon \ | \ a B \ | \ c B
+                        \begin{align*} S & \rightarrow A \ | \ B \\ A & \rightarrow \epsilon \
+                        | \ b A \ | \ c A \\ B & \rightarrow \epsilon \ | \ a B \ | \ c B
                         \end{align*}
                         Bevor wir einen nichtdeterministischen Automaten bauen können,
                         müssen wir erst die Produktionen der Form \(X \rightarrow Y\)
                         eliminieren bzw. ersetzen. Wenn Sie Aufgabe 4.1.7 gelöst haben,
                         haben Sie wahrscheinlich in etwa folgende Grammatik erhalten:
-                        \begin{align*} S&amp;\rightarrow \epsilon \ | \ bA \ | \ cA \ | \ aB \ |
-                        \ cB\\ A&amp;\rightarrow \epsilon \ | \ bA \ | \ cA \\ B&amp;\rightarrow
+                        \begin{align*} S & \rightarrow \epsilon \ | \ bA \ | \ cA \ | \ aB \ |
+                        \ cB\\ A & \rightarrow \epsilon \ | \ bA \ | \ cA \\ B & \rightarrow
                         \epsilon \ | \ aB \ | \ cB \end{align*} Also insgesamt 11 statt 8
                         Produktionen. Alle Nichtterminale erlauben auf ihrer rechten Seite ein
                         \(\epsilon\) und werden so zu akzeptierenden Zuständen. Die
-                        Zustandsübergangsrelation \(\delta\) ist also \begin{align*} \delta&
+                        Zustandsübergangsrelation \(\delta\) ist also \begin{align*} \delta &
                         = \{(S,b,A), (S,c,A), (S,a,B), (S,c,B), (A,b,A), (A,c,A), (B,a,B),
                         (B,c,B)\} \end{align*} Der nichtdeterminische Automat schaut also so
                         aus:
                         |> figure
                             |> img
-                                style=height: 10em
-                                src=../img/finite-state-automata/nfsm-example-02.svg
                                 loading=lazy
+                                src=../img/finite-state-automata/nfsm-example-02.svg
+                                style=height: 10em
                     |> Statement
                         title=*Übungsaufgabe*
                         Sei \(\Sigma = \{1\}\) und \(L_k := \{1^n \ | \textnormal{ $n$ ist
@@ -208,9 +208,9 @@
                     Automaten \(M\):
                     |> figure
                         |> img
-                            style=height: 10em
-                            src=../img/finite-state-automata/nfsm-example-01.svg
                             loading=lazy
+                            src=../img/finite-state-automata/nfsm-example-01.svg
+                            style=height: 10em
                     und das Eingabewort \(\alpha = 1001100\) überprüfen können, ob
                     \(1001100 \in L(M)\) gilt. Einem determinischen endlichen Automaten
                     können wir ja das Eingabewort einfach füttern und schauen, was der
@@ -221,208 +221,208 @@
                     |> figure
                         class=centered-figure well container
                         |> a
-                            data-slide=prev
-                            href=#nfsm-balls
                             class=left carousel-control-prev-icon
+                            href=#nfsm-balls
+                            data-slide=prev
                             |> div
                                 class=carousel-nav-icon
                                 |> img
                                     src=../img/carousel-prev-icon.svg
                         |> a
-                            data-slide=next
-                            href=#nfsm-balls
                             class=right carousel-control-next-icon
+                            href=#nfsm-balls
+                            data-slide=next
                             |> div
                                 class=carousel-nav-icon
                                 |> img
                                     src=../img/carousel-next-icon.svg
                         |> div
-                            style=display: inline-block
-                            data-interval=false
-                            class=carousel
                             id=nfsm-balls
+                            class=carousel
+                            data-interval=false
+                            style=display: inline-block
                             |> ol
                                 class=carousel-indicators
                                 |> li
-                                    class=active
+                                    data-target=#nfsm-balls
                                     data-slide-to=1
-                                    data-target=#nfsm-balls
+                                    class=active
                                 |> li
+                                    data-target=#nfsm-balls
                                     data-slide-to=2
-                                    data-target=#nfsm-balls
                                 |> li
+                                    data-target=#nfsm-balls
                                     data-slide-to=3
-                                    data-target=#nfsm-balls
                                 |> li
+                                    data-target=#nfsm-balls
                                     data-slide-to=4
-                                    data-target=#nfsm-balls
                                 |> li
+                                    data-target=#nfsm-balls
                                     data-slide-to=5
-                                    data-target=#nfsm-balls
                                 |> li
+                                    data-target=#nfsm-balls
                                     data-slide-to=6
-                                    data-target=#nfsm-balls
                                 |> li
+                                    data-target=#nfsm-balls
                                     data-slide-to=7
-                                    data-target=#nfsm-balls
                                 |> li
+                                    data-target=#nfsm-balls
                                     data-slide-to=8
-                                    data-target=#nfsm-balls
                                 |> li
+                                    data-target=#nfsm-balls
                                     data-slide-to=9
-                                    data-target=#nfsm-balls
                                 |> li
+                                    data-target=#nfsm-balls
                                     data-slide-to=10
-                                    data-target=#nfsm-balls
                                 |> li
+                                    data-target=#nfsm-balls
                                     data-slide-to=11
-                                    data-target=#nfsm-balls
                                 |> li
+                                    data-target=#nfsm-balls
                                     data-slide-to=12
-                                    data-target=#nfsm-balls
                                 |> li
+                                    data-target=#nfsm-balls
                                     data-slide-to=13
-                                    data-target=#nfsm-balls
                                 |> li
+                                    data-target=#nfsm-balls
                                     data-slide-to=14
-                                    data-target=#nfsm-balls
                                 |> li
+                                    data-target=#nfsm-balls
                                     data-slide-to=15
-                                    data-target=#nfsm-balls
                                 |> li
+                                    data-target=#nfsm-balls
                                     data-slide-to=16
-                                    data-target=#nfsm-balls
                                 |> li
+                                    data-target=#nfsm-balls
                                     data-slide-to=17
-                                    data-target=#nfsm-balls
                                 |> li
+                                    data-target=#nfsm-balls
                                     data-slide-to=18
-                                    data-target=#nfsm-balls
                                 |> li
+                                    data-target=#nfsm-balls
                                     data-slide-to=19
-                                    data-target=#nfsm-balls
                                 |> li
+                                    data-target=#nfsm-balls
                                     data-slide-to=20
-                                    data-target=#nfsm-balls
                                 |> li
+                                    data-target=#nfsm-balls
                                     data-slide-to=21
-                                    data-target=#nfsm-balls
                                 |> li
-                                    data-slide-to=22
                                     data-target=#nfsm-balls
+                                    data-slide-to=22
                             |> div
-                                style=display: inline-block
                                 class=carousel-inner
+                                style=display: inline-block
                                 |> div
                                     class=item active
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-01.svg
+                                        style=height: 12em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-02.svg
+                                        style=height: 12em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-03.svg
+                                        style=height: 12em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-04.svg
+                                        style=height: 12em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-05.svg
+                                        style=height: 12em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-06.svg
+                                        style=height: 12em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-07.svg
+                                        style=height: 12em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-08.svg
+                                        style=height: 12em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-09.svg
+                                        style=height: 12em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-10.svg
+                                        style=height: 12em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-11.svg
+                                        style=height: 12em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-12.svg
+                                        style=height: 12em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-13.svg
+                                        style=height: 12em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-14.svg
+                                        style=height: 12em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-15.svg
+                                        style=height: 12em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-16.svg
+                                        style=height: 12em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-17.svg
+                                        style=height: 12em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-18.svg
+                                        style=height: 12em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-19.svg
+                                        style=height: 12em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-20.svg
+                                        style=height: 12em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-21.svg
+                                        style=height: 12em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height: 12em
                                         src=../img/finite-state-automata/nfsm-colored-balls-22.svg
+                                        style=height: 12em
                     Am Ende landet der grüne Punkt im Zustand \(E\). Das Wort ist also in
                     \(L(M)\). Das können wir auch ganz allgemein tun. Wenn Zustand \(q\)
                     einen "Punkt" hat und Zeichen \(x\) gelesen wird, dann teilt sich
@@ -457,7 +457,7 @@
                         \(\mathcal{F}\) definiert als \begin{align*} \mathcal{F} := \{X
                         \subseteq Q \ | \ X \cap F \ne \emptyset\} \end{align*} und
                         Zustandsübergangsfunktion \(\Delta\) definiert als \begin{align*}
-                        \Delta : \quad&amp;2^Q \times \Sigma \rightarrow 2^Q \\&amp;(R, x) \mapsto
+                        \Delta : \quad & 2^Q \times \Sigma \rightarrow 2^Q \\ & (R, x) \mapsto
                         \{q' \in Q \ | \ \textnormal{ es gibt } \ q \in R \textnormal{ mit } q
                         \step{x} q'\} \end{align*} der _Potenzmengenautomat_. Es gilt
                         \(L(M) = L(M')\).
@@ -480,175 +480,175 @@
                         eine 1 ist. Der nichtdeterministische Automat hierfür ist
                         |> figure
                             |> img
-                                style=height: 10em
-                                src=../img/finite-state-automata/nfsm-example-04-third-from-right.svg
                                 loading=lazy
+                                src=../img/finite-state-automata/nfsm-example-04-third-from-right.svg
+                                style=height: 10em
                         Der Potenzmengenautomat hat die Zustandsmenge
                         |> figure
                             class=centered-figure well
                             |> a
-                                data-slide=prev
-                                href=#potenzmengenautomat
                                 class=left carousel-control-prev-icon
+                                href=#potenzmengenautomat
+                                data-slide=prev
                                 |> div
                                     class=carousel-nav-icon
                                     |> img
                                         src=../img/carousel-prev-icon.svg
                             |> a
-                                data-slide=next
-                                href=#potenzmengenautomat
                                 class=right carousel-control-next-icon
+                                href=#potenzmengenautomat
+                                data-slide=next
                                 |> div
                                     class=carousel-nav-icon
                                     |> img
                                         src=../img/carousel-next-icon.svg
                             |> div
-                                style=display:inline-block
-                                data-interval=false
-                                class=carousel
                                 id=potenzmengenautomat
+                                class=carousel
+                                data-interval=false
+                                style=display:inline-block
                                 |> ol
                                     class=carousel-indicators
                                     |> li
-                                        class=active
+                                        data-target=#potenzmengenautomat
                                         data-slide-to=1
-                                        data-target=#potenzmengenautomat
+                                        class=active
                                     |> li
+                                        data-target=#potenzmengenautomat
                                         data-slide-to=2
-                                        data-target=#potenzmengenautomat
                                     |> li
+                                        data-target=#potenzmengenautomat
                                         data-slide-to=3
-                                        data-target=#potenzmengenautomat
                                     |> li
+                                        data-target=#potenzmengenautomat
                                         data-slide-to=4
-                                        data-target=#potenzmengenautomat
                                     |> li
+                                        data-target=#potenzmengenautomat
                                         data-slide-to=5
-                                        data-target=#potenzmengenautomat
                                     |> li
+                                        data-target=#potenzmengenautomat
                                         data-slide-to=6
-                                        data-target=#potenzmengenautomat
                                     |> li
+                                        data-target=#potenzmengenautomat
                                         data-slide-to=7
-                                        data-target=#potenzmengenautomat
                                     |> li
+                                        data-target=#potenzmengenautomat
                                         data-slide-to=8
-                                        data-target=#potenzmengenautomat
                                     |> li
+                                        data-target=#potenzmengenautomat
                                         data-slide-to=9
-                                        data-target=#potenzmengenautomat
                                     |> li
+                                        data-target=#potenzmengenautomat
                                         data-slide-to=10
-                                        data-target=#potenzmengenautomat
                                     |> li
+                                        data-target=#potenzmengenautomat
                                         data-slide-to=11
-                                        data-target=#potenzmengenautomat
                                     |> li
+                                        data-target=#potenzmengenautomat
                                         data-slide-to=12
-                                        data-target=#potenzmengenautomat
                                     |> li
+                                        data-target=#potenzmengenautomat
                                         data-slide-to=13
-                                        data-target=#potenzmengenautomat
                                     |> li
+                                        data-target=#potenzmengenautomat
                                         data-slide-to=14
-                                        data-target=#potenzmengenautomat
                                     |> li
+                                        data-target=#potenzmengenautomat
                                         data-slide-to=15
-                                        data-target=#potenzmengenautomat
                                     |> li
+                                        data-target=#potenzmengenautomat
                                         data-slide-to=16
-                                        data-target=#potenzmengenautomat
                                     |> li
-                                        data-slide-to=17
                                         data-target=#potenzmengenautomat
+                                        data-slide-to=17
                                 |> div
-                                    style=display:inline-block
                                     class=carousel-inner
+                                    style=display:inline-block
                                     |> div
                                         class=item active
                                         |> img
-                                            style=height:18em
                                             src=../img/finite-state-automata/potenzmengenautomat/01.svg
+                                            style=height:18em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:18em
                                             src=../img/finite-state-automata/potenzmengenautomat/02.svg
+                                            style=height:18em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:18em
                                             src=../img/finite-state-automata/potenzmengenautomat/03.svg
+                                            style=height:18em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:18em
                                             src=../img/finite-state-automata/potenzmengenautomat/04.svg
+                                            style=height:18em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:18em
                                             src=../img/finite-state-automata/potenzmengenautomat/05.svg
+                                            style=height:18em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:18em
                                             src=../img/finite-state-automata/potenzmengenautomat/06.svg
+                                            style=height:18em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:18em
                                             src=../img/finite-state-automata/potenzmengenautomat/07.svg
+                                            style=height:18em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:18em
                                             src=../img/finite-state-automata/potenzmengenautomat/08.svg
+                                            style=height:18em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:18em
                                             src=../img/finite-state-automata/potenzmengenautomat/09.svg
+                                            style=height:18em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:18em
                                             src=../img/finite-state-automata/potenzmengenautomat/10.svg
+                                            style=height:18em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:18em
                                             src=../img/finite-state-automata/potenzmengenautomat/11.svg
+                                            style=height:18em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:18em
                                             src=../img/finite-state-automata/potenzmengenautomat/12.svg
+                                            style=height:18em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:18em
                                             src=../img/finite-state-automata/potenzmengenautomat/13.svg
+                                            style=height:18em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:18em
                                             src=../img/finite-state-automata/potenzmengenautomat/14.svg
+                                            style=height:18em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:18em
                                             src=../img/finite-state-automata/potenzmengenautomat/15.svg
+                                            style=height:18em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:18em
                                             src=../img/finite-state-automata/potenzmengenautomat/16.svg
+                                            style=height:18em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:18em
                                             src=../img/finite-state-automata/potenzmengenautomat/17.svg
+                                            style=height:18em
                         Wenn wir uns vorstellen, dass wir vor das Eingabewort \(\alpha\) die
                         Zeichen 000 stellen, also \(\alpha\) durch \(000\alpha\) ersetzen,
                         dann codiert jeder Zustand genau die letzten drei Zeichen des

@@ -52,16 +52,16 @@
                         natürlichen Zahlen.
                         |> figure
                             |> img
-                                style=width: 60%
                                 src=../img/infinite-sets/N.svg
+                                style=width: 60%
                             |> br
                             |> div
                                 Die Menge $\N$ bzw. ein Teil davon.
                         |> br
                         |> figure
                             |> img
-                                style=width: 60%
                                 src=../img/infinite-sets/N-times-N.svg
+                                style=width: 60%
                             |> br
                             |> div
                                 Die Menge $\N \times \N$ bzw. ein Teil davon.
@@ -72,8 +72,8 @@
                         welche natürliche Zahl er abgebildet werden soll:
                         |> figure
                             |> img
-                                style=width: 60%
                                 src=../img/infinite-sets/N-times-N-to-N.svg
+                                style=width: 60%
                         Wir zerlegen $\N \times \N$ also in fallende Diagonale und gehen
                         jede Diagonale von rechts unten nach links oben durch. Dadurch
                         können wir die zweidimensionale Gestalt von $\N \times \N$
@@ -130,12 +130,12 @@
                         Wir haben nun also eine Injektion $f_1 : \Q \rightarrow \Z \times
                         \N$. Mit
                         |> span
-                            data-ref=exercise-cartesian-product
                             class=reference
+                            data-ref=exercise-cartesian-product
                         und 
                         |> span
-                            data-ref=theorem-N-N^2
                             class=reference
+                            data-ref=theorem-N-N^2
                         gilt $\Z \times \N \approx \N \times \N \approx \N$, und somit gibt
                         es eine Bijektion $f_2 : \Z \times \N \rightarrow \N$. Die
                         Verknüpfung $f := f_2 \circ f_1 : \Q \rightarrow \N$ ist nun die
@@ -150,7 +150,7 @@
                     |> Highlight
                         *Beweis.* Dies ist ganz einach: da $\N \subseteq \Q$
                         gilt, können wir jedes $n$ einfach bei sich belassen. Die Funktion
-                        \begin{align*} g : \N&amp;\rightarrow \Q \\ n&amp;\mapsto n \end{align*}
+                        \begin{align*} g : \N & \rightarrow \Q \\ n & \mapsto n \end{align*}
                         ist die gewünschte Injektion. Man nennt so eine Funktion auch die
                         _Einbettung_ von $\N$ in $\Q$.
                         |> QED
@@ -180,14 +180,14 @@
                         Wir definieren eine Bijektion $f: \N \rightarrow \Q$, indem wir die
                         Beweisidee von
                         |> span
-                            data-ref=theorem-N-N^2
                             class=reference
+                            data-ref=theorem-N-N^2
                         wiederholen. Wir zeichnen $\Z \times \N^+$ schematisch, löschen aber
                         die Paare $(a,b)$, die nicht einem gekürzten Bruch entsprechen.
                         |> figure
                             |> img
-                                style=width: 90%
                                 src=../img/infinite-sets/Z-times-N-removed.svg
+                                style=width: 90%
                         Die Punkte sind die Elemente von $\Z \times \N^+$. Die schwarzen
                         Punkte sind jene Punkte $(x,y)$ mit $\gcd(x,y)=1$. Diese stehen nun
                         in Bijektion mit den rationalen Zahlen. Die entsprechenden
@@ -198,8 +198,8 @@
                         Menge der schwarzen Punkte:
                         |> figure
                             |> img
-                                style=width: 90%
                                 src=../img/infinite-sets/N-to-Q.svg
+                                style=width: 90%
                         Das funktioniert natürlich: wir überspringen einfach die gelöschten
                         Punkte. Wir können allerdings nicht bequem eine geschlossene Formel
                         dafür angeben. Auf dem "fünften Hütchen", das von $\frac{4}{1}$ nach
@@ -232,21 +232,21 @@
                         \begin{align*} 0011 \mapsto 10011 \mapsto (10011)_2 = 16 + 2 + 1 = 19
                         \ . \end{align*}
                         Formal also
-                        \begin{align*} f : \{0,1\}^*&amp;\rightarrow \N \\ a_1 a_2 \dots a_n&
+                        \begin{align*} f : \{0,1\}^* & \rightarrow \N \\ a_1 a_2 \dots a_n &
                         \mapsto 2^n + \sum_{i=1}^n a_i 2^{n-i} \ . \end{align*}
                         Eine äquivalente Interpretation: wir sortieren erst einmal die
                         Bitstrings nach ihrer Länge. Dann gehen wir $\{0,1\}^n$
                         lexicographisch durch, also von $00\dots0$ bis $11\dots$. Diese
                         Reihenfolge durchläuft ganz $\{0,1\}^*$ und ordnet jedem Bitstring
                         eine natürliche Zahl zu. Also:
-                        \begin{align*} \begin{array}{c|c} \epsilon&amp;0&amp;1&amp;00&amp;01&amp;10&amp;11
-                        &amp;000&amp;001&amp;010&amp;011&amp;100&amp;101&amp;110&amp;111 \\ \hline 1&amp;2&amp;3&
-                        4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10&amp;11&amp;12&amp;13&amp;14&amp;15 \end{array}
+                        \begin{align*} \begin{array}{c|c} \epsilon & 0 & 1 & 00 & 01 & 10 & 11
+                        & 000 & 001 & 010 & 011 & 100 & 101 & 110 & 111 \\ \hline 1 & 2 & 3 &
+                        4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 \end{array}
                         \end{align*}
                         Das haut nicht ganz hin, weil die $0$ nie drankommt. In der Tat
                         stellt die obige Tabelle eine Bijektion $\{0,1\}^* \rightarrow \N^+$
                         dar. Dies ist leicht korrigiert, indem wir 1 abziehen: die Funktion
-                        \begin{align*} g : \{0,1\}^*&amp;\rightarrow \N \\ a_1 a_2 \dots a_n&
+                        \begin{align*} g : \{0,1\}^* & \rightarrow \N \\ a_1 a_2 \dots a_n &
                         \mapsto 2^n - 1 + \sum_{i=1}^n a_i 2^{n-i} \ . \end{align*}
                         ist eine Bijektion von $\{0,1\}^*$ nach $\N$.
                         |> QED

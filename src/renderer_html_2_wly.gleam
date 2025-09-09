@@ -1,34 +1,56 @@
 import blame as bl
-import io_lines as io_l
+import io_lines.{type InputLine} as io_l
 import gleam/int
 import gleam/io
 import gleam/list
-import gleam/option.{type Option}
+import gleam/option.{type Option, Some}
 import gleam/pair
 import gleam/result
 import gleam/string
+import gleam/regexp as re
 import infrastructure as infra
-import on
 import pipeline_html_2_wly.{pipeline_html_2_wly}
 import simplifile
 import vxml.{type VXML} as vp
-import desugaring as ds
-import writerly as wp
+import desugaring as de
+import writerly as wr
+import on
 
 const ins = string.inspect
 
 fn html_input_lines_assembler(
-  _only_paths: List(String),
-) -> ds.Assembler(wp.AssemblyError) {
-  fn(input_dir) {
-    use file_content <- result.try(case simplifile.read(input_dir) {
-      Ok(content) -> Ok(content)
-      Error(_) -> Error(wp.ReadFileOrDirectoryError(input_dir))
+  path: String
+) -> Result(List(InputLine), wr.AssemblyError) {
+  use content <- on.error_ok(
+    simplifile.read(path),
+    fn(_) { Error(wr.ReadFileOrDirectoryError(path)) },
+  )
+
+  // close img tags
+  let assert Ok(re) = re.from_string("(<img)(\\b[^>]*[^\\/])(>)")
+  let content =
+    re.match_map(re, content, fn(match) {
+      let re.Match(_, sub) = match
+      let assert [_, Some(middle), _] = sub
+      "<img" <> middle <> "/>"
     })
-    let input_lines = io_l.string_to_input_lines(file_content, input_dir, 0)
-    io.println(input_dir)
-    Ok(input_lines)
-  }
+
+  // remove attributes in closing tags
+  let assert Ok(re) = re.from_string("(<\\/)(\\w+)(\\s+[^>]*)(>)")
+  let matches = re.scan(re, content)
+
+  let content =
+    list.fold(matches, content, fn(content_str, match) {
+      let re.Match(_, sub) = match
+      let assert [_, Some(tag), _, _] = sub
+      re.replace(re, content_str, "</" <> tag <> ">")
+    })
+
+  io.println(path)
+
+  content
+  |> io_l.string_to_input_lines(path, 0)
+  |> Ok
 }
 
 fn blame_us(message: String) -> bl.Blame {
@@ -214,8 +236,8 @@ fn remove_line_break_from_start(res: String) -> String {
 
 fn title_from_vxml(vxml: VXML) -> String {
   let assert vp.V(_, _, _, title) = vxml
-  wp.vxmls_to_writerlys(title)
-  |> list.map(wp.writerly_to_string)
+  wr.vxmls_to_writerlys(title)
+  |> list.map(wr.writerly_to_string)
   |> string.join("")
   |> string.split_once(" ")
   |> result.unwrap(#("", ""))
@@ -258,7 +280,7 @@ fn splitter(
   file: String,
   prev_file: Option(String),
   next_file: Option(String),
-) -> Result(List(ds.OutputFragment(Nil, VXML)), a) {
+) -> Result(List(de.OutputFragment(Nil, VXML)), a) {
   let filename = file |> string.drop_end(5) <> ".wly"
   let title_en =
     filename
@@ -316,82 +338,11 @@ fn splitter(
   )
 
   [
-    ds.OutputFragment(Nil, parent_path, parent_vxml),
-    ds.OutputFragment(Nil, file_path, file_vxml),
+    de.OutputFragment(Nil, parent_path, parent_vxml),
+    de.OutputFragment(Nil, file_path, file_vxml),
   ]
   |> Ok
 }
-
-// fn emitter(
-//   fragment: ds.OutputFragment(Nil, VXML),
-//   prev_file: Option(String),
-//   next_file: Option(String),
-// ) -> Result(ds.OutputFragment(Nil, List(io_l.OutputLine)), String) {
-//   let filename = fragment.path
-//   let vxml = fragment.payload
-//   let title_en =
-//     filename
-//     |> string.drop_end(4)
-//     |> string.split("-")
-//     |> list.drop(2)
-//     |> string.join(" ")
-//   let title_german = get_title_internal(vxml)
-//   let chapter_number_as_string =
-//     filename |> string.split_once("-") |> result.unwrap(#("", "")) |> pair.first
-//   let assert True = chapter_number_as_string != ""
-//   let number =
-//     filename
-//     |> string.split("-")
-//     |> list.take(2)
-//     |> list.map(remove_0_at_start)
-//     |> string.join(".")
-//   let assert [chapter_number, section_number] =
-//     filename
-//     |> string.split("-")
-//     |> list.take(2)
-//     |> list.map(remove_0_at_start)
-//     |> list.map(int.parse)
-//     |> list.map(result.unwrap(_, -1))
-//   let assert True = chapter_number >= 1
-//   let assert True = section_number >= 0
-//   let chapter_directory = "wly_content/" <> chapter_number_as_string
-
-//   case section_number == 0 {
-//     False -> Nil
-//     True -> {
-//       let _ = simplifile.create_directory(chapter_directory)
-//       let assert Ok(_) =
-//         simplifile.write(chapter_directory <> "/" <> "__parent.wly", "|> Chapter
-//     counter=SectionCtr
-//     title_gr=" <> title_german <> "\n    title_en=" <> title_en)
-//       Nil
-//     }
-//   }
-
-//   let root =
-//     vp.V(
-//       blame_us("Root"),
-//       "section",
-//       [
-//         vp.Attribute(blame_us("section title"), "title_gr", title_german),
-//         vp.Attribute(blame_us("section title"), "title_en", title_en),
-//         vp.Attribute(blame_us("section title"), "number", number),
-//         // Counter attributes
-//         vp.Attribute(blame_us("section def counter"), "counter", "DefCtr"),
-//         vp.Attribute(blame_us("section exo counter"), "counter", "ExoCtr"),
-//       ],
-//       [construct_left_nav(prev_file), construct_right_nav(next_file), vxml],
-//     )
-
-    
-//   let assert Ok(writerly) = wp.vxml_to_writerly(root)
-
-//   Ok(ds.OutputFragment(
-//     Nil,
-//     chapter_directory <> "/" <> filename,
-//     writerly |> wp.writerly_to_output_lines,
-//   ))
-// }
 
 fn drop_slash_at_end(path: String) -> String {
   case string.ends_with(path, "/") {
@@ -400,77 +351,77 @@ fn drop_slash_at_end(path: String) -> String {
   }
 }
 
-fn directory_files_else_file(
+fn directory_and_files(
   path: String,
 ) -> Result(#(String, List(String)), simplifile.FileError) {
-  case simplifile.read_directory(path) {
-    Ok(files) -> {
+  use _ <- on.ok_error(
+    simplifile.read_directory(path),
+    fn(files) {
       let path = drop_slash_at_end(path)
       Ok(#(path, files))
     }
-    Error(_) -> {
-      case simplifile.is_file(path) {
-        Error(e) -> Error(e)
-        _ -> {
-          let assert Ok(#(reversed_filename, reversed_path)) =
-            path |> string.reverse |> string.split_once("/")
-          Ok(
-            #(reversed_path |> string.reverse, [
-              reversed_filename |> string.reverse,
-            ]),
-          )
-        }
-      }
-    }
-  }
+  )
+
+  use _ <- on.ok(simplifile.is_file(path))
+
+  let assert Ok(#(reversed_filename, reversed_path)) =
+    path |> string.reverse |> string.split_once("/")
+
+  Ok(
+    #(
+      reversed_path |> string.reverse, 
+      [reversed_filename |> string.reverse]
+    )
+  )
 }
 
 pub fn renderer_html_2_wly(
   path: String,
-  amendments: ds.CommandLineAmendments,
+  amendments: de.CommandLineAmendments,
 ) -> Nil {
   use #(dir, files) <- on.error_ok(
-    directory_files_else_file(path),
-    fn(e) { io.print("failed to load files from " <> path <> ": " <> ins(e)) },
+    directory_and_files(path),
+    fn(e) {
+      io.print("failed to load files from " <> path <> ": " <> ins(e))
+    },
   )
 
-  let files = list.sort(files, string.compare)
+  let files =
+    list.sort(files, string.compare)
+    |> list.filter(fn (file) {
+      list.is_empty(amendments.only_paths) ||
+      list.any(amendments.only_paths, string.contains(file, _))
+    })
 
   each_prev_next(files, option.None, fn(file, prev, next) {
     let path = dir <> "/" <> file
-    use <- on.false_true(
-      amendments.only_paths
-      |> list.any(fn(f) { string.contains(path, f) || string.is_empty(f) })
-        || list.is_empty(amendments.only_paths),
-      Nil,
-    )
 
     let parameters =
-      ds.RendererParameters(
+      de.RendererParameters(
         table: False,
         input_dir: path,
         output_dir: ".",
-        prettifier_behavior: ds.PrettifierOff,
+        prettifier_behavior: de.PrettifierOff,
       )
-      |> ds.amend_renderer_paramaters_by_command_line_amendments(amendments)
+      |> de.amend_renderer_paramaters_by_command_line_amendments(amendments)
 
     let renderer =
-      ds.Renderer(
-        assembler: html_input_lines_assembler(amendments.only_paths),
-        parser: ds.default_html_parser(amendments.only_key_values),
+      de.Renderer(
+        assembler: html_input_lines_assembler,
+        parser: de.default_html_parser(_, amendments.only_key_values),
         pipeline: pipeline_html_2_wly(),
         splitter: fn(vxml) { splitter(vxml, file, prev, next) },
-        emitter: ds.default_writerly_emitter,
-        writer: ds.default_writer,
-        prettifier: ds.empty_prettifier,
+        emitter: de.default_writerly_emitter,
+        writer: de.default_writer,
+        prettifier: de.empty_prettifier,
       )
-      |> ds.amend_renderer_by_command_line_amendments(amendments)
+      |> de.amend_renderer_by_command_line_amendments(amendments)
 
     let debug_options =
-      ds.default_renderer_debug_options()
-      |> ds.amend_renderer_debug_options_by_command_line_amendments(amendments)
+      de.default_renderer_debug_options()
+      |> de.amend_renderer_debug_options_by_command_line_amendments(amendments)
 
-    case ds.run_renderer(renderer, parameters, debug_options) {
+    case de.run_renderer(renderer, parameters, debug_options) {
       Ok(Nil) -> Nil
       Error(error) -> {
         io.println("\nrenderer error on path " <> path <> ":")

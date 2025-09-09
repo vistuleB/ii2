@@ -10,8 +10,8 @@
             href=../vorlesungsskript.html
             Inhaltsverzeichnis
         |> a
-            href=08-06-Cook-Levin.html
-            &lt;&lt; Kapitel 8.6
+            href=08-07-Space.html
+            &lt;&lt; Kapitel 8.7
     |> div
         id=link-to-overview
         style=text-align: end
@@ -74,8 +74,8 @@
                             and here is the source code:
                             |> pre
                                 <div class='well container theorem'>
-                                <p><span class='numbered-title' id="sauer-shelah-lemma" data-label-title="Lemma">Lemma</span>
-                                <strong>(Sauer-Shelah lemma).</strong>Let $A \subseteq \{0,1\}^n$. If $|A| \gt {\rm vol}(n,r-1)$ then
+                                <p><span class='numbered-title' id=&quot;sauer-shelah-lemma&quot; data-label-title=&quot;Lemma&quot;>Lemma</span>
+                                <strong>(Sauer-Shelah lemma). </strong>Let $A \subseteq \{0,1\}^n$. If $|A| \gt {\rm vol}(n,r-1)$ then
                                 there exists some set $I \subseteq [n]$ of indices with $|I| \geq r$ such that</p>
                                 \begin{align*}
                                 \{ \mathbf{x}_I \ | \ \mathbf{x} \in A\} = \{0,1\}^r \ ,
@@ -92,24 +92,24 @@
                             |> Highlight
                                 This follows easily from the
                                 |> span
-                                    data-ref=sauer-shelah-lemma
                                     class=reference
+                                    data-ref=sauer-shelah-lemma
                                 \ just
                                 above and
                                 |> span
-                                    data-ref=theorem-N-N^2
                                     class=reference
+                                    data-ref=theorem-N-N^2
                                 .
                             and here is the source code:
                             |> pre
-                                Remember that<span class="reference" data-ref="theorem-N-N^2"></span> shows that $\N$ and $\N^2$ are equipotent.
+                                Remember that <span class=&quot;reference&quot; data-ref=&quot;theorem-N-N^2&quot;></span> shows that $\N$ and $\N^2$ are equipotent.
                         To work, the `id` of a theorem (or a general environment)
                         has to be unique _across all files of the lecture notes_.
                         Also, since we have to correctly compute the numbering of theorems
                         like 
                         |> span
-                            data-ref=theorem-N-N^2
                             class=reference
+                            data-ref=theorem-N-N^2
                         , we
                         would have to read the file containing it. So we'd have to write
                         code that, while loading Chapter 9, loads all chapters of referenced

@@ -49,8 +49,8 @@
                         \(b\)s.
                         Hier ist eine kontextfreie Grammatik für \(L\):
                         \begin{align*}
-                        S&amp;\rightarrow \epsilon \\
-                        S&amp;\rightarrow aSb
+                        S & \rightarrow \epsilon \\
+                        S & \rightarrow aSb
                         \end{align*}
                         Können wir eine reguläre Grammatik für \(L\) schreiben? Irgendwie klingt das nicht
                         plausibel.
@@ -298,8 +298,8 @@
                         so dass innerhalb eines \(A_i\) alle Wörter äquivalent sind, und zwischen
                         zwei verschiedenen \(A_i, A_j\) alle nicht äquivalent sind:
                         \begin{align*}
-                        \forall 1 \leq i \leq n&amp;\forall \alpha, \beta \in A_i:&amp;\quad \alpha \equiv_L \beta \\
-                        \forall 1 \leq i \lt j \leq n&amp;\forall \alpha\in A_i, \beta\in A_j :&amp;\quad \alpha \not
+                        \forall 1 \leq i \leq n & \forall \alpha, \beta \in A_i: & \quad \alpha \equiv_L \beta \\
+                        \forall 1 \leq i \lt j \leq n & \forall \alpha\in A_i, \beta\in A_j : & \quad \alpha \not
                         \equiv_L \beta
                         \end{align*}
                         Die Menge von Mengen \(\{A_1, A_2, \dots, A_n\}\) nennt man eine Partition oder
@@ -325,10 +325,10 @@
                         Als Anfangszustand wählen wir dasjenige \(i\), für das \(\epsilon \in A_i\) gilt.
                         Akzeptierende Zustände sind diejenigen \(j\), für die \(A_j \subseteq L\) gilt. Also:
                         \begin{align*}
-                        Q&amp;:= \{1,2,\dots,n\} \\
-                        \qstart&amp;:= \textnormal{ das $i$, für das $\epsilon \in A_i$} \\
-                        F&amp;:= \{j \in Q \ | \ A_j \subseteq L\} \\
-                        \delta&amp;:= (i,x) \mapsto \textnormal{(das eindeutige $j$, für das es ein $\alpha \in A_i$
+                        Q & := \{1,2,\dots,n\} \\
+                        \qstart & := \textnormal{ das $i$, für das $\epsilon \in A_i$} \\
+                        F & := \{j \in Q \ | \ A_j \subseteq L\} \\
+                        \delta & := (i,x) \mapsto \textnormal{(das eindeutige $j$, für das es ein $\alpha \in A_i$
                         gibt mit $\alpha x \in A_j$).}
                         \end{align*}
                         Der Automat \((\Sigma, Q, \qstart, F, \delta)\) erkennt die Sprache \(L\); die Anzahl
@@ -342,9 +342,9 @@
                         Der nichtdeterministische endliche Automat
                         |> figure
                             |> img
-                                style=height:10em
-                                src=../img/finite-state-automata/nfsm-example-01.svg
                                 loading=lazy
+                                src=../img/finite-state-automata/nfsm-example-01.svg
+                                style=height:10em
                         akzeptiert die Sprache \(L\) aller \(\alpha \in \{0,1\}^n\), deren viertletzter Buchstabe eine 1
                         ist.
                         Unsere Konstruktion, ihn deterministisch zu machen, würde 16 Zustände erzeugen. Ist dies

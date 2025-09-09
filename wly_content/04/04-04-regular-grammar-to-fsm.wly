@@ -81,7 +81,7 @@
                     Wir beginnen ganz unten und schreiben eine Grammatik für
                     Blöcke, also nichtleere Strings aus alphanumerischen Zeichen.
                     \begin{align*}
-                    B&amp;\rightarrow a \ | \ aB
+                    B & \rightarrow a \ | \ aB
                     \end{align*}
                     Als nächstes führen wir ein nichtterminales Symbole \(C\) für Labels mit `:` ein
                     und ein Nichtterminal \(D\) für Labels mit `-`. Wir wählen die Buchstaben \(C,D\),
@@ -99,9 +99,9 @@
                     Verwechslungsgefahr mit
                     dem ursprünglichen \(B\) aufkommt. Das gleiche machen wir für \(D\).
                     \begin{align*}
-                    C&amp;\rightarrow a \ | \ aC \ | \ a{:}C \\
-                    D&amp;\rightarrow a \ | \ aD \ | \ a{-}D \\
-                    T&amp;\rightarrow C \ | D
+                    C & \rightarrow a \ | \ aC \ | \ a{:}C \\
+                    D & \rightarrow a \ | \ aD \ | \ a{-}D \\
+                    T & \rightarrow C \ | D
                     \end{align*}
                     Von \(L\) lassen sich nun also alle Labels ableiten. Wir brauchen nun zum Schluss wieder
                     eine Folge von \(L\), mit `.` separiert, müssen also wieder
@@ -111,20 +111,20 @@
                     \ anwenden, dieses
                     mal auf die von \(T\) erzeugte Sprache. Im Ergebnis benennen wir das Startsymbol in \(S\) um.
                     \begin{align*}
-                    S&amp;\rightarrow C \ | \ D \\
-                    C&amp;\rightarrow a \ | \ aC \ | \ a{:}C \ | a{.}S \ \\
-                    D&amp;\rightarrow a \ | \ aD \ | \ a\text{-}D \ | \ a{.}S \\
+                    S & \rightarrow C \ | \ D \\
+                    C & \rightarrow a \ | \ aC \ | \ a{:}C \ | a{.}S \ \\
+                    D & \rightarrow a \ | \ aD \ | \ a\text{-}D \ | \ a{.}S \\
                     \end{align*}
                     Um eine "richtig" reguläre Sprache zu erhalten, entzerren wir die erweitert regulären
                     Produktionen
                     wie \(C \rightarrow a{:}C\). Dafür brauchen wir neue Symbole \(C', D', S'\):
                     \begin{align*}
-                    S&amp;\rightarrow C \ | \ D \\
-                    C&amp;\rightarrow a \ | \ aC \ | \ aC'\ | \ aS' \\
-                    C'&amp;\rightarrow {:}C \\
-                    D&amp;\rightarrow a \ | \ aD \ | \ a D' \ | \ aS' \\
-                    D'&amp;\rightarrow \text{-}D \\
-                    S'&amp;\rightarrow {.}S
+                    S & \rightarrow C \ | \ D \\
+                    C & \rightarrow a \ | \ aC \ | \ aC'\ | \ aS' \\
+                    C' & \rightarrow {:}C \\
+                    D & \rightarrow a \ | \ aD \ | \ a D' \ | \ aS' \\
+                    D' & \rightarrow \text{-}D \\
+                    S' & \rightarrow {.}S
                     \end{align*}
                     |> Topic
                         3. Die reguläre Grammatik säubern
@@ -134,13 +134,13 @@
                     xE\)
                     und fügen die Produktion \(E \rightarrow \epsilon\) hinzu.
                     \begin{align*}
-                    S&amp;\rightarrow C \ | \ D \\
-                    C&amp;\rightarrow aE \ | \ aC \ | \ aC'\ | \ aS' \\
-                    C'&amp;\rightarrow {:}C \\
-                    D&amp;\rightarrow aE \ | \ aD \ | \ a D' \ | \ aS' \\
-                    D'&amp;\rightarrow \text{-}D \\
-                    S'&amp;\rightarrow {.}S \\
-                    E&amp;\rightarrow \epsilon
+                    S & \rightarrow C \ | \ D \\
+                    C & \rightarrow aE \ | \ aC \ | \ aC'\ | \ aS' \\
+                    C' & \rightarrow {:}C \\
+                    D & \rightarrow aE \ | \ aD \ | \ a D' \ | \ aS' \\
+                    D' & \rightarrow \text{-}D \\
+                    S' & \rightarrow {.}S \\
+                    E & \rightarrow \epsilon
                     \end{align*}
                     In einem zweiten Schritt wollen wir die Produktionen \(S \rightarrow C\) und \(S \rightarrow D\)
                     eliminieren,
@@ -160,13 +160,13 @@
                     zu; gleiches gilt
                     für \(D\). Wir erhalten:
                     \begin{align*}
-                    S&amp;\rightarrow aE \ | \ aC \ | \ aC'\ | \ aS' \ | \ aD \ | \ a D' \\
-                    C&amp;\rightarrow aE \ | \ aC \ | \ aC'\ | \ aS' \ \\
-                    C'&amp;\rightarrow {:}C \\
-                    D&amp;\rightarrow aE \ | \ aD \ | \ a D' \ | \ aS' \ \\
-                    D'&amp;\rightarrow \text{-}D \\
-                    S'&amp;\rightarrow {.}S \\
-                    E&amp;\rightarrow \epsilon
+                    S & \rightarrow aE \ | \ aC \ | \ aC'\ | \ aS' \ | \ aD \ | \ a D' \\
+                    C & \rightarrow aE \ | \ aC \ | \ aC'\ | \ aS' \ \\
+                    C' & \rightarrow {:}C \\
+                    D & \rightarrow aE \ | \ aD \ | \ a D' \ | \ aS' \ \\
+                    D' & \rightarrow \text{-}D \\
+                    S' & \rightarrow {.}S \\
+                    E & \rightarrow \epsilon
                     \end{align*}
                     |> Topic
                         4. Einen nichtdeterministischen endlichen Automaten bauen
@@ -174,9 +174,9 @@
                     übersetzen jeden Grammatik-Pfeil in einen Automaten-Pfeil.
                     |> figure
                         |> img
-                            style=height:17em
-                            src=../img/finite-state-automata/nfsm-example-03-big.svg
                             loading=lazy
+                            src=../img/finite-state-automata/nfsm-example-03-big.svg
+                            style=height:17em
                     Ich habe die Zeichen `.:-` rot unterlegt, weil man sie sonst kaum erkennen würde in
                     dem Automaten.
                     |> Topic
@@ -196,258 +196,258 @@
                     sehen Sie manchmal den mit einem Kreuz markierten Fehlerzustand (trap state). Die akzeptierenden
                     Zustände sind mit fettem Rand markiert.
                     |> figure
-                        id=figure-ColonDashPeriod
                         class=centered-figure well
+                        id=figure-ColonDashPeriod
                         |> div
                             Der nichtdeterministische Automat
                             |> img
-                                style=height:10em
-                                src=../img/finite-state-automata/nfsm-example-03-big.svg
                                 loading=lazy
+                                src=../img/finite-state-automata/nfsm-example-03-big.svg
+                                style=height:10em
                         |> a
-                            data-slide=prev
-                            href=#nfsm-to-fsm
                             class=left carousel-control-prev-icon
+                            href=#nfsm-to-fsm
+                            data-slide=prev
                             |> div
                                 class=carousel-nav-icon
                                 |> img
                                     src=../img/carousel-prev-icon.svg
                         |> a
-                            data-slide=next
-                            href=#nfsm-to-fsm
                             class=right carousel-control-next-icon
+                            href=#nfsm-to-fsm
+                            data-slide=next
                             |> div
                                 class=carousel-nav-icon
                                 |> img
                                     src=../img/carousel-next-icon.svg
                         |> div
-                            style=display:inline-block
-                            data-interval=false
-                            class=carousel
                             id=nfsm-to-fsm
+                            class=carousel
+                            data-interval=false
+                            style=display:inline-block
                             |> ol
                                 class=carousel-indicators
                                 |> li
-                                    class=active
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=1
-                                    data-target=#nfsm-to-fsm
+                                    class=active
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=2
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=3
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=4
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=5
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=6
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=7
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=8
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=9
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=10
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=11
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=12
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=13
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=14
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=15
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=16
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=17
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=18
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=19
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=20
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=21
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=22
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=23
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=24
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=25
-                                    data-target=#nfsm-to-fsm
                                 |> li
+                                    data-target=#nfsm-to-fsm
                                     data-slide-to=26
-                                    data-target=#nfsm-to-fsm
                                 |> li
-                                    data-slide-to=27
                                     data-target=#nfsm-to-fsm
+                                    data-slide-to=27
                             Der deterministische Automat, Schritt für Schritt gebaut: 
                             |> div
-                                style=display:inline-block
                                 class=carousel-inner
+                                style=display:inline-block
                                 |> div
                                     class=item active
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/01.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/02.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/03.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/04.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/05.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/06.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/07.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/08.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/09.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/10.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/11.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/12.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/13.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/14.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/15.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/16.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/17.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/18.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/19.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/20.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/21.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/22.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/23.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/24.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/25.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/26.svg
+                                        style=height:18em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:18em
                                         src=../img/finite-state-automata/transformation/27.svg
+                                        style=height:18em
                     Dieser Automat hat deutlich weniger also 128 Zustände, nämlich mit nur sieben genau so
                     viele wie der nichtdeterministische (es ist Zufall, dass beide gleich viele Zustände haben;
                     messen
@@ -456,10 +456,10 @@
                     wäre als die ursprüngliche. Wenn wir erweitert reguläre Grammatiken erlauben, so können
                     wir den deterministischen Automaten besonders konzise in eine Grammatik fassen:
                     \begin{align*}
-                    S&amp;\rightarrow aT \\
-                    T&amp;\rightarrow {.}S \ | \ aT \ | \ {:}aC \ | \ \text{-}a D \\
-                    C&amp;\rightarrow aC \ | \ {:}aC \ | \ {.}S \\
-                    D&amp;\rightarrow aD \ | \ \text{-}aD \ | \ {.}S
+                    S & \rightarrow aT \\
+                    T & \rightarrow {.}S \ | \ aT \ | \ {:}aC \ | \ \text{-}a D \\
+                    C & \rightarrow aC \ | \ {:}aC \ | \ {.}S \\
+                    D & \rightarrow aD \ | \ \text{-}aD \ | \ {.}S
                     \end{align*}
                     Die Zustände des deterministischen Automaten beschreiben im Prinzip das, was wir uns merken
                     müssen, wenn wir so einen String "parsen": Zustand \( \{C',C,E,D,D',S'\}\), der
@@ -485,9 +485,9 @@
                         der Kanten verzichtet.
                         |> figure
                             |> img
-                                style=height:14em
-                                src=../img/finite-state-automata/divisibility-automaton/divisibility.svg
                                 loading=lazy
+                                src=../img/finite-state-automata/divisibility-automaton/divisibility.svg
+                                style=height:14em
                         Dieser Automat hat 11 Zustände. Sein Potenzmengenautomat hätte also \(2^{11} = 2048\)
                         Zustände.
                         Führen Sie die Konstruktion _lazy_ durch, indem Sie vom Startzustand \(\{S\}\)

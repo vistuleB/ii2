@@ -58,9 +58,9 @@
                     LL-Parser und LR-Parser funktionieren schlicht nicht für allgemeine kontextfreie Grammatiken.
                     Standardbeispiel ist die Palindromsprache ohne Kennzeichnung der Mitte:
                     \begin{align*}
-                    S&amp;\rightarrow aSa \\
-                    S&amp;\rightarrow bSb \\
-                    S&amp;\rightarrow a \ | \ b \ | \ \epsilon
+                    S & \rightarrow aSa \\
+                    S & \rightarrow bSb \\
+                    S & \rightarrow a \ | \ b \ | \ \epsilon
                     \end{align*}
                     Weder LL-Parser noch LR-Parser können bei langen Wörtern wie
                     \(aaaaaaaaaaaaaabbaaaaaaaaaaaaaa\) erkennen, wo die Mitte ist. Das muss man aber wissen,
@@ -69,11 +69,11 @@
                     noch beweisen).
                     Noch schlimmer steht es mit Grammatiken wie
                     \begin{align*}
-                    S&amp;\rightarrow AY \ \ | XC \\
-                    A&amp;\rightarrow aA \ | \ \epsilon \\
-                    C&amp;\rightarrow cC \ | \ \epsilon \\
-                    X&amp;\rightarrow aXb \ | \epsilon \\
-                    Y&amp;\rightarrow bYc \ | \epsilon
+                    S & \rightarrow AY \ \ | XC \\
+                    A & \rightarrow aA \ | \ \epsilon \\
+                    C & \rightarrow cC \ | \ \epsilon \\
+                    X & \rightarrow aXb \ | \epsilon \\
+                    Y & \rightarrow bYc \ | \epsilon
                     \end{align*}
                     Diese erzeugt die Sprache
                     \begin{align*}
@@ -95,13 +95,13 @@
                     Eine kontextfreie Grammatik ist in _Chomsky-Normalform_, wenn jede Produktion eine
                     der folgenden Formen hat:
                     \begin{align*}
-                    X&amp;\rightarrow YZ \\
-                    X&amp;\rightarrow a
+                    X & \rightarrow YZ \\
+                    X & \rightarrow a
                     \end{align*}
                     Eine solche Sprache kann offensichtlich nicht das Wort \(\epsilon\) ableiten. Daher lassen wir
                     als Sonderregel die Produktion
                     \begin{align*}
-                    S&amp;\rightarrow \epsilon
+                    S & \rightarrow \epsilon
                     \end{align*}
                     zu, verbieten dann aber, dass das Startsymbol \(S\) auf der rechten Seite einer Produktion vorkommen
                     kann.
@@ -116,10 +116,10 @@
                         title=*Übungsaufgabe*
                         Finden Sie zu der folgenden kontextfreien Grammatik
                         \begin{align*}
-                        S&amp;\rightarrow A \ | \ Bb \ | \ C \\
-                        A&amp;\rightarrow xyB \ | \ B \ | \ BC \\
-                        B&amp;\rightarrow yzC \ | \ AC \\
-                        C&amp;\rightarrow xzA \ | \ AB \ | \ \epsilon
+                        S & \rightarrow A \ | \ Bb \ | \ C \\
+                        A & \rightarrow xyB \ | \ B \ | \ BC \\
+                        B & \rightarrow yzC \ | \ AC \\
+                        C & \rightarrow xzA \ | \ AB \ | \ \epsilon
                         \end{align*}
                         eine äquivalente in Chomsky-Normalform.
                         Fragen, die Sie sich dabei stellen sollten:
@@ -138,7 +138,7 @@
                     eine Ableitung \(G: S \Step{}^* w\) finden wollen (oder feststellen, dass es keine gibt),
                     so ist die erste Beobachtung, dass eine Linksableitung die Form
                     \begin{align*}
-                    S&amp;\Step{}^* AB \Step{}^* uB \Step{}^* uv
+                    S & \Step{}^* AB \Step{}^* uB \Step{}^* uv
                     \end{align*}
                     haben muss, für \(w = uv\). Wenn wir die
                     Unterteilung von \(w\) in \(u\) und \(v\) kennen würden, so könnten wir rekursiv
@@ -170,7 +170,7 @@
                     Der Entwurf eines Dynamic-Programming-Algorithmus beginnt oft mit der folgenden Frage:
                     _Was sind sinnvolle Zwischenergebnisse?_ In unserem Falle sind Ableitungen der Form
                     \begin{align*}
-                    X&amp;\Step{}^* u
+                    X & \Step{}^* u
                     \end{align*}
                     sinnvolle Zwischenergebnisse, wenn \(u\) ein Teilwort von \(w\) ist, also
                     \(w = v_1 u v_2\). Konkret schreiben wir \(w = w_0 w_1 \dots w_{n-1}\) und definieren
@@ -200,8 +200,8 @@
                     \(X \in N_{i,k}\), also \(X \Step{}^* w[i:k]\) gilt genau dann,
                     wenn es eine Produktion \(X \rightarrow YZ\) gibt, so dass dann
                     \begin{align*}
-                    Y&amp;\Step{}^* w[i:j] \\
-                    Z&amp;\Step{}^* w[j:k]
+                    Y & \Step{}^* w[i:j] \\
+                    Z & \Step{}^* w[j:k]
                     \end{align*}
                     gilt. Das Problem ist, wie bereits oben skizziert, dass wir die "Grenze" \(j\) nicht kennen. Wir
                     probieren also alle Grenzen aus, und somit
@@ -222,13 +222,13 @@
                         |> li
                             `for l = 2 .. n`
                             |> ol
-                                type=I
                                 class=
+                                type=I
                                 |> li
                                     \ `for i = 0 .. n-l`
                                     |> ol
-                                        type=i
                                         class=
+                                        type=i
                                         |> li
                                             `k := i+l` 
                                             |> span
@@ -242,8 +242,8 @@
                                         |> li
                                             `for j = i+1 .. k-1:`
                                             |> ol
-                                                type=1
                                                 class=
+                                                type=1
                                                 |> li
                                                     `for all productions` \(X \rightarrow YZ\):
                                                     |> ol
@@ -292,244 +292,244 @@
                         title=*Demo*
                         Betrachten wir die Grammatik
                         \begin{align*}
-                        S&amp;\rightarrow AB \ | \ BC \ | \ AC \\
-                        A&amp;\rightarrow AC \ | \ x \ | \ z \\
-                        B&amp;\rightarrow AB \ | \ y \\
-                        C&amp;\rightarrow BC \ | \ AS \ | \ z
+                        S & \rightarrow AB \ | \ BC \ | \ AC \\
+                        A & \rightarrow AC \ | \ x \ | \ z \\
+                        B & \rightarrow AB \ | \ y \\
+                        C & \rightarrow BC \ | \ AS \ | \ z
                         \end{align*}
                         und das Eingabewort \(xyxxz\).
                         |> figure
                             class=centered-figure well container-fluid
                             |> a
-                                data-slide-to=0
-                                href=#cyk-demo
                                 class=left carousel-control-prev-icon
+                                href=#cyk-demo
+                                data-slide-to=0
                                 |> div
                                     class=carousel-nav-icon
                                     |> img
                                         src=../img/carousel-jump-to-start.svg
                             |> a
-                                data-slide=prev
-                                href=#cyk-demo
                                 class=left carousel-control-prev-icon
+                                href=#cyk-demo
+                                data-slide=prev
                                 |> div
                                     class=carousel-nav-icon
                                     |> img
                                         src=../img/carousel-prev-icon.svg
                             |> a
-                                data-slide=next
-                                href=#cyk-demo
                                 class=right carousel-control-next-icon
+                                href=#cyk-demo
+                                data-slide=next
                                 |> div
                                     class=carousel-nav-icon
                                     |> img
                                         src=../img/carousel-next-icon.svg
                             |> a
-                                data-slide-to=37
-                                href=#cyk-demo
                                 class=right carousel-control-next-icon
+                                href=#cyk-demo
+                                data-slide-to=37
                                 |> div
                                     class=carousel-nav-icon
                                     |> img
                                         src=../img/carousel-jump-to-end.svg
                             |> div
-                                style=display:inline-block
-                                data-interval=false
-                                class=carousel
                                 id=cyk-demo
+                                class=carousel
+                                data-interval=false
+                                style=display:inline-block
                                 |> div
-                                    style=display:inline-block
                                     class=carousel-inner
+                                    style=display:inline-block
                                     |> div
                                         class=item active
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/01-01.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/01-02.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/01-03.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-01.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-02.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-03.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-04.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-05.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-06.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-07.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-08.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-09.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-10.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-11.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-12.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-13.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-14.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-15.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-16.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-17.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-18.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-19.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-20.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-21.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-22.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-23.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-24.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-25.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-26.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-27.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-28.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-29.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-30.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-31.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-32.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-33.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-34.svg
+                                            style=height:23em
                                     |> div
                                         class=item
                                         |> img
-                                            style=height:23em
                                             src=../img/context-free/CYK/02-35.svg
+                                            style=height:23em
                         Wenn wir uns zusätzlich zu jedem \(X \in N_{i,k}\) noch merken, durch
                         welche Regeln \(X \rightarrow YZ\) es aufgenommen wurde und
                         für welches \(j\) man \(Y \in N_{i,j}, Z \in N_{j,k}\) hat, dann können wir

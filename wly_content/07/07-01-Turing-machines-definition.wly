@@ -49,96 +49,96 @@
                     |> figure
                         class=centered-figure well container
                         |> a
-                            data-slide=prev
-                            href=#turing-machine-example-01
                             class=left carousel-control-prev-icon
+                            href=#turing-machine-example-01
+                            data-slide=prev
                             |> div
                                 class=carousel-nav-icon
                                 |> img
                                     src=../img/carousel-prev-icon.svg
                         |> a
-                            data-slide=next
-                            href=#turing-machine-example-01
                             class=right carousel-control-next-icon
+                            href=#turing-machine-example-01
+                            data-slide=next
                             |> div
                                 class=carousel-nav-icon
                                 |> img
                                     src=../img/carousel-next-icon.svg
                         |> div
-                            style=display:inline-block
-                            data-interval=false
-                            class=carousel
                             id=turing-machine-example-01
+                            class=carousel
+                            data-interval=false
+                            style=display:inline-block
                             |> ol
                                 class=carousel-indicators
                                 |> li
-                                    class=active
+                                    data-target=#turing-machine-example-01
                                     data-slide-to=1
-                                    data-target=#turing-machine-example-01
+                                    class=active
                                 |> li
+                                    data-target=#turing-machine-example-01
                                     data-slide-to=2
-                                    data-target=#turing-machine-example-01
                                 |> li
+                                    data-target=#turing-machine-example-01
                                     data-slide-to=3
-                                    data-target=#turing-machine-example-01
                                 |> li
+                                    data-target=#turing-machine-example-01
                                     data-slide-to=4
-                                    data-target=#turing-machine-example-01
                                 |> li
+                                    data-target=#turing-machine-example-01
                                     data-slide-to=5
-                                    data-target=#turing-machine-example-01
                                 |> li
+                                    data-target=#turing-machine-example-01
                                     data-slide-to=6
-                                    data-target=#turing-machine-example-01
                                 |> li
+                                    data-target=#turing-machine-example-01
                                     data-slide-to=7
-                                    data-target=#turing-machine-example-01
                                 |> li
-                                    data-slide-to=8
                                     data-target=#turing-machine-example-01
+                                    data-slide-to=8
                             |> div
-                                style=display:inline-block
                                 class=carousel-inner
+                                style=display:inline-block
                                 |> div
                                     class=item active
                                     |> img
-                                        style=height:15em
                                         src=../img/turing-machines/exampe-1/01.svg
+                                        style=height:15em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:15em
                                         src=../img/turing-machines/exampe-1/02.svg
+                                        style=height:15em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:15em
                                         src=../img/turing-machines/exampe-1/03.svg
+                                        style=height:15em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:15em
                                         src=../img/turing-machines/exampe-1/04.svg
+                                        style=height:15em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:15em
                                         src=../img/turing-machines/exampe-1/05.svg
+                                        style=height:15em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:15em
                                         src=../img/turing-machines/exampe-1/06.svg
+                                        style=height:15em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:15em
                                         src=../img/turing-machines/exampe-1/07.svg
+                                        style=height:15em
                                 |> div
                                     class=item
                                     |> img
-                                        style=height:15em
                                         src=../img/turing-machines/exampe-1/08.svg
+                                        style=height:15em
                     Sie können sich das Band auch als Magnetband vorstellen, das nach vorn oder nach hinten gespult
                     wird, anstatt dass der Kopf sich bewegt. Am Anfang steht auf dem Band das
                     _Eingabewort_ und der Kopf auf dem ersten Symbol dieses Wortes. Die Turingmaschine
@@ -189,8 +189,8 @@
                                 Zwei besonderen Zuständen $\qaccept$ und $\qreject$.
                     Für die Turingmaschine in dem obigen Beispiel haben wir zwei Regeln gesehen:
                     \begin{align*}
-                    \delta(q_2, b)&amp;= (q_3, a, \texttt{R}) \\
-                    \delta(q_3, \#)&amp;= (q_4, b, \texttt{L})
+                    \delta(q_2, b) & = (q_3, a, \texttt{R}) \\
+                    \delta(q_3, \#) & = (q_4, b, \texttt{L})
                     \end{align*}
                     |> SubTopic
                         Was macht eine Turingmaschine?
@@ -203,9 +203,9 @@
                     uns bereits bekannten mathematischen Begriffen beschreiben.
                     |> figure
                         |> img
-                            style=height:20em
-                            src=../img/turing-machines/configuration.svg
                             loading=lazy
+                            src=../img/turing-machines/configuration.svg
+                            style=height:20em
                     |> Statement
                         title=*Definition*
                         Die _Konfiguration_ einer Turingmaschine ist ein Element in
@@ -226,8 +226,8 @@
                         Zustand, in dem sich die Maschine gerade befindet.
                         Wir bezeichnen mit $\state(C)$. Formal:
                         \begin{align*}
-                        \state: \mathcal{C}&amp;\rightarrow Q \\
-                        uqv&amp;\mapsto q \ .
+                        \state: \mathcal{C} & \rightarrow Q \\
+                        uqv & \mapsto q \ .
                         \end{align*}
                         Eine Konfiguration \(C\) ist
                         eine _akzeptierende Endkonfiguration_ wenn $\state(C) = \qaccept$ ist;
@@ -256,9 +256,9 @@
                         Momentaufnahmen
                         |> figure
                             |> img
-                                style=height:18em
-                                src=../img/turing-machines/configuration-two.svg
                                 loading=lazy
+                                src=../img/turing-machines/configuration-two.svg
+                                style=height:18em
                         können also beide mit der Konfiguration \(aAAaq\#ba\) beschrieben werden, obwohl
                         die Zellen nun andere Inhalte haben, weil die Turingmaschine es irgendwie geschafft
                         hat, den ganzen Bandinhalt um eins nach rechts zu kopieren. Es sollte klar
@@ -273,9 +273,9 @@
                         mit zwei Stapeln:
                         |> figure
                             |> img
-                                style=height:18em
-                                src=../img/turing-machines/two-stacks.svg
                                 loading=lazy
+                                src=../img/turing-machines/two-stacks.svg
+                                style=height:18em
                         Alternativ können wir auch der Turingmaschine verbieten, das Blank-Symbol $\Box$ jemals
                         zu schreiben. Dann wäre also
                         $\delta: Q \times \Gamma \rightarrow Q \times (\Gamma \setminus \{\Box\}) \times \lsr$.
@@ -301,9 +301,9 @@
                     \(\delta(q_2,b) = (q_3, a,R)\) und
                     \(\delta(q_3, \#) = (q_4, b, \texttt{L})\), und somit würden
                     \begin{align*}
-                    \hat{\delta}(aaAq_2b\#ba)&amp;= aaAaq_3\#ba \\
-                    \hat{\delta}(aaAaq_3\#ba)&amp;= aaAq_4abba \\
-                    \hat{\delta}(abAq_2bba\#)&amp;= abAaq_3ba\# \\
+                    \hat{\delta}(aaAq_2b\#ba) & = aaAaq_3\#ba \\
+                    \hat{\delta}(aaAaq_3\#ba) & = aaAq_4abba \\
+                    \hat{\delta}(abAq_2bba\#) & = abAaq_3ba\# \\
                     \end{align*}
                     gelten. Sie sehen:
                     Die Definition von $\hat{\delta}$ ist nichts wirklich Tiefgründiges, sondern einfach
@@ -329,9 +329,9 @@
                     wird. Daher kann \(\hat{\delta}^*\) auch `undefined` sein:
                     \begin{align*}
                     \hat{\delta}^* (C) := \begin{cases}
-                    \hat{\delta}^{(i)} (C)&
+                    \hat{\delta}^{(i)} (C) &
                     \textnormal{ wenn es ein \(i\) gibt, so dass $\hat{\delta}^{(i)} (C)$ eine Endkonfiguration ist} \\
-                    \texttt{undefined}&amp;\textnormal{sonst.}
+                    \texttt{undefined} & \textnormal{sonst.}
                     \end{cases}
                     \end{align*}
                     Nochmal zur Verdeutlichung: wenn $\delta^{(i)}(C)$ eine Endkonfiguration ist,
@@ -365,10 +365,10 @@
                     `reject` ist. Wir definieren daher
                     \begin{align*}
                     f_M(x) = \begin{cases}
-                    \texttt{accept}&amp;\textnormal{ falls $\state(\hat{M}(x)) = \qaccept$, wenn also $\hat{M}(x)$
+                    \texttt{accept} & \textnormal{ falls $\state(\hat{M}(x)) = \qaccept$, wenn also $\hat{M}(x)$
                     eine akzeptierende Endkonfiguration ist, }\\
-                    \texttt{reject}&amp;\textnormal{ falls $\state(\hat{M}(x)) = \qreject$ ,}\\
-                    \texttt{undefined}&amp;\textnormal{ falls $\hat{M}(x) = \texttt{undefined}$ }
+                    \texttt{reject} & \textnormal{ falls $\state(\hat{M}(x)) = \qreject$ ,}\\
+                    \texttt{undefined} & \textnormal{ falls $\hat{M}(x) = \texttt{undefined}$ }
                     \end{cases}
                     \end{align*}
                     |> Statement
@@ -451,9 +451,9 @@
                         Hierfür definieren wir für jede Regel der Turingmaschine eine Grammatik-Regel:
                         \begin{align*}
                         \begin{array}{lcl}
-                        \delta(q,x) = (r,y,\texttt{S} )&amp;\textnormal{wird zur Produktion}&amp;qx \rightarrow ry \\
-                        \delta(q,x) = (y,r,\texttt{R})&amp;\textnormal{wird zur Produktionen}&amp;qx \rightarrow yr \\
-                        \delta(q,x) = (y,r,\texttt{L})&amp;\textnormal{wird zu den Produktionen}&amp;aqx \rightarrow ray
+                        \delta(q,x) = (r,y,\texttt{S} ) & \textnormal{wird zur Produktion} & qx \rightarrow ry \\
+                        \delta(q,x) = (y,r,\texttt{R}) & \textnormal{wird zur Produktionen} & qx \rightarrow yr \\
+                        \delta(q,x) = (y,r,\texttt{L}) & \textnormal{wird zu den Produktionen} & aqx \rightarrow ray
                         \textnormal{ für alle $a \in \Gamma$}
                         \end{array}
                         \end{align*}
@@ -465,8 +465,8 @@
                         Ein Problem ergibt sich, wenn \(q\) am Rand steht. Hierfür erlauben wir,
                         an den Rändern der Konfiguration \(\square\)-Symbole zu erzeugen:
                         \begin{align*}
-                        \texttt{\$}&amp;\rightarrow \texttt{\$} \square \\
-                        \texttt{.}&amp;\rightarrow \square \texttt{.} \
+                        \texttt{\$} & \rightarrow \texttt{\$} \square \\
+                        \texttt{.} & \rightarrow \square \texttt{.} \
                         \end{align*}
                         Wenn der Kopf also vor dem \(\texttt{.}\) stehen sollte,
                         dann können wir
@@ -486,13 +486,13 @@
                         Als nächstes definieren wir _Aufräumregeln_: wenn \(q = \texttt{accept}\), dann
                         können wir jedes Zeichen löschen:
                         \begin{align*}
-                        \texttt{accept}\ x&amp;\rightarrow \texttt{accept} \\
-                        x\ \texttt{accept}&amp;\rightarrow \texttt{accept}
+                        \texttt{accept}\ x & \rightarrow \texttt{accept} \\
+                        x\ \texttt{accept} & \rightarrow \texttt{accept}
                         \end{align*}
                         wobei \(\texttt{accept}\) ein Nichtterminal der Grammatik ist.
                         Und somit gilt auch
                         \begin{align*}
-                        \texttt{\$} u \ \texttt{accept} \ v \texttt{.}&amp;\Step{}^*
+                        \texttt{\$} u \ \texttt{accept} \ v \texttt{.} & \Step{}^*
                         \texttt{\$}\ \texttt{accept} \ \texttt{.}
                         \end{align*}
                         Als letzte Regel definieren wir:
@@ -501,7 +501,7 @@
                         \end{align*}
                         Wir haben nun eine Grammatik mit den folgenden Eigenschaften:
                         \begin{align*}
-                        M(x_1 x_2 \dots x_n) = \texttt{accept}&amp;\textnormal{ genau dann, wenn }
+                        M(x_1 x_2 \dots x_n) = \texttt{accept} & \textnormal{ genau dann, wenn }
                         \texttt{\$} \texttt{start} x_1 x_2 \dots x_n \texttt{.} \Step{}^* S
                         \end{align*}
                         Wir bauen nun eine weitere Grammatik \(G\), in der wir jede Produktion \(\alpha \rightarrow
@@ -509,9 +509,9 @@
                         umdrehen, also durch \(\beta \rightarrow \alpha\) ersetzen. Zusätzlich definieren wir
                         Abschlussregeln
                         \begin{align*}
-                        \texttt{\$}&amp;\rightarrow \epsilon \\
-                        \texttt{.}&amp;\rightarrow \epsilon \\
-                        \texttt{start}&amp;\rightarrow \epsilon
+                        \texttt{\$} & \rightarrow \epsilon \\
+                        \texttt{.} & \rightarrow \epsilon \\
+                        \texttt{start} & \rightarrow \epsilon
                         \end{align*}
                         die die Randmarkierungen ersetzen. In dieser Grammatik gilt nun für
                         alle Wörter \(x \in \Sigma^*\):
@@ -521,18 +521,18 @@
                         \end{align*}
                         und somit gilt \(L(G) = L(M)\). Zusammenfassend besitzt \(G\) also die Produktionen
                         \begin{align*}
-                        S&amp;\step{1} \texttt{\$} \ \texttt{accept} \ \texttt{.} \\
-                        \texttt{accept}&amp;\step{2} x \ \texttt{accept} \ | \ \texttt{accept} \ x \quad
+                        S & \step{1} \texttt{\$} \ \texttt{accept} \ \texttt{.} \\
+                        \texttt{accept} & \step{2} x \ \texttt{accept} \ | \ \texttt{accept} \ x \quad
                         \tag{ für jedes \(x \in \Gamma\)} \\
-                        ry&amp;\step{3} qx \quad \tag{ wenn $\delta(q,x) = (r,y, \texttt{S})$}\\
-                        yr&amp;\step{4} qx \quad \tag{ wenn $\delta(q,x) = (r,y, \texttt{R})$}\\
-                        ray&amp;\step{5} aqx \quad \tag{ wenn $\delta(q,x) = (r,y, \texttt{L})$, für jedes \(a \in
+                        ry & \step{3} qx \quad \tag{ wenn $\delta(q,x) = (r,y, \texttt{S})$}\\
+                        yr & \step{4} qx \quad \tag{ wenn $\delta(q,x) = (r,y, \texttt{R})$}\\
+                        ray & \step{5} aqx \quad \tag{ wenn $\delta(q,x) = (r,y, \texttt{L})$, für jedes \(a \in
                         \Gamma\)} \\
-                        \texttt{\$} \square&amp;\step{6} \texttt{\$} \\
-                        \texttt{.}\square&amp;\step{7} \texttt{.} \\
-                        \texttt{\$}&amp;\step{8} \epsilon \\
-                        \texttt{.}&amp;\step{9} \epsilon \\
-                        \texttt{start}&amp;\step{10} \epsilon
+                        \texttt{\$} \square & \step{6} \texttt{\$} \\
+                        \texttt{.}\square & \step{7} \texttt{.} \\
+                        \texttt{\$} & \step{8} \epsilon \\
+                        \texttt{.} & \step{9} \epsilon \\
+                        \texttt{start} & \step{10} \epsilon
                         \end{align*}
                         Um also ein Wort \(x \in L(M)\) abzuleiten, müssen wir
                         die akzeptierende Endkonfiguration \(C\) von \(M(x)\) "erraten" und dann
