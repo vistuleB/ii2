@@ -74,7 +74,7 @@
                                 src=../img/context-free/pumping-lemma-01.svg
                                 style=height:14em
                         Nun betrachten wir in diesem Ableitungsbaum den längsten Pfad von \(S\) zu einem
-                        Nichtterminalknoten, der direkt über den Terminalen steht. Wenn dieser Länge \(d\) hat (also
+                        Nichtterminalknoten $X$, der direkt über den Terminalen steht. Wenn dieser Länge \(d\) hat (also
                         \(d\) Kanten lang ist), dann hat der Baum höchstens \(2^d\) Blätter, also \(|\gamma| \leq 2^d\).
                         Wenn nun \(|\gamma| \geq 2^{|N|} =: p\) ist, dann gibt es einen Pfad der Länge \(|N|\)
                         von diesem \(X\) aufwärts richtung \(S\). Auf diesem liegen \(|N|+1\) Nichtterminalsymbole,
@@ -84,8 +84,8 @@
                                 loading=lazy
                                 src=../img/context-free/pumping-lemma-02.svg
                                 style=height:14em
-                        Der Pfad vom oberen zum unteren \(Z\) hat höchstens Länge \(N\) (so haben wir diesen Pfad
-                        gewählt),
+                        Der Pfad vom oberen $Z$ zu irgendeinem Nichtterminal darunter
+                        hat höchstens Länge \(N\) (so haben wir diesen Pfad gewählt),
                         und somit hat das Unterwort \(vwx\) höchstens \(p = 2^{|N|}\) Zeichen.
                         Wenn wir nun das Wort \(a^nb^nc^n\) für ein sehr großes \(n\) betrachten, sagen wir
                         \(n \geq p = 2^{|N|}\), dann kann das Wort \(vwx\) nicht alle drei Symbole \(a,b,c\) enthalten;

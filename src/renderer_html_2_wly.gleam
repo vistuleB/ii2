@@ -311,14 +311,14 @@ fn splitter(
   let file_path = chapter_directory <> "/" <> filename
   let parent_path = chapter_directory <> "/" <> "__parent.wly"
   let file_vxml = vp.V(
-    bl.Em([], "section"),
+    bl.Ext([], "section"),
     "section",
     [
-      vp.Attribute(bl.Em([], "section"), "title_gr", title_german),
-      vp.Attribute(bl.Em([], "section"), "title_en", title_en),
-      vp.Attribute(bl.Em([], "section"), "number", number),
-      vp.Attribute(bl.Em([], "section"), "counter", "DefCtr"),
-      vp.Attribute(bl.Em([], "section"), "counter", "ExoCtr"),
+      vp.Attribute(bl.Ext([], "section"), "title_gr", title_german),
+      vp.Attribute(bl.Ext([], "section"), "title_en", title_en),
+      vp.Attribute(bl.Ext([], "section"), "number", number),
+      vp.Attribute(bl.Ext([], "section"), "counter", "DefCtr"),
+      vp.Attribute(bl.Ext([], "section"), "counter", "ExoCtr"),
     ],
     [
       construct_left_nav(prev_file),
@@ -327,12 +327,12 @@ fn splitter(
     ],
   )
   let parent_vxml = vp.V(
-    bl.Em([], "Chapter"),
+    bl.Ext([], "Chapter"),
     "Chapter",
     [
-      vp.Attribute(bl.Em([], "Chapter"), "counter", "SectionCtr"),
-      vp.Attribute(bl.Em([], "Chapter"), "title_gr", title_german),
-      vp.Attribute(bl.Em([], "Chapter"), "title_en", title_en),
+      vp.Attribute(bl.Ext([], "Chapter"), "counter", "SectionCtr"),
+      vp.Attribute(bl.Ext([], "Chapter"), "title_gr", title_german),
+      vp.Attribute(bl.Ext([], "Chapter"), "title_en", title_en),
     ],
     []
   )

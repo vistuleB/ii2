@@ -31,10 +31,9 @@ pub fn pipeline_wly_2_html() -> List(Pipe) {
     pp.symmetric_delim_splitting("\\*", "*", "b", ["MathBlock", "Math", "code"]),
     [
       dl.counters_substitute_and_assign_handles(),
-      dl.handles_generate_ids(),
-      dl.handles_generate_dictionary("path"),
-      dl.identity(),
-      dl.handles_substitute(#("", "", "", [], [])),
+      dl.handles_add_ids(),
+      dl.handles_generate_dictionary_and_id_list("path"),
+      dl.handles_substitute_and_fix_nonlocal_id_links(#("", "", "", [], [])),
       dl.concatenate_text_nodes(),
       dl.unwrap_if_no_child_meets_condition(#("p", infra.is_text_or_is_one_of(_, ["b", "i", "a", "span"]))),
       dl.unwrap_if_child_of__batch([#("p", ["span", "code", "tt", "figcaption", "em"])]),
@@ -43,7 +42,7 @@ pub fn pipeline_wly_2_html() -> List(Pipe) {
       dl.free_children(#("ol", "p")),
       dl.free_children(#("p", "p")),
       dl.free_children(#("figure", "p")),
-      dl.generate_ti2_table_of_contents_html(#("TOCAuthorSuppliedContent", "li")),
+      dl.generate_ii2_table_of_contents_html(#("TOCAuthorSuppliedContent", "li")),
       dl.fold_contents_into_text__batch(["MathBlock", "Math", "MathDollar"]),
     ],
   ]

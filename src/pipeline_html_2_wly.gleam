@@ -8,7 +8,7 @@ pub fn pipeline_html_2_wly() -> List(Pipe) {
     dl.identity(),
     dl.find_replace__outside(#("&lt;", "<"), []),
     dl.find_replace__outside(#("&gt;", ">"), []),
-    dl.ti2_remove_chapter_number_from_title(),
+    dl.ii2_remove_chapter_number_from_title(),
     dl.trim_spaces_around_newlines__outside([]),
     dl.replace_multiple_spaces_by_one(),
     dl.rename(#("tt", "code")),
@@ -28,26 +28,26 @@ pub fn pipeline_html_2_wly() -> List(Pipe) {
     dl.unwrap_tags_if_no_attributes(["i", "b", "strong", "em", "code"]),
     dl.fold_into_text(#("go23_xU", "")),
     dl.delete_empty_lines(),
-    dl.insert_ti2_counter_commands(#(
+    dl.insert_ii2_counter_commands(#(
       "::++ChapterCtr.",
       #("class", "chapterTitle"),
       [],
       None,
     )),
-    dl.insert_ti2_counter_commands(#(
+    dl.insert_ii2_counter_commands(#(
       "::::ChapterCtr.::++SectionCtr",
       #("class", "subChapterTitle"),
       [],
       None,
     )),
-    dl.insert_ti2_counter_commands(#(
+    dl.insert_ii2_counter_commands(#(
       "::::ChapterCtr.::::SectionCtr.::++ExoCtr",
       #("class", "numbered-title"),
       ["Übungsaufgabe"],
       Some("NumberedTitle"),
     )),
     // 15
-    dl.insert_ti2_counter_commands(#(
+    dl.insert_ii2_counter_commands(#(
       "::::ChapterCtr.::::SectionCtr.::++DefCtr",
       #("class", "numbered-title"),
       [
@@ -62,7 +62,7 @@ pub fn pipeline_html_2_wly() -> List(Pipe) {
     dl.rename(#("h2", "Topic")),
     dl.rename(#("h3", "SubTopic")),
     // this guy will have fucked up our old wly -> html pipeline, but of course we don't care anymore:
-    dl.ti2_class_well_container_theorem_2_statement(),
+    dl.ii2_class_well_container_theorem_2_statement(),
     dl.substitute_class(#("div", "container", "well")),
     dl.rename_if_has_singleton_class_attribute(#("div", "well", "Highlight")),
     dl.rename_if_has_singleton_class_attribute(#("div", "well subtheorem", "Remark")),
