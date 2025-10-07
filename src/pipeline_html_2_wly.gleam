@@ -64,8 +64,8 @@ pub fn pipeline_html_2_wly() -> List(Pipe) {
     // this guy will have fucked up our old wly -> html pipeline, but of course we don't care anymore:
     dl.ii2_class_well_container_theorem_2_statement(),
     dl.substitute_class(#("div", "container", "well")),
-    dl.rename_if_has_singleton_class_attribute(#("div", "well", "Highlight")),
-    dl.rename_if_has_singleton_class_attribute(#("div", "well subtheorem", "Remark")),
+    dl.rename_if_has_singleton_class_attribute(#("div", "Highlight", "well", )),
+    dl.rename_if_has_singleton_class_attribute(#("div", "Remark", "well subtheorem")),
     dl.rename_and_delete_children_if_has_singleton_class_attribute(#("span", "qed", "QED")),
     dl.supplement_class(#("div", "alert-info", "well")),
   ]
@@ -75,7 +75,8 @@ pub fn pipeline_html_2_wly() -> List(Pipe) {
       |> infra.extend_selector_down(16)
       |> infra.extend_selector_to_ancestors(
         with_elder_siblings: True,
-        with_attributes: False,
+        with_ancestor_attributes: False,
+        with_elder_sibling_attributes: False,
       ),
     infra.TrackingOff,
   )

@@ -47,7 +47,7 @@ fn ti2_splitter(root: VXML) -> Result(List(TI2Fragment(VXML)), Ti2SplitterError)
   let chapter_vxmls = infra.descendants_with_tag(root, "section")
 
   use toc_vxml <- on.error_ok(
-    infra.v_unique_child_with_tag(root, "TOCAuthorSuppliedContent"),
+    infra.v_unique_child_with_singleton_error(root, "TOCAuthorSuppliedContent"),
     on_error: fn(error) {
       case error {
         infra.MoreThanOne -> Error(MoreThanOneTOCAuthorSuppliedContent)
