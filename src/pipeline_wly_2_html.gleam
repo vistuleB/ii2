@@ -42,20 +42,21 @@ pub fn pipeline_wly_2_html() -> List(Pipe) {
       dl.free_children(#("ol", "p")),
       dl.free_children(#("p", "p")),
       dl.free_children(#("figure", "p")),
-      dl.generate_ii2_table_of_contents_html(#("TOCAuthorSuppliedContent", "li")),
+      dl.ii2_generate_table_of_contents_html(#("TOCAuthorSuppliedContent", "li")),
       dl.fold_contents_into_text__batch(["MathBlock", "Math", "MathDollar"]),
     ],
   ]
   |> list.flatten
-  |> infra.desugarers_2_pipeline(
-    sl.verbatim("ächstes wollen wir zeig")
-    |> infra.extend_selector_up(4)
-    |> infra.extend_selector_down(16)
-    |> infra.extend_selector_to_ancestors(
-      with_elder_siblings: True,
-      with_ancestor_attributes: False,
-      with_elder_sibling_attributes: False,
-    ),
-    infra.TrackingOff,
-  )
+  |> infra.desugarers_2_pipeline
+  // (
+  //   sl.verbatim("ächstes wollen wir zeig")
+  //   |> infra.extend_selector_up(4)
+  //   |> infra.extend_selector_down(16)
+  //   |> infra.extend_selector_to_ancestors(
+  //     with_elder_siblings: True,
+  //     with_ancestor_attributes: False,
+  //     with_elder_sibling_attributes: False,
+  //   ),
+  //   infra.TrackingOff,
+  // )
 }

@@ -1,7 +1,6 @@
 import desugarer_library as dl
 import gleam/option.{None, Some}
 import infrastructure.{type Pipe} as infra
-import selector_library as sl
 
 pub fn pipeline_html_2_wly() -> List(Pipe) {
   [
@@ -28,26 +27,26 @@ pub fn pipeline_html_2_wly() -> List(Pipe) {
     dl.unwrap_tags_if_no_attributes(["i", "b", "strong", "em", "code"]),
     dl.fold_into_text(#("go23_xU", "")),
     dl.delete_empty_lines(),
-    dl.insert_ii2_counter_commands(#(
+    dl.ii2_insert_counter_commands(#(
       "::++ChapterCtr.",
       #("class", "chapterTitle"),
       [],
       None,
     )),
-    dl.insert_ii2_counter_commands(#(
+    dl.ii2_insert_counter_commands(#(
       "::::ChapterCtr.::++SectionCtr",
       #("class", "subChapterTitle"),
       [],
       None,
     )),
-    dl.insert_ii2_counter_commands(#(
+    dl.ii2_insert_counter_commands(#(
       "::::ChapterCtr.::::SectionCtr.::++ExoCtr",
       #("class", "numbered-title"),
       ["Übungsaufgabe"],
       Some("NumberedTitle"),
     )),
     // 15
-    dl.insert_ii2_counter_commands(#(
+    dl.ii2_insert_counter_commands(#(
       "::::ChapterCtr.::::SectionCtr.::++DefCtr",
       #("class", "numbered-title"),
       [
@@ -69,15 +68,16 @@ pub fn pipeline_html_2_wly() -> List(Pipe) {
     dl.rename_and_delete_children_if_has_singleton_class_attribute(#("span", "qed", "QED")),
     dl.supplement_class(#("div", "alert-info", "well")),
   ]
-  |> infra.desugarers_2_pipeline(
-    sl.verbatim("ächstes wollen wir zeig")
-      |> infra.extend_selector_up(4)
-      |> infra.extend_selector_down(16)
-      |> infra.extend_selector_to_ancestors(
-        with_elder_siblings: True,
-        with_ancestor_attributes: False,
-        with_elder_sibling_attributes: False,
-      ),
-    infra.TrackingOff,
-  )
+  |> infra.desugarers_2_pipeline
+  // (
+  //   sl.verbatim("ächstes wollen wir zeig")
+  //     |> infra.extend_selector_up(4)
+  //     |> infra.extend_selector_down(16)
+  //     |> infra.extend_selector_to_ancestors(
+  //       with_elder_siblings: True,
+  //       with_ancestor_attributes: False,
+  //       with_elder_sibling_attributes: False,
+  //     ),
+  //   infra.TrackingOff,
+  // )
 }
